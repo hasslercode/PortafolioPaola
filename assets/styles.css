@@ -1086,7 +1086,7 @@ nav ul a:hover {
         display: none; /* Evita desbordamientos en pantallas muy compactas */
     }
     .services-grid-wow {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
     }
     .service-card-wow {
@@ -1845,7 +1845,7 @@ footer {
 
 @media (max-width: 550px) {
     .brands-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .featured-title {
         font-size: 40px;
@@ -3436,18 +3436,19 @@ footer {
     }
 
     .brands-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
         margin-bottom: 22px;
     }
 
     .brand-card {
-        padding: 16px;
+        padding: 12px;
         border-radius: 16px;
+        gap: 10px;
     }
 
     .brand-preview {
-        height: 170px;
+        height: 116px;
     }
 
     .results-band {
@@ -3498,25 +3499,26 @@ footer {
     }
 
     .service-card-wow {
-        text-align: left;
-        align-items: flex-start;
-        padding: 26px 18px;
+        text-align: center;
+        align-items: center;
+        padding: 22px 12px;
     }
 
     .service-icon-wrap {
-        margin-bottom: 18px;
+        margin-bottom: 14px;
     }
 
     .service-card-wow h3 {
-        min-height: unset;
+        min-height: 58px;
         margin-bottom: 10px;
-        text-align: left;
-        font-size: 18px;
+        text-align: center;
+        font-size: 14px;
         line-height: 1.3;
     }
 
     .service-card-wow p {
-        font-size: 13.5px;
+        font-size: 12px;
+        line-height: 1.5;
     }
 
     .skills-section-wow {
@@ -3566,7 +3568,7 @@ footer {
     }
 
     .steps-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
 
@@ -3586,12 +3588,13 @@ footer {
     }
 
     .step-item h3 {
-        font-size: 16px;
+        font-size: 15px;
         margin-bottom: 8px;
     }
 
     .step-item p {
-        font-size: 13.5px;
+        font-size: 12px;
+        line-height: 1.5;
     }
 
     .process-right {
@@ -3882,5 +3885,414 @@ footer {
 
     .footer-logo-titles span {
         font-size: 7.5px;
+    }
+}
+
+/* ========================================================================= */
+/* === MOBILE UX TUNE-UP (HEADER + FOOTER)                                === */
+/* ========================================================================= */
+
+@media (max-width: 992px) {
+    .site-header-refined {
+        padding-top: max(10px, env(safe-area-inset-top));
+    }
+
+    .logo-text-group-refined {
+        min-width: 0;
+    }
+
+    .logo-main-refined,
+    .logo-sub-refined {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header-menu-panel {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        z-index: 2200;
+        background: rgba(250, 245, 240, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(45, 30, 27, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 18px 40px rgba(45, 30, 27, 0.2);
+        padding: 0 10px;
+    }
+
+    .site-header-refined.menu-open .header-menu-panel {
+        max-height: min(72vh, 520px);
+        padding: 10px;
+    }
+
+    .main-nav-refined ul {
+        gap: 7px;
+    }
+
+    .nav-item-refined a {
+        min-height: 42px;
+        font-size: 12px;
+    }
+
+    .hero-premium-section {
+        padding: 38px 0 20px;
+    }
+
+    .hero-grid-premium {
+        gap: 22px;
+    }
+
+    .hero-left-premium {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .hero-premium-tagline {
+        display: block;
+        margin-bottom: 14px;
+        letter-spacing: 0.95px;
+        text-wrap: balance;
+    }
+
+    .hero-premium-tagline span.cursive-glow {
+        display: inline;
+        margin-left: 4px;
+    }
+
+    .hero-premium-title,
+    .hero-premium-description {
+        text-wrap: balance;
+    }
+
+    .hero-premium-title {
+        margin-bottom: 16px;
+        line-height: 1.08;
+    }
+
+    .hero-premium-description {
+        margin-bottom: 24px;
+        max-width: 34ch;
+    }
+
+    .hero-cta-group {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-wow-action {
+        min-height: 54px;
+    }
+
+    .footer-main-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "brand brand"
+            "links socials"
+            "arch arch";
+        gap: 20px 16px;
+        align-items: start;
+    }
+
+    .footer-col-brand {
+        grid-area: brand;
+    }
+
+    .footer-col-links {
+        grid-area: links;
+        text-align: left;
+    }
+
+    .footer-col-socials {
+        grid-area: socials;
+        text-align: left;
+    }
+
+    .footer-col-arch {
+        grid-area: arch;
+    }
+
+    .footer-col-links,
+    .footer-col-socials {
+        justify-content: flex-start;
+    }
+
+    .footer-col-links ul,
+    .footer-col-socials ul {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-col-links a,
+    .social-link-item {
+        font-size: 12px;
+    }
+
+    .footer-brand-desc {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .footer-mini-arch-wrapper {
+        width: 108px;
+        height: 140px;
+    }
+
+    .footer-bottom-row {
+        gap: 8px;
+    }
+
+    .copyright-text {
+        font-size: 11.5px;
+    }
+
+    .footer-brand-pillars {
+        gap: 8px;
+        font-size: 9.5px;
+        letter-spacing: 0.8px;
+    }
+}
+
+@media (max-width: 640px) {
+    .logo-main-refined {
+        max-width: 165px;
+    }
+
+    .hero-premium-section {
+        padding: 18px 0 10px;
+    }
+
+    .hero-premium-tagline {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        line-height: 1.45;
+        margin-bottom: 10px;
+    }
+
+    .hero-premium-tagline span.cursive-glow {
+        font-size: 24px;
+    }
+
+    .hero-premium-title {
+        max-width: 9ch;
+        font-size: clamp(38px, 10.8vw, 48px);
+        letter-spacing: -0.4px;
+        line-height: 0.98;
+        margin: 0 auto 14px;
+    }
+
+    .hero-premium-description {
+        max-width: 30ch;
+        font-size: 13px;
+        line-height: 1.48;
+        margin-bottom: 18px;
+    }
+
+    .btn-wow-action {
+        width: min(290px, 84vw);
+        min-height: 48px;
+        font-size: 10.5px;
+        letter-spacing: 0.35px;
+        padding: 12px 18px;
+        box-shadow: 0 10px 22px rgba(232, 167, 179, 0.2);
+    }
+
+    .hero-right-premium {
+        margin-top: 10px;
+    }
+
+    .hero-image-composite {
+        width: min(78vw, 300px);
+        height: min(92vw, 350px);
+    }
+
+    .hero-img-premium {
+        width: 104%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .metrics-card-glassmorphism {
+        left: 12px;
+        right: 12px;
+        bottom: 10px;
+        padding: 10px 12px;
+        border-radius: 16px;
+    }
+
+    .header-menu-panel {
+        top: calc(100% + 8px);
+        border-radius: 14px;
+    }
+
+    .footer-main-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "brand brand"
+            "links socials"
+            "arch arch";
+        gap: 22px 18px;
+        align-items: start;
+    }
+
+    .footer-final {
+        padding: 58px 0 24px;
+    }
+
+    .footer-logo-wrap {
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .footer-isotype-ph {
+        width: 44px;
+        height: 34px;
+    }
+
+    .footer-ph-text {
+        font-size: 20px;
+    }
+
+    .footer-logo-titles h3 {
+        font-size: 18px;
+        letter-spacing: 0.3px;
+    }
+
+    .footer-logo-titles span {
+        font-size: 7.5px;
+        letter-spacing: 0.9px;
+    }
+
+    .footer-brand-desc {
+        max-width: 33ch;
+        margin: 0 auto;
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+
+    .footer-final h4 {
+        margin-bottom: 12px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .footer-col-links,
+    .footer-col-socials {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .footer-col-links ul,
+    .footer-col-socials ul {
+        align-items: flex-start;
+        gap: 9px;
+    }
+
+    .footer-col-links a,
+    .social-link-item {
+        font-size: 12px;
+    }
+
+    .social-link-item {
+        gap: 8px;
+    }
+
+    .social-icon-circle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer-col-arch {
+        justify-content: center;
+    }
+
+    .footer-mini-arch-wrapper {
+        width: 92px;
+        height: 118px;
+    }
+
+    .footer-arch-sparkle {
+        top: 0;
+        right: -16px;
+        font-size: 16px;
+    }
+
+    .footer-bottom-divider {
+        margin: 22px 0 14px;
+    }
+
+    .footer-bottom-row {
+        gap: 8px;
+    }
+
+    .footer-brand-pillars {
+        gap: 7px;
+        font-size: 8.5px;
+        letter-spacing: 0.6px;
+    }
+}
+
+@media (max-width: 420px) {
+    .logo-main-refined {
+        max-width: 140px;
+        font-size: 13px;
+    }
+
+    .hero-premium-title {
+        max-width: 8.5ch;
+        font-size: clamp(34px, 10.5vw, 40px);
+        line-height: 1;
+    }
+
+    .hero-premium-description {
+        max-width: 29ch;
+        font-size: 12.5px;
+    }
+
+    .btn-wow-action {
+        width: min(270px, 82vw);
+        min-height: 46px;
+        font-size: 10px;
+    }
+
+    .hero-image-composite {
+        width: min(76vw, 280px);
+        height: min(90vw, 330px);
+    }
+
+    .footer-main-grid {
+        gap: 20px 14px;
+    }
+
+    .footer-logo-titles h3 {
+        font-size: 16px;
+    }
+
+    .footer-brand-desc {
+        font-size: 12px;
+    }
+
+    .footer-col-links a,
+    .social-link-item {
+        font-size: 11.5px;
+    }
+
+    .social-icon-circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .footer-mini-arch-wrapper {
+        width: 84px;
+        height: 108px;
+    }
+
+    .logo-sub-refined {
+        display: none;
     }
 }
