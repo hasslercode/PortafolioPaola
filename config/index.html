@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Editor de contenidos — Paola Hoyos</title>
+    <link rel="stylesheet" href="config.css">
+</head>
+<body>
+    <!--
+        PÁGINA TEMPORAL — ELIMINAR AL FINALIZAR REVISIÓN DE CONTENIDOS
+        Ver TEMP_CLEANUP.txt en la raíz del proyecto.
+    -->
+
+    <div id="login-screen" class="login-screen">
+        <form id="login-form" class="login-card">
+            <h1>Editor de contenidos</h1>
+            <p class="login-subtitle">Acceso temporal para revisión de textos</p>
+            <label for="login-user">Usuario</label>
+            <input type="text" id="login-user" name="user" autocomplete="username" required>
+            <label for="login-password">Contraseña</label>
+            <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+            <p id="login-error" class="login-error" hidden></p>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+    </div>
+
+    <div id="editor-screen" class="editor-screen" hidden>
+        <header class="editor-toolbar">
+            <div class="toolbar-left">
+                <h1>Editor de contenidos</h1>
+                <span id="unsaved-indicator" class="unsaved-indicator" hidden>Cambios sin guardar</span>
+            </div>
+            <div class="toolbar-actions">
+                <button type="button" id="btn-restore" class="btn btn-secondary">Restaurar cambios</button>
+                <button type="button" id="btn-download" class="btn btn-secondary">Descargar backup</button>
+                <button type="button" id="btn-save" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </header>
+
+        <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+
+        <div class="editor-layout">
+            <section class="editor-panel">
+                <div class="panel-header">
+                    <h2>Editar textos</h2>
+                    <p>Modifica cada campo y revisa el resultado en la vista previa.</p>
+                </div>
+                <form id="content-form" class="content-form" novalidate></form>
+            </section>
+
+            <section class="preview-panel">
+                <div class="panel-header">
+                    <h2>Vista previa en vivo</h2>
+                    <p>La landing real con los textos del formulario.</p>
+                </div>
+                <iframe id="preview-frame" class="preview-frame" title="Vista previa del sitio"></iframe>
+            </section>
+        </div>
+    </div>
+
+    <script src="config-form-schema.js"></script>
+    <script src="config.js"></script>
+</body>
+</html>

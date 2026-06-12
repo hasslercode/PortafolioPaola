@@ -1,0 +1,8 @@
+{
+  "name": "portafolio-paola",
+  "private": true,
+  "description": "Portafolio de Paola Hoyos con editor temporal de contenidos",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,35 @@
+ARCHIVOS Y FUNCIONALIDAD TEMPORAL — ELIMINAR AL FINALIZAR REVISIÓN DE CONTENIDOS
+================================================================================
+
+Cuando Paola termine de revisar y aprobar los textos:
+
+1. ELIMINAR la página de configuración:
+   - config/index.html
+   - config/config.js
+   - config/config-form-schema.js
+   - config/config.css
+   - config/ (carpeta completa si queda vacía)
+
+2. ELIMINAR el servidor temporal:
+   - server.js
+   - package.json
+   - TEMP_CLEANUP.txt (este archivo)
+
+3. ELIMINAR credenciales temporales en:
+   - config/config.js (bloque TEMPORARY ACCESS ONLY)
+
+4. DECIDIR el destino final de public/content.json:
+   - Opción A: Incrustar los textos finales de vuelta en index.html y eliminar
+     js/content-loader.js y public/content.json
+   - Opción B: Mantener public/content.json como fuente de contenidos en producción
+     (recomendado si se despliega con el servidor o un pipeline que lo sirva)
+
+5. Si se mantiene content.json en producción (GitHub Pages):
+   - El guardado desde /config NO funcionará sin backend
+   - Restringir acceso: no enlazar /config públicamente
+   - Los cambios finales deben commitearse manualmente en public/content.json
+
+ARCHIVOS PERMANENTES (mantener si se usa contenido dinámico):
+   - public/content.json
+   - js/content-loader.js
+   - Atributos data-content en index.html

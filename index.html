@@ -26,6 +26,7 @@
     <meta name="twitter:image" content="https://hasslercode.github.io/PortafolioPaola/assets/fotopaola.PNG">
     <link rel="preload" as="image" href="assets/fotopaola.PNG">
     <link rel="stylesheet" href="assets/styles.css">
+    <style>html:not(.content-ready) body { visibility: hidden; }</style>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -64,7 +65,7 @@
 
     <div class="container nav-container-refined">
         <div class="logo-box-refined">
-            <a href="#inicio" class="site-logo" aria-label="Paola Hoyos — Estrategia, Storytelling y Resultados">
+            <a href="#inicio" class="site-logo" data-content="header.logoAriaLabel" aria-label="">
                 <img src="assets/icon-paola.png" alt="" class="site-logo__icon" width="54" height="54" loading="eager" decoding="sync">
                 <span class="site-logo__lockup">
                     <svg class="site-logo__sparkles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 18" aria-hidden="true">
@@ -76,16 +77,16 @@
                         <svg class="site-logo__swirl-svg site-logo__swirl-svg--back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 36" preserveAspectRatio="none" aria-hidden="true">
                             <path class="site-logo__swirl" d="M8 21C1 21-3 15-1 9C1 3 11 1 24 4C32 7 36 10 38 12"/>
                         </svg>
-                        <span class="site-logo__name">Paola Hoyos</span>
+                        <span class="site-logo__name" data-content="header.logoName"></span>
                         <svg class="site-logo__swirl-svg site-logo__swirl-svg--front" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 36" preserveAspectRatio="none" aria-hidden="true">
                             <path class="site-logo__swirl" d="M36 12C44 15 52 13 62 14C100 18 150 21 200 21C240 20 270 18 278 17"/>
                         </svg>
                         <span class="site-logo__tagline">
-                            <span class="site-logo__tagline-word">Estrategia</span>
+                            <span class="site-logo__tagline-word" data-content="header.taglineWord"></span>
                             <svg class="site-logo__sep" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 .6 5.6 3.6 8.6 4.2 5.6 4.8 5 7.8 4.4 4.8 1.4 4.2 4.4 3.6Z"/></svg>
-                            <span class="site-logo__tagline-word">Storytelling</span>
+                            <span class="site-logo__tagline-word" data-content="header.taglineWord"></span>
                             <svg class="site-logo__sep" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 .6 5.6 3.6 8.6 4.2 5.6 4.8 5 7.8 4.4 4.8 1.4 4.2 4.4 3.6Z"/></svg>
-                            <span class="site-logo__tagline-word">Resultados</span>
+                            <span class="site-logo__tagline-word" data-content="header.taglineWord"></span>
                         </span>
                     </span>
                 </span>
@@ -101,16 +102,16 @@
         <div class="header-menu-panel" id="header-menu-panel">
             <nav class="main-nav-refined">
                 <ul>
-                    <li class="nav-item-refined active"><a href="#inicio">Inicio</a></li>
-                    <li class="nav-item-refined"><a href="#servicios">Servicios</a></li>
-                    <li class="nav-item-refined"><a href="#experiencias-destacadas">Experiencias</a></li>
-                    <li class="nav-item-refined"><a href="#" data-open-portfolio-modal>Portafolio</a></li>
-                    <li class="nav-item-refined"><a href="#contacto">Contacto</a></li>
+                    <li class="nav-item-refined active"><a href="#inicio" data-content="header.nav.inicio"></a></li>
+                    <li class="nav-item-refined"><a href="#servicios" data-content="header.nav.servicios"></a></li>
+                    <li class="nav-item-refined"><a href="#experiencias-destacadas" data-content="header.nav.experiencias"></a></li>
+                    <li class="nav-item-refined"><a href="#" data-open-portfolio-modal data-content="header.nav.portafolio"></a></li>
+                    <li class="nav-item-refined"><a href="#contacto" data-content="header.nav.contacto"></a></li>
                 </ul>
             </nav>
 
             <div class="cta-wrap-refined">
-                <a href="#" class="btn-pill-premium" data-open-contact-modal>Hablemos ✦</a>
+                <a href="#" class="btn-pill-premium" data-open-contact-modal data-content="header.cta"></a>
             </div>
         </div>
     </div>
@@ -122,22 +123,22 @@
             
             <div class="hero-left-premium">
                 <div class="hero-premium-tagline">
-                    MÁS ALLÁ DEL ALGORITMO: CONEXIONES HUMANAS,<br class="hero-tagline-break" aria-hidden="true">
-                    <span class="cursive-glow">resultados reales</span>
+                    <span data-content="hero.taglineLine1"></span><br class="hero-tagline-break" aria-hidden="true">
+                    <span class="cursive-glow" data-content="hero.taglineAccent"></span>
                 </div>
 
                 <h1 class="hero-premium-title">
-                    Deja de copiar.<br>
-                    Empieza a <span class="hero-title-accent">liderar.</span>
+                    <span data-content="hero.titleLine1"></span><br>
+                    <span data-content="hero.titleLine2Prefix"></span> <span class="hero-title-accent" data-content="hero.titleLine2Accent"></span>
                 </h1>
 
                 <p class="hero-premium-description">
-                    No necesitas estar en todas partes; necesitas estar donde realmente importa. Diseño estrategias digitales a medida y storytelling de alto impacto que transforman espectadores pasivos en una <span class="pink-accent-bold">comunidad activa y rentable.</span>
+                    <span data-content="hero.descriptionBefore"></span> <span class="pink-accent-bold" data-content="hero.descriptionAccent"></span>
                 </p>
 
                 <div class="hero-cta-group">
                     <a href="#" class="btn-pill btn-wow-action" data-open-contact-modal>
-                        Impulsa tu marca ahora
+                        <span data-content="hero.cta"></span>
                         <span class="btn-wow-action__sparkle" aria-hidden="true">✦</span>
                     </a>
                 </div>
@@ -150,22 +151,20 @@
 
                     <div class="premium-arch-backdrop"></div>
 
-                    <img src="assets/fotopaola.PNG" alt="Paola Hoyos, Dirección de Estrategia Digital" class="hero-img-premium">
+                    <img src="assets/fotopaola.PNG" alt="" data-content="hero.imageAlt" class="hero-img-premium">
 
                     <div class="metrics-card-glassmorphism">
                         <div class="glass-icon-circle">
                             <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
                         </div>
                         <div class="glass-metric-info">
-                            <span class="glass-metric-value">+3.8M</span>
-                            <span class="glass-metric-label">Impacto y alcance orgánico</span>
+                            <span class="glass-metric-value" data-content="hero.metricValue"></span>
+                            <span class="glass-metric-label" data-content="hero.metricLabel"></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="premium-vertical-label">
-                    · ESTRATEGIA · CONTENIDO · COMUNIDAD · RESULTADOS
-                </div>
+                <div class="premium-vertical-label" data-content="hero.verticalLabel"></div>
             </div>
         </div>
     </section>
@@ -177,43 +176,43 @@
                 <span class="perf-scrap perf-scrap--heart-outline" aria-hidden="true">♡</span>
 
                 <div class="performance-bar-grid">
-                    <div class="perf-item-premium">
+                    <div class="perf-item-premium" data-content-list="performance.items">
                         <div class="perf-icon-box perf-icon-box--pink">
                             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
                         </div>
                         <div class="perf-text-group">
-                            <h3>Dirección Estratégica</h3>
-                            <p>Planes de posicionamiento a corto y largo plazo.</p>
+                            <h3 data-content-field="title"></h3>
+                            <p data-content-field="description"></p>
                         </div>
                     </div>
 
-                    <div class="perf-item-premium">
+                    <div class="perf-item-premium" data-content-list="performance.items">
                         <div class="perf-icon-box perf-icon-box--lavender">
                             <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
                         </div>
                         <div class="perf-text-group">
-                            <h3>Narrativa Creativa</h3>
-                            <p>Storytelling de marca que conecta de inmediato.</p>
+                            <h3 data-content-field="title"></h3>
+                            <p data-content-field="description"></p>
                         </div>
                     </div>
 
-                    <div class="perf-item-premium">
+                    <div class="perf-item-premium" data-content-list="performance.items">
                         <div class="perf-icon-box perf-icon-box--pink">
                             <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                         </div>
                         <div class="perf-text-group">
-                            <h3>Engagement Humano</h3>
-                            <p>Crecimiento orgánico mediante interacciones reales.</p>
+                            <h3 data-content-field="title"></h3>
+                            <p data-content-field="description"></p>
                         </div>
                     </div>
 
-                    <div class="perf-item-premium">
+                    <div class="perf-item-premium" data-content-list="performance.items">
                         <div class="perf-icon-box perf-icon-box--sage">
                             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
                         </div>
                         <div class="perf-text-group">
-                            <h3>Conversión y ROI</h3>
-                            <p>Métricas transparentes que validan tu inversión.</p>
+                            <h3 data-content-field="title"></h3>
+                            <p data-content-field="description"></p>
                         </div>
                     </div>
                 </div>
@@ -233,13 +232,13 @@
             <div class="featured-header">
                 <div class="featured-title-block fade-up">
                     <div class="featured-badge-wrap">
-                        <span class="featured-badge">Marcas y experiencias</span>
+                        <span class="featured-badge" data-content="experience.badge"></span>
                     </div>
 
                     <div class="featured-title-container">
-                        <h2 class="featured-title">Experiencias</h2>
+                        <h2 class="featured-title" data-content="experience.title"></h2>
                         <div class="featured-script-row">
-                            <h3 class="featured-script">destacadas</h3>
+                            <h3 class="featured-script" data-content="experience.titleScript"></h3>
                             <span class="featured-scrap featured-scrap--heart" aria-hidden="true">♡</span>
                         </div>
                         <span class="featured-title-underline" aria-hidden="true"></span>
@@ -247,157 +246,152 @@
                 </div>
                 <div class="featured-copy-block fade-up">
                     <p class="featured-copy">
-                        He creado contenido estratégico para impulsar marcas y experiencias dentro de Parque Alegra,
-                        logrando resultados que se traducen en
-                        <span class="marker-highlight">visibilidad, interacción y crecimiento.</span>
+                        <span data-content="experience.copyBefore"></span>
+                        <span class="marker-highlight" data-content="experience.copyAccent"></span>
                     </p>
                     <div class="featured-note">
                         <span class="featured-note-tape" aria-hidden="true"></span>
                         <span class="featured-note-icon">i</span>
-                        <p>
-                            Las marcas aquí mencionadas corresponden a establecimientos presentes en contenidos y
-                            campañas desarrolladas para Parque Alegra.
-                            No representan una relación contractual directa con Paola Hoyos.
-                        </p>
+                        <p data-content="experience.note"></p>
                     </div>
                 </div>
             </div>
 
             <div class="brands-grid">
-                <article class="campaign-card campaign-card--coca fade-up">
+                <article class="campaign-card campaign-card--coca fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
                                 <img src="assets/logos/coca-cola.png" alt="" class="brand-header__logo brand-header__logo--wide" width="120" height="32" loading="lazy">
-                                <h3 class="brand-header__name">Coca-Cola</h3>
-                                <p class="brand-header__category">Momentos y sabor</p>
+                                <h3 class="brand-header__name" data-content-field="name"></h3>
+                                <p class="brand-header__category" data-content-field="category"></p>
                             </div>
                             <div class="metric-pill">
                                 <svg class="metric-pill__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span><strong>1.33M</strong> Visualizaciones</span>
+                                <span><strong data-content-field="metric"></strong> <span data-content-field="metricLabel"></span></span>
                             </div>
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--cutout">
                         <img src="assets/campaigns/coca-cola.png" alt="Campaña Coca-Cola" loading="lazy">
                     </div>
-                    <a href="https://vt.tiktok.com/ZSr4f3fEK/" class="campaign-cta campaign-cta--coca" target="_blank" rel="noopener noreferrer" aria-label="Ver contenido de Coca-Cola en TikTok">
-                        Ver contenido
+                    <a href="https://vt.tiktok.com/ZSr4f3fEK/" class="campaign-cta campaign-cta--coca" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                        <span data-content-field="cta"></span>
                         <span class="campaign-cta__arrow" aria-hidden="true">→</span>
                     </a>
                 </article>
 
-                <article class="campaign-card campaign-card--totto fade-up">
+                <article class="campaign-card campaign-card--totto fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
                                 <img src="assets/logos/totto.svg" alt="" class="brand-header__logo" width="48" height="48" loading="lazy">
-                                <h3 class="brand-header__name">TOTTO</h3>
-                                <p class="brand-header__category">Estilo y funcionalidad</p>
+                                <h3 class="brand-header__name" data-content-field="name"></h3>
+                                <p class="brand-header__category" data-content-field="category"></p>
                             </div>
                             <div class="metric-pill">
                                 <svg class="metric-pill__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span><strong>1.27M</strong> Visualizaciones</span>
+                                <span><strong data-content-field="metric"></strong> <span data-content-field="metricLabel"></span></span>
                             </div>
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--cutout">
                         <img src="assets/campaigns/totto-backpack.png" alt="Campaña Totto" loading="lazy">
                     </div>
-                    <a href="https://vt.tiktok.com/ZSr44Kpt5/" class="campaign-cta campaign-cta--totto" target="_blank" rel="noopener noreferrer" aria-label="Ver contenido de Totto en TikTok">
-                        Ver contenido
+                    <a href="https://vt.tiktok.com/ZSr44Kpt5/" class="campaign-cta campaign-cta--totto" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                        <span data-content-field="cta"></span>
                         <span class="campaign-cta__arrow" aria-hidden="true">→</span>
                     </a>
                 </article>
 
-                <article class="campaign-card campaign-card--cine fade-up">
+                <article class="campaign-card campaign-card--cine fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
                                 <img src="assets/logos/cine-colombia.png" alt="" class="brand-header__logo brand-header__logo--wide" width="120" height="32" loading="lazy">
-                                <h3 class="brand-header__name">Cine Colombia</h3>
-                                <p class="brand-header__category">Entretenimiento</p>
+                                <h3 class="brand-header__name" data-content-field="name"></h3>
+                                <p class="brand-header__category" data-content-field="category"></p>
                             </div>
                             <div class="metric-pill">
                                 <svg class="metric-pill__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span><strong>858K</strong> Visualizaciones</span>
+                                <span><strong data-content-field="metric"></strong> <span data-content-field="metricLabel"></span></span>
                             </div>
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--photo">
                         <img src="assets/campaigns/cine-colombia.jpg" alt="Campaña Cine Colombia" loading="lazy">
                     </div>
-                    <a href="https://www.instagram.com/reel/C_y73z6sxO_/?igsh=NjU4d2wyOGE5YjEy" class="campaign-cta campaign-cta--cine" target="_blank" rel="noopener noreferrer" aria-label="Ver contenido de Cine Colombia en Instagram">
-                        Ver contenido
+                    <a href="https://www.instagram.com/reel/C_y73z6sxO_/?igsh=NjU4d2wyOGE5YjEy" class="campaign-cta campaign-cta--cine" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                        <span data-content-field="cta"></span>
                         <span class="campaign-cta__arrow" aria-hidden="true">→</span>
                     </a>
                 </article>
 
-                <article class="campaign-card campaign-card--hm fade-up">
+                <article class="campaign-card campaign-card--hm fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
                                 <img src="assets/logos/hm.svg" alt="" class="brand-header__logo brand-header__logo--wide" width="72" height="32" loading="lazy">
-                                <h3 class="brand-header__name">H&amp;M</h3>
-                                <p class="brand-header__category">Moda y tendencias</p>
+                                <h3 class="brand-header__name" data-content-field="name"></h3>
+                                <p class="brand-header__category" data-content-field="category"></p>
                             </div>
                             <div class="metric-pill">
                                 <svg class="metric-pill__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span><strong>221K</strong> Visualizaciones</span>
+                                <span><strong data-content-field="metric"></strong> <span data-content-field="metricLabel"></span></span>
                             </div>
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--photo">
                         <img src="assets/campaigns/hm-store.jpg" alt="Campaña H&amp;M" loading="lazy">
                     </div>
-                    <a href="https://www.instagram.com/reel/DBAGE5BPQR0/?igsh=MWdpZTdvcWVlNTM3" class="campaign-cta campaign-cta--hm" target="_blank" rel="noopener noreferrer" aria-label="Ver contenido de H&amp;M en Instagram">
-                        Ver contenido
+                    <a href="https://www.instagram.com/reel/DBAGE5BPQR0/?igsh=MWdpZTdvcWVlNTM3" class="campaign-cta campaign-cta--hm" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                        <span data-content-field="cta"></span>
                         <span class="campaign-cta__arrow" aria-hidden="true">→</span>
                     </a>
                 </article>
 
-                <article class="campaign-card campaign-card--starbucks fade-up">
+                <article class="campaign-card campaign-card--starbucks fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
                                 <img src="assets/logos/starbucks.svg" alt="" class="brand-header__logo" width="40" height="40" loading="lazy">
-                                <h3 class="brand-header__name">Starbucks</h3>
-                                <p class="brand-header__category">Cafés y experiencias</p>
+                                <h3 class="brand-header__name" data-content-field="name"></h3>
+                                <p class="brand-header__category" data-content-field="category"></p>
                             </div>
                             <div class="metric-pill">
                                 <svg class="metric-pill__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span><strong>63K</strong> Visualizaciones</span>
+                                <span><strong data-content-field="metric"></strong> <span data-content-field="metricLabel"></span></span>
                             </div>
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--cutout">
                         <img src="assets/campaigns/starbucks-cup.png" alt="Campaña Starbucks" loading="lazy">
                     </div>
-                    <a href="https://www.instagram.com/reel/C2s-KN1PTLq/?igsh=dnNzZWt5cWoyM3Jt" class="campaign-cta campaign-cta--starbucks" target="_blank" rel="noopener noreferrer" aria-label="Ver contenido de Starbucks en Instagram">
-                        Ver contenido
+                    <a href="https://www.instagram.com/reel/C2s-KN1PTLq/?igsh=dnNzZWt5cWoyM3Jt" class="campaign-cta campaign-cta--starbucks" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                        <span data-content-field="cta"></span>
                         <span class="campaign-cta__arrow" aria-hidden="true">→</span>
                     </a>
                 </article>
 
-                <article class="campaign-card campaign-card--maxgordos fade-up">
+                <article class="campaign-card campaign-card--maxgordos fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
                                 <img src="assets/logos/maxgordos.png" alt="" class="brand-header__logo brand-header__logo--wide" width="120" height="40" loading="lazy">
-                                <h3 class="brand-header__name">MaxGordos</h3>
-                                <p class="brand-header__category">Sabor y tradición</p>
+                                <h3 class="brand-header__name" data-content-field="name"></h3>
+                                <p class="brand-header__category" data-content-field="category"></p>
                             </div>
                             <div class="metric-pill">
                                 <svg class="metric-pill__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span><strong>58K</strong> Visualizaciones</span>
+                                <span><strong data-content-field="metric"></strong> <span data-content-field="metricLabel"></span></span>
                             </div>
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--photo">
                         <img src="assets/campaigns/maxgordos-burger.jpg" alt="Campaña MaxGordos" loading="lazy">
                     </div>
-                    <a href="https://vt.tiktok.com/ZSr44PEfh/" class="campaign-cta campaign-cta--maxgordos" target="_blank" rel="noopener noreferrer" aria-label="Ver contenido de MaxGordos en TikTok">
-                        Ver contenido
+                    <a href="https://vt.tiktok.com/ZSr44PEfh/" class="campaign-cta campaign-cta--maxgordos" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                        <span data-content-field="cta"></span>
                         <span class="campaign-cta__arrow" aria-hidden="true">→</span>
                     </a>
                 </article>
@@ -410,9 +404,9 @@
                             <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
                         </svg>
                     </span>
-                    <p>Contenido que convierte experiencias en <span class="results-underline">resultados.</span></p>
+                    <p><span data-content="experience.results.leadBefore"></span> <span class="results-underline" data-content="experience.results.leadAccent"></span></p>
                 </div>
-                <div class="results-item">
+                <div class="results-item" data-content-list="experience.results.stats">
                     <span class="results-icon">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -420,11 +414,11 @@
                         </svg>
                     </span>
                     <div>
-                        <strong>+40.000</strong>
-                        <small>seguidores en TikTok</small>
+                        <strong data-content-field="value"></strong>
+                        <small data-content-field="label"></small>
                     </div>
                 </div>
-                <div class="results-item">
+                <div class="results-item" data-content-list="experience.results.stats">
                     <span class="results-icon">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -432,11 +426,11 @@
                         </svg>
                     </span>
                     <div>
-                        <strong>+70.000</strong>
-                        <small>seguidores en Instagram</small>
+                        <strong data-content-field="value"></strong>
+                        <small data-content-field="label"></small>
                     </div>
                 </div>
-                <div class="results-item">
+                <div class="results-item" data-content-list="experience.results.stats">
                     <span class="results-icon">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -444,8 +438,8 @@
                         </svg>
                     </span>
                     <div>
-                        <strong>+600</strong>
-                        <small>interacciones orgánicas promedio por publicación</small>
+                        <strong data-content-field="value"></strong>
+                        <small data-content-field="label"></small>
                     </div>
                 </div>
             </section>
@@ -459,7 +453,7 @@
 <section class="services-wow" id="servicios">
     <div class="container">
         <div class="services-wow__header">
-            <span class="badge-pill-wow">Servicios</span>
+            <span class="badge-pill-wow" data-content="services.badge"></span>
 
             <div class="section-header-wow">
                 <span class="services-scrap services-scrap--heart" aria-hidden="true">♡</span>
@@ -467,54 +461,54 @@
                 <div class="fluid-orbit-container">
                     <div class="fluid-ellipse ellipse-1"></div>
                     <div class="fluid-ellipse ellipse-2"></div>
-                    <h2 class="wow-main-title">¿Cómo puedo <span class="wow-title-script">ayudarte?</span></h2>
+                    <h2 class="wow-main-title"><span data-content="services.titleBefore"></span> <span class="wow-title-script" data-content="services.titleScript"></span></h2>
                 </div>
 
                 <p class="wow-subtitle">
-                    Soluciones <span class="wow-subtitle-accent">estratégicas</span> y <span class="wow-subtitle-accent">creativas</span> para fortalecer tu presencia digital.
+                    <span data-content="services.subtitleBefore"></span> <span class="wow-subtitle-accent" data-content="services.subtitleAccent1"></span> <span data-content="services.subtitleMiddle"></span> <span class="wow-subtitle-accent" data-content="services.subtitleAccent2"></span> <span data-content="services.subtitleAfter"></span>
                 </p>
             </div>
         </div>
 
         <div class="services-grid-wow">
-            <div class="service-card-wow service-card-wow--1 fade-up">
+            <div class="service-card-wow service-card-wow--1 fade-up" data-content-list="services.cards">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
                 </div>
-                <h3>Gestión de redes<br><span class="service-title-script">sociales</span></h3>
-                <p>Estrategias de contenido, comunidad y análisis de resultados para aumentar tu visibilidad y conexión con tu audiencia.</p>
+                <h3><span data-content-field="titleLine1"></span><br><span class="service-title-script" data-content-field="titleScript"></span></h3>
+                <p data-content-field="description"></p>
             </div>
 
-            <div class="service-card-wow service-card-wow--2 fade-up">
+            <div class="service-card-wow service-card-wow--2 fade-up" data-content-list="services.cards">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
                 </div>
-                <h3>Creación de <span class="service-title-script">contenido</span></h3>
-                <p>Contenido creativo, atractivo y alineado con tu marca para redes sociales, blogs, webs y campañas digitales.</p>
+                <h3><span data-content-field="titleBefore"></span> <span class="service-title-script" data-content-field="titleScript"></span></h3>
+                <p data-content-field="description"></p>
             </div>
 
-            <div class="service-card-wow service-card-wow--3 fade-up">
+            <div class="service-card-wow service-card-wow--3 fade-up" data-content-list="services.cards">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
                 </div>
-                <h3>Estrategia digital y<br><span class="service-title-script">marketing</span></h3>
-                <p>Planificación y ejecución de estrategias digitales orientadas a objetivos, con enfoque en crecimiento y conversión.</p>
+                <h3><span data-content-field="titleLine1"></span><br><span class="service-title-script" data-content-field="titleScript"></span></h3>
+                <p data-content-field="description"></p>
             </div>
 
-            <div class="service-card-wow service-card-wow--4 fade-up">
+            <div class="service-card-wow service-card-wow--4 fade-up" data-content-list="services.cards">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </div>
-                <h3>Email marketing y<br><span class="service-title-script">automatización</span></h3>
-                <p>Campañas efectivas que nutren, convierten y fidelizan a tu audiencia de forma estratégica y personalizada.</p>
+                <h3><span data-content-field="titleLine1"></span><br><span class="service-title-script" data-content-field="titleScript"></span></h3>
+                <p data-content-field="description"></p>
             </div>
 
-            <div class="service-card-wow service-card-wow--5 fade-up">
+            <div class="service-card-wow service-card-wow--5 fade-up" data-content-list="services.cards">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M12 12m-3.2 0a3.2 3.2 0 1 1 6.4 0a3.2 3.2 0 1 1 -6.4 0M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9z"/></svg>
                 </div>
-                <h3>Cobertura de eventos y<br><span class="service-title-script">producción</span></h3>
-                <p>Cubrimiento en tiempo real, producción audiovisual y contenidos para eventos presenciales y virtuales.</p>
+                <h3><span data-content-field="titleLine1"></span><br><span class="service-title-script" data-content-field="titleScript"></span></h3>
+                <p data-content-field="description"></p>
             </div>
         </div>
     </div>
@@ -531,19 +525,17 @@
 
         <div class="skills-info-block fade-up">
             <div class="skills-badge-wrap">
-                <span class="skills-badge-tag">
-                    ECOSISTEMA
-                </span>
+                <span class="skills-badge-tag" data-content="skills.badge"></span>
             </div>
 
             <div class="skills-title-container">
-                <h2 class="skills-main-title">Herramientas &</h2>
-                <p class="skills-script-title">competencias</p>
+                <h2 class="skills-main-title" data-content="skills.title"></h2>
+                <p class="skills-script-title" data-content="skills.titleScript"></p>
                 <div class="skills-title-line"></div>
             </div>
 
             <p class="skills-desc">
-                Dominio técnico y optimización de plataformas clave indispensables para la conceptualización, edición avanzada y distribución estratégica de contenido digital con <span class="pink-accent-bold">alto impacto comercial.</span>
+                <span data-content="skills.descriptionBefore"></span> <span class="pink-accent-bold" data-content="skills.descriptionAccent"></span>
             </p>
         </div>
 
@@ -552,15 +544,15 @@
 
             <div class="skills-bars-stack">
 
-                <div class="skill-item-wow">
+                <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
                             <img src="assets/logos/skills/premiere-pro.svg" alt="" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
-                                <span class="skill-name-wow">Adobe Premiere Pro</span>
-                                <span class="skill-percentage-wow">80 %</span>
+                                <span class="skill-name-wow" data-content-field="name"></span>
+                                <span class="skill-percentage-wow" data-content-field="percentage"></span>
                             </div>
                             <div class="skill-track-wow">
                                 <div class="skill-progress-wow" style="width: 80%;"></div>
@@ -569,15 +561,15 @@
                     </div>
                 </div>
 
-                <div class="skill-item-wow">
+                <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
                             <img src="assets/logos/skills/after-effects.svg" alt="" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
-                                <span class="skill-name-wow">Adobe After Effects</span>
-                                <span class="skill-percentage-wow">75 %</span>
+                                <span class="skill-name-wow" data-content-field="name"></span>
+                                <span class="skill-percentage-wow" data-content-field="percentage"></span>
                             </div>
                             <div class="skill-track-wow">
                                 <div class="skill-progress-wow" style="width: 75%;"></div>
@@ -586,15 +578,15 @@
                     </div>
                 </div>
 
-                <div class="skill-item-wow">
+                <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
                             <img src="assets/logos/skills/canva.svg" alt="" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
-                                <span class="skill-name-wow">Canva</span>
-                                <span class="skill-percentage-wow">90 %</span>
+                                <span class="skill-name-wow" data-content-field="name"></span>
+                                <span class="skill-percentage-wow" data-content-field="percentage"></span>
                             </div>
                             <div class="skill-track-wow">
                                 <div class="skill-progress-wow" style="width: 90%;"></div>
@@ -603,15 +595,15 @@
                     </div>
                 </div>
 
-                <div class="skill-item-wow">
+                <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
                             <img src="assets/logos/skills/capcut.svg" alt="" class="skill-icon-wow__img" width="24" height="24" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
-                                <span class="skill-name-wow">CapCut</span>
-                                <span class="skill-percentage-wow">100 %</span>
+                                <span class="skill-name-wow" data-content-field="name"></span>
+                                <span class="skill-percentage-wow" data-content-field="percentage"></span>
                             </div>
                             <div class="skill-track-wow">
                                 <div class="skill-progress-wow" style="width: 100%;"></div>
@@ -620,15 +612,15 @@
                     </div>
                 </div>
 
-                <div class="skill-item-wow">
+                <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
                             <img src="assets/logos/skills/meta.svg" alt="" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
-                                <span class="skill-name-wow">Meta y Google Ads</span>
-                                <span class="skill-percentage-wow">60 %</span>
+                                <span class="skill-name-wow" data-content-field="name"></span>
+                                <span class="skill-percentage-wow" data-content-field="percentage"></span>
                             </div>
                             <div class="skill-track-wow">
                                 <div class="skill-progress-wow" style="width: 60%;"></div>
@@ -637,7 +629,7 @@
                     </div>
                 </div>
 
-                <div class="skill-item-wow">
+                <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
                             <svg class="skill-icon-wow__img" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
@@ -650,8 +642,8 @@
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
-                                <span class="skill-name-wow">Inglés</span>
-                                <span class="skill-percentage-wow">80 %</span>
+                                <span class="skill-name-wow" data-content-field="name"></span>
+                                <span class="skill-percentage-wow" data-content-field="percentage"></span>
                             </div>
                             <div class="skill-track-wow">
                                 <div class="skill-progress-wow" style="width: 80%;"></div>
@@ -675,15 +667,15 @@
         <div class="container process-layout">
             <div class="process-left">
                 <div class="process-title-block">
-                    <span class="badge-pill">Mi Proceso</span>
+                    <span class="badge-pill" data-content="process.badge"></span>
                     <div class="process-orbit-wrap">
                         <div class="process-ellipse process-ellipse--1" aria-hidden="true"></div>
                         <div class="process-ellipse process-ellipse--2" aria-hidden="true"></div>
-                        <h2>De la idea a los <span class="wow-title-script">resultados</span></h2>
+                        <h2><span data-content="process.titleBefore"></span> <span class="wow-title-script" data-content="process.titleScript"></span></h2>
                     </div>
                 </div>
                 <div class="steps-container">
-                    <div class="step-card step-card--1 fade-up">
+                    <div class="step-card step-card--1 fade-up" data-content-list="process.steps">
                         <div class="step-meta">
                             <span class="step-number">1</span>
                             <span class="step-icon" aria-hidden="true">
@@ -691,12 +683,12 @@
                             </span>
                         </div>
                         <div class="step-body">
-                            <h3>Descubrir</h3>
+                            <h3 data-content-field="title"></h3>
                             <span class="step-title-bar" aria-hidden="true"></span>
-                            <p>Conozco tu marca, objetivos y audiencia para entender tus <span class="step-highlight">necesidades.</span></p>
+                            <p><span data-content-field="descriptionBefore"></span> <span class="step-highlight" data-content-field="descriptionAccent"></span><span data-content-field="descriptionAfter"></span></p>
                         </div>
                     </div>
-                    <div class="step-card step-card--2 fade-up">
+                    <div class="step-card step-card--2 fade-up" data-content-list="process.steps">
                         <div class="step-meta">
                             <span class="step-number">2</span>
                             <span class="step-icon" aria-hidden="true">
@@ -704,12 +696,12 @@
                             </span>
                         </div>
                         <div class="step-body">
-                            <h3>Estrategia</h3>
+                            <h3 data-content-field="title"></h3>
                             <span class="step-title-bar" aria-hidden="true"></span>
-                            <p>Diseño un <span class="step-highlight">plan digital</span> personalizado con acciones claras y medibles.</p>
+                            <p><span data-content-field="descriptionBefore"></span> <span class="step-highlight" data-content-field="descriptionAccent"></span> <span data-content-field="descriptionAfter"></span></p>
                         </div>
                     </div>
-                    <div class="step-card step-card--3 fade-up">
+                    <div class="step-card step-card--3 fade-up" data-content-list="process.steps">
                         <div class="step-meta">
                             <span class="step-number">3</span>
                             <span class="step-icon" aria-hidden="true">
@@ -717,12 +709,12 @@
                             </span>
                         </div>
                         <div class="step-body">
-                            <h3>Crear</h3>
+                            <h3 data-content-field="title"></h3>
                             <span class="step-title-bar" aria-hidden="true"></span>
-                            <p>Desarrollo <span class="step-highlight">contenidos y campañas</span> alineadas a tu marca y objetivos.</p>
+                            <p><span data-content-field="descriptionBefore"></span> <span class="step-highlight" data-content-field="descriptionAccent"></span> <span data-content-field="descriptionAfter"></span></p>
                         </div>
                     </div>
-                    <div class="step-card step-card--4 fade-up">
+                    <div class="step-card step-card--4 fade-up" data-content-list="process.steps">
                         <div class="step-meta">
                             <span class="step-number">4</span>
                             <span class="step-icon" aria-hidden="true">
@@ -730,9 +722,9 @@
                             </span>
                         </div>
                         <div class="step-body">
-                            <h3>Medir y Optimizar</h3>
+                            <h3 data-content-field="title"></h3>
                             <span class="step-title-bar" aria-hidden="true"></span>
-                            <p>Analizo <span class="step-highlight">resultados</span>, optimizo y escalo lo que realmente funciona.</p>
+                            <p><span data-content-field="descriptionBefore"></span> <span class="step-highlight" data-content-field="descriptionAccent"></span><span data-content-field="descriptionAfter"></span></p>
                         </div>
                     </div>
                 </div>
@@ -740,7 +732,7 @@
             <div class="process-right">
                 <blockquote class="process-quote">
                     <span class="process-quote-scrap process-quote-scrap--tape" aria-hidden="true"></span>
-                    <p>"No se trata de estar en todas partes, sino de <span class="process-quote-circle">conectar</span> donde realmente importa."</p>
+                    <p>"<span data-content="process.quoteBefore"></span> <span class="process-quote-circle" data-content="process.quoteAccent"></span> <span data-content="process.quoteAfter"></span>"</p>
                 </blockquote>
             </div>
         </div>
@@ -766,11 +758,11 @@
                 </div>
                 <div class="cta-text-block-final">
                     <h2 class="cta-title-final">
-                        <span class="cta-script-title">¿Lista para llevar tu marca</span>
-                        al <span class="cta-title-serif">siguiente nivel?</span>
+                        <span class="cta-script-title" data-content="contact.titleScript"></span>
+                        <span data-content="contact.titleBefore"></span> <span class="cta-title-serif" data-content="contact.titleSerif"></span>
                     </h2>
                     <p class="cta-desc-final">
-                        Trabajemos juntas para crear estrategias digitales que conecten con tu audiencia y generen <span class="pink-highlight-bold">resultados reales.</span>
+                        <span data-content="contact.descriptionBefore"></span> <span class="pink-highlight-bold" data-content="contact.descriptionAccent"></span>
                     </p>
                 </div>
             </div>
@@ -778,19 +770,19 @@
             <div class="cta-vertical-divider"></div>
 
             <div class="cta-right-final">
-                <a href="#" class="btn-hablemos-final" data-open-contact-modal>Hablemos ✦</a>
+                <a href="#" class="btn-hablemos-final" data-open-contact-modal data-content="contact.cta"></a>
                 <div class="cta-contact-links">
                     <a href="mailto:pahoyoscardona@gmail.com" class="contact-item-final">
                         <span class="contact-icon-box">
                             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         </span>
-                        pahoyoscardona@gmail.com
+                        <span data-content="contact.email"></span>
                     </a>
                     <a href="tel:+573002493331" class="contact-item-final">
                         <span class="contact-icon-box">
                             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                         </span>
-                        300 249 3331
+                        <span data-content="contact.phone"></span>
                     </a>
                 </div>
             </div>
@@ -805,56 +797,54 @@
                         <div class="footer-logo-glow">
                             <img src="assets/icon-paola.png" alt="" class="footer-logo-image" width="72" height="72" loading="lazy">
                         </div>
-                        <p class="footer-brand-name">PAOLA HOYOS</p>
-                        <p class="footer-brand-tagline">ESTRATEGIA · STORYTELLING &amp; RESULTADOS</p>
-                        <p class="footer-brand-desc">
-                            Estrategia, contenido y comunicación digital que conectan marcas con personas.
-                        </p>
+                        <p class="footer-brand-name" data-content="footer.brandName"></p>
+                        <p class="footer-brand-tagline" data-content="footer.brandTagline"></p>
+                        <p class="footer-brand-desc" data-content="footer.brandDescription"></p>
                     </div>
                 </div>
 
                 <div class="footer-col-links">
-                    <h4>NAVEGACIÓN</h4>
+                    <h4 data-content="footer.navTitle"></h4>
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#experiencias-destacadas">Experiencias</a></li>
-                        <li><a href="#" data-open-portfolio-modal>Portafolio</a></li>
-                        <li><a href="#competencias">Recursos</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#inicio" data-content="footer.nav.inicio"></a></li>
+                        <li><a href="#servicios" data-content="footer.nav.servicios"></a></li>
+                        <li><a href="#experiencias-destacadas" data-content="footer.nav.experiencias"></a></li>
+                        <li><a href="#" data-open-portfolio-modal data-content="footer.nav.portafolio"></a></li>
+                        <li><a href="#competencias" data-content="footer.nav.recursos"></a></li>
+                        <li><a href="#contacto" data-content="footer.nav.contacto"></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col-socials">
-                    <h4>CONECTEMOS</h4>
+                    <h4 data-content="footer.socialTitle"></h4>
                     <ul>
-                        <li>
+                        <li data-content-list="footer.socials">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/paolaahoyosc" class="social-link-item">
                                 <span class="social-icon-circle"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m4.4 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0-9m0 2a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5m4.75-.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5z"/></svg></span>
-                                Instagram
+                                <span data-content-field="name"></span>
                             </a>
                         </li>
-                        <li>
+                        <li data-content-list="footer.socials">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@paolahoyosc" class="social-link-item">
                                 <span class="social-icon-circle"><svg viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.01 1.62 4.13.94.97 2.24 1.57 3.58 1.71v3.32c-1.43-.07-2.85-.59-4.01-1.47-.18-.14-.35-.29-.51-.45v6.52c.04 2.91-1.6 5.71-4.31 6.81-2.83 1.22-6.27.46-8.26-1.85-2.16-2.42-2.31-6.19-.36-8.77 1.83-2.51 5.3-3.4 8.12-2.16v3.4c-1.61-.71-3.62-.2-4.66 1.25-.97 1.3-.87 3.23.23 4.41 1.13 1.24 3.09 1.48 4.5 0.54.83-.54 1.31-1.48 1.31-2.48V.02z"/></svg></span>
-                                TikTok
+                                <span data-content-field="name"></span>
                             </a>
                         </li>
-                        <li>
+                        <li data-content-list="footer.socials">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/paola-andrea-hoyos-cardona-b7247a182" class="social-link-item">
                                 <span class="social-icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></span>
-                                LinkedIn
+                                <span data-content-field="name"></span>
                             </a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="footer-col-mission">
-                    <h4 class="footer-mission-title">COMUNICACIÓN QUE CONECTA</h4>
+                    <h4 class="footer-mission-title" data-content="footer.missionTitle"></h4>
                     <ul class="footer-mission-list">
-                        <li>Ideas con propósito.</li>
-                        <li>Estrategias que inspiran.</li>
-                        <li>Resultados que se sienten.</li>
+                        <li data-content-list="footer.missionItems"></li>
+                        <li data-content-list="footer.missionItems"></li>
+                        <li data-content-list="footer.missionItems"></li>
                     </ul>
                 </div>
             </div>
@@ -862,13 +852,13 @@
             <div class="footer-bottom-divider"></div>
 
             <div class="footer-bottom-row">
-                <p class="copyright-text">© 2026 Paola Hoyos. Todos los derechos reservados.</p>
+                <p class="copyright-text" data-content="footer.copyright"></p>
                 <nav class="footer-legal" aria-label="Enlaces legales">
-                    <a href="#">Política de Privacidad</a>
+                    <a href="#" data-content="footer.legal.privacy"></a>
                     <span class="footer-legal-sep" aria-hidden="true">✦</span>
-                    <a href="#">Términos y Condiciones</a>
+                    <a href="#" data-content="footer.legal.terms"></a>
                     <span class="footer-legal-sep" aria-hidden="true">✦</span>
-                    <a href="#">Aviso Legal</a>
+                    <a href="#" data-content="footer.legal.notice"></a>
                 </nav>
             </div>
         </div>
@@ -885,16 +875,16 @@
             <span class="contact-modal__scrap contact-modal__scrap--sparkle-br" aria-hidden="true">✦</span>
             <span class="contact-modal__scrap contact-modal__scrap--grid" aria-hidden="true"></span>
 
-            <button type="button" class="contact-modal__close" aria-label="Cerrar contacto" data-close-contact-modal>
+            <button type="button" class="contact-modal__close" data-content="modals.contact.closeLabel" aria-label="" data-close-contact-modal>
                 <span aria-hidden="true">×</span>
             </button>
 
             <h2 id="contact-modal-title">
-                Hablemos de tu <span class="contact-modal__title-accent">marca</span>
+                <span data-content="modals.contact.titleBefore"></span> <span class="contact-modal__title-accent" data-content="modals.contact.titleAccent"></span>
                 <span class="contact-modal__title-sparkle" aria-hidden="true">✦</span>
             </h2>
             <p class="contact-modal__intro">
-                Te respondo <span class="contact-modal__intro-accent">rápido</span> por el canal que prefieras.
+                <span data-content="modals.contact.introBefore"></span> <span class="contact-modal__intro-accent" data-content="modals.contact.introAccent"></span> <span data-content="modals.contact.introAfter"></span>
             </p>
 
             <ul class="contact-modal__channels">
@@ -903,7 +893,7 @@
                         <span class="contact-modal__channel-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         </span>
-                        pahoyoscardona@gmail.com
+                        <span data-content="modals.contact.email"></span>
                     </a>
                 </li>
                 <li>
@@ -911,7 +901,7 @@
                         <span class="contact-modal__channel-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                         </span>
-                        +57 300 249 3331
+                        <span data-content="modals.contact.phone"></span>
                     </a>
                 </li>
                 <li>
@@ -919,7 +909,7 @@
                         <span class="contact-modal__channel-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                         </span>
-                        @paolaahoyosc
+                        <span data-content="modals.contact.instagram"></span>
                     </a>
                 </li>
             </ul>
@@ -928,7 +918,7 @@
                 <span class="contact-modal__wpp-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
                 </span>
-                Ir directo a WhatsApp
+                <span data-content="modals.contact.whatsapp"></span>
                 <span class="contact-modal__wpp-sparkle" aria-hidden="true">✦</span>
             </a>
         </div>
@@ -937,11 +927,11 @@
     <dialog class="portfolio-modal" id="portfolio-modal" aria-hidden="true" aria-labelledby="portfolio-modal-title">
         <div class="portfolio-modal__backdrop" data-close-portfolio-modal></div>
         <div class="portfolio-modal__panel">
-            <button type="button" class="portfolio-modal__close" aria-label="Cerrar portafolio" data-close-portfolio-modal>Cerrar</button>
+            <button type="button" class="portfolio-modal__close" data-content="modals.portfolio.closeLabel" aria-label="" data-close-portfolio-modal><span data-content="modals.portfolio.close"></span></button>
 
             <div class="portfolio-modal__header">
-                <h2 id="portfolio-modal-title">Portafolio completo</h2>
-                <a href="assets/portafolio.pdf" download class="btn-pill-premium">Descargar PDF</a>
+                <h2 id="portfolio-modal-title" data-content="modals.portfolio.title"></h2>
+                <a href="assets/portafolio.pdf" download class="btn-pill-premium" data-content="modals.portfolio.download"></a>
             </div>
 
             <div class="portfolio-modal__content">
@@ -950,6 +940,7 @@
         </div>
     </dialog>
 
+    <script src="js/content-loader.js"></script>
     <script>
         (function () {
             var header = document.querySelector('.site-header-refined');
@@ -964,16 +955,24 @@
                 return globalThis.matchMedia('(max-width: 992px)').matches;
             }
 
+            function getMenuLabel(type) {
+                var labels = window.__HEADER_MENU_LABELS__;
+                if (labels && labels[type]) {
+                    return labels[type];
+                }
+                return type === 'close' ? 'Cerrar menu' : 'Abrir menu';
+            }
+
             function closeMenu() {
                 header.classList.remove('menu-open');
                 menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.setAttribute('aria-label', 'Abrir menu');
+                menuToggle.setAttribute('aria-label', getMenuLabel('open'));
             }
 
             function openMenu() {
                 header.classList.add('menu-open');
                 menuToggle.setAttribute('aria-expanded', 'true');
-                menuToggle.setAttribute('aria-label', 'Cerrar menu');
+                menuToggle.setAttribute('aria-label', getMenuLabel('close'));
             }
 
             function syncMenuByViewport() {

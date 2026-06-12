@@ -671,17 +671,6 @@
     overflow: visible;
 }
 
-.site-logo__sparkles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 38px;
-    height: 18px;
-    overflow: visible;
-    pointer-events: none;
-    z-index: 4;
-}
-
 .site-logo__name-wrap {
     position: relative;
     display: flex;
@@ -731,6 +720,17 @@
     color: var(--text-dark);
     white-space: nowrap;
     -webkit-font-smoothing: antialiased;
+}
+
+.site-logo__sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 18px;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 4;
 }
 
 .site-logo__sparkle {
@@ -1576,6 +1576,11 @@
     }
 .site-logo {
         min-width: 0;
+        max-width: 100%;
+    }
+.logo-box-refined {
+        min-width: 0;
+        max-width: 100%;
     }
 .menu-toggle-refined {
         display: inline-flex;
@@ -3688,12 +3693,12 @@ body.modal-open {
 
 .hero-grid-premium {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 0;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    grid-template-rows: auto;
+    gap: 6px;
     align-items: stretch;
-    min-height: clamp(480px, 90svh, 780px);
-    text-align: center;
+    min-height: clamp(380px, 76svh, 620px);
+    text-align: left;
     min-width: 0;
     width: 100%;
 }
@@ -3701,14 +3706,14 @@ body.modal-open {
 .hero-left-premium {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     min-height: 0;
     min-width: 0;
     max-width: 100%;
     width: 100%;
-    padding: 10px 12px 14px;
+    padding: 8px 4px 8px 0;
     box-sizing: border-box;
 }
 
@@ -3753,42 +3758,42 @@ body.modal-open {
 
 .hero-premium-tagline {
     font-family: var(--font-sans);
-    font-size: 9px;
+    font-size: 7px;
     font-weight: 700;
-    letter-spacing: 0.55px;
+    letter-spacing: 0.35px;
     text-transform: uppercase;
     color: var(--text-dark);
-    margin-bottom: 10px;
-    line-height: 1.45;
-    max-width: min(300px, 100%);
+    margin-bottom: 8px;
+    line-height: 1.4;
+    max-width: 100%;
     text-wrap: balance;
     overflow-wrap: anywhere;
 }
 
 .hero-tagline-break {
-    display: block;
+    display: none;
 }
 
 .hero-premium-tagline span.cursive-glow {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 15px;
+    font-size: 11px;
     color: #e8a7b3;
     text-transform: none;
     font-weight: 700;
     letter-spacing: 0;
-    display: block;
-    margin-top: 2px;
+    display: inline;
+    margin-top: 0;
 }
 
 .hero-premium-title {
     font-family: var(--font-serif);
     font-weight: 900;
-    font-size: clamp(26px, 8.2vw, 38px);
-    line-height: 1.08;
-    letter-spacing: -0.6px;
+    font-size: clamp(16px, 4.8vw, 24px);
+    line-height: 1.1;
+    letter-spacing: -0.4px;
     color: #1a1a1a;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
     text-transform: none;
     position: relative;
     max-width: 100%;
@@ -3810,13 +3815,13 @@ body.modal-open {
     content: '';
     position: absolute;
     bottom: 3px;
-    left: 50%;
+    left: 0;
     width: 92%;
     height: 2px;
     background-color: #e8a7b3;
     border-radius: 2px;
     opacity: 0.7;
-    transform: translateX(-50%);
+    transform: none;
 }
 
 .title-underline-wave {
@@ -3843,11 +3848,11 @@ body.modal-open {
 
 .hero-premium-description {
     font-family: var(--font-inter);
-    font-size: 13.5px;
-    line-height: 1.55;
+    font-size: 9.5px;
+    line-height: 1.45;
     color: rgba(45, 30, 27, 0.72);
-    margin-bottom: 18px;
-    max-width: min(36ch, 100%);
+    margin-bottom: 10px;
+    max-width: 100%;
     text-wrap: balance;
     overflow-wrap: anywhere;
 }
@@ -3856,17 +3861,18 @@ body.modal-open {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .btn-wow-action {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    width: min(340px, 92vw);
-    padding: 13px 22px;
-    font-size: 11px;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    padding: 9px 10px;
+    font-size: 7px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -3901,10 +3907,10 @@ body.modal-open {
 
 .hero-image-composite {
     position: relative;
-    width: min(68vw, 260px);
+    width: 100%;
     height: 100%;
     max-height: 100%;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -3942,27 +3948,27 @@ body.modal-open {
 
 .metrics-card-glassmorphism {
     position: absolute;
-    bottom: 22px;
-    left: -10px;
+    bottom: 14px;
+    left: -14px;
     right: auto;
     background: #ffffff;
     overflow: visible;
-    padding: 14px 18px 12px;
-    border-radius: 22px;
+    padding: 7px 9px;
+    border-radius: 16px;
     box-shadow: 0 10px 28px rgba(45, 30, 27, 0.07);
     z-index: 4;
     display: flex;
     align-items: center;
-    gap: 12px;
-    max-width: 240px;
+    gap: 6px;
+    max-width: 130px;
     border: 1px solid rgba(45, 30, 27, 0.05);
 }
 
 .glass-icon-circle {
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
     background-color: #fde8ec;
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3970,8 +3976,8 @@ body.modal-open {
 }
 
 .glass-icon-circle svg {
-    width: 17px;
-    height: 17px;
+    width: 13px;
+    height: 13px;
     fill: #e8a7b3;
 }
 
@@ -3983,14 +3989,14 @@ body.modal-open {
 .glass-metric-value {
       font-family: var(--font-serif);
     font-weight: 900;
-    font-size: 26px;
+    font-size: 15px;
     color: var(--text-dark);
     line-height: 1;
 }
 
 .glass-metric-label {
     font-family: var(--font-inter);
-    font-size: 11px;
+    font-size: 7px;
     font-weight: 500;
     color: rgba(45, 30, 27, 0.52);
     margin-top: 2px;
@@ -4212,13 +4218,12 @@ body.modal-open {
 
 .hero-premium-tagline,
 .btn-wow-action {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .metrics-card-glassmorphism {
     z-index: 6;
-    max-width: 205px;
 }
 
 .hero-scrap--tape,
@@ -4310,6 +4315,28 @@ body.modal-open {
         bottom: 40px;
         left: -24px;
         max-width: 240px;
+        padding: 14px 18px 12px;
+        border-radius: 22px;
+        gap: 12px;
+    }
+
+    .glass-icon-circle {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .glass-icon-circle svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .glass-metric-value {
+        font-size: 26px;
+    }
+
+    .glass-metric-label {
+        font-size: 11px;
     }
 
     .hero-scrap--tape {
@@ -4732,43 +4759,39 @@ body.modal-open {
 
 @media (max-width: 640px) {
     .hero-grid-premium {
-        min-height: clamp(460px, 88svh, 680px);
+        min-height: clamp(360px, 74svh, 560px);
+        gap: 4px;
     }
 
     .hero-premium-title {
-        font-size: clamp(24px, 7.8vw, 34px);
-        margin-bottom: 8px;
+        font-size: clamp(15px, 4.4vw, 22px);
+        margin-bottom: 6px;
     }
 
     .hero-premium-description {
-        font-size: 12.5px;
-        margin-bottom: 12px;
-        max-width: min(34ch, 100%);
+        font-size: 9px;
+        margin-bottom: 8px;
     }
 
     .btn-wow-action {
-        min-height: 44px;
-        font-size: 9.5px;
-        padding: 11px 18px;
-    }
-
-    .hero-image-composite {
-        width: min(62vw, 240px);
+        min-height: 36px;
+        font-size: 6.5px;
+        padding: 8px 8px;
     }
 
     .metrics-card-glassmorphism {
-        left: -8px;
-        bottom: 16px;
-        max-width: 185px;
-        padding: 9px 11px;
+        left: -12px;
+        bottom: 12px;
+        max-width: 118px;
+        padding: 6px 8px;
     }
 
     .glass-metric-value {
-        font-size: 19px;
+        font-size: 14px;
     }
 
     .glass-metric-label {
-        font-size: 9.5px;
+        font-size: 6.5px;
     }
 
     .performance-bar-premium {
@@ -4796,28 +4819,23 @@ body.modal-open {
 
 @media (max-width: 420px) {
     .hero-grid-premium {
-        min-height: clamp(440px, 86svh, 620px);
+        min-height: clamp(340px, 72svh, 520px);
     }
 
     .hero-premium-title {
-        font-size: clamp(22px, 7.2vw, 30px);
+        font-size: clamp(14px, 4.2vw, 20px);
     }
 
     .hero-premium-tagline {
-        font-size: 8px;
-        max-width: min(280px, 100%);
+        font-size: 6.5px;
     }
 
     .hero-premium-tagline span.cursive-glow {
-        font-size: 13px;
-    }
-
-    .hero-image-composite {
-        width: min(58vw, 220px);
+        font-size: 10px;
     }
 
     .metrics-card-glassmorphism {
-        max-width: 168px;
-        left: -6px;
+        max-width: 108px;
+        left: -10px;
     }
 }
