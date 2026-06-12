@@ -73,15 +73,15 @@
                         <path class="site-logo__sparkle site-logo__sparkle--sm" d="M6 0.8 6.72 4.05 9.95 4.8 6.72 5.55 6 8.8 5.28 5.55 2.05 4.8 5.28 4.05Z" transform="translate(15 4)"/>
                         <path class="site-logo__sparkle site-logo__sparkle--xs" d="M6 0.8 6.72 4.05 9.95 4.8 6.72 5.55 6 8.8 5.28 5.55 2.05 4.8 5.28 4.05Z" transform="translate(27 -1) scale(0.68)"/>
                     </svg>
-                    <span class="site-logo__name-wrap">
+                        <span class="site-logo__name-wrap">
                         <svg class="site-logo__swirl-svg site-logo__swirl-svg--back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 36" preserveAspectRatio="none" aria-hidden="true">
                             <path class="site-logo__swirl" d="M8 21C1 21-3 15-1 9C1 3 11 1 24 4C32 7 36 10 38 12"/>
                         </svg>
-                        <span class="site-logo__name" data-content="header.logoName"></span>
+                        <h1 class="site-logo__name" data-content="header.logoName"></h1>
                         <svg class="site-logo__swirl-svg site-logo__swirl-svg--front" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 36" preserveAspectRatio="none" aria-hidden="true">
                             <path class="site-logo__swirl" d="M36 12C44 15 52 13 62 14C100 18 150 21 200 21C240 20 270 18 278 17"/>
                         </svg>
-                        <span class="site-logo__tagline">
+                        <span class="site-logo__tagline" aria-hidden="true">
                             <span class="site-logo__tagline-word" data-content="header.taglineWord"></span>
                             <svg class="site-logo__sep" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 .6 5.6 3.6 8.6 4.2 5.6 4.8 5 7.8 4.4 4.8 1.4 4.2 4.4 3.6Z"/></svg>
                             <span class="site-logo__tagline-word" data-content="header.taglineWord"></span>
@@ -93,7 +93,7 @@
             </a>
         </div>
 
-        <button class="menu-toggle-refined" type="button" aria-expanded="false" aria-controls="header-menu-panel" aria-label="Abrir menu">
+        <button class="menu-toggle-refined" type="button" aria-expanded="false" aria-controls="header-menu-panel" aria-label="Abrir menú">
             <span class="menu-toggle-line"></span>
             <span class="menu-toggle-line"></span>
             <span class="menu-toggle-line"></span>
@@ -105,13 +105,13 @@
                     <li class="nav-item-refined active"><a href="#inicio" data-content="header.nav.inicio"></a></li>
                     <li class="nav-item-refined"><a href="#servicios" data-content="header.nav.servicios"></a></li>
                     <li class="nav-item-refined"><a href="#experiencias-destacadas" data-content="header.nav.experiencias"></a></li>
-                    <li class="nav-item-refined"><a href="#" data-open-portfolio-modal data-content="header.nav.portafolio"></a></li>
+                    <li class="nav-item-refined"><a href="#" data-open-portfolio-modal data-content="header.nav.portafolio" aria-haspopup="dialog"></a></li>
                     <li class="nav-item-refined"><a href="#contacto" data-content="header.nav.contacto"></a></li>
                 </ul>
             </nav>
 
             <div class="cta-wrap-refined">
-                <a href="#" class="btn-pill-premium" data-open-contact-modal data-content="header.cta"></a>
+                <a href="#" class="btn-pill-premium" data-open-contact-modal data-content="header.cta" aria-haspopup="dialog"></a>
             </div>
         </div>
     </div>
@@ -127,17 +127,17 @@
                     <span class="cursive-glow" data-content="hero.taglineAccent"></span>
                 </div>
 
-                <h1 class="hero-premium-title">
+                <h2 class="hero-premium-title">
                     <span data-content="hero.titleLine1"></span><br>
                     <span data-content="hero.titleLine2Prefix"></span> <span class="hero-title-accent" data-content="hero.titleLine2Accent"></span>
-                </h1>
+                </h2>
 
                 <p class="hero-premium-description">
                     <span data-content="hero.descriptionBefore"></span> <span class="pink-accent-bold" data-content="hero.descriptionAccent"></span>
                 </p>
 
                 <div class="hero-cta-group">
-                    <a href="#" class="btn-pill btn-wow-action" data-open-contact-modal>
+                    <a href="#" class="btn-pill btn-wow-action" data-open-contact-modal aria-haspopup="dialog" aria-label="Impulsa tu marca ahora — abrir contacto">
                         <span data-content="hero.cta"></span>
                         <span class="btn-wow-action__sparkle" aria-hidden="true">✦</span>
                     </a>
@@ -155,7 +155,7 @@
 
                     <div class="metrics-card-glassmorphism">
                         <div class="glass-icon-circle">
-                            <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
                         </div>
                         <div class="glass-metric-info">
                             <span class="glass-metric-value" data-content="hero.metricValue"></span>
@@ -164,7 +164,7 @@
                     </div>
                 </div>
 
-                <div class="premium-vertical-label" data-content="hero.verticalLabel"></div>
+                <div class="premium-vertical-label" data-content="hero.verticalLabel" aria-hidden="true"></div>
             </div>
         </div>
     </section>
@@ -178,10 +178,10 @@
                 <div class="performance-bar-grid">
                     <div class="perf-item-premium" data-content-list="performance.items">
                         <div class="perf-icon-box perf-icon-box--pink">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
                         </div>
                         <div class="perf-text-group">
-                            <h3 data-content-field="title"></h3>
+                            <p class="perf-text-group__title" data-content-field="title"></p>
                             <p data-content-field="description"></p>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                             <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
                         </div>
                         <div class="perf-text-group">
-                            <h3 data-content-field="title"></h3>
+                            <p class="perf-text-group__title" data-content-field="title"></p>
                             <p data-content-field="description"></p>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                             <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                         </div>
                         <div class="perf-text-group">
-                            <h3 data-content-field="title"></h3>
+                            <p class="perf-text-group__title" data-content-field="title"></p>
                             <p data-content-field="description"></p>
                         </div>
                     </div>
@@ -211,7 +211,7 @@
                             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
                         </div>
                         <div class="perf-text-group">
-                            <h3 data-content-field="title"></h3>
+                            <p class="perf-text-group__title" data-content-field="title"></p>
                             <p data-content-field="description"></p>
                         </div>
                     </div>
@@ -232,15 +232,17 @@
             <div class="featured-header">
                 <div class="featured-title-block fade-up">
                     <div class="featured-badge-wrap">
-                        <span class="featured-badge" data-content="experience.badge"></span>
+                        <span class="featured-badge" data-content="experience.badge" aria-hidden="true"></span>
                     </div>
 
                     <div class="featured-title-container">
-                        <h2 class="featured-title" data-content="experience.title"></h2>
-                        <div class="featured-script-row">
-                            <h3 class="featured-script" data-content="experience.titleScript"></h3>
-                            <span class="featured-scrap featured-scrap--heart" aria-hidden="true">♡</span>
-                        </div>
+                        <h2 class="featured-title">
+                            <span class="featured-title__line" data-content="experience.title"></span>
+                            <span class="featured-script-row">
+                                <span class="featured-script" data-content="experience.titleScript"></span>
+                                <span class="featured-scrap featured-scrap--heart" aria-hidden="true">♡</span>
+                            </span>
+                        </h2>
                         <span class="featured-title-underline" aria-hidden="true"></span>
                     </div>
                 </div>
@@ -251,7 +253,7 @@
                     </p>
                     <div class="featured-note">
                         <span class="featured-note-tape" aria-hidden="true"></span>
-                        <span class="featured-note-icon">i</span>
+                        <span class="featured-note-icon" aria-hidden="true">i</span>
                         <p data-content="experience.note"></p>
                     </div>
                 </div>
@@ -262,7 +264,7 @@
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
-                                <img src="assets/logos/coca-cola.png" alt="" class="brand-header__logo brand-header__logo--wide" width="120" height="32" loading="lazy">
+                                <img src="assets/logos/coca-cola.png" alt="Logotipo de Coca-Cola" class="brand-header__logo brand-header__logo--wide" width="120" height="32" loading="lazy">
                                 <h3 class="brand-header__name" data-content-field="name"></h3>
                                 <p class="brand-header__category" data-content-field="category"></p>
                             </div>
@@ -273,19 +275,24 @@
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--cutout">
-                        <img src="assets/campaigns/coca-cola.png" alt="Campaña Coca-Cola" loading="lazy">
+                        <img src="assets/campaigns/coca-cola.png" alt="Campaña digital para Coca-Cola en Parque Alegra" loading="lazy">
                     </div>
-                    <a href="https://vt.tiktok.com/ZSr4f3fEK/" class="campaign-cta campaign-cta--coca" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
-                        <span data-content-field="cta"></span>
-                        <span class="campaign-cta__arrow" aria-hidden="true">→</span>
-                    </a>
+                    <a href="https://vt.tiktok.com/ZSr4f3fEK/" class="campaign-card__play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                            <span class="campaign-card__play-overlay" aria-hidden="true"></span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--corner" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--center" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </a>
                 </article>
 
                 <article class="campaign-card campaign-card--totto fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
-                                <img src="assets/logos/totto.svg" alt="" class="brand-header__logo" width="48" height="48" loading="lazy">
+                                <img src="assets/logos/totto.svg" alt="Logotipo de Totto" class="brand-header__logo" width="48" height="48" loading="lazy">
                                 <h3 class="brand-header__name" data-content-field="name"></h3>
                                 <p class="brand-header__category" data-content-field="category"></p>
                             </div>
@@ -296,19 +303,24 @@
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--cutout">
-                        <img src="assets/campaigns/totto-backpack.png" alt="Campaña Totto" loading="lazy">
+                        <img src="assets/campaigns/totto-backpack.png" alt="Campaña digital para Totto en Parque Alegra" loading="lazy">
                     </div>
-                    <a href="https://vt.tiktok.com/ZSr44Kpt5/" class="campaign-cta campaign-cta--totto" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
-                        <span data-content-field="cta"></span>
-                        <span class="campaign-cta__arrow" aria-hidden="true">→</span>
-                    </a>
+                    <a href="https://vt.tiktok.com/ZSr44Kpt5/" class="campaign-card__play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                            <span class="campaign-card__play-overlay" aria-hidden="true"></span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--corner" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--center" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </a>
                 </article>
 
                 <article class="campaign-card campaign-card--cine fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
-                                <img src="assets/logos/cine-colombia.png" alt="" class="brand-header__logo brand-header__logo--wide" width="120" height="32" loading="lazy">
+                                <img src="assets/logos/cine-colombia.png" alt="Logotipo de Cine Colombia" class="brand-header__logo brand-header__logo--wide" width="120" height="32" loading="lazy">
                                 <h3 class="brand-header__name" data-content-field="name"></h3>
                                 <p class="brand-header__category" data-content-field="category"></p>
                             </div>
@@ -319,19 +331,24 @@
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--photo">
-                        <img src="assets/campaigns/cine-colombia.jpg" alt="Campaña Cine Colombia" loading="lazy">
+                        <img src="assets/campaigns/cine-colombia.png" alt="Campaña digital para Cine Colombia en Parque Alegra" loading="lazy">
                     </div>
-                    <a href="https://www.instagram.com/reel/C_y73z6sxO_/?igsh=NjU4d2wyOGE5YjEy" class="campaign-cta campaign-cta--cine" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
-                        <span data-content-field="cta"></span>
-                        <span class="campaign-cta__arrow" aria-hidden="true">→</span>
-                    </a>
+                    <a href="https://www.instagram.com/reel/C_y73z6sxO_/?igsh=NjU4d2wyOGE5YjEy" class="campaign-card__play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                            <span class="campaign-card__play-overlay" aria-hidden="true"></span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--corner" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--center" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </a>
                 </article>
 
                 <article class="campaign-card campaign-card--hm fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
-                                <img src="assets/logos/hm.svg" alt="" class="brand-header__logo brand-header__logo--wide" width="72" height="32" loading="lazy">
+                                <img src="assets/logos/hm.svg" alt="Logotipo de H&amp;M" class="brand-header__logo brand-header__logo--wide" width="72" height="32" loading="lazy">
                                 <h3 class="brand-header__name" data-content-field="name"></h3>
                                 <p class="brand-header__category" data-content-field="category"></p>
                             </div>
@@ -342,19 +359,24 @@
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--photo">
-                        <img src="assets/campaigns/hm-store.jpg" alt="Campaña H&amp;M" loading="lazy">
+                        <img src="assets/campaigns/hm-store.png" alt="Campaña digital para H&amp;M en Parque Alegra" loading="lazy">
                     </div>
-                    <a href="https://www.instagram.com/reel/DBAGE5BPQR0/?igsh=MWdpZTdvcWVlNTM3" class="campaign-cta campaign-cta--hm" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
-                        <span data-content-field="cta"></span>
-                        <span class="campaign-cta__arrow" aria-hidden="true">→</span>
-                    </a>
+                    <a href="https://www.instagram.com/reel/DBAGE5BPQR0/?igsh=MWdpZTdvcWVlNTM3" class="campaign-card__play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                            <span class="campaign-card__play-overlay" aria-hidden="true"></span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--corner" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--center" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </a>
                 </article>
 
                 <article class="campaign-card campaign-card--starbucks fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
-                                <img src="assets/logos/starbucks.svg" alt="" class="brand-header__logo" width="40" height="40" loading="lazy">
+                                <img src="assets/logos/starbucks.svg" alt="Logotipo de Starbucks" class="brand-header__logo" width="40" height="40" loading="lazy">
                                 <h3 class="brand-header__name" data-content-field="name"></h3>
                                 <p class="brand-header__category" data-content-field="category"></p>
                             </div>
@@ -365,19 +387,24 @@
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--cutout">
-                        <img src="assets/campaigns/starbucks-cup.png" alt="Campaña Starbucks" loading="lazy">
+                        <img src="assets/campaigns/starbucks-cup.png" alt="Campaña digital para Starbucks en Parque Alegra" loading="lazy">
                     </div>
-                    <a href="https://www.instagram.com/reel/C2s-KN1PTLq/?igsh=dnNzZWt5cWoyM3Jt" class="campaign-cta campaign-cta--starbucks" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
-                        <span data-content-field="cta"></span>
-                        <span class="campaign-cta__arrow" aria-hidden="true">→</span>
-                    </a>
+                    <a href="https://www.instagram.com/reel/C2s-KN1PTLq/?igsh=dnNzZWt5cWoyM3Jt" class="campaign-card__play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                            <span class="campaign-card__play-overlay" aria-hidden="true"></span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--corner" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--center" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </a>
                 </article>
 
                 <article class="campaign-card campaign-card--maxgordos fade-up" data-content-list="experience.campaigns">
                     <div class="campaign-card__inner">
                         <div class="campaign-card__content">
                             <div class="brand-header">
-                                <img src="assets/logos/maxgordos.png" alt="" class="brand-header__logo brand-header__logo--wide" width="120" height="40" loading="lazy">
+                                <img src="assets/logos/maxgordos.png" alt="Logotipo de MaxGordos" class="brand-header__logo brand-header__logo--wide" width="120" height="40" loading="lazy">
                                 <h3 class="brand-header__name" data-content-field="name"></h3>
                                 <p class="brand-header__category" data-content-field="category"></p>
                             </div>
@@ -388,61 +415,19 @@
                         </div>
                     </div>
                     <div class="campaign-card__visual campaign-card__visual--photo">
-                        <img src="assets/campaigns/maxgordos-burger.jpg" alt="Campaña MaxGordos" loading="lazy">
+                        <img src="assets/campaigns/maxgordos-burger.png" alt="Campaña digital para MaxGordos en Parque Alegra" loading="lazy">
                     </div>
-                    <a href="https://vt.tiktok.com/ZSr44PEfh/" class="campaign-cta campaign-cta--maxgordos" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
-                        <span data-content-field="cta"></span>
-                        <span class="campaign-cta__arrow" aria-hidden="true">→</span>
-                    </a>
+                    <a href="https://vt.tiktok.com/ZSr44PEfh/" class="campaign-card__play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                            <span class="campaign-card__play-overlay" aria-hidden="true"></span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--corner" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                            <span class="campaign-card__play-btn campaign-card__play-btn--center" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </a>
                 </article>
             </div>
-
-            <section class="results-band fade-up" aria-label="Resultados">
-                <div class="results-item results-lead">
-                    <span class="results-icon" style="background-color: #E293A0;">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
-                        </svg>
-                    </span>
-                    <p><span data-content="experience.results.leadBefore"></span> <span class="results-underline" data-content="experience.results.leadAccent"></span></p>
-                </div>
-                <div class="results-item" data-content-list="experience.results.stats">
-                    <span class="results-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.01 1.62 4.13.94.97 2.24 1.57 3.58 1.71v3.32c-1.43-.07-2.85-.59-4.01-1.47-.18-.14-.35-.29-.51-.45v6.52c.04 2.91-1.6 5.71-4.31 6.81-2.83 1.22-6.27.46-8.26-1.85-2.16-2.42-2.31-6.19-.36-8.77 1.83-2.51 5.3-3.4 8.12-2.16v3.4c-1.61-.71-3.62-.2-4.66 1.25-.97 1.3-.87 3.23.23 4.41 1.13 1.24 3.09 1.48 4.5 0.54.83-.54 1.31-1.48 1.31-2.48V.02z" />
-                        </svg>
-                    </span>
-                    <div>
-                        <strong data-content-field="value"></strong>
-                        <small data-content-field="label"></small>
-                    </div>
-                </div>
-                <div class="results-item" data-content-list="experience.results.stats">
-                    <span class="results-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m4.4 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0-9m0 2a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5m4.75-.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5z" />
-                        </svg>
-                    </span>
-                    <div>
-                        <strong data-content-field="value"></strong>
-                        <small data-content-field="label"></small>
-                    </div>
-                </div>
-                <div class="results-item" data-content-list="experience.results.stats">
-                    <span class="results-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                    </span>
-                    <div>
-                        <strong data-content-field="value"></strong>
-                        <small data-content-field="label"></small>
-                    </div>
-                </div>
-            </section>
         </div>
     </section>
 
@@ -450,10 +435,232 @@
         <span class="section-divider__symbol">♡</span>
     </div>
 
+    <section class="results-proof" id="resultados">
+        <div class="container">
+            <header class="results-proof__header fade-up">
+                <span class="results-proof__badge" data-content="resultsProof.badge" aria-hidden="true"></span>
+                <h2 class="results-proof__title">
+                    <span data-content="resultsProof.titleBefore"></span>
+                    <span class="results-proof__accent" data-content="resultsProof.titleAccent"></span>
+                    <span data-content="resultsProof.titleAfter"></span>
+                    <span class="results-proof__scrap results-proof__scrap--heart" aria-hidden="true">♡</span>
+                </h2>
+                <p class="results-proof__desc" data-content="resultsProof.description"></p>
+                <p class="results-proof__note" data-content="resultsProof.note"></p>
+            </header>
+
+            <div class="results-proof__metrics fade-up">
+                <article class="results-proof__kpi-main">
+                    <span class="results-proof__tape" aria-hidden="true"></span>
+                    <span class="results-proof__kpi-icon results-proof__kpi-icon--pink" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                    </span>
+                    <div class="results-proof__kpi-main-text">
+                        <strong class="results-proof__kpi-value" data-content="resultsProof.primaryKpi.value"></strong>
+                        <p><span data-content="resultsProof.primaryKpi.labelBefore"></span> <span class="results-proof__highlight" data-content="resultsProof.primaryKpi.labelAccent"></span></p>
+                    </div>
+                </article>
+
+                <div class="results-proof__kpi-stats">
+                    <div class="results-proof__stat" data-content-list="resultsProof.secondaryKpis">
+                        <span class="results-proof__kpi-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </span>
+                        <div>
+                            <strong data-content-field="value"></strong>
+                            <span data-content-field="label"></span>
+                        </div>
+                    </div>
+                    <div class="results-proof__stat" data-content-list="resultsProof.secondaryKpis">
+                        <span class="results-proof__kpi-icon results-proof__kpi-icon--pink" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </span>
+                        <div>
+                            <strong data-content-field="value"></strong>
+                            <span data-content-field="label"></span>
+                        </div>
+                    </div>
+                    <div class="results-proof__stat" data-content-list="resultsProof.secondaryKpis">
+                        <span class="results-proof__kpi-icon results-proof__kpi-icon--sage" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                        </span>
+                        <div>
+                            <strong data-content-field="value"></strong>
+                            <span data-content-field="label"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-proof__chart">
+                    <p class="results-proof__chart-title">
+                        <span data-content="resultsProof.chart.titleBefore"></span>
+                        <span class="results-proof__script" data-content="resultsProof.chart.titleAccent"></span>
+                        <span data-content="resultsProof.chart.titleAfter"></span>
+                    </p>
+                    <div class="results-proof__chart-wrap" role="img" aria-label="Gráfica de crecimiento orgánico de 40K a 342K entre enero y mayo">
+                        <svg class="results-proof__chart-svg" viewBox="0 0 240 72" preserveAspectRatio="none" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="resultsChartFill" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#f5d6db" stop-opacity="0.55"/>
+                                    <stop offset="100%" stop-color="#faf7f5" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <path class="results-proof__chart-area" d="M0,58 L48,50 L96,38 L144,26 L192,10 L240,10 L240,72 L0,72 Z" fill="url(#resultsChartFill)"/>
+                            <path class="results-proof__chart-line" d="M0,58 L48,50 L96,38 L144,26 L192,10" fill="none" stroke="#e8a7b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="0" cy="58" r="3" fill="#fff" stroke="#e8a7b3" stroke-width="1.5"/>
+                            <circle cx="48" cy="50" r="3" fill="#fff" stroke="#e8a7b3" stroke-width="1.5"/>
+                            <circle cx="96" cy="38" r="3" fill="#fff" stroke="#e8a7b3" stroke-width="1.5"/>
+                            <circle cx="144" cy="26" r="3" fill="#fff" stroke="#e8a7b3" stroke-width="1.5"/>
+                            <circle cx="192" cy="10" r="3.5" fill="#e8a7b3" stroke="#fff" stroke-width="1.5"/>
+                        </svg>
+                        <div class="results-proof__chart-labels">
+                            <span><strong>40K</strong><small>Ene</small></span>
+                            <span><strong>70K</strong><small>Feb</small></span>
+                            <span><strong>120K</strong><small>Mar</small></span>
+                            <span><strong>180K</strong><small>Abr</small></span>
+                            <span><strong>342K</strong><small>May</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-proof__content fade-up">
+                <h3 class="results-proof__content-title">
+                    <span data-content="resultsProof.contentTitleBefore"></span>
+                    <span class="results-proof__script" data-content="resultsProof.contentTitleAccent"></span>
+                </h3>
+                <div class="results-proof__reels">
+                    <article class="results-proof__reel" data-content-list="resultsProof.reels">
+                        <div class="results-proof__reel-thumb">
+                            <img src="assets/campaigns/reel-conversacion.jpg" alt="" data-content-field="imageAlt" loading="lazy">
+                            <span class="results-proof__reel-metric" data-content-field="metric"></span>
+                            <a href="https://www.instagram.com/reel/DY8FFyWvMWn/?igsh=MWFkNDM4aGJtNGw0Ng==" class="results-proof__reel-play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                                <span class="results-proof__reel-overlay" aria-hidden="true"></span>
+                                <span class="results-proof__reel-play-btn" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="results-proof__reel-meta">
+                            <span class="results-proof__reel-icon results-proof__reel-icon--pink" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+                            </span>
+                            <div>
+                                <strong data-content-field="category"></strong>
+                                <p data-content-field="description"></p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="results-proof__reel" data-content-list="resultsProof.reels">
+                        <div class="results-proof__reel-thumb">
+                            <img src="assets/campaigns/reel-cultura.PNG" alt="" data-content-field="imageAlt" loading="lazy">
+                            <span class="results-proof__reel-metric" data-content-field="metric"></span>
+                            <a href="https://www.instagram.com/reel/DYVgclMJiDN/?igsh=MW54N3pkcHVwMmd5bg==" class="results-proof__reel-play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                                <span class="results-proof__reel-overlay" aria-hidden="true"></span>
+                                <span class="results-proof__reel-play-btn" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="results-proof__reel-meta">
+                            <span class="results-proof__reel-icon results-proof__reel-icon--lavender" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </span>
+                            <div>
+                                <strong data-content-field="category"></strong>
+                                <p data-content-field="description"></p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="results-proof__reel" data-content-list="resultsProof.reels">
+                        <div class="results-proof__reel-thumb">
+                            <img src="assets/campaigns/reel-curiosidad.jpg" alt="" data-content-field="imageAlt" loading="lazy">
+                            <span class="results-proof__reel-metric" data-content-field="metric"></span>
+                            <a href="https://www.instagram.com/reel/DHZkIS0Pf8g/?igsh=MW9rNmhuN252cGx1dw==" class="results-proof__reel-play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                                <span class="results-proof__reel-overlay" aria-hidden="true"></span>
+                                <span class="results-proof__reel-play-btn" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="results-proof__reel-meta">
+                            <span class="results-proof__reel-icon results-proof__reel-icon--sand" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                            </span>
+                            <div>
+                                <strong data-content-field="category"></strong>
+                                <p data-content-field="description"></p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="results-proof__reel" data-content-list="resultsProof.reels">
+                        <div class="results-proof__reel-thumb">
+                            <img src="assets/campaigns/reel-storytelling.jpg" alt="" data-content-field="imageAlt" loading="lazy">
+                            <span class="results-proof__reel-metric" data-content-field="metric"></span>
+                            <a href="https://www.instagram.com/reel/DXc1L-PpcR6/?igsh=MWgwOHBxbTRwdWZodg==" class="results-proof__reel-play" data-content-field="ctaLink" target="_blank" rel="noopener noreferrer" aria-label="">
+                                <span class="results-proof__reel-overlay" aria-hidden="true"></span>
+                                <span class="results-proof__reel-play-btn" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="results-proof__reel-meta">
+                            <span class="results-proof__reel-icon results-proof__reel-icon--sage" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                            </span>
+                            <div>
+                                <strong data-content-field="category"></strong>
+                                <p data-content-field="description"></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="results-proof__bar fade-up">
+                <div class="results-proof__trust">
+                    <div class="results-proof__trust-item" data-content-list="resultsProof.trustItems">
+                        <span class="results-proof__trust-icon" aria-hidden="true">✓</span>
+                        <div>
+                            <strong data-content-field="title"></strong>
+                            <span data-content-field="subtitle"></span>
+                        </div>
+                    </div>
+                    <div class="results-proof__trust-item" data-content-list="resultsProof.trustItems">
+                        <span class="results-proof__trust-icon results-proof__trust-icon--lavender" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </span>
+                        <div>
+                            <strong data-content-field="title"></strong>
+                            <span data-content-field="subtitle"></span>
+                        </div>
+                    </div>
+                    <div class="results-proof__trust-item" data-content-list="resultsProof.trustItems">
+                        <span class="results-proof__trust-icon results-proof__trust-icon--pink" aria-hidden="true">♡</span>
+                        <div>
+                            <strong data-content-field="title"></strong>
+                            <span data-content-field="subtitle"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="results-proof__cta btn-pill btn-wow-action" data-open-contact-modal aria-haspopup="dialog" aria-label="Trabajemos juntas — abrir contacto">
+                    <span data-content="resultsProof.cta"></span>
+                    <span class="btn-wow-action__sparkle" aria-hidden="true">✦</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider section-divider--lined" aria-hidden="true">
+        <span class="section-divider__line"></span>
+        <span class="section-divider__symbol">✦</span>
+        <span class="section-divider__line"></span>
+    </div>
+
 <section class="services-wow" id="servicios">
     <div class="container">
         <div class="services-wow__header">
-            <span class="badge-pill-wow" data-content="services.badge"></span>
+            <span class="badge-pill-wow" data-content="services.badge" aria-hidden="true"></span>
 
             <div class="section-header-wow">
                 <span class="services-scrap services-scrap--heart" aria-hidden="true">♡</span>
@@ -525,13 +732,15 @@
 
         <div class="skills-info-block fade-up">
             <div class="skills-badge-wrap">
-                <span class="skills-badge-tag" data-content="skills.badge"></span>
+                <span class="skills-badge-tag" data-content="skills.badge" aria-hidden="true"></span>
             </div>
 
             <div class="skills-title-container">
-                <h2 class="skills-main-title" data-content="skills.title"></h2>
-                <p class="skills-script-title" data-content="skills.titleScript"></p>
-                <div class="skills-title-line"></div>
+                <h2 class="skills-main-title">
+                    <span class="skills-main-title__line" data-content="skills.title"></span>
+                    <span class="skills-script-title" data-content="skills.titleScript"></span>
+                </h2>
+                <div class="skills-title-line" aria-hidden="true"></div>
             </div>
 
             <p class="skills-desc">
@@ -547,7 +756,7 @@
                 <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
-                            <img src="assets/logos/skills/premiere-pro.svg" alt="" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
+                            <img src="assets/logos/skills/premiere-pro.svg" alt="Icono de Adobe Premiere Pro" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
@@ -564,7 +773,7 @@
                 <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
-                            <img src="assets/logos/skills/after-effects.svg" alt="" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
+                            <img src="assets/logos/skills/after-effects.svg" alt="Icono de Adobe After Effects" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
@@ -581,7 +790,7 @@
                 <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
-                            <img src="assets/logos/skills/canva.svg" alt="" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
+                            <img src="assets/logos/skills/canva.svg" alt="Icono de Canva" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
@@ -598,7 +807,7 @@
                 <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
-                            <img src="assets/logos/skills/capcut.svg" alt="" class="skill-icon-wow__img" width="24" height="24" loading="lazy">
+                            <img src="assets/logos/skills/capcut.svg" alt="Icono de CapCut" class="skill-icon-wow__img" width="24" height="24" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
@@ -615,7 +824,7 @@
                 <div class="skill-item-wow" data-content-list="skills.items">
                     <div class="skill-row-wow">
                         <span class="skill-icon-wow">
-                            <img src="assets/logos/skills/meta.svg" alt="" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
+                            <img src="assets/logos/skills/meta.svg" alt="Icono de Meta y Google Ads" class="skill-icon-wow__img" width="26" height="26" loading="lazy">
                         </span>
                         <div class="skill-content-wow">
                             <div class="skill-meta-wow">
@@ -667,7 +876,7 @@
         <div class="container process-layout">
             <div class="process-left">
                 <div class="process-title-block">
-                    <span class="badge-pill" data-content="process.badge"></span>
+                    <span class="badge-pill" data-content="process.badge" aria-hidden="true"></span>
                     <div class="process-orbit-wrap">
                         <div class="process-ellipse process-ellipse--1" aria-hidden="true"></div>
                         <div class="process-ellipse process-ellipse--2" aria-hidden="true"></div>
@@ -770,7 +979,7 @@
             <div class="cta-vertical-divider"></div>
 
             <div class="cta-right-final">
-                <a href="#" class="btn-hablemos-final" data-open-contact-modal data-content="contact.cta"></a>
+                <a href="#" class="btn-hablemos-final" data-open-contact-modal data-content="contact.cta" aria-haspopup="dialog" aria-label="Hablemos — abrir contacto"></a>
                 <div class="cta-contact-links">
                     <a href="mailto:pahoyoscardona@gmail.com" class="contact-item-final">
                         <span class="contact-icon-box">
@@ -795,7 +1004,7 @@
                 <div class="footer-col-brand">
                     <div class="footer-brand-block">
                         <div class="footer-logo-glow">
-                            <img src="assets/icon-paola.png" alt="" class="footer-logo-image" width="72" height="72" loading="lazy">
+                            <img src="assets/icon-paola.png" alt="Isotipo de Paola Hoyos" class="footer-logo-image" width="72" height="72" loading="lazy">
                         </div>
                         <p class="footer-brand-name" data-content="footer.brandName"></p>
                         <p class="footer-brand-tagline" data-content="footer.brandTagline"></p>
@@ -804,19 +1013,19 @@
                 </div>
 
                 <div class="footer-col-links">
-                    <h4 data-content="footer.navTitle"></h4>
+                    <h3 data-content="footer.navTitle"></h3>
                     <ul>
                         <li><a href="#inicio" data-content="footer.nav.inicio"></a></li>
                         <li><a href="#servicios" data-content="footer.nav.servicios"></a></li>
                         <li><a href="#experiencias-destacadas" data-content="footer.nav.experiencias"></a></li>
-                        <li><a href="#" data-open-portfolio-modal data-content="footer.nav.portafolio"></a></li>
+                        <li><a href="#" data-open-portfolio-modal data-content="footer.nav.portafolio" aria-haspopup="dialog"></a></li>
                         <li><a href="#competencias" data-content="footer.nav.recursos"></a></li>
                         <li><a href="#contacto" data-content="footer.nav.contacto"></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col-socials">
-                    <h4 data-content="footer.socialTitle"></h4>
+                    <h3 data-content="footer.socialTitle"></h3>
                     <ul>
                         <li data-content-list="footer.socials">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/paolaahoyosc" class="social-link-item">
@@ -840,7 +1049,7 @@
                 </div>
 
                 <div class="footer-col-mission">
-                    <h4 class="footer-mission-title" data-content="footer.missionTitle"></h4>
+                    <h3 class="footer-mission-title" data-content="footer.missionTitle"></h3>
                     <ul class="footer-mission-list">
                         <li data-content-list="footer.missionItems"></li>
                         <li data-content-list="footer.missionItems"></li>
@@ -865,7 +1074,7 @@
     </footer>
 </div>
 
-    <dialog class="contact-modal" id="contact-modal" aria-hidden="true" aria-labelledby="contact-modal-title">
+    <dialog class="contact-modal" id="contact-modal" aria-labelledby="contact-modal-title">
         <div class="contact-modal__backdrop" data-close-contact-modal></div>
         <div class="contact-modal__panel">
             <span class="contact-modal__scrap contact-modal__scrap--heart-tl" aria-hidden="true">♡</span>
@@ -924,14 +1133,14 @@
         </div>
     </dialog>
 
-    <dialog class="portfolio-modal" id="portfolio-modal" aria-hidden="true" aria-labelledby="portfolio-modal-title">
+    <dialog class="portfolio-modal" id="portfolio-modal" aria-labelledby="portfolio-modal-title">
         <div class="portfolio-modal__backdrop" data-close-portfolio-modal></div>
         <div class="portfolio-modal__panel">
             <button type="button" class="portfolio-modal__close" data-content="modals.portfolio.closeLabel" aria-label="" data-close-portfolio-modal><span data-content="modals.portfolio.close"></span></button>
 
             <div class="portfolio-modal__header">
                 <h2 id="portfolio-modal-title" data-content="modals.portfolio.title"></h2>
-                <a href="assets/portafolio.pdf" download class="btn-pill-premium" data-content="modals.portfolio.download"></a>
+                <a href="assets/portafolio.pdf" download class="btn-pill-premium" data-content="modals.portfolio.download" aria-label="Descargar portafolio completo en PDF"></a>
             </div>
 
             <div class="portfolio-modal__content">
@@ -960,7 +1169,7 @@
                 if (labels && labels[type]) {
                     return labels[type];
                 }
-                return type === 'close' ? 'Cerrar menu' : 'Abrir menu';
+                return type === 'close' ? 'Cerrar menú' : 'Abrir menú';
             }
 
             function closeMenu() {
@@ -1063,7 +1272,6 @@
                 } else {
                     contactModal.setAttribute('open', 'open');
                 }
-                contactModal.setAttribute('aria-hidden', 'false');
                 document.body.classList.add('modal-open');
             }
 
@@ -1073,7 +1281,6 @@
                 } else {
                     contactModal.removeAttribute('open');
                 }
-                contactModal.setAttribute('aria-hidden', 'true');
                 document.body.classList.remove('modal-open');
             }
 
@@ -1111,7 +1318,6 @@
                 } else {
                     modal.setAttribute('open', 'open');
                 }
-                modal.setAttribute('aria-hidden', 'false');
                 document.body.classList.add('modal-open');
             }
 
@@ -1121,7 +1327,6 @@
                 } else {
                     modal.removeAttribute('open');
                 }
-                modal.setAttribute('aria-hidden', 'true');
                 document.body.classList.remove('modal-open');
             }
 

@@ -15,8 +15,8 @@
       "Storytelling",
       "Resultados"
     ],
-    "menuOpenLabel": "Abrir menu",
-    "menuCloseLabel": "Cerrar menu",
+    "menuOpenLabel": "Abrir menú",
+    "menuCloseLabel": "Cerrar menú",
     "nav": {
       "inicio": "Inicio",
       "servicios": "Servicios",
@@ -35,7 +35,8 @@
     "descriptionBefore": "No necesitas estar en todas partes; necesitas estar donde realmente importa. Diseño estrategias digitales a medida y storytelling de alto impacto que transforman espectadores pasivos en una",
     "descriptionAccent": "comunidad activa y rentable.",
     "cta": "Impulsa tu marca ahora",
-    "imageAlt": "Paola Hoyos, Dirección de Estrategia Digital",
+    "ctaAriaLabel": "Impulsa tu marca ahora — abrir contacto",
+    "imageAlt": "Paola Hoyos, estratega digital y comunicadora social",
     "metricValue": "+3.8M",
     "metricLabel": "Impacto y alcance orgánico",
     "verticalLabel": "· ESTRATEGIA · CONTENIDO · COMUNIDAD · RESULTADOS"
@@ -73,6 +74,7 @@
         "category": "Momentos y sabor",
         "metric": "1.33M",
         "metricLabel": "Visualizaciones",
+        "ctaLink": "https://vt.tiktok.com/ZSr4f3fEK/",
         "cta": "Ver contenido",
         "ctaAriaLabel": "Ver contenido de Coca-Cola en TikTok"
       },
@@ -81,6 +83,7 @@
         "category": "Estilo y funcionalidad",
         "metric": "1.27M",
         "metricLabel": "Visualizaciones",
+        "ctaLink": "https://vt.tiktok.com/ZSr44Kpt5/",
         "cta": "Ver contenido",
         "ctaAriaLabel": "Ver contenido de Totto en TikTok"
       },
@@ -89,6 +92,7 @@
         "category": "Entretenimiento",
         "metric": "858K",
         "metricLabel": "Visualizaciones",
+        "ctaLink": "https://www.instagram.com/reel/C_y73z6sxO_/?igsh=NjU4d2wyOGE5YjEy",
         "cta": "Ver contenido",
         "ctaAriaLabel": "Ver contenido de Cine Colombia en Instagram"
       },
@@ -97,6 +101,7 @@
         "category": "Moda y tendencias",
         "metric": "221K",
         "metricLabel": "Visualizaciones",
+        "ctaLink": "https://www.instagram.com/reel/DBAGE5BPQR0/?igsh=MWdpZTdvcWVlNTM3",
         "cta": "Ver contenido",
         "ctaAriaLabel": "Ver contenido de H&M en Instagram"
       },
@@ -105,6 +110,7 @@
         "category": "Cafés y experiencias",
         "metric": "63K",
         "metricLabel": "Visualizaciones",
+        "ctaLink": "https://www.instagram.com/reel/C2s-KN1PTLq/?igsh=dnNzZWt5cWoyM3Jt",
         "cta": "Ver contenido",
         "ctaAriaLabel": "Ver contenido de Starbucks en Instagram"
       },
@@ -113,6 +119,7 @@
         "category": "Sabor y tradición",
         "metric": "58K",
         "metricLabel": "Visualizaciones",
+        "ctaLink": "https://vt.tiktok.com/ZSr44PEfh/",
         "cta": "Ver contenido",
         "ctaAriaLabel": "Ver contenido de MaxGordos en TikTok"
       }
@@ -135,6 +142,95 @@
         }
       ]
     }
+  },
+  "resultsProof": {
+    "badge": "+ Resultados que respaldan mi trabajo",
+    "titleBefore": "Resultados que",
+    "titleAccent": "respaldan",
+    "titleAfter": "mi trabajo",
+    "description": "Más de 1.3 millones de visualizaciones orgánicas generadas a través de contenido auténtico, estratégico y enfocado en conectar con nuevas audiencias.",
+    "note": "Cifras reales de la comunidad orgánica que llevo construyendo en mis redes desde 2026.",
+    "primaryKpi": {
+      "value": "+1.3M",
+      "labelBefore": "Visualizaciones orgánicas en los",
+      "labelAccent": "últimos 90 días."
+    },
+    "secondaryKpis": [
+      {
+        "value": "95%",
+        "label": "Del alcance proviene de nuevas audiencias"
+      },
+      {
+        "value": "48K+",
+        "label": "Interacciones reales generadas"
+      },
+      {
+        "value": "279K",
+        "label": "Mejor reel orgánico en Instagram"
+      }
+    ],
+    "chart": {
+      "titleBefore": "Crecimiento",
+      "titleAccent": "sostenido",
+      "titleAfter": "sin pauta publicitaria."
+    },
+    "contentTitleBefore": "El contenido que genera",
+    "contentTitleAccent": "más conversación",
+    "reelCta": "Ver contenido",
+    "reels": [
+      {
+        "metric": "15K",
+        "category": "Conversación",
+        "description": "Temas que generan diálogo y opinión.",
+        "imageAlt": "Miniatura del reel de conversación con 15 mil visualizaciones",
+        "cta": "Ver contenido",
+        "ctaLink": "https://www.instagram.com/reel/DY8FFyWvMWn/?igsh=MWFkNDM4aGJtNGw0Ng==",
+        "ctaAriaLabel": "Ver reel de conversación en Instagram"
+      },
+      {
+        "metric": "143K",
+        "category": "Cultura",
+        "description": "Comparaciones, choques y curiosidades culturales.",
+        "imageAlt": "Miniatura del reel de cultura con 143 mil visualizaciones",
+        "cta": "Ver contenido",
+        "ctaLink": "https://www.instagram.com/reel/DYVgclMJiDN/?igsh=MW54N3pkcHVwMmd5bg==",
+        "ctaAriaLabel": "Ver reel de cultura en Instagram"
+      },
+      {
+        "metric": "190K",
+        "category": "Curiosidad",
+        "description": "Historias y datos que informan e inspiran.",
+        "imageAlt": "Miniatura del reel de curiosidad con 190 mil visualizaciones",
+        "cta": "Ver contenido",
+        "ctaLink": "https://www.instagram.com/reel/DHZkIS0Pf8g/?igsh=MW9rNmhuN252cGx1dw==",
+        "ctaAriaLabel": "Ver reel de curiosidad en Instagram"
+      },
+      {
+        "metric": "32K",
+        "category": "Storytelling",
+        "description": "Experiencias reales que conectan y enseñan.",
+        "imageAlt": "Miniatura del reel de storytelling con 32 mil visualizaciones",
+        "cta": "Ver contenido",
+        "ctaLink": "https://www.instagram.com/reel/DXc1L-PpcR6/?igsh=MWgwOHBxbTRwdWZodg==",
+        "ctaAriaLabel": "Ver reel de storytelling en Instagram"
+      }
+    ],
+    "trustItems": [
+      {
+        "title": "Audiencia real",
+        "subtitle": "Sin seguidores comprados"
+      },
+      {
+        "title": "Alcance orgánico",
+        "subtitle": "Sin pauta publicitaria"
+      },
+      {
+        "title": "Comunidad activa",
+        "subtitle": "Miles de interacciones reales"
+      }
+    ],
+    "cta": "Trabajemos juntas",
+    "ctaAriaLabel": "Trabajemos juntas — abrir contacto"
   },
   "services": {
     "badge": "Servicios",
@@ -246,6 +342,7 @@
     "descriptionBefore": "Trabajemos juntas para crear estrategias digitales que conecten con tu audiencia y generen",
     "descriptionAccent": "resultados reales.",
     "cta": "Hablemos ✦",
+    "ctaAriaLabel": "Hablemos — abrir contacto",
     "email": "pahoyoscardona@gmail.com",
     "phone": "300 249 3331"
   },

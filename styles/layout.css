@@ -4,6 +4,26 @@
     padding: 0;
 }
 
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 4px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 4px;
+}
+
 #contacto {
     scroll-margin-top: 110px;
 }
@@ -78,7 +98,7 @@
     left: 20px;
     font-family: var(--font-script);
     font-size: 22px;
-    color: #f4848c;
+    color: var(--pink-accent-text);
     opacity: 0.55;
 }
 
@@ -86,7 +106,7 @@
     top: 14px;
     left: 48px;
     font-size: 10px;
-    color: #f08098;
+    color: var(--pink-accent-text);
     opacity: 0.7;
 }
 
@@ -107,7 +127,7 @@
     right: 28px;
     font-family: var(--font-script);
     font-size: 28px;
-    color: #f4848c;
+    color: var(--pink-accent-text);
     opacity: 0.45;
 }
 
@@ -115,7 +135,7 @@
     bottom: 52px;
     right: 22px;
     font-size: 11px;
-    color: #f08098;
+    color: var(--pink-accent-text);
     opacity: 0.65;
 }
 
@@ -176,7 +196,7 @@
 
 .contact-modal__title-accent {
     font-style: italic;
-    color: #f08098;
+    color: var(--pink-accent-text);
 }
 
 .contact-modal__title-sparkle {
@@ -196,7 +216,7 @@
 }
 
 .contact-modal__intro-accent {
-    color: #f08098;
+    color: var(--pink-accent-text);
     font-weight: 600;
 }
 
@@ -232,14 +252,14 @@
 }
 
 .contact-modal__channel:hover {
-    color: #f08098;
+    color: var(--pink-accent-text);
 }
 
 .contact-modal__channel-icon {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: #f08098;
+    background-color: var(--pink-accent-text);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -300,7 +320,7 @@
 .contact-modal__wpp-sparkle {
     margin-left: auto;
     font-size: 12px;
-    color: #f08098;
+    color: var(--pink-accent-text);
     opacity: 0.85;
 }
 
@@ -493,7 +513,7 @@
     color: var(--text-dark);
     padding: 6px 16px;
     border-radius: 50px;
-    font-size: 11px;
+    font-size: var(--text-min);
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -633,6 +653,7 @@
     color: var(--text-dark);
     white-space: nowrap;
     -webkit-font-smoothing: antialiased;
+    line-height: inherit;
 }
 
 .site-logo__sparkles {
@@ -669,11 +690,11 @@
     width: 100%;
     gap: 0.18em;
     font-family: var(--font-sans);
-    font-size: 0.215em;
-    font-weight: 500;
+    font-size: max(var(--text-min), 0.215em);
+    font-weight: 600;
     letter-spacing: 0.055em;
     text-transform: uppercase;
-    color: var(--pink-muted);
+    color: var(--text-muted);
     white-space: nowrap;
     -webkit-font-smoothing: antialiased;
 }
@@ -722,7 +743,7 @@
     text-decoration: none;
     font-family: var(--font-sans);
     color: var(--text-dark);
-    font-size: 11.5px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.6px;
     text-transform: uppercase;
@@ -744,7 +765,7 @@
 }
 
 .nav-item-refined a:hover {
-    color: var(--pink-accent);
+    color: var(--pink-accent-text);
 }
 
 .nav-item-refined a:hover::after {
@@ -753,7 +774,7 @@
 }
 
 .nav-item-refined.active a {
-    color: var(--pink-muted);
+    color: var(--pink-accent-text);
 }
 
 .nav-item-refined.active::before {
@@ -790,7 +811,7 @@
     text-decoration: none;
     font-family: var(--font-sans);
     font-weight: 800;
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     box-shadow: 0 4px 15px rgba(232, 167, 179, 0.25);
@@ -868,7 +889,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--pink-muted);
+    color: var(--text-muted);
     pointer-events: none;
     user-select: none;
     padding-block: var(--section-divider-pad);
@@ -900,13 +921,13 @@
     font-size: 12px;
     line-height: 1;
     letter-spacing: 0;
-    opacity: 0.72;
+    opacity: 1;
     flex-shrink: 0;
 }
 
 .section-divider--symbol .section-divider__symbol {
     font-size: 13px;
-    opacity: 0.68;
+    opacity: 1;
 }
 
 /* Ritmo vertical: el divisor define la transición, no se acumula con padding doble */
@@ -994,7 +1015,7 @@
     bottom: 16px;
     right: 20px;
     font-size: 11px;
-    color: #f08098;
+    color: var(--pink-accent-text);
     opacity: 0.65;
 }
 
@@ -1026,7 +1047,7 @@
 
 .cta-circle-star {
     font-size: 22px;
-    color: #f08098;
+    color: var(--pink-accent-text);
     line-height: 1;
     position: relative;
     z-index: 2;
@@ -1057,7 +1078,7 @@
 .cta-script-title {
     display: block;
     font-family: var(--font-script);
-    color: #f08098;
+    color: var(--pink-accent-text);
     font-size: 26px;
     font-weight: 700;
     text-transform: none;
@@ -1080,7 +1101,7 @@
 }
 
 .pink-highlight-bold {
-    color: #f08098;
+    color: var(--pink-accent-text);
     font-weight: 700;
 }
 
@@ -1135,12 +1156,11 @@
     font-size: 14px;
     font-weight: 600;
     color: var(--text-dark);
-    opacity: 0.9;
     transition: color 0.3s ease;
 }
 
 .contact-item-final:hover {
-    color: var(--pink-accent);
+    color: var(--pink-accent-text);
 }
 
 .contact-icon-box {
@@ -1243,11 +1263,11 @@
 
 .footer-brand-tagline {
     font-family: var(--font-sans);
-    font-size: 8px;
+    font-size: var(--text-min);
     font-weight: 700;
     letter-spacing: 0.9px;
     text-transform: uppercase;
-    color: var(--pink-muted);
+    color: var(--pink-light);
     margin: 0 0 14px;
     line-height: 1.5;
 }
@@ -1256,19 +1276,18 @@
     font-family: var(--font-inter);
     font-size: 12.5px;
     line-height: 1.65;
-    color: var(--white);
-    opacity: 0.72;
+    color: var(--text-on-dark-muted);
     margin: 0;
     max-width: 260px;
 }
 
-.footer-final h4 {
+.footer-final h3 {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 10px;
+    font-size: var(--text-min);
     letter-spacing: 1.4px;
     text-transform: uppercase;
-    color: var(--pink-muted);
+    color: var(--pink-on-dark);
     margin: 0 0 20px;
 }
 
@@ -1283,14 +1302,12 @@
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
-    color: var(--white);
-    opacity: 0.78;
-    transition: opacity 0.3s, color 0.3s;
+    color: var(--text-on-dark);
+    transition: color 0.3s;
 }
 
 .footer-col-links a:hover {
-    opacity: 1;
-    color: var(--pink-accent);
+    color: var(--pink-light);
 }
 
 .footer-col-socials ul {
@@ -1307,14 +1324,12 @@
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
-    color: var(--white);
-    opacity: 0.78;
-    transition: opacity 0.3s, color 0.3s;
+    color: var(--text-on-dark);
+    transition: color 0.3s;
 }
 
 .social-link-item:hover {
-    opacity: 1;
-    color: var(--pink-accent);
+    color: var(--pink-light);
 }
 
 .social-icon-circle {
@@ -1346,7 +1361,7 @@
 .footer-mission-sparkles {
     display: block;
     font-size: 11px;
-    color: var(--pink-muted);
+    color: var(--pink-on-dark);
     letter-spacing: 4px;
     margin-bottom: 10px;
     line-height: 1;
@@ -1376,8 +1391,7 @@
     font-size: 12.5px;
     font-weight: 500;
     line-height: 1.5;
-    color: var(--white);
-    opacity: 0.78;
+    color: var(--text-on-dark-muted);
 }
 
 .footer-bottom-divider {
@@ -1398,8 +1412,7 @@
 .copyright-text {
     font-size: 11.5px;
     font-weight: 500;
-    color: var(--white);
-    opacity: 0.55;
+    color: var(--text-on-dark-muted);
     margin: 0;
 }
 
@@ -1413,20 +1426,18 @@
 .footer-legal a {
     font-size: 11.5px;
     font-weight: 500;
-    color: var(--white);
-    opacity: 0.55;
+    color: var(--text-on-dark-muted);
     text-decoration: none;
-    transition: opacity 0.3s, color 0.3s;
+    transition: color 0.3s;
 }
 
 .footer-legal a:hover {
-    opacity: 1;
-    color: var(--pink-accent);
+    color: var(--pink-light);
 }
 
 .footer-legal-sep {
-    font-size: 8px;
-    color: var(--pink-muted);
+    font-size: var(--text-min);
+    color: var(--pink-on-dark);
     line-height: 1;
 }
 
@@ -1783,10 +1794,10 @@
         max-width: 33ch;
         font-size: 12px;
     }
-.footer-final h4,
+.footer-final h3,
     .footer-mission-title {
         margin-bottom: 12px;
-        font-size: 9.5px;
+        font-size: var(--text-min);
     }
 .footer-col-links a,
     .social-link-item,
