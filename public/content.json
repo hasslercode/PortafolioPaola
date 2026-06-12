@@ -9,8 +9,12 @@
   },
   "header": {
     "logoAriaLabel": "Paola Hoyos — Estrategia, Storytelling y Resultados",
-    "logoName": "Paola Hoyos",
-    "taglineWords": ["Estrategia", "Storytelling", "Resultados"],
+    "logoName": "Paola Hoyosss",
+    "taglineWords": [
+      "Estrategia",
+      "Storytelling",
+      "Resultados"
+    ],
     "menuOpenLabel": "Abrir menu",
     "menuCloseLabel": "Cerrar menu",
     "nav": {
@@ -176,12 +180,30 @@
     "descriptionBefore": "Dominio técnico y optimización de plataformas clave indispensables para la conceptualización, edición avanzada y distribución estratégica de contenido digital con",
     "descriptionAccent": "alto impacto comercial.",
     "items": [
-      { "name": "Adobe Premiere Pro", "percentage": "80 %" },
-      { "name": "Adobe After Effects", "percentage": "75 %" },
-      { "name": "Canva", "percentage": "90 %" },
-      { "name": "CapCut", "percentage": "100 %" },
-      { "name": "Meta y Google Ads", "percentage": "60 %" },
-      { "name": "Inglés", "percentage": "80 %" }
+      {
+        "name": "Adobe Premiere Pro",
+        "percentage": "80 %"
+      },
+      {
+        "name": "Adobe After Effects",
+        "percentage": "75 %"
+      },
+      {
+        "name": "Canva",
+        "percentage": "90 %"
+      },
+      {
+        "name": "CapCut",
+        "percentage": "100 %"
+      },
+      {
+        "name": "Meta y Google Ads",
+        "percentage": "60 %"
+      },
+      {
+        "name": "Inglés",
+        "percentage": "80 %"
+      }
     ]
   },
   "process": {
@@ -242,9 +264,15 @@
     },
     "socialTitle": "CONECTEMOS",
     "socials": [
-      { "name": "Instagram" },
-      { "name": "TikTok" },
-      { "name": "LinkedIn" }
+      {
+        "name": "Instagram"
+      },
+      {
+        "name": "TikTok"
+      },
+      {
+        "name": "LinkedIn"
+      }
     ],
     "missionTitle": "COMUNICACIÓN QUE CONECTA",
     "missionItems": [
