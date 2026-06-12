@@ -6,9 +6,17 @@
     var TEMP_USER = 'pahoyos';
     var TEMP_PASSWORD = 'Prada%gata100%';
     var AUTH_KEY = 'paola-content-editor-auth';
+    var GITHUB_TOKEN_KEY = 'paola-content-github-token';
 
     var CONTENT_URL = '../public/content.json';
     var SAVE_URL = '../api/content';
+
+    var GITHUB_REPO = {
+        owner: 'hasslercode',
+        repo: 'PortafolioPaola',
+        branch: 'main',
+        path: 'public/content.json'
+    };
 
     var loginScreen = document.getElementById('login-screen');
     var editorScreen = document.getElementById('editor-screen');
@@ -27,6 +35,119 @@
     var previewTimer = null;
     var contentLoaded = false;
     var formBuilt = false;
+
+    function isLocalDev() {
+        var host = window.location.hostname;
+        return host === 'localhost' || host === '127.0.0.1';
+    }
+
+    function isGitHubPages() {
+        return window.location.hostname.indexOf('github.io') !== -1;
+    }
+
+    function setupLoginUi() {
+        var tokenWrap = document.getElementById('github-token-wrap');
+        var tokenInput = document.getElementById('login-github-token');
+        if (!tokenWrap) {
+            return;
+        }
+        if (isGitHubPages()) {
+            tokenWrap.hidden = false;
+            if (tokenInput) {
+                tokenInput.required = true;
+            }
+        }
+    }
+
+    function getGitHubToken() {
+        return sessionStorage.getItem(GITHUB_TOKEN_KEY) || '';
+    }
+
+    function contentToBase64(content) {
+        var text = JSON.stringify(content, null, 2) + '\n';
+        var bytes = new TextEncoder().encode(text);
+        var binary = '';
+        bytes.forEach(function (byte) {
+            binary += String.fromCharCode(byte);
+        });
+        return btoa(binary);
+    }
+
+    async function getGitHubFileMeta(token) {
+        var url = 'https://api.github.com/repos/' + GITHUB_REPO.owner + '/' + GITHUB_REPO.repo +
+            '/contents/' + GITHUB_REPO.path + '?ref=' + GITHUB_REPO.branch;
+        var response = await fetch(url, {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': 'Bearer ' + token
+            }
+        });
+
+        if (!response.ok) {
+            var errorBody = await response.json().catch(function () {
+                return {};
+            });
+            if (response.status === 401) {
+                throw new Error('Token de GitHub inválido o expirado. Vuelve a iniciar sesión.');
+            }
+            throw new Error(errorBody.message || 'No se pudo leer el archivo en GitHub.');
+        }
+
+        return response.json();
+    }
+
+    async function saveViaLocal() {
+        var response = await fetch(SAVE_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(currentContent, null, 2)
+        });
+
+        if (!response.ok) {
+            var errorData = await response.json().catch(function () {
+                return { error: 'Error al guardar en el servidor local.' };
+            });
+            throw new Error(errorData.error || 'Error al guardar en el servidor local.');
+        }
+    }
+
+    async function saveViaGitHub() {
+        var token = getGitHubToken();
+        if (!token) {
+            throw new Error('Falta el token de GitHub. Cierra sesión e inicia de nuevo con el token de guardado.');
+        }
+
+        var meta = await getGitHubFileMeta(token);
+        var url = 'https://api.github.com/repos/' + GITHUB_REPO.owner + '/' + GITHUB_REPO.repo +
+            '/contents/' + GITHUB_REPO.path;
+
+        var response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: 'Update site content via config editor',
+                content: contentToBase64(currentContent),
+                sha: meta.sha,
+                branch: GITHUB_REPO.branch
+            })
+        });
+
+        if (!response.ok) {
+            var errorBody = await response.json().catch(function () {
+                return {};
+            });
+            if (response.status === 401) {
+                throw new Error('Token de GitHub inválido o expirado. Vuelve a iniciar sesión.');
+            }
+            throw new Error(errorBody.message || 'Error al guardar en GitHub.');
+        }
+    }
 
     function showLogin() {
         loginScreen.hidden = false;
@@ -248,27 +369,31 @@
         }
 
         try {
-            var response = await fetch(SAVE_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(currentContent, null, 2)
-            });
-
-            if (!response.ok) {
-                var errorData = await response.json().catch(function () {
-                    return { error: 'Error al guardar.' };
-                });
-                throw new Error(errorData.error || 'Error al guardar.');
+            if (isLocalDev()) {
+                await saveViaLocal();
+                setStatus('Cambios guardados correctamente (servidor local).', 'success');
+            } else if (isGitHubPages()) {
+                await saveViaGitHub();
+                setStatus('Cambios guardados y publicados en GitHub. El sitio se actualizará en 1-2 minutos.', 'success');
+            } else {
+                try {
+                    await saveViaLocal();
+                    setStatus('Cambios guardados correctamente.', 'success');
+                } catch (localError) {
+                    await saveViaGitHub();
+                    setStatus('Cambios guardados en GitHub.', 'success');
+                }
             }
 
             savedContent = cloneContent(currentContent);
             updateUnsavedState();
             sendPreview(currentContent);
-            setStatus('Cambios guardados correctamente.', 'success');
         } catch (error) {
-            setStatus(error.message, 'error');
+            if (isGitHubPages()) {
+                setStatus(error.message + ' Si no tienes token, pídeselo a quien administra el repositorio.', 'error');
+            } else {
+                setStatus(error.message, 'error');
+            }
         }
     }
 
@@ -305,6 +430,16 @@
         var password = document.getElementById('login-password').value;
 
         if (user === TEMP_USER && password === TEMP_PASSWORD) {
+            if (isGitHubPages()) {
+                var githubToken = document.getElementById('login-github-token').value.trim();
+                if (!githubToken) {
+                    loginError.hidden = false;
+                    loginError.textContent = 'En el sitio publicado necesitas el token de GitHub para guardar cambios.';
+                    return;
+                }
+                sessionStorage.setItem(GITHUB_TOKEN_KEY, githubToken);
+            }
+
             localStorage.setItem(AUTH_KEY, 'true');
             loginError.hidden = true;
             showEditor();
@@ -343,11 +478,22 @@
         }
     });
 
+    setupLoginUi();
+
     if (localStorage.getItem(AUTH_KEY) === 'true') {
-        showEditor();
-        loadContent().catch(function (error) {
-            setStatus(error.message, 'error');
-        });
+        if (isGitHubPages() && !getGitHubToken()) {
+            localStorage.removeItem(AUTH_KEY);
+            showLogin();
+            setStatus('Vuelve a iniciar sesión con tu token de GitHub para poder guardar.', 'error');
+        } else {
+            showEditor();
+            loadContent().catch(function (error) {
+                setStatus(error.message, 'error');
+            });
+            if (isGitHubPages()) {
+                setStatus('Modo publicado: los cambios se guardan directamente en GitHub.', 'success');
+            }
+        }
     } else {
         showLogin();
     }

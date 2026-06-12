@@ -21,6 +21,11 @@
             <input type="text" id="login-user" name="user" autocomplete="username" required>
             <label for="login-password">Contraseña</label>
             <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+            <div id="github-token-wrap" class="github-token-wrap" hidden>
+                <label for="login-github-token">Token de GitHub (para guardar)</label>
+                <input type="password" id="login-github-token" name="github-token" autocomplete="off" placeholder="ghp_...">
+                <p class="login-hint">Requerido en el sitio publicado para guardar cambios. Pídeselo a quien administra el repositorio.</p>
+            </div>
             <p id="login-error" class="login-error" hidden></p>
             <button type="submit" class="btn btn-primary">Entrar</button>
         </form>

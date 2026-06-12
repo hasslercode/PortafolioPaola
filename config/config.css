@@ -71,6 +71,17 @@ body {
     font-size: 0.9rem;
 }
 
+.github-token-wrap {
+    margin-bottom: 0.5rem;
+}
+
+.login-hint {
+    margin: 0 0 1rem;
+    font-size: 0.82rem;
+    color: #6b6560;
+    line-height: 1.4;
+}
+
 .editor-screen {
     flex-direction: column;
     height: 100vh;
