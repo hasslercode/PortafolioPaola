@@ -1,0 +1,18 @@
+{
+  "name": "Paola Hoyos — Estrategia Digital",
+  "short_name": "Paola Hoyos",
+  "description": "Portafolio de estrategia digital, contenido y gestión de redes sociales.",
+  "start_url": "/PortafolioPaola/",
+  "scope": "/PortafolioPaola/",
+  "display": "standalone",
+  "background_color": "#faf7f5",
+  "theme_color": "#faf7f5",
+  "lang": "es-CO",
+  "icons": [
+    {
+      "src": "/PortafolioPaola/icon-paola.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}

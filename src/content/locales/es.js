@@ -1,4 +1,4 @@
-{
+export default {
   "app": {
     "skipLink": "Saltar al contenido principal"
   },
@@ -196,11 +196,26 @@
       "titleAfter": "sin pauta publicitaria.",
       "ariaLabel": "Gráfica de crecimiento orgánico de 40K a 342K entre enero y mayo",
       "labels": [
-        { "value": "40K", "month": "Ene" },
-        { "value": "70K", "month": "Feb" },
-        { "value": "120K", "month": "Mar" },
-        { "value": "180K", "month": "Abr" },
-        { "value": "342K", "month": "May" }
+        {
+          "value": "40K",
+          "month": "Ene"
+        },
+        {
+          "value": "70K",
+          "month": "Feb"
+        },
+        {
+          "value": "120K",
+          "month": "Mar"
+        },
+        {
+          "value": "180K",
+          "month": "Abr"
+        },
+        {
+          "value": "342K",
+          "month": "May"
+        }
       ]
     },
     "contentBadge": "+ Contenido destacado",
@@ -448,4 +463,4 @@
       "closeLabel": "Cerrar portafolio"
     }
   }
-}
+};

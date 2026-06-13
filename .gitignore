@@ -14,7 +14,6 @@ yarn-error.log*
 
 # Dependencias
 node_modules/
-package-lock.json
 yarn.lock
 
 # Build y dist
