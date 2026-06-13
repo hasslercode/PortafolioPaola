@@ -38,7 +38,7 @@ export default function Services() {
         <div className="services-wow__header">
           <span className="badge-pill-wow" aria-hidden="true">{services.badge}</span>
           <div className="section-header-wow">
-            <span className="services-scrap services-scrap--heart" aria-hidden="true">♡</span>
+            <span className="services-scrap services-scrap--heart scrap-heart-shape" aria-hidden="true" />
             <div className="fluid-orbit-container">
               <div className="fluid-ellipse ellipse-1" />
               <div className="fluid-ellipse ellipse-2" />

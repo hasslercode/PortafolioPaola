@@ -71,7 +71,7 @@ export default function Hero({ onOpenContact }) {
           <div className="hero-right-premium">
             <div className="hero-image-composite">
               <span className="hero-scrap hero-scrap--tape" aria-hidden="true" />
-              <span className="hero-scrap hero-scrap--heart" aria-hidden="true">♡</span>
+              <span className="hero-scrap hero-scrap--heart scrap-heart-shape" aria-hidden="true" />
               <div className="premium-arch-backdrop" />
               <picture>
                 <source
@@ -115,7 +115,7 @@ export default function Hero({ onOpenContact }) {
         <div className="container">
           <div className="performance-bar-pill">
             <span className="perf-scrap perf-scrap--tape-pink" aria-hidden="true" />
-            <span className="perf-scrap perf-scrap--heart-outline" aria-hidden="true">♡</span>
+            <span className="perf-scrap perf-scrap--heart-outline scrap-heart-shape scrap-heart-shape--lavender" aria-hidden="true" />
             <div className="performance-bar-grid">
               {performance.items.map((item, index) => (
                 <div key={item.title} className="perf-item-premium">

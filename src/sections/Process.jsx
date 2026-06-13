@@ -42,7 +42,12 @@ export default function Process() {
                   <p>
                     <span>{step.descriptionBefore}</span>{' '}
                     <span className="step-highlight">{step.descriptionAccent}</span>
-                    {step.descriptionAfter ? <span>{step.descriptionAfter}</span> : null}
+                    {step.descriptionAfter ? (
+                      <>
+                        {' '}
+                        <span>{step.descriptionAfter}</span>
+                      </>
+                    ) : null}
                   </p>
                 </div>
               </FadeUp>

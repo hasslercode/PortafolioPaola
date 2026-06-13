@@ -442,6 +442,7 @@
     "portfolio": {
       "title": "Full portfolio",
       "download": "Download PDF",
+      "downloadFormat": "PDF file",
       "downloadAriaLabel": "Download full portfolio PDF",
       "iframeTitle": "Paola Hoyos Portfolio",
       "close": "Close",

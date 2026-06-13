@@ -33,10 +33,10 @@ export function ContactModal({ open, onClose }) {
     <dialog ref={dialogRef} className="contact-modal" id="contact-modal" aria-labelledby="contact-modal-title" onClose={onClose}>
       <div className="contact-modal__backdrop" onClick={onClose} />
       <div className="contact-modal__panel">
-        <span className="contact-modal__scrap contact-modal__scrap--heart-tl" aria-hidden="true">♡</span>
+        <span className="contact-modal__scrap contact-modal__scrap--heart-tl scrap-heart-shape" aria-hidden="true" />
         <span className="contact-modal__scrap contact-modal__scrap--sparkle-tl" aria-hidden="true">✦</span>
         <span className="contact-modal__scrap contact-modal__scrap--tape" aria-hidden="true" />
-        <span className="contact-modal__scrap contact-modal__scrap--heart-br" aria-hidden="true">♡</span>
+        <span className="contact-modal__scrap contact-modal__scrap--heart-br scrap-heart-shape" aria-hidden="true" />
         <span className="contact-modal__scrap contact-modal__scrap--sparkle-br" aria-hidden="true">✦</span>
         <span className="contact-modal__scrap contact-modal__scrap--grid" aria-hidden="true" />
 
@@ -130,7 +130,17 @@ export function PortfolioModal({ open, onClose }) {
 
         <div className="portfolio-modal__header">
           <h2 id="portfolio-modal-title">{modal.title}</h2>
-          <a href={portafolioPdf} download className="btn-pill-premium" aria-label={modal.downloadAriaLabel}>{modal.download}</a>
+          <a
+            href={portafolioPdf}
+            download="portafolio-paola-hoyos.pdf"
+            type="application/pdf"
+            className="btn-pill-premium"
+            aria-label={modal.downloadAriaLabel}
+            title={modal.downloadAriaLabel}
+          >
+            {modal.download}
+            <span className="sr-only"> ({modal.downloadFormat})</span>
+          </a>
         </div>
 
         <div className="portfolio-modal__content">

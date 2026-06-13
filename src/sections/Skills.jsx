@@ -33,7 +33,7 @@ export default function Skills() {
 
   return (
     <section className="skills-section-wow" id="competencias">
-      <span className="skills-scrap skills-scrap--heart skills-scrap--heart-1" aria-hidden="true">♡</span>
+      <span className="skills-scrap skills-scrap--heart skills-scrap--heart-1 scrap-heart-shape" aria-hidden="true" />
       <div className="container skills-grid-wow">
         <FadeUp className="skills-info-block" index={0}>
           <div className="skills-badge-wrap">

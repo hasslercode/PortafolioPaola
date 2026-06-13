@@ -770,3 +770,21 @@ html.theme-transition *::after {
 [data-theme="dark"] .results-proof__cta-disclaimer {
     color: var(--text-body);
 }
+
+[data-theme="dark"] .step-card {
+    background-color: var(--surface-panel);
+    border-color: rgba(232, 167, 179, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .step-body {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+[data-theme="dark"] .step-number {
+    background-color: rgba(61, 40, 48, 0.85);
+    border-color: rgba(232, 167, 179, 0.28);
+    box-shadow: none;
+}

@@ -126,7 +126,7 @@ export default function FeaturedBrands() {
                 <span className="featured-title__line">{experience.title}</span>
                 <span className="featured-script-row">
                   <span className="featured-script">{experience.titleScript}</span>
-                  <span className="featured-scrap featured-scrap--heart" aria-hidden="true">♡</span>
+                  <span className="featured-scrap featured-scrap--heart scrap-heart-shape" aria-hidden="true" />
                 </span>
               </h2>
               <h2 className="featured-title featured-title--mobile">

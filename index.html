@@ -107,14 +107,22 @@
     </script>
   </head>
   <body>
-    <noscript>
-      <p style="margin:1rem;font-family:system-ui,sans-serif;text-align:center;">
-        Este portafolio requiere JavaScript. Visita el perfil de
-        <a href="https://www.instagram.com/paolaahoyosc">Paola Hoyos en Instagram</a>
-        o escribe a <a href="mailto:pahoyoscardona@gmail.com">pahoyoscardona@gmail.com</a>.
-      </p>
-    </noscript>
+    <div id="static-fallback" class="static-fallback" role="status">
+      <main style="max-width:40rem;margin:2rem auto;padding:0 1.25rem;font-family:system-ui,sans-serif;line-height:1.6;color:#2d1e1b;">
+        <h1 style="font-size:1.5rem;margin:0 0 0.75rem;">Paola Hoyos</h1>
+        <p style="margin:0 0 1rem;">Estrategia digital, contenido y gestión de redes sociales.</p>
+        <p style="margin:0 0 1rem;">Este portafolio interactivo requiere JavaScript. Puedes contactarme por:</p>
+        <ul style="margin:0;padding-left:1.25rem;">
+          <li><a href="mailto:pahoyoscardona@gmail.com">pahoyoscardona@gmail.com</a></li>
+          <li><a href="tel:+573002493331">+57 300 249 3331</a></li>
+          <li><a href="https://www.instagram.com/paolaahoyosc">Instagram</a></li>
+        </ul>
+      </main>
+    </div>
     <div id="root"></div>
+    <script>
+      document.getElementById('static-fallback')?.remove();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
