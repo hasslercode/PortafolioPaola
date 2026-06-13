@@ -211,7 +211,7 @@ summary:focus-visible,
 .contact-modal__scrap--sparkle-tl {
     top: 14px;
     left: 48px;
-    font-size: 10px;
+    font-size: 11px;
     color: var(--pink-accent-text);
     opacity: 0.7;
 }
@@ -538,6 +538,24 @@ summary:focus-visible,
     font-weight: 900;
     letter-spacing: -0.5px;
     margin: 0;
+}
+
+.portfolio-modal__download {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.portfolio-modal__download-note {
+    font-family: var(--font-inter);
+    font-size: var(--text-min);
+    line-height: 1.35;
+    color: var(--text-muted);
+    margin: 0;
+    text-align: right;
+    max-width: 16rem;
 }
 
 .portfolio-modal__content {
@@ -3604,7 +3622,7 @@ body.modal-open {
 
 .results-proof__chart-value {
     font-family: var(--font-sans);
-    font-size: 11px;
+    font-size: var(--text-min);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     font-feature-settings: 'tnum' 1;
@@ -3615,7 +3633,7 @@ body.modal-open {
 
 .results-proof__chart-month {
     font-family: var(--font-inter);
-    font-size: 10px;
+    font-size: var(--text-min);
     font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -4930,7 +4948,7 @@ body.modal-open {
     position: absolute;
     top: 9px;
     right: 13px;
-    font-size: 10px;
+    font-size: 11px;
     color: var(--pink-accent-text);
     opacity: 0.7;
 }
@@ -5926,7 +5944,7 @@ body.modal-open {
         height: 14px;
     }
 .glass-metric-label {
-        font-size: 10px;
+        font-size: var(--text-min);
     }
 .results-item {
         gap: 10px;

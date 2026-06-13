@@ -458,6 +458,7 @@ export default {
       "title": "Portafolio completo",
       "download": "Descargar PDF",
       "downloadFormat": "archivo PDF",
+      "downloadNote": "Se descargará un documento PDF.",
       "downloadAriaLabel": "Descargar portafolio completo en PDF",
       "iframeTitle": "Portafolio Paola Hoyos",
       "close": "Cerrar",

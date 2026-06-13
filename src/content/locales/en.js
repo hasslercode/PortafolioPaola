@@ -458,6 +458,7 @@ export default {
       "title": "Full portfolio",
       "download": "Download PDF",
       "downloadFormat": "PDF file",
+      "downloadNote": "This will download a PDF document.",
       "downloadAriaLabel": "Download full portfolio PDF",
       "iframeTitle": "Paola Hoyos Portfolio",
       "close": "Close",

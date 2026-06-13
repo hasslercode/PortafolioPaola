@@ -510,11 +510,11 @@
     }
 
     .results-proof__chart-value {
-        font-size: 11px;
+        font-size: var(--text-min);
     }
 
     .results-proof__chart-month {
-        font-size: 11px;
+        font-size: var(--text-min);
     }
 
     .results-proof__stat > div > span {

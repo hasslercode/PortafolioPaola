@@ -130,17 +130,21 @@ export function PortfolioModal({ open, onClose }) {
 
         <div className="portfolio-modal__header">
           <h2 id="portfolio-modal-title">{modal.title}</h2>
-          <a
-            href={portafolioPdf}
-            download="portafolio-paola-hoyos.pdf"
-            type="application/pdf"
-            className="btn-pill-premium"
-            aria-label={modal.downloadAriaLabel}
-            title={modal.downloadAriaLabel}
-          >
-            {modal.download}
-            <span className="sr-only"> ({modal.downloadFormat})</span>
-          </a>
+          <div className="portfolio-modal__download">
+            <a
+              href={portafolioPdf}
+              download="portafolio-paola-hoyos.pdf"
+              type="application/pdf"
+              className="btn-pill-premium"
+              aria-label={modal.downloadAriaLabel}
+              aria-describedby="portfolio-download-note"
+            >
+              {modal.download}
+            </a>
+            <p id="portfolio-download-note" className="portfolio-modal__download-note">
+              {modal.downloadNote}
+            </p>
+          </div>
         </div>
 
         <div className="portfolio-modal__content">
