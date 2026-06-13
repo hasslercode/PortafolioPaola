@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import Header from './components/Header.jsx';
+import CursorSparkles from './components/CursorSparkles.jsx';
 import SectionDivider from './components/SectionDivider.jsx';
 import Hero from './sections/Hero.jsx';
 import { useI18n } from './context/I18nProvider.jsx';
@@ -93,6 +94,8 @@ export default function App() {
       <a href="#inicio" className="skip-link">
         {content.app.skipLink}
       </a>
+
+      <CursorSparkles />
 
       <Header onOpenContact={contactModal.openModal} onOpenPortfolio={portfolioModal.openModal} />
 
