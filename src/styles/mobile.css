@@ -67,18 +67,31 @@
 
     /* ——— Header ——— */
     .site-header-refined {
-        padding: 12px 0;
+        padding: 14px 0 16px;
         background-color: rgba(255, 251, 249, 0.94);
+    }
+
+    .nav-container-refined {
+        gap: 8px 10px;
     }
 
     .site-logo__lockup {
         font-size: clamp(22px, 5.8vw, 28px);
         padding-left: 14px;
+        padding-bottom: 0;
     }
 
     .site-logo__tagline {
-        font-size: 12px;
-        letter-spacing: 0.08em;
+        font-size: 10.5px;
+        letter-spacing: 0.05em;
+        padding-left: 14px;
+        margin-top: 0;
+        line-height: 1.4;
+    }
+
+    .header-prefs--bar,
+    .menu-toggle-refined {
+        margin-top: 4px;
     }
 
     .menu-toggle-refined {
@@ -91,7 +104,7 @@
 
     /* ——— Hero ——— */
     .hero-premium-wrapper {
-        background-color: #fff7f8;
+        background-color: var(--hero-bg);
         padding-bottom: 24px;
     }
 
@@ -483,7 +496,7 @@
         text-align: left;
         gap: 12px;
         padding: 10px 12px;
-        background-color: rgba(250, 247, 245, 0.85);
+        background-color: var(--surface-inset);
         border-radius: 12px;
     }
 
@@ -681,7 +694,7 @@
         flex-direction: row;
         align-items: stretch;
         gap: 0;
-        background: #fff;
+        background: var(--surface-panel);
         border-radius: 18px;
         padding: 16px 8px;
         border: 1px solid rgba(240, 128, 152, 0.08);
@@ -795,11 +808,16 @@
     .services-grid-wow {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0;
-        background: #fff;
+        background: var(--surface-panel);
         border-radius: 24px;
         overflow: hidden;
         box-shadow: 0 8px 28px rgba(45, 30, 27, 0.05);
         border: 1px solid rgba(240, 128, 152, 0.08);
+    }
+
+    .service-card-wow:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        border-right: none;
     }
 
     .service-card-wow {

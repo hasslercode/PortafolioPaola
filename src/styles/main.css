@@ -34,6 +34,9 @@
     --text-body: #4A3E3C;
     --skill-track-bg: #EDE2DE;
     --performance-bar-bg: #F7F2EE;
+    --hero-bg: #fff7f8;
+    --surface-inset: rgba(250, 247, 245, 0.85);
+    --surface-panel: #ffffff;
     --modal-backdrop: rgba(35, 24, 22, 0.58);
     --modal-backdrop-portfolio: rgba(35, 24, 22, 0.55);
     --iframe-bg: #262626;
@@ -838,24 +841,52 @@ summary:focus-visible,
         grid-template-columns: minmax(0, 1fr) auto auto;
         grid-template-areas:
             "logo controls menu"
+            "tagline tagline tagline"
             "panel panel panel";
-        align-items: center;
-        gap: 8px 10px;
+        align-items: start;
+        gap: 10px 12px;
     }
 
     .logo-box-refined {
+        display: contents;
+    }
+
+    .site-logo {
         grid-area: logo;
+        align-self: start;
+        padding-bottom: 0;
+    }
+
+    .site-logo__lockup {
+        padding-bottom: 0;
+    }
+
+    .site-logo__tagline {
+        grid-area: tagline;
+        width: 100%;
+        padding-left: 14px;
+        margin-top: -2px;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        line-height: 1.35;
+        white-space: normal;
+        flex-wrap: wrap;
+        row-gap: 2px;
     }
 
     .header-prefs--bar {
         grid-area: controls;
         justify-self: end;
+        align-self: start;
+        margin-top: 6px;
     }
 
     .menu-toggle-refined {
         display: inline-flex;
         grid-area: menu;
         justify-self: end;
+        align-self: start;
+        margin-top: 6px;
     }
 
     .header-menu-panel {
@@ -891,7 +922,9 @@ summary:focus-visible,
 
 .logo-box-refined {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     flex-shrink: 0;
     overflow: visible;
 }
@@ -1003,11 +1036,12 @@ summary:focus-visible,
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     gap: 0.35em;
+    padding-left: 16px;
     font-family: var(--font-sans);
-    font-size: max(var(--text-min), 0.215em);
+    font-size: var(--text-min);
     font-weight: 600;
     letter-spacing: 0.055em;
     text-transform: uppercase;
@@ -1813,16 +1847,17 @@ summary:focus-visible,
         padding: 0 18px;
     }
 .site-header-refined {
-        padding: 10px 0 12px;
+        padding: 12px 0 14px;
     }
 .nav-container-refined {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto auto;
         grid-template-areas:
             "logo controls menu"
+            "tagline tagline tagline"
             "panel panel panel";
-        align-items: center;
-        gap: 8px 10px;
+        align-items: start;
+        gap: 10px 12px;
     }
 .site-logo {
         min-width: 0;
@@ -3761,7 +3796,7 @@ body.modal-open {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 20px 28px;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: var(--surface-panel);
     border-radius: 18px;
     padding: 16px 20px;
     border: 1px solid rgba(240, 128, 152, 0.1);
@@ -3889,7 +3924,7 @@ body.modal-open {
         text-align: left;
         gap: 12px;
         padding: 10px 12px;
-        background-color: rgba(250, 247, 245, 0.8);
+        background-color: var(--surface-inset);
         border-radius: 12px;
     }
 
@@ -4739,7 +4774,7 @@ body.modal-open {
     position: relative;
     width: 100%;
     padding-bottom: 36px;
-    background-color: #fff7f8;
+    background-color: var(--hero-bg);
 }
 
 .hero-premium-section {
@@ -4850,7 +4885,7 @@ body.modal-open {
     font-size: clamp(16px, 4.8vw, 24px);
     line-height: 1.1;
     letter-spacing: -0.4px;
-    color: #1a1a1a;
+    color: var(--text-dark);
     margin-bottom: 8px;
     text-transform: none;
     position: relative;
@@ -5090,7 +5125,7 @@ body.modal-open {
 
 .performance-bar-pill {
     position: relative;
-    background: #ffffff;
+    background: var(--surface-panel);
     border-radius: 60px;
     padding: 30px 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);

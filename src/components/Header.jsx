@@ -88,21 +88,21 @@ export default function Header({ onOpenContact, onOpenPortfolio }) {
                 <svg className="site-logo__swirl-svg site-logo__swirl-svg--front" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 36" preserveAspectRatio="none" aria-hidden="true">
                   <path className="site-logo__swirl" d="M36 18H278" />
                 </svg>
-                <span className="site-logo__tagline" aria-hidden="true">
-                  {header.taglineWords.map((word, index) => (
-                    <span key={word}>
-                      <span className="site-logo__tagline-word">{word}</span>
-                      {index < header.taglineWords.length - 1 && (
-                        <svg className="site-logo__sep" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true">
-                          <path d="M5 .6 5.6 3.6 8.6 4.2 5.6 4.8 5 7.8 4.4 4.8 1.4 4.2 4.4 3.6Z" />
-                        </svg>
-                      )}
-                    </span>
-                  ))}
-                </span>
               </span>
             </span>
           </a>
+          <span className="site-logo__tagline" aria-hidden="true">
+            {header.taglineWords.map((word, index) => (
+              <span key={word}>
+                <span className="site-logo__tagline-word">{word}</span>
+                {index < header.taglineWords.length - 1 && (
+                  <svg className="site-logo__sep" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true">
+                    <path d="M5 .6 5.6 3.6 8.6 4.2 5.6 4.8 5 7.8 4.4 4.8 1.4 4.2 4.4 3.6Z" />
+                  </svg>
+                )}
+              </span>
+            ))}
+          </span>
         </div>
 
         {compactHeader ? (

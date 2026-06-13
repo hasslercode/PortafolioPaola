@@ -23,6 +23,9 @@
     --footer-dark: #0c0a09;
     --skill-track-bg: #2a2220;
     --performance-bar-bg: #1a1514;
+    --hero-bg: #12100f;
+    --surface-inset: rgba(42, 32, 30, 0.92);
+    --surface-panel: rgba(30, 24, 22, 0.96);
     --white: #1e1816;
     --modal-backdrop: rgba(0, 0, 0, 0.72);
     --modal-backdrop-portfolio: rgba(0, 0, 0, 0.68);
@@ -665,4 +668,105 @@ html.theme-transition *::after {
 [data-theme="dark"] ::selection {
     background: rgba(232, 167, 179, 0.35);
     color: #fff;
+}
+
+/* Hero — fondo y textos legibles en móvil */
+[data-theme="dark"] .hero-premium-wrapper {
+    background-color: var(--hero-bg);
+}
+
+[data-theme="dark"] .hero-premium-tagline {
+    color: var(--text-body);
+}
+
+[data-theme="dark"] .hero-premium-tagline span.cursive-glow,
+[data-theme="dark"] .hero-title-accent,
+[data-theme="dark"] .pink-accent-bold {
+    color: var(--pink-accent-text);
+}
+
+[data-theme="dark"] .hero-left-premium .btn-wow-action {
+    color: var(--btn-text-on-pink);
+}
+
+/* Performance bar — iconos visibles sobre chips pastel */
+[data-theme="dark"] .perf-icon-box svg {
+    fill: var(--pink-accent-text);
+}
+
+[data-theme="dark"] .perf-text-group__title {
+    color: var(--text-dark);
+}
+
+/* KPI secundarios — tarjetas inset en móvil */
+[data-theme="dark"] .results-proof__stat {
+    background-color: var(--surface-inset);
+    border: 1px solid rgba(232, 167, 179, 0.1);
+}
+
+[data-theme="dark"] .results-proof__stat strong {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .results-proof__stat > div > span {
+    color: var(--text-body);
+}
+
+/* Barra de confianza móvil */
+[data-theme="dark"] .results-proof__trust {
+    background: var(--surface-panel);
+    border-color: rgba(232, 167, 179, 0.12);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .results-proof__trust-item:not(:last-child) {
+    border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .results-proof__trust-icon {
+    background-color: rgba(255, 186, 198, 0.18);
+    color: var(--pink-accent-text);
+}
+
+[data-theme="dark"] .results-proof__trust-icon--lavender {
+    background-color: rgba(200, 186, 228, 0.16);
+    color: #c4b5e8;
+}
+
+/* Servicios — grid móvil sin hueco blanco */
+[data-theme="dark"] .services-grid-wow {
+    background: var(--surface-panel);
+    border-color: rgba(232, 167, 179, 0.12);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .service-card-wow {
+    border-right-color: rgba(255, 255, 255, 0.06);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .service-icon-wrap {
+    background-color: rgba(232, 167, 179, 0.28);
+}
+
+[data-theme="dark"] .service-icon-wrap svg {
+    fill: var(--pink-accent-text);
+}
+
+[data-theme="dark"] .service-title-script {
+    color: var(--pink-accent-text);
+}
+
+/* CTA panel resultados (móvil) */
+[data-theme="dark"] .results-proof__cta-panel {
+    background: linear-gradient(145deg, #3a2a2e 0%, #2a1e22 100%);
+    border: 1px solid rgba(232, 167, 179, 0.14);
+}
+
+[data-theme="dark"] .results-proof__cta-script {
+    color: var(--pink-accent-text);
+}
+
+[data-theme="dark"] .results-proof__cta-disclaimer {
+    color: var(--text-body);
 }
