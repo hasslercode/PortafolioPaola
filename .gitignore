@@ -35,3 +35,6 @@ Thumbs.db
 *.tmp
 temp/
 .vercel
+# audit-loop workspace
+.audit-loop/
+audit-loop.adapter.js

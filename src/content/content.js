@@ -4,11 +4,11 @@ export default {
   },
   "meta": {
     "title": "Paola Hoyos | Estrategia Digital, Contenido y Gestión de Redes",
-    "description": "Portafolio oficial de Paola Hoyos: estratega digital y comunicadora social. Servicios de gestión de redes, contenido, storytelling y campañas enfocadas en crecimiento y conversión.",
+    "description": "Estratega digital freelance: estrategia, contenido, gestión de redes, storytelling y campañas para marcas que convierten audiencia en clientes leales.",
     "ogTitle": "Paola Hoyos | Estrategia Digital, Contenido y Gestión de Redes",
-    "ogDescription": "Estrategia digital, storytelling y creación de contenido para convertir audiencia en comunidad activa y rentable.",
+    "ogDescription": "Estrategia digital, contenido, gestión de redes, storytelling y campañas para marcas que convierten audiencia en clientes leales.",
     "twitterTitle": "Paola Hoyos | Estrategia Digital, Contenido y Gestión de Redes",
-    "twitterDescription": "Portafolio y servicios de estrategia digital, contenido y gestión de redes para marcas que buscan crecer con resultados reales."
+    "twitterDescription": "Estrategia, contenido, gestión de redes, storytelling y campañas para marcas que convierten audiencia en clientes leales."
   },
   "header": {
     "logoAriaLabel": "Paola Hoyos — Estrategia, Storytelling y Resultados",
@@ -43,13 +43,13 @@ export default {
   "hero": {
     "taglineLine1": "MÁS ALLÁ DEL ALGORITMO: CONEXIONES HUMANAS,",
     "taglineAccent": "resultados reales",
-    "titleLine1": "Deja de copiar.",
-    "titleLine2Prefix": "Empieza a",
-    "titleLine2Accent": "liderar.",
-    "descriptionBefore": "No necesitas estar en todas partes; necesitas estar donde realmente importa. Diseño estrategias digitales a medida y storytelling de alto impacto que transforman espectadores pasivos en una",
+    "titleLine1": "Estrategia y contenido",
+    "titleLine2Prefix": "que convierten tu audiencia en",
+    "titleLine2Accent": "clientes leales.",
+    "descriptionBefore": "Para marcas y emprendedores que publican sin retorno en redes: diseño estrategia digital, contenido y campañas con storytelling que transforman espectadores pasivos en una",
     "descriptionAccent": "comunidad activa y rentable.",
-    "cta": "Impulsa tu marca ahora",
-    "ctaAriaLabel": "Impulsa tu marca ahora — abrir contacto",
+    "cta": "Solicita tu estrategia digital",
+    "ctaAriaLabel": "Solicita tu estrategia digital — abrir contacto",
     "imageAlt": "Paola Hoyos, estratega digital y comunicadora social",
     "metricValue": "+3.8M",
     "metricLabel": "Impacto y alcance orgánico",
@@ -395,8 +395,8 @@ export default {
     "titleSerif": "siguiente nivel?",
     "descriptionBefore": "Trabajemos juntas para crear estrategias digitales que conecten con tu audiencia y generen",
     "descriptionAccent": "resultados reales.",
-    "cta": "Hablemos ✦",
-    "ctaAriaLabel": "Hablemos — abrir contacto",
+    "cta": "Agenda consulta gratuita ✦",
+    "ctaAriaLabel": "Agenda consulta gratuita — abrir contacto",
     "email": "pahoyoscardona@gmail.com",
     "phone": "300 249 3331"
   },

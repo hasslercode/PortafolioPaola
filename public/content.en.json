@@ -4,11 +4,11 @@
   },
   "meta": {
     "title": "Paola Hoyos | Digital Strategy, Content & Social Media Management",
-    "description": "Official portfolio of Paola Hoyos: digital strategist and social communicator. Social media management, content, storytelling, and campaigns focused on growth and conversion.",
+    "description": "Freelance digital strategist: strategy, content, social media management, storytelling, and campaigns for brands that turn audience into loyal customers.",
     "ogTitle": "Paola Hoyos | Digital Strategy, Content & Social Media Management",
-    "ogDescription": "Digital strategy, storytelling, and content creation to turn audiences into an active, profitable community.",
+    "ogDescription": "Digital strategy, content, social media management, storytelling, and campaigns for brands that turn audience into loyal customers.",
     "twitterTitle": "Paola Hoyos | Digital Strategy, Content & Social Media Management",
-    "twitterDescription": "Portfolio and services in digital strategy, content, and social media management for brands seeking real growth."
+    "twitterDescription": "Strategy, content, social media management, storytelling, and campaigns for brands that turn audience into loyal customers."
   },
   "header": {
     "logoAriaLabel": "Paola Hoyos — Strategy, Storytelling & Results",
@@ -43,13 +43,13 @@
   "hero": {
     "taglineLine1": "BEYOND THE ALGORITHM: HUMAN CONNECTIONS,",
     "taglineAccent": "real results",
-    "titleLine1": "Stop copying.",
-    "titleLine2Prefix": "Start",
-    "titleLine2Accent": "leading.",
-    "descriptionBefore": "You don't need to be everywhere; you need to be where it truly matters. I design tailored digital strategies and high-impact storytelling that turn passive viewers into an",
+    "titleLine1": "Strategy and content",
+    "titleLine2Prefix": "that turn your audience into",
+    "titleLine2Accent": "loyal customers.",
+    "descriptionBefore": "For brands and entrepreneurs posting without returns on social: I design digital strategy, content, and campaigns with storytelling that turn passive viewers into an",
     "descriptionAccent": "active, profitable community.",
-    "cta": "Boost your brand now",
-    "ctaAriaLabel": "Boost your brand now — open contact",
+    "cta": "Request your digital strategy",
+    "ctaAriaLabel": "Request your digital strategy — open contact",
     "imageAlt": "Paola Hoyos, digital strategist and social communicator",
     "metricValue": "+3.8M",
     "metricLabel": "Organic impact and reach",
@@ -380,8 +380,8 @@
     "titleSerif": "next level?",
     "descriptionBefore": "Let's work together to create digital strategies that connect with your audience and deliver",
     "descriptionAccent": "real results.",
-    "cta": "Let's talk ✦",
-    "ctaAriaLabel": "Let's talk — open contact",
+    "cta": "Book a free consultation ✦",
+    "ctaAriaLabel": "Book a free consultation — open contact",
     "email": "pahoyoscardona@gmail.com",
     "phone": "300 249 3331"
   },
