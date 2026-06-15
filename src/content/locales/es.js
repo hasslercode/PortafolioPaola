@@ -3,12 +3,12 @@ export default {
     "skipLink": "Saltar al contenido principal"
   },
   "meta": {
-    "title": "Paola Hoyos | Estrategia Digital, Contenido y Gestión de Redes",
-    "description": "Estratega digital freelance: estrategia, contenido, gestión de redes, storytelling y campañas para marcas que convierten audiencia en clientes leales.",
-    "ogTitle": "Paola Hoyos | Estrategia Digital, Contenido y Gestión de Redes",
-    "ogDescription": "Estrategia digital, contenido, gestión de redes, storytelling y campañas para marcas que convierten audiencia en clientes leales.",
-    "twitterTitle": "Paola Hoyos | Estrategia Digital, Contenido y Gestión de Redes",
-    "twitterDescription": "Estrategia, contenido, gestión de redes, storytelling y campañas para marcas que convierten audiencia en clientes leales."
+    "title": "Paola Hoyos | Estrategia, contenido, redes y campañas",
+    "description": "Paola Hoyos convierte tu audiencia en clientes leales con estrategia digital y contenido: más ventas, conversión y crecimiento sostenible para tu marca.",
+    "ogTitle": "Paola Hoyos | Estrategia, contenido, redes y campañas",
+    "ogDescription": "Paola Hoyos convierte tu audiencia en clientes leales con estrategia digital y contenido: más ventas, conversión y crecimiento sostenible para tu marca.",
+    "twitterTitle": "Paola Hoyos | Estrategia, contenido, redes y campañas",
+    "twitterDescription": "Paola Hoyos convierte tu audiencia en clientes leales con estrategia digital y contenido: más ventas, conversión y crecimiento sostenible para tu marca."
   },
   "header": {
     "logoAriaLabel": "Paola Hoyos — Estrategia, Storytelling y Resultados",
@@ -46,10 +46,10 @@ export default {
     "titleLine1": "Estrategia y contenido",
     "titleLine2Prefix": "que convierten tu audiencia en",
     "titleLine2Accent": "clientes leales.",
-    "descriptionBefore": "Para marcas y emprendedores que publican sin retorno en redes: diseño estrategia digital, contenido y campañas con storytelling que transforman espectadores pasivos en una",
-    "descriptionAccent": "comunidad activa y rentable.",
-    "cta": "Solicita tu estrategia digital",
-    "ctaAriaLabel": "Solicita tu estrategia digital — abrir contacto",
+    "descriptionBefore": "Para marcas y emprendedores sin conversión en redes: diseño estrategia digital, contenido y campañas con storytelling que transforman audiencia en",
+    "descriptionAccent": "clientes leales, ventas y crecimiento real.",
+    "cta": "Agenda consulta estratégica ✦",
+    "ctaAriaLabel": "Agenda consulta estratégica gratuita — abrir contacto",
     "imageAlt": "Paola Hoyos, estratega digital y comunicadora social",
     "metricValue": "+3.8M",
     "metricLabel": "Impacto y alcance orgánico",

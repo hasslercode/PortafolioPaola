@@ -38,3 +38,4 @@ temp/
 # audit-loop workspace
 .audit-loop/
 audit-loop.adapter.js
+.cursor/
