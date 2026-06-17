@@ -257,12 +257,21 @@
     .hero-image-composite {
         width: 100%;
         max-width: 100%;
-        height: min(56vw, 260px);
+        height: auto;
         margin: 0;
         filter: none;
         border-radius: 22px;
         overflow: hidden;
         position: relative;
+        display: block;
+        align-items: stretch;
+        justify-content: stretch;
+    }
+
+    .hero-image-composite picture {
+        display: block;
+        width: 100%;
+        line-height: 0;
     }
 
     .premium-arch-backdrop {
@@ -270,15 +279,22 @@
     }
 
     .hero-img-premium {
-        position: relative;
+        position: static;
         inset: auto;
         left: auto;
+        bottom: auto;
         transform: none;
         width: 100%;
-        height: 100%;
+        height: auto;
+        max-height: none;
         border-radius: 22px;
-        object-fit: cover;
+        object-fit: initial;
         object-position: center top;
+        transition: none;
+    }
+
+    .hero-image-composite:hover .hero-img-premium {
+        transform: none;
     }
 
     .metrics-card-glassmorphism--hero {
@@ -1136,12 +1152,6 @@
     .hero-premium-description--mobile {
         font-size: 13px;
         margin-bottom: 12px;
-    }
-
-    .hero-image-composite {
-        width: 100%;
-        max-width: 100%;
-        height: min(54vw, 240px);
     }
 
     .results-proof__trust-item {
