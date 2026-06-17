@@ -3,12 +3,12 @@
     "skipLink": "Skip to main content"
   },
   "meta": {
-    "title": "Paola Hoyos | Digital Strategy, Content & Social Media Management",
-    "description": "Freelance digital strategist: strategy, content, social media management, storytelling, and campaigns for brands that turn audience into loyal customers.",
-    "ogTitle": "Paola Hoyos | Digital Strategy, Content & Social Media Management",
-    "ogDescription": "Digital strategy, content, social media management, storytelling, and campaigns for brands that turn audience into loyal customers.",
-    "twitterTitle": "Paola Hoyos | Digital Strategy, Content & Social Media Management",
-    "twitterDescription": "Strategy, content, social media management, storytelling, and campaigns for brands that turn audience into loyal customers."
+    "title": "Paola Hoyos | Digital Strategy, Storytelling & Organic Growth",
+    "description": "Digital strategy, content creation, and storytelling for brands, entrepreneurs, and businesses seeking real growth results.",
+    "ogTitle": "Paola Hoyos | Digital Strategy, Storytelling & Organic Growth",
+    "ogDescription": "Digital strategy, content creation, and storytelling for brands, entrepreneurs, and businesses seeking real growth results.",
+    "twitterTitle": "Paola Hoyos | Digital Strategy, Storytelling & Organic Growth",
+    "twitterDescription": "Digital strategy, content creation, and storytelling for brands, entrepreneurs, and businesses seeking real growth results."
   },
   "header": {
     "logoAriaLabel": "Paola Hoyos — Strategy, Storytelling & Results",
@@ -41,19 +41,61 @@
     "preferencesAriaLabel": "Language and theme preferences"
   },
   "hero": {
-    "taglineLine1": "BEYOND THE ALGORITHM: HUMAN CONNECTIONS,",
+    "taglineLine1": "FOR BRANDS AND ENTREPRENEURS POSTING WITHOUT CONVERSION:",
     "taglineAccent": "real results",
-    "titleLine1": "Strategy and content",
-    "titleLine2Prefix": "that turn your audience into",
-    "titleLine2Accent": "loyal customers.",
-    "descriptionBefore": "For brands and entrepreneurs posting without returns on social: I design digital strategy, content, and campaigns with storytelling that turn passive viewers into an",
-    "descriptionAccent": "active, profitable community.",
-    "cta": "Request your digital strategy",
-    "ctaAriaLabel": "Request your digital strategy — open contact",
+    "titleLine1": "Strategic content to",
+    "titleLine2Prefix": "grow without relying on",
+    "titleLine2Accent": "paid advertising.",
+    "subtitle": "From idea to outcome: storytelling that builds recognition, trust, and business opportunities.",
+    "descriptionBefore": "I help personal brands, local businesses, and teams stop posting randomly and build digital presence with",
+    "descriptionAccent": "recognition, trust, and measurable conversions.",
+    "cta": "Book a strategy call ✦",
+    "ctaAriaLabel": "Book a free strategy call — open contact",
     "imageAlt": "Paola Hoyos, digital strategist and social communicator",
     "metricValue": "+3.8M",
     "metricLabel": "Organic impact and reach",
-    "verticalLabel": "· STRATEGY · CONTENT · COMMUNITY · RESULTS"
+    "verticalLabel": "· STRATEGY · CONTENT · COMMUNITY · RESULTS",
+    "copyVariants": [
+      {
+        "label": "Version A — Direct conversion",
+        "titleLine1": "Digital strategy that turns",
+        "titleLine2Prefix": "your audience into",
+        "titleLine2Accent": "clients and opportunities.",
+        "subtitle": "I connect strategic content with business goals — so every post moves your audience closer to action."
+      },
+      {
+        "label": "Version B — Organic growth",
+        "titleLine1": "Strategic content to",
+        "titleLine2Prefix": "grow without relying on",
+        "titleLine2Accent": "paid advertising.",
+        "subtitle": "From idea to outcome: storytelling that builds recognition, trust, and business opportunities."
+      },
+      {
+        "label": "Version C — Clarity and purpose",
+        "titleLine1": "Stop posting randomly.",
+        "titleLine2Prefix": "Build digital presence with",
+        "titleLine2Accent": "purpose and metrics.",
+        "subtitle": "Strategy + content + measurable results = organic growth that drives your business."
+      }
+    ]
+  },
+  "targetAudience": {
+    "title": "Is this for you?",
+    "subtitle": "I work with profiles seeking concrete results, not just likes.",
+    "profiles": [
+      {
+        "title": "Personal Brands",
+        "description": "People who want to position themselves as references and generate business opportunities."
+      },
+      {
+        "title": "Local Businesses",
+        "description": "Companies that need to attract more clients through strategic content."
+      },
+      {
+        "title": "Companies & Brands",
+        "description": "Teams looking to strengthen digital presence and connection with their audience."
+      }
+    ]
   },
   "performance": {
     "items": [
@@ -83,9 +125,11 @@
     "titleMobileRest": " experiences",
     "logoAlt": "{{brand}} logo",
     "imageAlt": "Digital campaign for {{brand}} at Parque Alegra, Barranquilla",
+    "intro": "These brands were part of campaigns and content developed for Parque Alegra, a shopping center operated by Parque Arauco.",
     "copyBefore": "I've created strategic content to boost brands and experiences at Parque Alegra, a shopping center in Barranquilla, Colombia, owned by the Chilean multinational Parque Arauco, achieving results that translate into",
     "copyAccent": "visibility, engagement, and growth.",
     "note": "The brands mentioned here correspond to establishments featured in content and campaigns developed for Parque Alegra (Barranquilla, Colombia), operated by Parque Arauco. They do not represent a direct contractual relationship with Paola Hoyos.",
+    "noteLabel": "Transparency notice",
     "campaigns": [
       {
         "name": "Coca-Cola",
@@ -168,8 +212,23 @@
     "titleAfter": "my work",
     "descriptionBefore": "Over ",
     "descriptionAccent": "1.3 million organic views",
-    "descriptionAfter": " generated through authentic, strategic content focused on connecting with new audiences.",
-    "communityNote": "Content that turns experiences into results.",
+    "descriptionAfter": " that aren't just numbers: they represent brand recognition, built trust, and interactions that open doors to commercial conversions.",
+    "businessImpactTitle": "From reach metrics to business results",
+    "businessImpact": [
+      {
+        "title": "Reach = Recognition",
+        "description": "Reaching new audiences builds top of mind: your brand becomes visible before the client decides to buy."
+      },
+      {
+        "title": "Engagement = Trust",
+        "description": "Comments, saves, and conversations show real interest and build the credibility that precedes a sale."
+      },
+      {
+        "title": "Active community = Conversion",
+        "description": "An engaged audience multiplies the chances of inquiries, referrals, and business opportunities."
+      }
+    ],
+    "communityNote": "Every metric reflects a step toward concrete business results.",
     "note": "Real figures from the organic community I've been building on my channels since 2026.",
     "primaryKpi": {
       "value": "+1.3M",
@@ -179,15 +238,15 @@
     "secondaryKpis": [
       {
         "value": "95%",
-        "label": "Of reach comes from new audiences"
+        "label": "Of reach comes from new audiences — potential clients discovering your brand"
       },
       {
         "value": "48K+",
-        "label": "Real interactions generated"
+        "label": "Real interactions that strengthen trust and closeness with the audience"
       },
       {
         "value": "279K",
-        "label": "Best organic reel on Instagram"
+        "label": "Best organic piece — proof of content that sparks conversation and visibility"
       }
     ],
     "chart": {
@@ -196,11 +255,26 @@
       "titleAfter": "without paid ads.",
       "ariaLabel": "Organic growth chart from 40K to 342K between January and May",
       "labels": [
-        { "value": "40K", "month": "Jan" },
-        { "value": "70K", "month": "Feb" },
-        { "value": "120K", "month": "Mar" },
-        { "value": "180K", "month": "Apr" },
-        { "value": "342K", "month": "May" }
+        {
+          "value": "40K",
+          "month": "Jan"
+        },
+        {
+          "value": "70K",
+          "month": "Feb"
+        },
+        {
+          "value": "120K",
+          "month": "Mar"
+        },
+        {
+          "value": "180K",
+          "month": "Apr"
+        },
+        {
+          "value": "342K",
+          "month": "May"
+        }
       ]
     },
     "contentBadge": "+ Featured content",
@@ -249,21 +323,69 @@
     "trustItems": [
       {
         "title": "Real audience",
-        "subtitle": "No bought followers"
+        "subtitle": "Genuine people, not inflated numbers — a solid base for conversion"
       },
       {
         "title": "Organic reach",
-        "subtitle": "No paid advertising"
+        "subtitle": "Sustainable visibility without relying on ad spend"
       },
       {
         "title": "Active community",
-        "subtitle": "Thousands of real interactions"
+        "subtitle": "Interactions that turn attention into business opportunities"
       }
     ],
     "cta": "Let's work together",
     "ctaAriaLabel": "Let's work together — open contact",
     "ctaScript": "Ready to grow together?",
     "ctaDisclaimer": "Personalized response within 24 hours."
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "titleBefore": "What those who",
+    "titleScript": "trust me say",
+    "resultLabel": "Result:",
+    "items": [
+      {
+        "name": "María Camila Fernández",
+        "role": "Journalist · Senate of the Republic of Colombia",
+        "quote": "I worked with Paola at Bienestar Uninorte and was so impressed by her professionalism that I called her again for a furniture store project. Her strategy and execution are impeccable.",
+        "result": "Two separate projects — trust that goes beyond the first engagement"
+      },
+      {
+        "name": "Astrid García",
+        "role": "Experiences Executive · Mall Plaza Barranquilla",
+        "quote": "We were on the same team at Parque Arauco and Paola's work always stood out. Even after I left the company, I kept reaching out to recommend her for new projects.",
+        "result": "A professional reference that outlasts the working relationship"
+      },
+      {
+        "name": "Hassler Isaac",
+        "role": "Software Engineer · Bancolombia",
+        "quote": "Paola helped me grow @reydelvacile, an entertainment account on Instagram. Her campaign and strategy added over 10,000 real followers in a short time.",
+        "result": "+10,000 organic followers from a single strategy"
+      }
+    ]
+  },
+  "whyWorkWithMe": {
+    "title": "Why work with me?",
+    "subtitle": "I don't post for the sake of posting. Every decision has strategy behind it.",
+    "pillars": [
+      {
+        "title": "Strategy before publishing",
+        "description": "Every piece starts from a clear plan with business objectives, not passing trends."
+      },
+      {
+        "title": "Storytelling focused on human connection",
+        "description": "Authentic stories that generate empathy and move your audience to action."
+      },
+      {
+        "title": "Sustainable organic growth",
+        "description": "I build digital presence that grows without relying exclusively on paid advertising."
+      },
+      {
+        "title": "Decisions backed by metrics",
+        "description": "I analyze real results to optimize, scale, and demonstrate the value of every action."
+      }
+    ]
   },
   "services": {
     "badge": "Services",
@@ -378,10 +500,18 @@
     "titleScript": "Ready to take your brand",
     "titleBefore": "to the",
     "titleSerif": "next level?",
-    "descriptionBefore": "Let's work together to create digital strategies that connect with your audience and deliver",
-    "descriptionAccent": "real results.",
-    "cta": "Book a free consultation ✦",
-    "ctaAriaLabel": "Book a free consultation — open contact",
+    "descriptionBefore": "Book a free consultation and discover how digital strategy can generate",
+    "descriptionAccent": "real results for your business.",
+    "cta": "Book your free consultation ✦",
+    "ctaSubtext": "30 min · No commitment · 100% personalized",
+    "ctaAriaLabel": "Book free consultation — open contact",
+    "consultationTitle": "What's included in the consultation?",
+    "consultationItems": [
+      "Quick diagnosis of your digital presence.",
+      "Identification of growth opportunities.",
+      "Initial strategic recommendations.",
+      "Space to answer your questions."
+    ],
     "email": "pahoyoscardona@gmail.com",
     "phone": "300 249 3331"
   },

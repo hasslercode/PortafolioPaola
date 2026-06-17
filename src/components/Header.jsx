@@ -84,7 +84,7 @@ export default function Header({ onOpenContact, onOpenPortfolio }) {
                 <svg className="site-logo__swirl-svg site-logo__swirl-svg--back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 36" preserveAspectRatio="none" aria-hidden="true">
                   <path className="site-logo__swirl" d="M8 21C1 21-3 15-1 9C1 3 11 1 24 4C32 7 36 10 38 18" />
                 </svg>
-                <h1 className="site-logo__name">{header.logoName}</h1>
+                <span className="site-logo__name">{header.logoName}</span>
                 <svg className="site-logo__swirl-svg site-logo__swirl-svg--front" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 36" preserveAspectRatio="none" aria-hidden="true">
                   <path className="site-logo__swirl" d="M36 18H278" />
                 </svg>

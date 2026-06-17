@@ -3,12 +3,12 @@ export default {
     "skipLink": "Saltar al contenido principal"
   },
   "meta": {
-    "title": "Paola Hoyos | Estrategia, contenido, redes y campañas",
-    "description": "Paola Hoyos convierte tu audiencia en clientes leales con estrategia digital y contenido: más ventas, conversión y crecimiento sostenible para tu marca.",
-    "ogTitle": "Paola Hoyos | Estrategia, contenido, redes y campañas",
-    "ogDescription": "Paola Hoyos convierte tu audiencia en clientes leales con estrategia digital y contenido: más ventas, conversión y crecimiento sostenible para tu marca.",
-    "twitterTitle": "Paola Hoyos | Estrategia, contenido, redes y campañas",
-    "twitterDescription": "Paola Hoyos convierte tu audiencia en clientes leales con estrategia digital y contenido: más ventas, conversión y crecimiento sostenible para tu marca."
+    "title": "Paola Hoyos | Estrategia Digital, Storytelling y Crecimiento Orgánico",
+    "description": "Estrategia digital, creación de contenido y storytelling para marcas, emprendedores y negocios que buscan crecer con resultados reales.",
+    "ogTitle": "Paola Hoyos | Estrategia Digital, Storytelling y Crecimiento Orgánico",
+    "ogDescription": "Estrategia digital, creación de contenido y storytelling para marcas, emprendedores y negocios que buscan crecer con resultados reales.",
+    "twitterTitle": "Paola Hoyos | Estrategia Digital, Storytelling y Crecimiento Orgánico",
+    "twitterDescription": "Estrategia digital, creación de contenido y storytelling para marcas, emprendedores y negocios que buscan crecer con resultados reales."
   },
   "header": {
     "logoAriaLabel": "Paola Hoyos — Estrategia, Storytelling y Resultados",
@@ -41,19 +41,61 @@ export default {
     "preferencesAriaLabel": "Preferencias de idioma y tema"
   },
   "hero": {
-    "taglineLine1": "MÁS ALLÁ DEL ALGORITMO: CONEXIONES HUMANAS,",
+    "taglineLine1": "PARA MARCAS Y EMPRENDEDORES QUE PUBLICAN SIN CONVERSIÓN:",
     "taglineAccent": "resultados reales",
-    "titleLine1": "Estrategia y contenido",
-    "titleLine2Prefix": "que convierten tu audiencia en",
-    "titleLine2Accent": "clientes leales.",
-    "descriptionBefore": "Para marcas y emprendedores sin conversión en redes: diseño estrategia digital, contenido y campañas con storytelling que transforman audiencia en",
-    "descriptionAccent": "clientes leales, ventas y crecimiento real.",
+    "titleLine1": "Contenido estratégico para",
+    "titleLine2Prefix": "crecer sin depender de",
+    "titleLine2Accent": "pauta publicitaria.",
+    "subtitle": "De la idea al resultado: storytelling que genera reconocimiento, confianza y oportunidades comerciales.",
+    "descriptionBefore": "Ayudo a marcas personales, negocios locales y equipos a dejar de publicar al azar y construir presencia digital con",
+    "descriptionAccent": "reconocimiento, confianza y conversiones medibles.",
     "cta": "Agenda consulta estratégica ✦",
     "ctaAriaLabel": "Agenda consulta estratégica gratuita — abrir contacto",
     "imageAlt": "Paola Hoyos, estratega digital y comunicadora social",
     "metricValue": "+3.8M",
     "metricLabel": "Impacto y alcance orgánico",
-    "verticalLabel": "· ESTRATEGIA · CONTENIDO · COMUNIDAD · RESULTADOS"
+    "verticalLabel": "· ESTRATEGIA · CONTENIDO · COMUNIDAD · RESULTADOS",
+    "copyVariants": [
+      {
+        "label": "Versión A — Conversión directa",
+        "titleLine1": "Estrategia digital que convierte",
+        "titleLine2Prefix": "tu audiencia en",
+        "titleLine2Accent": "clientes y oportunidades.",
+        "subtitle": "Conecto contenido estratégico con objetivos de negocio — para que cada publicación acerque a tu audiencia a la acción."
+      },
+      {
+        "label": "Versión B — Crecimiento orgánico",
+        "titleLine1": "Contenido estratégico para",
+        "titleLine2Prefix": "crecer sin depender de",
+        "titleLine2Accent": "pauta publicitaria.",
+        "subtitle": "De la idea al resultado: storytelling que genera reconocimiento, confianza y oportunidades comerciales."
+      },
+      {
+        "label": "Versión C — Claridad y propósito",
+        "titleLine1": "Deja de publicar al azar.",
+        "titleLine2Prefix": "Construye presencia digital con",
+        "titleLine2Accent": "propósito y métricas.",
+        "subtitle": "Estrategia + contenido + resultados medibles = crecimiento orgánico que impulsa tu negocio."
+      }
+    ]
+  },
+  "targetAudience": {
+    "title": "¿Es esto para ti?",
+    "subtitle": "Trabajo con perfiles que buscan resultados concretos, no solo likes.",
+    "profiles": [
+      {
+        "title": "Marcas Personales",
+        "description": "Personas que desean posicionarse como referentes y generar oportunidades de negocio."
+      },
+      {
+        "title": "Negocios Locales",
+        "description": "Empresas que necesitan atraer más clientes mediante contenido estratégico."
+      },
+      {
+        "title": "Empresas y Marcas",
+        "description": "Equipos que buscan fortalecer presencia digital y conexión con su audiencia."
+      }
+    ]
   },
   "performance": {
     "items": [
@@ -83,9 +125,11 @@ export default {
     "titleMobileRest": " destacadas",
     "logoAlt": "Logotipo de {{brand}}",
     "imageAlt": "Campaña digital para {{brand}} en Parque Alegra, Barranquilla",
+    "intro": "Estas marcas hicieron parte de campañas y contenidos desarrollados para Parque Alegra, centro comercial operado por Parque Arauco.",
     "copyBefore": "He creado contenido estratégico para impulsar marcas y experiencias en Parque Alegra, centro comercial de Barranquilla, Colombia, perteneciente a la multinacional chilena Parque Arauco, logrando resultados que se traducen en",
     "copyAccent": "visibilidad, interacción y crecimiento.",
     "note": "Las marcas aquí mencionadas corresponden a establecimientos presentes en contenidos y campañas desarrolladas para Parque Alegra (Barranquilla, Colombia), operado por Parque Arauco. No representan una relación contractual directa con Paola Hoyos.",
+    "noteLabel": "Aviso de transparencia",
     "campaigns": [
       {
         "name": "Coca-Cola",
@@ -168,8 +212,23 @@ export default {
     "titleAfter": "mi trabajo",
     "descriptionBefore": "Más de ",
     "descriptionAccent": "1.3 millones de visualizaciones orgánicas",
-    "descriptionAfter": " generadas a través de contenido auténtico, estratégico y enfocado en conectar con nuevas audiencias.",
-    "communityNote": "Contenido que convierte experiencias en resultados.",
+    "descriptionAfter": " que no son solo números: representan reconocimiento de marca, confianza construida e interacciones que abren puertas a conversiones comerciales.",
+    "businessImpactTitle": "De métricas de alcance a resultados de negocio",
+    "businessImpact": [
+      {
+        "title": "Alcance = Reconocimiento",
+        "description": "Llegar a nuevas audiencias genera top of mind: tu marca se vuelve visible antes de que el cliente decida comprar."
+      },
+      {
+        "title": "Interacción = Confianza",
+        "description": "Comentarios, guardados y conversaciones demuestran interés real y construyen la credibilidad que precede a una venta."
+      },
+      {
+        "title": "Comunidad activa = Conversión",
+        "description": "Una audiencia comprometida multiplica las posibilidades de consultas, referidos y oportunidades comerciales."
+      }
+    ],
+    "communityNote": "Cada métrica refleja un paso hacia resultados empresariales concretos.",
     "note": "Cifras reales de la comunidad orgánica que llevo construyendo en mis redes desde 2026.",
     "primaryKpi": {
       "value": "+1.3M",
@@ -179,15 +238,15 @@ export default {
     "secondaryKpis": [
       {
         "value": "95%",
-        "label": "Del alcance proviene de nuevas audiencias"
+        "label": "Del alcance son nuevas audiencias — potenciales clientes descubriendo tu marca"
       },
       {
         "value": "48K+",
-        "label": "Interacciones reales generadas"
+        "label": "Interacciones reales que fortalecen confianza y cercanía con la audiencia"
       },
       {
         "value": "279K",
-        "label": "Mejor reel orgánico en Instagram"
+        "label": "Mejor pieza orgánica — prueba de contenido que genera conversación y visibilidad"
       }
     ],
     "chart": {
@@ -264,21 +323,69 @@ export default {
     "trustItems": [
       {
         "title": "Audiencia real",
-        "subtitle": "Sin seguidores comprados"
+        "subtitle": "Personas genuinas, no números inflados — base sólida para convertir"
       },
       {
         "title": "Alcance orgánico",
-        "subtitle": "Sin pauta publicitaria"
+        "subtitle": "Visibilidad sostenible sin depender de inversión publicitaria"
       },
       {
         "title": "Comunidad activa",
-        "subtitle": "Miles de interacciones reales"
+        "subtitle": "Interacciones que traducen atención en oportunidades de negocio"
       }
     ],
     "cta": "Trabajemos juntas",
     "ctaAriaLabel": "Trabajemos juntas — abrir contacto",
     "ctaScript": "¿Lista para crecer juntas?",
     "ctaDisclaimer": "Respuesta personalizada en menos de 24 horas."
+  },
+  "testimonials": {
+    "badge": "Testimonios",
+    "titleBefore": "Lo que dicen quienes",
+    "titleScript": "confían",
+    "resultLabel": "Resultado:",
+    "items": [
+      {
+        "name": "María Camila Fernández",
+        "role": "Periodista · Senado de la República de Colombia",
+        "quote": "Trabajé con Paola en Bienestar Uninorte y quedé tan impresionada con su profesionalismo que la llamé de nuevo para un proyecto de un establecimiento de muebles. Su estrategia y ejecución son impecables.",
+        "result": "Dos proyectos distintos — confianza que trasciende el primer encargo"
+      },
+      {
+        "name": "Astrid García",
+        "role": "Ejecutiva de Experiencias · Mall Plaza Barranquilla",
+        "quote": "Compartimos equipo en Parque Arauco y el trabajo de Paola siempre destacó. Aun después de irme de la empresa, seguí contactándola para referenciarla en nuevos proyectos.",
+        "result": "Referente profesional más allá de la relación laboral"
+      },
+      {
+        "name": "Hassler Isaac",
+        "role": "Ingeniero de Software · Bancolombia",
+        "quote": "Paola me ayudó en el crecimiento de @reydelvacile, una cuenta de entretenimiento en Instagram. Su campaña y estrategia sumaron más de 10 mil seguidores reales en poco tiempo.",
+        "result": "+10.000 seguidores orgánicos en una sola estrategia"
+      }
+    ]
+  },
+  "whyWorkWithMe": {
+    "title": "¿Por qué trabajar conmigo?",
+    "subtitle": "No publico por publicar. Cada decisión tiene estrategia detrás.",
+    "pillars": [
+      {
+        "title": "Estrategia antes que publicación",
+        "description": "Cada pieza nace de un plan claro con objetivos de negocio, no de tendencias pasajeras."
+      },
+      {
+        "title": "Storytelling orientado a conexión humana",
+        "description": "Historias auténticas que generan empatía y acercan a tu audiencia a la acción."
+      },
+      {
+        "title": "Crecimiento orgánico sostenible",
+        "description": "Construyo presencia digital que crece sin depender exclusivamente de pauta publicitaria."
+      },
+      {
+        "title": "Decisiones respaldadas por métricas",
+        "description": "Analizo resultados reales para optimizar, escalar y demostrar el valor de cada acción."
+      }
+    ]
   },
   "services": {
     "badge": "Servicios",
@@ -393,10 +500,18 @@ export default {
     "titleScript": "¿Lista para llevar tu marca",
     "titleBefore": "al",
     "titleSerif": "siguiente nivel?",
-    "descriptionBefore": "Trabajemos juntas para crear estrategias digitales que conecten con tu audiencia y generen",
-    "descriptionAccent": "resultados reales.",
-    "cta": "Agenda consulta gratuita ✦",
+    "descriptionBefore": "Agenda una consulta gratuita y descubre cómo la estrategia digital puede generar",
+    "descriptionAccent": "resultados reales para tu negocio.",
+    "cta": "Agenda tu consulta gratuita ✦",
+    "ctaSubtext": "30 min · Sin compromiso · 100% personalizada",
     "ctaAriaLabel": "Agenda consulta gratuita — abrir contacto",
+    "consultationTitle": "¿Qué incluye la consulta?",
+    "consultationItems": [
+      "Diagnóstico rápido de tu presencia digital.",
+      "Identificación de oportunidades de crecimiento.",
+      "Recomendaciones estratégicas iniciales.",
+      "Espacio para resolver dudas."
+    ],
     "email": "pahoyoscardona@gmail.com",
     "phone": "300 249 3331"
   },

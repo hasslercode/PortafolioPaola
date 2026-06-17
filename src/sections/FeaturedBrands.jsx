@@ -137,15 +137,19 @@ export default function FeaturedBrands() {
             </div>
           </FadeUp>
           <FadeUp className="featured-copy-block featured-copy-block--desktop" index={1}>
+            <p className="featured-intro">{experience.intro}</p>
             <p className="featured-copy">
               <span>{experience.copyBefore}</span>{' '}
               <span className="marker-highlight">{experience.copyAccent}</span>
             </p>
-            <div className="featured-note">
+            <aside className="featured-note featured-note--prominent" role="note" aria-label={experience.noteLabel}>
               <span className="featured-note-tape" aria-hidden="true" />
               <span className="featured-note-icon" aria-hidden="true">i</span>
-              <p>{experience.note}</p>
-            </div>
+              <div>
+                <span className="featured-note__label">{experience.noteLabel}</span>
+                <p>{experience.note}</p>
+              </div>
+            </aside>
           </FadeUp>
         </div>
 

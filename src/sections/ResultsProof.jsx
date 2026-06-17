@@ -51,7 +51,7 @@ export default function ResultsProof({ onOpenContact }) {
 
   const handleContactClick = (event) => {
     event.preventDefault();
-    onOpenContact();
+    onOpenContact('results_proof');
   };
 
   return (
@@ -143,9 +143,21 @@ export default function ResultsProof({ onOpenContact }) {
           </div>
         </FadeUp>
 
+        <FadeUp className="results-proof__business-impact" index={2}>
+          <h3 className="results-proof__business-title">{resultsProof.businessImpactTitle}</h3>
+          <div className="results-proof__business-grid">
+            {resultsProof.businessImpact.map((item) => (
+              <article key={item.title} className="results-proof__business-card">
+                <strong>{item.title}</strong>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </FadeUp>
+
         <p className="results-proof__community">{resultsProof.communityNote}</p>
 
-        <FadeUp className="results-proof__showcase" index={2}>
+        <FadeUp className="results-proof__showcase" index={3}>
           <header className="results-proof__showcase-header">
             <span className="results-proof__showcase-badge">{resultsProof.contentBadge}</span>
             <h2 className="results-proof__showcase-title">
@@ -186,7 +198,7 @@ export default function ResultsProof({ onOpenContact }) {
           </div>
         </FadeUp>
 
-        <FadeUp className="results-proof__bar" index={3}>
+        <FadeUp className="results-proof__bar" index={4}>
           <div className="results-proof__trust">
             {resultsProof.trustItems.map((item, index) => (
               <div key={item.title} className="results-proof__trust-item">

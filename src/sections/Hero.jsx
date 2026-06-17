@@ -33,21 +33,23 @@ export default function Hero({ onOpenContact }) {
 
   return (
     <div className="hero-premium-wrapper">
-      <section className="hero-premium-section" id="inicio">
+      <section className="hero-premium-section" id="inicio" aria-labelledby="hero-title">
         <div className="container hero-grid-premium">
           <div className="hero-left-premium">
-            <div className="hero-premium-tagline">
+            <p className="hero-premium-tagline">
               <span>{hero.taglineLine1}</span>
               <br className="hero-tagline-break" aria-hidden="true" />
               <span className="cursive-glow">{hero.taglineAccent}</span>
-            </div>
+            </p>
 
-            <h2 className="hero-premium-title">
-              <span>{hero.titleLine1}</span>
-              <br />
+            <h1 id="hero-title" className="hero-premium-title">
+              <span>{hero.titleLine1}</span>{' '}
+              <br className="hero-title-break" aria-hidden="true" />
               <span>{hero.titleLine2Prefix}</span>{' '}
               <span className="hero-title-accent">{hero.titleLine2Accent}</span>
-            </h2>
+            </h1>
+
+            <p className="hero-premium-subtitle">{hero.subtitle}</p>
 
             <p className="hero-premium-description">
               <span>{hero.descriptionBefore}</span>{' '}
@@ -56,7 +58,7 @@ export default function Hero({ onOpenContact }) {
 
             <div className="hero-cta-group">
               <a
-                href="#"
+                href="#contacto"
                 className="btn-pill btn-wow-action"
                 onClick={handleContactClick}
                 aria-haspopup="dialog"
