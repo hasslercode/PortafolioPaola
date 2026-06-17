@@ -12,6 +12,20 @@ const PERF_ICONS = [
   { className: 'perf-icon-box perf-icon-box--sage', path: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z' },
 ];
 
+function HeroMetricCard({ hero }) {
+  return (
+    <div className="metrics-card-glassmorphism metrics-card-glassmorphism--hero">
+      <div className="glass-icon-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" /></svg>
+      </div>
+      <div className="glass-metric-info">
+        <span className="glass-metric-value">{hero.metricValue}</span>
+        <span className="glass-metric-label">{hero.metricLabel}</span>
+      </div>
+    </div>
+  );
+}
+
 export default function Hero({ onOpenContact }) {
   const { content } = useI18n();
   const { hero, performance } = content;
@@ -36,11 +50,12 @@ export default function Hero({ onOpenContact }) {
       <section className="hero-premium-section" id="inicio" aria-labelledby="hero-title">
         <div className="container hero-grid-premium">
           <div className="hero-left-premium">
-            <p className="hero-premium-tagline">
+            <p className="hero-premium-tagline hero-premium-tagline--desktop">
               <span>{hero.taglineLine1}</span>
               <br className="hero-tagline-break" aria-hidden="true" />
               <span className="cursive-glow">{hero.taglineAccent}</span>
             </p>
+            <p className="hero-premium-tagline hero-premium-tagline--mobile">{hero.mobileTagline}</p>
 
             <h1 id="hero-title" className="hero-premium-title">
               <span>{hero.titleLine1}</span>{' '}
@@ -51,9 +66,14 @@ export default function Hero({ onOpenContact }) {
 
             <p className="hero-premium-subtitle">{hero.subtitle}</p>
 
-            <p className="hero-premium-description">
+            <p className="hero-premium-description hero-premium-description--desktop">
               <span>{hero.descriptionBefore}</span>{' '}
               <span className="pink-accent-bold">{hero.descriptionAccent}</span>
+            </p>
+
+            <p className="hero-premium-description hero-premium-description--mobile">
+              <span>{hero.mobileDescriptionBefore}</span>{' '}
+              <span className="pink-accent-bold">{hero.mobileDescriptionAccent}</span>
             </p>
 
             <div className="hero-cta-group">
@@ -67,6 +87,20 @@ export default function Hero({ onOpenContact }) {
                 <span>{hero.cta}</span>
                 <span className="btn-wow-action__sparkle" aria-hidden="true">✦</span>
               </a>
+            </div>
+
+            <div className="hero-social-proof">
+              <span className="hero-social-proof__avatars" aria-hidden="true">
+                <span className="hero-social-proof__avatar hero-social-proof__avatar--1" />
+                <span className="hero-social-proof__avatar hero-social-proof__avatar--2" />
+                <span className="hero-social-proof__avatar hero-social-proof__avatar--3" />
+                <span className="hero-social-proof__avatar hero-social-proof__avatar--4" />
+              </span>
+              <p className="hero-social-proof__text">
+                <span>{hero.socialProofBefore}</span>{' '}
+                <span className="hero-social-proof__accent">{hero.socialProofAccent}</span>{' '}
+                <span>{hero.socialProofAfter}</span>
+              </p>
             </div>
           </div>
 
@@ -83,7 +117,7 @@ export default function Hero({ onOpenContact }) {
                 />
                 <source
                   srcSet={`${HERO_IMG_WEBP_480} 480w, ${HERO_IMG_WEBP_720} 720w`}
-                  sizes="(max-width: 768px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   type="image/webp"
                 />
                 <img
@@ -96,18 +130,8 @@ export default function Hero({ onOpenContact }) {
                   decoding="async"
                 />
               </picture>
-              {showEnhancements ? (
-                <div className="metrics-card-glassmorphism">
-                  <div className="glass-icon-circle">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" /></svg>
-                  </div>
-                  <div className="glass-metric-info">
-                    <span className="glass-metric-value">{hero.metricValue}</span>
-                    <span className="glass-metric-label">{hero.metricLabel}</span>
-                  </div>
-                </div>
-              ) : null}
             </div>
+            {showEnhancements ? <HeroMetricCard hero={hero} /> : null}
             <div className="premium-vertical-label" aria-hidden="true">{hero.verticalLabel}</div>
           </div>
         </div>

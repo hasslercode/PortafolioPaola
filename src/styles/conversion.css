@@ -27,7 +27,30 @@
     }
 }
 
-/* ── Hero subtitle ── */
+/* ── Hero mobile/desktop visibility defaults ── */
+.hero-premium-tagline--mobile,
+.hero-premium-description--mobile,
+.hero-social-proof {
+    display: none;
+}
+
+.hero-premium-description--desktop {
+    display: block;
+}
+
+@media (min-width: 1101px) {
+    .hero-right-premium {
+        position: relative;
+    }
+
+    .metrics-card-glassmorphism--hero {
+        position: absolute;
+        bottom: 40px;
+        left: -24px;
+        z-index: 4;
+    }
+}
+
 .hero-premium-subtitle {
     font-family: var(--font-sans);
     font-size: clamp(14px, 2.2vw, 17px);
@@ -131,7 +154,7 @@
         max-height: 430px;
     }
 
-    .metrics-card-glassmorphism {
+    .metrics-card-glassmorphism--hero {
         bottom: 32px;
         left: -20px;
         max-width: 220px;
