@@ -131,10 +131,9 @@ export default {
     "titleMobileRest": " destacadas",
     "logoAlt": "Logotipo de {{brand}}",
     "imageAlt": "Campaña digital para {{brand}} en Parque Alegra, Barranquilla",
-    "intro": "Estas marcas hicieron parte de campañas y contenidos desarrollados para Parque Alegra, centro comercial operado por Parque Arauco.",
-    "copyBefore": "He creado contenido estratégico para impulsar marcas y experiencias en Parque Alegra, centro comercial de Barranquilla, Colombia, perteneciente a la multinacional chilena Parque Arauco, logrando resultados que se traducen en",
+    "copyBefore": "He creado contenido estratégico para impulsar marcas y experiencias en Parque Alegra (Barranquilla), centro comercial operado por Parque Arauco, logrando resultados que se traducen en",
     "copyAccent": "visibilidad, interacción y crecimiento.",
-    "note": "Las marcas aquí mencionadas corresponden a establecimientos presentes en contenidos y campañas desarrolladas para Parque Alegra (Barranquilla, Colombia), operado por Parque Arauco. No representan una relación contractual directa con Paola Hoyos.",
+    "note": "Estas marcas corresponden a establecimientos del centro comercial; no representan una relación contractual directa con Paola Hoyos.",
     "noteLabel": "Aviso de transparencia",
     "campaigns": [
       {

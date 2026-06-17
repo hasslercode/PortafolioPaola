@@ -137,7 +137,6 @@ export default function FeaturedBrands() {
             </div>
           </FadeUp>
           <FadeUp className="featured-copy-block featured-copy-block--desktop" index={1}>
-            <p className="featured-intro">{experience.intro}</p>
             <p className="featured-copy">
               <span>{experience.copyBefore}</span>{' '}
               <span className="marker-highlight">{experience.copyAccent}</span>
