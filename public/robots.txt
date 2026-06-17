@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hasslercode.github.io/PortafolioPaola/sitemap.xml
+Sitemap: https://www.paolahoyos.com/sitemap.xml

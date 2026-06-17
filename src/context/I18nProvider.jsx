@@ -1,5 +1,10 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { defaultLocale, formatTemplate, locales } from '../content/index.js';
+import {
+  OG_IMAGE_ALT,
+  OG_IMAGE_URL,
+  SITE_URL,
+} from '../config/seo.js';
 
 const STORAGE_KEY = 'paola-locale';
 
@@ -24,13 +29,24 @@ function updateDocumentMeta(content, locale) {
     }
   };
 
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) {
+    canonical.href = `${SITE_URL}/`;
+  }
+
   document.title = content.meta.title;
   setMeta('meta[name="description"]', content.meta.description);
   setMeta('meta[property="og:title"]', content.meta.ogTitle);
   setMeta('meta[property="og:description"]', content.meta.ogDescription);
   setMeta('meta[property="og:locale"]', locale === 'en' ? 'en_US' : 'es_CO');
+  setMeta('meta[property="og:url"]', `${SITE_URL}/`);
+  setMeta('meta[property="og:image"]', OG_IMAGE_URL);
+  setMeta('meta[property="og:image:secure_url"]', OG_IMAGE_URL);
+  setMeta('meta[property="og:image:alt"]', OG_IMAGE_ALT);
   setMeta('meta[name="twitter:title"]', content.meta.twitterTitle);
   setMeta('meta[name="twitter:description"]', content.meta.twitterDescription);
+  setMeta('meta[name="twitter:image"]', OG_IMAGE_URL);
+  setMeta('meta[name="twitter:image:alt"]', OG_IMAGE_ALT);
 }
 
 export function I18nProvider({ children }) {

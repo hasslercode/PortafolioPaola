@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
+import { injectSeoPlaceholders } from './src/config/seo.js';
 
 const base = process.env.VERCEL ? '/' : '/PortafolioPaola/';
 
@@ -8,6 +9,12 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    {
+      name: 'inject-seo-meta',
+      transformIndexHtml(html) {
+        return injectSeoPlaceholders(html);
+      },
+    },
     {
       name: 'inject-lcp-preload',
       transformIndexHtml(html, ctx) {
