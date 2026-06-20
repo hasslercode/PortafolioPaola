@@ -1,11 +1,11 @@
 import FadeUp from '../components/FadeUp.jsx';
 import { useI18n } from '../context/I18nProvider.jsx';
-import reelConversacion from '../assets/campaigns/reel-conversacion-thumb.jpg';
+import reelVasos from '../assets/campaigns/reel-vasos-thumb.jpg';
 import reelCultura from '../assets/campaigns/reel-cultura-thumb.jpg';
 import reelCuriosidad from '../assets/campaigns/reel-curiosidad-thumb.jpg';
 import reelStorytelling from '../assets/campaigns/reel-storytelling-thumb.jpg';
 
-const REEL_IMAGES = [reelConversacion, reelCultura, reelCuriosidad, reelStorytelling];
+const REEL_IMAGES = [reelVasos, reelCultura, reelCuriosidad, reelStorytelling];
 
 const REEL_ICONS = [
   'results-proof__reel-icon results-proof__reel-icon--pink',

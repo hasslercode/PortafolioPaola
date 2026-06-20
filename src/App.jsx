@@ -52,13 +52,13 @@ function DeferredSections({ onOpenContact, onOpenPortfolio }) {
       <SectionDivider variant="symbol" />
 
       <Suspense fallback={<SectionFallback />}>
-        <Testimonials />
+        <Services />
       </Suspense>
 
       <SectionDivider />
 
       <Suspense fallback={<SectionFallback />}>
-        <Services />
+        <Testimonials />
       </Suspense>
 
       <SectionDivider variant="symbol" />

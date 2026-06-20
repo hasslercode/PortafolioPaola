@@ -3,14 +3,15 @@ import { useEffect } from 'react';
 export function useGlobalFadeUp() {
   useEffect(() => {
     const animatedElements = document.querySelectorAll('.fade-up');
-    if (!animatedElements.length) {
+    const dividers = document.querySelectorAll('.section-divider');
+
+    if (!animatedElements.length && !dividers.length) {
       return undefined;
     }
 
     if (!('IntersectionObserver' in globalThis)) {
-      animatedElements.forEach((element) => {
-        element.classList.add('is-visible');
-      });
+      animatedElements.forEach((element) => element.classList.add('is-visible'));
+      dividers.forEach((element) => element.classList.add('is-revealed'));
       return undefined;
     }
 
@@ -31,6 +32,22 @@ export function useGlobalFadeUp() {
       observer.observe(element);
     });
 
-    return () => observer.disconnect();
+    // "Wow" reveal for the dividers between sections: replays each time the
+    // divider scrolls into view so the sparkle keeps catching the eye.
+    const dividerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle('is-revealed', entry.isIntersecting);
+        });
+      },
+      { threshold: 0.65 }
+    );
+
+    dividers.forEach((element) => dividerObserver.observe(element));
+
+    return () => {
+      observer.disconnect();
+      dividerObserver.disconnect();
+    };
   });
 }

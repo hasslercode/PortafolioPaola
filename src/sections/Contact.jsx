@@ -1,5 +1,10 @@
 import { useI18n } from '../context/I18nProvider.jsx';
 
+const PHOTO_BASE = import.meta.env.BASE_URL;
+const CTA_PHOTO_WEBP_300 = `${PHOTO_BASE}assets/fotopaola4-300.webp`;
+const CTA_PHOTO_WEBP_560 = `${PHOTO_BASE}assets/fotopaola4-560.webp`;
+const CTA_PHOTO_JPG = `${PHOTO_BASE}assets/fotopaola4.jpg`;
+
 export default function Contact({ onOpenContact }) {
   const { content } = useI18n();
   const { contact } = content;
@@ -13,11 +18,23 @@ export default function Contact({ onOpenContact }) {
     <section className="cta-banner-final" id="contacto" aria-labelledby="contact-title">
       <span className="cta-scrap cta-scrap--tape" aria-hidden="true" />
       <div className="cta-left-final">
-        <div className="cta-isotype-circle">
-          <svg className="cta-ellipse-svg" viewBox="0 0 100 100" aria-hidden="true">
-            <ellipse cx="50" cy="50" rx="42" ry="24" transform="rotate(-25 50 50)" stroke="#f08098" strokeWidth="1" fill="none" />
-          </svg>
-          <span className="cta-circle-star" aria-hidden="true">✦</span>
+        <div className="cta-portrait">
+          <picture>
+            <source
+              type="image/webp"
+              srcSet={`${CTA_PHOTO_WEBP_300} 300w, ${CTA_PHOTO_WEBP_560} 560w`}
+              sizes="(max-width: 1024px) 240px, 270px"
+            />
+            <img
+              src={CTA_PHOTO_JPG}
+              alt={contact.imageAlt}
+              className="cta-portrait__img"
+              width={300}
+              height={375}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div className="cta-text-block-final">
           <h2 id="contact-title" className="cta-title-final">

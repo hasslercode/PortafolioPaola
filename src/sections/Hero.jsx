@@ -51,7 +51,7 @@ export default function Hero({ onOpenContact }) {
         <div className="container hero-grid-premium">
           <div className="hero-left-premium">
             <p className="hero-premium-tagline hero-premium-tagline--desktop">
-              <span>{hero.taglineLine1}</span>
+              <span>{hero.taglineLine1}</span>{' '}
               <br className="hero-tagline-break" aria-hidden="true" />
               <span className="cursive-glow">{hero.taglineAccent}</span>
             </p>
@@ -125,7 +125,7 @@ export default function Hero({ onOpenContact }) {
                   alt={hero.imageAlt}
                   className="hero-img-premium"
                   width={600}
-                  height={840}
+                  height={750}
                   fetchPriority="high"
                   decoding="async"
                 />

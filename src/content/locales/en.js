@@ -14,9 +14,8 @@ export default {
     "logoAriaLabel": "Paola Hoyos — Strategy, Storytelling & Results",
     "logoName": "Paola Hoyos",
     "taglineWords": [
-      "Strategy",
-      "Storytelling",
-      "Results"
+      "Digital Strategist",
+      "Content Management"
     ],
     "menuOpenLabel": "Open menu",
     "menuCloseLabel": "Close menu",
@@ -41,13 +40,13 @@ export default {
     "preferencesAriaLabel": "Language and theme preferences"
   },
   "hero": {
-    "taglineLine1": "FOR BRANDS AND ENTREPRENEURS POSTING WITHOUT CONVERSION:",
+    "taglineLine1": "FOR BRANDS AND ENTREPRENEURS SEEKING",
     "taglineAccent": "real results",
     "mobileTagline": "FOR BRANDS AND ENTREPRENEURS",
     "titleLine1": "Strategic content to",
-    "titleLine2Prefix": "grow without relying on",
-    "titleLine2Accent": "paid advertising.",
-    "subtitle": "From idea to outcome: storytelling that builds recognition, trust, and business opportunities.",
+    "titleLine2Prefix": "grow organically and strengthen",
+    "titleLine2Accent": "your community.",
+    "subtitle": "Generate conversions and business opportunities on your social media with creative, results-driven content.",
     "descriptionBefore": "I help personal brands, local businesses, and teams stop posting randomly and build digital presence with",
     "descriptionAccent": "recognition, trust, and measurable conversions.",
     "mobileDescriptionBefore": "Storytelling and digital strategy to turn your audience into",
@@ -91,15 +90,15 @@ export default {
     "profiles": [
       {
         "title": "Personal Brands",
-        "description": "People who want to position themselves as references and generate business opportunities."
+        "description": "People who want to boost their social media to showcase their talent as an artist, creator, or athlete."
       },
       {
-        "title": "Local Businesses",
-        "description": "Companies that need to attract more clients through strategic content."
+        "title": "Ventures",
+        "description": "Local businesses that need to build recognition, grow their digital community, and attract more clients."
       },
       {
-        "title": "Companies & Brands",
-        "description": "Teams looking to strengthen digital presence and connection with their audience."
+        "title": "B2B & B2C Companies",
+        "description": "Companies looking to strengthen and build loyalty in their digital presence with content that connects with their audience."
       }
     ]
   },
@@ -217,7 +216,7 @@ export default {
     "titleAfter": "my work",
     "descriptionBefore": "Over ",
     "descriptionAccent": "1.3 million organic views",
-    "descriptionAfter": " that aren't just numbers: they represent brand recognition, built trust, and interactions that open doors to commercial conversions.",
+    "descriptionAfter": " are the result of work that goes beyond creativity. Behind every piece of content there is constant analysis of the landscape, a deep understanding of each business and its audience, trend tracking, and the conviction that a purpose-driven strategy not only generates reach, but also builds trust and opens the door to major business opportunities.",
     "businessImpactTitle": "From reach metrics to business results",
     "businessImpact": [
       {
@@ -289,12 +288,12 @@ export default {
     "reelCta": "View content",
     "reels": [
       {
-        "metric": "15K",
+        "metric": "42K",
         "category": "Conversation",
         "description": "Topics that spark dialogue and opinions.",
-        "imageAlt": "Conversation reel thumbnail with 15 thousand views",
+        "imageAlt": "Conversation reel thumbnail with 42 thousand views",
         "cta": "View content",
-        "ctaLink": "https://www.instagram.com/reel/DY8FFyWvMWn/?igsh=MWFkNDM4aGJtNGw0Ng==",
+        "ctaLink": "https://www.instagram.com/reel/DZqeIEHJ856/?igsh=MWtkbndnd2JpY2R0MQ==",
         "ctaAriaLabel": "View conversation reel on Instagram"
       },
       {
@@ -357,10 +356,10 @@ export default {
         "result": "Two separate projects — trust that goes beyond the first engagement"
       },
       {
-        "name": "Astrid García",
-        "role": "Experiences Executive · Mall Plaza Barranquilla",
-        "quote": "We were on the same team at Parque Arauco and Paola's work always stood out. Even after I left the company, I kept reaching out to recommend her for new projects.",
-        "result": "A professional reference that outlasts the working relationship"
+        "name": "Óscar Sánchez",
+        "role": "Marketing Lead · Ofima",
+        "quote": "I worked with Paola at Ofima and her professionalism made the difference. Her content strategy consistently boosted our numbers, and every piece reflected creativity and a clear business vision.",
+        "result": "Strategic content that lifted the brand's metrics"
       },
       {
         "name": "Hassler Isaac",
@@ -372,23 +371,20 @@ export default {
   },
   "whyWorkWithMe": {
     "title": "Why work with me?",
-    "subtitle": "I don't post for the sake of posting. Every decision has strategy behind it.",
+    "subtitle": "",
+    "imageAlt": "Paola Hoyos at her graduation as a Master in Digital Communication",
     "pillars": [
       {
-        "title": "Strategy before publishing",
-        "description": "Every piece starts from a clear plan with business objectives, not passing trends."
+        "title": "4+ years of experience",
+        "description": "4+ years of experience managing digital communities and creating content."
       },
       {
-        "title": "Storytelling focused on human connection",
-        "description": "Authentic stories that generate empathy and move your audience to action."
+        "title": "Specialized training",
+        "description": "Social communicator with a master's degree in digital communication. I hold a diploma in digital marketing, plus courses in content creation and community management."
       },
       {
-        "title": "Sustainable organic growth",
-        "description": "I build digital presence that grows without relying exclusively on paid advertising."
-      },
-      {
-        "title": "Decisions backed by metrics",
-        "description": "I analyze real results to optimize, scale, and demonstrate the value of every action."
+        "title": "Metrics-driven decisions",
+        "description": "Strategies and decisions based on metrics. I analyze results to optimize every action and build strategies that impact the client's goals."
       }
     ]
   },
@@ -423,9 +419,9 @@ export default {
         "description": "Effective campaigns that nurture, convert, and retain your audience strategically and personally."
       },
       {
-        "titleLine1": "Event coverage &",
-        "titleScript": "production",
-        "description": "Real-time coverage, audiovisual production, and content for in-person and virtual events."
+        "titleLine1": "Event",
+        "titleScript": "coverage",
+        "description": "Real-time content generation for your events. From stories and Lives to recap videos."
       }
     ]
   },
@@ -510,6 +506,7 @@ export default {
     "cta": "Book your free consultation ✦",
     "ctaSubtext": "30 min · No commitment · 100% personalized",
     "ctaAriaLabel": "Book free consultation — open contact",
+    "imageAlt": "Paola Hoyos, digital strategist, planning content on her tablet",
     "consultationTitle": "What's included in the consultation?",
     "consultationItems": [
       "Quick diagnosis of your digital presence.",

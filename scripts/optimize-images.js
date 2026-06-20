@@ -28,6 +28,7 @@ const RESPONSIVE_TARGETS = [
   { input: 'campaigns/hm-store.webp', outputs: [{ suffix: '-thumb', width: 300, format: 'webp' }] },
   { input: 'campaigns/starbucks-cup.png', outputs: [{ suffix: '-thumb', width: 300, format: 'webp' }] },
   { input: 'campaigns/maxgordos-burger.webp', outputs: [{ suffix: '-thumb', width: 300, format: 'webp' }] },
+  { input: 'campaigns/reel-vasos.jpg', outputs: [{ suffix: '-thumb', width: 400, format: 'jpg' }] },
   { input: 'campaigns/reel-cultura.jpg', outputs: [{ suffix: '-thumb', width: 400, format: 'jpg' }] },
   { input: 'campaigns/reel-conversacion.jpg', outputs: [{ suffix: '-thumb', width: 400, format: 'jpg' }] },
   { input: 'campaigns/reel-curiosidad.jpg', outputs: [{ suffix: '-thumb', width: 400, format: 'jpg' }] },
