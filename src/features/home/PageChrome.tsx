@@ -6,7 +6,9 @@ import {
   Suspense,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
+  useState,
   type ReactNode,
 } from 'react';
 import Header from '@/features/home/components/Header';
@@ -18,6 +20,9 @@ import { useModal } from '@/hooks/useModal.js';
 import { usePathname } from '@/i18n/routing';
 import { trackCtaClick, trackFormStart } from '@/features/home/utils/analytics';
 
+const CursorSparkles = lazy(
+  () => import('@/features/home/components/CursorSparkles'),
+);
 const ContactModal = lazy(() =>
   import('@/features/home/components/Modals').then((m) => ({
     default: m.ContactModal,
@@ -57,6 +62,7 @@ export function PageChrome({ children }: PageChromeProps) {
   const contactModal = useModal();
   const portfolioModal = useModal();
   const showContactBanner = pathname !== '/contact';
+  const [showSparkles, setShowSparkles] = useState(false);
 
   const openContact = useCallback(
     (source = 'page') => {
@@ -75,12 +81,27 @@ export function PageChrome({ children }: PageChromeProps) {
     [openContact, portfolioModal.openModal],
   );
 
+  useEffect(() => {
+    const reveal = () => setShowSparkles(true);
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(reveal, { timeout: 2500 });
+    } else {
+      setTimeout(reveal, 1500);
+    }
+  }, []);
+
   return (
     <ContentActionsContext.Provider value={actions}>
       <div className="page-chrome">
         <a href="#contenido-principal" className="skip-link">
           {content.app.skipLink}
         </a>
+
+        {showSparkles ? (
+          <Suspense fallback={null}>
+            <CursorSparkles />
+          </Suspense>
+        ) : null}
 
         <Header
           onOpenContact={() => openContact('header')}
