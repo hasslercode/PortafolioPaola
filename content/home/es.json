@@ -1,0 +1,590 @@
+{
+  "app": {
+    "skipLink": "Saltar al contenido principal"
+  },
+  "meta": {
+    "title": "Paola Hoyos | Estrategia Digital, Storytelling y Crecimiento Orgánico",
+    "description": "Estrategia digital, creación de contenido y storytelling para marcas, emprendedores y negocios que buscan crecer con resultados reales.",
+    "ogTitle": "Paola Hoyos | Estrategia Digital, Storytelling y Crecimiento Orgánico",
+    "ogDescription": "Estrategia digital, creación de contenido y storytelling para marcas, emprendedores y negocios que buscan crecer con resultados reales.",
+    "twitterTitle": "Paola Hoyos | Estrategia Digital, Storytelling y Crecimiento Orgánico",
+    "twitterDescription": "Estrategia digital, creación de contenido y storytelling para marcas, emprendedores y negocios que buscan crecer con resultados reales."
+  },
+  "header": {
+    "logoAriaLabel": "Paola Hoyos — Estrategia, Storytelling y Resultados",
+    "logoName": "Paola Hoyos",
+    "taglineWords": [
+      "Estratega digital",
+      "Content Management"
+    ],
+    "menuOpenLabel": "Abrir menú",
+    "menuCloseLabel": "Cerrar menú",
+    "nav": {
+      "inicio": "Inicio",
+      "servicios": "Servicios",
+      "experiencias": "Experiencias",
+      "portafolio": "Portafolio",
+      "blog": "Blog",
+      "tarifas": "Inversión",
+      "sobreMi": "Sobre mí",
+      "contacto": "Contacto"
+    },
+    "cta": "Hablemos ✦",
+    "themeSwitchLabel": "Tema",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
+    "themeLightMode": "Activar modo claro",
+    "themeDarkMode": "Activar modo oscuro",
+    "langLabel": "Idioma",
+    "langEs": "ES",
+    "langEn": "EN",
+    "switchToEs": "Cambiar a español",
+    "switchToEn": "Cambiar a inglés",
+    "preferencesAriaLabel": "Preferencias de idioma y tema"
+  },
+  "hero": {
+    "taglineLine1": "PARA MARCAS Y EMPRENDEDORES QUE BUSCAN",
+    "taglineAccent": "resultados reales",
+    "mobileTagline": "PARA MARCAS Y EMPRENDEDORES",
+    "titleLine1": "Contenido estratégico para",
+    "titleLine2Prefix": "crecer orgánicamente y fortalecer",
+    "titleLine2Accent": "su comunidad.",
+    "subtitle": "Genera conversiones y oportunidades comerciales en tus redes sociales con contenido creativo y enfocado en resultados.",
+    "descriptionBefore": "Ayudo a marcas personales, negocios locales y equipos a dejar de publicar al azar y construir presencia digital con",
+    "descriptionAccent": "reconocimiento, confianza y conversiones medibles.",
+    "mobileDescriptionBefore": "Storytelling y estrategia digital para convertir audiencia en",
+    "mobileDescriptionAccent": "reconocimiento, confianza y oportunidades comerciales.",
+    "socialProofBefore": "Marcas y emprendedores que ya están",
+    "socialProofAccent": "creciendo",
+    "socialProofAfter": "conmigo ✨",
+    "availability": "Disponible para proyectos",
+    "location": "Medellín · Colombia · Remoto",
+    "cta": "Agenda consulta estratégica ✦",
+    "ctaAriaLabel": "Agenda consulta estratégica gratuita — abrir contacto",
+    "imageAlt": "Paola Hoyos, estratega digital y comunicadora social",
+    "metricValue": "+3.8M",
+    "metricLabel": "Impacto y alcance orgánico",
+    "verticalLabel": "· ESTRATEGIA · CONTENIDO · COMUNIDAD · RESULTADOS",
+    "copyVariants": [
+      {
+        "label": "Versión A — Conversión directa",
+        "titleLine1": "Estrategia digital que convierte",
+        "titleLine2Prefix": "tu audiencia en",
+        "titleLine2Accent": "clientes y oportunidades.",
+        "subtitle": "Conecto contenido estratégico con objetivos de negocio — para que cada publicación acerque a tu audiencia a la acción."
+      },
+      {
+        "label": "Versión B — Crecimiento orgánico",
+        "titleLine1": "Contenido estratégico para",
+        "titleLine2Prefix": "crecer sin depender de",
+        "titleLine2Accent": "pauta publicitaria.",
+        "subtitle": "De la idea al resultado: storytelling que genera reconocimiento, confianza y oportunidades comerciales."
+      },
+      {
+        "label": "Versión C — Claridad y propósito",
+        "titleLine1": "Deja de publicar al azar.",
+        "titleLine2Prefix": "Construye presencia digital con",
+        "titleLine2Accent": "propósito y métricas.",
+        "subtitle": "Estrategia + contenido + resultados medibles = crecimiento orgánico que impulsa tu negocio."
+      }
+    ]
+  },
+  "targetAudience": {
+    "title": "¿Es esto para ti?",
+    "subtitle": "Trabajo con perfiles que buscan resultados concretos, no solo likes.",
+    "profiles": [
+      {
+        "title": "Marcas personales",
+        "description": "Personas que quieren impulsar sus redes sociales para dar a conocer su talento como artista, creador o deportista."
+      },
+      {
+        "title": "Emprendimientos",
+        "description": "Negocios locales que necesitan generar reconocimiento, crecer su comunidad digital y atraer más clientes."
+      },
+      {
+        "title": "Empresas B2B y B2C",
+        "description": "Compañías que buscan fortalecer y fidelizar su presencia digital con contenido que conecte con su audiencia."
+      }
+    ]
+  },
+  "performance": {
+    "items": [
+      {
+        "title": "Dirección Estratégica",
+        "description": "Planes de posicionamiento a corto y largo plazo."
+      },
+      {
+        "title": "Narrativa Creativa",
+        "description": "Storytelling de marca que conecta de inmediato."
+      },
+      {
+        "title": "Engagement Humano",
+        "description": "Crecimiento orgánico mediante interacciones reales."
+      },
+      {
+        "title": "Conversión y ROI",
+        "description": "Métricas transparentes que validan tu inversión."
+      }
+    ]
+  },
+  "experience": {
+    "badge": "Marcas y experiencias",
+    "title": "Experiencias",
+    "titleScript": "destacadas",
+    "titleMobilePink": "Experiencias",
+    "titleMobileRest": " destacadas",
+    "logoAlt": "Logotipo de {{brand}}",
+    "imageAlt": "Campaña digital para {{brand}} en Parque Alegra, Barranquilla",
+    "copyBefore": "He creado contenido estratégico para impulsar marcas y experiencias en Parque Alegra (Barranquilla), centro comercial operado por Parque Arauco, logrando resultados que se traducen en",
+    "copyAccent": "visibilidad, interacción y crecimiento.",
+    "note": "Estas marcas corresponden a establecimientos del centro comercial; no representan una relación contractual directa con Paola Hoyos.",
+    "noteLabel": "Aviso de transparencia",
+    "campaigns": [
+      {
+        "name": "Coca-Cola",
+        "category": "Momentos y sabor",
+        "metric": "1.33M",
+        "metricLabel": "Visualizaciones",
+        "ctaLink": "https://vt.tiktok.com/ZSr4f3fEK/",
+        "cta": "Ver contenido",
+        "ctaAriaLabel": "Ver contenido de Coca-Cola en TikTok"
+      },
+      {
+        "name": "TOTTO",
+        "category": "Estilo y funcionalidad",
+        "metric": "1.27M",
+        "metricLabel": "Visualizaciones",
+        "ctaLink": "https://vt.tiktok.com/ZSr44Kpt5/",
+        "cta": "Ver contenido",
+        "ctaAriaLabel": "Ver contenido de Totto en TikTok"
+      },
+      {
+        "name": "Cine Colombia",
+        "category": "Entretenimiento",
+        "metric": "858K",
+        "metricLabel": "Visualizaciones",
+        "ctaLink": "https://www.instagram.com/reel/C_y73z6sxO_/?igsh=NjU4d2wyOGE5YjEy",
+        "cta": "Ver contenido",
+        "ctaAriaLabel": "Ver contenido de Cine Colombia en Instagram"
+      },
+      {
+        "name": "H&M",
+        "category": "Moda y tendencias",
+        "metric": "221K",
+        "metricLabel": "Visualizaciones",
+        "ctaLink": "https://www.instagram.com/reel/DBAGE5BPQR0/?igsh=MWdpZTdvcWVlNTM3",
+        "cta": "Ver contenido",
+        "ctaAriaLabel": "Ver contenido de H&M en Instagram"
+      },
+      {
+        "name": "Starbucks",
+        "category": "Cafés y experiencias",
+        "metric": "63K",
+        "metricLabel": "Visualizaciones",
+        "ctaLink": "https://www.instagram.com/reel/C2s-KN1PTLq/?igsh=dnNzZWt5cWoyM3Jt",
+        "cta": "Ver contenido",
+        "ctaAriaLabel": "Ver contenido de Starbucks en Instagram"
+      },
+      {
+        "name": "MaxGordos",
+        "category": "Sabor y tradición",
+        "metric": "58K",
+        "metricLabel": "Visualizaciones",
+        "ctaLink": "https://vt.tiktok.com/ZSr44PEfh/",
+        "cta": "Ver contenido",
+        "ctaAriaLabel": "Ver contenido de MaxGordos en TikTok"
+      }
+    ],
+    "results": {
+      "leadBefore": "Contenido que convierte experiencias en",
+      "leadAccent": "resultados.",
+      "stats": [
+        {
+          "value": "+40.000",
+          "label": "seguidores en TikTok"
+        },
+        {
+          "value": "+70.000",
+          "label": "seguidores en Instagram"
+        },
+        {
+          "value": "+600",
+          "label": "interacciones orgánicas promedio por publicación"
+        }
+      ]
+    }
+  },
+  "resultsProof": {
+    "badge": "+ Impacto orgánico real",
+    "titleBefore": "Resultados que",
+    "titleAccent": "respaldan",
+    "titleAfter": "mi trabajo",
+    "descriptionBefore": "Más de ",
+    "descriptionAccent": "1,3 millones de visualizaciones orgánicas",
+    "descriptionAfter": " son el resultado de un trabajo que va más allá de la creatividad. Detrás de cada contenido hay análisis constante del entorno, comprensión profunda de cada negocio y de su audiencia, seguimiento de tendencias y la convicción de que una estrategia con propósito no solo genera alcance, sino que construye confianza y abre la puerta a grandes oportunidades comerciales.",
+    "businessImpactTitle": "De métricas de alcance a resultados de negocio",
+    "businessImpact": [
+      {
+        "title": "Alcance = Reconocimiento",
+        "description": "Llegar a nuevas audiencias genera top of mind: tu marca se vuelve visible antes de que el cliente decida comprar."
+      },
+      {
+        "title": "Interacción = Confianza",
+        "description": "Comentarios, guardados y conversaciones demuestran interés real y construyen la credibilidad que precede a una venta."
+      },
+      {
+        "title": "Comunidad activa = Conversión",
+        "description": "Una audiencia comprometida multiplica las posibilidades de consultas, referidos y oportunidades comerciales."
+      }
+    ],
+    "communityNote": "Cada métrica refleja un paso hacia resultados empresariales concretos.",
+    "note": "Cifras reales de la comunidad orgánica que llevo construyendo en mis redes desde 2026.",
+    "primaryKpi": {
+      "value": "+1.3M",
+      "labelBefore": "Visualizaciones orgánicas en los",
+      "labelAccent": "últimos 90 días."
+    },
+    "secondaryKpis": [
+      {
+        "value": "95%",
+        "label": "Del alcance son nuevas audiencias — potenciales clientes descubriendo tu marca"
+      },
+      {
+        "value": "48K+",
+        "label": "Interacciones reales que fortalecen confianza y cercanía con la audiencia"
+      },
+      {
+        "value": "279K",
+        "label": "Mejor pieza orgánica — prueba de contenido que genera conversación y visibilidad"
+      }
+    ],
+    "chart": {
+      "titleBefore": "Crecimiento",
+      "titleAccent": "sostenido",
+      "titleAfter": "sin pauta publicitaria.",
+      "ariaLabel": "Gráfica de crecimiento orgánico de 40K a 342K entre enero y mayo",
+      "labels": [
+        {
+          "value": "40K",
+          "month": "Ene"
+        },
+        {
+          "value": "70K",
+          "month": "Feb"
+        },
+        {
+          "value": "120K",
+          "month": "Mar"
+        },
+        {
+          "value": "180K",
+          "month": "Abr"
+        },
+        {
+          "value": "342K",
+          "month": "May"
+        }
+      ]
+    },
+    "contentBadge": "+ Contenido destacado",
+    "contentTitleBefore": "El contenido que genera",
+    "contentTitleAccent": "más conversación",
+    "contentSubtitle": "Piezas reales que generan conversación y alcance orgánico.",
+    "reelCta": "Ver contenido",
+    "reels": [
+      {
+        "metric": "42K",
+        "category": "Conversación",
+        "description": "Temas que generan diálogo y opinión.",
+        "imageAlt": "Miniatura del reel de conversación con 42 mil visualizaciones",
+        "cta": "Ver contenido",
+        "ctaLink": "https://www.instagram.com/reel/DZqeIEHJ856/?igsh=MWtkbndnd2JpY2R0MQ==",
+        "ctaAriaLabel": "Ver reel de conversación en Instagram"
+      },
+      {
+        "metric": "143K",
+        "category": "Cultura",
+        "description": "Comparaciones, choques y curiosidades culturales.",
+        "imageAlt": "Miniatura del reel de cultura con 143 mil visualizaciones",
+        "cta": "Ver contenido",
+        "ctaLink": "https://www.instagram.com/reel/DYVgclMJiDN/?igsh=MW54N3pkcHVwMmd5bg==",
+        "ctaAriaLabel": "Ver reel de cultura en Instagram"
+      },
+      {
+        "metric": "190K",
+        "category": "Curiosidad",
+        "description": "Historias y datos que informan e inspiran.",
+        "imageAlt": "Miniatura del reel de curiosidad con 190 mil visualizaciones",
+        "cta": "Ver contenido",
+        "ctaLink": "https://www.instagram.com/reel/DHZkIS0Pf8g/?igsh=MW9rNmhuN252cGx1dw==",
+        "ctaAriaLabel": "Ver reel de curiosidad en Instagram"
+      },
+      {
+        "metric": "32K",
+        "category": "Storytelling",
+        "description": "Experiencias reales que conectan y enseñan.",
+        "imageAlt": "Miniatura del reel de storytelling con 32 mil visualizaciones",
+        "cta": "Ver contenido",
+        "ctaLink": "https://www.instagram.com/reel/DXc1L-PpcR6/?igsh=MWgwOHBxbTRwdWZodg==",
+        "ctaAriaLabel": "Ver reel de storytelling en Instagram"
+      }
+    ],
+    "trustItems": [
+      {
+        "title": "Audiencia real",
+        "subtitle": "Personas genuinas, no números inflados — base sólida para convertir"
+      },
+      {
+        "title": "Alcance orgánico",
+        "subtitle": "Visibilidad sostenible sin depender de inversión publicitaria"
+      },
+      {
+        "title": "Comunidad activa",
+        "subtitle": "Interacciones que traducen atención en oportunidades de negocio"
+      }
+    ],
+    "cta": "Trabajemos juntas",
+    "ctaAriaLabel": "Trabajemos juntas — abrir contacto",
+    "ctaScript": "¿Lista para crecer juntas?",
+    "ctaDisclaimer": "Respuesta personalizada en menos de 24 horas."
+  },
+  "testimonials": {
+    "badge": "Testimonios",
+    "titleBefore": "Lo que dicen quienes",
+    "titleScript": "confían",
+    "resultLabel": "Resultado:",
+    "items": [
+      {
+        "name": "María Camila Fernández",
+        "role": "Periodista · Senado de la República de Colombia",
+        "quote": "Trabajé con Paola en Bienestar Uninorte y quedé tan impresionada con su profesionalismo que la llamé de nuevo para un proyecto de un establecimiento de muebles. Su estrategia y ejecución son impecables.",
+        "result": "Dos proyectos distintos — confianza que trasciende el primer encargo"
+      },
+      {
+        "name": "Óscar Sánchez",
+        "role": "Líder de Marketing · Ofima",
+        "quote": "Trabajé con Paola en Ofima y su nivel profesional marcó la diferencia. Su estrategia de contenido impulsó nuestros números de forma constante y cada pieza reflejaba creatividad y visión de negocio.",
+        "result": "Contenido estratégico que elevó las métricas de la marca"
+      },
+      {
+        "name": "Hassler Isaac",
+        "role": "Ingeniero de Software · Bancolombia",
+        "quote": "Paola me ayudó en el crecimiento de @reydelvacile, una cuenta de entretenimiento en Instagram. Su campaña y estrategia sumaron más de 10 mil seguidores reales en poco tiempo.",
+        "result": "+10.000 seguidores orgánicos en una sola estrategia"
+      }
+    ]
+  },
+  "whyWorkWithMe": {
+    "title": "¿Por qué trabajar conmigo?",
+    "subtitle": "",
+    "imageAlt": "Paola Hoyos en su grado como Magíster en Comunicación Digital",
+    "pillars": [
+      {
+        "title": "+4 años de experiencia",
+        "description": "+4 años de experiencia trabajando en el manejo de comunidades digitales y creación de contenidos."
+      },
+      {
+        "title": "Formación especializada",
+        "description": "Comunicadora social con maestría en comunicación digital. Cuento con diplomado en marketing digital, cursos de creación de contenidos y community management."
+      },
+      {
+        "title": "Decisiones basadas en métricas",
+        "description": "Estrategias y decisiones basadas en métricas. Analizo los resultados para la optimización de cada acción y crear estrategias que impacten los objetivos del cliente."
+      }
+    ]
+  },
+  "services": {
+    "badge": "Servicios",
+    "titleBefore": "¿Cómo puedo",
+    "titleScript": "ayudarte?",
+    "subtitleBefore": "Soluciones",
+    "subtitleAccent1": "estratégicas",
+    "subtitleMiddle": "y",
+    "subtitleAccent2": "creativas",
+    "subtitleAfter": "para fortalecer tu presencia digital.",
+    "cards": [
+      {
+        "titleLine1": "Gestión de redes",
+        "titleScript": "sociales",
+        "description": "Estrategias de contenido, comunidad y análisis de resultados para aumentar tu visibilidad y conexión con tu audiencia."
+      },
+      {
+        "titleBefore": "Creación de",
+        "titleScript": "contenido",
+        "description": "Contenido creativo, atractivo y alineado con tu marca para redes sociales, blogs, webs y campañas digitales."
+      },
+      {
+        "titleLine1": "Estrategia digital y",
+        "titleScript": "marketing",
+        "description": "Planificación y ejecución de estrategias digitales orientadas a objetivos, con enfoque en crecimiento y conversión."
+      },
+      {
+        "titleLine1": "Email marketing y",
+        "titleScript": "automatización",
+        "description": "Campañas efectivas que nutren, convierten y fidelizan a tu audiencia de forma estratégica y personalizada."
+      },
+      {
+        "titleLine1": "Cobertura de",
+        "titleScript": "eventos",
+        "description": "Generación de contenido en tiempo real de tus eventos. Desde historias, Lives y vídeos resumen."
+      }
+    ]
+  },
+  "skills": {
+    "badge": "ECOSISTEMA",
+    "title": "Herramientas &",
+    "titleScript": "competencias",
+    "descriptionBefore": "Dominio técnico y optimización de plataformas clave indispensables para la conceptualización, edición avanzada y distribución estratégica de contenido digital con",
+    "descriptionAccent": "alto impacto comercial.",
+    "items": [
+      {
+        "name": "Adobe Premiere Pro",
+        "percentage": "80 %",
+        "iconAlt": "Icono de Adobe Premiere Pro"
+      },
+      {
+        "name": "Adobe After Effects",
+        "percentage": "75 %",
+        "iconAlt": "Icono de Adobe After Effects"
+      },
+      {
+        "name": "Canva",
+        "percentage": "90 %",
+        "iconAlt": "Icono de Canva"
+      },
+      {
+        "name": "CapCut",
+        "percentage": "100 %",
+        "iconAlt": "Icono de CapCut"
+      },
+      {
+        "name": "Meta y Google Ads",
+        "percentage": "60 %",
+        "iconAlt": "Icono de Meta y Google Ads"
+      },
+      {
+        "name": "Inglés",
+        "percentage": "80 %",
+        "iconAlt": "Icono de idioma inglés"
+      }
+    ]
+  },
+  "process": {
+    "badge": "Mi Proceso",
+    "titleBefore": "De la idea a los",
+    "titleScript": "resultados",
+    "steps": [
+      {
+        "title": "Descubrir",
+        "descriptionBefore": "Conozco tu marca, objetivos y audiencia para entender tus",
+        "descriptionAccent": "necesidades."
+      },
+      {
+        "title": "Estrategia",
+        "descriptionBefore": "Diseño un",
+        "descriptionAccent": "plan digital",
+        "descriptionAfter": "personalizado con acciones claras y medibles."
+      },
+      {
+        "title": "Crear",
+        "descriptionBefore": "Desarrollo",
+        "descriptionAccent": "contenidos y campañas",
+        "descriptionAfter": "alineadas a tu marca y objetivos."
+      },
+      {
+        "title": "Medir y Optimizar",
+        "descriptionBefore": "Analizo",
+        "descriptionAccent": "resultados",
+        "descriptionAfter": ", optimizo y escalo lo que realmente funciona."
+      }
+    ],
+    "quoteBefore": "No se trata de estar en todas partes, sino de",
+    "quoteAccent": "conectar",
+    "quoteAfter": "donde realmente importa."
+  },
+  "contact": {
+    "titleScript": "¿Lista para llevar tu marca",
+    "titleBefore": "al",
+    "titleSerif": "siguiente nivel?",
+    "descriptionBefore": "Agenda una consulta gratuita y descubre cómo la estrategia digital puede generar",
+    "descriptionAccent": "resultados reales para tu negocio.",
+    "cta": "Agenda tu consulta gratuita ✦",
+    "ctaSubtext": "30 min · Sin compromiso · 100% personalizada",
+    "ctaAriaLabel": "Agenda consulta gratuita — abrir contacto",
+    "imageAlt": "Paola Hoyos, estratega digital, planificando contenido en su tablet",
+    "consultationTitle": "¿Qué incluye la consulta?",
+    "consultationItems": [
+      "Diagnóstico rápido de tu presencia digital.",
+      "Identificación de oportunidades de crecimiento.",
+      "Recomendaciones estratégicas iniciales.",
+      "Espacio para resolver dudas."
+    ],
+    "email": "pahoyoscardona@gmail.com",
+    "phone": "300 249 3331"
+  },
+  "footer": {
+    "brandName": "PAOLA HOYOS",
+    "brandTagline": "ESTRATEGIA · STORYTELLING & RESULTADOS",
+    "brandDescription": "Estrategia, contenido y comunicación digital que conectan marcas con personas.",
+    "navTitle": "NAVEGACIÓN",
+    "nav": {
+      "inicio": "Inicio",
+      "servicios": "Servicios",
+      "experiencias": "Experiencias",
+      "portafolio": "Portafolio",
+      "recursos": "Recursos",
+      "contacto": "Contacto"
+    },
+    "socialTitle": "CONECTEMOS",
+    "socials": [
+      {
+        "name": "Instagram"
+      },
+      {
+        "name": "TikTok"
+      },
+      {
+        "name": "LinkedIn"
+      }
+    ],
+    "missionTitle": "COMUNICACIÓN QUE CONECTA",
+    "missionItems": [
+      "Ideas con propósito.",
+      "Estrategias que inspiran.",
+      "Resultados que se sienten."
+    ],
+    "copyright": "© 2026 Paola Hoyos. Todos los derechos reservados.",
+    "logoAlt": "Isotipo de Paola Hoyos",
+    "legalNavAriaLabel": "Enlaces legales",
+    "legal": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos y Condiciones",
+      "notice": "Aviso Legal"
+    }
+  },
+  "modals": {
+    "contact": {
+      "titleBefore": "Hablemos de tu",
+      "titleAccent": "marca",
+      "introBefore": "Te respondo",
+      "introAccent": "rápido",
+      "introAfter": "por el canal que prefieras.",
+      "email": "pahoyoscardona@gmail.com",
+      "phone": "+57 300 249 3331",
+      "instagram": "@paolaahoyosc",
+      "whatsapp": "Ir directo a WhatsApp",
+      "whatsappMessage": "Hola Paola, quiero impulsar mi marca.",
+      "closeLabel": "Cerrar contacto"
+    },
+    "portfolio": {
+      "title": "Portafolio completo",
+      "download": "Descargar PDF",
+      "downloadFormat": "archivo PDF",
+      "downloadNote": "Se descargará un documento PDF.",
+      "downloadAriaLabel": "Descargar portafolio completo en PDF",
+      "iframeTitle": "Portafolio Paola Hoyos",
+      "close": "Cerrar",
+      "closeLabel": "Cerrar portafolio"
+    }
+  }
+}

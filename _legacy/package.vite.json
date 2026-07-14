@@ -1,0 +1,31 @@
+{
+  "name": "portafolio-paola",
+  "private": true,
+  "description": "Portafolio de Paola Hoyos — React + Vite",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "sync:content": "node scripts/sync-content.js",
+    "optimize:images": "node scripts/optimize-images.js",
+    "prebuild": "npm run sync:content && npm run optimize:images",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "dependencies": {
+    "@fontsource/caveat": "^5.2.8",
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/playfair-display": "^5.2.8",
+    "@fontsource/plus-jakarta-sans": "^5.2.8",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "@vitejs/plugin-react": "^4.5.2",
+    "sharp": "^0.34.2",
+    "tailwindcss": "^4.3.1",
+    "vite": "^6.3.5"
+  }
+}

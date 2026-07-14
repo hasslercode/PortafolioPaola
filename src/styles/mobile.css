@@ -102,14 +102,19 @@
         border-color: rgba(45, 30, 27, 0.1);
     }
 
-    /* ——— Hero mobile (single column, conversion-first) ——— */
+    /* ——— Hero mobile: image-first card (reference pattern) ——— */
     .hero-premium-wrapper {
         background-color: var(--hero-bg);
-        padding-bottom: 16px;
+        padding-bottom: 8px;
     }
 
     .hero-premium-section {
-        padding-top: 4px;
+        padding-top: 0;
+        padding-bottom: 8px;
+    }
+
+    .hero-premium-section > .container.hero-grid-premium {
+        padding-inline: 16px;
     }
 
     .hero-grid-premium {
@@ -119,20 +124,27 @@
         align-items: stretch;
     }
 
-    .hero-left-premium {
+    /* Photo first */
+    .hero-right-premium {
         order: 1;
         width: 100%;
-        padding: 0;
-        max-width: none;
-    }
-
-    .hero-right-premium {
-        order: 2;
-        width: 100%;
-        margin-top: 14px;
+        margin-top: 0;
+        margin-bottom: 0;
         flex-direction: column;
         align-items: stretch;
-        gap: 12px;
+        gap: 0;
+    }
+
+    /* Copy + CTA below */
+    .hero-left-premium {
+        order: 2;
+        width: 100%;
+        padding: 22px 4px 8px;
+        max-width: none;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .hero-premium-tagline--desktop {
@@ -146,17 +158,20 @@
         letter-spacing: 1.1px;
         text-transform: uppercase;
         color: var(--pink-primary);
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         line-height: 1.35;
+        text-align: left;
+        width: 100%;
     }
 
     .hero-premium-title {
-        font-size: clamp(26px, 7.2vw, 32px);
-        line-height: 1.14;
-        letter-spacing: -0.6px;
-        margin-bottom: 10px;
+        font-size: clamp(26px, 7vw, 32px);
+        line-height: 1.16;
+        letter-spacing: -0.55px;
+        margin-bottom: 12px;
         max-width: 100%;
         text-wrap: balance;
+        text-align: left;
     }
 
     .hero-premium-title .hero-title-break {
@@ -174,37 +189,46 @@
     .hero-premium-description--mobile {
         display: block;
         font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 14px;
+        line-height: 1.55;
+        margin-bottom: 18px;
         color: var(--text-body);
+        max-width: 38ch;
+        text-align: left;
     }
 
     .hero-cta-group {
         width: 100%;
-        margin-bottom: 12px;
+        max-width: none;
+        margin-bottom: 14px;
     }
 
     .hero-left-premium .btn-wow-action {
         width: 100%;
-        padding: 13px 16px;
+        padding: 14px 18px;
         font-size: 11px;
         letter-spacing: 0.55px;
         border-radius: 999px;
-        min-height: 44px;
+        min-height: 48px;
         background: var(--cta-bg) !important;
         color: var(--cta-text) !important;
         box-shadow: var(--cta-shadow);
+        justify-content: center;
     }
 
     .hero-left-premium .btn-wow-action__sparkle {
-        display: none;
+        display: inline;
+        margin-left: 6px;
     }
 
     .hero-social-proof {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         gap: 10px;
         margin-bottom: 4px;
+        max-width: 100%;
+        width: 100%;
+        text-align: left;
     }
 
     .hero-social-proof__avatars {
@@ -242,6 +266,7 @@
         line-height: 1.4;
         color: var(--text-body);
         margin: 0;
+        text-align: left;
     }
 
     .hero-social-proof__accent {
@@ -257,20 +282,21 @@
     .hero-image-composite {
         width: 100%;
         max-width: 100%;
-        height: auto;
+        height: min(58vh, 460px);
         margin: 0;
         filter: none;
-        border-radius: 22px;
+        border-radius: 28px 28px 18px 18px;
         overflow: hidden;
         position: relative;
         display: block;
-        align-items: stretch;
-        justify-content: stretch;
+        background: #ebe4e1;
+        box-shadow: 0 14px 36px rgba(45, 30, 27, 0.1);
     }
 
     .hero-image-composite picture {
         display: block;
         width: 100%;
+        height: 100%;
         line-height: 0;
     }
 
@@ -279,17 +305,18 @@
     }
 
     .hero-img-premium {
-        position: static;
-        inset: auto;
-        left: auto;
-        bottom: auto;
-        transform: none;
+        position: absolute;
+        inset: 0;
+        left: 0;
+        bottom: 0;
         width: 100%;
-        height: auto;
+        height: 100%;
         max-height: none;
-        border-radius: 22px;
-        object-fit: initial;
-        object-position: center top;
+        border-radius: 0;
+        object-fit: cover;
+        /* Higher % = crop empty top, lift the subject in the frame */
+        object-position: center 48%;
+        transform: none;
         transition: none;
     }
 
@@ -297,35 +324,101 @@
         transform: none;
     }
 
-    .metrics-card-glassmorphism--hero {
-        position: static;
-        width: 100%;
-        max-width: none;
+    .hero-media-fade {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 28%;
+        background: linear-gradient(
+            180deg,
+            rgba(250, 246, 244, 0) 0%,
+            rgba(250, 246, 244, 0.35) 55%,
+            rgba(250, 246, 244, 0.88) 100%
+        );
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .hero-media-overlays {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 10px;
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        bottom: 14px;
+        z-index: 3;
+    }
+
+    .hero-availability-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
         margin: 0;
-        padding: 14px 16px;
-        border-radius: 18px;
-        box-shadow: 0 8px 24px rgba(45, 30, 27, 0.06);
-        gap: 12px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 6px 18px rgba(45, 30, 27, 0.1);
+        font-family: var(--font-sans);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--pink-primary);
+        line-height: 1.2;
+        max-width: 58%;
     }
 
-    .metrics-card-glassmorphism--hero .glass-icon-circle {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
+    .hero-availability-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: #3cb371;
+        box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.22);
     }
 
-    .metrics-card-glassmorphism--hero .glass-icon-circle svg {
-        width: 18px;
-        height: 18px;
+    .hero-location-chip {
+        margin: 0;
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 4px 14px rgba(45, 30, 27, 0.08);
+        font-family: var(--font-sans);
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--text-body);
+        line-height: 1.25;
+        text-align: right;
+        max-width: 42%;
     }
 
-    .metrics-card-glassmorphism--hero .glass-metric-value {
-        font-size: 22px;
+    [data-theme="dark"] .hero-availability-pill,
+    [data-theme="dark"] .hero-location-chip {
+        background: rgba(30, 26, 24, 0.92);
+        color: #f4e8ea;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
     }
 
-    .metrics-card-glassmorphism--hero .glass-metric-label {
-        font-size: 13px;
-        line-height: 1.3;
+    [data-theme="dark"] .hero-availability-pill {
+        color: #f0a8b8;
+    }
+
+    [data-theme="dark"] .hero-media-fade {
+        background: linear-gradient(
+            180deg,
+            rgba(18, 16, 15, 0) 0%,
+            rgba(18, 16, 15, 0.55) 48%,
+            rgba(18, 16, 15, 0.96) 100%
+        );
+    }
+
+    /* Metric card lives on desktop overlay; mobile uses availability badge */
+    .metrics-card-glassmorphism--hero {
+        display: none;
     }
 
     /* Performance bar (2×2 white card) */
@@ -1152,6 +1245,17 @@
     .hero-premium-description--mobile {
         font-size: 13px;
         margin-bottom: 12px;
+    }
+
+    .hero-image-composite {
+        height: min(52vh, 400px);
+        border-radius: 24px 24px 16px 16px;
+    }
+
+    .hero-availability-pill,
+    .hero-location-chip {
+        font-size: 9px;
+        padding: 7px 9px;
     }
 
     .results-proof__trust-item {

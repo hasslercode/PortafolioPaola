@@ -1,0 +1,198 @@
+@import '../styles/tailwind.css';
+@import '../styles/main.css';
+@import '../styles/conversion.css';
+@import '../styles/mobile.css';
+@import '../styles/dark.css';
+@import '../styles/seo.css';
+
+/* Map next/font CSS variables onto legacy + App Router design tokens */
+:root {
+  --font-sans: var(--font-sans-face), 'Plus Jakarta Sans', sans-serif;
+  --font-serif: var(--font-serif-face), 'Playfair Display', serif;
+  /* Alias used by marketing pages (was undefined) */
+  --font-playfair: var(--font-serif-face), 'Playfair Display', serif;
+  /* Logo fallback to serif — Cormorant removed in Phase 6 (unused) */
+  --font-logo: var(--font-serif-face), 'Playfair Display', serif;
+  --font-inter: var(--font-inter-face), 'Inter', sans-serif;
+  --font-script: var(--font-script-face), 'Caveat', cursive;
+}
+
+.prose-seo {
+  max-width: 42rem;
+  color: var(--text-body, #4a3e3c);
+  line-height: 1.7;
+}
+
+.prose-seo h2,
+.prose-seo h3 {
+  margin: 1.75rem 0 0.75rem;
+  color: var(--text-dark, #2d1e1b);
+  font-family: var(--font-serif);
+}
+
+.prose-seo p,
+.prose-seo ul {
+  margin: 0 0 1rem;
+}
+
+.prose-seo ul {
+  padding-left: 1.25rem;
+}
+
+.prose-seo a {
+  color: var(--pink-primary, #943850);
+  text-decoration: underline;
+}
+
+.seo-faq {
+  margin-top: 2.5rem;
+}
+
+.seo-faq h2 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.seo-faq__item {
+  border: 1px solid var(--border, #e8e4de);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.seo-faq__item summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.seo-faq__item p {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted, #554947);
+}
+
+.geo-answer {
+  border: 1px solid var(--border, #e8e4de);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 1.1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.geo-answer__label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted, #554947);
+  margin-bottom: 0.4rem;
+}
+
+.geo-answer__body p {
+  margin: 0;
+}
+
+.geo-toc {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.15rem;
+  border-left: 3px solid var(--pink-primary, #943850);
+  background: rgba(148, 56, 80, 0.04);
+}
+
+.geo-toc__title {
+  margin: 0 0 0.65rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted, #554947);
+}
+
+.geo-toc__list {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.geo-toc__item {
+  margin: 0.35rem 0;
+}
+
+.geo-toc__item--sub {
+  margin-left: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.geo-toc a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.geo-author {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border, #e8e4de);
+}
+
+.geo-author__by {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #554947);
+}
+
+.geo-author__role,
+.geo-author__base {
+  margin: 0.35rem 0 0;
+  color: var(--text-muted, #554947);
+  font-size: 0.95rem;
+}
+
+.geo-key-facts {
+  margin: 1.5rem 0;
+}
+
+.geo-key-facts__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.geo-key-facts__list {
+  margin: 0;
+}
+
+.geo-key-facts__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border, #e8e4de);
+}
+
+.geo-key-facts__row dt {
+  color: var(--text-muted, #554947);
+}
+
+.geo-key-facts__row dd {
+  margin: 0;
+  text-align: right;
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+
+.metrics-table th,
+.metrics-table td {
+  border-bottom: 1px solid var(--border, #e8e4de);
+  text-align: left;
+  padding: 0.7rem 0.4rem;
+}
+
+.metrics-table strong {
+  color: var(--text-dark, #2d1e1b);
+}

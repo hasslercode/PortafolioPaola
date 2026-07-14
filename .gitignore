@@ -1,4 +1,4 @@
-# IDE y editores
+# IDE
 .vscode/
 .idea/
 *.swp
@@ -9,33 +9,36 @@
 # Logs
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Dependencias
+# Dependencies
 node_modules/
 yarn.lock
 
-# Build y dist
-dist/
-build/
-.parcel-cache
+# Next.js
+.next/
+out/
+next-env.d.ts
+tsconfig.tsbuildinfo
 
-# Archivos de sistema
-Thumbs.db
-.DS_Store
-*.psd
+# Legacy Vite build artifacts (if regenerated)
+_legacy/dist/
 
-# Variables de entorno
+# Env
 .env
 .env.local
 .env.*.local
 
-# Archivos temporales
-*.tmp
-temp/
+# Vercel / Cursor / audit
 .vercel
-# audit-loop workspace
 .audit-loop/
 audit-loop.adapter.js
 .cursor/
+
+# Sitemap postbuild artifacts (optional)
+public/sitemap*.xml
+public/robots.txt
+
+# OS
+Thumbs.db
+*.tmp
+temp/

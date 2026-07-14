@@ -1,5 +1,7 @@
+'use client';
+
 import { useCallback, useEffect, useState } from 'react';
-import { useI18n } from '../context/I18nProvider.jsx';
+import { useI18n } from '@/features/home/HomeContentProvider';
 
 const MOBILE_QUERY = '(max-width: 992px)';
 
@@ -9,7 +11,8 @@ export function useHeaderMenu() {
   const labels = content.header;
 
   const isMobile = useCallback(() => {
-    return globalThis.matchMedia(MOBILE_QUERY).matches;
+    if (typeof window === 'undefined' || !window.matchMedia) return false;
+    return window.matchMedia(MOBILE_QUERY).matches;
   }, []);
 
   const closeMenu = useCallback(() => {

@@ -1,10 +1,11 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
 
 const SPARKLE_PATH = 'M8 1.2 8.95 5.35 13.1 6.3 8.95 7.25 8 11.4 7.05 7.25 2.9 6.3 7.05 5.35Z';
 const MIN_DISTANCE = 16;
 const MAX_PARTICLES = 24;
 const LIFETIME_MS = 780;
-const VARIANTS = ['lg', 'sm', 'xs'];
 
 function canUseSparkles() {
   return (
@@ -38,12 +39,18 @@ function createSparkle(id, x, y) {
 
 export function useCursorSparkles() {
   const [sparkles, setSparkles] = useState([]);
-  const [enabled, setEnabled] = useState(canUseSparkles);
+  const [enabled, setEnabled] = useState(false);
   const lastPosRef = useRef(null);
   const idRef = useRef(0);
   const timeoutsRef = useRef(new Set());
 
   useEffect(() => {
+    setEnabled(canUseSparkles());
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+
     const finePointer = globalThis.matchMedia('(pointer: fine)');
     const reducedMotion = globalThis.matchMedia('(prefers-reduced-motion: reduce)');
 

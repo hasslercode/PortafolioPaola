@@ -27,6 +27,12 @@
     }
 }
 
+/* Mobile overlays — shown only ≤768px */
+.hero-media-overlays,
+.hero-media-fade {
+    display: none;
+}
+
 /* ── Hero mobile/desktop visibility defaults ── */
 .hero-premium-tagline--mobile,
 .hero-premium-description--mobile,
