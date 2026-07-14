@@ -41,30 +41,42 @@ function ServiceTitle({ card }) {
   );
 }
 
-export default function Services({ linked = false }) {
+export default function Services({ linked = false, compact = false }) {
   const { content, locale } = useI18n();
   const { services } = content;
 
   return (
-    <section className="services-wow" id="servicios">
+    <section
+      className={`services-wow${compact ? ' services-wow--compact' : ''}`}
+      id="servicios"
+    >
       <div className="container">
         <div className="services-wow__header">
           <span className="badge-pill-wow" aria-hidden="true">
             {services.badge}
           </span>
           <div className="section-header-wow">
-            <span
-              className="services-scrap services-scrap--heart scrap-heart-shape"
-              aria-hidden="true"
-            />
-            <div className="fluid-orbit-container">
-              <div className="fluid-ellipse ellipse-1" />
-              <div className="fluid-ellipse ellipse-2" />
+            {compact ? (
               <h2 className="wow-main-title">
                 <span>{services.titleBefore}</span>{' '}
                 <span className="wow-title-script">{services.titleScript}</span>
               </h2>
-            </div>
+            ) : (
+              <>
+                <span
+                  className="services-scrap services-scrap--heart scrap-heart-shape"
+                  aria-hidden="true"
+                />
+                <div className="fluid-orbit-container">
+                  <div className="fluid-ellipse ellipse-1" />
+                  <div className="fluid-ellipse ellipse-2" />
+                  <h2 className="wow-main-title">
+                    <span>{services.titleBefore}</span>{' '}
+                    <span className="wow-title-script">{services.titleScript}</span>
+                  </h2>
+                </div>
+              </>
+            )}
             <p className="wow-subtitle">
               <span>{services.subtitleBefore}</span>{' '}
               <span className="wow-subtitle-accent">{services.subtitleAccent1}</span>{' '}

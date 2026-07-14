@@ -647,8 +647,17 @@
         padding-block: 40px;
     }
 
+    .results-proof__board {
+        padding: 16px 14px 14px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+    }
+
     .results-proof__header {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
+        padding: 0 2px 14px;
+        text-align: left;
+        max-width: none;
     }
 
     .results-proof__badge {
@@ -663,6 +672,16 @@
         margin-bottom: 10px;
     }
 
+    .results-proof__title-end {
+        white-space: normal;
+    }
+
+    .results-proof__scrap--heart {
+        width: 16px;
+        height: 16px;
+        margin-left: 6px;
+    }
+
     .results-proof__desc {
         font-size: 15px;
         line-height: 1.65;
@@ -672,14 +691,14 @@
         display: flex;
         align-items: flex-start;
         gap: 8px;
-        margin-top: 14px;
-        padding: 12px 14px;
-        background-color: rgba(255, 214, 222, 0.45);
-        border-radius: 14px;
+        margin-top: 10px;
+        padding: 0;
+        background: none;
+        border-radius: 0;
         text-align: left;
         font-size: 12px;
         line-height: 1.5;
-        color: var(--text-body);
+        color: var(--text-muted);
     }
 
     .results-proof__note-star {

@@ -2,8 +2,8 @@
 
 import FeaturedBrands from '@/features/home/sections/FeaturedBrands';
 import ResultsProof from '@/features/home/sections/ResultsProof';
-import SectionDivider from '@/features/home/components/SectionDivider';
 import { PortfolioPdfStrip } from '@/features/home/hubs/PortfolioHubView';
+import VerticalArtConnector from '@/features/home/components/VerticalArtConnector';
 import { useContentActions } from '@/features/home/PageChrome';
 import { useI18n } from '@/features/home/HomeContentProvider';
 
@@ -33,20 +33,10 @@ export function CaseStudiesHubView() {
   return (
     <>
       <nav
-        className="container"
+        className="container experiencias-hub-nav"
         aria-label={isEn ? 'On this page' : 'En esta página'}
-        style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }}
       >
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.75rem 1.25rem',
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-          }}
-        >
+        <ul>
           {anchors.map((item) => (
             <li key={item.href}>
               <a href={item.href} className="badge-pill-wow">
@@ -58,9 +48,9 @@ export function CaseStudiesHubView() {
       </nav>
 
       <FeaturedBrands hubMode />
-      <SectionDivider variant="symbol" />
+      <VerticalArtConnector mark="sparkle" />
       <ResultsProof onOpenContact={(source: string) => openContact(source)} />
-      <SectionDivider />
+      <VerticalArtConnector mark="heart" />
       <PortfolioPdfStrip />
     </>
   );

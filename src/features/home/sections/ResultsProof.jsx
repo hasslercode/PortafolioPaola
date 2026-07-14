@@ -60,87 +60,91 @@ export default function ResultsProof({ onOpenContact }) {
   return (
     <section className="results-proof" id="resultados">
       <div className="container">
-        <FadeUp as="header" className="results-proof__header" index={0}>
-          <span className="results-proof__badge" aria-hidden="true">{resultsProof.badge}</span>
-          <h2 className="results-proof__title">
-            <span>{resultsProof.titleBefore}</span>{' '}
-            <span className="results-proof__accent">{resultsProof.titleAccent}</span>{' '}
-            <span>{resultsProof.titleAfter}</span>
-            <span className="results-proof__scrap results-proof__scrap--heart scrap-heart-shape" aria-hidden="true" />
-          </h2>
-          <p className="results-proof__desc">
-            <span>{resultsProof.descriptionBefore}</span>
-            <span className="results-proof__highlight">{resultsProof.descriptionAccent}</span>
-            <span>{resultsProof.descriptionAfter}</span>
-          </p>
-          <p className="results-proof__note">
-            <span className="results-proof__note-star" aria-hidden="true">✦</span>
-            <span>{resultsProof.note}</span>
-          </p>
-        </FadeUp>
-
-        <FadeUp className="results-proof__metrics" index={1}>
-          <article className="results-proof__kpi-main">
-            <span className="results-proof__tape" aria-hidden="true" />
-            <span className="results-proof__kpi-icon results-proof__kpi-icon--pink" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" /></svg>
-            </span>
-            <div className="results-proof__kpi-main-text">
-              <strong className="results-proof__kpi-value">{resultsProof.primaryKpi.value}</strong>
-              <p>
-                <span>{resultsProof.primaryKpi.labelBefore}</span>{' '}
-                <span className="results-proof__highlight">{resultsProof.primaryKpi.labelAccent}</span>
-              </p>
-            </div>
-          </article>
-
-          <div className="results-proof__kpi-stats">
-            {resultsProof.secondaryKpis.map((kpi, index) => (
-              <div key={kpi.label} className="results-proof__stat">
-                <span className={SECONDARY_KPI_ICONS[index].className} aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path d={SECONDARY_KPI_ICONS[index].path} /></svg>
-                </span>
-                <div>
-                  <strong>{kpi.value}</strong>
-                  <span>{kpi.label}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="results-proof__chart">
-            <p className="results-proof__chart-title">
-              <span>{resultsProof.chart.titleBefore}</span>{' '}
-              <span className="results-proof__script">{resultsProof.chart.titleAccent}</span>{' '}
-              <span>{resultsProof.chart.titleAfter}</span>
+        <FadeUp className="results-proof__board" index={0}>
+          <header className="results-proof__header">
+            <span className="results-proof__badge" aria-hidden="true">{resultsProof.badge}</span>
+            <h2 className="results-proof__title">
+              <span>{resultsProof.titleBefore}</span>{' '}
+              <span className="results-proof__accent">{resultsProof.titleAccent}</span>{' '}
+              <span className="results-proof__title-end">
+                <span>{resultsProof.titleAfter}</span>
+                <span className="results-proof__scrap results-proof__scrap--heart scrap-heart-shape" aria-hidden="true" />
+              </span>
+            </h2>
+            <p className="results-proof__desc">
+              <span>{resultsProof.descriptionBefore}</span>
+              <span className="results-proof__highlight">{resultsProof.descriptionAccent}</span>
+              <span>{resultsProof.descriptionAfter}</span>
             </p>
-            <div className="results-proof__chart-body" role="img" aria-label={resultsProof.chart.ariaLabel}>
-              <svg className="results-proof__chart-svg" viewBox="0 0 100 56" preserveAspectRatio="none" aria-hidden="true">
-                <defs>
-                  <linearGradient id="resultsChartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#e8a7b3" stopOpacity="0.38" />
-                    <stop offset="100%" stopColor="#faf7f5" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path className="results-proof__chart-area" d={chartAreaPath} fill="url(#resultsChartFill)" />
-                <path className="results-proof__chart-line" d={`M ${chartLinePath}`} />
-                {CHART_POINTS.map((point, index) => (
-                  <circle
-                    key={point.x}
-                    cx={point.x}
-                    cy={point.y}
-                    r={index === CHART_POINTS.length - 1 ? 2.4 : 2}
-                    className={index === CHART_POINTS.length - 1 ? 'results-proof__chart-dot results-proof__chart-dot--peak' : 'results-proof__chart-dot'}
-                  />
-                ))}
-              </svg>
-              <div className="results-proof__chart-axis">
-                {resultsProof.chart.labels.map((label) => (
-                  <div key={label.month} className="results-proof__chart-tick">
-                    <span className="results-proof__chart-value">{label.value}</span>
-                    <span className="results-proof__chart-month">{label.month}</span>
+            <p className="results-proof__note">
+              <span className="results-proof__note-star" aria-hidden="true">✦</span>
+              <span>{resultsProof.note}</span>
+            </p>
+          </header>
+
+          <div className="results-proof__metrics">
+            <article className="results-proof__kpi-main">
+              <span className="results-proof__tape" aria-hidden="true" />
+              <span className="results-proof__kpi-icon results-proof__kpi-icon--pink" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" /></svg>
+              </span>
+              <div className="results-proof__kpi-main-text">
+                <strong className="results-proof__kpi-value">{resultsProof.primaryKpi.value}</strong>
+                <p>
+                  <span>{resultsProof.primaryKpi.labelBefore}</span>{' '}
+                  <span className="results-proof__highlight">{resultsProof.primaryKpi.labelAccent}</span>
+                </p>
+              </div>
+            </article>
+
+            <div className="results-proof__kpi-stats">
+              {resultsProof.secondaryKpis.map((kpi, index) => (
+                <div key={kpi.label} className="results-proof__stat">
+                  <span className={SECONDARY_KPI_ICONS[index].className} aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d={SECONDARY_KPI_ICONS[index].path} /></svg>
+                  </span>
+                  <div>
+                    <strong>{kpi.value}</strong>
+                    <span>{kpi.label}</span>
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+
+            <div className="results-proof__chart">
+              <p className="results-proof__chart-title">
+                <span>{resultsProof.chart.titleBefore}</span>{' '}
+                <span className="results-proof__script">{resultsProof.chart.titleAccent}</span>{' '}
+                <span>{resultsProof.chart.titleAfter}</span>
+              </p>
+              <div className="results-proof__chart-body" role="img" aria-label={resultsProof.chart.ariaLabel}>
+                <svg className="results-proof__chart-svg" viewBox="0 0 100 56" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="resultsChartFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#e8a7b3" stopOpacity="0.38" />
+                      <stop offset="100%" stopColor="#faf7f5" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path className="results-proof__chart-area" d={chartAreaPath} fill="url(#resultsChartFill)" />
+                  <path className="results-proof__chart-line" d={`M ${chartLinePath}`} />
+                  {CHART_POINTS.map((point, index) => (
+                    <circle
+                      key={point.x}
+                      cx={point.x}
+                      cy={point.y}
+                      r={index === CHART_POINTS.length - 1 ? 2.4 : 2}
+                      className={index === CHART_POINTS.length - 1 ? 'results-proof__chart-dot results-proof__chart-dot--peak' : 'results-proof__chart-dot'}
+                    />
+                  ))}
+                </svg>
+                <div className="results-proof__chart-axis">
+                  {resultsProof.chart.labels.map((label) => (
+                    <div key={label.month} className="results-proof__chart-tick">
+                      <span className="results-proof__chart-value">{label.value}</span>
+                      <span className="results-proof__chart-month">{label.month}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

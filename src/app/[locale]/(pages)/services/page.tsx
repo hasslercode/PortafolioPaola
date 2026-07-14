@@ -9,7 +9,7 @@ import { hubGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
 import { ServicesHubView } from '@/features/home/hubs/ServicesHubView';
 import { PricingHubView } from '@/features/home/hubs/ContentHubViews';
-import SectionDivider from '@/features/home/components/SectionDivider';
+import VerticalArtConnector from '@/features/home/components/VerticalArtConnector';
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -128,28 +128,30 @@ export default async function ServicesIndexPage({ params }: PageProps) {
   return (
     <>
       <JsonLdScript graph={graph} />
-      <div className="container" style={{ paddingTop: '1rem' }}>
-        <Breadcrumbs items={crumbs} locale={locale} />
+      <div className="servicios-hub">
+        <div className="container servicios-hub-crumbs">
+          <Breadcrumbs items={crumbs} locale={locale} />
+        </div>
+        <ServicesHubView />
+        <VerticalArtConnector mark="heart" />
+        <PricingHubView
+          badge={tp('badge')}
+          title={tp('title')}
+          summary={tp('summary')}
+          disclaimer={tp('disclaimer')}
+          fromLabel={tp('fromLabel')}
+          idealLabel={tp('idealLabel')}
+          ctaLabel={tp('cta')}
+          packages={packages.map(({ id, name, price, period, ideal }) => ({
+            id,
+            name,
+            price,
+            period,
+            ideal,
+          }))}
+          faqs={faqs}
+        />
       </div>
-      <ServicesHubView />
-      <SectionDivider />
-      <PricingHubView
-        badge={tp('badge')}
-        title={tp('title')}
-        summary={tp('summary')}
-        disclaimer={tp('disclaimer')}
-        fromLabel={tp('fromLabel')}
-        idealLabel={tp('idealLabel')}
-        ctaLabel={tp('cta')}
-        packages={packages.map(({ id, name, price, period, ideal }) => ({
-          id,
-          name,
-          price,
-          period,
-          ideal,
-        }))}
-        faqs={faqs}
-      />
     </>
   );
 }

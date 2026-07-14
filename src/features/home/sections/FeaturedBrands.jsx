@@ -241,9 +241,11 @@ export default function FeaturedBrands({ hubMode = false }) {
                 pathname: '/experiences/[slug]',
                 params: { slug: 'parque-alegra' },
               }}
-              className="btn-pill"
+              className="btn-pill-premium featured-hub-extra__btn"
             >
-              {locale === 'en' ? 'Also: Parque Alegra case' : 'También: caso Parque Alegra'}
+              {locale === 'en'
+                ? 'View full Parque Alegra experience'
+                : 'Ver experiencia completa Parque Alegra'}
             </Link>
           </p>
         ) : null}

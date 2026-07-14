@@ -11,7 +11,7 @@ type HomeArtArticleProps = {
 };
 
 /**
- * Detail-page frame using the home “wow” section header language.
+ * Detail-page frame aligned with scrapbook hubs (compact, left-aligned).
  */
 export function HomeArtArticle({
   badge,
@@ -20,25 +20,14 @@ export function HomeArtArticle({
   children,
 }: HomeArtArticleProps) {
   return (
-    <article className="services-wow home-art-article">
+    <article className="case-detail">
       <div className="container">
-        <div className="services-wow__header">
-          <span className="badge-pill-wow">{badge}</span>
-          <div className="section-header-wow">
-            <span
-              className="services-scrap services-scrap--heart scrap-heart-shape"
-              aria-hidden="true"
-            />
-            <div className="fluid-orbit-container">
-              <div className="fluid-ellipse ellipse-1" />
-              <div className="fluid-ellipse ellipse-2" />
-              <h1 className="wow-main-title home-art-article__title">{title}</h1>
-            </div>
-            {subtitle ? <div className="wow-subtitle">{subtitle}</div> : null}
-          </div>
-        </div>
-
-        <div className="home-art-article__body">{children}</div>
+        <header className="case-detail__header">
+          <span className="case-detail__badge">{badge}</span>
+          <h1 className="case-detail__title">{title}</h1>
+          {subtitle ? <p className="case-detail__subtitle">{subtitle}</p> : null}
+        </header>
+        <div className="case-detail__body">{children}</div>
       </div>
     </article>
   );
@@ -53,7 +42,7 @@ export function HomeArtArticleCta({
 }) {
   const { content } = useI18n();
   return (
-    <div className="home-art-article__cta">
+    <div className="case-detail__cta">
       <button type="button" className="btn-pill btn-wow-action" onClick={onClick}>
         <span>{label || content.header.cta}</span>
         <span className="btn-wow-action__sparkle" aria-hidden="true">

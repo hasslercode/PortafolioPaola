@@ -4,7 +4,7 @@ import WhyWorkWithMe from '@/features/home/sections/WhyWorkWithMe';
 import Skills from '@/features/home/sections/Skills';
 import Process from '@/features/home/sections/Process';
 import Testimonials from '@/features/home/sections/Testimonials';
-import SectionDivider from '@/features/home/components/SectionDivider';
+import VerticalArtConnector from '@/features/home/components/VerticalArtConnector';
 import { useI18n } from '@/features/home/HomeContentProvider';
 import { useContentActions } from '@/features/home/PageChrome';
 
@@ -25,22 +25,12 @@ export function AboutHubView() {
   ];
 
   return (
-    <>
+    <div className="sobre-hub">
       <nav
-        className="container"
+        className="container sobre-hub-nav"
         aria-label={isEn ? 'About sections' : 'Secciones sobre mí'}
-        style={{ paddingTop: '0.5rem', paddingBottom: '1rem' }}
       >
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.75rem 1.25rem',
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-          }}
-        >
+        <ul>
           {anchors.map((item) => (
             <li key={item.id}>
               <a href={`#${item.id}`} className="campaign-card__case-link">
@@ -55,27 +45,27 @@ export function AboutHubView() {
         <WhyWorkWithMe />
       </div>
 
-      <SectionDivider />
+      <VerticalArtConnector mark="sparkle" />
 
       <div id="formacion">
         <Skills />
       </div>
 
-      <SectionDivider variant="symbol" />
+      <VerticalArtConnector mark="heart" />
 
       <div id="filosofia">
         <Testimonials />
       </div>
 
-      <SectionDivider />
+      <VerticalArtConnector mark="sparkle" />
 
       <div id="metodologia">
         <Process />
       </div>
 
-      <SectionDivider />
+      <VerticalArtConnector mark="dot" />
 
-      <div id="cta" className="container" style={{ textAlign: 'center', paddingBottom: '2rem' }}>
+      <div id="cta" className="container sobre-hub-cta">
         <button
           type="button"
           className="btn-pill-premium"
@@ -84,6 +74,6 @@ export function AboutHubView() {
           {isEn ? "Let's work together" : 'Trabajemos juntos'}
         </button>
       </div>
-    </>
+    </div>
   );
 }

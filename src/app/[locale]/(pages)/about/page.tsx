@@ -50,7 +50,7 @@ export default async function AboutPage({ params }: PageProps) {
   return (
     <>
       <JsonLdScript graph={graph} />
-      <div className="container" style={{ paddingTop: '1rem' }}>
+      <div className="container sobre-hub-crumbs">
         <Breadcrumbs items={crumbs} locale={locale} />
       </div>
       <AboutHubView />

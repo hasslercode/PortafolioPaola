@@ -45,7 +45,7 @@ export default async function ContactPage({ params }: PageProps) {
   return (
     <>
       <JsonLdScript graph={graph} />
-      <div className="container" style={{ paddingTop: '1rem' }}>
+      <div className="container contacto-hub-crumbs">
         <Breadcrumbs items={crumbs} locale={locale} />
       </div>
       <ContactHubView />

@@ -221,24 +221,24 @@
     "titleAfter": "my work",
     "descriptionBefore": "Over ",
     "descriptionAccent": "1.3 million organic views",
-    "descriptionAfter": " are the result of work that goes beyond creativity. Behind every piece of content there is constant analysis of the landscape, a deep understanding of each business and its audience, trend tracking, and the conviction that a purpose-driven strategy not only generates reach, but also builds trust and opens the door to major business opportunities.",
-    "businessImpactTitle": "From reach metrics to business results",
+    "descriptionAfter": " from strategy, audience insight, and purpose-driven content — reach that also builds trust.",
+    "businessImpactTitle": "From reach to business",
     "businessImpact": [
       {
         "title": "Reach = Recognition",
-        "description": "Reaching new audiences builds top of mind: your brand becomes visible before the client decides to buy."
+        "description": "New audiences = more top of mind before the buy."
       },
       {
         "title": "Engagement = Trust",
-        "description": "Comments, saves, and conversations show real interest and build the credibility that precedes a sale."
+        "description": "Comments and conversations that pave the way to a sale."
       },
       {
         "title": "Active community = Conversion",
-        "description": "An engaged audience multiplies the chances of inquiries, referrals, and business opportunities."
+        "description": "An engaged audience brings inquiries, referrals, and deals."
       }
     ],
-    "communityNote": "Every metric reflects a step toward concrete business results.",
-    "note": "Real figures from the organic community I've been building on my channels since 2026.",
+    "communityNote": "Every metric points to a business outcome.",
+    "note": "Real figures from my organic community (since 2026).",
     "primaryKpi": {
       "value": "+1.3M",
       "labelBefore": "Organic views in the last",
@@ -247,21 +247,21 @@
     "secondaryKpis": [
       {
         "value": "95%",
-        "label": "Of reach comes from new audiences — potential clients discovering your brand"
+        "label": "Reach from new audiences"
       },
       {
         "value": "48K+",
-        "label": "Real interactions that strengthen trust and closeness with the audience"
+        "label": "Real interactions"
       },
       {
         "value": "279K",
-        "label": "Best organic piece — proof of content that sparks conversation and visibility"
+        "label": "Best organic piece"
       }
     ],
     "chart": {
-      "titleBefore": "Sustained",
-      "titleAccent": "growth",
-      "titleAfter": "without paid ads.",
+      "titleBefore": "Growth",
+      "titleAccent": "without ads",
+      "titleAfter": ".",
       "ariaLabel": "Organic growth chart from 40K to 342K between January and May",
       "labels": [
         {

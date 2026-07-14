@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { useI18n } from '@/features/home/HomeContentProvider';
 import { useContentActions } from '@/features/home/PageChrome';
-import SectionDivider from '@/features/home/components/SectionDivider';
+import VerticalArtConnector from '@/features/home/components/VerticalArtConnector';
 import { FaqSection } from '@/components/content/FaqSection';
 
 export type BlogTopic = 'seo' | 'instagram' | 'tiktok' | 'branding' | 'marketing';
@@ -187,20 +187,12 @@ export function PricingHubView({
 
   return (
     <>
-      <section className="services-wow" id="inversion">
+      <section className="services-wow services-wow--compact" id="inversion">
         <div className="container">
           <div className="services-wow__header">
             <span className="badge-pill-wow">{badge}</span>
             <div className="section-header-wow">
-              <span
-                className="services-scrap services-scrap--heart scrap-heart-shape"
-                aria-hidden="true"
-              />
-              <div className="fluid-orbit-container">
-                <div className="fluid-ellipse ellipse-1" />
-                <div className="fluid-ellipse ellipse-2" />
-                <h1 className="wow-main-title">{title}</h1>
-              </div>
+              <h1 className="wow-main-title">{title}</h1>
               <p className="wow-subtitle">{summary}</p>
             </div>
           </div>
@@ -242,24 +234,22 @@ export function PricingHubView({
             ))}
           </div>
 
-          <p className="wow-subtitle" style={{ marginTop: '1.75rem', textAlign: 'center' }}>
-            {disclaimer}
-          </p>
+          <p className="wow-subtitle investment-disclaimer">{disclaimer}</p>
         </div>
       </section>
 
-      <SectionDivider />
+      <VerticalArtConnector mark="sparkle" />
 
-      <div className="container" id="faqs">
+      <div className="container servicios-hub-faqs" id="faqs">
         <FaqSection
           title={isEn ? 'FAQ' : 'Preguntas frecuentes'}
           items={faqs}
         />
       </div>
 
-      <SectionDivider variant="symbol" />
+      <VerticalArtConnector mark="heart" />
 
-      <div id="cta" className="container" style={{ textAlign: 'center', paddingBottom: '2rem' }}>
+      <div id="cta" className="container servicios-hub-cta">
         <button
           type="button"
           className="btn-pill-premium"

@@ -220,48 +220,48 @@
     "titleAccent": "respaldan",
     "titleAfter": "mi trabajo",
     "descriptionBefore": "Más de ",
-    "descriptionAccent": "1,3 millones de visualizaciones orgánicas",
-    "descriptionAfter": " son el resultado de un trabajo que va más allá de la creatividad. Detrás de cada contenido hay análisis constante del entorno, comprensión profunda de cada negocio y de su audiencia, seguimiento de tendencias y la convicción de que una estrategia con propósito no solo genera alcance, sino que construye confianza y abre la puerta a grandes oportunidades comerciales.",
-    "businessImpactTitle": "De métricas de alcance a resultados de negocio",
+    "descriptionAccent": "1,3 millones de views orgánicas",
+    "descriptionAfter": " con estrategia, lectura de audiencia y contenido con propósito: alcance que también construye confianza.",
+    "businessImpactTitle": "De alcance a negocio",
     "businessImpact": [
       {
         "title": "Alcance = Reconocimiento",
-        "description": "Llegar a nuevas audiencias genera top of mind: tu marca se vuelve visible antes de que el cliente decida comprar."
+        "description": "Más audiencias nuevas = más top of mind antes de la compra."
       },
       {
         "title": "Interacción = Confianza",
-        "description": "Comentarios, guardados y conversaciones demuestran interés real y construyen la credibilidad que precede a una venta."
+        "description": "Comentarios y conversaciones que abren camino a la venta."
       },
       {
         "title": "Comunidad activa = Conversión",
-        "description": "Una audiencia comprometida multiplica las posibilidades de consultas, referidos y oportunidades comerciales."
+        "description": "Una audiencia viva trae consultas, referidos y oportunidades."
       }
     ],
-    "communityNote": "Cada métrica refleja un paso hacia resultados empresariales concretos.",
-    "note": "Cifras reales de la comunidad orgánica que llevo construyendo en mis redes desde 2026.",
+    "communityNote": "Cada métrica apunta a un resultado de negocio.",
+    "note": "Cifras reales de mi comunidad orgánica (desde 2026).",
     "primaryKpi": {
       "value": "+1.3M",
-      "labelBefore": "Visualizaciones orgánicas en los",
+      "labelBefore": "Views orgánicas en los",
       "labelAccent": "últimos 90 días."
     },
     "secondaryKpis": [
       {
         "value": "95%",
-        "label": "Del alcance son nuevas audiencias — potenciales clientes descubriendo tu marca"
+        "label": "Alcance en audiencias nuevas"
       },
       {
         "value": "48K+",
-        "label": "Interacciones reales que fortalecen confianza y cercanía con la audiencia"
+        "label": "Interacciones reales"
       },
       {
         "value": "279K",
-        "label": "Mejor pieza orgánica — prueba de contenido que genera conversación y visibilidad"
+        "label": "Mejor pieza orgánica"
       }
     ],
     "chart": {
       "titleBefore": "Crecimiento",
-      "titleAccent": "sostenido",
-      "titleAfter": "sin pauta publicitaria.",
+      "titleAccent": "sin pauta",
+      "titleAfter": ".",
       "ariaLabel": "Gráfica de crecimiento orgánico de 40K a 342K entre enero y mayo",
       "labels": [
         {

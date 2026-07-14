@@ -12,19 +12,30 @@ import {
   resolveCanonicalCaseSlug,
 } from '@/lib/seo/paths';
 import type { CaseStudySlug } from '@/content/registry';
-import { MarkdownBody, extractToc } from '@/components/content/MarkdownBody';
-import { FaqSection } from '@/components/content/FaqSection';
-import { GeoAnswer } from '@/components/content/GeoAnswer';
-import { TableOfContents } from '@/components/content/TableOfContents';
 import { AuthorByline } from '@/components/content/AuthorByline';
-import { KeyFacts } from '@/components/content/KeyFacts';
-import { DetailWithHomeArt } from '@/features/home/hubs/DetailWithHomeArt';
+import { CaseStudyBoard } from '@/features/home/hubs/CaseStudyBoard';
 import { caseStudyPageGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
+import type { StaticImageData } from 'next/image';
+import imgCoca from '@/assets/campaigns/coca-cola-thumb.webp';
+import imgHm from '@/assets/campaigns/hm-store-thumb.webp';
+import imgCine from '@/assets/campaigns/cine-colombia-thumb.webp';
+import imgStarbucks from '@/assets/campaigns/starbucks-cup-thumb.webp';
+import imgTotto from '@/assets/campaigns/totto-backpack-thumb.webp';
 
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
+
+const CASE_VISUALS: Partial<Record<CaseStudySlug, StaticImageData[]>> = {
+  'parque-alegra': [imgCoca, imgHm, imgCine],
+  'coca-cola': [imgCoca, imgStarbucks, imgTotto],
+  hm: [imgHm, imgCoca, imgCine],
+  'cine-colombia': [imgCine, imgHm, imgStarbucks],
+  starbucks: [imgStarbucks, imgCoca, imgTotto],
+};
+
+const DEFAULT_VISUALS = [imgCoca, imgHm, imgCine];
 
 export async function generateStaticParams() {
   return getAllLocalizedCaseStudyParams();
@@ -58,11 +69,10 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
   const crumbs = buildBreadcrumbs(typedLocale, [
     { name: t('badge'), route: { type: 'hub', hub: 'caseStudies' } },
     {
-      name: study.title,
+      name: study.brand,
       route: { type: 'caseStudy', slug: canonical },
     },
   ]);
-  const toc = extractToc(study.body);
 
   const graph = caseStudyPageGraph({
     locale: typedLocale,
@@ -75,65 +85,37 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     faqs: study.faq,
   });
 
+  const visuals = CASE_VISUALS[canonical] ?? DEFAULT_VISUALS;
+
   return (
     <>
       <JsonLdScript graph={graph} />
-      <div className="container" style={{ paddingTop: '1rem' }}>
+      <div className="container case-board__crumbs">
         <Breadcrumbs items={crumbs} locale={locale} />
       </div>
-      <DetailWithHomeArt
+      <CaseStudyBoard
         badge={t('badge')}
-        title={study.title}
-        subtitle={study.brand}
+        brand={study.brand}
+        summaryTitle={study.title}
+        shortAnswer={study.shortAnswer}
+        shortAnswerLabel={t('shortAnswer')}
+        metricsTitle={t('metrics')}
+        metrics={study.metrics}
+        story={[
+          { title: t('problem'), body: study.problem },
+          { title: t('context'), body: study.context },
+          { title: t('objective'), body: study.objective },
+        ]}
+        processTitle={t('process')}
+        process={study.process}
+        resultsTitle={t('results')}
+        results={study.results}
+        faqTitle={typedLocale === 'es' ? 'Preguntas frecuentes' : 'FAQ'}
+        faqs={study.faq}
         ctaLabel={t('cta')}
-      >
-        <GeoAnswer label={t('shortAnswer')}>
-          <p className="text-lg">{study.shortAnswer}</p>
-        </GeoAnswer>
-        <KeyFacts title={t('metrics')} facts={study.metrics} />
-        <div className="page-prose">
-          <section>
-            <h2>{t('problem')}</h2>
-            <p>{study.problem}</p>
-          </section>
-          <section>
-            <h2>{t('context')}</h2>
-            <p>{study.context}</p>
-          </section>
-          <section>
-            <h2>{t('objective')}</h2>
-            <p>{study.objective}</p>
-          </section>
-          <section>
-            <h2>{t('process')}</h2>
-            <ol>
-              {study.process.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ol>
-          </section>
-          <section>
-            <h2>{t('results')}</h2>
-            <ul>
-              {study.results.map((result) => (
-                <li key={result}>{result}</li>
-              ))}
-            </ul>
-          </section>
-        </div>
-        <TableOfContents
-          title={typedLocale === 'es' ? 'En este caso' : 'In this case'}
-          items={toc}
-        />
-        <div className="page-prose">
-          <MarkdownBody content={study.body} />
-        </div>
-        <FaqSection
-          title={typedLocale === 'es' ? 'Preguntas frecuentes' : 'FAQ'}
-          items={study.faq}
-        />
-        <AuthorByline locale={typedLocale} />
-      </DetailWithHomeArt>
+        visuals={visuals}
+        author={<AuthorByline locale={typedLocale} />}
+      />
     </>
   );
 }

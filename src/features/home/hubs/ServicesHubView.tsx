@@ -2,7 +2,7 @@
 
 import Services from '@/features/home/sections/Services';
 import TargetAudience from '@/features/home/sections/TargetAudience';
-import SectionDivider from '@/features/home/components/SectionDivider';
+import VerticalArtConnector from '@/features/home/components/VerticalArtConnector';
 import { useI18n } from '@/features/home/HomeContentProvider';
 
 /**
@@ -26,20 +26,10 @@ export function ServicesHubView() {
   return (
     <>
       <nav
-        className="container"
+        className="container servicios-hub-nav"
         aria-label={isEn ? 'On this page' : 'En esta página'}
-        style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }}
       >
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.75rem 1.25rem',
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-          }}
-        >
+        <ul>
           {pillars.map((item) => (
             <li key={item.href}>
               <a href={item.href} className="badge-pill-wow">
@@ -49,10 +39,8 @@ export function ServicesHubView() {
           ))}
         </ul>
       </nav>
-      <div>
-        <Services linked />
-      </div>
-      <SectionDivider />
+      <Services linked compact />
+      <VerticalArtConnector mark="sparkle" />
       <TargetAudience />
     </>
   );

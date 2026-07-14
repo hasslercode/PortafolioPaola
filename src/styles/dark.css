@@ -173,7 +173,7 @@ html.theme-transition *::after {
     background-color: var(--footer-dark);
 }
 
-[data-theme="dark"] .results-proof__metrics,
+[data-theme="dark"] .results-proof__board,
 [data-theme="dark"] .results-proof__content,
 [data-theme="dark"] .results-proof__showcase {
     background-color: var(--surface-elevated);
