@@ -7,14 +7,12 @@
 /* Map next/font CSS variables onto legacy + App Router design tokens */
 :root {
   --font-sans: var(--font-sans-face), 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif: var(--font-serif-face), 'Playfair Display', Georgia, serif;
-  /* Alias used by marketing pages (was undefined) */
-  --font-playfair: var(--font-serif-face), 'Playfair Display', Georgia, serif;
-  /* Logo fallback to serif — Cormorant removed in Phase 6 (unused) */
-  --font-logo: var(--font-serif-face), 'Playfair Display', Georgia, serif;
-  /* Inter/Caveat dropped for CWV — reuse sans/serif stacks */
+  /* System serif — avoids loading Playfair on the critical path */
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-playfair: Georgia, 'Times New Roman', serif;
+  --font-logo: Georgia, 'Times New Roman', serif;
   --font-inter: var(--font-sans-face), 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-script: var(--font-serif-face), 'Playfair Display', Georgia, cursive;
+  --font-script: Georgia, 'Times New Roman', cursive;
 }
 
 .prose-seo {

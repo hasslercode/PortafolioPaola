@@ -70,10 +70,10 @@
 
     /* Typography */
     --font-sans: 'Plus Jakarta Sans', sans-serif;
-    --font-serif: 'Playfair Display', serif;
-    --font-logo: 'Cormorant Garamond', 'Playfair Display', serif;
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-logo: Georgia, 'Times New Roman', serif;
     --font-inter: var(--font-sans-face), 'Plus Jakarta Sans', system-ui, sans-serif;
-    --font-script: var(--font-serif-face), 'Playfair Display', Georgia, cursive;
+    --font-script: Georgia, 'Times New Roman', cursive;
 
     /* Motion */
     --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);

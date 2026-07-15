@@ -3,7 +3,7 @@
 import { Link } from '@/i18n/routing';
 import { useI18n } from '@/features/home/HomeContentProvider';
 import { toSrc } from '@/lib/asset';
-import iconPaola from '@/assets/icon-paola-96.webp';
+import iconPaola from '@/assets/icon-paola-72.webp';
 
 const SOCIAL_LINKS = [
   'https://www.instagram.com/paolaahoyosc',

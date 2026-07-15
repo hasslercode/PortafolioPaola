@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { preload } from 'react-dom';
 import { setRequestLocale } from 'next-intl/server';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import type { SiteLocale } from '@/config/site';
@@ -54,6 +55,14 @@ export default async function HomePage({ params }: PageProps) {
     authorName: item.name,
     result: `${content.testimonials.resultLabel} ${item.result}`,
   }));
+
+  // Discover LCP image from the document as early as possible (no /_next/image hop).
+  preload('/assets/fotopaola-720.webp', {
+    as: 'image',
+    imageSrcSet: '/assets/fotopaola-480.webp 480w, /assets/fotopaola-720.webp 720w',
+    imageSizes: '(max-width: 768px) 85vw, 360px',
+    fetchPriority: 'high',
+  });
 
   return (
     <>
