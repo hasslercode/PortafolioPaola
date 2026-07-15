@@ -124,9 +124,8 @@
         align-items: stretch;
     }
 
-    /* Photo first */
+    /* Photo first in DOM — keep natural flex order (no CSS reorder = less CLS). */
     .hero-right-premium {
-        order: 1;
         width: 100%;
         margin-top: 0;
         margin-bottom: 0;
@@ -137,7 +136,6 @@
 
     /* Copy + CTA below */
     .hero-left-premium {
-        order: 2;
         width: 100%;
         padding: 22px 4px 8px;
         max-width: none;
@@ -172,6 +170,15 @@
         max-width: 100%;
         text-wrap: balance;
         text-align: left;
+        /* Sans on mobile first viewport — avoids Playfair download on LCP path. */
+        font-family: var(--font-sans);
+        font-weight: 800;
+    }
+
+    .hero-title-accent {
+        font-family: var(--font-sans);
+        font-style: normal;
+        font-weight: 800;
     }
 
     .hero-premium-title .hero-title-break {

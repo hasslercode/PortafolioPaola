@@ -1,14 +1,14 @@
-import { Caveat, Inter, Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
+import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
 
 /**
- * Font subset for CWV / mobile CLS:
- * - display: optional avoids late font swaps that inflate CLS on Slow 4G.
- * - Only Jakarta is preloaded (primary UI face).
- * @see https://nextjs.org/docs/app/building-your-application/optimizing/fonts
+ * CWV-first font set (mobile Slow 4G):
+ * - Only two families → smaller render-blocking font CSS + fewer woff2 on critical path.
+ * - display: optional → no late swap CLS when fonts arrive after ~100ms.
+ * - Inter/Caveat removed; CSS aliases map to sans/serif.
  */
 export const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
+  weight: ['400', '700', '800'],
   variable: '--font-sans-face',
   display: 'optional',
   preload: true,
@@ -17,7 +17,7 @@ export const plusJakarta = Plus_Jakarta_Sans({
 
 export const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['700', '900'],
+  weight: ['700'],
   style: ['normal', 'italic'],
   variable: '--font-serif-face',
   display: 'optional',
@@ -25,27 +25,4 @@ export const playfair = Playfair_Display({
   adjustFontFallback: true,
 });
 
-export const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-inter-face',
-  display: 'optional',
-  preload: false,
-  adjustFontFallback: true,
-});
-
-export const caveat = Caveat({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-script-face',
-  display: 'optional',
-  preload: false,
-  adjustFontFallback: true,
-});
-
-export const fontVariables = [
-  plusJakarta.variable,
-  playfair.variable,
-  inter.variable,
-  caveat.variable,
-].join(' ');
+export const fontVariables = [plusJakarta.variable, playfair.variable].join(' ');

@@ -6,7 +6,7 @@ import { useI18n } from '@/features/home/HomeContentProvider';
 import { useHeaderMenu } from '@/hooks/useHeaderMenu.js';
 import HeaderPreferences from './HeaderPreferences.jsx';
 import { toSrc } from '@/lib/asset';
-import iconPaola from '@/assets/icon-paola-108.webp';
+import iconPaola from '@/assets/icon-paola-96.webp';
 
 function navItemClass(active) {
   return `nav-item-refined${active ? ' active' : ''}`;

@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { routing } from '@/i18n/routing';
 import { fontVariables } from '@/lib/fonts';
+import { DeferredThemeStylesGate } from '@/components/theme/DeferredThemeStylesGate';
 
 type LocaleLayoutProps = {
   children: ReactNode;
@@ -54,6 +55,7 @@ export default async function LocaleLayout({
         </Script>
       </head>
       <body>
+        <DeferredThemeStylesGate />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

@@ -50,6 +50,36 @@ export default function Hero({ onOpenContact }) {
     <div className="hero-premium-wrapper">
       <section className="hero-premium-section" id="inicio" aria-labelledby="hero-title">
         <div className="container hero-grid-premium">
+          {/* Photo first in DOM — mobile natural order matches visual (no CSS reorder CLS). */}
+          <div className="hero-right-premium">
+            <div className="hero-image-composite">
+              <span className="hero-scrap hero-scrap--tape" aria-hidden="true" />
+              <span className="hero-scrap hero-scrap--heart scrap-heart-shape" aria-hidden="true" />
+              <div className="premium-arch-backdrop" />
+              <OptimizedImage
+                src={HERO_IMG}
+                alt={hero.imageAlt}
+                className="hero-img-premium"
+                width={600}
+                height={750}
+                priority
+                fetchPriority="high"
+                quality={70}
+                sizes="(max-width: 768px) 85vw, 360px"
+              />
+              <div className="hero-media-fade" aria-hidden="true" />
+              <div className="hero-media-overlays">
+                <p className="hero-availability-pill">
+                  <span className="hero-availability-dot" aria-hidden="true" />
+                  <span>{hero.availability}</span>
+                </p>
+                <p className="hero-location-chip">{hero.location}</p>
+              </div>
+            </div>
+            {showEnhancements ? <HeroMetricCard hero={hero} /> : null}
+            <div className="premium-vertical-label" aria-hidden="true">{hero.verticalLabel}</div>
+          </div>
+
           <div className="hero-left-premium">
             <p className="hero-premium-tagline hero-premium-tagline--desktop">
               <span>{hero.taglineLine1}</span>{' '}
@@ -103,35 +133,6 @@ export default function Hero({ onOpenContact }) {
                 <span>{hero.socialProofAfter}</span>
               </p>
             </div>
-          </div>
-
-          <div className="hero-right-premium">
-            <div className="hero-image-composite">
-              <span className="hero-scrap hero-scrap--tape" aria-hidden="true" />
-              <span className="hero-scrap hero-scrap--heart scrap-heart-shape" aria-hidden="true" />
-              <div className="premium-arch-backdrop" />
-              <OptimizedImage
-                src={HERO_IMG}
-                alt={hero.imageAlt}
-                className="hero-img-premium"
-                width={600}
-                height={750}
-                priority
-                fetchPriority="high"
-                quality={70}
-                sizes="(max-width: 768px) 85vw, 360px"
-              />
-              <div className="hero-media-fade" aria-hidden="true" />
-              <div className="hero-media-overlays">
-                <p className="hero-availability-pill">
-                  <span className="hero-availability-dot" aria-hidden="true" />
-                  <span>{hero.availability}</span>
-                </p>
-                <p className="hero-location-chip">{hero.location}</p>
-              </div>
-            </div>
-            {showEnhancements ? <HeroMetricCard hero={hero} /> : null}
-            <div className="premium-vertical-label" aria-hidden="true">{hero.verticalLabel}</div>
           </div>
         </div>
       </section>
