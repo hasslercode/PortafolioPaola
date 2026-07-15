@@ -1,14 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, usePathname } from '@/i18n/routing';
 import { useI18n } from '@/features/home/HomeContentProvider';
 import { useHeaderMenu } from '@/hooks/useHeaderMenu.js';
 import HeaderPreferences from './HeaderPreferences.jsx';
 import { toSrc } from '@/lib/asset';
 import iconPaola from '@/assets/icon-paola-108.webp';
-
-const MOBILE_HEADER_QUERY = '(max-width: 992px)';
 
 function navItemClass(active) {
   return `nav-item-refined${active ? ' active' : ''}`;
@@ -20,21 +18,12 @@ export default function Header({ onOpenContact }) {
   const pathname = usePathname();
   const headerRef = useRef(null);
   const { menuOpen, toggleMenu, closeMenu, menuLabel, isMobile } = useHeaderMenu();
-  const [compactHeader, setCompactHeader] = useState(false);
 
   const isHome = pathname === '/';
   const isCases = pathname.startsWith('/experiences');
   const isServices = pathname.startsWith('/services');
   const isContact = pathname.startsWith('/contact');
   const isAbout = pathname.startsWith('/about');
-
-  useEffect(() => {
-    const mediaQuery = globalThis.matchMedia(MOBILE_HEADER_QUERY);
-    const syncLayout = () => setCompactHeader(mediaQuery.matches);
-    syncLayout();
-    mediaQuery.addEventListener('change', syncLayout);
-    return () => mediaQuery.removeEventListener('change', syncLayout);
-  }, []);
 
   useEffect(() => {
     const headerEl = headerRef.current;
@@ -82,7 +71,7 @@ export default function Header({ onOpenContact }) {
       <div className="container nav-container-refined">
         <div className="logo-box-refined">
           <Link href="/" className="site-logo" aria-label={header.logoAriaLabel} onClick={handleNavClick}>
-            <img src={toSrc(iconPaola)} alt="" className="site-logo__icon" width="54" height="54" loading="lazy" decoding="async" fetchPriority="low" />
+            <img src={toSrc(iconPaola)} alt="" className="site-logo__icon" width="54" height="54" decoding="async" />
             <span className="site-logo__lockup">
               <svg className="site-logo__sparkles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 18" aria-hidden="true">
                 <path className="site-logo__sparkle" d="M8 1.2 8.95 5.35 13.1 6.3 8.95 7.25 8 11.4 7.05 7.25 2.9 6.3 7.05 5.35Z" />
@@ -114,9 +103,8 @@ export default function Header({ onOpenContact }) {
           </span>
         </div>
 
-        {compactHeader ? (
-          <HeaderPreferences className="header-prefs--bar" />
-        ) : null}
+        {/* Always in DOM — CSS toggles bar vs inline to avoid post-hydration layout. */}
+        <HeaderPreferences className="header-prefs--bar" />
 
         <button
           className="menu-toggle-refined"
@@ -162,9 +150,7 @@ export default function Header({ onOpenContact }) {
             </ul>
           </nav>
 
-          {!compactHeader ? (
-            <HeaderPreferences className="header-prefs--inline" />
-          ) : null}
+          <HeaderPreferences className="header-prefs--inline" />
 
           <div className="cta-wrap-refined">
             <a href="#" className="btn-pill-premium" onClick={handleContactClick} aria-haspopup="dialog">{header.cta}</a>

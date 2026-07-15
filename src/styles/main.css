@@ -5162,7 +5162,7 @@ body.modal-open {
 }
 
 .hero-premium-description {
-    font-family: var(--font-inter);
+    font-family: var(--font-sans);
     font-size: var(--text-min);
     line-height: 1.45;
     color: var(--text-body);
@@ -5223,7 +5223,8 @@ body.modal-open {
 .hero-image-composite {
     position: relative;
     width: min(44vw, 158px);
-    height: min(56vw, 220px);
+    height: auto;
+    aspect-ratio: 4 / 5;
     max-height: none;
     margin: 0 auto;
     display: flex;
@@ -5622,7 +5623,8 @@ body.modal-open {
 
     .hero-image-composite {
         width: min(100%, 390px);
-        height: min(68vh, 500px);
+        height: auto;
+        aspect-ratio: 4 / 5;
         max-height: 500px;
         margin: 0;
     }
@@ -6077,11 +6079,6 @@ body.modal-open {
         gap: 4px;
     }
 
-    .hero-image-composite {
-        width: min(40vw, 142px);
-        height: min(50vw, 195px);
-    }
-
     .hero-premium-title {
         font-size: clamp(15px, 4.4vw, 22px);
         margin-bottom: 6px;
@@ -6137,11 +6134,6 @@ body.modal-open {
 }
 
 @media (max-width: 420px) {
-    .hero-image-composite {
-        width: min(38vw, 128px);
-        height: min(48vw, 175px);
-    }
-
     .hero-premium-title {
         font-size: clamp(14px, 4.2vw, 20px);
     }

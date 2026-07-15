@@ -279,14 +279,14 @@
         display: none;
     }
 
-    /* Stable aspect-ratio — avoid 58vh (mobile chrome show/hide = CLS). */
+    /* Stable aspect-ratio — avoid vh (mobile chrome show/hide = CLS). */
     .hero-image-composite {
-        width: 100%;
+        width: min(100%, calc(460px * 4 / 5));
         max-width: 100%;
         height: auto;
         aspect-ratio: 4 / 5;
-        max-height: 460px;
-        margin: 0;
+        max-height: none;
+        margin: 0 auto;
         filter: none;
         border-radius: 28px 28px 18px 18px;
         overflow: hidden;
@@ -1270,8 +1270,8 @@
     }
 
     .hero-image-composite {
+        width: min(100%, calc(400px * 4 / 5));
         aspect-ratio: 4 / 5;
-        max-height: 400px;
         height: auto;
         border-radius: 24px 24px 16px 16px;
     }
