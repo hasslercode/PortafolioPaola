@@ -89,12 +89,12 @@
 
     .hero-grid-premium {
         gap: 36px;
-        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
         align-items: center;
     }
 
     .hero-left-premium {
-        max-width: 540px;
+        max-width: 640px;
         padding: 4px 20px 0 0;
     }
 
@@ -208,7 +208,7 @@
     }
 
     .hero-left-premium {
-        max-width: 560px;
+        max-width: 680px;
     }
 
     .hero-premium-title {
