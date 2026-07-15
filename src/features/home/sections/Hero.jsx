@@ -117,7 +117,9 @@ export default function Hero({ onOpenContact }) {
                 width={600}
                 height={750}
                 priority
-                sizes="(max-width: 768px) 100vw, 33vw"
+                fetchPriority="high"
+                quality={70}
+                sizes="(max-width: 768px) 85vw, 360px"
               />
               <div className="hero-media-fade" aria-hidden="true" />
               <div className="hero-media-overlays">

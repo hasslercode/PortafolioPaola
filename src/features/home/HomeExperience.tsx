@@ -179,10 +179,12 @@ export default function HomeExperience() {
 
       <Suspense fallback={null}>
         <ContactModal open={contactModal.open} onClose={contactModal.closeModal} />
-        <PortfolioModal
-          open={portfolioModal.open}
-          onClose={portfolioModal.closeModal}
-        />
+        {portfolioModal.open ? (
+          <PortfolioModal
+            open={portfolioModal.open}
+            onClose={portfolioModal.closeModal}
+          />
+        ) : null}
       </Suspense>
     </>
   );

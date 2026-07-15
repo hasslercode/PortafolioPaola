@@ -6,7 +6,7 @@ import { useI18n } from '@/features/home/HomeContentProvider';
 import { useHeaderMenu } from '@/hooks/useHeaderMenu.js';
 import HeaderPreferences from './HeaderPreferences.jsx';
 import { toSrc } from '@/lib/asset';
-import iconPaola from '@/assets/icon-paola-128.webp';
+import iconPaola from '@/assets/icon-paola-108.webp';
 
 const MOBILE_HEADER_QUERY = '(max-width: 992px)';
 
@@ -82,7 +82,7 @@ export default function Header({ onOpenContact }) {
       <div className="container nav-container-refined">
         <div className="logo-box-refined">
           <Link href="/" className="site-logo" aria-label={header.logoAriaLabel} onClick={handleNavClick}>
-            <img src={toSrc(iconPaola)} alt="" className="site-logo__icon" width="54" height="54" loading="eager" decoding="async" />
+            <img src={toSrc(iconPaola)} alt="" className="site-logo__icon" width="54" height="54" loading="lazy" decoding="async" fetchPriority="low" />
             <span className="site-logo__lockup">
               <svg className="site-logo__sparkles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 18" aria-hidden="true">
                 <path className="site-logo__sparkle" d="M8 1.2 8.95 5.35 13.1 6.3 8.95 7.25 8 11.4 7.05 7.25 2.9 6.3 7.05 5.35Z" />

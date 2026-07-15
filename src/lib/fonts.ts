@@ -6,6 +6,7 @@ import { Caveat, Inter, Playfair_Display, Plus_Jakarta_Sans } from 'next/font/go
  * - Weights limited to what legacy UI actually needs.
  * @see https://nextjs.org/docs/app/building-your-application/optimizing/fonts
  */
+/** Only preload the primary UI face — serif/script load with display:swap off the critical path. */
 export const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
@@ -19,8 +20,10 @@ export const playfair = Playfair_Display({
   weight: ['700', '900'],
   style: ['normal', 'italic'],
   variable: '--font-serif-face',
-  display: 'swap',
-  preload: true,
+  // optional = no late swap on Slow 4G (CLS on hero title); fallback stays if font is late
+  display: 'optional',
+  preload: false,
+  adjustFontFallback: true,
 });
 
 export const inter = Inter({

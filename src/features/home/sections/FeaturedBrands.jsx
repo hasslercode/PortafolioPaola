@@ -3,24 +3,19 @@
 import FadeUp from '@/features/home/components/FadeUp';
 import { Link } from '@/i18n/routing';
 import { useI18n } from '@/features/home/HomeContentProvider';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { toSrc } from '@/lib/asset';
-import logoCocaCola from '@/assets/logos/coca-cola.png';
+import logoCocaCola from '@/assets/logos/coca-cola.webp';
 import logoTotto from '@/assets/logos/totto.svg';
-import logoCineColombia from '@/assets/logos/cine-colombia.png';
+import logoCineColombia from '@/assets/logos/cine-colombia.webp';
 import logoHm from '@/assets/logos/hm.svg';
 import logoStarbucks from '@/assets/logos/starbucks.svg';
-import logoMaxgordos from '@/assets/logos/maxgordos.png';
-import imgCocaCola from '@/assets/campaigns/coca-cola.webp';
+import logoMaxgordos from '@/assets/logos/maxgordos.webp';
 import imgCocaColaThumb from '@/assets/campaigns/coca-cola-thumb.webp';
-import imgTotto from '@/assets/campaigns/totto-backpack.webp';
 import imgTottoThumb from '@/assets/campaigns/totto-backpack-thumb.webp';
-import imgCineColombia from '@/assets/campaigns/cine-colombia.webp';
 import imgCineColombiaThumb from '@/assets/campaigns/cine-colombia-thumb.webp';
-import imgHm from '@/assets/campaigns/hm-store.webp';
 import imgHmThumb from '@/assets/campaigns/hm-store-thumb.webp';
-import imgStarbucks from '@/assets/campaigns/starbucks-cup.png';
 import imgStarbucksThumb from '@/assets/campaigns/starbucks-cup-thumb.webp';
-import imgMaxgordos from '@/assets/campaigns/maxgordos-burger.webp';
 import imgMaxgordosThumb from '@/assets/campaigns/maxgordos-burger-thumb.webp';
 
 const CAMPAIGN_LAYOUT = [
@@ -31,7 +26,6 @@ const CAMPAIGN_LAYOUT = [
     logoWidth: 120,
     logoHeight: 32,
     visualClass: 'campaign-card__visual campaign-card__visual--cutout',
-    image: imgCocaCola,
     imageThumb: imgCocaColaThumb,
     imageWidth: 300,
     imageHeight: 520,
@@ -43,7 +37,6 @@ const CAMPAIGN_LAYOUT = [
     logoWidth: 48,
     logoHeight: 48,
     visualClass: 'campaign-card__visual campaign-card__visual--cutout',
-    image: imgTotto,
     imageThumb: imgTottoThumb,
     imageWidth: 300,
     imageHeight: 520,
@@ -55,7 +48,6 @@ const CAMPAIGN_LAYOUT = [
     logoWidth: 120,
     logoHeight: 32,
     visualClass: 'campaign-card__visual campaign-card__visual--photo',
-    image: imgCineColombia,
     imageThumb: imgCineColombiaThumb,
     imageWidth: 300,
     imageHeight: 520,
@@ -67,7 +59,6 @@ const CAMPAIGN_LAYOUT = [
     logoWidth: 72,
     logoHeight: 32,
     visualClass: 'campaign-card__visual campaign-card__visual--photo',
-    image: imgHm,
     imageThumb: imgHmThumb,
     imageWidth: 300,
     imageHeight: 520,
@@ -79,7 +70,6 @@ const CAMPAIGN_LAYOUT = [
     logoWidth: 40,
     logoHeight: 40,
     visualClass: 'campaign-card__visual campaign-card__visual--cutout',
-    image: imgStarbucks,
     imageThumb: imgStarbucksThumb,
     imageWidth: 300,
     imageHeight: 520,
@@ -91,7 +81,6 @@ const CAMPAIGN_LAYOUT = [
     logoWidth: 120,
     logoHeight: 40,
     visualClass: 'campaign-card__visual campaign-card__visual--photo',
-    image: imgMaxgordos,
     imageThumb: imgMaxgordosThumb,
     imageWidth: 300,
     imageHeight: 520,
@@ -183,6 +172,7 @@ export default function FeaturedBrands({ hubMode = false }) {
                           width={layout.logoWidth}
                           height={layout.logoHeight}
                           loading="lazy"
+                          decoding="async"
                         />
                         <h3 className="brand-header__name">{campaign.name}</h3>
                         <p className="brand-header__category">{campaign.category}</p>
@@ -208,17 +198,14 @@ export default function FeaturedBrands({ hubMode = false }) {
                     </div>
                   </div>
                   <div className={layout.visualClass}>
-                    <picture>
-                      <source srcSet={toSrc(layout.imageThumb)} type="image/webp" />
-                      <img
-                        src={toSrc(layout.image)}
-                        alt={t(experience.imageAlt, { brand: campaign.name })}
-                        width={layout.imageWidth}
-                        height={layout.imageHeight}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <OptimizedImage
+                      src={layout.imageThumb}
+                      alt={t(experience.imageAlt, { brand: campaign.name })}
+                      width={layout.imageWidth}
+                      height={layout.imageHeight}
+                      sizes="(max-width: 768px) 42vw, 180px"
+                      quality={70}
+                    />
                   </div>
                   <a
                     href={campaign.ctaLink}

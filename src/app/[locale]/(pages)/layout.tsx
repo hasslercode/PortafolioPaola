@@ -5,6 +5,7 @@ import type { AppLocale } from '@/i18n/routing';
 import type { SiteLocale } from '@/config/site';
 import homeEs from '../../../../content/home/es.json';
 import homeEn from '../../../../content/home/en.json';
+import '@/styles/seo.css';
 
 const homeContent = {
   es: homeEs,

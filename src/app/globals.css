@@ -3,7 +3,7 @@
 @import '../styles/conversion.css';
 @import '../styles/mobile.css';
 @import '../styles/dark.css';
-@import '../styles/seo.css';
+/* seo.css loaded only on content routes via (pages)/layout */
 
 /* Map next/font CSS variables onto legacy + App Router design tokens */
 :root {

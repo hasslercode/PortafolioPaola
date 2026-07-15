@@ -129,10 +129,12 @@ export function PageChrome({ children }: PageChromeProps) {
 
         <Suspense fallback={null}>
           <ContactModal open={contactModal.open} onClose={contactModal.closeModal} />
-          <PortfolioModal
-            open={portfolioModal.open}
-            onClose={portfolioModal.closeModal}
-          />
+          {portfolioModal.open ? (
+            <PortfolioModal
+              open={portfolioModal.open}
+              onClose={portfolioModal.closeModal}
+            />
+          ) : null}
         </Suspense>
       </div>
     </ContentActionsContext.Provider>

@@ -131,6 +131,8 @@ export function PortfolioModal({ open, onClose }) {
   const dialogRef = useRef(null);
   const { content } = useI18n();
   const { portfolio: modal } = content.modals;
+  // Only attach PDF src while open — avoids ~1.6MB×2 on initial page load.
+  const iframeSrc = open ? `${portafolioPdf}#toolbar=1&navpanes=0&scrollbar=1` : undefined;
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -181,7 +183,9 @@ export function PortfolioModal({ open, onClose }) {
         </div>
 
         <div className="portfolio-modal__content">
-          <iframe src={`${portafolioPdf}#toolbar=1&navpanes=0&scrollbar=1`} title={modal.iframeTitle} loading="lazy" />
+          {iframeSrc ? (
+            <iframe src={iframeSrc} title={modal.iframeTitle} />
+          ) : null}
         </div>
       </div>
     </dialog>

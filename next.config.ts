@@ -1,7 +1,9 @@
+import path from 'path';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+const emptyModule = path.join(__dirname, 'src/lib/empty-module.js');
 
 /**
  * SSG-first config for SEO/GEO 2026.
@@ -15,12 +17,24 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   images: {
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    // Cap large breakpoints — hero LCP is ~360–600 CSS px, not 1920.
+    deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],
+  },
+  // Next ships baseline polyfills unconditionally (browserslist does not gate them).
+  // Lighthouse "Legacy JavaScript" (~12 KiB) — safe to stub for our modern browser targets.
+  // @see https://github.com/vercel/next.js/issues/86785
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '../build/polyfills/polyfill-module': emptyModule,
+      'next/dist/build/polyfills/polyfill-module': emptyModule,
+    };
+    return config;
   },
   async headers() {
     return [

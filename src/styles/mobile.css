@@ -279,10 +279,13 @@
         display: none;
     }
 
+    /* Stable aspect-ratio — avoid 58vh (mobile chrome show/hide = CLS). */
     .hero-image-composite {
         width: 100%;
         max-width: 100%;
-        height: min(58vh, 460px);
+        height: auto;
+        aspect-ratio: 4 / 5;
+        max-height: 460px;
         margin: 0;
         filter: none;
         border-radius: 28px 28px 18px 18px;
@@ -1267,7 +1270,9 @@
     }
 
     .hero-image-composite {
-        height: min(52vh, 400px);
+        aspect-ratio: 4 / 5;
+        max-height: 400px;
+        height: auto;
         border-radius: 24px 24px 16px 16px;
     }
 

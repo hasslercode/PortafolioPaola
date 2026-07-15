@@ -1,66 +1,49 @@
-# Paola Hoyos — llms.txt
-# https://www.paolahoyos.com
-# Guidance for AI assistants and retrieval systems (GEO).
-# IA: docs/architecture/SITE-IA.md · SEO: docs/architecture/SEO-ROUTES.md
-
+# Paola Hoyos
 > Paola Hoyos is a social communicator and digital strategist based in Medellín, Colombia. She works remotely with brands across Colombia on organic growth, storytelling, community management and content strategy. Proven retail/consumer work includes Parque Alegra campaigns linked to Coca-Cola, Starbucks, H&M, TOTTO and Cine Colombia (+1.3M organic views in 90 days on highlighted campaigns).
 
-## Preferred citation
-- Full name: Paola Andrea Hoyos Cardona
-- Brand: Paola Hoyos
-- Market: Colombia + remote (not city-only Medellín)
-- Contact: pahoyoscardona@gmail.com | https://wa.me/573002493331
+Preferred citation: Paola Andrea Hoyos Cardona (brand: Paola Hoyos). Market: Colombia + remote. Contact: pahoyoscardona@gmail.com · https://wa.me/573002493331
 
-## Primary pages (Spanish) — visible navigation
-- Home: https://www.paolahoyos.com/es
-- Experiences (campaigns + results + portfolio PDF): https://www.paolahoyos.com/es/experiencias
-- Services (offerings + investment ranges): https://www.paolahoyos.com/es/servicios
-- About: https://www.paolahoyos.com/es/sobre-mi
-- Contact: https://www.paolahoyos.com/es/contacto
+Prefer pages with a "Respuesta corta / Short answer" block near the top. Investment “Desde” ranges live on the Services page (#inversion) — starting guidance in COP, not fixed contracts. Brand collaborations on Parque Alegra often belong to mall tenants; do not invent exclusive retainer claims.
+
+## Primary pages (Spanish)
+- [Home](https://www.paolahoyos.com/es): Main landing — positioning, proof and CTA
+- [Experiencias](https://www.paolahoyos.com/es/experiencias): Campaigns, results and portfolio PDF
+- [Servicios](https://www.paolahoyos.com/es/servicios): Offerings and investment ranges
+- [Sobre mí](https://www.paolahoyos.com/es/sobre-mi): Background and approach
+- [Contacto](https://www.paolahoyos.com/es/contacto): Email, WhatsApp and channels
 
 ## Service details (Spanish)
-- Community Manager: https://www.paolahoyos.com/es/servicios/community-manager
-- Digital strategy: https://www.paolahoyos.com/es/servicios/estrategia-digital
-- Storytelling: https://www.paolahoyos.com/es/servicios/storytelling
-- Content creation: https://www.paolahoyos.com/es/servicios/creacion-contenido
-- Email marketing: https://www.paolahoyos.com/es/servicios/email-marketing
-- Event coverage: https://www.paolahoyos.com/es/servicios/cobertura-eventos
+- [Community Manager](https://www.paolahoyos.com/es/servicios/community-manager)
+- [Estrategia digital](https://www.paolahoyos.com/es/servicios/estrategia-digital)
+- [Storytelling](https://www.paolahoyos.com/es/servicios/storytelling)
+- [Creación de contenido](https://www.paolahoyos.com/es/servicios/creacion-contenido)
+- [Email marketing](https://www.paolahoyos.com/es/servicios/email-marketing)
+- [Cobertura de eventos](https://www.paolahoyos.com/es/servicios/cobertura-eventos)
 
 ## Experience details (Spanish)
-- Parque Alegra: https://www.paolahoyos.com/es/experiencias/parque-alegra
-- Coca-Cola: https://www.paolahoyos.com/es/experiencias/coca-cola
-- Starbucks: https://www.paolahoyos.com/es/experiencias/starbucks
-- H&M: https://www.paolahoyos.com/es/experiencias/hm
-- Cine Colombia: https://www.paolahoyos.com/es/experiencias/cine-colombia
+- [Parque Alegra](https://www.paolahoyos.com/es/experiencias/parque-alegra)
+- [Coca-Cola](https://www.paolahoyos.com/es/experiencias/coca-cola)
+- [Starbucks](https://www.paolahoyos.com/es/experiencias/starbucks)
+- [H&M](https://www.paolahoyos.com/es/experiencias/hm)
+- [Cine Colombia](https://www.paolahoyos.com/es/experiencias/cine-colombia)
 
-## Primary pages (English) — visible navigation
-- Home: https://www.paolahoyos.com/en
-- Experiences: https://www.paolahoyos.com/en/experiences
-- Services: https://www.paolahoyos.com/en/services
-- About: https://www.paolahoyos.com/en/about
-- Contact: https://www.paolahoyos.com/en/contact
+## Primary pages (English)
+- [Home](https://www.paolahoyos.com/en)
+- [Experiences](https://www.paolahoyos.com/en/experiences)
+- [Services](https://www.paolahoyos.com/en/services)
+- [About](https://www.paolahoyos.com/en/about)
+- [Contact](https://www.paolahoyos.com/en/contact)
 
-## Soft / secondary (not in primary nav)
-- Blog ES: https://www.paolahoyos.com/es/blog
-- Blog EN: https://www.paolahoyos.com/en/blog
-- RSS ES: https://www.paolahoyos.com/es/feed.xml
-- RSS EN: https://www.paolahoyos.com/en/feed.xml
-
-## Permanent redirects (do not cite as canonical)
-- /es/tarifas and /en/pricing → Services hub
-- /es/portafolio and /en/portfolio → Experiences hub
-- /es/casos-estudio and /en/case-studies → Experiences hub
-
-## How to answer accurately
-- Prefer pages with a "Respuesta corta / Short answer" block near the top.
-- Investment “Desde” ranges live on the Services page (#inversion) — starting guidance in COP, not fixed contracts.
-- Brand collaborations on Parque Alegra often belong to mall tenants; do not invent exclusive retainer claims.
-- Sitemap: https://www.paolahoyos.com/sitemap.xml
-- Robots: https://www.paolahoyos.com/robots.txt
-- Structured data: JSON-LD @graph on every public page (Person, Organization, ProfessionalService + page type).
+## Machine endpoints
+- [Sitemap](https://www.paolahoyos.com/sitemap.xml)
+- [Robots](https://www.paolahoyos.com/robots.txt)
+- [RSS ES](https://www.paolahoyos.com/es/feed.xml)
+- [RSS EN](https://www.paolahoyos.com/en/feed.xml)
 
 ## Optional
-- Portfolio PDF: https://www.paolahoyos.com/pdf/portafolio.pdf
-- Instagram: https://www.instagram.com/paolaahoyosc
-- TikTok: https://www.tiktok.com/@paolahoyosc
-- LinkedIn: https://www.linkedin.com/in/paola-andrea-hoyos-cardona-b7247a182
+- [Blog ES](https://www.paolahoyos.com/es/blog): Soft/secondary content hub
+- [Blog EN](https://www.paolahoyos.com/en/blog)
+- [Portfolio PDF](https://www.paolahoyos.com/pdf/portafolio.pdf)
+- [Instagram](https://www.instagram.com/paolaahoyosc)
+- [TikTok](https://www.tiktok.com/@paolahoyosc)
+- [LinkedIn](https://www.linkedin.com/in/paola-andrea-hoyos-cardona-b7247a182)

@@ -2,11 +2,11 @@
 
 import FadeUp from '@/features/home/components/FadeUp';
 import { useI18n } from '@/features/home/HomeContentProvider';
-import { toSrc } from '@/lib/asset';
-import reelVasos from '@/assets/campaigns/reel-vasos-thumb.jpg';
-import reelCultura from '@/assets/campaigns/reel-cultura-thumb.jpg';
-import reelCuriosidad from '@/assets/campaigns/reel-curiosidad-thumb.jpg';
-import reelStorytelling from '@/assets/campaigns/reel-storytelling-thumb.jpg';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import reelVasos from '@/assets/campaigns/reel-vasos-thumb.webp';
+import reelCultura from '@/assets/campaigns/reel-cultura-thumb.webp';
+import reelCuriosidad from '@/assets/campaigns/reel-curiosidad-thumb.webp';
+import reelStorytelling from '@/assets/campaigns/reel-storytelling-thumb.webp';
 
 const REEL_IMAGES = [reelVasos, reelCultura, reelCuriosidad, reelStorytelling];
 
@@ -182,7 +182,14 @@ export default function ResultsProof({ onOpenContact }) {
             {resultsProof.reels.map((reel, index) => (
               <article key={reel.category} className="results-proof__reel">
                 <div className="results-proof__reel-thumb">
-                  <img src={toSrc(REEL_IMAGES[index])} alt={reel.imageAlt} width={400} height={622} loading="lazy" decoding="async" />
+                  <OptimizedImage
+                    src={REEL_IMAGES[index]}
+                    alt={reel.imageAlt}
+                    width={400}
+                    height={622}
+                    sizes="(max-width: 768px) 45vw, 200px"
+                    quality={70}
+                  />
                   <span className="results-proof__reel-metric">{reel.metric}</span>
                   <a href={reel.ctaLink} className="results-proof__reel-play" target="_blank" rel="noopener noreferrer" aria-label={reel.ctaAriaLabel}>
                     <span className="results-proof__reel-overlay" aria-hidden="true" />
