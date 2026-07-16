@@ -15,7 +15,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/'],
+        // Do not disallow /_next/ — Googlebot must fetch JS/CSS under /_next/static/
+        // to render the page (Search Console "robots.txt blocks Google Script").
+        disallow: ['/api/'],
       },
       // Generative / AI retrieval crawlers
       { userAgent: 'GPTBot', allow: '/' },
