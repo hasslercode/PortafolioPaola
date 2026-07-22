@@ -819,3 +819,13 @@
   background: rgba(148, 56, 80, 0.16);
   border-color: rgba(232, 167, 179, 0.16);
 }
+
+[data-theme='dark'] .session-advisory {
+  background: rgba(148, 56, 80, 0.12);
+  border-color: rgba(232, 167, 179, 0.28);
+}
+
+[data-theme='dark'] .session-advisory__title,
+[data-theme='dark'] .plan-showcase__plans-title {
+  color: var(--text-on-dark, #f4e8ea);
+}
