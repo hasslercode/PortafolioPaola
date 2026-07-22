@@ -7,9 +7,7 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { buildBreadcrumbs } from '@/lib/seo/paths';
 import { hubGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
-import { ServicesHubView } from '@/features/home/hubs/ServicesHubView';
 import { PricingHubView } from '@/features/home/hubs/ContentHubViews';
-import VerticalArtConnector from '@/features/home/components/VerticalArtConnector';
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -47,22 +45,12 @@ function buildInvestmentFaqs(locale: string) {
     {
       question:
         locale === 'es'
-          ? '¿La sesión estratégica es un plan?'
-          : 'Is the strategy session a plan?',
+          ? '¿Por dónde empiezo?'
+          : 'Where should I start?',
       answer:
         locale === 'es'
-          ? 'No. Es una reunión de diagnóstico: revisamos redes, encontramos oportunidades y entrego un plan de acción. Ideal para ordenar el camino antes de producir o gestionar.'
-          : 'No. It is a diagnosis meeting: we review channels, spot opportunities and I deliver an action plan. Ideal to map the path before producing or managing.',
-    },
-    {
-      question:
-        locale === 'es'
-          ? '¿Puedo subir de nivel después?'
-          : 'Can I upgrade later?',
-      answer:
-        locale === 'es'
-          ? 'Sí. Muchas marcas empiezan con la sesión o con estrategia de contenido, y luego pasan a producción o gestión mensual.'
-          : 'Yes. Many brands start with the session or content strategy, then move into production or monthly management.',
+          ? 'Si necesitas claridad, la consultoría. Si ya sabes el mensaje, producción o gestión mensual.'
+          : 'Need clarity? Start with consulting. Already know the message? Production or monthly management.',
     },
   ];
 }
@@ -78,22 +66,30 @@ export default async function ServicesIndexPage({ params }: PageProps) {
   const faqs = buildInvestmentFaqs(locale);
   const packages = [
     {
-      id: 'estrategia',
+      id: 'consultoria',
       index: '01',
+      name: tp('pkgSessionName'),
+      pitch: tp('pkgSessionPitch'),
+      includes: [tp('pkgSessionInc1'), tp('pkgSessionInc2'), tp('pkgSessionInc3')],
+      priceValue: tp('pkgSessionPrice'),
+      ctaLabel: tp('pkgSessionCta'),
+    },
+    {
+      id: 'estrategia',
+      index: '02',
       name: tp('pkgStrategyName'),
       pitch: tp('pkgStrategyPitch'),
       includes: [
         tp('pkgStrategyInc1'),
         tp('pkgStrategyInc3'),
         tp('pkgStrategyInc5'),
-        tp('pkgStrategyInc6'),
       ],
       priceValue: tp('pkgStrategyPrice'),
       ctaLabel: tp('pkgStrategyCta'),
     },
     {
       id: 'produccion',
-      index: '02',
+      index: '03',
       name: tp('pkgProductionName'),
       pitch: tp('pkgProductionPitch'),
       includes: [
@@ -106,7 +102,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     },
     {
       id: 'gestion-mensual',
-      index: '03',
+      index: '04',
       name: tp('pkgMonthlyName'),
       pitch: tp('pkgMonthlyPitch'),
       includes: [
@@ -141,13 +137,11 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         <div className="container servicios-hub-crumbs">
           <Breadcrumbs items={crumbs} locale={locale} />
         </div>
-        <ServicesHubView />
-        <VerticalArtConnector mark="heart" />
         <PricingHubView
           badge={tp('badge')}
           title={tp('title')}
           summary={tp('summary')}
-          disclaimer={tp('disclaimer')}
+          disclaimer=""
           includesLabel={tp('includesLabel')}
           fromLabel={tp('fromLabel')}
           featuredLabel={tp('featuredLabel')}

@@ -401,61 +401,56 @@
     "subtitleAccent1": "clarity",
     "subtitleMiddle": "to full",
     "subtitleAccent2": "operations",
-    "subtitleAfter": "— at the load level your brand actually needs.",
+    "subtitleAfter": ".",
     "cards": [
       {
         "eyebrow": "01 · Session",
         "titleLine1": "Strategic",
         "titleScript": "consulting",
-        "pitch": "We meet, review your social channels, spot opportunities and I hand you an action plan.",
+        "pitch": "Review, opportunities and action plan.",
         "includes": [
-          "Social channels review",
-          "Opportunity mapping",
+          "Channel review",
+          "Opportunities",
           "Action plan"
         ],
-        "tagline": "Ideal to map the path."
+        "tagline": "To map the path."
       },
       {
         "eyebrow": "02 · Strategy",
         "titleBefore": "Content",
         "titleScript": "strategy",
-        "pitch": "This is pure strategist work. You leave with clear direction to produce with intention.",
+        "pitch": "Clear direction to produce with intention.",
         "includes": [
           "Brand analysis",
           "Buyer persona",
-          "Content pillars",
-          "Calendar",
-          "Goals",
-          "Communication tone"
+          "Calendar and ideas"
         ],
-        "tagline": "The compass before production."
+        "tagline": "Before producing."
       },
       {
         "eyebrow": "03 · Production",
         "titleBefore": "Content",
         "titleScript": "production",
-        "pitch": "You already know what to say. I make it look spectacular.",
+        "pitch": "Premium editing from your footage.",
         "includes": [
-          "Premium creative editing",
-          "Pacing, captions and typography",
-          "Color, music and publish-ready export"
+          "Creative editing",
+          "Captions and typography",
+          "Publish-ready export"
         ],
-        "tagline": "We start from your recorded footage."
+        "tagline": "From your recorded material."
       },
       {
         "eyebrow": "04 · Premium",
         "titleLine1": "Monthly",
         "titleScript": "management",
-        "pitch": "End-to-end support: light strategy + production + publishing + follow-up.",
+        "pitch": "Light strategy + production + publishing.",
         "includes": [
-          "Light monthly strategy",
+          "Monthly strategy",
           "Production",
-          "Editing",
-          "Scheduling",
           "Publishing",
           "Follow-up"
         ],
-        "tagline": "The full process, with calm and judgment."
+        "tagline": "The full process."
       }
     ]
   },

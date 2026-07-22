@@ -401,61 +401,56 @@
     "subtitleAccent1": "claridad",
     "subtitleMiddle": "a la",
     "subtitleAccent2": "operación",
-    "subtitleAfter": "completa — con el nivel de carga que tu marca necesita.",
+    "subtitleAfter": "completa.",
     "cards": [
       {
         "eyebrow": "01 · Sesión",
         "titleLine1": "Consultoría",
         "titleScript": "estratégica",
-        "pitch": "Tengo una reunión contigo, revisamos tus redes, encontramos oportunidades y te entrego un plan de acción.",
+        "pitch": "Revisión, oportunidades y plan de acción.",
         "includes": [
           "Revisión de redes",
-          "Detección de oportunidades",
+          "Oportunidades",
           "Plan de acción"
         ],
-        "tagline": "Ideal para ordenar el camino."
+        "tagline": "Para ordenar el camino."
       },
       {
         "eyebrow": "02 · Estrategia",
         "titleBefore": "Estrategia de",
         "titleScript": "contenido",
-        "pitch": "Aquí sí trabajo 100% como estratega. Sales con dirección clara para producir con intención.",
+        "pitch": "Dirección clara para producir con intención.",
         "includes": [
           "Análisis de marca",
           "Buyer persona",
-          "Pilares de contenido",
-          "Calendario",
-          "Objetivos",
-          "Tono de comunicación"
+          "Calendario e ideas"
         ],
-        "tagline": "La brújula antes de producir."
+        "tagline": "Antes de producir."
       },
       {
         "eyebrow": "03 · Producción",
         "titleBefore": "Producción de",
         "titleScript": "contenido",
-        "pitch": "Ya sabes qué quieres decir. Yo hago que se vea espectacular.",
+        "pitch": "Edición premium a partir de tu material.",
         "includes": [
-          "Edición creativa premium",
-          "Ritmo, subtítulos y tipografías",
-          "Color, música y export listo"
+          "Edición creativa",
+          "Subtítulos y tipografías",
+          "Export listo"
         ],
-        "tagline": "Partimos de tu material grabado."
+        "tagline": "Con tu material grabado."
       },
       {
         "eyebrow": "04 · Premium",
         "titleLine1": "Gestión",
         "titleScript": "mensual",
-        "pitch": "El acompañamiento integral: estrategia ligera + producción + publicación + seguimiento.",
+        "pitch": "Estrategia ligera + producción + publicación.",
         "includes": [
-          "Estrategia ligera del mes",
+          "Estrategia del mes",
           "Producción",
-          "Edición",
-          "Programación",
           "Publicación",
           "Seguimiento"
         ],
-        "tagline": "Todo el proceso, con calma y criterio."
+        "tagline": "Todo el proceso."
       }
     ]
   },

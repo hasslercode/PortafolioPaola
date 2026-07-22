@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { useI18n } from '@/features/home/HomeContentProvider';
 import { useContentActions } from '@/features/home/PageChrome';
-import VerticalArtConnector from '@/features/home/components/VerticalArtConnector';
 import { FaqSection } from '@/components/content/FaqSection';
 
 export type BlogTopic = 'seo' | 'instagram' | 'tiktok' | 'branding' | 'marketing';
@@ -166,6 +165,8 @@ export type InvestmentPackage = {
 };
 
 const PLAN_ICONS: Record<string, string> = {
+  consultoria:
+    'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
   estrategia:
     'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z',
   produccion:
@@ -280,7 +281,9 @@ export function PricingHubView({
             })}
           </div>
 
-          <p className="wow-subtitle investment-disclaimer">{disclaimer}</p>
+          {disclaimer ? (
+            <p className="wow-subtitle investment-disclaimer">{disclaimer}</p>
+          ) : null}
         </div>
       </section>
 
@@ -303,21 +306,21 @@ export function PricingHubView({
             onClick={() => openContact('pricing_help')}
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" />
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
             </svg>
             <span>{helpCta}</span>
           </button>
         </div>
       </div>
 
-      <VerticalArtConnector mark="sparkle" />
-
-      <div className="container servicios-hub-faqs" id="faqs">
-        <FaqSection
-          title={isEn ? 'FAQ' : 'Preguntas frecuentes'}
-          items={faqs}
-        />
-      </div>
+      {faqs.length > 0 ? (
+        <div className="container servicios-hub-faqs" id="faqs">
+          <FaqSection
+            title={isEn ? 'FAQ' : 'Preguntas frecuentes'}
+            items={faqs}
+          />
+        </div>
+      ) : null}
     </>
   );
 }
