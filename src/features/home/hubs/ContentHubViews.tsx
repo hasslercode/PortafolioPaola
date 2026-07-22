@@ -252,12 +252,9 @@ export function PricingHubView({
             <div className="session-advisory__lists">
               <div className="session-advisory__panel session-advisory__panel--yes">
                 <p className="session-advisory__label">{includesLabel}</p>
-                <ul className="session-advisory__includes">
+                <ul className="session-advisory__chips">
                   {session.includes.map((item) => (
-                    <li key={item}>
-                      <span aria-hidden="true">✓</span>
-                      <span>{item}</span>
-                    </li>
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
@@ -265,12 +262,9 @@ export function PricingHubView({
                 <p className="session-advisory__label">
                   {isEn ? 'Does not include' : 'No incluye'}
                 </p>
-                <ul className="session-advisory__excludes">
+                <ul className="session-advisory__chips session-advisory__chips--muted">
                   {session.excludes.map((item) => (
-                    <li key={item}>
-                      <span aria-hidden="true">✕</span>
-                      <span>{item}</span>
-                    </li>
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
@@ -325,11 +319,7 @@ export function PricingHubView({
                   <p className="plan-card__pitch">{pkg.pitch}</p>
 
                   <p className="plan-card__includes-label">{includesLabel}</p>
-                  <ul
-                    className={`plan-card__includes${
-                      featured ? ' plan-card__includes--pills' : ''
-                    }`}
-                  >
+                  <ul className="plan-card__includes plan-card__includes--pills">
                     {pkg.includes.map((item) => (
                       <li key={item}>{item}</li>
                     ))}

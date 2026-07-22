@@ -541,41 +541,43 @@
 }
 
 .session-advisory__label {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.65rem;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-align: left;
   color: var(--text-muted, #7a5a62);
 }
 
-.session-advisory__includes,
-.session-advisory__excludes {
+.session-advisory__chips {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  gap: 0.45rem;
-}
-
-.session-advisory__includes li,
-.session-advisory__excludes li {
   display: flex;
-  align-items: flex-start;
-  gap: 0.45rem;
-  font-size: 0.92rem;
-  line-height: 1.3;
-  color: var(--text-body);
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
-.session-advisory__includes li span:first-child {
-  color: #2f7a4b;
-  font-weight: 800;
+.session-advisory__chips li {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 56, 80, 0.22);
+  background: rgba(255, 255, 255, 0.88);
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-dark);
 }
 
-.session-advisory__excludes li span:first-child {
-  color: #943850;
-  font-weight: 800;
+.session-advisory__chips--muted li {
+  border-color: rgba(148, 56, 80, 0.16);
+  background: rgba(148, 56, 80, 0.06);
+  color: #7a3a4a;
+  text-decoration: line-through;
+  text-decoration-color: rgba(148, 56, 80, 0.35);
 }
 
 .session-advisory__cta {
@@ -789,32 +791,6 @@
   list-style: none;
   margin: 0 0 1rem;
   padding: 0;
-  display: grid;
-  gap: 0.42rem;
-}
-
-.plan-card__includes li {
-  position: relative;
-  padding-left: 1rem;
-  font-family: var(--font-inter);
-  font-size: 0.88rem;
-  line-height: 1.35;
-  color: var(--text-dark);
-}
-
-.plan-card__includes li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.5em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--pink-primary);
-}
-
-.plan-card--featured .plan-card__includes li::before {
-  background: #ffd4dc;
 }
 
 .plan-card__includes--pills {
@@ -824,15 +800,26 @@
 }
 
 .plan-card__includes--pills li {
+  position: relative;
   padding: 0.42rem 0.75rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+  border: 1px solid rgba(148, 56, 80, 0.22);
+  background: rgba(148, 56, 80, 0.05);
+  font-family: var(--font-inter);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-dark);
 }
 
 .plan-card__includes--pills li::before {
   display: none;
+}
+
+.plan-card--featured .plan-card__includes--pills li {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
 }
 
 .plan-card__footer {
