@@ -79,18 +79,26 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     badge: tp('sessionBadge'),
     title: tp('pkgSessionName'),
     pitch: tp('pkgSessionPitch'),
+    note: tp('pkgSessionNote'),
+    ctaLabel: tp('pkgSessionCta'),
+    includesLabel: tp('includesLabel'),
+    excludesLabel: tp('excludesLabel'),
     includes: [
-      tp('pkgSessionInc1'),
-      tp('pkgSessionInc2'),
-      tp('pkgSessionInc3'),
+      { title: tp('pkgSessionInc1'), detail: tp('pkgSessionInc1Detail') },
+      { title: tp('pkgSessionInc2'), detail: tp('pkgSessionInc2Detail') },
+      { title: tp('pkgSessionInc3'), detail: tp('pkgSessionInc3Detail') },
     ],
     excludes: [
       tp('pkgSessionExc1'),
       tp('pkgSessionExc2'),
       tp('pkgSessionExc3'),
     ],
-    note: tp('pkgSessionNote'),
-    ctaLabel: tp('pkgSessionCta'),
+    highlights: [
+      { title: tp('pkgSessionHi1'), detail: tp('pkgSessionHi1Detail') },
+      { title: tp('pkgSessionHi2'), detail: tp('pkgSessionHi2Detail') },
+      { title: tp('pkgSessionHi3'), detail: tp('pkgSessionHi3Detail') },
+    ],
+    assurance: tp('sessionAssurance'),
   };
 
   const packages = [
@@ -177,7 +185,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           summary={tp('summary')}
           plansTitle={tp('plansTitle')}
           plansSummary={tp('plansSummary')}
-          disclaimer={tp('disclaimer')}
+          disclaimer=""
           includesLabel={tp('includesLabel')}
           fromLabel={tp('fromLabel')}
           featuredLabel={tp('featuredLabel')}
