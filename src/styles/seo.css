@@ -1136,10 +1136,10 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* Inversión hub — 4 packs centered (services grid is 5-col) */
+/* Inversión / planes hub — structured cards, no price spam */
 .investment-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   width: 100%;
   max-width: 1100px;
@@ -1148,61 +1148,41 @@
   align-items: stretch;
 }
 
+.investment-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .investment-card {
   height: 100%;
   min-width: 0;
+  text-align: left;
+  align-items: stretch;
+}
+
+.investment-card .service-card-wow__top,
+.investment-card .service-card-wow__includes,
+.investment-card .service-card-wow__tagline,
+.investment-card .investment-card__cta {
+  width: 100%;
 }
 
 .investment-card__title {
-  font-size: clamp(1.25rem, 2vw, 1.55rem) !important;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem) !important;
   white-space: normal !important;
   line-height: 1.2;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.75rem !important;
   text-wrap: balance;
+  text-align: left;
 }
 
-.investment-card__from {
+.investment-card__includes-label {
   font-family: var(--font-inter);
-  font-size: var(--text-min, 0.8rem);
-  letter-spacing: 0.06em;
+  font-size: var(--text-min, 0.75rem);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin: 0 0 0.25rem !important;
-}
-
-.investment-card__price {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 4.1rem;
-  margin: 0 0 1rem !important;
-  line-height: 1.15;
-}
-
-.investment-card__amount {
-  font-family: var(--font-playfair), Georgia, serif;
-  font-size: clamp(1.65rem, 2.8vw, 2.1rem);
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.investment-card__period {
-  font-family: var(--font-inter);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  margin-top: 0.15rem;
-}
-
-.investment-card__period--spacer {
-  visibility: hidden;
-}
-
-.investment-card__ideal {
-  flex: 1 1 auto;
-  margin: 0 !important;
-  text-wrap: pretty;
+  margin: 0 0 0.45rem !important;
+  align-self: flex-start;
 }
 
 .investment-card__cta {
@@ -1211,15 +1191,21 @@
   width: 100%;
 }
 
+.investment-card__cta .btn-pill-premium {
+  width: 100%;
+}
+
 @media (max-width: 1100px) {
-  .investment-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 720px;
+  .investment-grid,
+  .investment-grid--3 {
+    grid-template-columns: 1fr;
+    max-width: 420px;
   }
 }
 
 @media (max-width: 560px) {
-  .investment-grid {
+  .investment-grid,
+  .investment-grid--3 {
     grid-template-columns: 1fr;
     max-width: 380px;
   }

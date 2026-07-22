@@ -392,31 +392,74 @@
     "badge": "Services",
     "titleBefore": "How can I",
     "titleScript": "help you?",
-    "subtitleBefore": "Four plans",
-    "subtitleAccent1": "without fixed prices",
-    "subtitleMiddle": ",",
-    "subtitleAccent2": "tailored",
-    "subtitleAfter": "to each company — from lightest to heaviest operational load.",
+    "subtitleBefore": "From",
+    "subtitleAccent1": "clarity",
+    "subtitleMiddle": "to full",
+    "subtitleAccent2": "operations",
+    "subtitleAfter": "— at the load level your brand actually needs.",
     "cards": [
       {
+        "eyebrow": "01 · Session",
         "titleLine1": "Strategic",
-        "titleScript": "advisory",
-        "description": "Evaluation session: social audit, opportunity mapping and action plan. No recording, no editing, no publishing."
-      },
-      {
-        "titleLine1": "Content",
         "titleScript": "consulting",
-        "description": "100% strategist work: a PDF with brand/competitor analysis, buyer persona, pillars, calendar, ideas, formats, goals and tone. No content recording."
+        "pitch": "We meet, review your social channels, spot opportunities and I hand you an action plan.",
+        "includes": [
+          "Social channels review",
+          "Opportunity mapping",
+          "Action plan"
+        ],
+        "rules": [
+          "No editing.",
+          "No recording.",
+          "No publishing."
+        ],
+        "tagline": "Advisory only."
       },
       {
+        "eyebrow": "02 · Strategy",
+        "titleBefore": "Content",
+        "titleScript": "strategy",
+        "pitch": "This is pure strategist work. You leave with clear direction to produce with intention.",
+        "includes": [
+          "Brand analysis",
+          "Competitors",
+          "Buyer persona",
+          "Content pillars",
+          "Calendar",
+          "Ideas and formats",
+          "Goals",
+          "Communication tone"
+        ],
+        "rules": [
+          "Absolutely no recording."
+        ]
+      },
+      {
+        "eyebrow": "03 · Production",
         "titleBefore": "Content",
         "titleScript": "production",
-        "description": "Premium editing of the footage you provide. Spectacular finish; investment is based on edit duration."
+        "pitch": "You already know what to say. I make it look spectacular.",
+        "includes": [
+          "Premium creative editing",
+          "Pacing, captions and typography",
+          "Color, music and publish-ready export"
+        ],
+        "tagline": "You provide the recorded footage."
       },
       {
+        "eyebrow": "04 · Premium",
         "titleLine1": "Monthly",
         "titleScript": "management",
-        "description": "Premium end-to-end plan: light monthly strategy, preproduction, filming, editing, scheduling, publishing and follow-up."
+        "pitch": "End-to-end support: light strategy + production + publishing + follow-up.",
+        "includes": [
+          "Light monthly strategy",
+          "Production",
+          "Editing",
+          "Scheduling",
+          "Publishing",
+          "Follow-up"
+        ],
+        "tagline": "Premium plan, start to finish."
       }
     ]
   },

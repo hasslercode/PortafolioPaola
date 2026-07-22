@@ -392,31 +392,74 @@
     "badge": "Servicios",
     "titleBefore": "¿Cómo puedo",
     "titleScript": "ayudarte?",
-    "subtitleBefore": "Cuatro planes",
-    "subtitleAccent1": "sin precios fijos",
-    "subtitleMiddle": ",",
-    "subtitleAccent2": "ajustados",
-    "subtitleAfter": "a cada empresa — de menor a mayor carga operativa.",
+    "subtitleBefore": "De la",
+    "subtitleAccent1": "claridad",
+    "subtitleMiddle": "a la",
+    "subtitleAccent2": "operación",
+    "subtitleAfter": "completa — con el nivel de carga que tu marca necesita.",
     "cards": [
       {
-        "titleLine1": "Asesoría",
+        "eyebrow": "01 · Sesión",
+        "titleLine1": "Consultoría",
         "titleScript": "estratégica",
-        "description": "Sesión de evaluación: revisión de redes, detección de oportunidades y plan de acción. No se graba, no se edita y no se publica."
+        "pitch": "Tengo una reunión contigo, revisamos tus redes, encontramos oportunidades y te entrego un plan de acción.",
+        "includes": [
+          "Revisión de redes",
+          "Detección de oportunidades",
+          "Plan de acción"
+        ],
+        "rules": [
+          "No editas.",
+          "No grabas.",
+          "No publicas."
+        ],
+        "tagline": "Solo asesoría."
       },
       {
-        "titleLine1": "Consultoría de",
+        "eyebrow": "02 · Estrategia",
+        "titleBefore": "Estrategia de",
         "titleScript": "contenido",
-        "description": "Trabajo 100% como estratega: documento PDF con análisis, buyer persona, pilares, calendario, ideas, formatos, objetivos y tono. Sin grabación de contenido."
+        "pitch": "Aquí sí trabajo 100% como estratega. Sales con dirección clara para producir con intención.",
+        "includes": [
+          "Análisis de marca",
+          "Competencia",
+          "Buyer persona",
+          "Pilares de contenido",
+          "Calendario",
+          "Ideas y formatos",
+          "Objetivos",
+          "Tono de comunicación"
+        ],
+        "rules": [
+          "No grabo absolutamente nada."
+        ]
       },
       {
+        "eyebrow": "03 · Producción",
         "titleBefore": "Producción de",
         "titleScript": "contenido",
-        "description": "Edición premium del material que tú grabas. Acabado espectacular; la inversión se define según la duración a editar."
+        "pitch": "Ya sabes qué quieres decir. Yo hago que se vea espectacular.",
+        "includes": [
+          "Edición creativa premium",
+          "Ritmo, subtítulos y tipografías",
+          "Color, música y export listo"
+        ],
+        "tagline": "Tú aportas el material grabado."
       },
       {
+        "eyebrow": "04 · Premium",
         "titleLine1": "Gestión",
         "titleScript": "mensual",
-        "description": "Plan Premium integral: estrategia ligera, preproducción, grabación, edición, programación, publicación y seguimiento."
+        "pitch": "El acompañamiento integral: estrategia ligera + producción + publicación + seguimiento.",
+        "includes": [
+          "Estrategia ligera del mes",
+          "Producción",
+          "Edición",
+          "Programación",
+          "Publicación",
+          "Seguimiento"
+        ],
+        "tagline": "Plan premium de punta a punta."
       }
     ]
   },

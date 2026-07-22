@@ -7,8 +7,8 @@ import { serviceSlugLocales } from '@/content/registry';
 
 /** Home card order → canonical service slug */
 export const HOME_SERVICE_SLUGS = [
-  'asesoria',
-  'consultoria',
+  'sesion-estrategica',
+  'estrategia-contenido',
   'produccion-contenido',
   'gestion-mensual',
 ];
@@ -36,6 +36,45 @@ function ServiceTitle({ card }) {
       <br />
       <span className="service-title-script">{card.titleScript}</span>
     </h3>
+  );
+}
+
+function ServiceCardBody({ card, index }) {
+  return (
+    <>
+      <div className="service-card-wow__top">
+        {card.eyebrow ? (
+          <span className="service-card-wow__eyebrow">{card.eyebrow}</span>
+        ) : null}
+        <div className="service-icon-wrap">
+          <svg viewBox="0 0 24 24">
+            <path d={SERVICE_ICONS[index]} />
+          </svg>
+        </div>
+        <ServiceTitle card={card} />
+        <p className="service-card-wow__pitch">{card.pitch || card.description}</p>
+      </div>
+
+      {Array.isArray(card.includes) && card.includes.length > 0 ? (
+        <ul className="service-card-wow__includes">
+          {card.includes.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      ) : null}
+
+      {Array.isArray(card.rules) && card.rules.length > 0 ? (
+        <ul className="service-card-wow__rules">
+          {card.rules.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      ) : null}
+
+      {card.tagline ? (
+        <p className="service-card-wow__tagline">{card.tagline}</p>
+      ) : null}
+    </>
   );
 }
 
@@ -91,24 +130,14 @@ export default function Services({ linked = false, compact = false }) {
             const localized = slug
               ? serviceSlugLocales[slug][locale === 'en' ? 'en' : 'es']
               : null;
-
-            const body = (
-              <>
-                <div className="service-icon-wrap">
-                  <svg viewBox="0 0 24 24">
-                    <path d={SERVICE_ICONS[index]} />
-                  </svg>
-                </div>
-                <ServiceTitle card={card} />
-                <p>{card.description}</p>
-              </>
-            );
+            const key = card.titleLine1 || card.titleBefore || card.eyebrow;
+            const body = <ServiceCardBody card={card} index={index} />;
 
             if (linked && localized) {
               return (
                 <FadeUp
-                  key={card.titleLine1 || card.titleBefore}
-                  className={`service-card-wow service-card-wow--${index + 1}`}
+                  key={key}
+                  className={`service-card-wow service-card-wow--rich service-card-wow--${index + 1}`}
                   index={index}
                 >
                   <Link
@@ -126,8 +155,8 @@ export default function Services({ linked = false, compact = false }) {
 
             return (
               <FadeUp
-                key={card.titleLine1 || card.titleBefore}
-                className={`service-card-wow service-card-wow--${index + 1}`}
+                key={key}
+                className={`service-card-wow service-card-wow--rich service-card-wow--${index + 1}`}
                 index={index}
               >
                 {body}

@@ -16,11 +16,11 @@ export function ServicesHubView() {
   const pillars = isEn
     ? [
         { href: '#servicios', label: 'Services' },
-        { href: '#inversion', label: 'Investment' },
+        { href: '#inversion', label: 'Plans' },
       ]
     : [
         { href: '#servicios', label: 'Servicios' },
-        { href: '#inversion', label: 'Inversión' },
+        { href: '#inversion', label: 'Planes' },
       ];
 
   return (

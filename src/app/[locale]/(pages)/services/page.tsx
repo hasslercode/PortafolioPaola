@@ -33,8 +33,8 @@ export async function generateMetadata({
     route: { type: 'hub', hub: 'services' },
     keywords: [
       'servicios estrategia digital colombia',
-      'asesoría estratégica',
-      'consultoría de contenido',
+      'sesión estratégica',
+      'estrategia de contenido',
       'producción de contenido',
       'gestión mensual redes',
       tp('pkgMonthlyName'),
@@ -47,22 +47,22 @@ function buildInvestmentFaqs(locale: string) {
     {
       question:
         locale === 'es'
-          ? '¿Hay precios fijos?'
-          : 'Are there fixed prices?',
+          ? '¿La sesión estratégica es un plan?'
+          : 'Is the strategy session a plan?',
       answer:
         locale === 'es'
-          ? 'No. Los cuatro planes no tienen tarifas fijas: cada propuesta se ajusta a la empresa, objetivos y carga operativa.'
-          : 'No. The four plans have no fixed rates: every proposal is tailored to the company, goals and operational load.',
+          ? 'No. Es una reunión de diagnóstico: revisamos redes, encontramos oportunidades y entrego un plan de acción. Sin editar, grabar ni publicar.'
+          : 'No. It is a diagnosis meeting: we review channels, spot opportunities and I deliver an action plan. No editing, recording or publishing.',
     },
     {
       question:
         locale === 'es'
-          ? '¿Puedo combinar o subir de nivel?'
-          : 'Can I combine or upgrade plans?',
+          ? '¿Puedo subir de nivel después?'
+          : 'Can I upgrade later?',
       answer:
         locale === 'es'
-          ? 'Sí. Muchas marcas empiezan con asesoría o consultoría y luego avanzan a producción o gestión mensual cuando ya hay claridad.'
-          : 'Yes. Many brands start with advisory or consulting, then move to production or monthly management once direction is clear.',
+          ? 'Sí. Muchas marcas empiezan con la sesión o con estrategia de contenido, y luego pasan a producción o gestión mensual.'
+          : 'Yes. Many brands start with the session or content strategy, then move into production or monthly management.',
     },
   ];
 }
@@ -78,32 +78,44 @@ export default async function ServicesIndexPage({ params }: PageProps) {
   const faqs = buildInvestmentFaqs(locale);
   const packages = [
     {
-      id: 'asesoria',
-      name: tp('pkgAdvisoryName'),
-      price: tp('pkgAdvisoryPrice'),
-      period: tp('pkgAdvisoryPeriod'),
-      ideal: tp('pkgAdvisoryIdeal'),
-    },
-    {
-      id: 'consultoria',
-      name: tp('pkgConsultingName'),
-      price: tp('pkgConsultingPrice'),
-      period: tp('pkgConsultingPeriod'),
-      ideal: tp('pkgConsultingIdeal'),
+      id: 'estrategia',
+      index: '01',
+      name: tp('pkgStrategyName'),
+      pitch: tp('pkgStrategyPitch'),
+      includes: [
+        tp('pkgStrategyInc1'),
+        tp('pkgStrategyInc2'),
+        tp('pkgStrategyInc3'),
+        tp('pkgStrategyInc4'),
+        tp('pkgStrategyInc5'),
+        tp('pkgStrategyInc6'),
+      ],
+      note: tp('pkgStrategyNote'),
     },
     {
       id: 'produccion',
+      index: '02',
       name: tp('pkgProductionName'),
-      price: tp('pkgProductionPrice'),
-      period: tp('pkgProductionPeriod'),
-      ideal: tp('pkgProductionIdeal'),
+      pitch: tp('pkgProductionPitch'),
+      includes: [
+        tp('pkgProductionInc1'),
+        tp('pkgProductionInc2'),
+        tp('pkgProductionInc3'),
+      ],
+      note: tp('pkgProductionNote'),
     },
     {
       id: 'gestion-mensual',
+      index: '03',
       name: tp('pkgMonthlyName'),
-      price: tp('pkgMonthlyPrice'),
-      period: tp('pkgMonthlyPeriod'),
-      ideal: tp('pkgMonthlyIdeal'),
+      pitch: tp('pkgMonthlyPitch'),
+      includes: [
+        tp('pkgMonthlyInc1'),
+        tp('pkgMonthlyInc2'),
+        tp('pkgMonthlyInc3'),
+        tp('pkgMonthlyInc4'),
+      ],
+      note: tp('pkgMonthlyNote'),
     },
   ];
 
@@ -115,7 +127,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     breadcrumbs: crumbs,
     offers: packages.map((pkg) => ({
       name: pkg.name,
-      description: pkg.ideal,
+      description: pkg.pitch,
     })),
     faqs,
   });
@@ -134,16 +146,9 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           title={tp('title')}
           summary={tp('summary')}
           disclaimer={tp('disclaimer')}
-          fromLabel={tp('fromLabel')}
-          idealLabel={tp('idealLabel')}
+          includesLabel={tp('includesLabel')}
           ctaLabel={tp('cta')}
-          packages={packages.map(({ id, name, price, period, ideal }) => ({
-            id,
-            name,
-            price,
-            period,
-            ideal,
-          }))}
+          packages={packages}
           faqs={faqs}
         />
       </div>

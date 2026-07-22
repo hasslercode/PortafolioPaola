@@ -154,10 +154,12 @@ export function BlogHubView({
 
 export type InvestmentPackage = {
   id: string;
+  index: string;
   name: string;
-  price: string;
-  period: string;
-  ideal: string;
+  pitch: string;
+  includes: string[];
+  note?: string;
+  ctaLabel?: string;
 };
 
 export function PricingHubView({
@@ -165,8 +167,7 @@ export function PricingHubView({
   title,
   summary,
   disclaimer,
-  fromLabel,
-  idealLabel,
+  includesLabel,
   ctaLabel,
   packages,
   faqs,
@@ -175,8 +176,7 @@ export function PricingHubView({
   title: string;
   summary: string;
   disclaimer: string;
-  fromLabel: string;
-  idealLabel: string;
+  includesLabel: string;
   ctaLabel: string;
   packages: InvestmentPackage[];
   faqs: Array<{ question: string; answer: string }>;
@@ -197,37 +197,41 @@ export function PricingHubView({
             </div>
           </div>
 
-          <div className="investment-grid">
+          <div className={`investment-grid investment-grid--${packages.length}`}>
             {packages.map((pkg, index) => (
               <article
                 key={pkg.id}
-                className={`service-card-wow service-card-wow--${(index % 5) + 1} investment-card`}
+                className={`service-card-wow service-card-wow--rich service-card-wow--${(index % 5) + 1} investment-card`}
                 id={pkg.id}
               >
-                <h2 className="service-title-script investment-card__title">
-                  {pkg.name}
-                </h2>
-                <p className="investment-card__from">{fromLabel}</p>
-                <p className="investment-card__price">
-                  <span className="investment-card__amount">{pkg.price}</span>
-                  {pkg.period ? (
-                    <span className="investment-card__period">{pkg.period}</span>
-                  ) : (
-                    <span className="investment-card__period investment-card__period--spacer" aria-hidden="true">
-                      &nbsp;
-                    </span>
-                  )}
-                </p>
-                <p className="investment-card__ideal">
-                  <strong>{idealLabel}</strong> {pkg.ideal}
-                </p>
+                <div className="service-card-wow__top">
+                  <span className="service-card-wow__eyebrow">
+                    {pkg.index}
+                  </span>
+                  <h2 className="service-title-script investment-card__title">
+                    {pkg.name}
+                  </h2>
+                  <p className="service-card-wow__pitch">{pkg.pitch}</p>
+                </div>
+
+                <p className="investment-card__includes-label">{includesLabel}</p>
+                <ul className="service-card-wow__includes">
+                  {pkg.includes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+
+                {pkg.note ? (
+                  <p className="service-card-wow__tagline">{pkg.note}</p>
+                ) : null}
+
                 <p className="investment-card__cta">
                   <button
                     type="button"
                     className="btn-pill-premium"
                     onClick={() => openContact(`investment_${pkg.id}`)}
                   >
-                    {ctaLabel}
+                    {pkg.ctaLabel || ctaLabel}
                   </button>
                 </p>
               </article>
@@ -255,7 +259,7 @@ export function PricingHubView({
           className="btn-pill-premium"
           onClick={() => openContact('pricing_cta')}
         >
-          {isEn ? 'Request a custom proposal' : 'Pedir una propuesta a medida'}
+          {isEn ? "Let's talk about your brand" : 'Hablemos de tu marca'}
         </button>
       </div>
     </>

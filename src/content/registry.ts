@@ -5,8 +5,8 @@
  */
 
 export const serviceSlugs = [
-  'asesoria',
-  'consultoria',
+  'sesion-estrategica',
+  'estrategia-contenido',
   'produccion-contenido',
   'gestion-mensual',
 ] as const;
@@ -36,13 +36,13 @@ export const serviceSlugLocales: Record<
   ServiceSlug,
   { es: string; en: string }
 > = {
-  asesoria: {
-    es: 'asesoria',
-    en: 'advisory',
+  'sesion-estrategica': {
+    es: 'sesion-estrategica',
+    en: 'strategy-session',
   },
-  consultoria: {
-    es: 'consultoria',
-    en: 'consulting',
+  'estrategia-contenido': {
+    es: 'estrategia-contenido',
+    en: 'content-strategy',
   },
   'produccion-contenido': {
     es: 'produccion-contenido',
