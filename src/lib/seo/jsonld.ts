@@ -101,7 +101,7 @@ export function websiteNode(locale: string = 'es'): JsonLdNode {
     publisher: { '@id': organizationId(locale) },
     potentialAction: {
       '@type': 'CommunicateAction',
-      name: locale === 'es' ? 'Agenda consulta estratégica' : 'Book a strategy consult',
+      name: locale === 'es' ? 'Contactar por correo' : 'Contact by email',
       target: absoluteUrl(
         buildLocalizedPath(locale === 'en' ? 'en' : 'es', {
           type: 'hub',

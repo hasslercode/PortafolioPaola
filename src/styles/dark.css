@@ -605,22 +605,6 @@ html.theme-transition *::after {
     background-color: var(--pink-bg);
 }
 
-[data-theme="dark"] .contact-modal__wpp {
-    color: var(--btn-text-on-pink);
-}
-
-[data-theme="dark"] .contact-modal__wpp-icon {
-    border-color: rgba(45, 30, 27, 0.28);
-}
-
-[data-theme="dark"] .contact-modal__wpp-icon svg {
-    fill: var(--btn-text-on-pink);
-}
-
-[data-theme="dark"] .contact-modal__wpp-sparkle {
-    color: var(--btn-sparkle-on-pink);
-}
-
 /* Footer — zona inferior más profunda (como en light mode) */
 
 [data-theme="dark"] .footer-brand-desc,

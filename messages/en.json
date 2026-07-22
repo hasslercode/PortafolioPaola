@@ -30,7 +30,7 @@
     "faq": "FAQ",
     "detailPlaceholder": "Full service copy arrives in Phase 5 (MDX).",
     "faqPlaceholder": "Commercial FAQs in Phase 5 / GEO in Phase 7.",
-    "cta": "Book a consult"
+    "cta": "Contact by email"
   },
   "CaseStudies": {
     "badge": "Experiences",
@@ -62,10 +62,10 @@
   },
   "Contact": {
     "title": "Contact",
-    "summary": "Strategy consult via WhatsApp, email, Instagram or Calendly. Pick your channel.",
+    "summary": "Contact via email or Instagram. Pick your preferred channel.",
     "metaTitle": "Contact | Paola Hoyos",
-    "metaDescription": "Book a strategy consult with Paola Hoyos via WhatsApp, email or Calendly.",
-    "formNote": "Lead form and Calendly wiring land in Phase 2/5."
+    "metaDescription": "Contact Paola Hoyos by email or Instagram for a strategy consult.",
+    "formNote": "Lead form wiring lands in Phase 2/5."
   },
   "Pricing": {
     "badge": "Plans",
@@ -82,7 +82,7 @@
     "pkgMonthlyCta": "I want to delegate it all",
     "helpTitle": "Not sure which to choose?",
     "helpBody": "I will recommend the best fit for your brand, time and goals.",
-    "helpCta": "Book a call",
+    "helpCta": "Contact by email",
     "disclaimer": "The strategy session (consulting) is not part of these plans: it is a diagnosis meeting with an action plan.",
     "pkgStrategyName": "Content strategy",
     "pkgStrategyPitch": "Pure strategist work. You leave with a clear document to produce with intention.",

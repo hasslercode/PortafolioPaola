@@ -28,7 +28,6 @@ export const siteConfig = {
 
   contact: {
     email: 'pahoyoscardona@gmail.com',
-    whatsapp: 'https://wa.me/573002493331',
     calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ?? '',
   },
 

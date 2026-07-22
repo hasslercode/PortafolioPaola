@@ -30,7 +30,7 @@
     "faq": "Preguntas frecuentes",
     "detailPlaceholder": "Contenido completo del servicio en Fase 5 (MDX).",
     "faqPlaceholder": "FAQs comerciales en Fase 5 / GEO en Fase 7.",
-    "cta": "Agendar consulta"
+    "cta": "Contactar por correo"
   },
   "CaseStudies": {
     "badge": "Experiencias",
@@ -62,10 +62,10 @@
   },
   "Contact": {
     "title": "Contacto",
-    "summary": "Consulta estratégica: WhatsApp, email, Instagram o Calendly. Elige el canal que prefieras.",
+    "summary": "Contacto por correo o Instagram. Elige el canal que prefieras.",
     "metaTitle": "Contacto | Paola Hoyos",
-    "metaDescription": "Agenda una consulta estratégica con Paola Hoyos. WhatsApp, email o Calendly.",
-    "formNote": "Formulario de precalificación y Calendly se cablean en Fase 2/5."
+    "metaDescription": "Contacta a Paola Hoyos por correo o Instagram para una consulta estratégica.",
+    "formNote": "Formulario de precalificación se cablea en Fase 2/5."
   },
   "Pricing": {
     "badge": "Planes",
@@ -82,7 +82,7 @@
     "pkgMonthlyCta": "Quiero delegarlo todo",
     "helpTitle": "¿No sabes cuál elegir?",
     "helpBody": "Te recomiendo el nivel ideal según tu marca, tu tiempo y tus objetivos.",
-    "helpCta": "Agendar una llamada",
+    "helpCta": "Contactar por correo",
     "disclaimer": "La sesión estratégica (consultoría) no forma parte de estos planes: es una reunión de diagnóstico y plan de acción.",
     "pkgStrategyName": "Estrategia de contenido",
     "pkgStrategyPitch": "Trabajo 100% como estratega. Sales con un documento claro para producir con intención.",

@@ -29,13 +29,6 @@ export function trackCtaClick(location, label) {
   });
 }
 
-export function trackWhatsAppClick(location) {
-  trackEvent('whatsapp_click', {
-    event_category: 'conversion',
-    event_label: 'whatsapp',
-    click_location: location,
-  });
-}
 
 export function trackFormStart(source) {
   trackEvent('form_start', {

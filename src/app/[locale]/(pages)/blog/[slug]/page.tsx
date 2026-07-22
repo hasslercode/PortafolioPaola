@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         badge={post.intent}
         title={post.title}
         subtitle={<time dateTime={post.publishedAt}>{post.publishedAt}</time>}
-        ctaLabel={typedLocale === 'es' ? 'Agendar consulta' : 'Book a consult'}
+        ctaLabel={typedLocale === 'es' ? 'Contactar por correo' : 'Contact by email'}
       >
         <GeoAnswer label={t('shortAnswer')}>
           <p className="text-lg">{post.shortAnswer}</p>

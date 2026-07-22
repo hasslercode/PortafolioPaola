@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: t('metaTitle'),
     description: t('metaDescription'),
     route: { type: 'hub', hub: 'contact' },
-    keywords: ['contacto paola hoyos', 'consulta estratégica', 'whatsapp'],
+    keywords: ['contacto paola hoyos', 'consulta estratégica', 'correo'],
   });
 }
 
@@ -52,7 +52,6 @@ export default async function ContactPage({ params }: PageProps) {
       {/* crawlable channels (also in Contact section visually) */}
       <div className="sr-only">
         <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
-        <a href={siteConfig.contact.whatsapp}>WhatsApp</a>
         <a href={siteConfig.social.instagram}>Instagram</a>
       </div>
     </>
