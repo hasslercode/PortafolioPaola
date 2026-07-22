@@ -226,15 +226,22 @@ export function PricingHubView({
     <>
       <section className="services-wow services-wow--compact plan-showcase" id="inversion">
         <div className="container">
-          <div className="services-wow__header">
+          <div className="services-wow__header plan-showcase__intro">
             <span className="badge-pill-wow">{badge}</span>
             <div className="section-header-wow">
+              <span className="plan-showcase__scrap plan-showcase__scrap--heart scrap-heart-shape" aria-hidden="true" />
+              <span className="plan-showcase__scrap plan-showcase__scrap--sparkle" aria-hidden="true">✦</span>
               <h1 className="wow-main-title">{title}</h1>
               <p className="wow-subtitle">{summary}</p>
             </div>
           </div>
 
           <article className="session-advisory" id="consultoria">
+            <span className="session-advisory__glow" aria-hidden="true" />
+            <span className="session-advisory__ghost" aria-hidden="true">01</span>
+            <span className="session-advisory__tape" aria-hidden="true" />
+            <span className="session-advisory__sparkle" aria-hidden="true">✦</span>
+
             <div className="session-advisory__meta">
               <span className="session-advisory__badge">{session.badge}</span>
               <h2 className="session-advisory__title">{session.title}</h2>
@@ -243,21 +250,27 @@ export function PricingHubView({
             </div>
 
             <div className="session-advisory__lists">
-              <div>
+              <div className="session-advisory__panel session-advisory__panel--yes">
                 <p className="session-advisory__label">{includesLabel}</p>
                 <ul className="session-advisory__includes">
                   {session.includes.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>
+                      <span aria-hidden="true">✓</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="session-advisory__panel session-advisory__panel--no">
                 <p className="session-advisory__label">
                   {isEn ? 'Does not include' : 'No incluye'}
                 </p>
                 <ul className="session-advisory__excludes">
                   {session.excludes.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>
+                      <span aria-hidden="true">✕</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -274,21 +287,24 @@ export function PricingHubView({
           </article>
 
           <div className="plan-showcase__plans-header">
+            <span className="badge-pill-wow">{isEn ? 'Plans' : 'Planes'}</span>
             <h2 className="plan-showcase__plans-title">{plansTitle}</h2>
             <p className="wow-subtitle">{plansSummary}</p>
           </div>
 
           <div className="plan-showcase__grid">
-            {packages.map((pkg) => {
+            {packages.map((pkg, index) => {
               const featured = Boolean(pkg.featured || pkg.id === 'gestion-mensual');
               const icon = PLAN_ICONS[pkg.id] || PLAN_ICONS.estrategia;
 
               return (
                 <article
                   key={pkg.id}
-                  className={`plan-card${featured ? ' plan-card--featured' : ''}`}
+                  className={`plan-card plan-card--${pkg.id}${featured ? ' plan-card--featured' : ''}`}
                   id={pkg.id}
+                  style={{ ['--plan-delay' as string]: `${index * 80}ms` }}
                 >
+                  <span className="plan-card__shine" aria-hidden="true" />
                   <span className="plan-card__ghost" aria-hidden="true">
                     {pkg.index}
                   </span>
@@ -321,21 +337,23 @@ export function PricingHubView({
 
                   {pkg.note ? <p className="plan-card__note">{pkg.note}</p> : null}
 
-                  <div className="plan-card__price">
-                    <span className="plan-card__from">{fromLabel}</span>
-                    <span className="plan-card__amount">
-                      {pkg.priceValue || (isEn ? 'Custom quote' : 'Cotización')}
-                    </span>
-                  </div>
+                  <div className="plan-card__footer">
+                    <div className="plan-card__price">
+                      <span className="plan-card__from">{fromLabel}</span>
+                      <span className="plan-card__amount">
+                        {pkg.priceValue || (isEn ? 'Custom quote' : 'Cotización')}
+                      </span>
+                    </div>
 
-                  <button
-                    type="button"
-                    className={`plan-card__cta${featured ? ' plan-card__cta--solid' : ''}`}
-                    onClick={() => openContact(`investment_${pkg.id}`)}
-                  >
-                    <span>{pkg.ctaLabel || ctaLabel}</span>
-                    <span aria-hidden="true">→</span>
-                  </button>
+                    <button
+                      type="button"
+                      className={`plan-card__cta${featured ? ' plan-card__cta--solid' : ''}`}
+                      onClick={() => openContact(`investment_${pkg.id}`)}
+                    >
+                      <span>{pkg.ctaLabel || ctaLabel}</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
                 </article>
               );
             })}
