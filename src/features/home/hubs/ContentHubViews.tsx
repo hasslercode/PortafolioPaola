@@ -160,26 +160,22 @@ export type InvestmentPackage = {
   note?: string;
   ctaLabel?: string;
   featured?: boolean;
+  tag?: string;
+  delivery?: string;
   priceFrom?: string;
   priceValue?: string;
 };
 
-export type AdvisorySession = {
-  badge: string;
+export type ProcessStep = {
+  index: string;
   title: string;
-  pitch: string;
-  note: string;
-  ctaLabel: string;
-  includesLabel: string;
-  excludesLabel: string;
-  includes: Array<{ title: string; detail: string }>;
-  excludes: string[];
-  highlights: Array<{ title: string; detail: string }>;
-  assurance: string;
+  detail: string;
 };
 
-const SESSION_ICON =
-  'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z';
+export type OfferValue = {
+  title: string;
+  detail: string;
+};
 
 const PLAN_ICONS: Record<string, string> = {
   estrategia:
@@ -187,60 +183,72 @@ const PLAN_ICONS: Record<string, string> = {
   produccion:
     'M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zm0 14H4V8h16v10z',
   'gestion-mensual':
-    'M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z',
+    'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',
 };
 
-const HIGHLIGHT_ICONS = [
-  'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
-  'M12 2l2.4 7.2H22l-6 4.8 2.3 7L12 16.8 5.7 21 8 14 2 9.2h7.6L12 2z',
-  'M19 3H5c-1.1 0-2 .9-2 2v14l4-4h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z',
+const PROCESS_ICONS = [
+  'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z',
+  'M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zm0 14H4V8h16v10z',
+  'M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z',
 ];
 
-const INCLUDE_ICONS = [
-  'M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z',
-  'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z',
-  'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
-];
-
-const EXCLUDE_ICONS = [
-  'M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z',
+const INCLUDE_ROW_ICONS = [
   'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z',
-  'M2.01 21L23 12 2.01 3 2 10l15 2-15 2z',
+  'M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z',
+  'M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
+  'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z',
+  'M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM3 21.5h8v-8H3v8z',
+  'M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z',
+  'M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z',
+  'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z',
+  'M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z',
 ];
 
+const VALUE_ICONS = [
+  'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z',
+  'M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z',
+  'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z',
+  'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z',
+];
 
 export function PricingHubView({
   badge,
-  title,
+  titleLead,
+  titleAccent,
+  titleTrail,
   summary,
-  plansTitle,
-  plansSummary,
-  disclaimer,
+  processEyebrow,
+  processTitle,
+  processSteps,
+  consultCta,
   includesLabel,
-  fromLabel,
   featuredLabel,
+  deliveryLabel,
+  values,
   helpTitle,
   helpBody,
   helpCta,
   ctaLabel,
-  session,
   packages,
   faqs,
 }: {
   badge: string;
-  title: string;
+  titleLead: string;
+  titleAccent: string;
+  titleTrail: string;
   summary: string;
-  plansTitle: string;
-  plansSummary: string;
-  disclaimer: string;
+  processEyebrow: string;
+  processTitle: string;
+  processSteps: ProcessStep[];
+  consultCta: string;
   includesLabel: string;
-  fromLabel: string;
   featuredLabel: string;
+  deliveryLabel: string;
+  values: OfferValue[];
   helpTitle: string;
   helpBody: string;
   helpCta: string;
   ctaLabel: string;
-  session: AdvisorySession;
   packages: InvestmentPackage[];
   faqs: Array<{ question: string; answer: string }>;
 }) {
@@ -250,189 +258,145 @@ export function PricingHubView({
 
   return (
     <>
-      <section className="services-wow services-wow--compact plan-showcase" id="inversion">
+      <section className="offer-suite" id="inversion">
         <div className="container">
-          <div className="services-wow__header plan-showcase__intro">
-            <span className="badge-pill-wow">{badge}</span>
-            <div className="section-header-wow">
-              <span className="plan-showcase__scrap plan-showcase__scrap--heart scrap-heart-shape" aria-hidden="true" />
-              <span className="plan-showcase__scrap plan-showcase__scrap--sparkle" aria-hidden="true">✦</span>
-              <h1 className="wow-main-title">{title}</h1>
-              <p className="wow-subtitle">{summary}</p>
-            </div>
-          </div>
+          <header className="offer-suite__intro">
+            <span className="offer-suite__badge">
+              <span aria-hidden="true">✨</span> {badge}
+            </span>
+            <h1 className="offer-suite__title">
+              {titleLead}{' '}
+              <em>{titleAccent}</em>
+              {titleTrail ? <> {titleTrail}</> : null}
+            </h1>
+            <p className="offer-suite__summary">{summary}</p>
+          </header>
 
-          <article className="session-board" id="consultoria">
-            <span className="session-board__grid" aria-hidden="true" />
-            <span className="session-board__ghost" aria-hidden="true">01</span>
-            <span className="session-board__sparkle session-board__sparkle--a" aria-hidden="true">✦</span>
-            <span className="session-board__sparkle session-board__sparkle--b" aria-hidden="true">✦</span>
-
-            <div className="session-board__layout">
-              <div className="session-board__overview">
-                <div className="session-board__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d={SESSION_ICON} />
-                  </svg>
-                </div>
-                <span className="session-board__badge">{session.badge}</span>
-                <h2 className="session-board__title">{session.title}</h2>
-                <p className="session-board__pitch">{session.pitch}</p>
-                <p className="session-board__note">
-                  <span aria-hidden="true">✦</span>
-                  <span>{session.note}</span>
-                </p>
-                <ul className="session-board__highlights">
-                  {session.highlights.map((item, i) => (
-                    <li key={item.title}>
-                      <span className="session-board__hi-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                          <path d={HIGHLIGHT_ICONS[i % HIGHLIGHT_ICONS.length]} />
-                        </svg>
-                      </span>
-                      <span>
-                        <strong>{item.title}</strong>
-                        <small>{item.detail}</small>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="session-board__includes">
-                <p className="session-board__panel-label">
-                  <span aria-hidden="true">✓</span>
-                  {session.includesLabel}
-                </p>
-                <ul>
-                  {session.includes.map((item, i) => (
-                    <li key={item.title}>
-                      <span className="session-board__item-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                          <path d={INCLUDE_ICONS[i % INCLUDE_ICONS.length]} />
-                        </svg>
-                      </span>
-                      <span>
-                        <strong>{item.title}</strong>
-                        <small>{item.detail}</small>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="session-board__side">
-                <div className="session-board__excludes">
-                  <p className="session-board__panel-label">
-                    <span aria-hidden="true">✕</span>
-                    {session.excludesLabel}
-                  </p>
-                  <ul>
-                    {session.excludes.map((item, i) => (
-                      <li key={item}>
-                        <span className="session-board__item-icon" aria-hidden="true">
-                          <svg viewBox="0 0 24 24">
-                            <path d={EXCLUDE_ICONS[i % EXCLUDE_ICONS.length]} />
-                          </svg>
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <button
-                  type="button"
-                  className="session-board__cta"
-                  onClick={() => openContact('advisory_session')}
-                >
-                  <span>{session.ctaLabel}</span>
-                  <span aria-hidden="true">→</span>
-                </button>
-              </div>
-            </div>
-
-            <p className="session-board__assurance">
-              <span className="session-board__assurance-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-                </svg>
-              </span>
-              <span>{session.assurance}</span>
-            </p>
-          </article>
-
-          <div className="plan-showcase__plans-header">
-            <span className="badge-pill-wow">{isEn ? 'Plans' : 'Planes'}</span>
-            <h2 className="plan-showcase__plans-title">{plansTitle}</h2>
-            <p className="wow-subtitle">{plansSummary}</p>
-          </div>
-
-          <div className="plan-showcase__grid">
-            {packages.map((pkg, index) => {
-              const featured = Boolean(pkg.featured || pkg.id === 'gestion-mensual');
-              const icon = PLAN_ICONS[pkg.id] || PLAN_ICONS.estrategia;
-
-              return (
-                <article
-                  key={pkg.id}
-                  className={`plan-card plan-card--${pkg.id}${featured ? ' plan-card--featured' : ''}`}
-                  id={pkg.id}
-                  style={{ ['--plan-delay' as string]: `${index * 80}ms` }}
-                >
-                  <span className="plan-card__shine" aria-hidden="true" />
-                  <span className="plan-card__ghost" aria-hidden="true">
-                    {pkg.index}
-                  </span>
-
-                  {featured ? (
-                    <span className="plan-card__badge">
-                      <span aria-hidden="true">★</span> {featuredLabel}
+          <div className="offer-board">
+            <aside className="offer-process" id="proceso">
+              <p className="offer-process__eyebrow">{processEyebrow}</p>
+              <h2 className="offer-process__title">{processTitle}</h2>
+              <ol className="offer-process__steps">
+                {processSteps.map((step, i) => (
+                  <li key={step.index}>
+                    <span className="offer-process__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <path d={PROCESS_ICONS[i % PROCESS_ICONS.length]} />
+                      </svg>
                     </span>
-                  ) : null}
+                    <span className="offer-process__copy">
+                      <strong>
+                        <span className="offer-process__num">{step.index}</span>{' '}
+                        {step.title}
+                      </strong>
+                      <small>{step.detail}</small>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <button
+                type="button"
+                className="offer-process__consult"
+                id="consultoria"
+                onClick={() => openContact('advisory_session')}
+              >
+                <span>{consultCta}</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </aside>
 
-                  <div className="plan-card__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                      <path d={icon} />
-                    </svg>
-                  </div>
+            <div className="offer-plans">
+              {packages.map((pkg) => {
+                const featured = Boolean(pkg.featured || pkg.id === 'gestion-mensual');
+                const icon = PLAN_ICONS[pkg.id] || PLAN_ICONS.estrategia;
 
-                  <h3 className="plan-card__title">{pkg.name}</h3>
-                  <p className="plan-card__pitch">{pkg.pitch}</p>
-
-                  <p className="plan-card__includes-label">{includesLabel}</p>
-                  <ul className="plan-card__includes plan-card__includes--pills">
-                    {pkg.includes.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-
-                  {pkg.note ? <p className="plan-card__note">{pkg.note}</p> : null}
-
-                  <div className="plan-card__footer">
-                    <div className="plan-card__price">
-                      <span className="plan-card__from">{fromLabel}</span>
-                      <span className="plan-card__amount">
-                        {pkg.priceValue || (isEn ? 'Custom quote' : 'Cotización')}
+                return (
+                  <article
+                    key={pkg.id}
+                    className={`offer-plan${featured ? ' offer-plan--featured' : ''}`}
+                    id={pkg.id}
+                  >
+                    <div className="offer-plan__top">
+                      <span className="offer-plan__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                          <path d={icon} />
+                        </svg>
+                      </span>
+                      <span className="offer-plan__ghost" aria-hidden="true">
+                        {pkg.index}
                       </span>
                     </div>
 
+                    <h3 className="offer-plan__name">{pkg.name}</h3>
+                    {pkg.tag ? (
+                      <span className="offer-plan__tag">{pkg.tag}</span>
+                    ) : featured ? (
+                      <span className="offer-plan__tag">{featuredLabel}</span>
+                    ) : null}
+                    <p className="offer-plan__pitch">{pkg.pitch}</p>
+
+                    <p className="offer-plan__includes-label">{includesLabel}</p>
+                    {featured ? (
+                      <ul className="offer-plan__tags">
+                        {pkg.includes.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <ul className="offer-plan__includes">
+                        {pkg.includes.map((item, i) => (
+                          <li key={item}>
+                            <span className="offer-plan__inc-icon" aria-hidden="true">
+                              <svg viewBox="0 0 24 24">
+                                <path d={INCLUDE_ROW_ICONS[i % INCLUDE_ROW_ICONS.length]} />
+                              </svg>
+                            </span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {pkg.delivery ? (
+                      <p className="offer-plan__delivery">
+                        <span aria-hidden="true">
+                          <svg viewBox="0 0 24 24">
+                            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+                          </svg>
+                        </span>
+                        <span>
+                          {deliveryLabel}: {pkg.delivery}
+                        </span>
+                      </p>
+                    ) : null}
+
                     <button
                       type="button"
-                      className={`plan-card__cta${featured ? ' plan-card__cta--solid' : ''}`}
+                      className={`offer-plan__cta${featured ? ' offer-plan__cta--solid' : ''}`}
                       onClick={() => openContact(`investment_${pkg.id}`)}
                     >
                       <span>{pkg.ctaLabel || ctaLabel}</span>
                       <span aria-hidden="true">→</span>
                     </button>
-                  </div>
-                </article>
-              );
-            })}
+                  </article>
+                );
+              })}
+            </div>
           </div>
 
-          {disclaimer ? (
-            <p className="wow-subtitle investment-disclaimer">{disclaimer}</p>
-          ) : null}
+          <ul className="offer-values">
+            {values.map((value, i) => (
+              <li key={value.title}>
+                <span className="offer-values__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d={VALUE_ICONS[i % VALUE_ICONS.length]} />
+                  </svg>
+                </span>
+                <strong>{value.title}</strong>
+                <small>{value.detail}</small>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

@@ -75,31 +75,30 @@ export default async function ServicesIndexPage({ params }: PageProps) {
   ]);
   const faqs = buildInvestmentFaqs(locale);
 
-  const session = {
-    badge: tp('sessionBadge'),
-    title: tp('pkgSessionName'),
-    pitch: tp('pkgSessionPitch'),
-    note: tp('pkgSessionNote'),
-    ctaLabel: tp('pkgSessionCta'),
-    includesLabel: tp('includesLabel'),
-    excludesLabel: tp('excludesLabel'),
-    includes: [
-      { title: tp('pkgSessionInc1'), detail: tp('pkgSessionInc1Detail') },
-      { title: tp('pkgSessionInc2'), detail: tp('pkgSessionInc2Detail') },
-      { title: tp('pkgSessionInc3'), detail: tp('pkgSessionInc3Detail') },
-    ],
-    excludes: [
-      tp('pkgSessionExc1'),
-      tp('pkgSessionExc2'),
-      tp('pkgSessionExc3'),
-    ],
-    highlights: [
-      { title: tp('pkgSessionHi1'), detail: tp('pkgSessionHi1Detail') },
-      { title: tp('pkgSessionHi2'), detail: tp('pkgSessionHi2Detail') },
-      { title: tp('pkgSessionHi3'), detail: tp('pkgSessionHi3Detail') },
-    ],
-    assurance: tp('sessionAssurance'),
-  };
+  const processSteps = [
+    {
+      index: '01',
+      title: tp('processStep1Title'),
+      detail: tp('processStep1Detail'),
+    },
+    {
+      index: '02',
+      title: tp('processStep2Title'),
+      detail: tp('processStep2Detail'),
+    },
+    {
+      index: '03',
+      title: tp('processStep3Title'),
+      detail: tp('processStep3Detail'),
+    },
+  ];
+
+  const values = [
+    { title: tp('value1Title'), detail: tp('value1Detail') },
+    { title: tp('value2Title'), detail: tp('value2Detail') },
+    { title: tp('value3Title'), detail: tp('value3Detail') },
+    { title: tp('value4Title'), detail: tp('value4Detail') },
+  ];
 
   const packages = [
     {
@@ -107,6 +106,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       index: '01',
       name: tp('pkgStrategyName'),
       pitch: tp('pkgStrategyPitch'),
+      tag: tp('pkgStrategyTag'),
       includes: [
         tp('pkgStrategyInc1'),
         tp('pkgStrategyInc2'),
@@ -114,12 +114,8 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgStrategyInc4'),
         tp('pkgStrategyInc5'),
         tp('pkgStrategyInc6'),
-        tp('pkgStrategyInc7'),
-        tp('pkgStrategyInc8'),
-        tp('pkgStrategyInc9'),
       ],
-      note: tp('pkgStrategyNote'),
-      priceValue: tp('pkgStrategyPrice'),
+      delivery: tp('pkgStrategyDelivery'),
       ctaLabel: tp('pkgStrategyCta'),
     },
     {
@@ -127,13 +123,13 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       index: '02',
       name: tp('pkgProductionName'),
       pitch: tp('pkgProductionPitch'),
+      tag: tp('pkgProductionTag'),
       includes: [
         tp('pkgProductionInc1'),
         tp('pkgProductionInc2'),
         tp('pkgProductionInc3'),
       ],
-      note: tp('pkgProductionNote'),
-      priceValue: tp('pkgProductionPrice'),
+      delivery: tp('pkgProductionDelivery'),
       ctaLabel: tp('pkgProductionCta'),
     },
     {
@@ -141,6 +137,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       index: '03',
       name: tp('pkgMonthlyName'),
       pitch: tp('pkgMonthlyPitch'),
+      tag: tp('pkgMonthlyTag'),
       includes: [
         tp('pkgMonthlyInc1'),
         tp('pkgMonthlyInc2'),
@@ -149,8 +146,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgMonthlyInc5'),
         tp('pkgMonthlyInc6'),
       ],
-      note: tp('pkgMonthlyNote'),
-      priceValue: tp('pkgMonthlyPrice'),
+      delivery: tp('pkgMonthlyDelivery'),
       ctaLabel: tp('pkgMonthlyCta'),
       featured: true,
     },
@@ -163,7 +159,10 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     description: t('metaDescriptionMerged'),
     breadcrumbs: crumbs,
     offers: [
-      { name: session.title, description: session.pitch },
+      {
+        name: tp('pkgSessionName'),
+        description: tp('pkgSessionPitch'),
+      },
       ...packages.map((pkg) => ({
         name: pkg.name,
         description: pkg.pitch,
@@ -181,19 +180,22 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         </div>
         <PricingHubView
           badge={tp('badge')}
-          title={tp('title')}
+          titleLead={tp('titleLead')}
+          titleAccent={tp('titleAccent')}
+          titleTrail={tp('titleTrail')}
           summary={tp('summary')}
-          plansTitle={tp('plansTitle')}
-          plansSummary={tp('plansSummary')}
-          disclaimer=""
+          processEyebrow={tp('processEyebrow')}
+          processTitle={tp('processTitle')}
+          processSteps={processSteps}
+          consultCta={tp('consultCta')}
           includesLabel={tp('includesLabel')}
-          fromLabel={tp('fromLabel')}
           featuredLabel={tp('featuredLabel')}
+          deliveryLabel={tp('deliveryLabel')}
+          values={values}
           helpTitle={tp('helpTitle')}
           helpBody={tp('helpBody')}
           helpCta={tp('helpCta')}
           ctaLabel={tp('cta')}
-          session={session}
           packages={packages}
           faqs={faqs}
         />
