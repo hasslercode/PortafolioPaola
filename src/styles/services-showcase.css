@@ -1125,7 +1125,19 @@
   border-color: rgba(232, 167, 179, 0.18);
 }
 
-[data-theme='dark'] .session-advisory__includes li,
-[data-theme='dark'] .session-advisory__excludes li {
-  color: rgba(244, 232, 234, 0.9);
+[data-theme='dark'] .session-advisory__chips li {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(232, 167, 179, 0.22);
+  color: rgba(244, 232, 234, 0.95);
+}
+
+[data-theme='dark'] .session-advisory__chips--muted li {
+  background: rgba(0, 0, 0, 0.18);
+  color: rgba(244, 232, 234, 0.7);
+}
+
+[data-theme='dark'] .plan-card:not(.plan-card--featured) .plan-card__includes--pills li {
+  background: rgba(232, 167, 179, 0.08);
+  border-color: rgba(232, 167, 179, 0.22);
+  color: var(--text-on-dark, #f4e8ea);
 }
