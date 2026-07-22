@@ -44,7 +44,6 @@ export function personNode(locale: string = 'es'): JsonLdNode {
     url: `${siteConfig.url}/${locale}`,
     image: `${siteConfig.url}/assets/fotopaola.jpg`,
     email: siteConfig.contact.email,
-    telephone: siteConfig.contact.phone,
     address: {
       '@type': 'PostalAddress',
       addressLocality: siteConfig.geo.addressLocality,
@@ -56,12 +55,12 @@ export function personNode(locale: string = 'es'): JsonLdNode {
     knowsAbout: [
       'Digital Strategy',
       'Content Strategy',
+      'Strategic Advisory',
+      'Content Consulting',
+      'Content Production',
+      'Monthly Social Management',
       'Storytelling',
-      'Community Management',
       'Organic Growth',
-      'Email Marketing',
-      'Retail Marketing',
-      'Event Coverage',
     ],
     alumniOf: {
       '@type': 'EducationalOrganization',
@@ -83,7 +82,6 @@ export function organizationNode(locale: string = 'es'): JsonLdNode {
     image: `${siteConfig.url}/assets/og-paola.png`,
     founder: { '@id': personId(locale) },
     email: siteConfig.contact.email,
-    telephone: siteConfig.contact.phone,
     sameAs: Object.values(siteConfig.social),
     areaServed: siteConfig.geo.areaServed.map((name) => ({
       '@type': 'AdministrativeArea',
@@ -137,7 +135,6 @@ export function professionalServiceNode(
     description: input.description ?? siteConfig.description[typedLocale],
     url: input.url ?? `${siteConfig.url}/${locale}`,
     image: `${siteConfig.url}/assets/og-paola.png`,
-    telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
     priceRange: input.priceRange ?? '$$',
     currenciesAccepted: 'COP',

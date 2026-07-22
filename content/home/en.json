@@ -397,36 +397,31 @@
     "badge": "Services",
     "titleBefore": "How can I",
     "titleScript": "help you?",
-    "subtitleBefore": "Strategic and creative",
-    "subtitleAccent1": "solutions",
-    "subtitleMiddle": "to",
-    "subtitleAccent2": "strengthen",
-    "subtitleAfter": "your digital presence.",
+    "subtitleBefore": "Four plans",
+    "subtitleAccent1": "without fixed prices",
+    "subtitleMiddle": ",",
+    "subtitleAccent2": "tailored",
+    "subtitleAfter": "to each company — from lightest to heaviest operational load.",
     "cards": [
       {
-        "titleLine1": "Social media",
-        "titleScript": "management",
-        "description": "Content, community, and analytics strategies to increase your visibility and connection with your audience."
+        "titleLine1": "Strategic",
+        "titleScript": "advisory",
+        "description": "Evaluation session: social audit, opportunity mapping and action plan. No recording, no editing, no publishing."
+      },
+      {
+        "titleLine1": "Content",
+        "titleScript": "consulting",
+        "description": "100% strategist work: a PDF with brand/competitor analysis, buyer persona, pillars, calendar, ideas, formats, goals and tone. No content recording."
       },
       {
         "titleBefore": "Content",
-        "titleScript": "creation",
-        "description": "Creative, engaging content aligned with your brand for social media, blogs, websites, and digital campaigns."
+        "titleScript": "production",
+        "description": "Premium editing of the footage you provide. Spectacular finish; investment is based on edit duration."
       },
       {
-        "titleLine1": "Digital strategy &",
-        "titleScript": "marketing",
-        "description": "Planning and execution of goal-oriented digital strategies focused on growth and conversion."
-      },
-      {
-        "titleLine1": "Email marketing &",
-        "titleScript": "automation",
-        "description": "Effective campaigns that nurture, convert, and retain your audience strategically and personally."
-      },
-      {
-        "titleLine1": "Event",
-        "titleScript": "coverage",
-        "description": "Real-time content generation for your events. From stories and Lives to recap videos."
+        "titleLine1": "Monthly",
+        "titleScript": "management",
+        "description": "Premium end-to-end plan: light monthly strategy, preproduction, filming, editing, scheduling, publishing and follow-up."
       }
     ]
   },
@@ -520,7 +515,7 @@
       "Space to answer your questions."
     ],
     "email": "pahoyoscardona@gmail.com",
-    "phone": "300 249 3331"
+    "instagram": "@paolaahoyosc"
   },
   "footer": {
     "brandName": "PAOLA HOYOS",
@@ -570,7 +565,6 @@
       "introAccent": "quickly",
       "introAfter": "through your preferred channel.",
       "email": "pahoyoscardona@gmail.com",
-      "phone": "+57 300 249 3331",
       "instagram": "@paolaahoyosc",
       "whatsapp": "Go straight to WhatsApp",
       "whatsappMessage": "Hi Paola, I'd like to boost my brand.",

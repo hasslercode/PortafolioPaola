@@ -5,12 +5,10 @@
  */
 
 export const serviceSlugs = [
-  'community-manager',
-  'estrategia-digital',
-  'storytelling',
-  'creacion-contenido',
-  'cobertura-eventos',
-  'email-marketing',
+  'asesoria',
+  'consultoria',
+  'produccion-contenido',
+  'gestion-mensual',
 ] as const;
 
 export const caseStudySlugs = [
@@ -38,29 +36,21 @@ export const serviceSlugLocales: Record<
   ServiceSlug,
   { es: string; en: string }
 > = {
-  'community-manager': {
-    es: 'community-manager',
-    en: 'community-manager',
+  asesoria: {
+    es: 'asesoria',
+    en: 'advisory',
   },
-  'estrategia-digital': {
-    es: 'estrategia-digital',
-    en: 'digital-strategy',
+  consultoria: {
+    es: 'consultoria',
+    en: 'consulting',
   },
-  storytelling: {
-    es: 'storytelling',
-    en: 'storytelling',
+  'produccion-contenido': {
+    es: 'produccion-contenido',
+    en: 'content-production',
   },
-  'creacion-contenido': {
-    es: 'creacion-contenido',
-    en: 'content-creation',
-  },
-  'cobertura-eventos': {
-    es: 'cobertura-eventos',
-    en: 'event-coverage',
-  },
-  'email-marketing': {
-    es: 'email-marketing',
-    en: 'email-marketing',
+  'gestion-mensual': {
+    es: 'gestion-mensual',
+    en: 'monthly-management',
   },
 };
 

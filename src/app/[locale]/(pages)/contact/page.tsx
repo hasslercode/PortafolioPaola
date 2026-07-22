@@ -53,7 +53,7 @@ export default async function ContactPage({ params }: PageProps) {
       <div className="sr-only">
         <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
         <a href={siteConfig.contact.whatsapp}>WhatsApp</a>
-        <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phoneDisplay}</a>
+        <a href={siteConfig.social.instagram}>Instagram</a>
       </div>
     </>
   );

@@ -397,36 +397,31 @@
     "badge": "Servicios",
     "titleBefore": "¿Cómo puedo",
     "titleScript": "ayudarte?",
-    "subtitleBefore": "Soluciones",
-    "subtitleAccent1": "estratégicas",
-    "subtitleMiddle": "y",
-    "subtitleAccent2": "creativas",
-    "subtitleAfter": "para fortalecer tu presencia digital.",
+    "subtitleBefore": "Cuatro planes",
+    "subtitleAccent1": "sin precios fijos",
+    "subtitleMiddle": ",",
+    "subtitleAccent2": "ajustados",
+    "subtitleAfter": "a cada empresa — de menor a mayor carga operativa.",
     "cards": [
       {
-        "titleLine1": "Gestión de redes",
-        "titleScript": "sociales",
-        "description": "Estrategias de contenido, comunidad y análisis de resultados para aumentar tu visibilidad y conexión con tu audiencia."
+        "titleLine1": "Asesoría",
+        "titleScript": "estratégica",
+        "description": "Sesión de evaluación: revisión de redes, detección de oportunidades y plan de acción. No se graba, no se edita y no se publica."
       },
       {
-        "titleBefore": "Creación de",
+        "titleLine1": "Consultoría de",
         "titleScript": "contenido",
-        "description": "Contenido creativo, atractivo y alineado con tu marca para redes sociales, blogs, webs y campañas digitales."
+        "description": "Trabajo 100% como estratega: documento PDF con análisis, buyer persona, pilares, calendario, ideas, formatos, objetivos y tono. Sin grabación de contenido."
       },
       {
-        "titleLine1": "Estrategia digital y",
-        "titleScript": "marketing",
-        "description": "Planificación y ejecución de estrategias digitales orientadas a objetivos, con enfoque en crecimiento y conversión."
+        "titleBefore": "Producción de",
+        "titleScript": "contenido",
+        "description": "Edición premium del material que tú grabas. Acabado espectacular; la inversión se define según la duración a editar."
       },
       {
-        "titleLine1": "Email marketing y",
-        "titleScript": "automatización",
-        "description": "Campañas efectivas que nutren, convierten y fidelizan a tu audiencia de forma estratégica y personalizada."
-      },
-      {
-        "titleLine1": "Cobertura de",
-        "titleScript": "eventos",
-        "description": "Generación de contenido en tiempo real de tus eventos. Desde historias, Lives y vídeos resumen."
+        "titleLine1": "Gestión",
+        "titleScript": "mensual",
+        "description": "Plan Premium integral: estrategia ligera, preproducción, grabación, edición, programación, publicación y seguimiento."
       }
     ]
   },
@@ -520,7 +515,7 @@
       "Espacio para resolver dudas."
     ],
     "email": "pahoyoscardona@gmail.com",
-    "phone": "300 249 3331"
+    "instagram": "@paolaahoyosc"
   },
   "footer": {
     "brandName": "PAOLA HOYOS",
@@ -570,7 +565,6 @@
       "introAccent": "rápido",
       "introAfter": "por el canal que prefieras.",
       "email": "pahoyoscardona@gmail.com",
-      "phone": "+57 300 249 3331",
       "instagram": "@paolaahoyosc",
       "whatsapp": "Ir directo a WhatsApp",
       "whatsappMessage": "Hola Paola, quiero impulsar mi marca.",

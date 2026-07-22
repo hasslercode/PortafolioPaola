@@ -514,9 +514,8 @@ export default {
       "Recomendaciones estratégicas iniciales.",
       "Espacio para resolver dudas."
     ],
-    "email": "pahoyoscardona@gmail.com",
-    "phone": "300 249 3331"
-  },
+    "email": "pahoyoscardona@gmail.com"
+},
   "footer": {
     "brandName": "PAOLA HOYOS",
     "brandTagline": "ESTRATEGIA · STORYTELLING & RESULTADOS",
@@ -565,7 +564,7 @@ export default {
       "introAccent": "rápido",
       "introAfter": "por el canal que prefieras.",
       "email": "pahoyoscardona@gmail.com",
-      "phone": "+57 300 249 3331",
+
       "instagram": "@paolaahoyosc",
       "whatsapp": "Ir directo a WhatsApp",
       "whatsappMessage": "Hola Paola, quiero impulsar mi marca.",

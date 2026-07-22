@@ -28,8 +28,6 @@ export const siteConfig = {
 
   contact: {
     email: 'pahoyoscardona@gmail.com',
-    phone: '+573002493331',
-    phoneDisplay: '+57 300 249 3331',
     whatsapp: 'https://wa.me/573002493331',
     calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ?? '',
   },

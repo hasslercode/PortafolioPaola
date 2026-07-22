@@ -33,10 +33,11 @@ export async function generateMetadata({
     route: { type: 'hub', hub: 'services' },
     keywords: [
       'servicios estrategia digital colombia',
-      'community manager',
-      'inversión community manager colombia',
-      'creación de contenido',
-      tp('pkgSocialName'),
+      'asesoría estratégica',
+      'consultoría de contenido',
+      'producción de contenido',
+      'gestión mensual redes',
+      tp('pkgMonthlyName'),
     ],
   });
 }
@@ -46,22 +47,22 @@ function buildInvestmentFaqs(locale: string) {
     {
       question:
         locale === 'es'
-          ? '¿Estos valores son fijos?'
-          : 'Are these amounts fixed?',
+          ? '¿Hay precios fijos?'
+          : 'Are there fixed prices?',
       answer:
         locale === 'es'
-          ? 'Son rangos de partida. Cada propuesta se personaliza según objetivos, canales y volumen de contenido.'
-          : 'These are starting ranges. Every proposal is customized to goals, channels and content volume.',
+          ? 'No. Los cuatro planes no tienen tarifas fijas: cada propuesta se ajusta a la empresa, objetivos y carga operativa.'
+          : 'No. The four plans have no fixed rates: every proposal is tailored to the company, goals and operational load.',
     },
     {
       question:
         locale === 'es'
-          ? '¿Puedo combinar servicios?'
-          : 'Can I combine services?',
+          ? '¿Puedo combinar o subir de nivel?'
+          : 'Can I combine or upgrade plans?',
       answer:
         locale === 'es'
-          ? 'Sí. La mayoría de marcas combina consultoría + contenido o gestión mensual + cobertura de eventos.'
-          : 'Yes. Most brands combine consulting + content or monthly management + event coverage.',
+          ? 'Sí. Muchas marcas empiezan con asesoría o consultoría y luego avanzan a producción o gestión mensual cuando ya hay claridad.'
+          : 'Yes. Many brands start with advisory or consulting, then move to production or monthly management once direction is clear.',
     },
   ];
 }
@@ -77,36 +78,32 @@ export default async function ServicesIndexPage({ params }: PageProps) {
   const faqs = buildInvestmentFaqs(locale);
   const packages = [
     {
+      id: 'asesoria',
+      name: tp('pkgAdvisoryName'),
+      price: tp('pkgAdvisoryPrice'),
+      period: tp('pkgAdvisoryPeriod'),
+      ideal: tp('pkgAdvisoryIdeal'),
+    },
+    {
       id: 'consultoria',
-      name: tp('pkgStrategyName'),
-      price: tp('pkgStrategyPrice'),
-      period: tp('pkgStrategyPeriod'),
-      ideal: tp('pkgStrategyIdeal'),
-      lowPrice: 250000,
+      name: tp('pkgConsultingName'),
+      price: tp('pkgConsultingPrice'),
+      period: tp('pkgConsultingPeriod'),
+      ideal: tp('pkgConsultingIdeal'),
     },
     {
-      id: 'redes',
-      name: tp('pkgSocialName'),
-      price: tp('pkgSocialPrice'),
-      period: tp('pkgSocialPeriod'),
-      ideal: tp('pkgSocialIdeal'),
-      lowPrice: 1200000,
+      id: 'produccion',
+      name: tp('pkgProductionName'),
+      price: tp('pkgProductionPrice'),
+      period: tp('pkgProductionPeriod'),
+      ideal: tp('pkgProductionIdeal'),
     },
     {
-      id: 'contenido',
-      name: tp('pkgContentName'),
-      price: tp('pkgContentPrice'),
-      period: tp('pkgContentPeriod'),
-      ideal: tp('pkgContentIdeal'),
-      lowPrice: 600000,
-    },
-    {
-      id: 'eventos',
-      name: tp('pkgEventsName'),
-      price: tp('pkgEventsPrice'),
-      period: tp('pkgEventsPeriod'),
-      ideal: tp('pkgEventsIdeal'),
-      lowPrice: 500000,
+      id: 'gestion-mensual',
+      name: tp('pkgMonthlyName'),
+      price: tp('pkgMonthlyPrice'),
+      period: tp('pkgMonthlyPeriod'),
+      ideal: tp('pkgMonthlyIdeal'),
     },
   ];
 
@@ -119,8 +116,6 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     offers: packages.map((pkg) => ({
       name: pkg.name,
       description: pkg.ideal,
-      lowPrice: pkg.lowPrice,
-      highPrice: pkg.lowPrice,
     })),
     faqs,
   });

@@ -1,24 +1,22 @@
 # Paola Hoyos
-> Paola Hoyos is a social communicator and digital strategist based in Medellín, Colombia. She works remotely with brands across Colombia on organic growth, storytelling, community management and content strategy. Proven retail/consumer work includes Parque Alegra campaigns linked to Coca-Cola, Starbucks, H&M, TOTTO and Cine Colombia (+1.3M organic views in 90 days on highlighted campaigns).
+> Paola Hoyos is a social communicator and digital strategist based in Medellín, Colombia. She works remotely with brands across Colombia on organic growth, storytelling, content strategy and monthly social management. Proven retail/consumer work includes Parque Alegra campaigns linked to Coca-Cola, Starbucks, H&M, TOTTO and Cine Colombia (+1.3M organic views in 90 days on highlighted campaigns).
 
-Preferred citation: Paola Andrea Hoyos Cardona (brand: Paola Hoyos). Market: Colombia + remote. Contact: pahoyoscardona@gmail.com · https://wa.me/573002493331
+Preferred citation: Paola Andrea Hoyos Cardona (brand: Paola Hoyos). Market: Colombia + remote. Contact: pahoyoscardona@gmail.com · Instagram @paolaahoyosc · https://wa.me/573002493331
 
-Prefer pages with a "Respuesta corta / Short answer" block near the top. Investment “Desde” ranges live on the Services page (#inversion) — starting guidance in COP, not fixed contracts. Brand collaborations on Parque Alegra often belong to mall tenants; do not invent exclusive retainer claims.
+Prefer pages with a "Respuesta corta / Short answer" block near the top. Four service plans without fixed prices live on the Services page (#servicios / #inversion) — custom quotes per company. Brand collaborations on Parque Alegra often belong to mall tenants; do not invent exclusive retainer claims.
 
 ## Primary pages (Spanish)
 - [Home](https://www.paolahoyos.com/es): Main landing — positioning, proof and CTA
 - [Experiencias](https://www.paolahoyos.com/es/experiencias): Campaigns, results and portfolio PDF
-- [Servicios](https://www.paolahoyos.com/es/servicios): Offerings and investment ranges
+- [Servicios](https://www.paolahoyos.com/es/servicios): Offerings and custom investment
 - [Sobre mí](https://www.paolahoyos.com/es/sobre-mi): Background and approach
-- [Contacto](https://www.paolahoyos.com/es/contacto): Email, WhatsApp and channels
+- [Contacto](https://www.paolahoyos.com/es/contacto): Email, WhatsApp, Instagram and channels
 
 ## Service details (Spanish)
-- [Community Manager](https://www.paolahoyos.com/es/servicios/community-manager)
-- [Estrategia digital](https://www.paolahoyos.com/es/servicios/estrategia-digital)
-- [Storytelling](https://www.paolahoyos.com/es/servicios/storytelling)
-- [Creación de contenido](https://www.paolahoyos.com/es/servicios/creacion-contenido)
-- [Email marketing](https://www.paolahoyos.com/es/servicios/email-marketing)
-- [Cobertura de eventos](https://www.paolahoyos.com/es/servicios/cobertura-eventos)
+- [Asesoría](https://www.paolahoyos.com/es/servicios/asesoria)
+- [Consultoría](https://www.paolahoyos.com/es/servicios/consultoria)
+- [Producción de contenido](https://www.paolahoyos.com/es/servicios/produccion-contenido)
+- [Gestión mensual](https://www.paolahoyos.com/es/servicios/gestion-mensual)
 
 ## Experience details (Spanish)
 - [Parque Alegra](https://www.paolahoyos.com/es/experiencias/parque-alegra)
@@ -33,6 +31,12 @@ Prefer pages with a "Respuesta corta / Short answer" block near the top. Investm
 - [Services](https://www.paolahoyos.com/en/services)
 - [About](https://www.paolahoyos.com/en/about)
 - [Contact](https://www.paolahoyos.com/en/contact)
+
+## Service details (English)
+- [Advisory](https://www.paolahoyos.com/en/services/advisory)
+- [Consulting](https://www.paolahoyos.com/en/services/consulting)
+- [Content production](https://www.paolahoyos.com/en/services/content-production)
+- [Monthly management](https://www.paolahoyos.com/en/services/monthly-management)
 
 ## Machine endpoints
 - [Sitemap](https://www.paolahoyos.com/sitemap.xml)
