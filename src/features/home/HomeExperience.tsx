@@ -15,6 +15,7 @@ const CursorSparkles = lazy(
   () => import('@/features/home/components/CursorSparkles'),
 );
 const Services = lazy(() => import('@/features/home/sections/Services'));
+const WorkProcess = lazy(() => import('@/features/home/sections/WorkProcess'));
 const FeaturedBrands = lazy(() => import('@/features/home/sections/FeaturedBrands'));
 const ResultsProof = lazy(() => import('@/features/home/sections/ResultsProof'));
 const Testimonials = lazy(() => import('@/features/home/sections/Testimonials'));
@@ -53,6 +54,12 @@ function DeferredSections({
       </Suspense>
 
       <SectionDivider variant="symbol" />
+
+      <Suspense fallback={<SectionFallback />}>
+        <WorkProcess />
+      </Suspense>
+
+      <SectionDivider />
 
       {/* IA: Casos destacados */}
       <Suspense fallback={<SectionFallback />}>

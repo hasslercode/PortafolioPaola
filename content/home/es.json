@@ -413,11 +413,6 @@
           "Detección de oportunidades",
           "Plan de acción"
         ],
-        "rules": [
-          "Conversación clara",
-          "Diagnóstico honesto",
-          "Próximos pasos"
-        ],
         "tagline": "Ideal para ordenar el camino."
       },
       {
@@ -427,11 +422,9 @@
         "pitch": "Aquí sí trabajo 100% como estratega. Sales con dirección clara para producir con intención.",
         "includes": [
           "Análisis de marca",
-          "Competencia",
           "Buyer persona",
           "Pilares de contenido",
           "Calendario",
-          "Ideas y formatos",
           "Objetivos",
           "Tono de comunicación"
         ],
@@ -463,6 +456,28 @@
           "Seguimiento"
         ],
         "tagline": "Todo el proceso, con calma y criterio."
+      }
+    ]
+  },
+  "workProcess": {
+    "titleBefore": "Así es como",
+    "titleScript": "trabajamos contigo",
+    "steps": [
+      {
+        "title": "Descubrimos",
+        "description": "Entendemos tu marca, tu audiencia y tus objetivos."
+      },
+      {
+        "title": "Diseñamos",
+        "description": "Creamos la estrategia y el plan de contenido."
+      },
+      {
+        "title": "Producimos",
+        "description": "Creamos piezas de alto impacto que conectan."
+      },
+      {
+        "title": "Escalamos",
+        "description": "Publicamos, analizamos y optimizamos resultados."
       }
     ]
   },

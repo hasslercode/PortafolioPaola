@@ -1,5 +1,6 @@
 @import '../styles/tailwind.css';
 @import '../styles/main.css';
+@import '../styles/services-showcase.css';
 @import '../styles/conversion.css';
 @import '../styles/mobile.css';
 /* dark.css loaded after paint via DeferredThemeStyles — keeps it off the critical path */

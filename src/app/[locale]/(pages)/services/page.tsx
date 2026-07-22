@@ -84,13 +84,12 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       pitch: tp('pkgStrategyPitch'),
       includes: [
         tp('pkgStrategyInc1'),
-        tp('pkgStrategyInc2'),
         tp('pkgStrategyInc3'),
-        tp('pkgStrategyInc4'),
         tp('pkgStrategyInc5'),
         tp('pkgStrategyInc6'),
       ],
-      note: tp('pkgStrategyNote'),
+      priceValue: tp('pkgStrategyPrice'),
+      ctaLabel: tp('pkgStrategyCta'),
     },
     {
       id: 'produccion',
@@ -102,7 +101,8 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgProductionInc2'),
         tp('pkgProductionInc3'),
       ],
-      note: tp('pkgProductionNote'),
+      priceValue: tp('pkgProductionPrice'),
+      ctaLabel: tp('pkgProductionCta'),
     },
     {
       id: 'gestion-mensual',
@@ -115,7 +115,8 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgMonthlyInc3'),
         tp('pkgMonthlyInc4'),
       ],
-      note: tp('pkgMonthlyNote'),
+      priceValue: tp('pkgMonthlyPrice'),
+      ctaLabel: tp('pkgMonthlyCta'),
       featured: true,
     },
   ];
@@ -148,6 +149,11 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           summary={tp('summary')}
           disclaimer={tp('disclaimer')}
           includesLabel={tp('includesLabel')}
+          fromLabel={tp('fromLabel')}
+          featuredLabel={tp('featuredLabel')}
+          helpTitle={tp('helpTitle')}
+          helpBody={tp('helpBody')}
+          helpCta={tp('helpCta')}
           ctaLabel={tp('cta')}
           packages={packages}
           faqs={faqs}

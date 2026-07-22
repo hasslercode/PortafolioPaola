@@ -161,6 +161,17 @@ export type InvestmentPackage = {
   note?: string;
   ctaLabel?: string;
   featured?: boolean;
+  priceFrom?: string;
+  priceValue?: string;
+};
+
+const PLAN_ICONS: Record<string, string> = {
+  estrategia:
+    'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z',
+  produccion:
+    'M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zm0 14H4V8h16v10z',
+  'gestion-mensual':
+    'M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z',
 };
 
 export function PricingHubView({
@@ -169,6 +180,11 @@ export function PricingHubView({
   summary,
   disclaimer,
   includesLabel,
+  fromLabel,
+  featuredLabel,
+  helpTitle,
+  helpBody,
+  helpCta,
   ctaLabel,
   packages,
   faqs,
@@ -178,6 +194,11 @@ export function PricingHubView({
   summary: string;
   disclaimer: string;
   includesLabel: string;
+  fromLabel: string;
+  featuredLabel: string;
+  helpTitle: string;
+  helpBody: string;
+  helpCta: string;
   ctaLabel: string;
   packages: InvestmentPackage[];
   faqs: Array<{ question: string; answer: string }>;
@@ -188,7 +209,7 @@ export function PricingHubView({
 
   return (
     <>
-      <section className="services-wow services-wow--compact" id="inversion">
+      <section className="services-wow services-wow--compact plan-showcase" id="inversion">
         <div className="container">
           <div className="services-wow__header">
             <span className="badge-pill-wow">{badge}</span>
@@ -198,68 +219,62 @@ export function PricingHubView({
             </div>
           </div>
 
-          <div className="plan-rail">
+          <div className="plan-showcase__grid">
             {packages.map((pkg) => {
-              const variant =
-                pkg.featured || pkg.id === 'gestion-mensual'
-                  ? 'premium'
-                  : pkg.id === 'produccion'
-                    ? 'production'
-                    : 'strategy';
+              const featured = Boolean(pkg.featured || pkg.id === 'gestion-mensual');
+              const icon = PLAN_ICONS[pkg.id] || PLAN_ICONS.estrategia;
 
               return (
                 <article
                   key={pkg.id}
-                  className={`offer-card offer-card--${variant} offer-card--plan${
-                    pkg.featured || pkg.id === 'gestion-mensual'
-                      ? ' offer-card--featured'
-                      : ''
-                  }`}
+                  className={`plan-card${featured ? ' plan-card--featured' : ''}`}
                   id={pkg.id}
                 >
-                  <span className="offer-card__ghost" aria-hidden="true">
+                  <span className="plan-card__ghost" aria-hidden="true">
                     {pkg.index}
                   </span>
 
-                  <div className="offer-card__head">
-                    <span className="offer-card__eyebrow">
-                      {pkg.featured || pkg.id === 'gestion-mensual'
-                        ? isEn
-                          ? 'Premium'
-                          : 'Premium'
-                        : `${pkg.index}`}
+                  {featured ? (
+                    <span className="plan-card__badge">
+                      <span aria-hidden="true">★</span> {featuredLabel}
                     </span>
-                    <h2 className="offer-card__title offer-card__title--plan">
-                      {pkg.name}
-                    </h2>
+                  ) : null}
+
+                  <div className="plan-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d={icon} />
+                    </svg>
                   </div>
 
-                  <p className="offer-card__pitch">{pkg.pitch}</p>
+                  <h2 className="plan-card__title">{pkg.name}</h2>
+                  <p className="plan-card__pitch">{pkg.pitch}</p>
 
-                  <p className="offer-card__includes-label">{includesLabel}</p>
-                  <ul className={`offer-card__includes offer-card__includes--${variant}`}>
+                  <p className="plan-card__includes-label">{includesLabel}</p>
+                  <ul
+                    className={`plan-card__includes${
+                      featured ? ' plan-card__includes--pills' : ''
+                    }`}
+                  >
                     {pkg.includes.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
 
-                  {pkg.note ? (
-                    <p className="offer-card__tagline">{pkg.note}</p>
-                  ) : null}
-
-                  <div className="offer-card__cta">
-                    <button
-                      type="button"
-                      className={
-                        pkg.featured || pkg.id === 'gestion-mensual'
-                          ? 'btn-pill-premium btn-pill-premium--on-dark'
-                          : 'btn-pill-premium'
-                      }
-                      onClick={() => openContact(`investment_${pkg.id}`)}
-                    >
-                      {pkg.ctaLabel || ctaLabel}
-                    </button>
+                  <div className="plan-card__price">
+                    <span className="plan-card__from">{fromLabel}</span>
+                    <span className="plan-card__amount">
+                      {pkg.priceValue || (isEn ? 'Custom quote' : 'Cotización')}
+                    </span>
                   </div>
+
+                  <button
+                    type="button"
+                    className={`plan-card__cta${featured ? ' plan-card__cta--solid' : ''}`}
+                    onClick={() => openContact(`investment_${pkg.id}`)}
+                  >
+                    <span>{pkg.ctaLabel || ctaLabel}</span>
+                    <span aria-hidden="true">→</span>
+                  </button>
                 </article>
               );
             })}
@@ -269,6 +284,32 @@ export function PricingHubView({
         </div>
       </section>
 
+      <div className="container">
+        <div className="plan-help">
+          <div className="plan-help__copy">
+            <span className="plan-help__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z" />
+              </svg>
+            </span>
+            <div>
+              <p className="plan-help__title">{helpTitle}</p>
+              <p className="plan-help__body">{helpBody}</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="plan-help__cta"
+            onClick={() => openContact('pricing_help')}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" />
+            </svg>
+            <span>{helpCta}</span>
+          </button>
+        </div>
+      </div>
+
       <VerticalArtConnector mark="sparkle" />
 
       <div className="container servicios-hub-faqs" id="faqs">
@@ -276,18 +317,6 @@ export function PricingHubView({
           title={isEn ? 'FAQ' : 'Preguntas frecuentes'}
           items={faqs}
         />
-      </div>
-
-      <VerticalArtConnector mark="heart" />
-
-      <div id="cta" className="container servicios-hub-cta">
-        <button
-          type="button"
-          className="btn-pill-premium"
-          onClick={() => openContact('pricing_cta')}
-        >
-          {isEn ? "Let's talk about your brand" : 'Hablemos de tu marca'}
-        </button>
       </div>
     </>
   );

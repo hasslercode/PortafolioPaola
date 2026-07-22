@@ -408,11 +408,6 @@
           "Opportunity mapping",
           "Action plan"
         ],
-        "rules": [
-          "Clear conversation",
-          "Honest diagnosis",
-          "Next steps"
-        ],
         "tagline": "Ideal to map the path."
       },
       {
@@ -422,11 +417,9 @@
         "pitch": "This is pure strategist work. You leave with clear direction to produce with intention.",
         "includes": [
           "Brand analysis",
-          "Competitors",
           "Buyer persona",
           "Content pillars",
           "Calendar",
-          "Ideas and formats",
           "Goals",
           "Communication tone"
         ],
@@ -616,5 +609,27 @@
       "close": "Close",
       "closeLabel": "Close portfolio"
     }
+  },
+  "workProcess": {
+    "titleBefore": "This is how we",
+    "titleScript": "work with you",
+    "steps": [
+      {
+        "title": "Discover",
+        "description": "We understand your brand, audience and goals."
+      },
+      {
+        "title": "Design",
+        "description": "We create the strategy and content plan."
+      },
+      {
+        "title": "Produce",
+        "description": "We craft high-impact pieces that connect."
+      },
+      {
+        "title": "Scale",
+        "description": "We publish, analyze and optimize results."
+      }
+    ]
   }
 }
