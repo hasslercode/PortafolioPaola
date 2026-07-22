@@ -698,8 +698,7 @@ def build():
     add_para(doc, "Paola Hoyos Cardona", size=12, bold=True, color=INK, space_before=10, space_after=2)
     add_para(doc, "Comunicadora Social · Content Strategist · Producción de contenido", size=9, color=MUTED, space_after=2)
     add_para(doc, "Email: pahoyoscardona@gmail.com", size=10, space_after=1)
-    add_para(doc, "Instagram: @paolaahoyosc", size=10, space_after=1)
-    add_para(doc, "WhatsApp: disponible vía enlace de contacto", size=10, space_after=12)
+    add_para(doc, "Instagram: @paolaahoyosc", size=10, space_after=12)
     quote(
         doc,
         "Sus guiones ya tienen el mensaje. Yo me encargo de que se vean a la altura de la confianza que prometen.",
