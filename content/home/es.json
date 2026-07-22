@@ -414,11 +414,11 @@
           "Plan de acción"
         ],
         "rules": [
-          "No editas.",
-          "No grabas.",
-          "No publicas."
+          "Conversación clara",
+          "Diagnóstico honesto",
+          "Próximos pasos"
         ],
-        "tagline": "Solo asesoría."
+        "tagline": "Ideal para ordenar el camino."
       },
       {
         "eyebrow": "02 · Estrategia",
@@ -435,9 +435,7 @@
           "Objetivos",
           "Tono de comunicación"
         ],
-        "rules": [
-          "No grabo absolutamente nada."
-        ]
+        "tagline": "La brújula antes de producir."
       },
       {
         "eyebrow": "03 · Producción",
@@ -449,7 +447,7 @@
           "Ritmo, subtítulos y tipografías",
           "Color, música y export listo"
         ],
-        "tagline": "Tú aportas el material grabado."
+        "tagline": "Partimos de tu material grabado."
       },
       {
         "eyebrow": "04 · Premium",
@@ -464,7 +462,7 @@
           "Publicación",
           "Seguimiento"
         ],
-        "tagline": "Plan premium de punta a punta."
+        "tagline": "Todo el proceso, con calma y criterio."
       }
     ]
   },

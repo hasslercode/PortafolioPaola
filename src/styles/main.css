@@ -2593,10 +2593,10 @@ body.modal-open {
     gap: 18px;
 }
 
-/* ---- Offer bento (services) ---- */
+/* ---- Offer bento (services) — 1 fila · 4 columnas ---- */
 .offer-bento {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
     align-items: stretch;
 }
@@ -2748,22 +2748,20 @@ body.modal-open {
 
 .offer-card__stamp {
     font-family: var(--font-playfair), Georgia, serif;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 600;
     font-style: italic;
     padding: 0.35rem 0.75rem;
-    border: 1.5px dashed rgba(148, 56, 80, 0.45);
-    border-radius: 8px;
+    border: 1px solid rgba(148, 56, 80, 0.22);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
     color: var(--pink-primary);
-    transform: rotate(-1.5deg);
+    transform: none;
 }
 
-.offer-card__stamp:nth-child(2) {
-    transform: rotate(1.2deg);
-}
-
+.offer-card__stamp:nth-child(2),
 .offer-card__stamp:nth-child(3) {
-    transform: rotate(-0.6deg);
+    transform: none;
 }
 
 .offer-card__tagline {
@@ -2785,23 +2783,28 @@ body.modal-open {
     width: 100%;
 }
 
-/* Variants */
+/* Variants — equal columns */
+.offer-card--session,
+.offer-card--strategy,
+.offer-card--production,
+.offer-card--premium {
+    grid-column: auto;
+}
+
 .offer-card--session {
-    grid-column: 1 / -1;
     background:
-        linear-gradient(120deg, rgba(255, 240, 242, 0.95) 0%, rgba(250, 247, 245, 0.4) 48%, rgba(245, 214, 219, 0.55) 100%),
+        linear-gradient(160deg, rgba(255, 240, 242, 0.98) 0%, #fff 62%),
         var(--white);
     border: 1px solid rgba(148, 56, 80, 0.1);
     box-shadow: 0 10px 34px rgba(99, 42, 56, 0.06);
-    padding: 32px 34px 28px;
 }
 
 .offer-card--session .offer-card__pitch {
     font-family: var(--font-playfair), Georgia, serif;
-    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-size: 1.05rem;
     font-style: italic;
     line-height: 1.4;
-    max-width: 46ch;
+    max-width: 28ch;
     color: var(--pink-accent-text);
 }
 
@@ -2815,14 +2818,12 @@ body.modal-open {
 }
 
 .offer-card--strategy {
-    grid-column: span 4;
     background: var(--white);
     border: 1px solid rgba(45, 30, 27, 0.06);
     box-shadow: 0 8px 28px rgba(45, 30, 27, 0.05);
 }
 
 .offer-card--production {
-    grid-column: span 4;
     background:
         radial-gradient(120% 90% at 100% 0%, rgba(232, 167, 179, 0.35), transparent 55%),
         #fff8f9;
@@ -2832,13 +2833,12 @@ body.modal-open {
 
 .offer-card--production .offer-card__pitch {
     font-family: var(--font-playfair), Georgia, serif;
-    font-size: 1.12rem;
+    font-size: 1.05rem;
     font-style: italic;
-    max-width: 28ch;
+    max-width: 26ch;
 }
 
 .offer-card--premium {
-    grid-column: span 4;
     background:
         linear-gradient(160deg, #6f3d4a 0%, #943850 48%, #632a38 100%);
     color: #f8ecef;
@@ -2884,10 +2884,10 @@ body.modal-open {
     transform: translateY(-9px);
 }
 
-/* Plans rail */
+/* Plans rail — also 1 fila · 3 columnas (sesión fuera) */
 .plan-rail {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
     align-items: stretch;
     max-width: 1120px;
@@ -2895,13 +2895,10 @@ body.modal-open {
 }
 
 .plan-rail .offer-card--strategy,
-.plan-rail .offer-card--production {
-    grid-column: span 4;
-}
-
+.plan-rail .offer-card--production,
 .plan-rail .offer-card--premium,
 .plan-rail .offer-card--featured {
-    grid-column: span 4;
+    grid-column: auto;
 }
 
 .btn-pill-premium--on-dark {
@@ -2914,31 +2911,13 @@ body.modal-open {
 }
 
 @media (max-width: 1100px) {
-    .offer-bento,
-    .plan-rail {
-        grid-template-columns: 1fr 1fr;
+    .offer-bento {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .offer-card--session {
-        grid-column: 1 / -1;
-    }
-
-    .offer-card--strategy,
-    .offer-card--production,
-    .offer-card--premium,
-    .plan-rail .offer-card--strategy,
-    .plan-rail .offer-card--production,
-    .plan-rail .offer-card--premium,
-    .plan-rail .offer-card--featured {
-        grid-column: span 1;
-    }
-}
-
-@media (max-width: 720px) {
-    .offer-bento,
     .plan-rail {
         grid-template-columns: 1fr;
-        gap: 14px;
+        max-width: 420px;
     }
 
     .offer-card--session,
@@ -2949,15 +2928,32 @@ body.modal-open {
     .plan-rail .offer-card--production,
     .plan-rail .offer-card--premium,
     .plan-rail .offer-card--featured {
-        grid-column: 1 / -1;
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 720px) {
+    .offer-bento,
+    .plan-rail {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        max-width: 420px;
+        margin-inline: auto;
+    }
+
+    .offer-card--session,
+    .offer-card--strategy,
+    .offer-card--production,
+    .offer-card--premium,
+    .plan-rail .offer-card--strategy,
+    .plan-rail .offer-card--production,
+    .plan-rail .offer-card--premium,
+    .plan-rail .offer-card--featured {
+        grid-column: auto;
     }
 
     .offer-card {
         padding: 24px 20px 22px;
-    }
-
-    .offer-card--session {
-        padding: 26px 22px 24px;
     }
 
     .offer-card--featured {

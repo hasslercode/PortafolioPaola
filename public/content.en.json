@@ -409,11 +409,11 @@
           "Action plan"
         ],
         "rules": [
-          "No editing.",
-          "No recording.",
-          "No publishing."
+          "Clear conversation",
+          "Honest diagnosis",
+          "Next steps"
         ],
-        "tagline": "Advisory only."
+        "tagline": "Ideal to map the path."
       },
       {
         "eyebrow": "02 · Strategy",
@@ -430,9 +430,7 @@
           "Goals",
           "Communication tone"
         ],
-        "rules": [
-          "Absolutely no recording."
-        ]
+        "tagline": "The compass before production."
       },
       {
         "eyebrow": "03 · Production",
@@ -444,7 +442,7 @@
           "Pacing, captions and typography",
           "Color, music and publish-ready export"
         ],
-        "tagline": "You provide the recorded footage."
+        "tagline": "We start from your recorded footage."
       },
       {
         "eyebrow": "04 · Premium",
@@ -459,7 +457,7 @@
           "Publishing",
           "Follow-up"
         ],
-        "tagline": "Premium plan, start to finish."
+        "tagline": "The full process, with calm and judgment."
       }
     ]
   },

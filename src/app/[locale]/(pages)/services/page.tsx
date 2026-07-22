@@ -51,8 +51,8 @@ function buildInvestmentFaqs(locale: string) {
           : 'Is the strategy session a plan?',
       answer:
         locale === 'es'
-          ? 'No. Es una reunión de diagnóstico: revisamos redes, encontramos oportunidades y entrego un plan de acción. Sin editar, grabar ni publicar.'
-          : 'No. It is a diagnosis meeting: we review channels, spot opportunities and I deliver an action plan. No editing, recording or publishing.',
+          ? 'No. Es una reunión de diagnóstico: revisamos redes, encontramos oportunidades y entrego un plan de acción. Ideal para ordenar el camino antes de producir o gestionar.'
+          : 'No. It is a diagnosis meeting: we review channels, spot opportunities and I deliver an action plan. Ideal to map the path before producing or managing.',
     },
     {
       question:
