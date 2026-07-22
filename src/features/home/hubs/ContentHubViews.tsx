@@ -221,6 +221,8 @@ export function PricingHubView({
   processTitle,
   processSteps,
   consultCta,
+  consultTag,
+  consultNote,
   includesLabel,
   featuredLabel,
   deliveryLabel,
@@ -241,6 +243,8 @@ export function PricingHubView({
   processTitle: string;
   processSteps: ProcessStep[];
   consultCta: string;
+  consultTag: string;
+  consultNote: string;
   includesLabel: string;
   featuredLabel: string;
   deliveryLabel: string;
@@ -300,8 +304,12 @@ export function PricingHubView({
                 id="consultoria"
                 onClick={() => openContact('advisory_session')}
               >
-                <span>{consultCta}</span>
-                <span aria-hidden="true">→</span>
+                <span className="offer-process__consult-top">
+                  <span className="offer-process__consult-tag">{consultTag}</span>
+                  <span className="offer-process__consult-arrow" aria-hidden="true">→</span>
+                </span>
+                <span className="offer-process__consult-title">{consultCta}</span>
+                <span className="offer-process__consult-note">{consultNote}</span>
               </button>
             </aside>
 

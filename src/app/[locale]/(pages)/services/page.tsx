@@ -188,6 +188,8 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           processTitle={tp('processTitle')}
           processSteps={processSteps}
           consultCta={tp('consultCta')}
+          consultTag={tp('consultTag')}
+          consultNote={tp('consultNote')}
           includesLabel={tp('includesLabel')}
           featuredLabel={tp('featuredLabel')}
           deliveryLabel={tp('deliveryLabel')}
