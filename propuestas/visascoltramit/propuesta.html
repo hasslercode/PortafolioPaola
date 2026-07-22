@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Propuesta de Producción de Contenido — VisasColTramit × Paola Hoyos</title>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noto Serif";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noto Serif";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Noto Serif";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  :root {
+    --bg: #FAF7F5;
+    --bg-soft: #FFF7F8;
+    --bg-warm: #F3E6E0;
+    --bg-card: #FFFFFF;
+    --ink: #2D1E1B;
+    --body: #4A3E3C;
+    --muted: #554947;
+    --line: #E8E4DE;
+    --pink: #943850;
+    --pink-deep: #7A2F42;
+    --pink-soft: #E8A7B3;
+    --pink-light: #F5D6DB;
+    --pink-bg: #FFF0F2;
+    --footer: #231816;
+    --on-dark: #F5EBED;
+    --on-dark-muted: #D8C4C9;
+    --green-brand: #1F6B4A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-center {
+      content: counter(page);
+      font-family: "Inter", sans-serif;
+      font-size: 8.5pt;
+      color: #8A7A76;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  @page :first {
+    margin: 0;
+    @bottom-center { content: none; }
+  }
+
+  @page cover {
+    margin: 0;
+    @bottom-center { content: none; }
+  }
+
+  @page dark {
+    margin: 18mm 16mm 18mm 16mm;
+    background: #231816;
+    @bottom-center {
+      content: counter(page);
+      font-family: "Inter", sans-serif;
+      font-size: 8.5pt;
+      color: #D8C4C9;
+    }
+  }
+
+  html, body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--body);
+    background: var(--bg);
+    font-size: 10pt;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .serif { font-family: "Noto Serif", Georgia, serif; }
+  .eyebrow {
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pink);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .page {
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ========== COVER ========== */
+  .cover {
+    page: cover;
+    width: 210mm;
+    height: 297mm;
+    background: var(--footer);
+    color: var(--on-dark);
+    padding: 22mm 18mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .cover-brand {
+    font-size: 9pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pink-soft);
+    font-weight: 600;
+  }
+  .cover-meta {
+    text-align: right;
+    font-size: 8.5pt;
+    color: var(--on-dark-muted);
+    line-height: 1.6;
+  }
+  .cover-mid { margin-top: 48mm; }
+  .cover-label {
+    display: inline-block;
+    border: 1px solid rgba(232,167,179,0.45);
+    color: var(--pink-soft);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .cover h1 {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 32pt;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.15;
+    max-width: 150mm;
+    margin-bottom: 18px;
+  }
+  .cover h1 em {
+    font-style: italic;
+    color: var(--pink-soft);
+  }
+  .cover-sub {
+    font-size: 11.5pt;
+    color: var(--on-dark-muted);
+    max-width: 135mm;
+    line-height: 1.6;
+  }
+  .cover-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(245,235,237,0.15);
+    padding-top: 16px;
+  }
+  .cover-client, .cover-from {
+    font-size: 9pt;
+    color: var(--on-dark-muted);
+  }
+  .cover-client strong, .cover-from strong {
+    display: block;
+    color: #FFFFFF;
+    font-size: 11pt;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .accent-bar {
+    width: 42px;
+    height: 3px;
+    background: var(--pink);
+    margin: 14px 0 18px;
+  }
+
+  /* ========== INNER PAGES ========== */
+  .inner {
+    padding-top: 2mm;
+  }
+  .section-title {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 22pt;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .lead {
+    font-size: 11pt;
+    color: var(--muted);
+    max-width: 155mm;
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+  p { margin-bottom: 10px; }
+  strong { color: var(--ink); font-weight: 600; }
+
+  .grid-2 {
+    display: table;
+    width: 100%;
+    border-spacing: 10px 0;
+    margin: 8px 0 14px;
+  }
+  .grid-2 > div {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 15px;
+    margin-bottom: 10px;
+  }
+  .card h3 {
+    font-size: 11pt;
+    margin-bottom: 6px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  .card-pink {
+    background: var(--pink-bg);
+    border-color: #F0D4DA;
+  }
+  .card-warm {
+    background: var(--bg-warm);
+    border-color: #E7D6CC;
+  }
+  .card-dark {
+    background: var(--footer);
+    color: var(--on-dark-muted);
+    border: none;
+  }
+  .card-dark h3, .card-dark strong { color: #FFFFFF; }
+
+  .pill {
+    display: inline-block;
+    background: var(--pink-light);
+    color: var(--pink-deep);
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+
+  .stat-row {
+    display: table;
+    width: 100%;
+    margin: 14px 0 18px;
+    border-spacing: 8px 0;
+  }
+  .stat {
+    display: table-cell;
+    width: 25%;
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: top;
+  }
+  .stat .num {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 18pt;
+    color: var(--pink);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .stat .lbl {
+    font-size: 7.5pt;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+  }
+
+  ul.clean {
+    list-style: none;
+    margin: 6px 0 12px;
+  }
+  ul.clean li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 7px;
+  }
+  ul.clean li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--pink);
+  }
+
+  .quote {
+    border-left: 3px solid var(--pink);
+    padding: 4px 0 4px 14px;
+    margin: 14px 0;
+    font-family: "Noto Serif", Georgia, serif;
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+
+  table.matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px;
+    font-size: 8.8pt;
+  }
+  table.matrix th {
+    text-align: left;
+    background: var(--footer);
+    color: #FFFFFF;
+    padding: 8px 9px;
+    font-weight: 600;
+    font-size: 8pt;
+    letter-spacing: 0.04em;
+  }
+  table.matrix th:first-child { border-radius: 10px 0 0 0; }
+  table.matrix th:last-child { border-radius: 0 10px 0 0; }
+  table.matrix td {
+    padding: 8px 9px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+    color: var(--body);
+  }
+  table.matrix tr:nth-child(even) td { background: rgba(255,255,255,0.65); }
+  table.matrix td strong { font-size: 9pt; }
+
+  .shot-grid {
+    display: table;
+    width: 100%;
+    border-spacing: 8px 8px;
+    margin-top: 6px;
+  }
+  .shot {
+    display: table-cell;
+    width: 50%;
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 13px;
+    vertical-align: top;
+  }
+  .shot h4 {
+    font-size: 10.5pt;
+    margin-bottom: 4px;
+  }
+  .shot .meta {
+    font-size: 7.5pt;
+    color: var(--pink);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .shot dl {
+    margin: 0;
+  }
+  .shot dt {
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .shot dd {
+    margin: 2px 0 0;
+    font-size: 8.7pt;
+    line-height: 1.4;
+  }
+
+  .price-box {
+    background: var(--footer);
+    color: var(--on-dark);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin: 12px 0;
+  }
+  .price-box .label {
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--pink-soft);
+    margin-bottom: 8px;
+  }
+  .price-box .amount {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 28pt;
+    color: #FFFFFF;
+    line-height: 1;
+  }
+  .price-box .amount span {
+    font-size: 11pt;
+    color: var(--on-dark-muted);
+    font-family: "Inter", sans-serif;
+  }
+  .price-box .note {
+    margin-top: 10px;
+    font-size: 9pt;
+    color: var(--on-dark-muted);
+  }
+
+  .include-list {
+    display: table;
+    width: 100%;
+    border-spacing: 8px 8px;
+  }
+  .include-item {
+    display: table-cell;
+    width: 33.33%;
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px;
+    vertical-align: top;
+  }
+  .include-item .n {
+    font-family: "Noto Serif", Georgia, serif;
+    color: var(--pink);
+    font-size: 14pt;
+    margin-bottom: 4px;
+  }
+  .include-item h4 {
+    font-size: 10pt;
+    margin-bottom: 4px;
+  }
+  .include-item p {
+    font-size: 8.5pt;
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .steps {
+    margin: 10px 0;
+  }
+  .step {
+    display: table;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .step-num, .step-body {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .step-num {
+    width: 28px;
+    font-family: "Noto Serif", Georgia, serif;
+    color: var(--pink);
+    font-size: 14pt;
+    padding-top: 1px;
+  }
+  .step-body h4 {
+    font-size: 10.5pt;
+    margin-bottom: 2px;
+  }
+  .step-body p {
+    font-size: 9pt;
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .footer-mini {
+    margin-top: 16px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    font-size: 8pt;
+    color: var(--muted);
+    display: table;
+    width: 100%;
+  }
+  .footer-mini span {
+    display: table-cell;
+  }
+  .footer-mini span:last-child { text-align: right; }
+
+  .two-col-tight {
+    display: table;
+    width: 100%;
+    border-spacing: 12px 0;
+  }
+  .two-col-tight > div {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 3px 7px;
+    font-size: 7.5pt;
+    color: var(--muted);
+    margin: 0 4px 4px 0;
+    background: #FFFFFF;
+  }
+
+  .hr {
+    height: 1px;
+    background: var(--line);
+    margin: 14px 0;
+    border: none;
+  }
+
+  .avoid-break { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<!-- ===================== 1. COVER ===================== -->
+<section class="page cover">
+  <div class="cover-top">
+    <div class="cover-brand">Paola Hoyos · Creative</div>
+    <div class="cover-meta">
+      Propuesta comercial<br />
+      Julio 2026<br />
+      Confidencial
+    </div>
+  </div>
+
+  <div class="cover-mid">
+    <div class="cover-label">Producción &amp; Edición de Contenido</div>
+    <h1>Transformamos sus guiones en contenido que <em>inspira confianza</em>.</h1>
+    <p class="cover-sub">
+      Propuesta de producción audiovisual para Instagram: dirección de grabación,
+      edición creativa y piezas listas para publicar — con la autoridad visual
+      que VisasColTramit merece.
+    </p>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-client">
+      Preparado para
+      <strong>VisasColTramit</strong>
+    </div>
+    <div class="cover-from" style="text-align:right;">
+      Preparado por
+      <strong>Paola Hoyos Cardona</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. ENTENDIMIENTO ===================== -->
+<section class="page inner">
+  <div class="eyebrow">01 · Entendimiento de marca</div>
+  <h2 class="section-title serif">VisasColTramit, en su esencia</h2>
+  <p class="lead">
+    No se trata solo de trámites. Se trata de acompañar proyectos de vida —
+    familias, profesionales y nómadas digitales — con rigor legal y calidez humana.
+  </p>
+
+  <div class="grid-2">
+    <div>
+      <div class="card">
+        <div class="pill">Propuesta de valor</div>
+        <h3>Trámites sin complicaciones</h3>
+        <p>
+          Orientación clara, servicio bilingüe y acompañamiento de principio a fin
+          en visas colombianas, pasaportes de EE.UU. y Canadá. El diferencial no es
+          solo el documento: es la certeza de no caminar solo.
+        </p>
+      </div>
+      <div class="card">
+        <div class="pill">Público objetivo</div>
+        <h3>Quiénes los buscan</h3>
+        <ul class="clean">
+          <li>Extranjeros que quieren vivir o invertir en Colombia</li>
+          <li>Nómadas digitales y estudiantes internacionales</li>
+          <li>Familias en procesos de agrupación / residencia</li>
+          <li>Profesionales con pasaporte EE.UU. o Canadá a renovar</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card card-pink">
+        <div class="pill">ADN de comunicación</div>
+        <h3>Cómo se perciben hoy</h3>
+        <ul class="clean">
+          <li><strong>Autoridad:</strong> especialistas, procesos estructurados</li>
+          <li><strong>Confianza:</strong> cumplimiento, transparencia, rigor</li>
+          <li><strong>Cercanía:</strong> empatía, acompañamiento humano</li>
+          <li><strong>Claridad:</strong> lenguaje simple frente a la burocracia</li>
+        </ul>
+      </div>
+      <div class="card card-warm">
+        <div class="pill">Identidad visual observada</div>
+        <h3>Paleta y estilo actual</h3>
+        <p>
+          Verde esmeralda institucional, blanco limpio, acentos dorados/amarillos
+          (referencia Colombia), tipografía sans-serif bold en overlays.
+          Contenido mixto: talking-heads + gráficos informativos.
+        </p>
+        <div style="margin-top:8px;">
+          <span class="tag">Verde marca</span>
+          <span class="tag">Blanco</span>
+          <span class="tag">Negro</span>
+          <span class="tag">Dorado / bandera</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+    “Detrás de cada trámite hay un proyecto de vida.” Esa frase es el norte creativo:
+    el contenido debe verse tan sólido como el proceso que ofrecen.
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 3. OPORTUNIDAD ===================== -->
+<section class="page inner">
+  <div class="eyebrow">02 · Lectura creativa</div>
+  <h2 class="section-title serif">La oportunidad no es inventar temas.<br/>Es elevar la ejecución.</h2>
+  <p class="lead">
+    Ustedes ya tienen los guiones y la planeación. El salto que falta es de
+    producción: dirección, ritmo, consistencia visual y acabado editorial
+    que proyecte la misma seriedad de una firma migratoria de referencia.
+  </p>
+
+  <div class="stat-row">
+    <div class="stat">
+      <span class="num">01</span>
+      <span class="lbl">Dirección en set<br/>para cada pieza</span>
+    </div>
+    <div class="stat">
+      <span class="num">02</span>
+      <span class="lbl">Edición con ritmo<br/>de algoritmo</span>
+    </div>
+    <div class="stat">
+      <span class="num">03</span>
+      <span class="lbl">Identidad visual<br/>consistente</span>
+    </div>
+    <div class="stat">
+      <span class="num">04</span>
+      <span class="lbl">Autoridad + cercanía<br/>en cada frame</span>
+    </div>
+  </div>
+
+  <div class="two-col-tight">
+    <div>
+      <div class="card">
+        <h3>Lo que ya funciona</h3>
+        <ul class="clean">
+          <li>Temática educativa clara (visas, checklists, pasos)</li>
+          <li>Presencia humana en cámara (rostro = confianza)</li>
+          <li>Uso del verde de marca como ancla visual</li>
+          <li>Tono útil, no intimidante</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card card-pink">
+        <h3>Lo que vamos a elevar</h3>
+        <ul class="clean">
+          <li>Iluminación, encuadre y continuidad entre piezas</li>
+          <li>Ritmo de edición (hooks, cuts, retención)</li>
+          <li>Motion graphics y subtítulos con sistema tipográfico</li>
+          <li>B-roll que humanice sin perder profesionalismo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-dark avoid-break" style="margin-top:8px;">
+    <h3>Promesa de esta propuesta</h3>
+    <p style="margin:0; color:#D8C4C9;">
+      Convertir cada guion en una pieza profesional que se vea — y se sienta —
+      como una marca que ya es referente: segura, cercana y visualmente impecable.
+      Sin rehacer su estrategia. Potenciando su ejecución.
+    </p>
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 4. SERVICIO ===================== -->
+<section class="page inner">
+  <div class="eyebrow">03 · El servicio</div>
+  <h2 class="section-title serif">Producción y edición<br/>de contenido para Instagram</h2>
+  <p class="lead">
+    Un sistema mensual de piezas listas para publicar. Ustedes aportan los guiones
+    y la agenda temática; yo dirijo, produzco y edito con estándar premium.
+  </p>
+
+  <div class="price-box">
+    <div class="label">Inversión mensual</div>
+    <div class="amount">$600.000 <span>COP / mes</span></div>
+    <div class="note">12 publicaciones · Reels (máx. 40 s) y/o carruseles · Dirección + producción + edición creativa</div>
+  </div>
+
+  <div class="include-list">
+    <div class="include-item">
+      <div class="n">12</div>
+      <h4>Publicaciones / mes</h4>
+      <p>Reels de máximo 40 segundos y/o carruseles, según el guion y el objetivo de cada pieza.</p>
+    </div>
+    <div class="include-item">
+      <div class="n">01</div>
+      <h4>Dirección de grabación</h4>
+      <p>Guía en set: ángulos, vestuario, lenguaje corporal, iluminación y continuidad.</p>
+    </div>
+    <div class="include-item">
+      <div class="n">∞</div>
+      <h4>Edición creativa</h4>
+      <p>Corte dinámico, subtítulos, motion graphics sencillos, música, color y ritmo.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:16px 0 8px; font-size:12pt;">Qué incluye, en concreto</h3>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th style="width:28%;">Bloque</th>
+        <th>Entregable</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Preproducción</strong></td>
+        <td>Brief de rodaje por pieza a partir de sus guiones: plano, hook visual, B-roll, vestuario y referencias de ritmo.</td>
+      </tr>
+      <tr>
+        <td><strong>Dirección en set</strong></td>
+        <td>Acompañamiento creativo durante la grabación (presencial o remoto guiado) para asegurar autoridad, cercanía y calidad de imagen.</td>
+      </tr>
+      <tr>
+        <td><strong>Producción AV</strong></td>
+        <td>Selección de tomas, organización de rushes, criterios de continuidad y captura orientada a edición vertical 9:16.</td>
+      </tr>
+      <tr>
+        <td><strong>Postproducción</strong></td>
+        <td>Edición, subtítulos quemados, tipografías de marca, lower-thirds, stickers tipográficos, música libre de derechos, colorización y exportación lista para Instagram.</td>
+      </tr>
+      <tr>
+        <td><strong>Entrega</strong></td>
+        <td>Archivos finales en formato vertical + versión carrusel cuando aplique. Una ronda de ajustes por pieza.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 5. DIRECCIÓN ===================== -->
+<section class="page inner">
+  <div class="eyebrow">04 · Dirección de grabación</div>
+  <h2 class="section-title serif">En set, cada detalle<br/>construye autoridad</h2>
+  <p class="lead">
+    La diferencia entre un video “correcto” y uno que convierte está en la dirección:
+    cómo se mira a cámara, cómo se ocupa el cuadro, cómo se respira el mensaje.
+  </p>
+
+  <div class="grid-2">
+    <div>
+      <div class="card avoid-break">
+        <h3>Presencia y lenguaje corporal</h3>
+        <ul class="clean">
+          <li>Postura abierta, hombros relajados, pecho ligeramente hacia lente</li>
+          <li>Gesto con las manos dentro del cuadro (nunca cortar muñecas)</li>
+          <li>Mirada directa al lente en hooks; mirada “off” en storytelling</li>
+          <li>Pausas conscientes de 0.3–0.5 s antes de la frase clave</li>
+          <li>Sonrisa contenido / seriedad cálida en temas legales</li>
+        </ul>
+      </div>
+      <div class="card avoid-break">
+        <h3>Vestuario y styling</h3>
+        <ul class="clean">
+          <li>Bloque sólido: negro, blanco, beige o verde marca</li>
+          <li>Evitar rayas finas y logos ajenos (moiré / ruido visual)</li>
+          <li>Accesorio mínimo: reloj fino o aretes discretos</li>
+          <li>Look consistente por bloque de 4–6 piezas del mes</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card card-pink avoid-break">
+        <h3>Iluminación</h3>
+        <ul class="clean">
+          <li>Key light a 45° (ventana suave o softbox)</li>
+          <li>Fill ligero para no hundir ojos</li>
+          <li>Evitar luz cenital dura de oficina</li>
+          <li>Fondo 1–1.5 stops más oscuro que el rostro</li>
+          <li>Balance de blancos fijo (no auto) por sesión</li>
+        </ul>
+      </div>
+      <div class="card card-warm avoid-break">
+        <h3>Audio y entorno</h3>
+        <ul class="clean">
+          <li>Micrófono solapa o close-mic al celular</li>
+          <li>Ambiente controlado: sin eco de salas vacías</li>
+          <li>Fondo limpio: planta, estantería ordenada o muro neutro</li>
+          <li>Profundidad: sin papeles sueltos ni pantallas brillantes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+    Dirigir no es “decir qué decir”. Es diseñar cómo se siente la marca
+    cuando alguien escucha un consejo migratorio por primera vez.
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 6. CÓMO GRABAR ===================== -->
+<section class="page inner">
+  <div class="eyebrow">05 · Cómo grabar cada tipo de video</div>
+  <h2 class="section-title serif">Kit de encuadres<br/>para Instagram 9:16</h2>
+  <p class="lead">
+    Un sistema práctico de planos, ángulos y movimientos para que cada guion
+    se grabe con intención — no improvisando el cuadro.
+  </p>
+
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th style="width:22%;">Tipo de pieza</th>
+        <th style="width:26%;">Planos recomendados</th>
+        <th style="width:26%;">Ángulos / movimiento</th>
+        <th>Composición</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Talking head experto</strong></td>
+        <td>Medio corto (pecho-cabeza) + detalle de manos al enfatizar</td>
+        <td>Frontal a la altura de ojos. Push-in lento al CTA final</td>
+        <td>Rostro en tercio superior. Espacio negativo a la derecha para texto</td>
+      </tr>
+      <tr>
+        <td><strong>Hook de duda / mito</strong></td>
+        <td>Primer plano expresivo · corte a medio</td>
+        <td>Ligeramente contrapicado (autoridad). Whip-pan a B-roll</td>
+        <td>Texto grande arriba; sujeto centrado los primeros 1.5 s</td>
+      </tr>
+      <tr>
+        <td><strong>Checklist / pasos</strong></td>
+        <td>Medio + insertos de documentos / pantalla / mapa</td>
+        <td>Estático limpio; cortes rítmicos cada 2–3 s</td>
+        <td>Lower-third numerado; iconografía alineada a la izquierda</td>
+      </tr>
+      <tr>
+        <td><strong>Testimonio / caso</strong></td>
+        <td>Medio lateral ¾ + B-roll emocional</td>
+        <td>Ángulo 15–30°. Travelling suave si hay espacio</td>
+        <td>Luz cálida; menos gráficos, más respiración</td>
+      </tr>
+      <tr>
+        <td><strong>Carrusel educativo</strong></td>
+        <td>Portada foto + tipografía; interiores limpios</td>
+        <td>N/A (estático). Foto hero con profundidad</td>
+        <td>Margen seguro 80 px; tipografía jerárquica 3 niveles</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card avoid-break">
+    <h3>Reglas de oro en cámara</h3>
+    <div class="two-col-tight">
+      <div>
+        <ul class="clean">
+          <li>Vertical nativo 1080×1920 (nunca crop de horizontal)</li>
+          <li>Lente equivalente 24–35 mm (celular wide sin ultra-wide)</li>
+          <li>Estabilización: trípode o gimbal; nada de temblor “home video”</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="clean">
+          <li>Grabar 3 tomas del hook + 2 del cuerpo + 1 CTA limpio</li>
+          <li>Dejar 1 s de cola al inicio/fin para edición</li>
+          <li>Claqueta verbal: nombre de pieza + take</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 7. EDICIÓN ===================== -->
+<section class="page inner">
+  <div class="eyebrow">06 · Edición para el algoritmo</div>
+  <h2 class="section-title serif">Ritmo, retención<br/>y acabado editorial</h2>
+  <p class="lead">
+    Instagram premia retención y rewatch. La edición no es “cortar bonito”:
+    es diseñar la atención segundo a segundo, sin traicionar el tono serio de la marca.
+  </p>
+
+  <div class="grid-2">
+    <div>
+      <div class="card card-pink">
+        <h3>Arquitectura de un Reel ≤ 40 s</h3>
+        <ul class="clean">
+          <li><strong>0–1.5 s:</strong> hook visual + texto que detiene el scroll</li>
+          <li><strong>1.5–8 s:</strong> promesa o tensión (mito, error, plazo)</li>
+          <li><strong>8–30 s:</strong> valor en bloques de 3–5 s con cuts</li>
+          <li><strong>30–40 s:</strong> síntesis + CTA claro (WhatsApp / link)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Subtítulos y tipografía</h3>
+        <ul class="clean">
+          <li>Subtítulos quemados, palabra a palabra o por frase corta</li>
+          <li>Máx. 2 líneas; contraste alto sobre verde/blanco/negro</li>
+          <li>Highlight de keywords en verde marca o dorado</li>
+          <li>Safe zone: lejos de UI de Instagram (abajo/derecha)</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Motion graphics sencillos</h3>
+        <ul class="clean">
+          <li>Lower-thirds con nombre / rol</li>
+          <li>Numeración animada de pasos (01, 02, 03)</li>
+          <li>Checkmarks y sellos “aprobado / importante”</li>
+          <li>Transiciones: cut seco, match-cut, zoom sutil 3–5%</li>
+          <li>Sin efectos baratos ni stickers genéricos</li>
+        </ul>
+      </div>
+      <div class="card card-warm">
+        <h3>Música, color y sonido</h3>
+        <ul class="clean">
+          <li>Tracks trending o corporativos suaves (bajo volumen bajo voz)</li>
+          <li>Duck music −12 a −18 dB bajo locución</li>
+          <li>Color: piel natural, verdes un punto más ricos, negros limpios</li>
+          <li>SFX discretos en cortes de lista (whoosh / tick)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-dark avoid-break" style="margin-top:4px;">
+    <h3>Principio de edición VisasColTramit</h3>
+    <p style="margin:0;">
+      Dinámico, sí. Ansioso, no. El ritmo debe transmitir control — como un proceso
+      migratorio bien llevado: claro, ordenado y humano.
+    </p>
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 8. IDENTIDAD ===================== -->
+<section class="page inner">
+  <div class="eyebrow">07 · Identidad visual en contenido</div>
+  <h2 class="section-title serif">Consistencia que se reconoce<br/>antes de leer el logo</h2>
+  <p class="lead">
+    Cada Reel y carrusel debe pertenecer a la misma familia visual.
+    Eso es lo que convierte una cuenta nueva en una marca memorable.
+  </p>
+
+  <div class="two-col-tight">
+    <div>
+      <div class="card">
+        <div class="pill">Sistema gráfico</div>
+        <h3>Elementos recurrentes</h3>
+        <ul class="clean">
+          <li>Verde institucional como color de acento y highlights</li>
+          <li>Dorado/ámbar solo para “alerta / plazo / bandera”</li>
+          <li>Fondos: blanco editorial o verde profundo en portadas</li>
+          <li>Esquinas redondeadas suaves en cards internas</li>
+          <li>Iconografía lineal simple (pasaporte, check, mapa)</li>
+        </ul>
+      </div>
+      <div class="card card-warm">
+        <div class="pill">Tipografía en pantalla</div>
+        <h3>Jerarquía legible en móvil</h3>
+        <ul class="clean">
+          <li><strong>Hook:</strong> bold condensed / display corto</li>
+          <li><strong>Cuerpo:</strong> sans geométrica limpia</li>
+          <li><strong>CTA:</strong> botón tipográfico o pill verde</li>
+          <li>Máximo 3 pesos por pieza</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card card-pink">
+        <div class="pill">Percepción deseada</div>
+        <h3>Autoridad + confianza + cercanía</h3>
+        <p><strong>Autoridad</strong> — encuadres estables, data clara, voz firme, tipografía sobria.</p>
+        <p><strong>Confianza</strong> — continuidad visual, subtítulos impecables, cero improvisación estética.</p>
+        <p style="margin:0;"><strong>Cercanía</strong> — sonrisa genuina, B-roll humano, lenguaje accesible, CTA cálido (“te acompañamos”).</p>
+      </div>
+      <div class="card">
+        <div class="pill">Grid Instagram</div>
+        <h3>Orden en el perfil</h3>
+        <ul class="clean">
+          <li>Alternancia consciente: Reel humano → carrusel → Reel checklist</li>
+          <li>Portadas de Reel con tipografía consistente</li>
+          <li>Misma familia de thumbnails = feed premium</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 9. EJEMPLOS 1 ===================== -->
+<section class="page inner">
+  <div class="eyebrow">08 · Ejemplos de producción</div>
+  <h2 class="section-title serif">De guion a pieza:<br/>casos de dirección</h2>
+  <p class="lead">
+    Ejemplos aplicados al universo VisasColTramit. Sirven como referencia de cómo
+    se traduce un objetivo en planos, B-roll, ritmo gráfico y CTA.
+  </p>
+
+  <div class="shot-grid">
+    <div class="shot avoid-break">
+      <div class="meta">Ejemplo 01 · Reel 25–35 s</div>
+      <h4>“Antes de aplicar a tu visa de estudiante”</h4>
+      <dl>
+        <dt>Objetivo</dt>
+        <dd>Educar y captar leads calificados con dudas reales de visa V.</dd>
+        <dt>Tipo de plano</dt>
+        <dd>Hook en primer plano → medio corto para el desarrollo → detalle de documentos.</dd>
+        <dt>Ángulos</dt>
+        <dd>Frontal a ojos + inserto top-down de checklist impresa.</dd>
+        <dt>B-roll sugerido</dt>
+        <dd>Pasaporte abriéndose, laptop con formulario, skyline Medellín, firma de papeles.</dd>
+        <dt>Ritmo de edición</dt>
+        <dd>Corte cada 2.5–3.5 s. Zoom 4% en cada tip. Música corporate-upbeat suave.</dd>
+        <dt>Elementos gráficos</dt>
+        <dd>Números 01–03 en verde; highlight de “error común”; lower-third “Visa estudiantes”.</dd>
+        <dt>CTA</dt>
+        <dd>“Agenda tu asesoría de 10 min — link en bio / WhatsApp”.</dd>
+      </dl>
+    </div>
+    <div class="shot avoid-break">
+      <div class="meta">Ejemplo 02 · Reel 20–30 s</div>
+      <h4>“Checklist nómada digital”</h4>
+      <dl>
+        <dt>Objetivo</dt>
+        <dd>Alcance + guardados. Pieza ultra útil y rewatchable.</dd>
+        <dt>Tipo de plano</dt>
+        <dd>Talking head medio + jump cuts a inserts de ítems.</dd>
+        <dt>Ángulos</dt>
+        <dd>Frontal limpio; cámara fija en trípode; B-roll lateral café/cowork.</dd>
+        <dt>B-roll sugerido</dt>
+        <dd>Manos en teclado, café, visa stamp, maleta, mapa de Colombia texturizado.</dd>
+        <dt>Ritmo de edición</dt>
+        <dd>Staccato: 1 ítem cada 2 s. SFX tick al check. Loop amigable al final.</dd>
+        <dt>Elementos gráficos</dt>
+        <dd>Checklist animada, checks verdes, tipografía bold en hooks.</dd>
+        <dt>CTA</dt>
+        <dd>“Guarda este video y escríbenos ‘NÓMADA’ por WhatsApp”.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 10. EJEMPLOS 2 ===================== -->
+<section class="page inner">
+  <div class="eyebrow">08 · Ejemplos de producción (cont.)</div>
+  <h2 class="section-title serif">Más referencias<br/>de ejecución</h2>
+
+  <div class="shot-grid">
+    <div class="shot avoid-break">
+      <div class="meta">Ejemplo 03 · Reel 30–40 s</div>
+      <h4>“Traspaso de visa residente: hazlo antes de octubre”</h4>
+      <dl>
+        <dt>Objetivo</dt>
+        <dd>Urgencia responsable + conversión a trámite de traspaso.</dd>
+        <dt>Tipo de plano</dt>
+        <dd>Medio corto serio; cutaways a calendario y documento Tipo R.</dd>
+        <dt>Ángulos</dt>
+        <dd>Ligeramente contrapicado (autoridad). Hold largo en la fecha límite.</dd>
+        <dt>B-roll sugerido</dt>
+        <dd>Close-up de visa, hoja oficial, reloj/calendario, firma, handshake.</dd>
+        <dt>Ritmo de edición</dt>
+        <dd>Hook tenso 0–3 s; explicación clara; cierre calmado con solución.</dd>
+        <dt>Elementos gráficos</dt>
+        <dd>Badge dorado “Plazo legal”; countdown tipográfico; CTA pill verde.</dd>
+        <dt>CTA</dt>
+        <dd>“Quiero hacer mi traspaso ahora” → WhatsApp con keyword TRASPASO.</dd>
+      </dl>
+    </div>
+    <div class="shot avoid-break">
+      <div class="meta">Ejemplo 04 · Carrusel 7–8 slides</div>
+      <h4>“Pasos que pide Medellín para visa de visitante”</h4>
+      <dl>
+        <dt>Objetivo</dt>
+        <dd>Autoridad local + guardados + shares a grupos de expats.</dd>
+        <dt>Tipo de plano</dt>
+        <dd>Portada con foto ciudad + tipografía; interiores tipo guía editorial.</dd>
+        <dt>Ángulos</dt>
+        <dd>Foto hero con profundidad (primer plano + fondo ciudad desenfocado).</dd>
+        <dt>B-roll / visual</dt>
+        <dd>Medellín recognoscible, iconos de requisitos, mock de expediente ordenado.</dd>
+        <dt>Ritmo de edición</dt>
+        <dd>Jerarquía tipográfica fija; 1 idea por slide; slide final CTA.</dd>
+        <dt>Elementos gráficos</dt>
+        <dd>Números grandes, verde + blanco, línea dorada sutil, logo discreto.</dd>
+        <dt>CTA</dt>
+        <dd>“¿Quieres que revisemos tu caso? Escríbenos hoy”.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 10b. EJEMPLOS 3 ===================== -->
+<section class="page inner">
+  <div class="eyebrow">08 · Ejemplos de producción (cont.)</div>
+  <h2 class="section-title serif">Pasaportes, cercanía<br/>y diferencial de marca</h2>
+  <p class="lead">
+    Dos piezas más para equilibrar el mes: servicio de pasaportes (claridad)
+    y storytelling de acompañamiento (emoción / valores).
+  </p>
+
+  <div class="shot-grid">
+    <div class="shot avoid-break">
+      <div class="meta">Ejemplo 05 · Reel 25–35 s</div>
+      <h4>“Pasaporte EE.UU.: renovación sin enredos”</h4>
+      <dl>
+        <dt>Objetivo</dt>
+        <dd>Posicionar servicio de pasaportes con claridad y calma.</dd>
+        <dt>Tipo de plano</dt>
+        <dd>Talking head + inserts DS-11/DS-82 (sin datos sensibles).</dd>
+        <dt>Ángulos</dt>
+        <dd>Frontal; detalle overhead de fotos 2×2 y formularios.</dd>
+        <dt>B-roll sugerido</dt>
+        <dd>Pasaporte USA, fotos tipo documento, sobre/envío, check final.</dd>
+        <dt>Ritmo de edición</dt>
+        <dd>Explicativo elegante; cortes cada 3–4 s; sin saturación de texto.</dd>
+        <dt>Elementos gráficos</dt>
+        <dd>Etiquetas “Adultos” / “Menores”; checkmarks; end card bilingüe.</dd>
+        <dt>CTA</dt>
+        <dd>“Cuéntanos tu caso — orientación sin compromiso”.</dd>
+      </dl>
+    </div>
+    <div class="shot avoid-break">
+      <div class="meta">Ejemplo 06 · Reel 20–30 s</div>
+      <h4>“Lo que nadie te dice del acompañamiento migratorio”</h4>
+      <dl>
+        <dt>Objetivo</dt>
+        <dd>Brand love + diferenciación emocional (valores de la firma).</dd>
+        <dt>Tipo de plano</dt>
+        <dd>Medio lateral ¾ + B-roll de atención al cliente / equipo.</dd>
+        <dt>Ángulos</dt>
+        <dd>15–30°; travelling suave; luz más cálida.</dd>
+        <dt>B-roll sugerido</dt>
+        <dd>WhatsApp en escritorio, reunión, sonrisa al cierre, sello/aprobación.</dd>
+        <dt>Ritmo de edición</dt>
+        <dd>Más aire; cuts emocionales; música suave con piano/ambient.</dd>
+        <dt>Elementos gráficos</dt>
+        <dd>Mínimos: subtítulos elegantes + frase final en serif.</dd>
+        <dt>CTA</dt>
+        <dd>“Si quieres un proceso con alguien a tu lado, habla con nosotros”.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 11. PROCESO ===================== -->
+<section class="page inner">
+  <div class="eyebrow">09 · Cómo trabajamos el mes</div>
+  <h2 class="section-title serif">Un flujo simple,<br/>pensado para producir</h2>
+  <p class="lead">
+    Sin fricción. Ustedes llegan con guiones y temas listos; yo me encargo
+    de que cada pieza salga con nivel de marca.
+  </p>
+
+  <div class="steps">
+    <div class="step avoid-break">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <h4>Kickoff &amp; brief de rodaje</h4>
+        <p>Recibo los 12 guiones / temas del mes. Devuelvo un brief de producción por pieza: formato (Reel o carrusel), planos, vestuario, B-roll y referencias de ritmo.</p>
+      </div>
+    </div>
+    <div class="step avoid-break">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <h4>Jornada(s) de grabación dirigida</h4>
+        <p>Sesión presencial o remota guiada. Optimizamos tomas, iluminación, audio y continuidad para editar en bloque con eficiencia.</p>
+      </div>
+    </div>
+    <div class="step avoid-break">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <h4>Edición creativa</h4>
+        <p>Corte, subtítulos, motion graphics, música, color y exportación 9:16. Priorizo hooks y retención sin perder el tono institucional.</p>
+      </div>
+    </div>
+    <div class="step avoid-break">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <h4>Revisión y entrega</h4>
+        <p>Una ronda de ajustes por pieza. Entrega de archivos finales listos para publicar en Instagram (y portadas coherentes de Reel).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="grid-2">
+    <div>
+      <div class="card">
+        <h3>Lo que necesito de ustedes</h3>
+        <ul class="clean">
+          <li>Guiones y orden de prioridad del mes</li>
+          <li>Acceso a logo / verdes de marca / tipografías si existen</li>
+          <li>Disponibilidad para sesión de grabación</li>
+          <li>Aprobador único de feedback (para velocidad)</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card card-pink">
+        <h3>Lo que NO incluye este paquete</h3>
+        <ul class="clean">
+          <li>Investigación o estrategia de contenidos</li>
+          <li>Redacción de guiones desde cero</li>
+          <li>Community management / respuestas</li>
+          <li>Pauta paga o gestión de anuncios</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos</span>
+    <span>Producción de contenido Instagram</span>
+  </div>
+</section>
+
+<!-- ===================== 12. INVERSIÓN / CIERRE ===================== -->
+<section class="page inner">
+  <div class="eyebrow">10 · Inversión y siguiente paso</div>
+  <h2 class="section-title serif">Listos para que cada publicación<br/>se sienta premium</h2>
+
+  <div class="price-box">
+    <div class="label">Paquete mensual · Creación de contenido</div>
+    <div class="amount">$600.000 <span>COP / mes</span></div>
+    <div class="note">
+      12 publicaciones (Reels ≤ 40 s y/o carruseles) · Dirección de grabación ·
+      Producción audiovisual · Edición creativa · 1 ronda de ajustes por pieza
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat">
+      <span class="num">12</span>
+      <span class="lbl">Piezas listas<br/>para publicar</span>
+    </div>
+    <div class="stat">
+      <span class="num">40s</span>
+      <span class="lbl">Máximo por Reel<br/>alto impacto</span>
+    </div>
+    <div class="stat">
+      <span class="num">1</span>
+      <span class="lbl">Ronda de ajustes<br/>por pieza</span>
+    </div>
+    <div class="stat">
+      <span class="num">9:16</span>
+      <span class="lbl">Export nativo<br/>Instagram</span>
+    </div>
+  </div>
+
+  <div class="card avoid-break">
+    <h3>Por qué esta inversión tiene sentido para VisasColTramit</h3>
+    <p>
+      En categorías de alto ticket emocional (visas, residencia, pasaportes),
+      la gente no compra el precio más bajo: compra la sensación de estar en
+      buenas manos. Un feed inconsistente genera duda. Un feed dirigido,
+      iluminado y editado con rigor genera autoridad — y autoridad abre conversaciones
+      de WhatsApp.
+    </p>
+  </div>
+
+  <div class="card card-dark avoid-break">
+    <h3>Siguiente paso</h3>
+    <p>
+      Si esta propuesta resuena, agendamos kickoff, definimos la primera jornada
+      de grabación y arrancamos el mes 1 con sus guiones ya listos.
+    </p>
+    <p style="margin:10px 0 0; color:#FFFFFF;">
+      <strong>Paola Hoyos Cardona</strong><br />
+      Comunicadora Social · Content Strategist · Producción de contenido<br />
+      WhatsApp: +57 300 249 3331<br />
+      Email: pahoyoscardona@gmail.com<br />
+      Instagram: @paolaahoyosc
+    </p>
+  </div>
+
+  <div class="quote" style="margin-top:16px;">
+    Sus guiones ya tienen el mensaje. Yo me encargo de que se vean
+    a la altura de la confianza que prometen.
+  </div>
+
+  <div class="footer-mini">
+    <span>VisasColTramit × Paola Hoyos · Julio 2026</span>
+    <span>Documento comercial confidencial</span>
+  </div>
+</section>
+
+</body>
+</html>
