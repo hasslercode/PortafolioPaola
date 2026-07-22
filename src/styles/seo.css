@@ -1136,77 +1136,10 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* Inversión / planes hub — structured cards, no price spam */
-.investment-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  width: 100%;
-  max-width: 1100px;
+/* Inversión / planes — uses .plan-rail + .offer-card in main.css */
+.investment-disclaimer {
+  margin-top: 1.5rem !important;
+  text-align: center;
+  max-width: 52ch;
   margin-inline: auto;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.investment-grid--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.investment-card {
-  height: 100%;
-  min-width: 0;
-  text-align: left;
-  align-items: stretch;
-}
-
-.investment-card .service-card-wow__top,
-.investment-card .service-card-wow__includes,
-.investment-card .service-card-wow__tagline,
-.investment-card .investment-card__cta {
-  width: 100%;
-}
-
-.investment-card__title {
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem) !important;
-  white-space: normal !important;
-  line-height: 1.2;
-  margin: 0 0 0.75rem !important;
-  text-wrap: balance;
-  text-align: left;
-}
-
-.investment-card__includes-label {
-  font-family: var(--font-inter);
-  font-size: var(--text-min, 0.75rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 0 0 0.45rem !important;
-  align-self: flex-start;
-}
-
-.investment-card__cta {
-  margin: 1.35rem 0 0 !important;
-  margin-top: auto !important;
-  width: 100%;
-}
-
-.investment-card__cta .btn-pill-premium {
-  width: 100%;
-}
-
-@media (max-width: 1100px) {
-  .investment-grid,
-  .investment-grid--3 {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-  }
-}
-
-@media (max-width: 560px) {
-  .investment-grid,
-  .investment-grid--3 {
-    grid-template-columns: 1fr;
-    max-width: 380px;
-  }
 }

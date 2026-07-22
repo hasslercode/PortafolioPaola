@@ -160,6 +160,7 @@ export type InvestmentPackage = {
   includes: string[];
   note?: string;
   ctaLabel?: string;
+  featured?: boolean;
 };
 
 export function PricingHubView({
@@ -197,45 +198,71 @@ export function PricingHubView({
             </div>
           </div>
 
-          <div className={`investment-grid investment-grid--${packages.length}`}>
-            {packages.map((pkg, index) => (
-              <article
-                key={pkg.id}
-                className={`service-card-wow service-card-wow--rich service-card-wow--${(index % 5) + 1} investment-card`}
-                id={pkg.id}
-              >
-                <div className="service-card-wow__top">
-                  <span className="service-card-wow__eyebrow">
+          <div className="plan-rail">
+            {packages.map((pkg) => {
+              const variant =
+                pkg.featured || pkg.id === 'gestion-mensual'
+                  ? 'premium'
+                  : pkg.id === 'produccion'
+                    ? 'production'
+                    : 'strategy';
+
+              return (
+                <article
+                  key={pkg.id}
+                  className={`offer-card offer-card--${variant} offer-card--plan${
+                    pkg.featured || pkg.id === 'gestion-mensual'
+                      ? ' offer-card--featured'
+                      : ''
+                  }`}
+                  id={pkg.id}
+                >
+                  <span className="offer-card__ghost" aria-hidden="true">
                     {pkg.index}
                   </span>
-                  <h2 className="service-title-script investment-card__title">
-                    {pkg.name}
-                  </h2>
-                  <p className="service-card-wow__pitch">{pkg.pitch}</p>
-                </div>
 
-                <p className="investment-card__includes-label">{includesLabel}</p>
-                <ul className="service-card-wow__includes">
-                  {pkg.includes.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                  <div className="offer-card__head">
+                    <span className="offer-card__eyebrow">
+                      {pkg.featured || pkg.id === 'gestion-mensual'
+                        ? isEn
+                          ? 'Premium'
+                          : 'Premium'
+                        : `${pkg.index}`}
+                    </span>
+                    <h2 className="offer-card__title offer-card__title--plan">
+                      {pkg.name}
+                    </h2>
+                  </div>
 
-                {pkg.note ? (
-                  <p className="service-card-wow__tagline">{pkg.note}</p>
-                ) : null}
+                  <p className="offer-card__pitch">{pkg.pitch}</p>
 
-                <p className="investment-card__cta">
-                  <button
-                    type="button"
-                    className="btn-pill-premium"
-                    onClick={() => openContact(`investment_${pkg.id}`)}
-                  >
-                    {pkg.ctaLabel || ctaLabel}
-                  </button>
-                </p>
-              </article>
-            ))}
+                  <p className="offer-card__includes-label">{includesLabel}</p>
+                  <ul className={`offer-card__includes offer-card__includes--${variant}`}>
+                    {pkg.includes.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+
+                  {pkg.note ? (
+                    <p className="offer-card__tagline">{pkg.note}</p>
+                  ) : null}
+
+                  <div className="offer-card__cta">
+                    <button
+                      type="button"
+                      className={
+                        pkg.featured || pkg.id === 'gestion-mensual'
+                          ? 'btn-pill-premium btn-pill-premium--on-dark'
+                          : 'btn-pill-premium'
+                      }
+                      onClick={() => openContact(`investment_${pkg.id}`)}
+                    >
+                      {pkg.ctaLabel || ctaLabel}
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
           <p className="wow-subtitle investment-disclaimer">{disclaimer}</p>

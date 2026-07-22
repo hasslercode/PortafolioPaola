@@ -788,3 +788,42 @@ html.theme-transition *::after {
     border-color: rgba(232, 167, 179, 0.28);
     box-shadow: none;
 }
+
+/* Offer bento / plan rail */
+[data-theme="dark"] .offer-card--session {
+    background:
+        linear-gradient(120deg, rgba(148, 56, 80, 0.22) 0%, rgba(42, 30, 34, 0.9) 55%, rgba(99, 42, 56, 0.35) 100%);
+    border-color: rgba(232, 167, 179, 0.16);
+}
+
+[data-theme="dark"] .offer-card--strategy {
+    background: var(--surface-panel);
+    border-color: rgba(232, 167, 179, 0.12);
+}
+
+[data-theme="dark"] .offer-card--production {
+    background:
+        radial-gradient(120% 90% at 100% 0%, rgba(232, 167, 179, 0.18), transparent 55%),
+        var(--surface-panel);
+    border-color: rgba(232, 167, 179, 0.16);
+}
+
+[data-theme="dark"] .offer-card__title,
+[data-theme="dark"] .offer-card__pitch {
+    color: var(--text-on-dark, #f4e8ea);
+}
+
+[data-theme="dark"] .offer-card__includes li {
+    background: rgba(232, 167, 179, 0.12);
+    color: var(--pink-on-dark);
+}
+
+[data-theme="dark"] .offer-card__includes--strategy li {
+    border-color: rgba(232, 167, 179, 0.22);
+    background: transparent;
+}
+
+[data-theme="dark"] .offer-card__stamp {
+    border-color: rgba(232, 167, 179, 0.4);
+    color: var(--pink-on-dark);
+}

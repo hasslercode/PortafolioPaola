@@ -116,6 +116,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgMonthlyInc4'),
       ],
       note: tp('pkgMonthlyNote'),
+      featured: true,
     },
   ];
 

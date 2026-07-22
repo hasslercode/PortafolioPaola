@@ -13,50 +13,48 @@ export const HOME_SERVICE_SLUGS = [
   'gestion-mensual',
 ];
 
-const SERVICE_ICONS = [
-  'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
-  'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z',
-  'M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z',
-  'M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z',
-];
+const SERVICE_VARIANTS = ['session', 'strategy', 'production', 'premium'];
 
 function ServiceTitle({ card }) {
   if (card.titleBefore) {
     return (
-      <h3>
+      <h3 className="offer-card__title">
         <span>{card.titleBefore}</span>{' '}
-        <span className="service-title-script">{card.titleScript}</span>
+        <span className="offer-card__title-script">{card.titleScript}</span>
       </h3>
     );
   }
 
   return (
-    <h3>
-      <span>{card.titleLine1}</span>
-      <br />
-      <span className="service-title-script">{card.titleScript}</span>
+    <h3 className="offer-card__title">
+      <span>{card.titleLine1}</span>{' '}
+      <span className="offer-card__title-script">{card.titleScript}</span>
     </h3>
   );
 }
 
-function ServiceCardBody({ card, index }) {
+function OfferCardBody({ card, index, variant }) {
+  const num = String(index + 1).padStart(2, '0');
+
   return (
     <>
-      <div className="service-card-wow__top">
+      <span className="offer-card__ghost" aria-hidden="true">
+        {num}
+      </span>
+
+      <div className="offer-card__head">
         {card.eyebrow ? (
-          <span className="service-card-wow__eyebrow">{card.eyebrow}</span>
+          <span className="offer-card__eyebrow">{card.eyebrow}</span>
         ) : null}
-        <div className="service-icon-wrap">
-          <svg viewBox="0 0 24 24">
-            <path d={SERVICE_ICONS[index]} />
-          </svg>
-        </div>
         <ServiceTitle card={card} />
-        <p className="service-card-wow__pitch">{card.pitch || card.description}</p>
       </div>
 
+      <p className="offer-card__pitch">{card.pitch || card.description}</p>
+
       {Array.isArray(card.includes) && card.includes.length > 0 ? (
-        <ul className="service-card-wow__includes">
+        <ul
+          className={`offer-card__includes offer-card__includes--${variant}`}
+        >
           {card.includes.map((item) => (
             <li key={item}>{item}</li>
           ))}
@@ -64,15 +62,17 @@ function ServiceCardBody({ card, index }) {
       ) : null}
 
       {Array.isArray(card.rules) && card.rules.length > 0 ? (
-        <ul className="service-card-wow__rules">
+        <div className="offer-card__stamps">
           {card.rules.map((item) => (
-            <li key={item}>{item}</li>
+            <span key={item} className="offer-card__stamp">
+              {item}
+            </span>
           ))}
-        </ul>
+        </div>
       ) : null}
 
       {card.tagline ? (
-        <p className="service-card-wow__tagline">{card.tagline}</p>
+        <p className="offer-card__tagline">{card.tagline}</p>
       ) : null}
     </>
   );
@@ -124,28 +124,29 @@ export default function Services({ linked = false, compact = false }) {
           </div>
         </div>
 
-        <div className="services-grid-wow">
+        <div className="offer-bento">
           {services.cards.map((card, index) => {
             const slug = HOME_SERVICE_SLUGS[index];
+            const variant = SERVICE_VARIANTS[index] || 'strategy';
             const localized = slug
               ? serviceSlugLocales[slug][locale === 'en' ? 'en' : 'es']
               : null;
             const key = card.titleLine1 || card.titleBefore || card.eyebrow;
-            const body = <ServiceCardBody card={card} index={index} />;
+            const body = (
+              <OfferCardBody card={card} index={index} variant={variant} />
+            );
+
+            const className = `offer-card offer-card--${variant}`;
 
             if (linked && localized) {
               return (
-                <FadeUp
-                  key={key}
-                  className={`service-card-wow service-card-wow--rich service-card-wow--${index + 1}`}
-                  index={index}
-                >
+                <FadeUp key={key} className={className} index={index}>
                   <Link
                     href={{
                       pathname: '/services/[slug]',
                       params: { slug: localized },
                     }}
-                    className="service-card-wow__link"
+                    className="offer-card__link"
                   >
                     {body}
                   </Link>
@@ -154,11 +155,7 @@ export default function Services({ linked = false, compact = false }) {
             }
 
             return (
-              <FadeUp
-                key={key}
-                className={`service-card-wow service-card-wow--rich service-card-wow--${index + 1}`}
-                index={index}
-              >
+              <FadeUp key={key} className={className} index={index}>
                 {body}
               </FadeUp>
             );
