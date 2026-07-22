@@ -399,53 +399,61 @@
     "subtitleAfter": ".",
     "cards": [
       {
-        "eyebrow": "01 · Session",
+        "eyebrow": "01 · Advisory",
         "titleLine1": "Strategic",
         "titleScript": "consulting",
-        "pitch": "Review, opportunities and action plan.",
+        "pitch": "We meet, review your channels, spot opportunities and I deliver an action plan.",
         "includes": [
           "Channel review",
-          "Opportunities",
+          "Opportunity mapping",
           "Action plan"
         ],
-        "tagline": "To map the path."
+        "tagline": "Advisory only. No editing, filming or publishing."
       },
       {
         "eyebrow": "02 · Strategy",
         "titleBefore": "Content",
         "titleScript": "strategy",
-        "pitch": "Clear direction to produce with intention.",
+        "pitch": "Pure strategist work. I do not film anything.",
         "includes": [
           "Brand analysis",
+          "Competitors",
           "Buyer persona",
-          "Calendar and ideas"
+          "Content pillars",
+          "Calendar",
+          "Ideas",
+          "Formats",
+          "Goals",
+          "Tone of voice"
         ],
-        "tagline": "Before producing."
+        "tagline": "Strategy only."
       },
       {
         "eyebrow": "03 · Production",
         "titleBefore": "Content",
         "titleScript": "production",
-        "pitch": "Premium editing from your footage.",
+        "pitch": "You already know what to say. I make it look spectacular.",
         "includes": [
-          "Creative editing",
-          "Captions and typography",
-          "Publish-ready export"
+          "Premium creative editing",
+          "Pacing, captions and typography",
+          "Color, music and publish-ready export"
         ],
-        "tagline": "From your recorded material."
+        "tagline": "We start from your recorded footage."
       },
       {
         "eyebrow": "04 · Premium",
         "titleLine1": "Monthly",
         "titleScript": "management",
-        "pitch": "Light strategy + production + publishing.",
+        "pitch": "Premium plan: light strategy + production + publishing + follow-up.",
         "includes": [
-          "Monthly strategy",
+          "Light monthly strategy",
           "Production",
+          "Editing",
+          "Scheduling",
           "Publishing",
           "Follow-up"
         ],
-        "tagline": "The full process."
+        "tagline": "Full monthly operation."
       }
     ]
   },

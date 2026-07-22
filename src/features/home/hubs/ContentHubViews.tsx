@@ -164,9 +164,17 @@ export type InvestmentPackage = {
   priceValue?: string;
 };
 
+export type AdvisorySession = {
+  badge: string;
+  title: string;
+  pitch: string;
+  excludes: string[];
+  includes: string[];
+  note: string;
+  ctaLabel: string;
+};
+
 const PLAN_ICONS: Record<string, string> = {
-  consultoria:
-    'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
   estrategia:
     'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z',
   produccion:
@@ -179,6 +187,8 @@ export function PricingHubView({
   badge,
   title,
   summary,
+  plansTitle,
+  plansSummary,
   disclaimer,
   includesLabel,
   fromLabel,
@@ -187,12 +197,15 @@ export function PricingHubView({
   helpBody,
   helpCta,
   ctaLabel,
+  session,
   packages,
   faqs,
 }: {
   badge: string;
   title: string;
   summary: string;
+  plansTitle: string;
+  plansSummary: string;
   disclaimer: string;
   includesLabel: string;
   fromLabel: string;
@@ -201,6 +214,7 @@ export function PricingHubView({
   helpBody: string;
   helpCta: string;
   ctaLabel: string;
+  session: AdvisorySession;
   packages: InvestmentPackage[];
   faqs: Array<{ question: string; answer: string }>;
 }) {
@@ -218,6 +232,50 @@ export function PricingHubView({
               <h1 className="wow-main-title">{title}</h1>
               <p className="wow-subtitle">{summary}</p>
             </div>
+          </div>
+
+          <article className="session-advisory" id="consultoria">
+            <div className="session-advisory__meta">
+              <span className="session-advisory__badge">{session.badge}</span>
+              <h2 className="session-advisory__title">{session.title}</h2>
+              <p className="session-advisory__pitch">{session.pitch}</p>
+              <p className="session-advisory__note">{session.note}</p>
+            </div>
+
+            <div className="session-advisory__lists">
+              <div>
+                <p className="session-advisory__label">{includesLabel}</p>
+                <ul className="session-advisory__includes">
+                  {session.includes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="session-advisory__label">
+                  {isEn ? 'Does not include' : 'No incluye'}
+                </p>
+                <ul className="session-advisory__excludes">
+                  {session.excludes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              className="session-advisory__cta"
+              onClick={() => openContact('advisory_session')}
+            >
+              <span>{session.ctaLabel}</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <div className="plan-showcase__plans-header">
+            <h2 className="plan-showcase__plans-title">{plansTitle}</h2>
+            <p className="wow-subtitle">{plansSummary}</p>
           </div>
 
           <div className="plan-showcase__grid">
@@ -247,7 +305,7 @@ export function PricingHubView({
                     </svg>
                   </div>
 
-                  <h2 className="plan-card__title">{pkg.name}</h2>
+                  <h3 className="plan-card__title">{pkg.name}</h3>
                   <p className="plan-card__pitch">{pkg.pitch}</p>
 
                   <p className="plan-card__includes-label">{includesLabel}</p>
@@ -260,6 +318,8 @@ export function PricingHubView({
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
+
+                  {pkg.note ? <p className="plan-card__note">{pkg.note}</p> : null}
 
                   <div className="plan-card__price">
                     <span className="plan-card__from">{fromLabel}</span>

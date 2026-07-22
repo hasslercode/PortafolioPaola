@@ -82,7 +82,7 @@ function OfferCardBody({ card, index, variant, featuredLabel }) {
   const iconName = VARIANT_ICON[index] || 'target';
   const includes = Array.isArray(card.includes) ? card.includes : [];
   const isStrategy = variant === 'strategy';
-  const strategyItems = isStrategy ? includes.slice(0, 6) : includes;
+  const listItems = includes;
 
   return (
     <>
@@ -104,7 +104,7 @@ function OfferCardBody({ card, index, variant, featuredLabel }) {
 
       {isStrategy ? (
         <ul className="svc-card__grid">
-          {strategyItems.map((item, i) => (
+          {listItems.map((item, i) => (
             <li key={item}>
               <span className="svc-card__mini-icon" aria-hidden="true">
                 <Icon name={STRATEGY_ITEM_ICONS[i % STRATEGY_ITEM_ICONS.length]} />
@@ -115,13 +115,13 @@ function OfferCardBody({ card, index, variant, featuredLabel }) {
         </ul>
       ) : variant === 'premium' ? (
         <ul className="svc-card__pills">
-          {includes.map((item) => (
+          {listItems.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
       ) : (
         <ul className="svc-card__checks">
-          {includes.map((item) => (
+          {listItems.map((item) => (
             <li key={item}>
               <span className="svc-card__check" aria-hidden="true">
                 <Icon name="check" />

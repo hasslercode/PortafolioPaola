@@ -45,12 +45,22 @@ function buildInvestmentFaqs(locale: string) {
     {
       question:
         locale === 'es'
+          ? '¿La consultoría es un plan?'
+          : 'Is consulting a plan?',
+      answer:
+        locale === 'es'
+          ? 'No. Es solo asesoría: reunión, revisión de redes, oportunidades y plan de acción. No edito, no grabo ni publico.'
+          : 'No. It is advisory only: meeting, channel review, opportunities and action plan. No editing, filming or publishing.',
+    },
+    {
+      question:
+        locale === 'es'
           ? '¿Por dónde empiezo?'
           : 'Where should I start?',
       answer:
         locale === 'es'
-          ? 'Si necesitas claridad, la consultoría. Si ya sabes el mensaje, producción o gestión mensual.'
-          : 'Need clarity? Start with consulting. Already know the message? Production or monthly management.',
+          ? 'Si necesitas claridad, consultoría. Si ya sabes qué decir, producción. Si quieres que lo opere todo el mes, gestión mensual.'
+          : 'Need clarity? Consulting. Already know what to say? Production. Want it run all month? Monthly management.',
     },
   ];
 }
@@ -64,32 +74,49 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     { name: t('badge'), route: { type: 'hub', hub: 'services' } },
   ]);
   const faqs = buildInvestmentFaqs(locale);
+
+  const session = {
+    badge: tp('sessionBadge'),
+    title: tp('pkgSessionName'),
+    pitch: tp('pkgSessionPitch'),
+    includes: [
+      tp('pkgSessionInc1'),
+      tp('pkgSessionInc2'),
+      tp('pkgSessionInc3'),
+    ],
+    excludes: [
+      tp('pkgSessionExc1'),
+      tp('pkgSessionExc2'),
+      tp('pkgSessionExc3'),
+    ],
+    note: tp('pkgSessionNote'),
+    ctaLabel: tp('pkgSessionCta'),
+  };
+
   const packages = [
     {
-      id: 'consultoria',
-      index: '01',
-      name: tp('pkgSessionName'),
-      pitch: tp('pkgSessionPitch'),
-      includes: [tp('pkgSessionInc1'), tp('pkgSessionInc2'), tp('pkgSessionInc3')],
-      priceValue: tp('pkgSessionPrice'),
-      ctaLabel: tp('pkgSessionCta'),
-    },
-    {
       id: 'estrategia',
-      index: '02',
+      index: '01',
       name: tp('pkgStrategyName'),
       pitch: tp('pkgStrategyPitch'),
       includes: [
         tp('pkgStrategyInc1'),
+        tp('pkgStrategyInc2'),
         tp('pkgStrategyInc3'),
+        tp('pkgStrategyInc4'),
         tp('pkgStrategyInc5'),
+        tp('pkgStrategyInc6'),
+        tp('pkgStrategyInc7'),
+        tp('pkgStrategyInc8'),
+        tp('pkgStrategyInc9'),
       ],
+      note: tp('pkgStrategyNote'),
       priceValue: tp('pkgStrategyPrice'),
       ctaLabel: tp('pkgStrategyCta'),
     },
     {
       id: 'produccion',
-      index: '03',
+      index: '02',
       name: tp('pkgProductionName'),
       pitch: tp('pkgProductionPitch'),
       includes: [
@@ -97,12 +124,13 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgProductionInc2'),
         tp('pkgProductionInc3'),
       ],
+      note: tp('pkgProductionNote'),
       priceValue: tp('pkgProductionPrice'),
       ctaLabel: tp('pkgProductionCta'),
     },
     {
       id: 'gestion-mensual',
-      index: '04',
+      index: '03',
       name: tp('pkgMonthlyName'),
       pitch: tp('pkgMonthlyPitch'),
       includes: [
@@ -110,7 +138,10 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgMonthlyInc2'),
         tp('pkgMonthlyInc3'),
         tp('pkgMonthlyInc4'),
+        tp('pkgMonthlyInc5'),
+        tp('pkgMonthlyInc6'),
       ],
+      note: tp('pkgMonthlyNote'),
       priceValue: tp('pkgMonthlyPrice'),
       ctaLabel: tp('pkgMonthlyCta'),
       featured: true,
@@ -123,10 +154,13 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     name: t('titleMerged'),
     description: t('metaDescriptionMerged'),
     breadcrumbs: crumbs,
-    offers: packages.map((pkg) => ({
-      name: pkg.name,
-      description: pkg.pitch,
-    })),
+    offers: [
+      { name: session.title, description: session.pitch },
+      ...packages.map((pkg) => ({
+        name: pkg.name,
+        description: pkg.pitch,
+      })),
+    ],
     faqs,
   });
 
@@ -141,7 +175,9 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           badge={tp('badge')}
           title={tp('title')}
           summary={tp('summary')}
-          disclaimer=""
+          plansTitle={tp('plansTitle')}
+          plansSummary={tp('plansSummary')}
+          disclaimer={tp('disclaimer')}
           includesLabel={tp('includesLabel')}
           fromLabel={tp('fromLabel')}
           featuredLabel={tp('featuredLabel')}
@@ -149,6 +185,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           helpBody={tp('helpBody')}
           helpCta={tp('helpCta')}
           ctaLabel={tp('cta')}
+          session={session}
           packages={packages}
           faqs={faqs}
         />

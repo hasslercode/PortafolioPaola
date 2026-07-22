@@ -399,53 +399,61 @@
     "subtitleAfter": "completa.",
     "cards": [
       {
-        "eyebrow": "01 · Sesión",
+        "eyebrow": "01 · Asesoría",
         "titleLine1": "Consultoría",
         "titleScript": "estratégica",
-        "pitch": "Revisión, oportunidades y plan de acción.",
+        "pitch": "Tengo una reunión contigo, revisamos tus redes, encontramos oportunidades y te entrego un plan de acción.",
         "includes": [
           "Revisión de redes",
-          "Oportunidades",
+          "Detección de oportunidades",
           "Plan de acción"
         ],
-        "tagline": "Para ordenar el camino."
+        "tagline": "Solo asesoría. No edito, no grabo, no publico."
       },
       {
         "eyebrow": "02 · Estrategia",
         "titleBefore": "Estrategia de",
         "titleScript": "contenido",
-        "pitch": "Dirección clara para producir con intención.",
+        "pitch": "Aquí sí trabajo como estratega. No grabo absolutamente nada.",
         "includes": [
           "Análisis de marca",
+          "Competencia",
           "Buyer persona",
-          "Calendario e ideas"
+          "Pilares de contenido",
+          "Calendario",
+          "Ideas",
+          "Formatos",
+          "Objetivos",
+          "Tono de comunicación"
         ],
-        "tagline": "Antes de producir."
+        "tagline": "Solo estrategia."
       },
       {
         "eyebrow": "03 · Producción",
         "titleBefore": "Producción de",
         "titleScript": "contenido",
-        "pitch": "Edición premium a partir de tu material.",
+        "pitch": "Ya sabes qué quieres decir. Yo hago que se vea espectacular.",
         "includes": [
-          "Edición creativa",
-          "Subtítulos y tipografías",
-          "Export listo"
+          "Edición creativa premium",
+          "Ritmo, subtítulos y tipografías",
+          "Color, música y export listo"
         ],
-        "tagline": "Con tu material grabado."
+        "tagline": "Partimos de tu material grabado."
       },
       {
         "eyebrow": "04 · Premium",
         "titleLine1": "Gestión",
         "titleScript": "mensual",
-        "pitch": "Estrategia ligera + producción + publicación.",
+        "pitch": "Plan premium: estrategia ligera + producción + publicación + seguimiento.",
         "includes": [
-          "Estrategia del mes",
+          "Estrategia ligera del mes",
           "Producción",
+          "Edición",
+          "Programación",
           "Publicación",
           "Seguimiento"
         ],
-        "tagline": "Todo el proceso."
+        "tagline": "Operación completa del mes."
       }
     ]
   },
