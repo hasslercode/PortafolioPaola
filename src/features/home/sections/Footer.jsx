@@ -54,6 +54,14 @@ export default function Footer({ onOpenPortfolio }) {
                 <Link href="/services">{footer.nav.servicios}</Link>
               </li>
               <li>
+                <Link href="/blog">{footer.nav.recursos}</Link>
+              </li>
+              <li>
+                <Link href="/pricing">
+                  {locale === 'en' ? 'Investment' : 'Tarifas'}
+                </Link>
+              </li>
+              <li>
                 <Link href="/about">{header.nav.sobreMi}</Link>
               </li>
               <li>
@@ -98,15 +106,15 @@ export default function Footer({ onOpenPortfolio }) {
         <div className="footer-bottom-row">
           <p className="copyright-text">{footer.copyright}</p>
           <nav className="footer-legal" aria-label={footer.legalNavAriaLabel}>
-            <a href="#">{footer.legal.privacy}</a>
+            <Link href="/privacy">{footer.legal.privacy}</Link>
             <span className="footer-legal-sep" aria-hidden="true">
               ✦
             </span>
-            <a href="#">{footer.legal.terms}</a>
+            <Link href="/terms">{footer.legal.terms}</Link>
             <span className="footer-legal-sep" aria-hidden="true">
               ✦
             </span>
-            <a href="#">{footer.legal.notice}</a>
+            <Link href="/legal">{footer.legal.notice}</Link>
           </nav>
         </div>
       </div>

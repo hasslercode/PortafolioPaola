@@ -26,5 +26,5 @@
     ".next/types/**/*.ts",
     "content/**/*.mdx"
   ],
-  "exclude": ["node_modules", "_legacy"]
+  "exclude": ["node_modules", "_legacy", "scripts"]
 }

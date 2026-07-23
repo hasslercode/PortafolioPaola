@@ -33,6 +33,7 @@ const CASE_VISUALS: Partial<Record<CaseStudySlug, StaticImageData[]>> = {
   hm: [imgHm, imgCoca, imgCine],
   'cine-colombia': [imgCine, imgHm, imgStarbucks],
   starbucks: [imgStarbucks, imgCoca, imgTotto],
+  totto: [imgTotto, imgHm, imgCoca],
 };
 
 const DEFAULT_VISUALS = [imgCoca, imgHm, imgCine];
@@ -83,6 +84,8 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     breadcrumbs: crumbs,
     metrics: study.metrics,
     faqs: study.faq,
+    videoUrl: study.videoUrl,
+    videoTitle: study.videoTitle,
   });
 
   const visuals = CASE_VISUALS[canonical] ?? DEFAULT_VISUALS;

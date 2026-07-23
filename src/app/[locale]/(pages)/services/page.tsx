@@ -8,6 +8,23 @@ import { buildBreadcrumbs } from '@/lib/seo/paths';
 import { hubGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
 import { PricingHubView } from '@/features/home/hubs/ContentHubViews';
+import { serviceSlugLocales } from '@/content/registry';
+import { getAllServices } from '@/content/loaders';
+import {
+  absoluteUrl,
+  buildLocalizedPath,
+} from '@/lib/seo/paths';
+import {
+  CONSULT_SERVICE_SLUG,
+  PACKAGE_TO_SERVICE_SLUG,
+  PRIMARY_KEYWORDS_ES,
+} from '@/config/seo-strategy';
+import {
+  PRICE_FROM_COP,
+  PRICE_LIST_COP,
+  LAUNCH_SALE_ACTIVE,
+  formatCopFrom,
+} from '@/lib/contact';
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -30,11 +47,8 @@ export async function generateMetadata({
     description: t('metaDescriptionMerged'),
     route: { type: 'hub', hub: 'services' },
     keywords: [
+      ...PRIMARY_KEYWORDS_ES,
       'servicios estrategia digital colombia',
-      'sesión estratégica',
-      'estrategia de contenido',
-      'producción de contenido',
-      'gestión mensual redes',
       tp('pkgMonthlyName'),
     ],
   });
@@ -100,6 +114,14 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     { title: tp('value4Title'), detail: tp('value4Detail') },
   ];
 
+  const typedLocale = (locale === 'en' ? 'en' : 'es') as SiteLocale;
+  const services = await getAllServices(locale);
+  const saleFlag = LAUNCH_SALE_ACTIVE
+    ? typedLocale === 'es'
+      ? 'Lanzamiento'
+      : 'Launch deal'
+    : undefined;
+
   const packages = [
     {
       id: 'estrategia',
@@ -117,6 +139,13 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       ],
       delivery: tp('pkgStrategyDelivery'),
       ctaLabel: tp('pkgStrategyCta'),
+      priceFrom: formatCopFrom(PRICE_FROM_COP.estrategia, typedLocale),
+      priceWas: LAUNCH_SALE_ACTIVE
+        ? formatCopFrom(PRICE_LIST_COP.estrategia, typedLocale)
+        : undefined,
+      saleFlag,
+      detailSlug:
+        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.estrategia][typedLocale],
     },
     {
       id: 'produccion',
@@ -131,6 +160,13 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       ],
       delivery: tp('pkgProductionDelivery'),
       ctaLabel: tp('pkgProductionCta'),
+      priceFrom: formatCopFrom(PRICE_FROM_COP.produccion, typedLocale),
+      priceWas: LAUNCH_SALE_ACTIVE
+        ? formatCopFrom(PRICE_LIST_COP.produccion, typedLocale)
+        : undefined,
+      saleFlag,
+      detailSlug:
+        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.produccion][typedLocale],
     },
     {
       id: 'gestion-mensual',
@@ -149,8 +185,43 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       delivery: tp('pkgMonthlyDelivery'),
       ctaLabel: tp('pkgMonthlyCta'),
       featured: true,
+      priceFrom: formatCopFrom(PRICE_FROM_COP.mensual, typedLocale),
+      priceWas: LAUNCH_SALE_ACTIVE
+        ? formatCopFrom(PRICE_LIST_COP.mensual, typedLocale)
+        : undefined,
+      saleFlag,
+      detailSlug:
+        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG['gestion-mensual']][
+          typedLocale
+        ],
     },
   ];
+
+  const ugcPackage = {
+    id: 'ugc',
+    index: '04',
+    name: typedLocale === 'es' ? 'UGC para marcas' : 'UGC for brands',
+    pitch:
+      typedLocale === 'es'
+        ? 'Videos auténticos estilo creador para marcas y emprendedores en Colombia.'
+        : 'Authentic creator-style videos for brands and founders in Colombia.',
+    tag: 'UGC',
+    includes:
+      typedLocale === 'es'
+        ? ['Brief UGC', 'Guion ligero', 'Piezas verticales', 'Derechos de uso claros']
+        : ['UGC brief', 'Light script', 'Vertical pieces', 'Clear usage rights'],
+    delivery:
+      typedLocale === 'es'
+        ? 'Pack UGC listo para ads/orgánico'
+        : 'UGC pack ready for ads/organic',
+    ctaLabel: typedLocale === 'es' ? 'Quiero UGC' : 'I want UGC',
+    priceFrom: formatCopFrom(PRICE_FROM_COP.ugc, typedLocale),
+    priceWas: LAUNCH_SALE_ACTIVE
+      ? formatCopFrom(PRICE_LIST_COP.ugc, typedLocale)
+      : undefined,
+    saleFlag,
+    detailSlug: serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.ugc][typedLocale],
+  };
 
   const graph = hubGraph({
     locale: locale as SiteLocale,
@@ -162,13 +233,40 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       {
         name: tp('pkgSessionName'),
         description: tp('pkgSessionPitch'),
+        lowPrice: PRICE_FROM_COP.sesion > 0 ? PRICE_FROM_COP.sesion : undefined,
       },
-      ...packages.map((pkg) => ({
-        name: pkg.name,
-        description: pkg.pitch,
-      })),
+      {
+        name: packages[0].name,
+        description: packages[0].pitch,
+        lowPrice: PRICE_FROM_COP.estrategia,
+      },
+      {
+        name: packages[1].name,
+        description: packages[1].pitch,
+        lowPrice: PRICE_FROM_COP.produccion,
+      },
+      {
+        name: packages[2].name,
+        description: packages[2].pitch,
+        lowPrice: PRICE_FROM_COP.mensual,
+      },
+      {
+        name: ugcPackage.name,
+        description: ugcPackage.pitch,
+        lowPrice: PRICE_FROM_COP.ugc,
+      },
     ],
     faqs,
+    itemListName: t('titleMerged'),
+    itemList: services.map((service) => ({
+      name: service.title,
+      url: absoluteUrl(
+        buildLocalizedPath(typedLocale, {
+          type: 'service',
+          slug: service.canonicalSlug,
+        }),
+      ),
+    })),
   });
 
   return (
@@ -184,12 +282,20 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           titleAccent={tp('titleAccent')}
           titleTrail={tp('titleTrail')}
           summary={tp('summary')}
+          launchFlag={tp('launchFlag')}
+          launchTitle={tp('launchTitle')}
+          launchBody={tp('launchBody')}
           processEyebrow={tp('processEyebrow')}
           processTitle={tp('processTitle')}
           processSteps={processSteps}
           consultCta={tp('consultCta')}
           consultTag={tp('consultTag')}
           consultNote={tp('consultNote')}
+          consultDetailSlug={
+            serviceSlugLocales[CONSULT_SERVICE_SLUG][
+              locale === 'en' ? 'en' : 'es'
+            ]
+          }
           includesLabel={tp('includesLabel')}
           featuredLabel={tp('featuredLabel')}
           deliveryLabel={tp('deliveryLabel')}
@@ -199,6 +305,10 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           helpCta={tp('helpCta')}
           ctaLabel={tp('cta')}
           packages={packages}
+          ugcPackage={ugcPackage}
+          ugcEyebrow={tp('ugcEyebrow')}
+          ugcTitle={tp('ugcTitle')}
+          ugcSummary={tp('ugcSummary')}
           faqs={faqs}
         />
       </div>

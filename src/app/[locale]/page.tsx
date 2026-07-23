@@ -3,11 +3,13 @@ import { preload } from 'react-dom';
 import { setRequestLocale } from 'next-intl/server';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import type { SiteLocale } from '@/config/site';
+import { PRIMARY_KEYWORDS_ES } from '@/config/seo-strategy';
 import { routing, type AppLocale } from '@/i18n/routing';
 import { HomeContentProvider } from '@/features/home/HomeContentProvider';
 import HomeExperience from '@/features/home/HomeExperience';
 import { homeGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
+import { getAllPosts } from '@/content/loaders';
 import homeEs from '../../../content/home/es.json';
 import homeEn from '../../../content/home/en.json';
 
@@ -36,13 +38,7 @@ export async function generateMetadata({
     description: content.meta.description,
     route: { type: 'hub', hub: 'home' },
     absoluteTitle: true,
-    keywords: [
-      'estratega digital colombia',
-      'community manager colombia',
-      'storytelling',
-      'crecimiento orgánico',
-      'paola hoyos',
-    ],
+    keywords: [...PRIMARY_KEYWORDS_ES, 'paola hoyos'],
   });
 }
 
@@ -54,6 +50,12 @@ export default async function HomePage({ params }: PageProps) {
     reviewBody: item.quote,
     authorName: item.name,
     result: `${content.testimonials.resultLabel} ${item.result}`,
+  }));
+  const posts = await getAllPosts(locale);
+  const blogTeasers = posts.slice(0, 3).map((post) => ({
+    slug: post.slug[locale as SiteLocale] ?? post.slug.es,
+    title: post.title,
+    description: post.seo.description,
   }));
 
   // Discover LCP image from the document as early as possible (no /_next/image hop).
@@ -68,7 +70,7 @@ export default async function HomePage({ params }: PageProps) {
     <>
       <JsonLdScript graph={homeGraph(locale as SiteLocale, reviews)} />
       <HomeContentProvider locale={locale as AppLocale} content={content}>
-        <HomeExperience />
+        <HomeExperience blogTeasers={blogTeasers} />
       </HomeContentProvider>
     </>
   );

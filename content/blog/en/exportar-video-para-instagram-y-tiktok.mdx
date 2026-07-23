@@ -1,0 +1,182 @@
+---
+type: blog
+slug:
+  es: exportar-video-para-instagram-y-tiktok
+  en: export-video-instagram-tiktok
+title: "Export video for Instagram and TikTok: technical specs 2026 (Colombia)"
+shortAnswer: "To export video for Instagram Reels and TikTok in 2026: 9:16 vertical, minimum 1080×1920, H.264, 30 fps, audio normalized ~-14 LUFS, captions inside safe area and sufficient bitrate to avoid blurry upload compression."
+publishedAt: "2026-08-09"
+updatedAt: "2026-08-09"
+topic: video
+intent: commercial
+primaryKeyword: "export video instagram tiktok"
+cluster: production
+relatedSlugs:
+  - edicion-de-videos-para-redes-colombia
+  - errores-al-editar-reels-para-negocios
+  - reels-vs-tiktok-vs-shorts-colombia
+  - videos-para-marcas-instagram-tiktok
+serviceCta: produccion-contenido
+draft: false
+seo:
+  title: "Export video Instagram TikTok 2026 | Technical specs"
+  description: "Export settings for Reels and TikTok: resolution, codec, bitrate, audio LUFS, safe areas and Premiere CapCut DaVinci presets."
+  keywords:
+    - export video instagram
+    - export video tiktok
+    - reels specs 2026
+    - vertical video format
+faq:
+  - question: "Is 1080×1920 enough for Reels in 2026?"
+    answer: "Yes for most brands. Optional 4K vertical if filmed in 4K for crop margin; platforms recompress anyway. Prioritize bitrate and sharp focus over inflated resolution."
+  - question: "30 fps or 60 fps for Reels?"
+    answer: "30 fps is standard and enough for talking head and product. 60 fps for fast action or native slow-motion. Batch consistency matters more."
+  - question: "Why does my video look blurry after upload?"
+    answer: "Low export bitrate, re-compressing already compressed file, upscaling from 720p or multiple generational re-exports."
+  - question: "Same file for Instagram and TikTok?"
+    answer: "You can use common 9:16 master; verify safe areas and consider hook text variants for different UI. Do not reuse badly cropped horizontal."
+  - question: "Burned captions or native?"
+    answer: "Burned gives brand visual control. Native app captions allow viewer editing. For brands, burned plus legibility review is most common."
+---
+
+## Short answer
+
+**Exporting video for Instagram and TikTok** correctly avoids the frustrating scenario: hours of editing that look pixelated, have black bars or quiet audio when published. Platforms recompress everything — your job is delivering a clean master that survives compression.
+
+This guide consolidates 2026 specs, practical presets and frequent technical mistakes in Colombian production.
+
+## Recommended master specs 2026
+
+| Parameter | Reels / TikTok | Notes |
+|---|---|---|
+| Aspect ratio | 9:16 | Native vertical |
+| Resolution | 1080 × 1920 | Professional minimum |
+| Video codec | H.264 | Universal compatibility |
+| Profile | High | Better compression |
+| Frame rate | 30 fps | 60 fps if action |
+| Video bitrate | 15–25 Mbps 1080p | Raise if heavy motion |
+| Audio codec | AAC | Stereo 48 kHz |
+| Audio loudness | -14 LUFS integrated | Streaming orientation |
+| Duration | 15–90 s typical | By message |
+| Color | Rec.709 | Web standard |
+
+## Safe areas: where to place text
+
+App UI covers edges:
+
+- **Top 10–15%:** username, trending music, search
+- **Bottom 20–25%:** caption, buttons, description
+- **Central safe zone:** main text and key faces
+
+Preview on iPhone SE and Pro Max — different sizes.
+
+See [business Reels editing mistakes](/en/blog/errores-al-editar-reels-para-negocios).
+
+## Professional export workflow
+
+1. Edit timeline at 1080×1920 project resolution
+2. Color grade Rec.709
+3. Audio mix clear voice, music ducking
+4. Burn captions or export separate SRT
+5. Export high bitrate H.264 master MP4
+6. Mobile QA before upload
+7. Platform hook/caption variants if applicable
+8. Archive project + master + SRT
+
+## Tool presets
+
+### CapCut
+
+1080p, 30 fps, high quality or custom elevated bitrate. Avoid WhatsApp re-export.
+
+### Adobe Premiere Pro
+
+H.264 Match Source – High bitrate or custom 1080×1920, VBR 2 pass, ~20 Mbps target, AAC 320 kbps audio.
+
+### DaVinci Resolve
+
+Custom MP4 H.264, 1080×1920, 30fps, ~20000 Kb/s; normalize loudness in Fairlight.
+
+Document internal preset for batch consistency.
+
+## Instagram Reels vs TikTok export differences
+
+| Factor | Instagram Reels | TikTok |
+|---|---|---|
+| Cover thumbnail | Critical profile CTR | Less weight |
+| Native app text | IG stickers | TikTok built-in text |
+| Recompression | Aggressive feed | Aggressive; variable sharpness |
+
+**Practice:** Single master → native upload each app beats cross-watermark repost.
+
+Platform comparison: [Reels vs TikTok vs Shorts](/en/blog/reels-vs-tiktok-vs-shorts-colombia).
+
+## Audio normalization
+
+- Integrated **-14 LUFS** (orientation, not dogma)
+- Peak max -1 dBTP avoids clipping
+- Music 18–22 dB under voice when speaking
+- Use WAV on timeline; avoid generational MP3
+
+Bad audio survives less than mediocre video.
+
+## Bitrate: why it matters
+
+Five Mbps 1080p vertical export falls apart post-upload. Motion, fine text and grain worsen.
+
+**Rule:** When in doubt, raise bitrate. Storage cost is minimal vs reshooting.
+
+## Common export mistakes
+
+1. 16:9 timeline with late crop — loses composition
+2. 720 → 1080 upscale — false sharpness
+3. WhatsApp re-export — destroys quality
+4. Phone variable frame rate without fix — audio desync
+5. HDR without SDR conversion — washed web colors
+6. Captions outside safe zone — covered after upload UI
+7. Exact 90:00.001 duration — rare glitches; leave margin
+
+## Paid export (Meta Ads / TikTok Ads)
+
+Same 9:16 master; variant without copyright music if needed; hook first 3 s silent-first; conservative safe area for ad CTA buttons.
+
+## File naming
+
+```
+BRAND_2026-08_Reel04_ProductDemo_vFinal_IG.mp4
+BRAND_2026-08_Reel04_ProductDemo_SRT.srt
+```
+
+Organization saves hours in monthly packs.
+
+## Pre-upload QA checklist
+
+- [ ] 1080×1920 verified in file properties
+- [ ] No black bars
+- [ ] Text readable on mobile without zoom
+- [ ] Clear audio on low speaker
+- [ ] First frame not blur
+- [ ] Correct duration
+- [ ] CTA visible at end
+- [ ] Licensed music documented
+
+## Summary
+
+**Exporting for Instagram and TikTok** with correct specs — 9:16, 1080×1920, H.264, generous bitrate, -14 LUFS audio, respected safe areas — protects filming and editing investment. Document preset, QA on real mobile and avoid re-compression chains.
+
+Technical post-production is part of [professional social editing](/en/blog/edicion-de-videos-para-redes-colombia), not optional final detail.
+
+## Next step
+
+1. Save export preset in your editor
+2. Audit last published video file properties
+3. Fix bitrate/resolution in next batch
+4. Implement mobile QA checklist
+5. Brief editor with explicit specs
+
+## Related reading
+
+- [Social video editing Colombia](/en/blog/edicion-de-videos-para-redes-colombia)
+- [Business Reels editing mistakes](/en/blog/errores-al-editar-reels-para-negocios)
+- [Reels vs TikTok vs Shorts](/en/blog/reels-vs-tiktok-vs-shorts-colombia)
+- [Brand videos Instagram TikTok](/en/blog/videos-para-marcas-instagram-tiktok)

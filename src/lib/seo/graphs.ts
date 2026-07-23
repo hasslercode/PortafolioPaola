@@ -11,9 +11,12 @@ import {
   caseStudyNode,
   coreGraph,
   faqNode,
+  howToNode,
+  itemListNode,
   offerNode,
   reviewNode,
   serviceNode,
+  videoObjectNode,
   webPageNode,
   type JsonLdNode,
 } from '@/lib/seo/jsonld';
@@ -50,12 +53,15 @@ export function hubGraph(input: {
   description: string;
   breadcrumbs: BreadcrumbItem[];
   faqs?: Array<{ question: string; answer: string }>;
+  howToSteps?: Array<{ name: string; text: string }>;
   offers?: Array<{
     name: string;
     description?: string;
     lowPrice?: string | number;
     highPrice?: string | number;
   }>;
+  itemList?: Array<{ name: string; url: string }>;
+  itemListName?: string;
 }) {
   const url = absoluteUrl(buildLocalizedPath(input.locale, input.route));
   const nodes: JsonLdNode[] = [
@@ -73,6 +79,18 @@ export function hubGraph(input: {
   const faq = faqNode(url, input.faqs ?? []);
   if (faq) nodes.push(faq);
 
+  if (input.howToSteps?.length) {
+    nodes.push(
+      howToNode({
+        locale: input.locale,
+        url,
+        name: input.name,
+        description: input.description,
+        steps: input.howToSteps,
+      }),
+    );
+  }
+
   for (const offer of input.offers ?? []) {
     nodes.push(
       offerNode({
@@ -82,6 +100,13 @@ export function hubGraph(input: {
       }),
     );
   }
+
+  const itemList = itemListNode({
+    pageUrl: url,
+    name: input.itemListName ?? input.name,
+    items: input.itemList ?? [],
+  });
+  if (itemList) nodes.push(itemList);
 
   return buildGraph(nodes);
 }
@@ -131,6 +156,9 @@ export function caseStudyPageGraph(input: {
   breadcrumbs: BreadcrumbItem[];
   metrics?: Array<{ label: string; value: string }>;
   faqs?: Array<{ question: string; answer: string }>;
+  videoUrl?: string;
+  videoTitle?: string;
+  videoThumbnailUrl?: string;
 }) {
   const url = absoluteUrl(buildLocalizedPath(input.locale, input.route));
   const nodes: JsonLdNode[] = [
@@ -145,6 +173,15 @@ export function caseStudyPageGraph(input: {
     }),
     breadcrumbNode(input.locale, input.breadcrumbs),
   ];
+
+  const video = videoObjectNode({
+    pageUrl: url,
+    name: input.videoTitle ?? input.name,
+    description: input.description,
+    contentUrl: input.videoUrl ?? '',
+    thumbnailUrl: input.videoThumbnailUrl,
+  });
+  if (video) nodes.push(video);
 
   const faq = faqNode(url, input.faqs ?? []);
   if (faq) nodes.push(faq);

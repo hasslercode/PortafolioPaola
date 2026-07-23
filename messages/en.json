@@ -25,7 +25,7 @@
     "metaTitle": "Digital Strategy & Content Services | Paola Hoyos",
     "metaTitleMerged": "Services | Digital Strategy Colombia | Paola Hoyos",
     "metaDescription": "Strategic consulting, content strategy, production and premium monthly management for brands in Colombia.",
-    "metaDescriptionMerged": "Advisory consulting plus plans for strategy, production and monthly management.",
+    "metaDescriptionMerged": "Strategy consulting, content production, video editing and monthly management for entrepreneurs and brands in Colombia.",
     "shortAnswer": "Short answer",
     "faq": "FAQ",
     "detailPlaceholder": "Full service copy arrives in Phase 5 (MDX).",
@@ -64,15 +64,21 @@
     "title": "Contact",
     "summary": "Contact via email or Instagram. Pick your preferred channel.",
     "metaTitle": "Contact | Paola Hoyos",
-    "metaDescription": "Contact Paola Hoyos by email or Instagram for a strategy consult.",
-    "formNote": "Lead form wiring lands in Phase 2/5."
+    "metaDescription": "Contact Paola Hoyos via briefing, email or WhatsApp to quote content and video.",
+    "formNote": "Complete the briefing or reach me by email / WhatsApp."
   },
   "Pricing": {
     "badge": "Services",
     "titleLead": "Strategy,",
     "titleAccent": "production",
     "titleTrail": "and management.",
-    "summary": "One flow: clear process, concrete plans, and consulting when you need clarity.",
+    "summary": "One flow: clear process, concrete plans, and consulting when you need clarity. Launch pricing now live.",
+    "launchFlag": "Launch discount",
+    "launchTitle": "Service launch pricing",
+    "launchBody": "For a limited time: strategy, content, monthly management and UGC at launch rates. Limited slots — final quote by scope.",
+    "ugcEyebrow": "UGC line",
+    "ugcTitle": "UGC for brands",
+    "ugcSummary": "Creator-style pieces, separate from strategy / production / management. Built for ads and organic tests.",
     "title": "Strategy, production and management.",
     "plansTitle": "Plans",
     "plansSummary": "Execution starts here, at the level you choose.",
@@ -168,9 +174,18 @@
   "Blog": {
     "title": "Commercial-intent resources",
     "summary": "Only content that helps buyers decide: pricing, hiring, ROI and retail storytelling.",
-    "metaTitle": "Blog | Digital Strategy & Community Management Colombia",
-    "metaDescription": "Commercial guides on pricing, hiring digital strategists, organic ROI and retail storytelling in Colombia.",
+    "metaTitle": "Blog | Content Creation, UGC & Digital Strategy Colombia",
+    "metaDescription": "Guides for entrepreneurs: content creation, video editing, UGC, pricing and digital strategy in Colombia.",
     "shortAnswer": "Short answer",
     "placeholder": "Full MDX article — Phase 5."
+  },
+  "Results": {
+    "title": "Results & metrics",
+    "eyebrow": "Verifiable social proof",
+    "summary": "1.3M+ documented organic views, retail brands at Parque Alegra and links to each experience.",
+    "brandListTitle": "Documented brands & experiences",
+    "lastUpdated": "Last updated",
+    "metaTitle": "Organic results | 1.3M+ views | Paola Hoyos",
+    "metaDescription": "Consolidated organic reach metrics (1.3M+ views), retail brands and links to real experiences in Colombia."
   }
 }

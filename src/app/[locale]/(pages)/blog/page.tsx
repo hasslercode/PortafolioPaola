@@ -9,6 +9,7 @@ import { buildBreadcrumbs } from '@/lib/seo/paths';
 import { hubGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
 import { BlogHubView } from '@/features/home/hubs/ContentHubViews';
+import { absoluteUrl, buildLocalizedPath } from '@/lib/seo/paths';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -41,6 +42,16 @@ export default async function BlogIndexPage({ params }: PageProps) {
     name: t('title'),
     description: t('metaDescription'),
     breadcrumbs: crumbs,
+    itemListName: t('title'),
+    itemList: posts.map((post) => ({
+      name: post.title,
+      url: absoluteUrl(
+        buildLocalizedPath(locale as SiteLocale, {
+          type: 'blogPost',
+          slug: post.slug[locale === 'en' ? 'en' : 'es'],
+        }),
+      ),
+    })),
   });
 
   return (

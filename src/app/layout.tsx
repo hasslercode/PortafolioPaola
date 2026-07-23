@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   },
   applicationName: siteConfig.name,
   icons: {
-    icon: '/icon-paola.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon-paola.png', type: 'image/png' },
+    ],
     apple: '/icon-paola.png',
   },
   manifest: '/manifest.webmanifest',

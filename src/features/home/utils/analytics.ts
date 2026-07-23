@@ -46,6 +46,13 @@ export function trackFormSubmit(source: string) {
   });
 }
 
+export function trackWhatsappClick(location: string) {
+  trackEvent('cta_whatsapp', {
+    event_category: 'conversion',
+    cta_location: location,
+  });
+}
+
 export function trackSectionView(section: string) {
   trackEvent('section_view', { section });
 }

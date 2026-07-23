@@ -9,21 +9,27 @@ import {
 /**
  * Public path prefixes per locale (no leading locale segment).
  * Canonical hubs only — legacy aliases resolve to the fused pages.
- * Visible menu: Inicio | Experiencias | Servicios | Sobre mí | Contacto
- * Soft (no menu): Blog
- * Redirects: /tarifas,/pricing → services · /portafolio,/portfolio → experiences
+ * Visible menu: Inicio | Experiencias | Servicios | Blog | Sobre mí | Contacto
+ * Pricing hub: /tarifas · /pricing (rangos COP — HU-CRO-001)
+ * Redirects: /portafolio,/portfolio → experiences
  */
 const hubs = {
   home: { es: '', en: '' },
   services: { es: '/servicios', en: '/services' },
   caseStudies: { es: '/experiencias', en: '/experiences' },
-  /** @deprecated Alias — fused into services (never emit as a distinct sitemap URL). */
-  pricing: { es: '/servicios', en: '/services' },
+  pricing: { es: '/tarifas', en: '/pricing' },
   /** @deprecated Alias — fused into experiences (never emit as a distinct sitemap URL). */
   portfolio: { es: '/experiencias', en: '/experiences' },
   about: { es: '/sobre-mi', en: '/about' },
   contact: { es: '/contacto', en: '/contact' },
+  process: { es: '/proceso-de-trabajo', en: '/process' },
+  privacy: { es: '/privacidad', en: '/privacy' },
+  terms: { es: '/terminos', en: '/terms' },
+  legal: { es: '/aviso-legal', en: '/legal-notice' },
+  faq: { es: '/preguntas-frecuentes', en: '/faq' },
   blog: { es: '/blog', en: '/blog' },
+  cities: { es: '/ciudades', en: '/cities' },
+  results: { es: '/resultados', en: '/results' },
 } as const;
 
 export type SeoHub = keyof typeof hubs;

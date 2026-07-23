@@ -90,7 +90,7 @@ const CAMPAIGN_LAYOUT = [
 /** Campaign card index → case study slug (when available) */
 export const HOME_CASE_SLUGS = [
   'coca-cola',
-  null, // TOTTO — no dedicated case page yet
+  'totto',
   'cine-colombia',
   'hm',
   'starbucks',

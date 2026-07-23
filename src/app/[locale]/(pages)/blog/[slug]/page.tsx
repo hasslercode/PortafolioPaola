@@ -11,9 +11,13 @@ import { FaqSection } from '@/components/content/FaqSection';
 import { GeoAnswer } from '@/components/content/GeoAnswer';
 import { TableOfContents } from '@/components/content/TableOfContents';
 import { AuthorByline } from '@/components/content/AuthorByline';
+import { RelatedContent } from '@/components/content/RelatedContent';
 import { DetailWithHomeArt } from '@/features/home/hubs/DetailWithHomeArt';
 import { articlePageGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
+import { getAllPosts } from '@/content/loaders';
+import { buildLocalizedPath } from '@/lib/seo/paths';
+import { serviceSlugLocales, type ServiceSlug } from '@/content/registry';
 
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -30,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale, slug } = await params;
   const post = await getBlogBySlug(slug, locale);
   if (!post) return {};
+  const enNeedsNoIndex = locale === 'en';
   return buildPageMetadata({
     locale: locale as SiteLocale,
     title: post.seo?.title ?? post.title,
@@ -40,6 +45,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     publishedTime: post.publishedAt,
     modifiedTime: post.updatedAt ?? post.publishedAt,
     absoluteTitle: true,
+    // HU-EN-001: EN blog bodies still mixed/ES — avoid hreflang dilution until HU-EN-002
+    noIndex: enNeedsNoIndex,
   });
 }
 
@@ -67,6 +74,40 @@ export default async function BlogPostPage({ params }: PageProps) {
     faqs: post.faq,
   });
 
+  const allPosts = await getAllPosts(locale);
+  const related = (post.relatedSlugs ?? [])
+    .map((relatedSlug) => {
+      const match = allPosts.find(
+        (entry) =>
+          entry.canonicalSlug === relatedSlug ||
+          entry.slug.es === relatedSlug ||
+          entry.slug.en === relatedSlug,
+      );
+      if (!match) return null;
+      return {
+        href: buildLocalizedPath(typedLocale, {
+          type: 'blogPost',
+          slug: match.canonicalSlug,
+        }),
+        title: match.title,
+      };
+    })
+    .filter(Boolean) as Array<{ href: string; title: string }>;
+
+  if (post.serviceCta && post.serviceCta in serviceSlugLocales) {
+    const serviceSlug = post.serviceCta as ServiceSlug;
+    related.push({
+      href: buildLocalizedPath(typedLocale, {
+        type: 'service',
+        slug: serviceSlug,
+      }),
+      title:
+        typedLocale === 'es'
+          ? `Servicio: ${serviceSlugLocales[serviceSlug].es}`
+          : `Service: ${serviceSlugLocales[serviceSlug].en}`,
+    });
+  }
+
   return (
     <>
       <JsonLdScript graph={graph} />
@@ -92,6 +133,10 @@ export default async function BlogPostPage({ params }: PageProps) {
         <FaqSection
           title={typedLocale === 'es' ? 'Preguntas frecuentes' : 'FAQ'}
           items={post.faq}
+        />
+        <RelatedContent
+          title={typedLocale === 'es' ? 'Sigue explorando' : 'Keep exploring'}
+          items={related}
         />
         <AuthorByline locale={typedLocale} />
       </DetailWithHomeArt>

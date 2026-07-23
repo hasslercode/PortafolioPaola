@@ -24,6 +24,7 @@ export default function Header({ onOpenContact }) {
   const isServices = pathname.startsWith('/services');
   const isContact = pathname.startsWith('/contact');
   const isAbout = pathname.startsWith('/about');
+  const isBlog = pathname.startsWith('/blog');
 
   useEffect(() => {
     const headerEl = headerRef.current;
@@ -135,6 +136,11 @@ export default function Header({ onOpenContact }) {
               <li className={navItemClass(isServices)}>
                 <Link href="/services" onClick={handleNavClick}>
                   {header.nav.servicios}
+                </Link>
+              </li>
+              <li className={navItemClass(isBlog)}>
+                <Link href="/blog" onClick={handleNavClick}>
+                  {header.nav.blog}
                 </Link>
               </li>
               <li className={navItemClass(isAbout)}>

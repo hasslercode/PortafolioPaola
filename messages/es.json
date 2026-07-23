@@ -25,7 +25,7 @@
     "metaTitle": "Servicios de Estrategia Digital y Content Strategy | Paola Hoyos",
     "metaTitleMerged": "Servicios | Estrategia Digital Colombia | Paola Hoyos",
     "metaDescription": "Consultoría estratégica, estrategia de contenido, producción y gestión mensual premium para marcas en Colombia.",
-    "metaDescriptionMerged": "Consultoría (solo asesoría) y planes de estrategia, producción y gestión mensual.",
+    "metaDescriptionMerged": "Consultoría, estrategia de contenido, edición de video y gestión mensual para emprendedores y marcas en Colombia.",
     "shortAnswer": "Respuesta corta",
     "faq": "Preguntas frecuentes",
     "detailPlaceholder": "Contenido completo del servicio en Fase 5 (MDX).",
@@ -64,15 +64,21 @@
     "title": "Contacto",
     "summary": "Contacto por correo o Instagram. Elige el canal que prefieras.",
     "metaTitle": "Contacto | Paola Hoyos",
-    "metaDescription": "Contacta a Paola Hoyos por correo o Instagram para una consulta estratégica.",
-    "formNote": "Formulario de precalificación se cablea en Fase 2/5."
+    "metaDescription": "Contacta a Paola Hoyos por briefing, correo o WhatsApp para cotizar contenido y video.",
+    "formNote": "Completa el briefing o escríbeme por correo / WhatsApp."
   },
   "Pricing": {
     "badge": "Servicios",
     "titleLead": "Estrategia,",
     "titleAccent": "producción",
     "titleTrail": "y gestión.",
-    "summary": "Un solo flujo: proceso claro, planes concretos y consultoría cuando necesitas claridad.",
+    "summary": "Un solo flujo: proceso claro, planes concretos y consultoría cuando necesitas claridad. Ahora con precios de lanzamiento.",
+    "launchFlag": "Descuento lanzamiento",
+    "launchTitle": "Precios de apertura de servicios",
+    "launchBody": "Por tiempo limitado: estrategia, contenido, gestión mensual y UGC con tarifa de lanzamiento. Cupos limitados — cotización final según alcance.",
+    "ugcEyebrow": "Línea UGC",
+    "ugcTitle": "UGC para marcas",
+    "ugcSummary": "Piezas estilo creador, aparte del plan de estrategia / producción / gestión. Ideal para ads y prueba orgánica.",
     "title": "Estrategia, producción y gestión.",
     "plansTitle": "Planes",
     "plansSummary": "Aquí sí hay ejecución según el nivel que elijas.",
@@ -168,9 +174,18 @@
   "Blog": {
     "title": "Recursos de intención comercial",
     "summary": "Solo contenido que ayuda a decidir: tarifas, contratación, ROI y storytelling para retail.",
-    "metaTitle": "Blog | Estrategia Digital y Community Management Colombia",
-    "metaDescription": "Guías comerciales sobre tarifas, contratación de estrategas digitales, ROI orgánico y storytelling para retail en Colombia.",
+    "metaTitle": "Blog | Creación de Contenido, UGC y Estrategia Digital Colombia",
+    "metaDescription": "Guías para emprendedores: creación de contenido, edición de video, UGC, tarifas y estrategia digital en Colombia.",
     "shortAnswer": "Respuesta corta",
     "placeholder": "Artículo completo en MDX — Fase 5."
+  },
+  "Results": {
+    "title": "Resultados y métricas",
+    "eyebrow": "Prueba social verificable",
+    "summary": "Más de 1,3 millones de views orgánicas documentadas, marcas retail en Parque Alegra y enlaces a cada experiencia.",
+    "brandListTitle": "Marcas y experiencias documentadas",
+    "lastUpdated": "Última actualización",
+    "metaTitle": "Resultados orgánicos | +1.3M views | Paola Hoyos",
+    "metaDescription": "Métricas consolidadas de alcance orgánico (+1.3M views), marcas retail y enlaces a experiencias reales en Colombia."
   }
 }

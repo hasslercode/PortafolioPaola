@@ -4,7 +4,10 @@
  */
 
 import { siteConfig, type SiteLocale } from '@/config/site';
+import { KNOW_ABOUT_ENTITIES } from '@/config/seo-strategy';
 import { absoluteUrl, buildLocalizedPath, type BreadcrumbItem } from '@/lib/seo/paths';
+
+const OG_IMAGE = `${siteConfig.url}/assets/og-paola.jpg`;
 
 export type JsonLdNode = Record<string, unknown>;
 
@@ -52,20 +55,9 @@ export function personNode(locale: string = 'es'): JsonLdNode {
     },
     worksFor: { '@id': organizationId(locale) },
     sameAs: Object.values(siteConfig.social),
-    knowsAbout: [
-      'Digital Strategy',
-      'Content Strategy',
-      'Strategic Advisory',
-      'Content Consulting',
-      'Content Production',
-      'Monthly Social Management',
-      'Storytelling',
-      'Organic Growth',
-    ],
-    alumniOf: {
-      '@type': 'EducationalOrganization',
-      name: 'Maestría en Comunicación Digital',
-    },
+    knowsAbout: [...KNOW_ABOUT_ENTITIES],
+    // TODO(HU-EEAT-001): add alumniOf when a real university name is confirmed in
+    // content (home/about only mentions "maestría en comunicación digital", not the institution).
   };
 }
 
@@ -77,9 +69,9 @@ export function organizationNode(locale: string = 'es'): JsonLdNode {
     url: `${siteConfig.url}/${locale}`,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteConfig.url}/assets/og-paola.png`,
+      url: OG_IMAGE,
     },
-    image: `${siteConfig.url}/assets/og-paola.png`,
+    image: OG_IMAGE,
     founder: { '@id': personId(locale) },
     email: siteConfig.contact.email,
     sameAs: Object.values(siteConfig.social),
@@ -134,7 +126,7 @@ export function professionalServiceNode(
         : 'Paola Hoyos — Digital Strategy & Organic Growth'),
     description: input.description ?? siteConfig.description[typedLocale],
     url: input.url ?? `${siteConfig.url}/${locale}`,
-    image: `${siteConfig.url}/assets/og-paola.png`,
+    image: OG_IMAGE,
     email: siteConfig.contact.email,
     priceRange: input.priceRange ?? '$$',
     currenciesAccepted: 'COP',
@@ -143,6 +135,9 @@ export function professionalServiceNode(
     employee: { '@id': personId(locale) },
     areaServed: [
       { '@type': 'Country', name: 'Colombia' },
+      { '@type': 'City', name: 'Medellín' },
+      { '@type': 'City', name: 'Bogotá' },
+      { '@type': 'City', name: 'Barranquilla' },
       { '@type': 'AdministrativeArea', name: 'LatAm' },
     ],
     address: {
@@ -152,13 +147,55 @@ export function professionalServiceNode(
       addressCountry: siteConfig.geo.addressCountry,
     },
     serviceType: input.serviceType ?? [
-      'Social Media Management',
-      'Content Creation',
-      'Digital Strategy',
-      'Email Marketing',
-      'Event Coverage',
+      'Content Strategy',
+      'Content Production',
+      'Video Editing for Social Media',
+      'UGC-style Brand Videos',
+      'Monthly Social Management',
+      'Strategic Advisory',
     ],
     sameAs: Object.values(siteConfig.social),
+  };
+}
+
+export function itemListNode(input: {
+  pageUrl: string;
+  name: string;
+  items: Array<{ name: string; url: string }>;
+}): JsonLdNode | null {
+  if (!input.items.length) return null;
+
+  return {
+    '@type': 'ItemList',
+    '@id': `${input.pageUrl}#itemlist`,
+    name: input.name,
+    numberOfItems: input.items.length,
+    itemListElement: input.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  };
+}
+
+export function videoObjectNode(input: {
+  pageUrl: string;
+  name: string;
+  description?: string;
+  contentUrl: string;
+  thumbnailUrl?: string;
+}): JsonLdNode | null {
+  if (!input.contentUrl.trim()) return null;
+
+  return {
+    '@type': 'VideoObject',
+    '@id': `${input.pageUrl}#video`,
+    name: input.name,
+    description: input.description,
+    contentUrl: input.contentUrl,
+    embedUrl: input.contentUrl,
+    thumbnailUrl: input.thumbnailUrl ?? OG_IMAGE,
   };
 }
 
@@ -174,6 +211,28 @@ export function breadcrumbNode(
       position: index + 1,
       name: entry.name,
       item: absoluteUrl(entry.path),
+    })),
+  };
+}
+
+export function howToNode(input: {
+  locale: string;
+  url: string;
+  name: string;
+  description: string;
+  steps: Array<{ name: string; text: string }>;
+}): JsonLdNode {
+  return {
+    '@type': 'HowTo',
+    '@id': `${input.url}#howto`,
+    name: input.name,
+    description: input.description,
+    inLanguage: input.locale === 'es' ? 'es-CO' : 'en',
+    step: input.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
     })),
   };
 }
@@ -218,7 +277,7 @@ export function articleNode(input: {
     inLanguage: input.locale === 'es' ? 'es-CO' : 'en',
     datePublished: input.datePublished,
     dateModified: input.dateModified ?? input.datePublished,
-    image: input.image ?? `${siteConfig.url}/assets/og-paola.png`,
+    image: input.image ?? OG_IMAGE,
     keywords: input.keywords?.join(', '),
     author: { '@id': personId(input.locale) },
     publisher: { '@id': organizationId(input.locale) },
@@ -267,6 +326,7 @@ export function reviewNode(input: {
   reviewBody: string;
   authorName: string;
   result?: string;
+  ratingValue?: number;
 }): JsonLdNode {
   return {
     '@type': 'Review',
@@ -277,7 +337,17 @@ export function reviewNode(input: {
       '@type': 'Person',
       name: input.authorName,
     },
-    itemReviewed: { '@id': professionalServiceId(input.locale) },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: input.ratingValue ?? 5,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    itemReviewed: {
+      '@id': professionalServiceId(input.locale),
+      '@type': 'ProfessionalService',
+      name: siteConfig.name,
+    },
   };
 }
 

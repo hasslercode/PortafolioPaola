@@ -625,26 +625,6 @@ summary:focus-visible,
     flex-shrink: 0;
 }
 
-.header-prefs--bar {
-    display: inline-flex;
-}
-
-@media (min-width: 993px) {
-    .header-prefs--bar {
-        display: none;
-    }
-}
-
-.header-prefs--inline {
-    display: inline-flex;
-}
-
-@media (max-width: 992px) {
-    .header-prefs--inline {
-        display: none;
-    }
-}
-
 .menu-toggle-refined {
     display: none;
     width: 44px;
@@ -669,6 +649,27 @@ summary:focus-visible,
     border: 1px solid rgba(45, 30, 27, 0.1);
     box-shadow: 0 1px 4px rgba(45, 30, 27, 0.04);
     flex-shrink: 0;
+}
+
+/* Compound selectors beat .header-prefs { display } — only one prefs set visible */
+.header-prefs.header-prefs--bar {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header-prefs.header-prefs--bar {
+        display: inline-flex;
+    }
+}
+
+.header-prefs.header-prefs--inline {
+    display: none;
+}
+
+@media (min-width: 993px) {
+    .header-prefs.header-prefs--inline {
+        display: inline-flex;
+    }
 }
 
 .header-prefs__lang {
