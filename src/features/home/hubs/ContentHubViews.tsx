@@ -255,12 +255,11 @@ export function PricingHubView({
   consultWarning,
   consultIncludes,
   consultExcludes,
-  consultDetailSlug,
-  consultDetailLabel,
+  consultDetailSlug: _consultDetailSlug,
+  consultDetailLabel: _consultDetailLabel,
   includesLabel,
   excludesLabel,
   packageLabel,
-  seeAllIncludes,
   featuredLabel,
   deliveryLabel,
   values,
@@ -321,25 +320,10 @@ export function PricingHubView({
     const featured = Boolean(pkg.featured || pkg.id === 'gestion-mensual');
     const icon = PLAN_ICONS[pkg.id] || PLAN_ICONS.estrategia;
     const onSale = Boolean(pkg.saleFlag && pkg.priceFrom);
-    const highlightItems =
-      pkg.packageIncludes && pkg.packageIncludes.length > 0
-        ? pkg.packageIncludes
-        : pkg.includes.slice(0, 4);
-    const detailIncludes =
-      pkg.packageIncludes && pkg.packageIncludes.length > 0
-        ? pkg.includes
-        : pkg.includes.slice(highlightItems.length);
-    const showDetails =
-      detailIncludes.length > 0 ||
-      Boolean(pkg.excludes?.length) ||
-      Boolean(pkg.note);
-    const detailsLabel =
-      seeAllIncludes ||
-      (isEn ? 'See everything included' : 'Ver todo lo que incluye');
-    const detailIncludesLabel =
-      pkg.packageIncludes && pkg.packageIncludes.length > 0
-        ? pkg.includesLabelOverride || includesLabel
-        : includesLabel;
+    const packageItems = pkg.packageIncludes ?? [];
+    const includeItems = pkg.includes;
+    const includesHeading =
+      pkg.includesLabelOverride || includesLabel;
 
     return (
       <article
@@ -363,11 +347,6 @@ export function PricingHubView({
               <path d={icon} />
             </svg>
           </span>
-          {pkg.tag ? (
-            <span className="offer-plan__tag">{pkg.tag}</span>
-          ) : featured ? (
-            <span className="offer-plan__tag">{featuredLabel}</span>
-          ) : null}
           <span className="offer-plan__ghost" aria-hidden="true">
             {pkg.index}
           </span>
@@ -390,11 +369,22 @@ export function PricingHubView({
           <p className="offer-plan__warning">{pkg.warning}</p>
         ) : null}
 
-        <ul className="offer-plan__highlights" aria-label={includesLabel}>
-          {highlightItems.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        {packageItems.length > 0 ? (
+          <ul className="offer-plan__highlights" aria-label={packageLabel || (isEn ? 'Package' : 'Paquete')}>
+            {packageItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        ) : null}
+
+        <div className="offer-plan__includes-block">
+          <p className="offer-plan__includes-label">{includesHeading}</p>
+          <ul className="offer-plan__includes">
+            {includeItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
 
         {pkg.delivery ? (
           <p className="offer-plan__delivery">
@@ -405,44 +395,10 @@ export function PricingHubView({
           </p>
         ) : null}
 
-        {showDetails ? (
-          <details className="offer-plan__details">
-            <summary>
-              {detailsLabel}
-              {detailIncludes.length > 0 ? (
-                <span className="offer-plan__details-count">
-                  {detailIncludes.length}
-                </span>
-              ) : null}
-            </summary>
-            <div className="offer-plan__details-body">
-              {detailIncludes.length > 0 ? (
-                <>
-                  <p className="offer-plan__includes-label">{detailIncludesLabel}</p>
-                  <ul className="offer-plan__includes">
-                    {detailIncludes.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </>
-              ) : null}
-
-              {pkg.excludes?.length && excludesLabel ? (
-                <>
-                  <p className="offer-plan__includes-label offer-plan__includes-label--excludes">
-                    {excludesLabel}
-                  </p>
-                  <ul className="offer-plan__excludes">
-                    {pkg.excludes.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </>
-              ) : null}
-
-              {pkg.note ? <p className="offer-plan__note">{pkg.note}</p> : null}
-            </div>
-          </details>
+        {pkg.tag || featured ? (
+          <span className="offer-plan__tag offer-plan__tag--footer">
+            {pkg.tag || featuredLabel}
+          </span>
         ) : null}
 
         <button
@@ -453,18 +409,6 @@ export function PricingHubView({
           <span>{pkg.ctaLabel || ctaLabel}</span>
           <span aria-hidden="true">→</span>
         </button>
-        {pkg.detailSlug ? (
-          <Link
-            href={{
-              pathname: '/services/[slug]',
-              params: { slug: pkg.detailSlug },
-            }}
-            className="offer-plan__detail-link"
-          >
-            {pkg.detailLabel ||
-              (isEn ? 'See full service details' : 'Ver detalle del servicio')}
-          </Link>
-        ) : null}
       </article>
     );
   };
@@ -537,52 +481,22 @@ export function PricingHubView({
               ) : null}
               {consultIncludes?.length ? (
                 <ul className="offer-process__consult-chips" aria-label={includesLabel}>
-                  {consultIncludes.slice(0, 3).map((item) => (
+                  {consultIncludes.slice(0, 4).map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               ) : null}
-              {(consultIncludes && consultIncludes.length > 3) ||
-              consultExcludes?.length ? (
-                <details className="offer-process__consult-details">
-                  <summary>
-                    {seeAllIncludes ||
-                      (isEn ? 'See everything included' : 'Ver todo lo que incluye')}
-                  </summary>
-                  <div className="offer-process__consult-details-body">
-                    {consultIncludes && consultIncludes.length > 3 ? (
-                      <ul className="offer-process__consult-list">
-                        {consultIncludes.slice(3).map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    ) : null}
-                    {consultExcludes?.length && excludesLabel ? (
-                      <>
-                        <p className="offer-process__consult-excludes-label">
-                          {excludesLabel}
-                        </p>
-                        <ul className="offer-process__consult-excludes">
-                          {consultExcludes.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                      </>
-                    ) : null}
-                  </div>
-                </details>
-              ) : null}
-              {consultDetailSlug ? (
-                <Link
-                  href={{
-                    pathname: '/services/[slug]',
-                    params: { slug: consultDetailSlug },
-                  }}
-                  className="offer-process__detail-link"
-                >
-                  {consultDetailLabel ||
-                    (isEn ? 'How the strategy session works' : 'Cómo funciona la sesión')}
-                </Link>
+              {consultExcludes?.length && excludesLabel ? (
+                <>
+                  <p className="offer-process__consult-excludes-label">
+                    {excludesLabel}
+                  </p>
+                  <ul className="offer-process__consult-excludes">
+                    {consultExcludes.slice(0, 4).map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </>
               ) : null}
             </aside>
 
@@ -636,20 +550,6 @@ export function PricingHubView({
                       <span>{ugcPackage.ctaLabel || ctaLabel}</span>
                       <span aria-hidden="true">→</span>
                     </button>
-                    {ugcPackage.detailSlug ? (
-                      <Link
-                        href={{
-                          pathname: '/services/[slug]',
-                          params: { slug: ugcPackage.detailSlug },
-                        }}
-                        className="ugc-spotlight__link"
-                      >
-                        {ugcPackage.detailLabel ||
-                          (isEn
-                            ? 'See full service details'
-                            : 'Ver detalle del servicio')}
-                      </Link>
-                    ) : null}
                   </div>
                 </div>
 

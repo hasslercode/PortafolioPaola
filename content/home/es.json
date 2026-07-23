@@ -406,67 +406,56 @@
     "cardCta": "Más información",
     "cards": [
       {
-        "eyebrow": "01 · Asesoría",
+        "eyebrow": "01 · Entrada",
         "titleLine1": "Consultoría",
         "titleScript": "estratégica",
-        "pitch": "Sesión de entrada en vivo: revisamos redes, errores y oportunidades con recomendaciones al momento.",
+        "price": "Desde $60.000",
+        "pitch": "Sesión en vivo: redes, errores y recomendaciones al momento.",
         "includes": [
-          "Reunión 45-60 min",
+          "45-60 minutos",
           "Revisión de redes",
-          "Errores y oportunidades",
-          "Recomendaciones en vivo",
-          "Espacio para preguntas"
+          "Recomendaciones en vivo"
         ],
-        "tagline": "Asesoría en vivo. No incluye entregables."
+        "tagline": "Sin entregables."
       },
       {
-        "eyebrow": "02 · Estrategia",
+        "eyebrow": "02 · Dirección",
         "titleBefore": "Estrategia de",
         "titleScript": "contenido",
-        "pitch": "Auditoría, competencia, buyer persona, pilares, tono, ideas y calendario — con PDF y reunión de explicación.",
+        "price": "Desde $180.000",
+        "pitch": "Auditoría, pilares y calendario para producir con intención.",
         "includes": [
           "Auditoría de marca",
-          "Competencia",
-          "Buyer persona",
-          "Pilares de contenido",
-          "Calendario",
-          "Ideas",
-          "Objetivos",
-          "Tono de comunicación",
-          "Recomendaciones"
+          "Pilares + calendario",
+          "PDF + reunión"
         ],
-        "tagline": "Entregable: PDF + reunión."
+        "tagline": "Documento estratégico."
       },
       {
-        "eyebrow": "03 · Producción",
+        "eyebrow": "03 · Ejecución",
         "titleBefore": "Producción de",
         "titleScript": "contenido",
-        "pitch": "Idea, guion, grabación, edición, subtítulos y export — 1 video listo.",
+        "price": "Desde $180.000",
+        "pitch": "De la idea al export: 1 video listo para publicar.",
         "includes": [
-          "1 video hasta 60s",
+          "1 video · hasta 60s",
           "Una locación",
-          "Una ronda de cambios",
-          "Idea · Guion · Grabación",
-          "Edición · Subtítulos · Música"
+          "Una ronda de cambios"
         ],
-        "tagline": "Desde $180.000 · Paquete base."
+        "tagline": "Paquete base."
       },
       {
         "eyebrow": "04 · Premium",
         "titleLine1": "Gestión estratégica",
         "titleScript": "de contenido",
-        "pitch": "Estrategia mensual, calendario, guiones, hasta 8 videos verticales y edición premium.",
+        "price": "Desde $1.200.000/mes",
+        "pitch": "Estrategia, guiones y hasta 8 videos verticales al mes.",
         "includes": [
-          "Diagnóstico (1er mes)",
           "Estrategia mensual",
-          "Calendario",
-          "Guiones",
           "Hasta 8 videos",
-          "Edición premium",
-          "Publicación opcional",
-          "Seguimiento 30 min"
+          "Edición premium"
         ],
-        "tagline": "Desde $1.200.000/mes."
+        "tagline": "Operación del mes."
       }
     ]
   },

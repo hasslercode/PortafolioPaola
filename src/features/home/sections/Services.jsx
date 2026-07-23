@@ -23,32 +23,9 @@ const ICONS = {
     'M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zm0 14H4V8h16v10z',
   crown:
     'M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z',
-  brand:
-    'M12 2l2.4 7.2H22l-6 4.8 2.3 7L12 16.8 5.7 21 8 14 2 9.2h7.6L12 2z',
-  persona:
-    'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z',
-  pillars:
-    'M4 10h3v10H4V10zm6.5-6h3v16h-3V4zM17 14h3v6h-3v-6z',
-  calendar:
-    'M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z',
-  goals:
-    'M19 3H5c-1.1 0-2 .9-2 2v14l4-4h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z',
-  tone:
-    'M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z',
-  check:
-    'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
 };
 
 const VARIANT_ICON = ['people', 'target', 'clapper', 'crown'];
-
-const STRATEGY_ITEM_ICONS = [
-  'brand',
-  'persona',
-  'pillars',
-  'calendar',
-  'goals',
-  'tone',
-];
 
 function ServiceTitle({ card }) {
   if (card.titleBefore) {
@@ -79,9 +56,7 @@ function Icon({ name, className = '' }) {
 function OfferCardBody({ card, index, variant, featuredLabel, ctaLabel, showCta }) {
   const num = String(index + 1).padStart(2, '0');
   const iconName = VARIANT_ICON[index] || 'target';
-  const includes = Array.isArray(card.includes) ? card.includes : [];
-  const isStrategy = variant === 'strategy';
-  const listItems = includes;
+  const highlights = (Array.isArray(card.includes) ? card.includes : []).slice(0, 3);
   const anchor = HOME_SERVICE_ANCHORS[index] || 'inversion';
 
   return (
@@ -96,45 +71,26 @@ function OfferCardBody({ card, index, variant, featuredLabel, ctaLabel, showCta 
         </span>
       ) : null}
 
-      <div className="svc-card__icon-wrap" aria-hidden="true">
-        <Icon name={iconName} />
+      <div className="svc-card__meta">
+        <div className="svc-card__icon-wrap" aria-hidden="true">
+          <Icon name={iconName} />
+        </div>
+        {card.eyebrow ? <p className="svc-card__eyebrow">{card.eyebrow}</p> : null}
       </div>
 
       <ServiceTitle card={card} />
 
-      {isStrategy ? (
-        <ul className="svc-card__grid">
-          {listItems.map((item, i) => (
-            <li key={item}>
-              <span className="svc-card__mini-icon" aria-hidden="true">
-                <Icon name={STRATEGY_ITEM_ICONS[i % STRATEGY_ITEM_ICONS.length]} />
-              </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      ) : variant === 'premium' ? (
-        <ul className="svc-card__pills">
-          {listItems.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      ) : (
-        <ul className="svc-card__checks">
-          {listItems.map((item) => (
-            <li key={item}>
-              <span className="svc-card__check" aria-hidden="true">
-                <Icon name="check" />
-              </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      )}
+      {card.price ? <p className="svc-card__price">{card.price}</p> : null}
 
-      {card.tagline ? (
-        <p className="svc-card__foot">{card.tagline}</p>
-      ) : null}
+      {card.pitch ? <p className="svc-card__pitch">{card.pitch}</p> : null}
+
+      <ul className="svc-card__chips">
+        {highlights.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+
+      {card.tagline ? <p className="svc-card__foot">{card.tagline}</p> : null}
 
       {showCta ? (
         <Link

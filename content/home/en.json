@@ -406,67 +406,56 @@
     "cardCta": "More information",
     "cards": [
       {
-        "eyebrow": "01 · Advisory",
+        "eyebrow": "01 · Entry",
         "titleLine1": "Strategic",
         "titleScript": "consulting",
-        "pitch": "Entry live session: we review channels, errors and opportunities with recommendations on the spot.",
+        "price": "From $60,000",
+        "pitch": "Live session: channels, errors and recommendations on the spot.",
         "includes": [
-          "45–60 min meeting",
+          "45–60 minutes",
           "Channel review",
-          "Errors and opportunities",
-          "Live recommendations",
-          "Q&A space"
+          "Live recommendations"
         ],
-        "tagline": "Live advisory. No deliverables included."
+        "tagline": "No deliverables."
       },
       {
-        "eyebrow": "02 · Strategy",
+        "eyebrow": "02 · Direction",
         "titleBefore": "Content",
         "titleScript": "strategy",
-        "pitch": "Audit, competitors, buyer persona, pillars, tone, ideas and calendar — with PDF and walkthrough meeting.",
+        "price": "From $180,000",
+        "pitch": "Audit, pillars and calendar to produce with intention.",
         "includes": [
           "Brand audit",
-          "Competitors",
-          "Buyer persona",
-          "Content pillars",
-          "Calendar",
-          "Ideas",
-          "Goals",
-          "Tone of voice",
-          "Recommendations"
+          "Pillars + calendar",
+          "PDF + meeting"
         ],
-        "tagline": "Deliverable: PDF + meeting."
+        "tagline": "Strategy document."
       },
       {
-        "eyebrow": "03 · Production",
+        "eyebrow": "03 · Execution",
         "titleBefore": "Content",
         "titleScript": "production",
-        "pitch": "Idea, script, filming, editing, captions and export — 1 ready video.",
+        "price": "From $180,000",
+        "pitch": "From idea to export: 1 publish-ready video.",
         "includes": [
-          "1 video up to 60s",
+          "1 video · up to 60s",
           "One location",
-          "One revision round",
-          "Idea · Script · Filming",
-          "Edit · Captions · Music"
+          "One revision round"
         ],
-        "tagline": "From $180,000 · Base package."
+        "tagline": "Base package."
       },
       {
         "eyebrow": "04 · Premium",
         "titleLine1": "Strategic content",
         "titleScript": "management",
-        "pitch": "Monthly strategy, calendar, scripts, up to 8 vertical videos and premium editing.",
+        "price": "From $1,200,000/mo",
+        "pitch": "Strategy, scripts and up to 8 vertical videos a month.",
         "includes": [
-          "Diagnosis (month 1)",
           "Monthly strategy",
-          "Calendar",
-          "Scripts",
           "Up to 8 videos",
-          "Premium editing",
-          "Optional publishing",
-          "30-min follow-up"
+          "Premium editing"
         ],
-        "tagline": "From $1,200,000/mo."
+        "tagline": "Month operated."
       }
     ]
   },
