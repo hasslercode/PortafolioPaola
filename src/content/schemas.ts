@@ -54,6 +54,8 @@ export const caseStudyFrontmatterSchema = z.object({
     )
     .default([]),
   draft: z.boolean().default(false),
+  videoUrl: z.string().url().optional(),
+  videoTitle: z.string().optional(),
   seo: seoFrontmatterSchema,
   faq: z
     .array(

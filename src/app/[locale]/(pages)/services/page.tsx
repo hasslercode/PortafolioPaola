@@ -9,6 +9,11 @@ import { hubGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
 import { PricingHubView } from '@/features/home/hubs/ContentHubViews';
 import { serviceSlugLocales } from '@/content/registry';
+import { getAllServices } from '@/content/loaders';
+import {
+  absoluteUrl,
+  buildLocalizedPath,
+} from '@/lib/seo/paths';
 import {
   CONSULT_SERVICE_SLUG,
   PACKAGE_TO_SERVICE_SLUG,
@@ -105,6 +110,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
   ];
 
   const typedLocale = (locale === 'en' ? 'en' : 'es') as SiteLocale;
+  const services = await getAllServices(locale);
 
   const packages = [
     {
@@ -222,6 +228,16 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       },
     ],
     faqs,
+    itemListName: t('titleMerged'),
+    itemList: services.map((service) => ({
+      name: service.title,
+      url: absoluteUrl(
+        buildLocalizedPath(typedLocale, {
+          type: 'service',
+          slug: service.canonicalSlug,
+        }),
+      ),
+    })),
   });
 
   return (

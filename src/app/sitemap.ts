@@ -58,9 +58,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }> = [
     { hub: { type: 'hub', hub: 'home' }, priority: 1, freq: 'weekly' },
     { hub: { type: 'hub', hub: 'caseStudies' }, priority: 0.95, freq: 'monthly' },
+    { hub: { type: 'hub', hub: 'results' }, priority: 0.9, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'services' }, priority: 0.95, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'pricing' }, priority: 0.9, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'blog' }, priority: 0.85, freq: 'weekly' },
+    { hub: { type: 'hub', hub: 'cities' }, priority: 0.8, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'about' }, priority: 0.8, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'contact' }, priority: 0.8, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'process' }, priority: 0.75, freq: 'monthly' },

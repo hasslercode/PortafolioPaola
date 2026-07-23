@@ -65,8 +65,16 @@ export const routing = defineRouting({
       es: '/preguntas-frecuentes',
       en: '/faq',
     },
+    '/results': {
+      es: '/resultados',
+      en: '/results',
+    },
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
+    '/cities': {
+      es: '/ciudades',
+      en: '/cities',
+    },
   },
 });
 

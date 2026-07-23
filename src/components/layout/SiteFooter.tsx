@@ -13,6 +13,7 @@ export function SiteFooter({ locale }: { locale: AppLocale }) {
         </p>
         <div className="site-chrome-footer__links">
           <Link href="/experiences">{locale === 'es' ? 'Experiencias' : 'Experiences'}</Link>
+          <Link href="/results">{locale === 'es' ? 'Resultados' : 'Results'}</Link>
           <Link href="/services">{locale === 'es' ? 'Servicios' : 'Services'}</Link>
           <Link href="/about">{locale === 'es' ? 'Sobre mí' : 'About'}</Link>
           <Link href="/contact">{locale === 'es' ? 'Contacto' : 'Contact'}</Link>

@@ -56,10 +56,8 @@ export function personNode(locale: string = 'es'): JsonLdNode {
     worksFor: { '@id': organizationId(locale) },
     sameAs: Object.values(siteConfig.social),
     knowsAbout: [...KNOW_ABOUT_ENTITIES],
-    alumniOf: {
-      '@type': 'EducationalOrganization',
-      name: 'Maestría en Comunicación Digital',
-    },
+    // TODO(HU-EEAT-001): add alumniOf when a real university name is confirmed in
+    // content (home/about only mentions "maestría en comunicación digital", not the institution).
   };
 }
 
@@ -157,6 +155,47 @@ export function professionalServiceNode(
       'Strategic Advisory',
     ],
     sameAs: Object.values(siteConfig.social),
+  };
+}
+
+export function itemListNode(input: {
+  pageUrl: string;
+  name: string;
+  items: Array<{ name: string; url: string }>;
+}): JsonLdNode | null {
+  if (!input.items.length) return null;
+
+  return {
+    '@type': 'ItemList',
+    '@id': `${input.pageUrl}#itemlist`,
+    name: input.name,
+    numberOfItems: input.items.length,
+    itemListElement: input.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  };
+}
+
+export function videoObjectNode(input: {
+  pageUrl: string;
+  name: string;
+  description?: string;
+  contentUrl: string;
+  thumbnailUrl?: string;
+}): JsonLdNode | null {
+  if (!input.contentUrl.trim()) return null;
+
+  return {
+    '@type': 'VideoObject',
+    '@id': `${input.pageUrl}#video`,
+    name: input.name,
+    description: input.description,
+    contentUrl: input.contentUrl,
+    embedUrl: input.contentUrl,
+    thumbnailUrl: input.thumbnailUrl ?? OG_IMAGE,
   };
 }
 

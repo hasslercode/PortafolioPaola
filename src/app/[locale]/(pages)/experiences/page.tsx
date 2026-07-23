@@ -8,6 +8,8 @@ import { buildBreadcrumbs } from '@/lib/seo/paths';
 import { hubGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
 import { CaseStudiesHubView } from '@/features/home/hubs/CaseStudiesHubView';
+import { getAllCaseStudies } from '@/content/loaders';
+import { absoluteUrl, buildLocalizedPath } from '@/lib/seo/paths';
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -35,15 +37,27 @@ export default async function CaseStudiesIndexPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'CaseStudies' });
-  const crumbs = buildBreadcrumbs(locale as SiteLocale, [
+  const typedLocale = locale as SiteLocale;
+  const cases = await getAllCaseStudies(locale);
+  const crumbs = buildBreadcrumbs(typedLocale, [
     { name: t('badgeMerged'), route: { type: 'hub', hub: 'caseStudies' } },
   ]);
   const graph = hubGraph({
-    locale: locale as SiteLocale,
+    locale: typedLocale,
     route: { type: 'hub', hub: 'caseStudies' },
     name: t('titleMerged'),
     description: t('metaDescriptionMerged'),
     breadcrumbs: crumbs,
+    itemListName: t('titleMerged'),
+    itemList: cases.map((study) => ({
+      name: study.brand,
+      url: absoluteUrl(
+        buildLocalizedPath(typedLocale, {
+          type: 'caseStudy',
+          slug: study.canonicalSlug,
+        }),
+      ),
+    })),
   });
 
   return (

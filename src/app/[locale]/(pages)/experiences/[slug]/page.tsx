@@ -84,6 +84,8 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     breadcrumbs: crumbs,
     metrics: study.metrics,
     faqs: study.faq,
+    videoUrl: study.videoUrl,
+    videoTitle: study.videoTitle,
   });
 
   const visuals = CASE_VISUALS[canonical] ?? DEFAULT_VISUALS;
