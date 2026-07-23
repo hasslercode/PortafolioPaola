@@ -22,6 +22,11 @@ const hubs = {
   portfolio: { es: '/experiencias', en: '/experiences' },
   about: { es: '/sobre-mi', en: '/about' },
   contact: { es: '/contacto', en: '/contact' },
+  process: { es: '/proceso-de-trabajo', en: '/process' },
+  privacy: { es: '/privacidad', en: '/privacy' },
+  terms: { es: '/terminos', en: '/terms' },
+  legal: { es: '/aviso-legal', en: '/legal-notice' },
+  faq: { es: '/preguntas-frecuentes', en: '/faq' },
   blog: { es: '/blog', en: '/blog' },
 } as const;
 

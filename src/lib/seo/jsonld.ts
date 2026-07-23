@@ -176,6 +176,28 @@ export function breadcrumbNode(
   };
 }
 
+export function howToNode(input: {
+  locale: string;
+  url: string;
+  name: string;
+  description: string;
+  steps: Array<{ name: string; text: string }>;
+}): JsonLdNode {
+  return {
+    '@type': 'HowTo',
+    '@id': `${input.url}#howto`,
+    name: input.name,
+    description: input.description,
+    inLanguage: input.locale === 'es' ? 'es-CO' : 'en',
+    step: input.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 export function faqNode(
   pageUrl: string,
   faqs: Array<{ question: string; answer: string }>,

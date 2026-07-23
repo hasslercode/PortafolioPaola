@@ -45,6 +45,26 @@ export const routing = defineRouting({
       es: '/tarifas',
       en: '/pricing',
     },
+    '/process': {
+      es: '/proceso-de-trabajo',
+      en: '/process',
+    },
+    '/privacy': {
+      es: '/privacidad',
+      en: '/privacy',
+    },
+    '/terms': {
+      es: '/terminos',
+      en: '/terms',
+    },
+    '/legal': {
+      es: '/aviso-legal',
+      en: '/legal-notice',
+    },
+    '/faq': {
+      es: '/preguntas-frecuentes',
+      en: '/faq',
+    },
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
   },

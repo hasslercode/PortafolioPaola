@@ -63,6 +63,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { hub: { type: 'hub', hub: 'blog' }, priority: 0.85, freq: 'weekly' },
     { hub: { type: 'hub', hub: 'about' }, priority: 0.8, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'contact' }, priority: 0.8, freq: 'monthly' },
+    { hub: { type: 'hub', hub: 'process' }, priority: 0.75, freq: 'monthly' },
+    { hub: { type: 'hub', hub: 'faq' }, priority: 0.75, freq: 'monthly' },
+    { hub: { type: 'hub', hub: 'privacy' }, priority: 0.35, freq: 'yearly' },
+    { hub: { type: 'hub', hub: 'terms' }, priority: 0.35, freq: 'yearly' },
+    { hub: { type: 'hub', hub: 'legal' }, priority: 0.35, freq: 'yearly' },
   ];
 
   for (const locale of siteConfig.locales) {

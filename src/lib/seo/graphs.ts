@@ -11,6 +11,7 @@ import {
   caseStudyNode,
   coreGraph,
   faqNode,
+  howToNode,
   offerNode,
   reviewNode,
   serviceNode,
@@ -50,6 +51,7 @@ export function hubGraph(input: {
   description: string;
   breadcrumbs: BreadcrumbItem[];
   faqs?: Array<{ question: string; answer: string }>;
+  howToSteps?: Array<{ name: string; text: string }>;
   offers?: Array<{
     name: string;
     description?: string;
@@ -72,6 +74,18 @@ export function hubGraph(input: {
 
   const faq = faqNode(url, input.faqs ?? []);
   if (faq) nodes.push(faq);
+
+  if (input.howToSteps?.length) {
+    nodes.push(
+      howToNode({
+        locale: input.locale,
+        url,
+        name: input.name,
+        description: input.description,
+        steps: input.howToSteps,
+      }),
+    );
+  }
 
   for (const offer of input.offers ?? []) {
     nodes.push(
