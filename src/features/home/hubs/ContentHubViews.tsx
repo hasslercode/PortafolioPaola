@@ -67,6 +67,12 @@ export function BlogHubView({
   const { locale } = useI18n();
   const [topic, setTopic] = useState<BlogTopic | 'all'>('all');
   const isEn = locale === 'en';
+  const lang = locale === 'en' ? 'en' : 'es';
+
+  const availableTopics = useMemo(() => {
+    const present = new Set(posts.map((post) => post.topic));
+    return ALL_TOPICS.filter((key) => present.has(key));
+  }, [posts]);
 
   const filtered = useMemo(() => {
     if (topic === 'all') return posts;
@@ -74,98 +80,82 @@ export function BlogHubView({
   }, [posts, topic]);
 
   return (
-    <section className="services-wow" id="blog">
-      <div className="container">
-        <div className="services-wow__header">
-          <span className="badge-pill-wow">{eyebrow}</span>
-          <div className="section-header-wow">
-            <span
-              className="services-scrap services-scrap--heart scrap-heart-shape"
-              aria-hidden="true"
-            />
-            <div className="fluid-orbit-container">
-              <div className="fluid-ellipse ellipse-1" />
-              <div className="fluid-ellipse ellipse-2" />
-              <h1 className="wow-main-title">{title}</h1>
-            </div>
-            <p className="wow-subtitle">{summary}</p>
-            <p className="wow-subtitle">
-              <a href={rssHref} rel="alternate" type="application/rss+xml">
-                RSS
-              </a>
-            </p>
-          </div>
-        </div>
+    <section className="blog-hub" id="blog">
+      <div className="container blog-hub__container">
+        <header className="blog-hub__header">
+          <span className="blog-hub__eyebrow">{eyebrow}</span>
+          <h1 className="blog-hub__title">{title}</h1>
+          <p className="blog-hub__summary">{summary}</p>
+          <a
+            href={rssHref}
+            className="blog-hub__rss"
+            rel="alternate"
+            type="application/rss+xml"
+          >
+            RSS
+          </a>
+        </header>
 
         <nav
+          className="blog-hub__filters"
           aria-label={isEn ? 'Blog topics' : 'Temas del blog'}
-          style={{ marginBottom: '1.75rem' }}
         >
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '0.65rem',
-              listStyle: 'none',
-              padding: 0,
-              margin: 0,
-            }}
-          >
+          <ul className="blog-hub__filter-list">
             <li>
               <button
                 type="button"
-                className={topic === 'all' ? 'btn-pill-premium' : 'btn-pill'}
+                className={`blog-hub__chip${topic === 'all' ? ' is-active' : ''}`}
+                aria-pressed={topic === 'all'}
                 onClick={() => setTopic('all')}
               >
                 {isEn ? 'All' : 'Todos'}
               </button>
             </li>
-            {ALL_TOPICS.map((key) => (
+            {availableTopics.map((key) => (
               <li key={key}>
                 <button
                   type="button"
-                  className={topic === key ? 'btn-pill-premium' : 'btn-pill'}
+                  className={`blog-hub__chip${topic === key ? ' is-active' : ''}`}
+                  aria-pressed={topic === key}
                   onClick={() => setTopic(key)}
                 >
-                  {TOPIC_LABELS[key][locale]}
+                  {TOPIC_LABELS[key][lang]}
                 </button>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className="services-grid-wow">
-          {filtered.map((post, index) => (
-            <article
-              key={post.slug}
-              className={`service-card-wow service-card-wow--${(index % 5) + 1}`}
-            >
-              <Link
-                href={{ pathname: '/blog/[slug]', params: { slug: post.slug } }}
-                className="service-card-wow__link"
-              >
-                <span className="badge-pill-wow" style={{ marginBottom: '0.5rem' }}>
-                  {TOPIC_LABELS[post.topic][locale]}
-                </span>
-                <h2 className="service-title-script" style={{ fontSize: '1.35rem' }}>
-                  {post.title}
-                </h2>
-                <p>{post.description}</p>
-                <span className="campaign-card__case-link">
-                  {isEn ? 'Read article' : 'Leer artículo'}
-                </span>
-              </Link>
-            </article>
-          ))}
-        </div>
-
         {filtered.length === 0 ? (
-          <p className="wow-subtitle" style={{ textAlign: 'center' }}>
+          <p className="blog-hub__empty" role="status">
             {isEn
               ? 'No articles in this topic yet.'
               : 'Aún no hay artículos en este tema.'}
           </p>
-        ) : null}
+        ) : (
+          <div className="blog-hub__grid">
+            {filtered.map((post) => (
+              <article key={post.slug} className="blog-card">
+                <Link
+                  href={{
+                    pathname: '/blog/[slug]',
+                    params: { slug: post.slug },
+                  }}
+                  className="blog-card__link"
+                >
+                  <span className="blog-card__topic">
+                    {TOPIC_LABELS[post.topic][lang]}
+                  </span>
+                  <h2 className="blog-card__title">{post.title}</h2>
+                  <p className="blog-card__excerpt">{post.description}</p>
+                  <span className="blog-card__cta">
+                    {isEn ? 'Read article' : 'Leer artículo'}
+                  </span>
+                </Link>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
@@ -182,7 +172,12 @@ export type InvestmentPackage = {
   featured?: boolean;
   tag?: string;
   delivery?: string;
+  /** Sale / public “desde” label */
   priceFrom?: string;
+  /** Strikethrough list price before launch discount */
+  priceWas?: string;
+  /** Wow sale flag (e.g. launch discount) */
+  saleFlag?: string;
   priceValue?: string;
   /** Public service slug for locale-aware detail link */
   detailSlug?: string;
@@ -241,6 +236,9 @@ export function PricingHubView({
   titleAccent,
   titleTrail,
   summary,
+  launchFlag,
+  launchTitle,
+  launchBody,
   processEyebrow,
   processTitle,
   processSteps,
@@ -258,6 +256,10 @@ export function PricingHubView({
   helpCta,
   ctaLabel,
   packages,
+  ugcPackage,
+  ugcEyebrow,
+  ugcTitle,
+  ugcSummary,
   faqs,
 }: {
   badge: string;
@@ -265,6 +267,9 @@ export function PricingHubView({
   titleAccent: string;
   titleTrail: string;
   summary: string;
+  launchFlag: string;
+  launchTitle: string;
+  launchBody: string;
   processEyebrow: string;
   processTitle: string;
   processSteps: ProcessStep[];
@@ -282,11 +287,127 @@ export function PricingHubView({
   helpCta: string;
   ctaLabel: string;
   packages: InvestmentPackage[];
+  ugcPackage?: InvestmentPackage;
+  ugcEyebrow: string;
+  ugcTitle: string;
+  ugcSummary: string;
   faqs: Array<{ question: string; answer: string }>;
 }) {
   const { locale } = useI18n();
   const { openContact } = useContentActions();
   const isEn = locale === 'en';
+
+  const renderPlan = (pkg: InvestmentPackage) => {
+    const featured = Boolean(pkg.featured || pkg.id === 'gestion-mensual');
+    const icon = PLAN_ICONS[pkg.id] || PLAN_ICONS.estrategia;
+    const onSale = Boolean(pkg.saleFlag && pkg.priceFrom);
+
+    return (
+      <article
+        key={pkg.id}
+        className={[
+          'offer-plan',
+          featured ? 'offer-plan--featured' : '',
+          onSale ? 'offer-plan--sale' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
+        id={pkg.id}
+      >
+        {pkg.saleFlag ? (
+          <span className="offer-plan__sale-flag badge-pill-wow">{pkg.saleFlag}</span>
+        ) : null}
+
+        <div className="offer-plan__top">
+          <span className="offer-plan__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d={icon} />
+            </svg>
+          </span>
+          <span className="offer-plan__ghost" aria-hidden="true">
+            {pkg.index}
+          </span>
+        </div>
+
+        <h3 className="offer-plan__name">{pkg.name}</h3>
+        {pkg.tag ? (
+          <span className="offer-plan__tag">{pkg.tag}</span>
+        ) : featured ? (
+          <span className="offer-plan__tag">{featuredLabel}</span>
+        ) : null}
+        <p className="offer-plan__pitch">{pkg.pitch}</p>
+        {pkg.priceFrom ? (
+          <p className="offer-plan__price">
+            {pkg.priceWas ? (
+              <span className="offer-plan__price-was">{pkg.priceWas}</span>
+            ) : null}{' '}
+            <strong>{pkg.priceFrom}</strong>
+            <span className="offer-plan__price-note">
+              {isEn
+                ? ' · Final quote by scope'
+                : ' · Cotización final según alcance'}
+            </span>
+          </p>
+        ) : null}
+
+        <p className="offer-plan__includes-label">{includesLabel}</p>
+        {featured ? (
+          <ul className="offer-plan__tags">
+            {pkg.includes.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <ul className="offer-plan__includes">
+            {pkg.includes.map((item, i) => (
+              <li key={item}>
+                <span className="offer-plan__inc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d={INCLUDE_ROW_ICONS[i % INCLUDE_ROW_ICONS.length]} />
+                  </svg>
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {pkg.delivery ? (
+          <p className="offer-plan__delivery">
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+              </svg>
+            </span>
+            <span>
+              {deliveryLabel}: {pkg.delivery}
+            </span>
+          </p>
+        ) : null}
+
+        <button
+          type="button"
+          className={`offer-plan__cta${featured ? ' offer-plan__cta--solid' : ''}`}
+          onClick={() => openContact(`investment_${pkg.id}`)}
+        >
+          <span>{pkg.ctaLabel || ctaLabel}</span>
+          <span aria-hidden="true">→</span>
+        </button>
+        {pkg.detailSlug ? (
+          <Link
+            href={{
+              pathname: '/services/[slug]',
+              params: { slug: pkg.detailSlug },
+            }}
+            className="offer-plan__detail-link"
+          >
+            {pkg.detailLabel ||
+              (isEn ? 'See full service details' : 'Ver detalle del servicio')}
+          </Link>
+        ) : null}
+      </article>
+    );
+  };
 
   return (
     <>
@@ -294,7 +415,7 @@ export function PricingHubView({
         <div className="container">
           <header className="offer-suite__intro">
             <span className="offer-suite__badge">
-              <span aria-hidden="true">✨</span> {badge}
+              <span aria-hidden="true">✦</span> {badge}
             </span>
             <h1 className="offer-suite__title">
               {titleLead}{' '}
@@ -302,6 +423,14 @@ export function PricingHubView({
               {titleTrail ? <> {titleTrail}</> : null}
             </h1>
             <p className="offer-suite__summary">{summary}</p>
+
+            <aside className="offer-launch" aria-label={launchFlag}>
+              <span className="offer-launch__flag badge-pill-wow">{launchFlag}</span>
+              <div className="offer-launch__copy">
+                <p className="offer-launch__title">{launchTitle}</p>
+                <p className="offer-launch__body">{launchBody}</p>
+              </div>
+            </aside>
           </header>
 
           <div className="offer-board">
@@ -334,7 +463,9 @@ export function PricingHubView({
               >
                 <span className="offer-process__consult-top">
                   <span className="offer-process__consult-tag">{consultTag}</span>
-                  <span className="offer-process__consult-arrow" aria-hidden="true">→</span>
+                  <span className="offer-process__consult-arrow" aria-hidden="true">
+                    →
+                  </span>
                 </span>
                 <span className="offer-process__consult-title">{consultCta}</span>
                 <span className="offer-process__consult-note">{consultNote}</span>
@@ -353,106 +484,97 @@ export function PricingHubView({
               ) : null}
             </aside>
 
-            <div className="offer-plans">
-              {packages.map((pkg) => {
-                const featured = Boolean(pkg.featured || pkg.id === 'gestion-mensual');
-                const icon = PLAN_ICONS[pkg.id] || PLAN_ICONS.estrategia;
+            <div className="offer-plans">{packages.map((pkg) => renderPlan(pkg))}</div>
+          </div>
 
-                return (
-                  <article
-                    key={pkg.id}
-                    className={`offer-plan${featured ? ' offer-plan--featured' : ''}`}
-                    id={pkg.id}
-                  >
-                    <div className="offer-plan__top">
-                      <span className="offer-plan__icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                          <path d={icon} />
-                        </svg>
-                      </span>
-                      <span className="offer-plan__ghost" aria-hidden="true">
-                        {pkg.index}
+          {ugcPackage ? (
+            <section className="ugc-spotlight" id="ugc" aria-labelledby="offer-ugc-title">
+              <article className="ugc-spotlight__card">
+                <div className="ugc-spotlight__glow" aria-hidden="true" />
+                <div className="ugc-spotlight__shine" aria-hidden="true" />
+
+                <div className="ugc-spotlight__main">
+                  <div className="ugc-spotlight__meta">
+                    <span className="ugc-spotlight__eyebrow">{ugcEyebrow}</span>
+                    {ugcPackage.saleFlag ? (
+                      <span className="ugc-spotlight__flag">{ugcPackage.saleFlag}</span>
+                    ) : null}
+                  </div>
+
+                  <h2 id="offer-ugc-title" className="ugc-spotlight__title">
+                    {ugcTitle}
+                  </h2>
+                  <p className="ugc-spotlight__pitch">{ugcPackage.pitch}</p>
+                  <p className="ugc-spotlight__summary">{ugcSummary}</p>
+
+                  {ugcPackage.priceFrom ? (
+                    <div className="ugc-spotlight__price">
+                      {ugcPackage.priceWas ? (
+                        <span className="ugc-spotlight__price-was">
+                          {ugcPackage.priceWas}
+                        </span>
+                      ) : null}
+                      <strong className="ugc-spotlight__price-now">
+                        {ugcPackage.priceFrom}
+                      </strong>
+                      <span className="ugc-spotlight__price-note">
+                        {isEn
+                          ? 'Final quote by scope'
+                          : 'Cotización final según alcance'}
                       </span>
                     </div>
+                  ) : null}
 
-                    <h3 className="offer-plan__name">{pkg.name}</h3>
-                    {pkg.tag ? (
-                      <span className="offer-plan__tag">{pkg.tag}</span>
-                    ) : featured ? (
-                      <span className="offer-plan__tag">{featuredLabel}</span>
-                    ) : null}
-                    <p className="offer-plan__pitch">{pkg.pitch}</p>
-                    {pkg.priceFrom ? (
-                      <p className="offer-plan__price">
-                        <strong>{pkg.priceFrom}</strong>
-                        <span className="offer-plan__price-note">
-                          {isEn
-                            ? ' · Final quote by scope'
-                            : ' · Cotización final según alcance'}
-                        </span>
-                      </p>
-                    ) : null}
-
-                    <p className="offer-plan__includes-label">{includesLabel}</p>
-                    {featured ? (
-                      <ul className="offer-plan__tags">
-                        {pkg.includes.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <ul className="offer-plan__includes">
-                        {pkg.includes.map((item, i) => (
-                          <li key={item}>
-                            <span className="offer-plan__inc-icon" aria-hidden="true">
-                              <svg viewBox="0 0 24 24">
-                                <path d={INCLUDE_ROW_ICONS[i % INCLUDE_ROW_ICONS.length]} />
-                              </svg>
-                            </span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {pkg.delivery ? (
-                      <p className="offer-plan__delivery">
-                        <span aria-hidden="true">
-                          <svg viewBox="0 0 24 24">
-                            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
-                          </svg>
-                        </span>
-                        <span>
-                          {deliveryLabel}: {pkg.delivery}
-                        </span>
-                      </p>
-                    ) : null}
-
+                  <div className="ugc-spotlight__actions">
                     <button
                       type="button"
-                      className={`offer-plan__cta${featured ? ' offer-plan__cta--solid' : ''}`}
-                      onClick={() => openContact(`investment_${pkg.id}`)}
+                      className="ugc-spotlight__cta"
+                      onClick={() => openContact(`investment_${ugcPackage.id}`)}
                     >
-                      <span>{pkg.ctaLabel || ctaLabel}</span>
+                      <span>{ugcPackage.ctaLabel || ctaLabel}</span>
                       <span aria-hidden="true">→</span>
                     </button>
-                    {pkg.detailSlug ? (
+                    {ugcPackage.detailSlug ? (
                       <Link
                         href={{
                           pathname: '/services/[slug]',
-                          params: { slug: pkg.detailSlug },
+                          params: { slug: ugcPackage.detailSlug },
                         }}
-                        className="offer-plan__detail-link"
+                        className="ugc-spotlight__link"
                       >
-                        {pkg.detailLabel ||
-                          (isEn ? 'See full service details' : 'Ver detalle del servicio')}
+                        {ugcPackage.detailLabel ||
+                          (isEn
+                            ? 'See full service details'
+                            : 'Ver detalle del servicio')}
                       </Link>
                     ) : null}
-                  </article>
-                );
-              })}
-            </div>
-          </div>
+                  </div>
+                </div>
+
+                <div className="ugc-spotlight__side">
+                  <p className="ugc-spotlight__includes-label">{includesLabel}</p>
+                  <ul className="ugc-spotlight__includes">
+                    {ugcPackage.includes.map((item, i) => (
+                      <li key={item}>
+                        <span className="ugc-spotlight__check" aria-hidden="true">
+                          <svg viewBox="0 0 24 24">
+                            <path d={INCLUDE_ROW_ICONS[i % INCLUDE_ROW_ICONS.length]} />
+                          </svg>
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {ugcPackage.delivery ? (
+                    <p className="ugc-spotlight__delivery">
+                      <strong>{deliveryLabel}</strong>
+                      <span>{ugcPackage.delivery}</span>
+                    </p>
+                  ) : null}
+                </div>
+              </article>
+            </section>
+          ) : null}
 
           <ul className="offer-values">
             {values.map((value, i) => (

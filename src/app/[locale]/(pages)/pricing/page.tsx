@@ -14,7 +14,7 @@ import {
   CONSULT_SERVICE_SLUG,
   PACKAGE_TO_SERVICE_SLUG,
 } from '@/config/seo-strategy';
-import { PRICE_FROM_COP, formatCopFrom } from '@/lib/contact';
+import { PRICE_FROM_COP, PRICE_LIST_COP, formatCopFrom } from '@/lib/contact';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -48,6 +48,7 @@ export async function generateMetadata({
 type PriceRow = {
   name: string;
   from: string;
+  was?: string;
   ideal: string;
   slug: string;
   lowPrice: number;
@@ -83,6 +84,7 @@ export default async function PricingPage({ params }: PageProps) {
     {
       name: t('pkgStrategyName'),
       from: formatCopFrom(PRICE_FROM_COP.estrategia, typed),
+      was: formatCopFrom(PRICE_LIST_COP.estrategia, typed),
       ideal: isEn
         ? 'Message, pillars and calendar without filming'
         : 'Mensaje, pilares y calendario sin grabación',
@@ -92,6 +94,7 @@ export default async function PricingPage({ params }: PageProps) {
     {
       name: t('pkgProductionName'),
       from: formatCopFrom(PRICE_FROM_COP.produccion, typed),
+      was: formatCopFrom(PRICE_LIST_COP.produccion, typed),
       ideal: isEn
         ? 'Premium editing from your recorded footage'
         : 'Edición premium a partir de tu material',
@@ -101,6 +104,7 @@ export default async function PricingPage({ params }: PageProps) {
     {
       name: t('pkgMonthlyName'),
       from: formatCopFrom(PRICE_FROM_COP.mensual, typed),
+      was: formatCopFrom(PRICE_LIST_COP.mensual, typed),
       ideal: isEn
         ? 'Light strategy + production + publishing'
         : 'Estrategia ligera + producción + publicación',
@@ -110,6 +114,7 @@ export default async function PricingPage({ params }: PageProps) {
     {
       name: isEn ? 'UGC for brands' : 'UGC para marcas',
       from: formatCopFrom(PRICE_FROM_COP.ugc, typed),
+      was: formatCopFrom(PRICE_LIST_COP.ugc, typed),
       ideal: isEn
         ? 'Creator-style videos for ads and organic'
         : 'Videos estilo creador para ads y orgánico',
@@ -200,7 +205,15 @@ export default async function PricingPage({ params }: PageProps) {
                 <tr key={row.slug}>
                   <td>{row.name}</td>
                   <td>
+                    {row.was ? (
+                      <span className="pricing-page__was">{row.was}</span>
+                    ) : null}{' '}
                     <strong>{row.from}</strong>
+                    {row.was ? (
+                      <span className="pricing-page__sale-pill">
+                        {isEn ? 'Launch' : 'Lanzamiento'}
+                      </span>
+                    ) : null}
                   </td>
                   <td>{row.ideal}</td>
                   <td>

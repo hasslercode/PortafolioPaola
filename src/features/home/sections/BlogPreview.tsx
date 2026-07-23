@@ -24,47 +24,32 @@ export function BlogPreview({ posts }: { posts: HomeBlogTeaser[] }) {
   const read = locale === 'en' ? 'Read article' : 'Leer artículo';
 
   return (
-    <section className="services-wow" id="blog-preview" aria-labelledby="blog-preview-title">
-      <div className="container">
-        <div className="services-wow__header">
-          <span className="badge-pill-wow">Blog</span>
-          <div className="section-header-wow">
-            <span
-              className="services-scrap services-scrap--heart scrap-heart-shape"
-              aria-hidden="true"
-            />
-            <div className="fluid-orbit-container">
-              <div className="fluid-ellipse ellipse-1" />
-              <div className="fluid-ellipse ellipse-2" />
-              <h2 id="blog-preview-title" className="wow-main-title">
-                {title}
-              </h2>
-            </div>
-            <p className="wow-subtitle">{subtitle}</p>
-          </div>
-        </div>
+    <section className="blog-hub blog-hub--preview" id="blog-preview" aria-labelledby="blog-preview-title">
+      <div className="container blog-hub__container">
+        <header className="blog-hub__header">
+          <span className="blog-hub__eyebrow">Blog</span>
+          <h2 id="blog-preview-title" className="blog-hub__title">
+            {title}
+          </h2>
+          <p className="blog-hub__summary">{subtitle}</p>
+        </header>
 
-        <div className="services-grid-wow">
-          {preview.map((post, index) => (
-            <article
-              key={post.slug}
-              className={`service-card-wow service-card-wow--${(index % 5) + 1}`}
-            >
+        <div className="blog-hub__grid">
+          {preview.map((post) => (
+            <article key={post.slug} className="blog-card">
               <Link
                 href={{ pathname: '/blog/[slug]', params: { slug: post.slug } }}
-                className="service-card-wow__link"
+                className="blog-card__link"
               >
-                <h3 className="service-title-script" style={{ fontSize: '1.35rem' }}>
-                  {post.title}
-                </h3>
-                <p>{post.description}</p>
-                <span className="campaign-card__case-link">{read}</span>
+                <h3 className="blog-card__title">{post.title}</h3>
+                <p className="blog-card__excerpt">{post.description}</p>
+                <span className="blog-card__cta">{read}</span>
               </Link>
             </article>
           ))}
         </div>
 
-        <p style={{ textAlign: 'center', marginTop: '2rem' }}>
+        <p className="blog-hub__more">
           <Link href="/blog" className="btn-pill">
             {seeAll}
           </Link>

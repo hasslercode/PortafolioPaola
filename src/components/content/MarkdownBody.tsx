@@ -1,6 +1,6 @@
 /**
  * Lightweight markdown → HTML for MDX body sections (SSG-safe).
- * Supports headings (with ids), paragraphs, lists, bold/italic, links.
+ * Supports headings (with ids), paragraphs, lists, bold/italic, links, GFM tables.
  */
 
 export type TocHeading = {
@@ -22,6 +22,39 @@ function slugify(text: string) {
 
 function stripInline(text: string) {
   return text.replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1').replace(/\[(.+?)\]\((.+?)\)/g, '$1');
+}
+
+function isTableSeparator(line: string) {
+  const trimmed = line.trim();
+  if (!trimmed.includes('-')) return false;
+  // |---|:---|---:| or ---|--- without outer pipes
+  return /^\|?[\s:|-]+\|[\s:|-]*\|?$/.test(trimmed) && /-+/.test(trimmed);
+}
+
+function isTableRow(line: string) {
+  const trimmed = line.trim();
+  if (!trimmed.includes('|')) return false;
+  if (isTableSeparator(trimmed)) return false;
+  const cells = splitTableCells(trimmed);
+  return cells.length >= 2;
+}
+
+function splitTableCells(line: string) {
+  let trimmed = line.trim();
+  if (trimmed.startsWith('|')) trimmed = trimmed.slice(1);
+  if (trimmed.endsWith('|')) trimmed = trimmed.slice(0, -1);
+  return trimmed.split('|').map((cell) => cell.trim());
+}
+
+function renderTable(header: string[], rows: string[][], inline: (text: string) => string) {
+  const thead = `<thead><tr>${header.map((cell) => `<th scope="col">${inline(cell)}</th>`).join('')}</tr></thead>`;
+  const tbody = `<tbody>${rows
+    .map((row) => {
+      const cells = header.map((_, i) => row[i] ?? '');
+      return `<tr>${cells.map((cell) => `<td>${inline(cell)}</td>`).join('')}</tr>`;
+    })
+    .join('')}</tbody>`;
+  return `<div class="prose-seo__table-wrap"><table class="prose-seo__table">${thead}${tbody}</table></div>`;
 }
 
 export function extractToc(markdown: string): TocHeading[] {
@@ -94,10 +127,29 @@ export function markdownToHtml(markdown: string): string {
       .replace(/\*(.+?)\*/g, '<em>$1</em>')
       .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" rel="noopener noreferrer">$1</a>');
 
-  for (const line of lines) {
-    const trimmed = line.trim();
+  for (let i = 0; i < lines.length; i += 1) {
+    const trimmed = lines[i].trim();
     if (!trimmed) {
       closeList();
+      continue;
+    }
+
+    // GFM table: header + separator + body rows
+    if (
+      isTableRow(trimmed) &&
+      i + 1 < lines.length &&
+      isTableSeparator(lines[i + 1].trim())
+    ) {
+      closeList();
+      const header = splitTableCells(trimmed);
+      i += 2; // skip separator
+      const rows: string[][] = [];
+      while (i < lines.length && isTableRow(lines[i].trim())) {
+        rows.push(splitTableCells(lines[i].trim()));
+        i += 1;
+      }
+      i -= 1; // outer loop will advance
+      html.push(renderTable(header, rows, inline));
       continue;
     }
 

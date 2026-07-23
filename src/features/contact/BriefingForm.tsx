@@ -16,9 +16,13 @@ type Locale = 'es' | 'en';
 const COPY = {
   es: {
     title: 'Briefing rápido',
+    lede: 'Cuatro datos. Te abro el correo con el resumen listo para enviar.',
     brand: 'Marca o negocio',
+    brandPh: 'Ej. Boutique en Medellín',
     city: 'Ciudad',
+    cityPh: 'Ej. Bogotá',
     need: '¿Qué necesitas?',
+    needPlaceholder: 'Elige una opción',
     needOptions: [
       'Estrategia de contenido',
       'Edición / producción de video',
@@ -28,12 +32,14 @@ const COPY = {
       'Otro',
     ],
     budget: 'Rango de presupuesto (COP / mes)',
+    budgetPlaceholder: 'Elige un rango',
     budgetOptions: [
       'Aún no lo sé',
-      'Menos de $1.500.000',
-      '$1.500.000 – $3.000.000',
-      '$3.000.000 – $5.000.000',
-      'Más de $5.000.000',
+      'Menos de $2.000.000',
+      '$2.000.000 – $3.500.000',
+      '$3.500.000 – $5.500.000',
+      '$5.500.000 – $9.000.000',
+      'Más de $9.000.000',
     ],
     submit: 'Enviar briefing por correo',
     whatsapp: 'Prefiero WhatsApp',
@@ -43,9 +49,13 @@ const COPY = {
   },
   en: {
     title: 'Quick briefing',
+    lede: 'Four fields. Opens your email with a ready-to-send summary.',
     brand: 'Brand or business',
+    brandPh: 'e.g. Boutique in Medellín',
     city: 'City',
+    cityPh: 'e.g. Bogotá',
     need: 'What do you need?',
+    needPlaceholder: 'Choose an option',
     needOptions: [
       'Content strategy',
       'Video editing / production',
@@ -55,12 +65,14 @@ const COPY = {
       'Other',
     ],
     budget: 'Budget range (COP / month)',
+    budgetPlaceholder: 'Choose a range',
     budgetOptions: [
       'Not sure yet',
-      'Under $1,500,000',
-      '$1,500,000 – $3,000,000',
-      '$3,000,000 – $5,000,000',
-      'Over $5,000,000',
+      'Under $2,000,000',
+      '$2,000,000 – $3,500,000',
+      '$3,500,000 – $5,500,000',
+      '$5,500,000 – $9,000,000',
+      'Over $9,000,000',
     ],
     submit: 'Send briefing by email',
     whatsapp: 'Prefer WhatsApp',
@@ -125,9 +137,11 @@ export function BriefingForm({ locale }: { locale: Locale }) {
 
   return (
     <section className="briefing-form" aria-labelledby="briefing-form-title">
+      <span className="briefing-form__tape" aria-hidden="true" />
       <h2 id="briefing-form-title" className="briefing-form__title">
         {t.title}
       </h2>
+      <p className="briefing-form__lede">{t.lede}</p>
 
       {sent ? (
         <p className="briefing-form__success" role="status">
@@ -142,6 +156,7 @@ export function BriefingForm({ locale }: { locale: Locale }) {
             id="brief-brand"
             name="brand"
             autoComplete="organization"
+            placeholder={t.brandPh}
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
             aria-invalid={Boolean(errors.brand)}
@@ -160,6 +175,7 @@ export function BriefingForm({ locale }: { locale: Locale }) {
             id="brief-city"
             name="city"
             autoComplete="address-level2"
+            placeholder={t.cityPh}
             value={city}
             onChange={(e) => setCity(e.target.value)}
             aria-invalid={Boolean(errors.city)}
@@ -182,7 +198,7 @@ export function BriefingForm({ locale }: { locale: Locale }) {
             aria-invalid={Boolean(errors.need)}
             aria-describedby={errors.need ? 'brief-need-err' : undefined}
           >
-            <option value="">—</option>
+            <option value="">{t.needPlaceholder}</option>
             {t.needOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -206,7 +222,7 @@ export function BriefingForm({ locale }: { locale: Locale }) {
             aria-invalid={Boolean(errors.budget)}
             aria-describedby={errors.budget ? 'brief-budget-err' : undefined}
           >
-            <option value="">—</option>
+            <option value="">{t.budgetPlaceholder}</option>
             {t.budgetOptions.map((option) => (
               <option key={option} value={option}>
                 {option}

@@ -17,23 +17,38 @@ export function defaultWhatsappMessage(locale: 'es' | 'en' = 'es') {
     : 'Hi Paola, I would like a quote for content / video for my brand.';
 }
 
-/** Investment anchors (COP) — transparent “desde”, final quote by scope */
+/** List (regular) vs launch-sale anchors (COP) — HU launch promo */
+export const PRICE_LIST_COP = {
+  sesion: 0,
+  estrategia: 1_800_000,
+  produccion: 1_200_000,
+  mensual: 4_500_000,
+  ugc: 1_500_000,
+} as const;
+
+/** Public “desde” = launch discount prices */
 export const PRICE_FROM_COP = {
   sesion: 0, // consultoría marcada gratis en UI
-  estrategia: 1_200_000,
-  produccion: 800_000,
-  mensual: 2_500_000,
-  ugc: 1_000_000,
+  estrategia: 800_000,
+  produccion: 600_000,
+  mensual: 3_000_000,
+  ugc: 550_000,
 } as const;
+
+export const LAUNCH_SALE_ACTIVE = true;
+
+export function formatCopAmount(value: number, locale: 'es' | 'en' = 'es') {
+  return new Intl.NumberFormat(locale === 'en' ? 'en-US' : 'es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    maximumFractionDigits: 0,
+  }).format(value);
+}
 
 export function formatCopFrom(value: number, locale: 'es' | 'en' = 'es') {
   if (value <= 0) {
     return locale === 'es' ? 'Gratis' : 'Free';
   }
-  const formatted = new Intl.NumberFormat('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    maximumFractionDigits: 0,
-  }).format(value);
+  const formatted = formatCopAmount(value, locale);
   return locale === 'es' ? `Desde ${formatted}` : `From ${formatted}`;
 }
