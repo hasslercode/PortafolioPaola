@@ -51,6 +51,20 @@ export const blogSlugs = [
   'reels-vs-tiktok-vs-shorts-colombia',
   'calendario-de-videos-semanal-pyme',
   'precio-edicion-de-reels-colombia',
+  'que-es-ugc-y-por-que-funciona-en-colombia',
+  'ugc-vs-influencer-marketing',
+  'como-contratar-creador-ugc',
+  'brief-ugc-plantilla',
+  'ugc-para-ecommerce-colombia',
+  'ugc-para-restaurantes',
+  'ugc-para-marcas-de-moda',
+  'derechos-de-uso-contenido-ugc',
+  'metricas-para-campanas-ugc',
+  'ugc-organico-vs-pagado',
+  'ejemplos-ugc-marcas-consumo',
+  'como-escalar-contenido-ugc-mensual',
+  'ugc-para-lanzamiento-de-producto',
+  'tarifas-creador-ugc-colombia',
 ] as const;
 
 export type ServiceSlug = (typeof serviceSlugs)[number];
