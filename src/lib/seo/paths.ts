@@ -28,6 +28,7 @@ const hubs = {
   legal: { es: '/aviso-legal', en: '/legal-notice' },
   faq: { es: '/preguntas-frecuentes', en: '/faq' },
   blog: { es: '/blog', en: '/blog' },
+  cities: { es: '/ciudades', en: '/cities' },
   results: { es: '/resultados', en: '/results' },
 } as const;
 
