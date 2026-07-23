@@ -191,7 +191,7 @@
 
 ---
 
-### HU-CONT-001 — Expandir sesión estratégica ≥1200 palabras
+### HU-CONT-001 — Expandir sesión estratégica ≥1200 palabras · `DONE`
 **Como** emprendedor indeciso  
 **Quiero** entender qué incluye la consultoría, qué no, y resultados esperados  
 **Para** decidir si agendar  
@@ -205,7 +205,7 @@
 
 ---
 
-### HU-CONT-002 — Expandir estrategia de contenido ≥1500 palabras
+### HU-CONT-002 — Expandir estrategia de contenido ≥1500 palabras · `DONE`
 **Como** marca que busca “estrategia de contenido Colombia”  
 **Quiero** una money page profunda con proceso, entregables y prueba  
 **Para** convertir búsqueda → lead  
@@ -218,7 +218,7 @@
 
 ---
 
-### HU-CONT-003 — Expandir producción (iterar semilla) ≥1800 palabras
+### HU-CONT-003 — Expandir producción (iterar semilla) ≥1800 palabras · `DONE`
 **Como** pyme que busca edición de Reels  
 **Quiero** cobertura completa de proceso, brief, exclusiones, UGC vs edición  
 **Para** cotizar con claridad  
@@ -230,7 +230,7 @@
 
 ---
 
-### HU-CONT-004 — Expandir gestión mensual ≥1500 palabras
+### HU-CONT-004 — Expandir gestión mensual ≥1500 palabras · `DONE`
 **Como** marca que quiere delegar operación  
 **Quiero** saber alcance premium vs CM commodity  
 **Para** no comparar solo precio  
@@ -343,7 +343,7 @@
 
 ---
 
-### HU-CRO-001 — Restaurar `/tarifas` como página real
+### HU-CRO-001 — Restaurar `/tarifas` como página real · `DONE`
 **Como** buscador de precios  
 **Quiero** una URL de inversión con rangos COP “desde”  
 **Para** auto-calificar sin fricción  
@@ -361,7 +361,7 @@
 
 ---
 
-### HU-CRO-002 — WhatsApp Business CTA
+### HU-CRO-002 — WhatsApp Business CTA · `DONE`
 **Como** emprendedor colombiano  
 **Quiero** contactar por WhatsApp en 1 tap  
 **Para** pedir cotización sin email  
@@ -379,7 +379,7 @@
 
 ---
 
-### HU-CRO-003 — Formulario briefing 4 campos
+### HU-CRO-003 — Formulario briefing 4 campos · `DONE`
 **Como** lead calificado  
 **Quiero** enviar marca, ciudad, necesidad, presupuesto  
 **Para** recibir respuesta estructurada  
@@ -394,7 +394,7 @@
 
 ---
 
-### HU-CRO-004 — Precios “Desde $X COP” en hub
+### HU-CRO-004 — Precios “Desde $X COP” en hub · `DONE`
 **Como** visitante de servicios  
 **Quiero** ver ancla de precio por plan  
 **Para** no sentir opacidad  
@@ -406,7 +406,7 @@
 
 ---
 
-### HU-CRO-005 — CTA social proof junto a conversión
+### HU-CRO-005 — CTA social proof junto a conversión · `DONE`
 **Como** prospecto en duda  
 **Quiero** ver testimonio/métrica cerca del CTA  
 **Para** reducir fricción  
@@ -416,7 +416,7 @@
 
 ---
 
-### HU-CRO-006 — Calendly opcional cableado
+### HU-CRO-006 — Calendly opcional cableado · `DONE`
 **Como** lead que prefiere agenda  
 **Quiero** link Calendly si está configurado  
 **Para** reservar sesión  
@@ -545,7 +545,7 @@
 
 ---
 
-### HU-IA-010 — Componente RelatedContent
+### HU-IA-010 — Componente RelatedContent · `DONE`
 **Como** lector  
 **Quiero** bloque “Sigue explorando” al final del MDX  
 **Para** recorrer el cluster  
@@ -734,7 +734,7 @@
 
 ---
 
-### HU-TECH-010 — sitemap lastModified real
+### HU-TECH-010 — sitemap lastModified real · `DONE`
 **Como** crawler  
 **Quiero** fechas de contenido real  
 **Para** señales de freshness honestas  
@@ -809,7 +809,7 @@
 
 ---
 
-### HU-EN-001 — noindex EN blog temporal
+### HU-EN-001 — noindex EN blog temporal · `DONE`
 **Como** SEO lead  
 **Quiero** noindex en `/en/blog/*` mientras bodies sean ES  
 **Para** evitar hreflang dilution  
@@ -914,7 +914,7 @@
 
 ---
 
-### HU-OBS-003 — Alertas thin content
+### HU-OBS-003 — Alertas thin content · `DONE`
 **Como** editor  
 **Quiero** fail CI si money page <800 palabras  
 **Para** no republicar thin  
@@ -926,7 +926,7 @@
 
 ---
 
-### HU-OBS-004 — Rich Results / Schema smoke
+### HU-OBS-004 — Rich Results / Schema smoke · `DONE`
 **Como** dev  
 **Quiero** test snapshot JSON-LD core  
 **Para** no regresar Email Marketing en schema  

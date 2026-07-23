@@ -381,6 +381,16 @@ export function PricingHubView({
                       <span className="offer-plan__tag">{featuredLabel}</span>
                     ) : null}
                     <p className="offer-plan__pitch">{pkg.pitch}</p>
+                    {pkg.priceFrom ? (
+                      <p className="offer-plan__price">
+                        <strong>{pkg.priceFrom}</strong>
+                        <span className="offer-plan__price-note">
+                          {isEn
+                            ? ' · Final quote by scope'
+                            : ' · Cotización final según alcance'}
+                        </span>
+                      </p>
+                    ) : null}
 
                     <p className="offer-plan__includes-label">{includesLabel}</p>
                     {featured ? (
@@ -470,6 +480,11 @@ export function PricingHubView({
             <div>
               <p className="plan-help__title">{helpTitle}</p>
               <p className="plan-help__body">{helpBody}</p>
+              <p className="plan-help__proof">
+                {isEn
+                  ? '+1.3M organic views · Coca-Cola, Starbucks, H&M, TOTTO, Cine Colombia'
+                  : '+1.3M vistas orgánicas · Coca-Cola, Starbucks, H&M, TOTTO, Cine Colombia'}
+              </p>
             </div>
           </div>
           <button

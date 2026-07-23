@@ -1143,3 +1143,153 @@
   max-width: 52ch;
   margin-inline: auto;
 }
+
+/* HU-CRO-001 pricing page */
+.pricing-page {
+  padding: 1.5rem 1rem 4rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.pricing-page__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 650;
+  color: var(--pink-primary, #943850);
+  margin: 0 0 0.5rem;
+}
+.pricing-page__title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+}
+.pricing-page__table-wrap {
+  overflow-x: auto;
+  margin: 2rem 0 1.25rem;
+  border: 1px solid rgba(148, 56, 80, 0.15);
+  border-radius: 14px;
+}
+.pricing-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+.pricing-page__table th,
+.pricing-page__table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(148, 56, 80, 0.12);
+  vertical-align: top;
+}
+.pricing-page__table th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(148, 56, 80, 0.05);
+}
+.pricing-page__disclaimer {
+  font-size: 0.92rem;
+  color: var(--text-muted, #554947);
+  margin: 0 0 2rem;
+}
+.pricing-page__disclaimer a {
+  color: var(--pink-primary, #943850);
+  text-underline-offset: 2px;
+}
+
+/* HU-CRO-003 briefing form */
+.contacto-hub__form {
+  padding: 1.5rem 1rem 0.5rem;
+}
+.briefing-form {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 56, 80, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+.briefing-form__title {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+}
+.briefing-form__form {
+  display: grid;
+  gap: 0.9rem;
+}
+.briefing-form__field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.briefing-form__field input,
+.briefing-form__field select {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(85, 73, 71, 0.25);
+  background: #fff;
+  font: inherit;
+}
+.briefing-form__field input[aria-invalid='true'],
+.briefing-form__field select[aria-invalid='true'] {
+  border-color: #b42318;
+}
+.briefing-form__error {
+  margin: 0.35rem 0 0;
+  color: #b42318;
+  font-size: 0.8rem;
+}
+.briefing-form__success {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(18, 130, 84, 0.1);
+  color: #0f6b45;
+}
+.briefing-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+}
+@media (max-width: 640px) {
+  .briefing-form__actions .btn-pill,
+  .briefing-form__actions .btn-pill-premium {
+    width: 100%;
+    text-align: center;
+  }
+}
+[data-theme='dark'] .briefing-form {
+  background: rgba(30, 24, 26, 0.85);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+[data-theme='dark'] .briefing-form__field input,
+[data-theme='dark'] .briefing-form__field select {
+  background: #1a1517;
+  color: #f5ecee;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.related-content {
+  margin: 2.5rem 0 1rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 56, 80, 0.16);
+  background: rgba(148, 56, 80, 0.04);
+}
+.related-content__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+.related-content__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+.related-content__list a {
+  color: var(--pink-primary, #943850);
+  text-underline-offset: 2px;
+}

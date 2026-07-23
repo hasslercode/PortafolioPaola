@@ -74,8 +74,7 @@ const nextConfig: NextConfig = {
       { source: '/es/portafolio', destination: '/es/experiencias', permanent: true },
       { source: '/sobre-mi', destination: '/es/sobre-mi', permanent: true },
       { source: '/contacto', destination: '/es/contacto', permanent: true },
-      { source: '/tarifas', destination: '/es/servicios', permanent: true },
-      { source: '/es/tarifas', destination: '/es/servicios', permanent: true },
+      { source: '/tarifas', destination: '/es/tarifas', permanent: true },
       { source: '/blog', destination: '/es/blog', permanent: true },
       { source: '/blog/:slug', destination: '/es/blog/:slug', permanent: true },
       // Old service slugs → hub / new plans
@@ -113,8 +112,7 @@ const nextConfig: NextConfig = {
       { source: '/en/case-studies/:slug', destination: '/en/experiences/:slug', permanent: true },
       { source: '/about', destination: '/en/about', permanent: true },
       { source: '/contact', destination: '/en/contact', permanent: true },
-      { source: '/pricing', destination: '/en/services', permanent: true },
-      { source: '/en/pricing', destination: '/en/services', permanent: true },
+      { source: '/pricing', destination: '/en/pricing', permanent: true },
     ];
   },
 };

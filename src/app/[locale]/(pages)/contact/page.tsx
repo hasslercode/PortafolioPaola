@@ -53,6 +53,13 @@ export default async function ContactPage({ params }: PageProps) {
       <div className="sr-only">
         <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
         <a href={siteConfig.social.instagram}>Instagram</a>
+        {siteConfig.contact.whatsapp ? (
+          <a
+            href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/\D/g, '')}`}
+          >
+            WhatsApp
+          </a>
+        ) : null}
       </div>
     </>
   );

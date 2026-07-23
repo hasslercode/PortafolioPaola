@@ -1175,6 +1175,14 @@
   color: var(--text-muted);
 }
 
+.plan-help__proof {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--offer-burgundy, #7d1f3d);
+  opacity: 0.9;
+}
+
 .plan-help__cta {
   flex: 0 0 auto;
   display: inline-flex;
@@ -1751,6 +1759,32 @@
   height: 14px;
   fill: currentColor;
   flex: 0 0 auto;
+}
+
+.offer-plan__pitch {
+  margin: 0 0 0.75rem;
+}
+
+.offer-plan__price {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  color: var(--offer-burgundy);
+}
+
+.offer-plan__price-note {
+  display: inline;
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--offer-muted);
+}
+
+.offer-plan--featured .offer-plan__price {
+  color: #fff;
+}
+
+.offer-plan--featured .offer-plan__price-note {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .offer-plan__cta {

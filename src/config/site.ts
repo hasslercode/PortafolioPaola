@@ -28,6 +28,8 @@ export const siteConfig = {
 
   contact: {
     email: 'pahoyoscardona@gmail.com',
+    /** E.164 without + — set NEXT_PUBLIC_WHATSAPP_E164 in prod (e.g. 573001234567) */
+    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_E164 ?? '',
     calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ?? '',
   },
 

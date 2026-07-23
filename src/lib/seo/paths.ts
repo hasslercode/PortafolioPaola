@@ -10,14 +10,14 @@ import {
  * Public path prefixes per locale (no leading locale segment).
  * Canonical hubs only — legacy aliases resolve to the fused pages.
  * Visible menu: Inicio | Experiencias | Servicios | Blog | Sobre mí | Contacto
- * Redirects: /tarifas,/pricing → services · /portafolio,/portfolio → experiences
+ * Pricing hub: /tarifas · /pricing (rangos COP — HU-CRO-001)
+ * Redirects: /portafolio,/portfolio → experiences
  */
 const hubs = {
   home: { es: '', en: '' },
   services: { es: '/servicios', en: '/services' },
   caseStudies: { es: '/experiencias', en: '/experiences' },
-  /** @deprecated Alias — fused into services (never emit as a distinct sitemap URL). */
-  pricing: { es: '/servicios', en: '/services' },
+  pricing: { es: '/tarifas', en: '/pricing' },
   /** @deprecated Alias — fused into experiences (never emit as a distinct sitemap URL). */
   portfolio: { es: '/experiencias', en: '/experiences' },
   about: { es: '/sobre-mi', en: '/about' },

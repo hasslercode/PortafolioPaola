@@ -14,6 +14,7 @@ import {
   PACKAGE_TO_SERVICE_SLUG,
   PRIMARY_KEYWORDS_ES,
 } from '@/config/seo-strategy';
+import { PRICE_FROM_COP, formatCopFrom } from '@/lib/contact';
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -103,6 +104,8 @@ export default async function ServicesIndexPage({ params }: PageProps) {
     { title: tp('value4Title'), detail: tp('value4Detail') },
   ];
 
+  const typedLocale = (locale === 'en' ? 'en' : 'es') as SiteLocale;
+
   const packages = [
     {
       id: 'estrategia',
@@ -120,10 +123,9 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       ],
       delivery: tp('pkgStrategyDelivery'),
       ctaLabel: tp('pkgStrategyCta'),
+      priceFrom: formatCopFrom(PRICE_FROM_COP.estrategia, typedLocale),
       detailSlug:
-        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.estrategia][
-          locale === 'en' ? 'en' : 'es'
-        ],
+        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.estrategia][typedLocale],
     },
     {
       id: 'produccion',
@@ -138,10 +140,9 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       ],
       delivery: tp('pkgProductionDelivery'),
       ctaLabel: tp('pkgProductionCta'),
+      priceFrom: formatCopFrom(PRICE_FROM_COP.produccion, typedLocale),
       detailSlug:
-        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.produccion][
-          locale === 'en' ? 'en' : 'es'
-        ],
+        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.produccion][typedLocale],
     },
     {
       id: 'gestion-mensual',
@@ -160,9 +161,10 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       delivery: tp('pkgMonthlyDelivery'),
       ctaLabel: tp('pkgMonthlyCta'),
       featured: true,
+      priceFrom: formatCopFrom(PRICE_FROM_COP.mensual, typedLocale),
       detailSlug:
         serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG['gestion-mensual']][
-          locale === 'en' ? 'en' : 'es'
+          typedLocale
         ],
     },
   ];
@@ -177,11 +179,23 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       {
         name: tp('pkgSessionName'),
         description: tp('pkgSessionPitch'),
+        lowPrice: PRICE_FROM_COP.sesion > 0 ? PRICE_FROM_COP.sesion : undefined,
       },
-      ...packages.map((pkg) => ({
-        name: pkg.name,
-        description: pkg.pitch,
-      })),
+      {
+        name: packages[0].name,
+        description: packages[0].pitch,
+        lowPrice: PRICE_FROM_COP.estrategia,
+      },
+      {
+        name: packages[1].name,
+        description: packages[1].pitch,
+        lowPrice: PRICE_FROM_COP.produccion,
+      },
+      {
+        name: packages[2].name,
+        description: packages[2].pitch,
+        lowPrice: PRICE_FROM_COP.mensual,
+      },
     ],
     faqs,
   });
