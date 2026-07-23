@@ -226,6 +226,7 @@ Escala impacto: **S/M/L/XL** · Dificultad: **1–5**
 
 ## Relacionados
 
+- `docs/seo/BACKLOG-HU-TDD.md` — **plan completo en HUs (Como/Quiero/Para) + TDD Dado/Cuando/Entonces**  
 - `docs/seo/CONTENT-FACTORY-100.md` — inventario de URLs  
 - `docs/seo/IMPLEMENTATION-SNIPPETS.md` — código listo por recomendación  
 - `docs/architecture/SEO-ROUTES.md` — rutas canónicas actuales  
