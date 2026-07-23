@@ -107,6 +107,15 @@ export default async function PricingPage({ params }: PageProps) {
       slug: serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG['gestion-mensual']][typed],
       lowPrice: PRICE_FROM_COP.mensual,
     },
+    {
+      name: isEn ? 'UGC for brands' : 'UGC para marcas',
+      from: formatCopFrom(PRICE_FROM_COP.ugc, typed),
+      ideal: isEn
+        ? 'Creator-style videos for ads and organic'
+        : 'Videos estilo creador para ads y orgánico',
+      slug: serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.ugc][typed],
+      lowPrice: PRICE_FROM_COP.ugc,
+    },
   ];
 
   const faqs = [

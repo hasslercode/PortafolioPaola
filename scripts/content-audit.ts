@@ -12,6 +12,7 @@ const MIN: Record<string, number> = {
   'estrategia-contenido.mdx': 1500,
   'produccion-contenido.mdx': 1800,
   'gestion-mensual.mdx': 1500,
+  'ugc-videos-marcas.mdx': 1500,
 };
 
 function bodyOf(raw: string) {

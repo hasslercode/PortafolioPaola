@@ -167,6 +167,25 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           typedLocale
         ],
     },
+    {
+      id: 'ugc',
+      index: '04',
+      name: typedLocale === 'es' ? 'UGC para marcas' : 'UGC for brands',
+      pitch:
+        typedLocale === 'es'
+          ? 'Videos auténticos estilo creador para marcas y emprendedores en Colombia.'
+          : 'Authentic creator-style videos for brands and founders in Colombia.',
+      tag: 'UGC',
+      includes:
+        typedLocale === 'es'
+          ? ['Brief UGC', 'Guion ligero', 'Piezas verticales', 'Derechos de uso claros']
+          : ['UGC brief', 'Light script', 'Vertical pieces', 'Clear usage rights'],
+      delivery:
+        typedLocale === 'es' ? 'Pack UGC listo para ads/orgánico' : 'UGC pack ready for ads/organic',
+      ctaLabel: typedLocale === 'es' ? 'Quiero UGC' : 'I want UGC',
+      priceFrom: formatCopFrom(PRICE_FROM_COP.ugc, typedLocale),
+      detailSlug: serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.ugc][typedLocale],
+    },
   ];
 
   const graph = hubGraph({
@@ -195,6 +214,11 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         name: packages[2].name,
         description: packages[2].pitch,
         lowPrice: PRICE_FROM_COP.mensual,
+      },
+      {
+        name: packages[3].name,
+        description: packages[3].pitch,
+        lowPrice: PRICE_FROM_COP.ugc,
       },
     ],
     faqs,

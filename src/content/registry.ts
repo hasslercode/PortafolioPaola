@@ -9,6 +9,7 @@ export const serviceSlugs = [
   'estrategia-contenido',
   'produccion-contenido',
   'gestion-mensual',
+  'ugc-videos-marcas',
 ] as const;
 
 export const caseStudySlugs = [
@@ -17,10 +18,16 @@ export const caseStudySlugs = [
   'starbucks',
   'hm',
   'cine-colombia',
+  'totto',
 ] as const;
 
 export const blogSlugs = [
   'edicion-de-videos-para-redes-colombia',
+  'estrategia-de-contenido-colombia',
+  'creacion-de-contenido-para-redes-sociales',
+  'creador-ugc-colombia-guia',
+  'marketing-de-contenidos-para-emprendedores',
+  'videos-para-marcas-instagram-tiktok',
   'tarifas-community-manager-colombia',
   'como-contratar-estratega-digital',
   'roi-contenido-organico',
@@ -53,6 +60,10 @@ export const serviceSlugLocales: Record<
     es: 'gestion-mensual',
     en: 'monthly-management',
   },
+  'ugc-videos-marcas': {
+    es: 'ugc-videos-marcas',
+    en: 'ugc-brand-videos',
+  },
 };
 
 export const caseStudySlugLocales: Record<
@@ -64,4 +75,5 @@ export const caseStudySlugLocales: Record<
   starbucks: { es: 'starbucks', en: 'starbucks' },
   hm: { es: 'hm', en: 'hm' },
   'cine-colombia': { es: 'cine-colombia', en: 'cine-colombia' },
+  totto: { es: 'totto', en: 'totto' },
 };

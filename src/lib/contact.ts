@@ -23,6 +23,7 @@ export const PRICE_FROM_COP = {
   estrategia: 1_200_000,
   produccion: 800_000,
   mensual: 2_500_000,
+  ugc: 1_000_000,
 } as const;
 
 export function formatCopFrom(value: number, locale: 'es' | 'en' = 'es') {

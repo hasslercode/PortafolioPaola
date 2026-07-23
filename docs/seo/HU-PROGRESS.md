@@ -1,35 +1,19 @@
 # HU Progress — `cursor/seo-hu-implementation-cf78`
 
-## Completed this branch
+## Completed
 
-| HU | Notes |
-|----|-------|
-| HU-TECH-010 | sitemap lastModified from content dates + pricing hub |
-| HU-EN-001 | noindex EN blog posts |
-| HU-OBS-003 | `npm run content:audit` |
-| HU-OBS-004 | `npm run test:seo` |
-| HU-CRO-001 | `/tarifas` real page + Offer schema |
-| HU-CRO-002 | WhatsApp CTA (env-gated) |
-| HU-CRO-003 | Briefing form 4 fields on contact |
-| HU-CRO-004 | “Desde COP” on services hub + Offer prices |
-| HU-CRO-005 | Social proof near services CTA |
-| HU-CRO-006 | Calendly channel when env set |
-| HU-CONT-001 | sesión estratégica expanded |
-| HU-CONT-002 | estrategia contenido expanded |
-| HU-CONT-003 | producción ≥1800 |
-| HU-CONT-004 | gestión mensual expanded |
-| HU-IA-010 | RelatedContent on blog posts |
+### S1
+HU-TECH-010, HU-EN-001, HU-OBS-003, HU-OBS-004, HU-CRO-001..006, HU-CONT-001..004, HU-IA-010
 
-## Blocked / needs human
+### S2
+HU-CONT-005 (UGC service), HU-CONT-006..010 (5 pillars + video seed), HU-CONT-011 (cases expanded), HU-CONT-012 (TOTTO), HU-EEAT-002 (proceso), HU-EEAT-004..007 (legales+FAQ)
 
-| HU | Reason |
-|----|--------|
-| HU-EEAT-008 | Domain email mailbox not provisioned |
-| HU-LOC-006 | GBP ops decision |
-| HU-AUTH-* | Off-page / outreach ops |
-| HU-CONT-013 | MaxGordos needs brand permission |
-| HU-EN-002+ | Full EN translation factory (large) |
+## Blocked (human)
+- HU-EEAT-008 domain email
+- HU-LOC-006 GBP decision
+- HU-AUTH-* outreach ops
+- HU-CONT-013 MaxGordos permission
+- HU-EN-002 full EN translation quality pass
 
-## Next queue
-
-CONT-005 UGC service → CONT-006..010 pillars → EEAT legales → CONT-011 cases → factory spokes
+## Next
+Factory spokes CONT-100..714, geo LOC, ItemList/VideoObject TECH-011/012, OBS dashboards

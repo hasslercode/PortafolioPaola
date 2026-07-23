@@ -33,6 +33,7 @@ const CASE_VISUALS: Partial<Record<CaseStudySlug, StaticImageData[]>> = {
   hm: [imgHm, imgCoca, imgCine],
   'cine-colombia': [imgCine, imgHm, imgStarbucks],
   starbucks: [imgStarbucks, imgCoca, imgTotto],
+  totto: [imgTotto, imgHm, imgCoca],
 };
 
 const DEFAULT_VISUALS = [imgCoca, imgHm, imgCine];

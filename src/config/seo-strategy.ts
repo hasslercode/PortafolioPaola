@@ -11,6 +11,7 @@ export const PACKAGE_TO_SERVICE_SLUG: Record<string, ServiceSlug> = {
   estrategia: 'estrategia-contenido',
   produccion: 'produccion-contenido',
   'gestion-mensual': 'gestion-mensual',
+  ugc: 'ugc-videos-marcas',
 };
 
 export const CONSULT_SERVICE_SLUG: ServiceSlug = 'sesion-estrategica';

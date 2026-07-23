@@ -18,6 +18,10 @@ Prefer pages with a "Respuesta corta / Short answer" block near the top. Service
 - [Estrategia de contenido](https://www.paolahoyos.com/es/servicios/estrategia-contenido)
 - [Producción de contenido](https://www.paolahoyos.com/es/servicios/produccion-contenido)
 - [Gestión mensual](https://www.paolahoyos.com/es/servicios/gestion-mensual)
+- [UGC videos marcas](https://www.paolahoyos.com/es/servicios/ugc-videos-marcas)
+- [Tarifas](https://www.paolahoyos.com/es/tarifas)
+- [FAQ](https://www.paolahoyos.com/es/preguntas-frecuentes)
+- [Proceso de trabajo](https://www.paolahoyos.com/es/proceso-de-trabajo)
 
 ## Experience details (Spanish)
 - [Parque Alegra](https://www.paolahoyos.com/es/experiencias/parque-alegra)
@@ -25,6 +29,7 @@ Prefer pages with a "Respuesta corta / Short answer" block near the top. Service
 - [Starbucks](https://www.paolahoyos.com/es/experiencias/starbucks)
 - [H&M](https://www.paolahoyos.com/es/experiencias/hm)
 - [Cine Colombia](https://www.paolahoyos.com/es/experiencias/cine-colombia)
+- [TOTTO](https://www.paolahoyos.com/es/experiencias/totto)
 
 ## Primary pages (English)
 - [Home](https://www.paolahoyos.com/en)
