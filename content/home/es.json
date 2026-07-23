@@ -402,63 +402,71 @@
     "subtitleMiddle": "a la",
     "subtitleAccent2": "operación",
     "subtitleAfter": "completa.",
+    "hubCta": "Ver servicios e inversión",
+    "cardCta": "Más información",
     "cards": [
       {
         "eyebrow": "01 · Asesoría",
         "titleLine1": "Consultoría",
         "titleScript": "estratégica",
-        "pitch": "Tengo una reunión contigo, revisamos tus redes, encontramos oportunidades y te entrego un plan de acción.",
+        "pitch": "Sesión de entrada en vivo: revisamos redes, errores y oportunidades con recomendaciones al momento.",
         "includes": [
+          "Reunión 45-60 min",
           "Revisión de redes",
-          "Detección de oportunidades",
-          "Plan de acción"
+          "Errores y oportunidades",
+          "Recomendaciones en vivo",
+          "Espacio para preguntas"
         ],
-        "tagline": "Solo asesoría. No edito, no grabo, no publico."
+        "tagline": "Asesoría en vivo. No incluye entregables."
       },
       {
         "eyebrow": "02 · Estrategia",
         "titleBefore": "Estrategia de",
         "titleScript": "contenido",
-        "pitch": "Aquí sí trabajo como estratega. No grabo absolutamente nada.",
+        "pitch": "Auditoría, competencia, buyer persona, pilares, tono, ideas y calendario — con PDF y reunión de explicación.",
         "includes": [
-          "Análisis de marca",
+          "Auditoría de marca",
           "Competencia",
           "Buyer persona",
           "Pilares de contenido",
           "Calendario",
           "Ideas",
-          "Formatos",
           "Objetivos",
-          "Tono de comunicación"
+          "Tono de comunicación",
+          "Recomendaciones"
         ],
-        "tagline": "Solo estrategia."
+        "tagline": "Entregable: PDF + reunión."
       },
       {
         "eyebrow": "03 · Producción",
         "titleBefore": "Producción de",
         "titleScript": "contenido",
-        "pitch": "Ya sabes qué quieres decir. Yo hago que se vea espectacular.",
+        "pitch": "Idea, guion, grabación, edición, subtítulos y export — 1 video listo.",
         "includes": [
-          "Edición creativa premium",
-          "Ritmo, subtítulos y tipografías",
-          "Color, música y export listo"
+          "1 video hasta 60s",
+          "Una locación",
+          "Una ronda de cambios",
+          "Idea · Guion · Grabación",
+          "Edición · Subtítulos · Música"
         ],
-        "tagline": "Partimos de tu material grabado."
+        "tagline": "Desde $180.000 · Paquete base."
       },
       {
         "eyebrow": "04 · Premium",
-        "titleLine1": "Gestión",
-        "titleScript": "mensual",
-        "pitch": "Plan premium: estrategia ligera + producción + publicación + seguimiento.",
+        "titleLine1": "Gestión estratégica",
+        "titleScript": "de contenido",
+        "pitch": "Estrategia mensual, calendario, guiones, hasta 8 videos verticales y edición premium.",
         "includes": [
-          "Estrategia ligera del mes",
-          "Producción",
-          "Edición",
-          "Programación",
-          "Publicación",
-          "Seguimiento"
+          "Diagnóstico (1er mes)",
+          "Estrategia mensual",
+          "Calendario",
+          "Guiones",
+          "Hasta 8 videos",
+          "Edición premium",
+          "Publicación opcional",
+          "Seguimiento 30 min"
         ],
-        "tagline": "Operación completa del mes."
+        "tagline": "Desde $1.200.000/mes."
       }
     ]
   },

@@ -14,7 +14,7 @@ import {
   CONSULT_SERVICE_SLUG,
   PACKAGE_TO_SERVICE_SLUG,
 } from '@/config/seo-strategy';
-import { PRICE_FROM_COP, PRICE_LIST_COP, formatCopFrom } from '@/lib/contact';
+import { PRICE_FROM_COP, LAUNCH_SALE_ACTIVE, PRICE_LIST_COP, formatCopFrom } from '@/lib/contact';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -76,45 +76,53 @@ export default async function PricingPage({ params }: PageProps) {
       name: t('pkgSessionName'),
       from: formatCopFrom(PRICE_FROM_COP.sesion, typed),
       ideal: isEn
-        ? 'Clarity before investing in production'
-        : 'Claridad antes de invertir en producción',
+        ? 'Live entry session before investing in production'
+        : 'Sesión de entrada en vivo antes de invertir en producción',
       slug: serviceSlugLocales[CONSULT_SERVICE_SLUG][typed],
       lowPrice: PRICE_FROM_COP.sesion,
     },
     {
       name: t('pkgStrategyName'),
       from: formatCopFrom(PRICE_FROM_COP.estrategia, typed),
-      was: formatCopFrom(PRICE_LIST_COP.estrategia, typed),
+      was: LAUNCH_SALE_ACTIVE
+        ? formatCopFrom(PRICE_LIST_COP.estrategia, typed)
+        : undefined,
       ideal: isEn
-        ? 'Message, pillars and calendar without filming'
-        : 'Mensaje, pilares y calendario sin grabación',
+        ? 'PDF strategy + walkthrough meeting'
+        : 'Estrategia en PDF + reunión de explicación',
       slug: serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.estrategia][typed],
       lowPrice: PRICE_FROM_COP.estrategia,
     },
     {
       name: t('pkgProductionName'),
       from: formatCopFrom(PRICE_FROM_COP.produccion, typed),
-      was: formatCopFrom(PRICE_LIST_COP.produccion, typed),
+      was: LAUNCH_SALE_ACTIVE
+        ? formatCopFrom(PRICE_LIST_COP.produccion, typed)
+        : undefined,
       ideal: isEn
-        ? 'Premium editing from your recorded footage'
-        : 'Edición premium a partir de tu material',
+        ? '1 video up to 60s · one location · one revision'
+        : '1 video hasta 60s · una locación · una ronda de cambios',
       slug: serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.produccion][typed],
       lowPrice: PRICE_FROM_COP.produccion,
     },
     {
       name: t('pkgMonthlyName'),
-      from: formatCopFrom(PRICE_FROM_COP.mensual, typed),
-      was: formatCopFrom(PRICE_LIST_COP.mensual, typed),
+      from: formatCopFrom(PRICE_FROM_COP.mensual, typed, { perMonth: true }),
+      was: LAUNCH_SALE_ACTIVE
+        ? formatCopFrom(PRICE_LIST_COP.mensual, typed, { perMonth: true })
+        : undefined,
       ideal: isEn
-        ? 'Light strategy + production + publishing'
-        : 'Estrategia ligera + producción + publicación',
+        ? 'Monthly strategy + up to 8 vertical videos'
+        : 'Estrategia mensual + hasta 8 videos verticales',
       slug: serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG['gestion-mensual']][typed],
       lowPrice: PRICE_FROM_COP.mensual,
     },
     {
       name: isEn ? 'UGC for brands' : 'UGC para marcas',
       from: formatCopFrom(PRICE_FROM_COP.ugc, typed),
-      was: formatCopFrom(PRICE_LIST_COP.ugc, typed),
+      was: LAUNCH_SALE_ACTIVE
+        ? formatCopFrom(PRICE_LIST_COP.ugc, typed)
+        : undefined,
       ideal: isEn
         ? 'Creator-style videos for ads and organic'
         : 'Videos estilo creador para ads y orgánico',

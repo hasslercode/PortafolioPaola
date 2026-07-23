@@ -59,12 +59,12 @@ function buildInvestmentFaqs(locale: string) {
     {
       question:
         locale === 'es'
-          ? '¿La consultoría es un plan?'
-          : 'Is consulting a plan?',
+          ? '¿La consultoría incluye entregables?'
+          : 'Does consulting include deliverables?',
       answer:
         locale === 'es'
-          ? 'No. Es solo asesoría: reunión, revisión de redes, oportunidades y plan de acción. No edito, no grabo ni publico.'
-          : 'No. It is advisory only: meeting, channel review, opportunities and action plan. No editing, filming or publishing.',
+          ? 'No. Es una sesión de asesoría en vivo (45-60 min): revisión de redes, errores, oportunidades y recomendaciones. No incluye documento, estrategia, calendario, seguimiento ni implementación.'
+          : 'No. It is a live advisory session (45–60 min): channel review, errors, opportunities and recommendations. No document, strategy, calendar, follow-up or implementation.',
     },
     {
       question:
@@ -73,8 +73,8 @@ function buildInvestmentFaqs(locale: string) {
           : 'Where should I start?',
       answer:
         locale === 'es'
-          ? 'Si necesitas claridad, consultoría. Si ya sabes qué decir, producción. Si quieres que lo opere todo el mes, gestión mensual.'
-          : 'Need clarity? Consulting. Already know what to say? Production. Want it run all month? Monthly management.',
+          ? 'Si necesitas claridad, consultoría estratégica. Si quieres dirección documentada, estrategia de contenido. Si ya toca producir, producción. Si quieres operación del mes, gestión estratégica de contenido.'
+          : 'Need clarity? Strategic consulting. Need a documented direction? Content strategy. Ready to produce? Production. Want the month operated? Strategic content management.',
     },
   ];
 }
@@ -136,8 +136,12 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgStrategyInc4'),
         tp('pkgStrategyInc5'),
         tp('pkgStrategyInc6'),
+        tp('pkgStrategyInc7'),
+        tp('pkgStrategyInc8'),
+        tp('pkgStrategyInc9'),
       ],
       delivery: tp('pkgStrategyDelivery'),
+      note: tp('pkgStrategyNote'),
       ctaLabel: tp('pkgStrategyCta'),
       priceFrom: formatCopFrom(PRICE_FROM_COP.estrategia, typedLocale),
       priceWas: LAUNCH_SALE_ACTIVE
@@ -157,8 +161,20 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgProductionInc1'),
         tp('pkgProductionInc2'),
         tp('pkgProductionInc3'),
+        tp('pkgProductionInc4'),
+        tp('pkgProductionInc5'),
+        tp('pkgProductionInc6'),
+        tp('pkgProductionInc7'),
       ],
+      packageIncludes: [
+        tp('pkgProductionPkg1'),
+        tp('pkgProductionPkg2'),
+        tp('pkgProductionPkg3'),
+        tp('pkgProductionPkg4'),
+      ],
+      includesLabelOverride: tp('canIncludeLabel'),
       delivery: tp('pkgProductionDelivery'),
+      note: tp('pkgProductionNote'),
       ctaLabel: tp('pkgProductionCta'),
       priceFrom: formatCopFrom(PRICE_FROM_COP.produccion, typedLocale),
       priceWas: LAUNCH_SALE_ACTIVE
@@ -181,13 +197,19 @@ export default async function ServicesIndexPage({ params }: PageProps) {
         tp('pkgMonthlyInc4'),
         tp('pkgMonthlyInc5'),
         tp('pkgMonthlyInc6'),
+        tp('pkgMonthlyInc7'),
+        tp('pkgMonthlyInc8'),
+        tp('pkgMonthlyInc9'),
       ],
       delivery: tp('pkgMonthlyDelivery'),
+      note: tp('pkgMonthlyNote'),
       ctaLabel: tp('pkgMonthlyCta'),
       featured: true,
-      priceFrom: formatCopFrom(PRICE_FROM_COP.mensual, typedLocale),
+      priceFrom: formatCopFrom(PRICE_FROM_COP.mensual, typedLocale, {
+        perMonth: true,
+      }),
       priceWas: LAUNCH_SALE_ACTIVE
-        ? formatCopFrom(PRICE_LIST_COP.mensual, typedLocale)
+        ? formatCopFrom(PRICE_LIST_COP.mensual, typedLocale, { perMonth: true })
         : undefined,
       saleFlag,
       detailSlug:
@@ -233,7 +255,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       {
         name: tp('pkgSessionName'),
         description: tp('pkgSessionPitch'),
-        lowPrice: PRICE_FROM_COP.sesion > 0 ? PRICE_FROM_COP.sesion : undefined,
+        lowPrice: PRICE_FROM_COP.sesion,
       },
       {
         name: packages[0].name,
@@ -282,6 +304,7 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           titleAccent={tp('titleAccent')}
           titleTrail={tp('titleTrail')}
           summary={tp('summary')}
+          showLaunchPromo={LAUNCH_SALE_ACTIVE}
           launchFlag={tp('launchFlag')}
           launchTitle={tp('launchTitle')}
           launchBody={tp('launchBody')}
@@ -289,14 +312,32 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           processTitle={tp('processTitle')}
           processSteps={processSteps}
           consultCta={tp('consultCta')}
-          consultTag={tp('consultTag')}
+          consultTag={formatCopFrom(PRICE_FROM_COP.sesion, typedLocale)}
           consultNote={tp('consultNote')}
+          consultIncludes={[
+            tp('pkgSessionInc1'),
+            tp('pkgSessionInc2'),
+            tp('pkgSessionInc3'),
+            tp('pkgSessionInc4'),
+            tp('pkgSessionInc5'),
+            tp('pkgSessionInc6'),
+          ]}
+          consultExcludes={[
+            tp('pkgSessionExc1'),
+            tp('pkgSessionExc2'),
+            tp('pkgSessionExc3'),
+            tp('pkgSessionExc4'),
+            tp('pkgSessionExc5'),
+          ]}
+          includesLabel={tp('includesLabel')}
+          excludesLabel={tp('excludesLabel')}
+          packageLabel={tp('packageLabel')}
+          seeAllIncludes={tp('seeAllIncludes')}
           consultDetailSlug={
             serviceSlugLocales[CONSULT_SERVICE_SLUG][
               locale === 'en' ? 'en' : 'es'
             ]
           }
-          includesLabel={tp('includesLabel')}
           featuredLabel={tp('featuredLabel')}
           deliveryLabel={tp('deliveryLabel')}
           values={values}

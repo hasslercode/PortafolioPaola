@@ -167,7 +167,13 @@ export type InvestmentPackage = {
   name: string;
   pitch: string;
   includes: string[];
+  excludes?: string[];
+  /** Secondary checklist (e.g. production package specs) */
+  packageIncludes?: string[];
+  /** Override “Includes” label (e.g. “May include”) */
+  includesLabelOverride?: string;
   note?: string;
+  warning?: string;
   ctaLabel?: string;
   featured?: boolean;
   tag?: string;
@@ -236,6 +242,7 @@ export function PricingHubView({
   titleAccent,
   titleTrail,
   summary,
+  showLaunchPromo = false,
   launchFlag,
   launchTitle,
   launchBody,
@@ -245,9 +252,15 @@ export function PricingHubView({
   consultCta,
   consultTag,
   consultNote,
+  consultWarning,
+  consultIncludes,
+  consultExcludes,
   consultDetailSlug,
   consultDetailLabel,
   includesLabel,
+  excludesLabel,
+  packageLabel,
+  seeAllIncludes,
   featuredLabel,
   deliveryLabel,
   values,
@@ -267,6 +280,7 @@ export function PricingHubView({
   titleAccent: string;
   titleTrail: string;
   summary: string;
+  showLaunchPromo?: boolean;
   launchFlag: string;
   launchTitle: string;
   launchBody: string;
@@ -276,9 +290,15 @@ export function PricingHubView({
   consultCta: string;
   consultTag: string;
   consultNote: string;
+  consultWarning?: string;
+  consultIncludes?: string[];
+  consultExcludes?: string[];
   consultDetailSlug?: string;
   consultDetailLabel?: string;
   includesLabel: string;
+  excludesLabel?: string;
+  packageLabel?: string;
+  seeAllIncludes?: string;
   featuredLabel: string;
   deliveryLabel: string;
   values: OfferValue[];
@@ -301,6 +321,25 @@ export function PricingHubView({
     const featured = Boolean(pkg.featured || pkg.id === 'gestion-mensual');
     const icon = PLAN_ICONS[pkg.id] || PLAN_ICONS.estrategia;
     const onSale = Boolean(pkg.saleFlag && pkg.priceFrom);
+    const highlightItems =
+      pkg.packageIncludes && pkg.packageIncludes.length > 0
+        ? pkg.packageIncludes
+        : pkg.includes.slice(0, 4);
+    const detailIncludes =
+      pkg.packageIncludes && pkg.packageIncludes.length > 0
+        ? pkg.includes
+        : pkg.includes.slice(highlightItems.length);
+    const showDetails =
+      detailIncludes.length > 0 ||
+      Boolean(pkg.excludes?.length) ||
+      Boolean(pkg.note);
+    const detailsLabel =
+      seeAllIncludes ||
+      (isEn ? 'See everything included' : 'Ver todo lo que incluye');
+    const detailIncludesLabel =
+      pkg.packageIncludes && pkg.packageIncludes.length > 0
+        ? pkg.includesLabelOverride || includesLabel
+        : includesLabel;
 
     return (
       <article
@@ -324,65 +363,86 @@ export function PricingHubView({
               <path d={icon} />
             </svg>
           </span>
+          {pkg.tag ? (
+            <span className="offer-plan__tag">{pkg.tag}</span>
+          ) : featured ? (
+            <span className="offer-plan__tag">{featuredLabel}</span>
+          ) : null}
           <span className="offer-plan__ghost" aria-hidden="true">
             {pkg.index}
           </span>
         </div>
 
         <h3 className="offer-plan__name">{pkg.name}</h3>
-        {pkg.tag ? (
-          <span className="offer-plan__tag">{pkg.tag}</span>
-        ) : featured ? (
-          <span className="offer-plan__tag">{featuredLabel}</span>
-        ) : null}
-        <p className="offer-plan__pitch">{pkg.pitch}</p>
+
         {pkg.priceFrom ? (
           <p className="offer-plan__price">
             {pkg.priceWas ? (
               <span className="offer-plan__price-was">{pkg.priceWas}</span>
             ) : null}{' '}
             <strong>{pkg.priceFrom}</strong>
-            <span className="offer-plan__price-note">
-              {isEn
-                ? ' · Final quote by scope'
-                : ' · Cotización final según alcance'}
-            </span>
           </p>
         ) : null}
 
-        <p className="offer-plan__includes-label">{includesLabel}</p>
-        {featured ? (
-          <ul className="offer-plan__tags">
-            {pkg.includes.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        ) : (
-          <ul className="offer-plan__includes">
-            {pkg.includes.map((item, i) => (
-              <li key={item}>
-                <span className="offer-plan__inc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d={INCLUDE_ROW_ICONS[i % INCLUDE_ROW_ICONS.length]} />
-                  </svg>
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        )}
+        <p className="offer-plan__pitch">{pkg.pitch}</p>
+
+        {pkg.warning ? (
+          <p className="offer-plan__warning">{pkg.warning}</p>
+        ) : null}
+
+        <ul className="offer-plan__highlights" aria-label={includesLabel}>
+          {highlightItems.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
 
         {pkg.delivery ? (
           <p className="offer-plan__delivery">
-            <span aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
-              </svg>
-            </span>
+            <span aria-hidden="true">✦</span>
             <span>
               {deliveryLabel}: {pkg.delivery}
             </span>
           </p>
+        ) : null}
+
+        {showDetails ? (
+          <details className="offer-plan__details">
+            <summary>
+              {detailsLabel}
+              {detailIncludes.length > 0 ? (
+                <span className="offer-plan__details-count">
+                  {detailIncludes.length}
+                </span>
+              ) : null}
+            </summary>
+            <div className="offer-plan__details-body">
+              {detailIncludes.length > 0 ? (
+                <>
+                  <p className="offer-plan__includes-label">{detailIncludesLabel}</p>
+                  <ul className="offer-plan__includes">
+                    {detailIncludes.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+
+              {pkg.excludes?.length && excludesLabel ? (
+                <>
+                  <p className="offer-plan__includes-label offer-plan__includes-label--excludes">
+                    {excludesLabel}
+                  </p>
+                  <ul className="offer-plan__excludes">
+                    {pkg.excludes.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+
+              {pkg.note ? <p className="offer-plan__note">{pkg.note}</p> : null}
+            </div>
+          </details>
         ) : null}
 
         <button
@@ -424,13 +484,15 @@ export function PricingHubView({
             </h1>
             <p className="offer-suite__summary">{summary}</p>
 
-            <aside className="offer-launch" aria-label={launchFlag}>
-              <span className="offer-launch__flag badge-pill-wow">{launchFlag}</span>
-              <div className="offer-launch__copy">
-                <p className="offer-launch__title">{launchTitle}</p>
-                <p className="offer-launch__body">{launchBody}</p>
-              </div>
-            </aside>
+            {showLaunchPromo ? (
+              <aside className="offer-launch" aria-label={launchFlag}>
+                <span className="offer-launch__flag badge-pill-wow">{launchFlag}</span>
+                <div className="offer-launch__copy">
+                  <p className="offer-launch__title">{launchTitle}</p>
+                  <p className="offer-launch__body">{launchBody}</p>
+                </div>
+              </aside>
+            ) : null}
           </header>
 
           <div className="offer-board">
@@ -470,6 +532,46 @@ export function PricingHubView({
                 <span className="offer-process__consult-title">{consultCta}</span>
                 <span className="offer-process__consult-note">{consultNote}</span>
               </button>
+              {consultWarning ? (
+                <p className="offer-process__consult-warning">{consultWarning}</p>
+              ) : null}
+              {consultIncludes?.length ? (
+                <ul className="offer-process__consult-chips" aria-label={includesLabel}>
+                  {consultIncludes.slice(0, 3).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {(consultIncludes && consultIncludes.length > 3) ||
+              consultExcludes?.length ? (
+                <details className="offer-process__consult-details">
+                  <summary>
+                    {seeAllIncludes ||
+                      (isEn ? 'See everything included' : 'Ver todo lo que incluye')}
+                  </summary>
+                  <div className="offer-process__consult-details-body">
+                    {consultIncludes && consultIncludes.length > 3 ? (
+                      <ul className="offer-process__consult-list">
+                        {consultIncludes.slice(3).map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                    {consultExcludes?.length && excludesLabel ? (
+                      <>
+                        <p className="offer-process__consult-excludes-label">
+                          {excludesLabel}
+                        </p>
+                        <ul className="offer-process__consult-excludes">
+                          {consultExcludes.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : null}
+                  </div>
+                </details>
+              ) : null}
               {consultDetailSlug ? (
                 <Link
                   href={{

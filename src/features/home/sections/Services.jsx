@@ -3,13 +3,12 @@
 import FadeUp from '@/features/home/components/FadeUp';
 import { Link } from '@/i18n/routing';
 import { useI18n } from '@/features/home/HomeContentProvider';
-import { serviceSlugLocales } from '@/content/registry';
 
-/** Home card order → canonical service slug */
-export const HOME_SERVICE_SLUGS = [
-  'sesion-estrategica',
-  'estrategia-contenido',
-  'produccion-contenido',
+/** Home card order → anchor on /servicios hub */
+export const HOME_SERVICE_ANCHORS = [
+  'consultoria',
+  'estrategia',
+  'produccion',
   'gestion-mensual',
 ];
 
@@ -77,12 +76,13 @@ function Icon({ name, className = '' }) {
   );
 }
 
-function OfferCardBody({ card, index, variant, featuredLabel }) {
+function OfferCardBody({ card, index, variant, featuredLabel, ctaLabel, showCta }) {
   const num = String(index + 1).padStart(2, '0');
   const iconName = VARIANT_ICON[index] || 'target';
   const includes = Array.isArray(card.includes) ? card.includes : [];
   const isStrategy = variant === 'strategy';
   const listItems = includes;
+  const anchor = HOME_SERVICE_ANCHORS[index] || 'inversion';
 
   return (
     <>
@@ -135,6 +135,16 @@ function OfferCardBody({ card, index, variant, featuredLabel }) {
       {card.tagline ? (
         <p className="svc-card__foot">{card.tagline}</p>
       ) : null}
+
+      {showCta ? (
+        <Link
+          href={`/services#${anchor}`}
+          className={`svc-card__cta${variant === 'premium' ? ' svc-card__cta--on-dark' : ''}`}
+        >
+          <span>{ctaLabel}</span>
+          <span aria-hidden="true">→</span>
+        </Link>
+      ) : null}
     </>
   );
 }
@@ -144,6 +154,8 @@ export default function Services({ linked = false, compact = false }) {
   const { services } = content;
   const isEn = locale === 'en';
   const featuredLabel = isEn ? 'Most complete' : 'Más completo';
+  const cardCta =
+    services.cardCta || (isEn ? 'More information' : 'Más información');
 
   return (
     <section
@@ -191,41 +203,23 @@ export default function Services({ linked = false, compact = false }) {
 
         <div className="svc-grid">
           {services.cards.map((card, index) => {
-            const slug = HOME_SERVICE_SLUGS[index];
             const variant = SERVICE_VARIANTS[index] || 'strategy';
-            const localized = slug
-              ? serviceSlugLocales[slug][locale === 'en' ? 'en' : 'es']
-              : null;
             const key = card.titleLine1 || card.titleBefore || card.eyebrow;
-            const body = (
-              <OfferCardBody
-                card={card}
-                index={index}
-                variant={variant}
-                featuredLabel={featuredLabel}
-              />
-            );
-            const className = `svc-card svc-card--${variant}`;
-
-            if (linked && localized) {
-              return (
-                <FadeUp key={key} className={className} index={index}>
-                  <Link
-                    href={{
-                      pathname: '/services/[slug]',
-                      params: { slug: localized },
-                    }}
-                    className="svc-card__link"
-                  >
-                    {body}
-                  </Link>
-                </FadeUp>
-              );
-            }
 
             return (
-              <FadeUp key={key} className={className} index={index}>
-                {body}
+              <FadeUp
+                key={key}
+                className={`svc-card svc-card--${variant}`}
+                index={index}
+              >
+                <OfferCardBody
+                  card={card}
+                  index={index}
+                  variant={variant}
+                  featuredLabel={featuredLabel}
+                  ctaLabel={cardCta}
+                  showCta={linked}
+                />
               </FadeUp>
             );
           })}

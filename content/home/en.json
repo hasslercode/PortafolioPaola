@@ -402,63 +402,71 @@
     "subtitleMiddle": "to full",
     "subtitleAccent2": "operations",
     "subtitleAfter": ".",
+    "hubCta": "View services & investment",
+    "cardCta": "More information",
     "cards": [
       {
         "eyebrow": "01 · Advisory",
         "titleLine1": "Strategic",
         "titleScript": "consulting",
-        "pitch": "We meet, review your channels, spot opportunities and I deliver an action plan.",
+        "pitch": "Entry live session: we review channels, errors and opportunities with recommendations on the spot.",
         "includes": [
+          "45–60 min meeting",
           "Channel review",
-          "Opportunity mapping",
-          "Action plan"
+          "Errors and opportunities",
+          "Live recommendations",
+          "Q&A space"
         ],
-        "tagline": "Advisory only. No editing, filming or publishing."
+        "tagline": "Live advisory. No deliverables included."
       },
       {
         "eyebrow": "02 · Strategy",
         "titleBefore": "Content",
         "titleScript": "strategy",
-        "pitch": "Pure strategist work. I do not film anything.",
+        "pitch": "Audit, competitors, buyer persona, pillars, tone, ideas and calendar — with PDF and walkthrough meeting.",
         "includes": [
-          "Brand analysis",
+          "Brand audit",
           "Competitors",
           "Buyer persona",
           "Content pillars",
           "Calendar",
           "Ideas",
-          "Formats",
           "Goals",
-          "Tone of voice"
+          "Tone of voice",
+          "Recommendations"
         ],
-        "tagline": "Strategy only."
+        "tagline": "Deliverable: PDF + meeting."
       },
       {
         "eyebrow": "03 · Production",
         "titleBefore": "Content",
         "titleScript": "production",
-        "pitch": "You already know what to say. I make it look spectacular.",
+        "pitch": "Idea, script, filming, editing, captions and export — 1 ready video.",
         "includes": [
-          "Premium creative editing",
-          "Pacing, captions and typography",
-          "Color, music and publish-ready export"
+          "1 video up to 60s",
+          "One location",
+          "One revision round",
+          "Idea · Script · Filming",
+          "Edit · Captions · Music"
         ],
-        "tagline": "We start from your recorded footage."
+        "tagline": "From $180,000 · Base package."
       },
       {
         "eyebrow": "04 · Premium",
-        "titleLine1": "Monthly",
+        "titleLine1": "Strategic content",
         "titleScript": "management",
-        "pitch": "Premium plan: light strategy + production + publishing + follow-up.",
+        "pitch": "Monthly strategy, calendar, scripts, up to 8 vertical videos and premium editing.",
         "includes": [
-          "Light monthly strategy",
-          "Production",
-          "Editing",
-          "Scheduling",
-          "Publishing",
-          "Follow-up"
+          "Diagnosis (month 1)",
+          "Monthly strategy",
+          "Calendar",
+          "Scripts",
+          "Up to 8 videos",
+          "Premium editing",
+          "Optional publishing",
+          "30-min follow-up"
         ],
-        "tagline": "Full monthly operation."
+        "tagline": "From $1,200,000/mo."
       }
     ]
   },
