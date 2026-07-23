@@ -6,7 +6,17 @@ import { useI18n } from '@/features/home/HomeContentProvider';
 import { useContentActions } from '@/features/home/PageChrome';
 import { FaqSection } from '@/components/content/FaqSection';
 
-export type BlogTopic = 'seo' | 'instagram' | 'tiktok' | 'branding' | 'marketing';
+export type BlogTopic =
+  | 'seo'
+  | 'instagram'
+  | 'tiktok'
+  | 'branding'
+  | 'marketing'
+  | 'video'
+  | 'ugc'
+  | 'strategy'
+  | 'local'
+  | 'comparison';
 
 type BlogPostCard = {
   slug: string;
@@ -21,14 +31,24 @@ const TOPIC_LABELS: Record<BlogTopic, { es: string; en: string }> = {
   tiktok: { es: 'TikTok', en: 'TikTok' },
   branding: { es: 'Branding', en: 'Branding' },
   marketing: { es: 'Marketing', en: 'Marketing' },
+  video: { es: 'Video', en: 'Video' },
+  ugc: { es: 'UGC', en: 'UGC' },
+  strategy: { es: 'Estrategia', en: 'Strategy' },
+  local: { es: 'Colombia', en: 'Colombia' },
+  comparison: { es: 'Comparativas', en: 'Comparisons' },
 };
 
 const ALL_TOPICS: BlogTopic[] = [
-  'seo',
+  'strategy',
+  'video',
+  'ugc',
+  'marketing',
+  'comparison',
+  'local',
   'instagram',
   'tiktok',
   'branding',
-  'marketing',
+  'seo',
 ];
 
 export function BlogHubView({
@@ -164,6 +184,9 @@ export type InvestmentPackage = {
   delivery?: string;
   priceFrom?: string;
   priceValue?: string;
+  /** Public service slug for locale-aware detail link */
+  detailSlug?: string;
+  detailLabel?: string;
 };
 
 export type ProcessStep = {
@@ -223,6 +246,8 @@ export function PricingHubView({
   consultCta,
   consultTag,
   consultNote,
+  consultDetailSlug,
+  consultDetailLabel,
   includesLabel,
   featuredLabel,
   deliveryLabel,
@@ -245,6 +270,8 @@ export function PricingHubView({
   consultCta: string;
   consultTag: string;
   consultNote: string;
+  consultDetailSlug?: string;
+  consultDetailLabel?: string;
   includesLabel: string;
   featuredLabel: string;
   deliveryLabel: string;
@@ -311,6 +338,18 @@ export function PricingHubView({
                 <span className="offer-process__consult-title">{consultCta}</span>
                 <span className="offer-process__consult-note">{consultNote}</span>
               </button>
+              {consultDetailSlug ? (
+                <Link
+                  href={{
+                    pathname: '/services/[slug]',
+                    params: { slug: consultDetailSlug },
+                  }}
+                  className="offer-process__detail-link"
+                >
+                  {consultDetailLabel ||
+                    (isEn ? 'How the strategy session works' : 'Cómo funciona la sesión')}
+                </Link>
+              ) : null}
             </aside>
 
             <div className="offer-plans">
@@ -386,6 +425,18 @@ export function PricingHubView({
                       <span>{pkg.ctaLabel || ctaLabel}</span>
                       <span aria-hidden="true">→</span>
                     </button>
+                    {pkg.detailSlug ? (
+                      <Link
+                        href={{
+                          pathname: '/services/[slug]',
+                          params: { slug: pkg.detailSlug },
+                        }}
+                        className="offer-plan__detail-link"
+                      >
+                        {pkg.detailLabel ||
+                          (isEn ? 'See full service details' : 'Ver detalle del servicio')}
+                      </Link>
+                    ) : null}
                   </article>
                 );
               })}

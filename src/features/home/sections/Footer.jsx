@@ -54,6 +54,9 @@ export default function Footer({ onOpenPortfolio }) {
                 <Link href="/services">{footer.nav.servicios}</Link>
               </li>
               <li>
+                <Link href="/blog">{footer.nav.recursos}</Link>
+              </li>
+              <li>
                 <Link href="/about">{header.nav.sobreMi}</Link>
               </li>
               <li>

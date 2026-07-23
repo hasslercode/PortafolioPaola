@@ -30,15 +30,15 @@ function entry(
 }
 
 /**
- * Sitemap aligned to consolidated IA (visible menu + soft blog).
+ * Sitemap aligned to consolidated IA (visible menu includes blog/recursos).
  * Does NOT list redirect shells (/tarifas, /portafolio) — only canonical hubs.
  *
- * Visible: home, experiences, services, about, contact
- * Soft: blog (+ posts)
- * Details: services/[slug], experiences/[slug]
+ * Visible: home, experiences, services, blog, about, contact
+ * Details: services/[slug], experiences/[slug], blog/[slug]
  *
  * @see docs/architecture/SITE-IA.md
  * @see docs/architecture/SEO-ROUTES.md
+ * @see docs/seo/ROADMAP-TOP10-COLOMBIA.md
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -51,10 +51,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { hub: { type: 'hub', hub: 'home' }, priority: 1, freq: 'weekly' },
     { hub: { type: 'hub', hub: 'caseStudies' }, priority: 0.95, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'services' }, priority: 0.95, freq: 'monthly' },
+    { hub: { type: 'hub', hub: 'blog' }, priority: 0.85, freq: 'weekly' },
     { hub: { type: 'hub', hub: 'about' }, priority: 0.8, freq: 'monthly' },
     { hub: { type: 'hub', hub: 'contact' }, priority: 0.8, freq: 'monthly' },
-    // Soft URL (hidden from primary nav) — still crawlable
-    { hub: { type: 'hub', hub: 'blog' }, priority: 0.45, freq: 'weekly' },
   ];
 
   for (const locale of siteConfig.locales) {
@@ -76,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     for (const slug of blogSlugs) {
       entries.push(
-        entry(locale, { type: 'blogPost', slug }, 0.4, 'monthly'),
+        entry(locale, { type: 'blogPost', slug }, 0.75, 'monthly'),
       );
     }
   }

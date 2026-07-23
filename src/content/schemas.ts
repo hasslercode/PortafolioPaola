@@ -72,11 +72,35 @@ export const blogFrontmatterSchema = z.object({
   shortAnswer: z.string().max(400),
   publishedAt: z.string(),
   updatedAt: z.string().optional(),
-  /** SITE-IA topic clusters */
+  /** Commercial topic clusters — aligned to Top-10 Colombia strategy */
   topic: z
-    .enum(['seo', 'instagram', 'tiktok', 'branding', 'marketing'])
+    .enum([
+      'seo',
+      'instagram',
+      'tiktok',
+      'branding',
+      'marketing',
+      'video',
+      'ugc',
+      'strategy',
+      'local',
+      'comparison',
+    ])
     .default('marketing'),
   intent: z.enum(['commercial', 'decision', 'comparison']),
+  primaryKeyword: z.string().optional(),
+  cluster: z
+    .enum([
+      'strategy',
+      'production',
+      'ugc',
+      'entrepreneurs',
+      'local',
+      'comparison',
+    ])
+    .optional(),
+  relatedSlugs: z.array(z.string()).default([]),
+  serviceCta: z.string().optional(),
   draft: z.boolean().default(false),
   seo: seoFrontmatterSchema,
   faq: z

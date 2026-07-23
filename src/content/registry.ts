@@ -20,6 +20,7 @@ export const caseStudySlugs = [
 ] as const;
 
 export const blogSlugs = [
+  'edicion-de-videos-para-redes-colombia',
   'tarifas-community-manager-colombia',
   'como-contratar-estratega-digital',
   'roi-contenido-organico',

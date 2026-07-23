@@ -42,13 +42,11 @@ Sobre mí  →  /es/sobre-mi  |  /en/about
 ├── Metodología
 └── CTA
 
-Blog  →  /es/blog  |  /en/blog  (oculto de menú y home; URLs activas)
+Blog  →  /es/blog  |  /en/blog  (visible en menú y home preview)
 │
-├── SEO
-├── Instagram
-├── TikTok
-├── Branding
-└── Marketing
+├── strategy / video / ugc / marketing / comparison / local
+├── Pilares + long-tails (ver docs/seo/CONTENT-FACTORY-100.md)
+└── Bridge posts (tarifas CM → oferta estratega/producción)
 ```
 
 ## Notas de implementación

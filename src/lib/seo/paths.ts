@@ -9,8 +9,7 @@ import {
 /**
  * Public path prefixes per locale (no leading locale segment).
  * Canonical hubs only — legacy aliases resolve to the fused pages.
- * Visible menu: Inicio | Experiencias | Servicios | Sobre mí | Contacto
- * Soft (no menu): Blog
+ * Visible menu: Inicio | Experiencias | Servicios | Blog | Sobre mí | Contacto
  * Redirects: /tarifas,/pricing → services · /portafolio,/portfolio → experiences
  */
 const hubs = {

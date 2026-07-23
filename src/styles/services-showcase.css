@@ -1787,6 +1787,27 @@
   background: #fff5f7;
 }
 
+.offer-plan__detail-link,
+.offer-process__detail-link {
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--offer-burgundy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.offer-plan--featured .offer-plan__detail-link {
+  color: #fff;
+}
+
+.offer-process__detail-link {
+  margin-top: 0.75rem;
+  text-align: center;
+  width: 100%;
+}
+
 .offer-plan--featured {
   background: linear-gradient(165deg, #8a2745 0%, var(--offer-burgundy) 48%, #5f1730 100%);
   color: #fff;

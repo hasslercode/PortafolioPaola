@@ -34,7 +34,7 @@ export function buildPageMetadata({
   route,
   keywords = [],
   noIndex = false,
-  ogImage = '/assets/og-paola.png',
+  ogImage = '/assets/og-paola.jpg',
   ogType = 'website',
   absoluteTitle = false,
   publishedTime,
@@ -46,12 +46,20 @@ export function buildPageMetadata({
     ? ogImage
     : absoluteUrl(ogImage);
   const languages = buildAlternateLanguages(route);
+  const ogTypeMime = absoluteOg.endsWith('.png')
+    ? 'image/png'
+    : absoluteOg.endsWith('.webp')
+      ? 'image/webp'
+      : 'image/jpeg';
+  const aboutPath = absoluteUrl(
+    buildLocalizedPath(locale, { type: 'hub', hub: 'about' }),
+  );
 
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
     keywords: keywords.length ? keywords : undefined,
-    authors: [{ name: siteConfig.name, url: absoluteUrl(`/${locale}`) }],
+    authors: [{ name: siteConfig.name, url: aboutPath }],
     creator: siteConfig.name,
     publisher: siteConfig.name,
     category: 'Digital Marketing',
@@ -77,7 +85,7 @@ export function buildPageMetadata({
           width: 1200,
           height: 630,
           alt: title,
-          type: 'image/png',
+          type: ogTypeMime,
         },
       ],
       ...(ogType === 'article'

@@ -15,11 +15,11 @@ export function BlogPreview({ posts }: { posts: HomeBlogTeaser[] }) {
   const preview = posts.slice(0, 3);
   if (preview.length === 0) return null;
 
-  const title = locale === 'en' ? 'Ideas that convert' : 'Ideas que convierten';
+  const title = locale === 'en' ? 'Guides that help you decide' : 'Guías que te ayudan a decidir';
   const subtitle =
     locale === 'en'
-      ? 'Practical notes on SEO, social and brand growth.'
-      : 'Notas prácticas sobre SEO, redes y crecimiento de marca.';
+      ? 'Content creation, video, UGC and strategy for entrepreneurs in Colombia.'
+      : 'Creación de contenido, video, UGC y estrategia para emprendedores en Colombia.';
   const seeAll = locale === 'en' ? 'View all articles' : 'Ver todos los artículos';
   const read = locale === 'en' ? 'Read article' : 'Leer artículo';
 

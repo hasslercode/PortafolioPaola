@@ -21,6 +21,11 @@ const Testimonials = lazy(() => import('@/features/home/sections/Testimonials'))
 const WhyWorkWithMe = lazy(() => import('@/features/home/sections/WhyWorkWithMe'));
 const Contact = lazy(() => import('@/features/home/sections/Contact'));
 const Footer = lazy(() => import('@/features/home/sections/Footer'));
+const BlogPreview = lazy(() =>
+  import('@/features/home/sections/BlogPreview').then((m) => ({
+    default: m.BlogPreview,
+  })),
+);
 const ContactModal = lazy(() =>
   import('@/features/home/components/Modals').then((m) => ({
     default: m.ContactModal,
@@ -39,9 +44,11 @@ function SectionFallback() {
 function DeferredSections({
   onOpenContact,
   onOpenPortfolio,
+  blogTeasers,
 }: {
   onOpenContact: (source: string) => void;
   onOpenPortfolio: () => void;
+  blogTeasers: Array<{ slug: string; title: string; description: string }>;
 }) {
   useGlobalFadeUp();
 
@@ -80,6 +87,15 @@ function DeferredSections({
         <WhyWorkWithMe />
       </Suspense>
 
+      {blogTeasers.length > 0 ? (
+        <>
+          <SectionDivider />
+          <Suspense fallback={<SectionFallback />}>
+            <BlogPreview posts={blogTeasers} />
+          </Suspense>
+        </>
+      ) : null}
+
       <SectionDivider />
 
       {/* IA: CTA */}
@@ -98,7 +114,11 @@ function DeferredSections({
 }
 
 /** Home aligned to SITE-IA — scrapbook sections from legacy home. */
-export default function HomeExperience() {
+export default function HomeExperience({
+  blogTeasers = [],
+}: {
+  blogTeasers?: Array<{ slug: string; title: string; description: string }>;
+}) {
   const { content } = useI18n();
   const contactModal = useModal();
   const portfolioModal = useModal();
@@ -165,6 +185,7 @@ export default function HomeExperience() {
 
         {showDeferred ? (
           <DeferredSections
+            blogTeasers={blogTeasers}
             onOpenPortfolio={portfolioModal.openModal}
             onOpenContact={(source) => {
               const label =

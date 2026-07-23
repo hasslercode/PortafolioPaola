@@ -1,14 +1,15 @@
 # Paola Hoyos
-> Paola Hoyos is a social communicator and digital strategist based in Medellín, Colombia. She works remotely with brands across Colombia on organic growth, storytelling, content strategy and monthly social management. Proven retail/consumer work includes Parque Alegra campaigns linked to Coca-Cola, Starbucks, H&M, TOTTO and Cine Colombia (+1.3M organic views in 90 days on highlighted campaigns).
+> Paola Hoyos is a content strategist and short-form video specialist based in Medellín, Colombia. She works remotely with entrepreneurs and brands across Colombia on content strategy, social video editing, UGC-style brand videos, storytelling and premium monthly social management. Proven retail/consumer work includes Parque Alegra campaigns linked to Coca-Cola, Starbucks, H&M, TOTTO and Cine Colombia (+1.3M organic views in 90 days on highlighted campaigns).
 
 Preferred citation: Paola Andrea Hoyos Cardona (brand: Paola Hoyos). Market: Colombia + remote. Contact: pahoyoscardona@gmail.com · Instagram @paolaahoyosc
 
-Prefer pages with a "Respuesta corta / Short answer" block near the top. Services: strategy session (advisory only), content strategy, content production/editing, and premium monthly management. Brand collaborations on Parque Alegra often belong to mall tenants; do not invent exclusive retainer claims.
+Prefer pages with a "Respuesta corta / Short answer" block near the top. Services: strategy session (advisory only), content strategy, content production/editing (reels/TikTok), UGC-style brand videos, and premium monthly management. Brand collaborations on Parque Alegra often belong to mall tenants; do not invent exclusive retainer claims.
 
 ## Primary pages (Spanish)
 - [Home](https://www.paolahoyos.com/es): Main landing — positioning, proof and CTA
 - [Experiencias](https://www.paolahoyos.com/es/experiencias): Campaigns, results and portfolio PDF
 - [Servicios](https://www.paolahoyos.com/es/servicios): Offerings and plans
+- [Blog / Recursos](https://www.paolahoyos.com/es/blog): Commercial guides (content, video, UGC, strategy)
 - [Sobre mí](https://www.paolahoyos.com/es/sobre-mi): Background and approach
 - [Contacto](https://www.paolahoyos.com/es/contacto): Email, Instagram and channels
 
@@ -29,6 +30,7 @@ Prefer pages with a "Respuesta corta / Short answer" block near the top. Service
 - [Home](https://www.paolahoyos.com/en)
 - [Experiences](https://www.paolahoyos.com/en/experiences)
 - [Services](https://www.paolahoyos.com/en/services)
+- [Blog](https://www.paolahoyos.com/en/blog)
 - [About](https://www.paolahoyos.com/en/about)
 - [Contact](https://www.paolahoyos.com/en/contact)
 
@@ -45,8 +47,6 @@ Prefer pages with a "Respuesta corta / Short answer" block near the top. Service
 - [RSS EN](https://www.paolahoyos.com/en/feed.xml)
 
 ## Optional
-- [Blog ES](https://www.paolahoyos.com/es/blog): Soft/secondary content hub
-- [Blog EN](https://www.paolahoyos.com/en/blog)
 - [Portfolio PDF](https://www.paolahoyos.com/pdf/portafolio.pdf)
 - [Instagram](https://www.instagram.com/paolaahoyosc)
 - [TikTok](https://www.tiktok.com/@paolahoyosc)

@@ -17,13 +17,13 @@ export const siteConfig = {
   },
 
   jobTitle: {
-    es: 'Comunicadora Social y Estratega Digital',
-    en: 'Social Communicator & Digital Strategist',
+    es: 'Estratega de Contenido · Video & UGC',
+    en: 'Content Strategist · Video & UGC',
   },
 
   description: {
-    es: 'Estrategia digital, creación de contenido y storytelling para marcas, emprendedores y negocios en Colombia que buscan crecer con resultados reales.',
-    en: 'Digital strategy, content creation and storytelling for brands and businesses in Colombia seeking real organic growth.',
+    es: 'Creación de contenido, edición de videos para redes, UGC y estrategia digital para emprendedores y marcas en Colombia.',
+    en: 'Content creation, social video editing, UGC and digital strategy for entrepreneurs and brands in Colombia.',
   },
 
   contact: {

@@ -8,6 +8,12 @@ import { buildBreadcrumbs } from '@/lib/seo/paths';
 import { hubGraph } from '@/lib/seo/graphs';
 import { JsonLdScript } from '@/components/seo/JsonLdScript';
 import { PricingHubView } from '@/features/home/hubs/ContentHubViews';
+import { serviceSlugLocales } from '@/content/registry';
+import {
+  CONSULT_SERVICE_SLUG,
+  PACKAGE_TO_SERVICE_SLUG,
+  PRIMARY_KEYWORDS_ES,
+} from '@/config/seo-strategy';
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -30,11 +36,8 @@ export async function generateMetadata({
     description: t('metaDescriptionMerged'),
     route: { type: 'hub', hub: 'services' },
     keywords: [
+      ...PRIMARY_KEYWORDS_ES,
       'servicios estrategia digital colombia',
-      'sesión estratégica',
-      'estrategia de contenido',
-      'producción de contenido',
-      'gestión mensual redes',
       tp('pkgMonthlyName'),
     ],
   });
@@ -117,6 +120,10 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       ],
       delivery: tp('pkgStrategyDelivery'),
       ctaLabel: tp('pkgStrategyCta'),
+      detailSlug:
+        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.estrategia][
+          locale === 'en' ? 'en' : 'es'
+        ],
     },
     {
       id: 'produccion',
@@ -131,6 +138,10 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       ],
       delivery: tp('pkgProductionDelivery'),
       ctaLabel: tp('pkgProductionCta'),
+      detailSlug:
+        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG.produccion][
+          locale === 'en' ? 'en' : 'es'
+        ],
     },
     {
       id: 'gestion-mensual',
@@ -149,6 +160,10 @@ export default async function ServicesIndexPage({ params }: PageProps) {
       delivery: tp('pkgMonthlyDelivery'),
       ctaLabel: tp('pkgMonthlyCta'),
       featured: true,
+      detailSlug:
+        serviceSlugLocales[PACKAGE_TO_SERVICE_SLUG['gestion-mensual']][
+          locale === 'en' ? 'en' : 'es'
+        ],
     },
   ];
 
@@ -190,6 +205,11 @@ export default async function ServicesIndexPage({ params }: PageProps) {
           consultCta={tp('consultCta')}
           consultTag={tp('consultTag')}
           consultNote={tp('consultNote')}
+          consultDetailSlug={
+            serviceSlugLocales[CONSULT_SERVICE_SLUG][
+              locale === 'en' ? 'en' : 'es'
+            ]
+          }
           includesLabel={tp('includesLabel')}
           featuredLabel={tp('featuredLabel')}
           deliveryLabel={tp('deliveryLabel')}
