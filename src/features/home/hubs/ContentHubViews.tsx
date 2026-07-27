@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import { useI18n } from '@/features/home/HomeContentProvider';
 import { useContentActions } from '@/features/home/PageChrome';
 import { FaqSection } from '@/components/content/FaqSection';
+import { trackBlogClick } from '@/features/home/utils/analytics';
 
 export type BlogTopic =
   | 'seo'
@@ -142,6 +143,7 @@ export function BlogHubView({
                     params: { slug: post.slug },
                   }}
                   className="blog-card__link"
+                  onClick={() => trackBlogClick(post.slug, 'blog_hub')}
                 >
                   <span className="blog-card__topic">
                     {TOPIC_LABELS[post.topic][lang]}

@@ -1,6 +1,6 @@
 /**
- * Analytics stubs for Phase 2 UI parity.
- * Real providers wire in later without changing call sites.
+ * Google Analytics 4 — event helpers (gtag.js + dataLayer).
+ * No-ops until GA4 scripts hydrate `window.gtag`.
  */
 
 function pushDataLayer(payload: Record<string, unknown>) {
@@ -24,8 +24,15 @@ export function trackEvent(eventName: string, params: Record<string, unknown> = 
   pushDataLayer({ event: eventName, ...params });
 }
 
+/** Primary conversion CTAs: Hablemos / Contactar / header pill */
 export function trackCtaClick(location: string, label: string) {
   trackEvent('cta_click', {
+    event_category: 'conversion',
+    event_label: label,
+    cta_location: location,
+  });
+  // Distinct conversion event for contact intent (mark as key event in GA4)
+  trackEvent('hablemos_click', {
     event_category: 'conversion',
     event_label: label,
     cta_location: location,
@@ -59,4 +66,36 @@ export function trackSectionView(section: string) {
 
 export function trackOutboundClick(url: string) {
   trackEvent('outbound_click', { url });
+}
+
+export function trackScrollDepth(percent: number) {
+  trackEvent('scroll_depth', {
+    event_category: 'engagement',
+    scroll_percent: percent,
+  });
+}
+
+/** Fired when a blog article route is viewed */
+export function trackBlogView(slug: string, pagePath?: string) {
+  trackEvent('blog_view', {
+    event_category: 'engagement',
+    blog_slug: slug,
+    page_path: pagePath,
+  });
+}
+
+/** Fired when a user clicks into a blog article from a listing */
+export function trackBlogClick(slug: string, location: string) {
+  trackEvent('blog_click', {
+    event_category: 'engagement',
+    blog_slug: slug,
+    click_location: location,
+  });
+}
+
+export function trackContactPageView(pagePath?: string) {
+  trackEvent('contact_view', {
+    event_category: 'conversion',
+    page_path: pagePath,
+  });
 }

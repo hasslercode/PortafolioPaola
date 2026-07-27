@@ -2,6 +2,7 @@
 
 import { Link } from '@/i18n/routing';
 import { useI18n } from '@/features/home/HomeContentProvider';
+import { trackBlogClick } from '@/features/home/utils/analytics';
 
 export type HomeBlogTeaser = {
   slug: string;
@@ -40,6 +41,7 @@ export function BlogPreview({ posts }: { posts: HomeBlogTeaser[] }) {
               <Link
                 href={{ pathname: '/blog/[slug]', params: { slug: post.slug } }}
                 className="blog-card__link"
+                onClick={() => trackBlogClick(post.slug, 'home_preview')}
               >
                 <h3 className="blog-card__title">{post.title}</h3>
                 <p className="blog-card__excerpt">{post.description}</p>

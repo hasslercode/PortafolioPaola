@@ -1,6 +1,6 @@
 /**
- * Analytics adapters — load only after consent / idle.
- * Wired in Phase 2+; stubs keep architecture ready without hurting CWV.
+ * Analytics adapters — load only when IDs are present.
+ * GA4 ships enabled with the portfolio measurement ID; override via env if needed.
  */
 
 export type AnalyticsProvider =
@@ -10,8 +10,11 @@ export type AnalyticsProvider =
   | 'clarity'
   | 'metaPixel';
 
+/** Production GA4 property for paolahoyos.com */
+export const DEFAULT_GA4_ID = 'G-Q0GGQ2E216';
+
 export const analyticsConfig = {
-  ga4Id: process.env.NEXT_PUBLIC_GA4_ID ?? '',
+  ga4Id: process.env.NEXT_PUBLIC_GA4_ID || DEFAULT_GA4_ID,
   gtmId: process.env.NEXT_PUBLIC_GTM_ID ?? '',
   posthogKey: process.env.NEXT_PUBLIC_POSTHOG_KEY ?? '',
   posthogHost: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? '',
