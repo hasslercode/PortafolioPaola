@@ -12,8 +12,9 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   icons: {
     icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/icon-paola.png', type: 'image/png' },
+      { url: '/icon-paola.png', type: 'image/png', sizes: '128x128' },
     ],
     apple: '/icon-paola.png',
   },

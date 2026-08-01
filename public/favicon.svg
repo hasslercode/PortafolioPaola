@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Paola Hoyos">
+  <style>
+    .bg { fill: #faf7f5; }
+    .mark { fill: #943850; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #2d1e1b; }
+      .mark { fill: #f0c8d2; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <path
+    class="mark"
+    d="M8.2 24V8.4h6.1c1.55 0 2.72.32 3.5.96.79.63 1.18 1.55 1.18 2.76 0 .86-.22 1.6-.66 2.2-.43.6-1.05 1.03-1.85 1.3l3.1 8.38h-3.05l-2.78-7.7H11V24H8.2zm2.8-10.05h3.05c.78 0 1.36-.17 1.74-.5.39-.34.58-.82.58-1.44 0-.64-.2-1.12-.58-1.44-.38-.33-.96-.5-1.74-.5H11v3.88z"
+  />
+</svg>
