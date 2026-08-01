@@ -5503,7 +5503,22 @@ body.modal-open {
     position: relative;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
     justify-content: flex-start;
+}
+
+.hero-cta-secondary {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--pink-primary, #943850);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.hero-cta-secondary:hover {
+    color: var(--text-dark, #2d1e1b);
 }
 
 .btn-wow-action {

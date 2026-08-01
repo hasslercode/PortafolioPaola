@@ -15,6 +15,8 @@ export function SiteFooter({ locale }: { locale: AppLocale }) {
           <Link href="/experiences">{locale === 'es' ? 'Experiencias' : 'Experiences'}</Link>
           <Link href="/results">{locale === 'es' ? 'Resultados' : 'Results'}</Link>
           <Link href="/services">{locale === 'es' ? 'Servicios' : 'Services'}</Link>
+          <Link href="/pricing">{locale === 'es' ? 'Tarifas' : 'Pricing'}</Link>
+          <Link href="/cities">{locale === 'es' ? 'Ciudades' : 'Cities'}</Link>
           <Link href="/about">{locale === 'es' ? 'Sobre mí' : 'About'}</Link>
           <Link href="/contact">{locale === 'es' ? 'Contacto' : 'Contact'}</Link>
           <a href="/llms.txt" rel="noopener noreferrer">
@@ -22,6 +24,12 @@ export function SiteFooter({ locale }: { locale: AppLocale }) {
           </a>
           <a href={siteConfig.social.instagram} rel="noopener noreferrer">
             Instagram
+          </a>
+          <a href={siteConfig.social.linkedin} rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href={siteConfig.social.tiktok} rel="noopener noreferrer">
+            TikTok
           </a>
         </div>
       </div>

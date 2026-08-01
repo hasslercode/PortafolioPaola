@@ -52,8 +52,28 @@ export default async function HomePage({ params }: PageProps) {
     result: `${content.testimonials.resultLabel} ${item.result}`,
   }));
   const posts = await getAllPosts(locale);
-  const blogTeasers = posts.slice(0, 3).map((post) => ({
-    slug: post.slug[locale as SiteLocale] ?? post.slug.es,
+  /** Prefer GSC/commercial pillars over glossary fluff on the home teaser strip. */
+  const PRIORITY_HOME_TEASERS = [
+    'definicion-reel',
+    'que-es-ugc-y-por-que-funciona-en-colombia',
+    'precio-edicion-de-reels-colombia',
+  ] as const;
+  const typedLocale = locale as SiteLocale;
+  const bySlug = new Map(
+    posts.map((post) => [post.slug[typedLocale] ?? post.slug.es, post]),
+  );
+  const picked = PRIORITY_HOME_TEASERS.map((slug) => bySlug.get(slug)).filter(
+    (post): post is (typeof posts)[number] => Boolean(post),
+  );
+  for (const post of posts) {
+    if (picked.length >= 3) break;
+    const slug = post.slug[typedLocale] ?? post.slug.es;
+    if (slug.startsWith('definicion-')) continue;
+    if (picked.some((p) => (p.slug[typedLocale] ?? p.slug.es) === slug)) continue;
+    picked.push(post);
+  }
+  const blogTeasers = picked.slice(0, 3).map((post) => ({
+    slug: post.slug[typedLocale] ?? post.slug.es,
     title: post.title,
     description: post.seo.description,
   }));

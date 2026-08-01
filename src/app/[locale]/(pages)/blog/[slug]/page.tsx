@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = await getBlogBySlug(slug, locale);
   if (!post) return {};
   const enNeedsNoIndex = locale === 'en';
+  const contentNoIndex = Boolean(post.seo?.noIndex);
   return buildPageMetadata({
     locale: locale as SiteLocale,
     title: post.seo?.title ?? post.title,
@@ -46,7 +47,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     modifiedTime: post.updatedAt ?? post.publishedAt,
     absoluteTitle: true,
     // HU-EN-001: EN blog bodies still mixed/ES — avoid hreflang dilution until HU-EN-002
-    noIndex: enNeedsNoIndex,
+    // Thin stubs can set seo.noIndex until expanded (helpful-content hygiene).
+    noIndex: enNeedsNoIndex || contentNoIndex,
   });
 }
 

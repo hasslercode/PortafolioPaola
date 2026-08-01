@@ -18,13 +18,24 @@
 - Blog posts: `/blog/{slug}` (priority 0.75)
 - Blog hub: priority 0.85
 
+## Supporting hubs (also in sitemap)
+
+| Label ES | Canonical ES | Notes |
+|---|---|---|
+| Tarifas | `/es/tarifas` | Live COP ranges + Offer schema (restored) |
+| Ciudades | `/es/ciudades` | Local SEO hub |
+| Resultados | `/es/resultados` | Proof / metrics hub |
+| Proceso | `/es/proceso-de-trabajo` | How we work |
+| FAQ | `/es/preguntas-frecuentes` | FAQPage schema |
+
 ## Permanent redirects (301/308 — never list as canonical)
 
 | From | To |
 |---|---|
-| `/es/tarifas`, `/en/pricing`, `/tarifas`, `/pricing` | Services hub *(temporal — restaurar página tarifas en P1)* |
 | `/es/portafolio`, `/en/portfolio`, `/portafolio`, `/portfolio` | Experiences hub |
 | `/es/casos-estudio`, `/en/case-studies` (+ slugs) | Experiences hub |
+
+> Note: `/es/tarifas` and `/en/pricing` are **live pages**, not redirects.
 
 ## Crawl surfaces
 

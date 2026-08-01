@@ -217,6 +217,21 @@
   font-size: 0.95rem;
 }
 
+.geo-author__links {
+  margin: 0.65rem 0 0;
+  font-size: 0.92rem;
+}
+
+.geo-author__links a {
+  color: var(--pink-primary, #943850);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.geo-author__links a:hover {
+  color: var(--text-dark, #2d1e1b);
+}
+
 .geo-key-facts {
   margin: 1.5rem 0;
 }
