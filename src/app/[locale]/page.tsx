@@ -75,7 +75,8 @@ export default async function HomePage({ params }: PageProps) {
   const blogTeasers = picked.slice(0, 3).map((post) => ({
     slug: post.slug[typedLocale] ?? post.slug.es,
     title: post.title,
-    description: post.seo.description,
+    description: post.shortAnswer || post.seo.description,
+    topic: post.cluster || post.topic,
   }));
 
   // Discover LCP image from the document as early as possible (no /_next/image hop).
