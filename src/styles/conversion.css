@@ -573,6 +573,206 @@
     color: var(--text-body);
 }
 
+/* ── Home blog preview (must live here — seo.css is NOT loaded on /es home) ── */
+.home-blog {
+    padding-block: var(--section-padding-block);
+    background: var(--hero-bg);
+}
+
+.home-blog__header {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 28px;
+}
+
+.home-blog__badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--pink-primary);
+    background: var(--pink-bg);
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 16px;
+}
+
+.home-blog__title {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.4px;
+    margin: 0 0 12px;
+    line-height: 1.15;
+}
+
+.home-blog__title-script {
+    font-family: var(--font-script);
+    font-weight: 400;
+    color: var(--pink-primary);
+    font-size: 1.15em;
+}
+
+.home-blog__subtitle {
+    margin: 0;
+    font-size: clamp(15px, 2vw, 17px);
+    line-height: 1.55;
+    color: var(--text-body);
+}
+
+.home-blog__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .home-blog__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+.home-blog__card {
+    margin: 0;
+    min-width: 0;
+    background: var(--surface-panel, #fff);
+    border-radius: var(--radius-lg, 22px);
+    border: 1px solid rgba(232, 167, 179, 0.28);
+    box-shadow: var(--shadow-card, 0 10px 28px rgba(45, 30, 27, 0.06));
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-blog__card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(148, 56, 80, 0.12);
+}
+
+.home-blog__link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    height: 100%;
+    padding: 22px 20px 20px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.home-blog__card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.home-blog__index {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--pink-accent, #e8a7b3);
+    line-height: 1;
+}
+
+.home-blog__topic {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(148, 56, 80, 0.1);
+    color: var(--pink-primary);
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.home-blog__card-title {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.05rem, 2.4vw, 1.22rem);
+    font-weight: 700;
+    line-height: 1.28;
+    color: var(--text-dark);
+    overflow-wrap: anywhere;
+}
+
+.home-blog__excerpt {
+    margin: 0;
+    flex: 1;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text-muted, #554947);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.home-blog__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0.35rem;
+    width: fit-content;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffdce3 0%, #f8c4cf 100%);
+    color: var(--text-dark);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.home-blog__cta-arrow {
+    font-size: 0.95rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.home-blog__card:hover .home-blog__cta-arrow {
+    transform: translateX(3px);
+}
+
+.home-blog__more {
+    margin: 28px 0 0;
+    text-align: center;
+}
+
+@media (max-width: 720px) {
+    .home-blog__header {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .home-blog__link {
+        padding: 20px 18px 18px;
+    }
+
+    .home-blog__excerpt {
+        -webkit-line-clamp: 2;
+    }
+}
+
+[data-theme="dark"] .home-blog__card {
+    background: var(--surface-panel);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .home-blog__card-title {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .home-blog__excerpt {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .home-blog__cta {
+    color: var(--btn-text-on-pink, #2d1e1b);
+}
+
 /* ── Why Work With Me ── */
 .why-me {
     padding-block: var(--section-padding-block);
