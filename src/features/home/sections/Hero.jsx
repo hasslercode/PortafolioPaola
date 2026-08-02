@@ -120,12 +120,12 @@ export default function Hero({ onOpenContact }) {
               {hero.ctaSecondary ? (
                 <a
                   href={siteConfig.social.instagram}
-                  className="hero-cta-secondary"
+                  className="btn-pill btn-wow-action btn-wow-action--ghost"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={hero.ctaSecondaryAriaLabel || hero.ctaSecondary}
                 >
-                  {hero.ctaSecondary}
+                  <span>{hero.ctaSecondary}</span>
                 </a>
               ) : null}
             </div>

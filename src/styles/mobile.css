@@ -222,6 +222,13 @@
         justify-content: center;
     }
 
+    .hero-left-premium .btn-wow-action--ghost {
+        background: transparent !important;
+        color: var(--pink-primary, #943850) !important;
+        border: 1.5px solid rgba(148, 56, 80, 0.35) !important;
+        box-shadow: none !important;
+    }
+
     .hero-left-premium .btn-wow-action__sparkle {
         display: inline;
         margin-left: 6px;

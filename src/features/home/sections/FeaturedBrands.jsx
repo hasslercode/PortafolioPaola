@@ -112,9 +112,13 @@ function PlayButton() {
   );
 }
 
-export default function FeaturedBrands({ hubMode = false }) {
+export default function FeaturedBrands({
+  hubMode = false,
+  showCaseLinks = false,
+}) {
   const { content, t, locale } = useI18n();
   const { experience } = content;
+  const linkCases = hubMode || showCaseLinks;
 
   return (
     <section className="featured-brands" id="experiencias-destacadas">
@@ -158,7 +162,7 @@ export default function FeaturedBrands({ hubMode = false }) {
         <div className="brands-grid">
           {experience.campaigns.map((campaign, index) => {
             const layout = CAMPAIGN_LAYOUT[index];
-            const caseSlug = hubMode ? HOME_CASE_SLUGS[index] : null;
+            const caseSlug = linkCases ? HOME_CASE_SLUGS[index] : null;
 
             return (
               <FadeUp key={campaign.name} as="article" className={`campaign-card campaign-card--${layout.modifier}`} index={index}>
@@ -192,7 +196,7 @@ export default function FeaturedBrands({ hubMode = false }) {
                           }}
                           className="campaign-card__case-link"
                         >
-                          {locale === 'en' ? 'View case study' : 'Ver caso de estudio'}
+                          {locale === 'en' ? 'View case' : 'Ver caso'}
                         </Link>
                       ) : null}
                     </div>

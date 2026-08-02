@@ -150,6 +150,10 @@
         width: auto;
     }
 
+    .hero-cta-group .btn-wow-action--ghost {
+        padding: 13px 28px;
+    }
+
     .hero-right-premium {
         justify-content: center;
     }

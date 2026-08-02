@@ -557,6 +557,19 @@ html.theme-transition *::after {
     color: var(--btn-text-on-pink);
 }
 
+[data-theme="dark"] .btn-wow-action--ghost {
+    color: var(--pink-primary);
+    background: transparent;
+    border-color: rgba(232, 167, 179, 0.45);
+    box-shadow: none;
+}
+
+[data-theme="dark"] .btn-wow-action--ghost:hover {
+    color: var(--text-dark);
+    background: rgba(232, 167, 179, 0.12);
+    border-color: rgba(232, 167, 179, 0.7);
+}
+
 [data-theme="dark"] .btn-wow-action__sparkle {
     color: var(--btn-sparkle-on-pink);
 }
@@ -669,7 +682,7 @@ html.theme-transition *::after {
     color: var(--pink-accent-text);
 }
 
-[data-theme="dark"] .hero-left-premium .btn-wow-action {
+[data-theme="dark"] .hero-left-premium .btn-wow-action:not(.btn-wow-action--ghost) {
     color: var(--btn-text-on-pink);
 }
 

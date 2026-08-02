@@ -5504,21 +5504,9 @@ body.modal-open {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 10px;
     justify-content: flex-start;
-}
-
-.hero-cta-secondary {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--pink-primary, #943850);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.hero-cta-secondary:hover {
-    color: var(--text-dark, #2d1e1b);
 }
 
 .btn-wow-action {
@@ -5537,7 +5525,23 @@ body.modal-open {
     background: linear-gradient(135deg, #ffdce3 0%, #f8c4cf 100%);
     border: 1px solid rgba(255, 255, 255, 0.7);
     box-shadow: 0 8px 22px rgba(232, 167, 179, 0.28);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-wow-action--ghost {
+    background: transparent;
+    border: 1.5px solid rgba(148, 56, 80, 0.35);
+    box-shadow: none;
+    color: var(--pink-primary, #943850);
+}
+
+.btn-wow-action--ghost:hover {
+    background: rgba(255, 220, 227, 0.45);
+    border-color: rgba(148, 56, 80, 0.55);
+    box-shadow: none;
+    color: var(--text-dark, #2d1e1b);
+    transform: translateY(-1px);
 }
 
 .btn-wow-action__sparkle {
@@ -5951,7 +5955,15 @@ body.modal-open {
 
     .hero-cta-group {
         width: auto;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .hero-cta-group .btn-wow-action {
+        width: auto;
     }
 
     .hero-premium-tagline,

@@ -63,7 +63,7 @@ function DeferredSections({
 
       {/* IA: Casos destacados */}
       <Suspense fallback={<SectionFallback />}>
-        <FeaturedBrands hubMode />
+        <FeaturedBrands showCaseLinks />
       </Suspense>
 
       <SectionDivider />

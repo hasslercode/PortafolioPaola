@@ -655,13 +655,23 @@
 }
 
 .campaign-card__case-link {
-  display: inline-block;
-  margin-top: 0.85rem;
-  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--pink-primary, #943850);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(148, 56, 80, 0.35);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.campaign-card__case-link:hover {
+  color: var(--text-dark, #2d1e1b);
+  border-bottom-color: rgba(45, 30, 27, 0.45);
 }
 
 .home-art-article {
