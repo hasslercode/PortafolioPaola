@@ -1,6 +1,7 @@
 'use client';
 
 import { Link } from '@/i18n/routing';
+import FadeUp from '@/features/home/components/FadeUp';
 import { useI18n } from '@/features/home/HomeContentProvider';
 import { trackBlogClick } from '@/features/home/utils/analytics';
 
@@ -22,63 +23,88 @@ const TOPIC_LABELS: Record<string, { es: string; en: string }> = {
   marketing: { es: 'Marketing', en: 'Marketing' },
 };
 
-/** Home blog teaser — 3 commercial pillars (SITE-IA). */
+/** Home blog teaser — scrapbook cards (styles live in main.css, not seo.css). */
 export function BlogPreview({ posts }: { posts: HomeBlogTeaser[] }) {
   const { locale } = useI18n();
   const preview = posts.slice(0, 3);
   if (preview.length === 0) return null;
 
-  const title = locale === 'en' ? 'Guides that help you decide' : 'Guías que te ayudan a decidir';
-  const subtitle =
+  const copy =
     locale === 'en'
-      ? 'Clear answers on Reels, UGC and pricing for brands in Colombia.'
-      : 'Respuestas claras sobre Reels, UGC y precios para marcas en Colombia.';
-  const seeAll = locale === 'en' ? 'View all articles' : 'Ver todos los artículos';
-  const read = locale === 'en' ? 'Read' : 'Leer';
+      ? {
+          badge: 'Blog',
+          titleBefore: 'Guides that help you',
+          titleScript: 'decide',
+          subtitle: 'Clear answers on Reels, UGC and pricing for brands in Colombia.',
+          seeAll: 'View all articles',
+          read: 'Read guide',
+        }
+      : {
+          badge: 'Blog',
+          titleBefore: 'Guías que te ayudan a',
+          titleScript: 'decidir',
+          subtitle: 'Respuestas claras sobre Reels, UGC y precios para marcas en Colombia.',
+          seeAll: 'Ver todos los artículos',
+          read: 'Leer guía',
+        };
 
   return (
-    <section className="blog-hub blog-hub--preview" id="blog-preview" aria-labelledby="blog-preview-title">
-      <div className="container blog-hub__container">
-        <header className="blog-hub__header">
-          <span className="blog-hub__eyebrow">Blog</span>
-          <h2 id="blog-preview-title" className="blog-hub__title">
-            {title}
+    <section className="home-blog" id="blog-preview" aria-labelledby="home-blog-title">
+      <div className="container">
+        <FadeUp as="header" className="home-blog__header" index={0}>
+          <span className="home-blog__badge" aria-hidden="true">
+            {copy.badge}
+          </span>
+          <h2 id="home-blog-title" className="home-blog__title">
+            <span>{copy.titleBefore}</span>{' '}
+            <span className="home-blog__title-script">{copy.titleScript}</span>
           </h2>
-          <p className="blog-hub__summary">{subtitle}</p>
-        </header>
+          <p className="home-blog__subtitle">{copy.subtitle}</p>
+        </FadeUp>
 
-        <div className="blog-hub__grid">
-          {preview.map((post) => {
+        <div className="home-blog__grid">
+          {preview.map((post, index) => {
             const topicKey = post.topic || '';
-            const topicLabel = TOPIC_LABELS[topicKey]?.[locale === 'en' ? 'en' : 'es'];
+            const topicLabel =
+              TOPIC_LABELS[topicKey]?.[locale === 'en' ? 'en' : 'es'] || copy.badge;
 
             return (
-              <article key={post.slug} className="blog-card blog-card--preview">
+              <FadeUp
+                key={post.slug}
+                as="article"
+                className="home-blog__card"
+                index={index + 1}
+              >
                 <Link
                   href={{ pathname: '/blog/[slug]', params: { slug: post.slug } }}
-                  className="blog-card__link"
+                  className="home-blog__link"
                   onClick={() => trackBlogClick(post.slug, 'home_preview')}
                 >
-                  {topicLabel ? (
-                    <span className="blog-card__topic">{topicLabel}</span>
-                  ) : null}
-                  <h3 className="blog-card__title">{post.title}</h3>
-                  <p className="blog-card__excerpt">{post.description}</p>
-                  <span className="blog-card__cta">
-                    {read}
-                    <span aria-hidden="true"> →</span>
+                  <div className="home-blog__card-top">
+                    <span className="home-blog__index" aria-hidden="true">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="home-blog__topic">{topicLabel}</span>
+                  </div>
+                  <h3 className="home-blog__card-title">{post.title}</h3>
+                  <p className="home-blog__excerpt">{post.description}</p>
+                  <span className="home-blog__cta">
+                    <span>{copy.read}</span>
+                    <span className="home-blog__cta-arrow" aria-hidden="true">
+                      →
+                    </span>
                   </span>
                 </Link>
-              </article>
+              </FadeUp>
             );
           })}
         </div>
 
-        <p className="blog-hub__more">
-          <Link href="/blog" className="btn-pill">
-            {seeAll}
+        <FadeUp as="p" className="home-blog__more" index={4}>
+          <Link href="/blog" className="btn-pill-premium">
+            {copy.seeAll}
           </Link>
-        </p>
+        </FadeUp>
       </div>
     </section>
   );

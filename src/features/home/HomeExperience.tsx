@@ -48,7 +48,12 @@ function DeferredSections({
 }: {
   onOpenContact: (source: string) => void;
   onOpenPortfolio: () => void;
-  blogTeasers: Array<{ slug: string; title: string; description: string }>;
+  blogTeasers: Array<{
+    slug: string;
+    title: string;
+    description: string;
+    topic?: string;
+  }>;
 }) {
   useGlobalFadeUp();
 
@@ -117,7 +122,12 @@ function DeferredSections({
 export default function HomeExperience({
   blogTeasers = [],
 }: {
-  blogTeasers?: Array<{ slug: string; title: string; description: string }>;
+  blogTeasers?: Array<{
+    slug: string;
+    title: string;
+    description: string;
+    topic?: string;
+  }>;
 }) {
   const { content } = useI18n();
   const contactModal = useModal();
