@@ -34,7 +34,8 @@ export function buildPageMetadata({
   route,
   keywords = [],
   noIndex = false,
-  ogImage = '/assets/og-paola.jpg',
+  // Hero portrait (fotopaola) cropped to 1200×630; ?v= busts WhatsApp/FB OG cache.
+  ogImage = '/assets/og-paola.jpg?v=hero-20260812',
   ogType = 'website',
   absoluteTitle = false,
   publishedTime,
