@@ -7,7 +7,7 @@ import { siteConfig, type SiteLocale } from '@/config/site';
 import { KNOW_ABOUT_ENTITIES } from '@/config/seo-strategy';
 import { absoluteUrl, buildLocalizedPath, type BreadcrumbItem } from '@/lib/seo/paths';
 
-const OG_IMAGE = `${siteConfig.url}/assets/og-paola.jpg`;
+const OG_IMAGE = `${siteConfig.url}/assets/og-paola.jpg?v=hero-20260812`;
 
 export type JsonLdNode = Record<string, unknown>;
 
