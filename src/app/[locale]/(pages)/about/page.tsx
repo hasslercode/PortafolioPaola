@@ -25,9 +25,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     route: { type: 'hub', hub: 'about' },
     keywords: [
       'paola hoyos',
-      'estratega digital colombia',
-      'comunicadora social',
-      'medellín remoto',
+      'content strategist colombia',
+      'estratega de contenido',
+      'reclutadores content strategy',
+      'comunicadora social medellín',
+      'brand content colombia remoto',
     ],
   });
 }

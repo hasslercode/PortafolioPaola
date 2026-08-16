@@ -242,6 +242,108 @@
   padding: 0.75rem 0 1.25rem;
 }
 
+/* Hiring bridge — recruiters / in-house roles (dual ICP) */
+.recruiter-bridge {
+  padding-block: 1.35rem 1.5rem;
+}
+
+.recruiter-bridge__header {
+  max-width: 40rem;
+  margin-bottom: 1.1rem;
+}
+
+.recruiter-bridge__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted, #6b5b6a);
+}
+
+.recruiter-bridge__title {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  line-height: 1.2;
+  color: var(--text-primary, #2a1f2a);
+}
+
+.recruiter-bridge__lead {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--text-secondary, #4a3f4a);
+}
+
+.recruiter-bridge__roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.65rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.recruiter-bridge__role {
+  margin: 0;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent-pink, #c45b7a) 35%, transparent);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  color: var(--text-primary, #2a1f2a);
+  background: color-mix(in srgb, var(--accent-pink, #c45b7a) 8%, transparent);
+}
+
+.recruiter-bridge__proof {
+  max-width: 42rem;
+  margin-bottom: 1.15rem;
+}
+
+.recruiter-bridge__proof p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--text-secondary, #4a3f4a);
+}
+
+.recruiter-bridge__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.1rem;
+}
+
+.recruiter-bridge__secondary {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary, #2a1f2a);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.recruiter-bridge__secondary:hover {
+  color: var(--accent-pink, #c45b7a);
+}
+
+.sobre-hub .recruiter-bridge {
+  padding-block: 1.15rem 1.35rem;
+}
+
+[data-theme='dark'] .recruiter-bridge__title,
+[data-theme='dark'] .recruiter-bridge__role {
+  color: var(--text-primary, #f5eef3);
+}
+
+[data-theme='dark'] .recruiter-bridge__lead,
+[data-theme='dark'] .recruiter-bridge__proof p {
+  color: var(--text-secondary, #d4c6d0);
+}
+
 /* Contacto hub */
 .contacto-hub-crumbs {
   padding-top: 0.35rem;

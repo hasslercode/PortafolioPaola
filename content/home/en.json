@@ -57,7 +57,7 @@
     "socialProofBefore": "Brands and entrepreneurs already",
     "socialProofAccent": "growing",
     "socialProofAfter": "with me ✨",
-    "availability": "Available for projects",
+    "availability": "Open to projects and roles",
     "location": "Medellín · Colombia · Remote",
     "cta": "Contact by email ✦",
     "ctaAriaLabel": "Contact by email — open contact",
@@ -394,6 +394,21 @@
         "description": "Strategies and decisions based on metrics. I analyze results to optimize every action and build strategies that impact the client's goals."
       }
     ]
+  },
+  "recruiterBridge": {
+    "eyebrow": "For recruiters and companies",
+    "title": "Open to Content Strategy, Social and Brand Content roles",
+    "lead": "Beyond freelance projects, I evaluate in-house or retainer opportunities with companies in Colombia and LatAm. I look for teams that measure content by business outcomes — not just likes.",
+    "roles": [
+      "Content Strategy",
+      "Senior Social / Community",
+      "Brand Content",
+      "Short-form video & UGC"
+    ],
+    "proof": "Documented retail and consumer experience (campaigns linked to Coca-Cola, Starbucks, H&M, TOTTO, Cine Colombia / Parque Alegra) with 1.3M+ organic views in 90 days on highlighted pieces. Based in Medellín · remote nationwide.",
+    "linkedinCta": "View LinkedIn ✦",
+    "emailCta": "Email me",
+    "guideCta": "Guide: remote content strategist"
   },
   "services": {
     "badge": "Services",

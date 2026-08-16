@@ -56,7 +56,7 @@ export default async function HomePage({ params }: PageProps) {
   const PRIORITY_HOME_TEASERS = [
     'definicion-reel',
     'que-es-ugc-y-por-que-funciona-en-colombia',
-    'precio-edicion-de-reels-colombia',
+    'como-contratar-estratega-digital',
   ] as const;
   const typedLocale = locale as SiteLocale;
   const bySlug = new Map(
