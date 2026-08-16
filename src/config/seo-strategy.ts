@@ -27,6 +27,17 @@ export const PRIMARY_KEYWORDS_ES = [
   'marketing para emprendedores',
   'producción de contenido',
   'gestión de redes sociales colombia',
+  'content strategist colombia',
+  'contratar estratega digital',
+] as const;
+
+/** Hiring / recruiter bridge keywords (About + decision posts) */
+export const HIRING_BRIDGE_KEYWORDS_ES = [
+  'content strategist colombia remoto',
+  'contratar estratega digital',
+  'content strategy colombia',
+  'brand content colombia',
+  'estratega de contenido medellín',
 ] as const;
 
 export const KNOW_ABOUT_ENTITIES = [

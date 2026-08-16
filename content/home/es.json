@@ -57,7 +57,7 @@
     "socialProofBefore": "Marcas y emprendedores que ya están",
     "socialProofAccent": "creciendo",
     "socialProofAfter": "conmigo ✨",
-    "availability": "Disponible para proyectos",
+    "availability": "Disponible para proyectos y roles",
     "location": "Medellín · Colombia · Remoto",
     "cta": "Contactar por correo ✦",
     "ctaAriaLabel": "Contactar por correo — abrir contacto",
@@ -394,6 +394,21 @@
         "description": "Estrategias y decisiones basadas en métricas. Analizo los resultados para la optimización de cada acción y crear estrategias que impacten los objetivos del cliente."
       }
     ]
+  },
+  "recruiterBridge": {
+    "eyebrow": "Para reclutadores y empresas",
+    "title": "Abierta a roles de Content Strategy, Social y Brand Content",
+    "lead": "Además de proyectos freelance, evalúo oportunidades in-house o retainer en empresas de Colombia y LatAm. Busco equipos que midan contenido por negocio — no solo por likes.",
+    "roles": [
+      "Content Strategy",
+      "Social / Community senior",
+      "Brand Content",
+      "Video corto & UGC"
+    ],
+    "proof": "Experiencia documentada en retail y consumo (campañas ligadas a Coca-Cola, Starbucks, H&M, TOTTO, Cine Colombia / Parque Alegra) con +1.3M vistas orgánicas en 90 días en piezas destacadas. Base Medellín · trabajo remoto nacional.",
+    "linkedinCta": "Ver LinkedIn ✦",
+    "emailCta": "Escribir por correo",
+    "guideCta": "Guía: content strategist remoto"
   },
   "services": {
     "badge": "Servicios",

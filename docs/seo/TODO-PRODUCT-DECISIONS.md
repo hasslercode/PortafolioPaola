@@ -31,10 +31,11 @@ Estas acciones **no se implementaron en código** porque requieren confirmación
 ## P1 — Marca personal / hiring enterprise
 
 ### TODO-04 — ICP dual: freelance vs empleo
-- **Decisión:** ¿El sitio debe optimizar solo “contrátame como proveedora”, también “ábreme un rol in-house”, o ambos con secciones separadas?
-- **Por qué:** Tarifas “desde $60k” ayudan a pymes pero pueden sub-posicionar frente a talento senior en Rappi/MELI/Globant. Un bloque “Para reclutadores” resuelve sin matar CRO freelance.
-- **Archivos (cuando se decida):** `content/home/es.json` (About / WhyWorkWithMe) · `AboutHubView` · posible ruta `/es/sobre-mi#reclutadores` · LinkedIn CTA en hero About.
-- **Propuesta de copy (borrador):**
+- **Decisión:** **Aprobado en código (2026-08-16)** — ambos con sección separada “Para reclutadores”.
+- **Implementado:** `RecruiterBridge` en `/es/sobre-mi#reclutadores` · availability dual en hero · guía `como-contratar-estratega-digital` indexable · bridge en `content-strategist-colombia-remoto` · doc `docs/seo/WEDGE-OPORTUNIDADES.md`.
+- **Pendiente fino:** timeline laboral / CV (`TODO-05`) para seniority en 30 s.
+- **Archivos:** `content/home/{es,en}.json` · `AboutHubView` · `RecruiterBridge.jsx` · blog hiring cluster.
+- **Propuesta de copy (en producción):**
   > “Además de proyectos freelance, estoy abierta a roles de Content Strategy / Social / Brand Content en empresas de Colombia y LatAm. Experiencia documentada en retail/consumo (+1.3M vistas orgánicas en campañas destacadas).”
 
 ### TODO-05 — Timeline laboral / CV descargable
@@ -91,7 +92,7 @@ Estas acciones **no se implementaron en código** porque requieren confirmación
 | TODO-01 WhatsApp | | |
 | TODO-02 Mailbox dominio | | |
 | TODO-03 Calendly | | |
-| TODO-04 ICP dual | | |
+| TODO-04 ICP dual | sí · 2026-08-16 | Bloque reclutadores + hiring SEO; CV sigue en TODO-05 |
 | TODO-05 CV / timeline | | |
 | TODO-06 Universidad | | |
 | TODO-07 Framing logos | | |

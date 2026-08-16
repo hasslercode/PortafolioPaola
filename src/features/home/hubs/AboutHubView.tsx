@@ -4,13 +4,14 @@ import WhyWorkWithMe from '@/features/home/sections/WhyWorkWithMe';
 import Skills from '@/features/home/sections/Skills';
 import Process from '@/features/home/sections/Process';
 import Testimonials from '@/features/home/sections/Testimonials';
+import RecruiterBridge from '@/features/home/sections/RecruiterBridge';
 import VerticalArtConnector from '@/features/home/components/VerticalArtConnector';
 import { useI18n } from '@/features/home/HomeContentProvider';
 import { useContentActions } from '@/features/home/PageChrome';
 
 /**
  * Sobre mí — SITE-IA:
- * Historia | Formación | Filosofía | Metodología | CTA
+ * Historia | Formación | Filosofía | Metodología | Reclutadores | CTA
  */
 export function AboutHubView() {
   const { locale } = useI18n();
@@ -22,6 +23,7 @@ export function AboutHubView() {
     { id: 'formacion', label: isEn ? 'Background' : 'Formación' },
     { id: 'filosofia', label: isEn ? 'Philosophy' : 'Filosofía' },
     { id: 'metodologia', label: isEn ? 'Method' : 'Metodología' },
+    { id: 'reclutadores', label: isEn ? 'Recruiters' : 'Reclutadores' },
   ];
 
   return (
@@ -64,6 +66,10 @@ export function AboutHubView() {
       </div>
 
       <VerticalArtConnector mark="dot" />
+
+      <RecruiterBridge />
+
+      <VerticalArtConnector mark="sparkle" />
 
       <div id="cta" className="container sobre-hub-cta">
         <button
