@@ -159,44 +159,12 @@ def metric_table(data, styles):
 
 
 def add_cover(story, styles):
-    story.append(Spacer(1, 1.8 * inch))
+    story.append(Spacer(1, 2.2 * inch))
     story.append(Paragraph("Prueba Técnica", styles["cover_title"]))
-    story.append(Paragraph("Coordinador@ de Estrategia Digital y Comunidades", styles["cover_sub"]))
-    story.append(Spacer(1, 0.3 * inch))
-    story.append(Paragraph("<b>Línea Estética</b> — Market de Bienestar y Belleza Integral", styles["cover_sub"]))
-    story.append(Spacer(1, 0.6 * inch))
-    story.append(Paragraph("Presentado por:", styles["cover_meta"]))
+    story.append(Paragraph("Línea Estética", styles["cover_sub"]))
+    story.append(Spacer(1, 0.8 * inch))
     story.append(Paragraph("<b>Paola Andrea Hoyos Cardona</b>", styles["cover_sub"]))
-    story.append(Paragraph("Estratega Digital · Comunicadora Social · Magíster en Comunicación Digital", styles["cover_meta"]))
-    story.append(Paragraph("pahoyoscardona@gmail.com · linkedin.com/in/paola-andrea-hoyos-cardona-b7247a182", styles["cover_meta"]))
-    story.append(Spacer(1, 0.5 * inch))
-    story.append(HRFlowable(width="60%", thickness=2, color=PURPLE, spaceBefore=10, spaceAfter=10))
     story.append(Paragraph("Septiembre 2026", styles["cover_meta"]))
-    story.append(PageBreak())
-
-
-def add_context(story, styles):
-    story.append(Paragraph("Contexto y alineación con la marca", styles["h1"]))
-    story.append(
-        Paragraph(
-            "Línea Estética se posiciona como <i>«Tu Market de Bienestar y Belleza Integral»</i>: "
-            "desde 2016 conecta a las colombianas con dermocosmética de respaldo científico "
-            "(La Roche-Posay, Eucerin, ISDIN, Vichy, CeraVe, K-Beauty, entre otras), con más de 82 tiendas "
-            "físicas y canales digitales. Su propósito —<i>«Más que una empresa, somos tu aliado estratégico "
-            "en el cuidado de la piel»</i>— y su comunidad <b>#SkincareLovers</b> son el marco de esta propuesta.",
-            styles["body"],
-        )
-    )
-    story.append(
-        Paragraph(
-            "La vacante busca un perfil estratégico, creativo y analítico que conecte marcas con personas, "
-            "gestione reputación, lidere influencers, traduzca métricas en decisiones de negocio y una "
-            "experiencia digital con activaciones físicas. Esta respuesta integra diagnóstico, estrategia, "
-            "gestión de crisis, campaña con creadores y apertura omnicanal — con el enfoque que aplico "
-            "en mi trabajo: storytelling con propósito, crecimiento orgánico y resultados medibles.",
-            styles["body"],
-        )
-    )
     story.append(PageBreak())
 
 
@@ -582,28 +550,6 @@ def add_q4(story, styles):
         )
     )
 
-    story.append(Spacer(1, 0.2 * inch))
-    story.append(Paragraph("Cierre", styles["h2"]))
-    story.append(
-        Paragraph(
-            "Esta propuesta conecta el diagnóstico de datos con acciones concretas alineadas al propósito de "
-            "Línea Estética: ser el aliado de bienestar de sus clientas, no solo un catálogo digital. "
-            "Mi enfoque combina storytelling que genera conversación, ejecución disciplinada por métricas "
-            "y experiencias que unen lo digital con lo físico — exactamente lo que la vacante demanda.",
-            styles["body"],
-        )
-    )
-    story.append(Spacer(1, 0.3 * inch))
-    story.append(
-        Paragraph(
-            "<b>Paola Andrea Hoyos Cardona</b><br/>"
-            "Comunicadora Social · Magíster en Comunicación Digital<br/>"
-            "Estratega Digital · Storytelling · Crecimiento Orgánico<br/>"
-            "pahoyoscardona@gmail.com",
-            styles["body"],
-        )
-    )
-
 
 def main():
     styles = build_styles()
@@ -620,7 +566,6 @@ def main():
 
     story = []
     add_cover(story, styles)
-    add_context(story, styles)
     add_q1(story, styles)
     add_q2(story, styles)
     add_q3(story, styles)
