@@ -127,6 +127,9 @@ export const blogSlugs = [
   'contenido-tiktok-para-negocios-colombia',
   'social-media-manager-vs-community-manager',
   'gestion-de-redes-sociales-colombia',
+  'estrategia-contenido-instagram-tiktok-colombia',
+  'parrilla-de-contenido-instagram-tiktok',
+  'edicion-de-videos-de-marca-instagram-tiktok',
 ] as const;
 
 export type ServiceSlug = (typeof serviceSlugs)[number];
