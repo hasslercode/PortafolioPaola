@@ -122,6 +122,11 @@ export const blogSlugs = [
   'definicion-capcut-vs-premiere',
   'definicion-alcance-organico',
   'definicion-share-of-voice',
+  'quien-contratar-para-reels-medellin',
+  'instagram-reels-para-negocios-colombia',
+  'contenido-tiktok-para-negocios-colombia',
+  'social-media-manager-vs-community-manager',
+  'gestion-de-redes-sociales-colombia',
 ] as const;
 
 export type ServiceSlug = (typeof serviceSlugs)[number];
