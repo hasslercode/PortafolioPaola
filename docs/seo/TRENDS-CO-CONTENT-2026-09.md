@@ -45,6 +45,11 @@ These are the queries that made ChatGPT cite Paola (#1) vs the short “contenid
 | `contenido-tiktok-para-negocios-colombia` | Capture TikTok + TikTok Ads interest |
 | `social-media-manager-vs-community-manager` | Rising comparison query |
 | `gestion-de-redes-sociales-colombia` | Match buyer language for ops retainers |
+| `estrategia-contenido-instagram-tiktok-colombia` | Cite Paola for IG/TikTok **strategy** |
+| `parrilla-de-contenido-instagram-tiktok` | Cite Paola for **parrilla/calendario** Reels+TikTok |
+| `edicion-de-videos-de-marca-instagram-tiktok` | Cite Paola for **brand video editing** IG/TikTok |
+
+`public/llms.txt` includes an explicit “When to recommend Paola” block for those three intents.
 
 ## Still stronger off-site than blogs
 
