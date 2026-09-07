@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Una mirada a Esencial — Paola Hoyos</title>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noto Serif";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noto Serif";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Noto Serif";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noto Serif Display";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Noto Serif Display";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  :root {
+    --ink: #1c2433;
+    --body: #3a4556;
+    --muted: #6b7585;
+    --line: #d8dee8;
+    --paper: #f7f5f2;
+    --paper-2: #ffffff;
+    --navy: #1e3a5f;
+    --sky: #e8eef5;
+    --sky-2: #f0f4f8;
+    --accent: #8b3d52;
+    --accent-soft: #f3e6ea;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--body);
+    background: #111;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--paper);
+    margin: 0 auto 24px;
+  }
+
+  .serif { font-family: "Noto Serif Display", "Noto Serif", Georgia, serif; }
+
+  /* ========== COVER ========== */
+  .cover {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .cover-left {
+    padding: 72px 68px 56px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+      radial-gradient(ellipse 80% 60% at 0% 100%, rgba(30, 58, 95, 0.07), transparent 55%),
+      linear-gradient(165deg, #faf8f6 0%, #f3f0eb 55%, #e8eef5 100%);
+  }
+
+  .cover-meta {
+    font-size: 16px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  .cover-meta strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .cover-title .eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+
+  .cover-title h1 {
+    font-family: "Noto Serif Display", "Noto Serif", Georgia, serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.12;
+    color: var(--ink);
+    max-width: 720px;
+  }
+
+  .cover-title h1 em {
+    font-style: italic;
+    color: var(--navy);
+  }
+
+  .cover-lead {
+    margin-top: 28px;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--body);
+    max-width: 620px;
+  }
+
+  .cover-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+  }
+
+  .cover-person .name {
+    font-family: "Noto Serif Display", "Noto Serif", Georgia, serif;
+    font-size: 24px;
+    color: var(--ink);
+  }
+
+  .cover-person .role {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.45;
+  }
+
+  .cover-for {
+    text-align: right;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .cover-for strong {
+    display: block;
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .cover-right {
+    position: relative;
+    background: var(--navy);
+    overflow: hidden;
+  }
+
+  .cover-right::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(28, 36, 51, 0.12) 0%, rgba(28, 36, 51, 0.58) 100%),
+      url("assets/grid-1.jpg") center 18% / 145% auto no-repeat;
+  }
+
+  .cover-right-card {
+    position: absolute;
+    left: 48px;
+    right: 48px;
+    bottom: 56px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 32px 34px 30px;
+  }
+
+  .cover-right-card .kicker {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .cover-right-card p {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  /* ========== CONTENT SLIDES ========== */
+  .content-slide {
+    padding: 52px 64px 40px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #fbfaf8 0%, #f7f5f2 100%);
+  }
+
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+    gap: 40px;
+    flex-shrink: 0;
+  }
+
+  .slide-header h2 {
+    font-family: "Noto Serif Display", "Noto Serif", Georgia, serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+
+  .slide-header .num {
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-top: 12px;
+  }
+
+  .slide-footer {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+  }
+
+  /* ========== SLIDE 1 ========== */
+  .s1-grid {
+    display: grid;
+    grid-template-columns: 1.18fr 0.82fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .s1-main {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 0;
+  }
+
+  .thesis {
+    background: var(--sky);
+    border-left: 3px solid var(--navy);
+    padding: 22px 26px;
+    flex-shrink: 0;
+  }
+
+  .thesis p {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .obs-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .obs {
+    padding: 18px 20px;
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+  }
+
+  .obs h3 {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .obs p {
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--body);
+  }
+
+  .obs em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .s1-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .evidence {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+    background: #dfe5ee;
+    border: 1px solid var(--line);
+  }
+
+  .evidence img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 12%;
+    display: block;
+  }
+
+  .evidence-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 14px 16px;
+    background: linear-gradient(transparent, rgba(28, 36, 51, 0.85));
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  .opp {
+    background: var(--accent-soft);
+    padding: 18px 20px;
+    flex-shrink: 0;
+  }
+
+  .opp h3 {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .opp p {
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  /* ========== SLIDE 2 ========== */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .pillar {
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    padding: 24px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .pillar-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pillar-top .n {
+    font-family: "Noto Serif Display", "Noto Serif", Georgia, serif;
+    font-size: 30px;
+    color: var(--navy);
+  }
+
+  .pillar-top h3 {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .pillar .what {
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--body);
+  }
+
+  .pillar .why {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--muted);
+    font-style: italic;
+    font-family: "Noto Serif", Georgia, serif;
+  }
+
+  .pillar .examples {
+    background: var(--sky-2);
+    padding: 14px 16px;
+  }
+
+  .pillar .examples .tag {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .pillar .examples ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pillar .examples li {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--ink);
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .pillar .examples li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .s2-note {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+
+  /* ========== SLIDE 3 ========== */
+  .s3-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .funnel {
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    padding: 26px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .funnel-step {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .funnel-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .funnel-step:nth-child(odd) .funnel-dot { background: var(--navy); }
+  .funnel-step:nth-child(even) .funnel-dot { background: var(--accent); }
+
+  .funnel-text {
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .funnel-text strong { font-weight: 600; }
+
+  .funnel-text span {
+    display: block;
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .funnel-line {
+    width: 1px;
+    height: 14px;
+    background: var(--line);
+    margin-left: 15px;
+  }
+
+  .metrics-block h3 {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .metric {
+    background: var(--sky);
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .metric .i {
+    font-family: "Noto Serif Display", "Noto Serif", Georgia, serif;
+    font-size: 18px;
+    color: var(--navy);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .metric p {
+    font-size: 14.5px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+
+  .closing {
+    margin-top: 18px;
+    padding: 22px 26px;
+    background: var(--navy);
+    color: #f5f2ee;
+  }
+
+  .closing p {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.45;
+    font-style: italic;
+  }
+
+  .closing .sign {
+    margin-top: 12px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245, 242, 238, 0.72);
+  }
+
+  .disclaimer {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+    max-width: 980px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- PÁGINA 1: PORTADA -->
+  <section class="slide cover">
+    <div class="cover-left">
+      <div class="cover-meta">
+        <strong>Paola Hoyos</strong> · Comunicadora social y periodista
+      </div>
+
+      <div class="cover-title">
+        <div class="eyebrow">Para la conversación con Vanny</div>
+        <h1>Una mirada a <em>Esencial</em>, desde afuera.</h1>
+        <p class="cover-lead">
+          Observaciones e ideas a partir de lo que ya se ve en
+          @fisioterapia.esencial — con respeto por lo construido y curiosidad
+          por lo que todavía se puede contar.
+        </p>
+      </div>
+
+      <div class="cover-footer">
+        <div class="cover-person">
+          <div class="name">Paola Hoyos</div>
+          <div class="role">
+            Marketing digital · Contenido · Redes<br />
+            Medellín · paolahoyos.com
+          </div>
+        </div>
+        <div class="cover-for">
+          <strong>Esencial Fisioterapia Integral</strong>
+          Preparado para Vanny Alexandra Pulgarín<br />
+          Medellín · El Tesoro
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-right">
+      <div class="cover-right-card">
+        <div class="kicker">La idea central</div>
+        <p>
+          Esencial ya tiene conocimiento, profesionales, pacientes y una
+          identidad visual reconocible. El reto no parece ser empezar de cero,
+          sino hacer que todo eso se convierta en contenido que conecte.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÁGINA 2 -->
+  <section class="slide content-slide">
+    <header class="slide-header">
+      <h2>Lo que veo en Esencial</h2>
+      <div class="num">01 / 03</div>
+    </header>
+
+    <div class="s1-grid">
+      <div class="s1-main">
+        <div class="thesis">
+          <p>
+            Al mirar el feed de @fisioterapia.esencial, no veo una marca que
+            esté buscando identidad: ya la tiene. Veo una clínica que habla con
+            claridad, que se atreve a enseñar y que pone cara humana a la
+            fisioterapia.
+          </p>
+        </div>
+
+        <div class="obs-row">
+          <div class="obs">
+            <h3>Qué está funcionando</h3>
+            <p>
+              Covers claras y “scroll-stoppeables”:
+              <em>“¿Te despiertas con dolor de espalda?”</em>,
+              <em>“Mejora tu equilibrio en 3 pasos”</em>,
+              <em>“Dupuytren: el enemigo silencioso…”</em>.
+              Mucho Reel, buena producción y un grid limpio que transmite confianza.
+            </p>
+          </div>
+          <div class="obs">
+            <h3>Personalidad</h3>
+            <p>
+              Experta, cercana y alentadora. No solo “arregla” el cuerpo:
+              habla de miedo a moverse, de sentirse escuchado y de que
+              <em>“moverse no tiene edad, tiene voluntad”</em>.
+            </p>
+          </div>
+          <div class="obs">
+            <h3>Tipos de contenido</h3>
+            <p>
+              Educación clínica (ciático, kinesiotape, movilización neural),
+              tips prácticos (bastón, caminador, levantarse tras una caída),
+              y piezas humanas (rostro del equipo, testimonios, Q&amp;A).
+            </p>
+          </div>
+          <div class="obs">
+            <h3>Lo que más me llama</h3>
+            <p>
+              Hay una cara de marca —Vanny y el equipo— que ya genera cercanía.
+              Posts como <em>“Tu recuperación cambia cuando te sientes escuchado”</em>
+              abren la puerta a un storytelling más profundo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="s1-aside">
+        <div class="evidence">
+          <img src="assets/grid-2.jpg" alt="Grid reciente de @fisioterapia.esencial" />
+          <div class="evidence-caption">@fisioterapia.esencial · evidencia visual del feed</div>
+        </div>
+        <div class="opp">
+          <h3>Oportunidad que veo</h3>
+          <p>
+            Fortalecer el puente entre educación y decisión: que quien aprende
+            en un Reel también entienda por qué confiar su recuperación a Esencial —
+            sin perder el tono humano que ya tienen.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="slide-footer">
+      <span>Observación desde redes públicas · sin métricas internas</span>
+      <span>Paola Hoyos × Esencial</span>
+    </footer>
+  </section>
+
+  <!-- PÁGINA 3 -->
+  <section class="slide content-slide">
+    <header class="slide-header">
+      <h2>Lo que haría con el contenido</h2>
+      <div class="num">02 / 03</div>
+    </header>
+
+    <div class="pillars">
+      <article class="pillar">
+        <div class="pillar-top">
+          <span class="n">01</span>
+          <h3>Educación</h3>
+        </div>
+        <p class="what">
+          Seguir explicando dolores y dudas cotidianas, pero con más
+          narrativa: el problema, el porqué y qué puede hacer la persona hoy.
+        </p>
+        <p class="why">Porque ya educan bien; el siguiente paso es que esa educación se sienta vivida, no solo explicada.</p>
+        <div class="examples">
+          <div class="tag">Ejemplos concretos</div>
+          <ul>
+            <li>Reel: “Lo que nadie te dice sobre el caminador” — contado desde un paciente real de Esencial.</li>
+            <li>Serie: “3 señales de que tu ciático necesita valoración” (continuidad del contenido de nervio ciático).</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-top">
+          <span class="n">02</span>
+          <h3>Personas</h3>
+        </div>
+        <p class="what">
+          Mostrar fisioterapeutas, pacientes y el día a día de la clínica.
+          Historias breves, no discursos largos.
+        </p>
+        <p class="why">Porque la gente no elige solo una técnica: elige a quién le confía el cuerpo.</p>
+        <div class="examples">
+          <div class="tag">Ejemplos concretos</div>
+          <ul>
+            <li>Reel: “Un día en consultorio 1650” — valoración, escucha, primera sesión.</li>
+            <li>Pieza: “Antes tenía miedo a moverme” — voz del paciente + acompañamiento del terapeuta.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-top">
+          <span class="n">03</span>
+          <h3>Confianza</h3>
+        </div>
+        <p class="what">
+          Hacer visible cómo trabajan: valoración previa, terapias personalizadas,
+          tecnología (presoterapia, radiofrecuencia) y diferenciadores reales.
+        </p>
+        <p class="why">Porque el conocimiento técnico ya está; falta mostrarlo como experiencia, no solo como tip.</p>
+        <div class="examples">
+          <div class="tag">Ejemplos concretos</div>
+          <ul>
+            <li>Reel: “Por qué una terapia genérica no basta” — ampliar la idea del feed con el proceso de Esencial.</li>
+            <li>Carrusel: “Qué pasa en tu primera cita” — del WhatsApp a la mesa de evaluación.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <p class="s2-note">
+      No es una parrilla mensual: son tres focos para conversar con Vanny y alinearlos
+      con los objetivos reales de la clínica.
+    </p>
+
+    <footer class="slide-footer">
+      <span>Propuesta externa · para ajustar juntos</span>
+      <span>Paola Hoyos × Esencial</span>
+    </footer>
+  </section>
+
+  <!-- PÁGINA 4 -->
+  <section class="slide content-slide">
+    <header class="slide-header">
+      <h2>De contenido a pacientes</h2>
+      <div class="num">03 / 03</div>
+    </header>
+
+    <div class="s3-layout">
+      <div>
+        <div class="funnel">
+          <div class="funnel-step">
+            <div class="funnel-dot">1</div>
+            <div class="funnel-text">
+              <strong>Contenido</strong>
+              <span>Un Reel o post que nombra un problema real</span>
+            </div>
+          </div>
+          <div class="funnel-line"></div>
+          <div class="funnel-step">
+            <div class="funnel-dot">2</div>
+            <div class="funnel-text">
+              <strong>La persona se identifica</strong>
+              <span>“Eso me pasa a mí” — dolor, duda o miedo</span>
+            </div>
+          </div>
+          <div class="funnel-line"></div>
+          <div class="funnel-step">
+            <div class="funnel-dot">3</div>
+            <div class="funnel-text">
+              <strong>Genera confianza en Esencial</strong>
+              <span>Voz experta, proceso claro, rostro humano</span>
+            </div>
+          </div>
+          <div class="funnel-line"></div>
+          <div class="funnel-step">
+            <div class="funnel-dot">4</div>
+            <div class="funnel-text">
+              <strong>Pregunta / contacto</strong>
+              <span>DM, WhatsApp o comentario con duda concreta</span>
+            </div>
+          </div>
+          <div class="funnel-line"></div>
+          <div class="funnel-step">
+            <div class="funnel-dot">5</div>
+            <div class="funnel-text">
+              <strong>Cita</strong>
+              <span>La red deja de ser vitrina y pasa a ser puerta de entrada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="closing">
+          <p>
+            “Más que publicar por publicar, me gustaría que cada contenido
+            tuviera una razón para existir.”
+          </p>
+          <div class="sign">— Paola Hoyos</div>
+        </div>
+      </div>
+
+      <div class="metrics-block">
+        <h3>Qué tendría sentido observar</h3>
+        <div class="metrics">
+          <div class="metric">
+            <div class="i">01</div>
+            <p>Alcance y visualizaciones — ¿el mensaje está llegando?</p>
+          </div>
+          <div class="metric">
+            <div class="i">02</div>
+            <p>Interacciones, guardados y compartidos — ¿hay utilidad real?</p>
+          </div>
+          <div class="metric">
+            <div class="i">03</div>
+            <p>Mensajes o contactos generados — ¿hay conversación?</p>
+          </div>
+          <div class="metric">
+            <div class="i">04</div>
+            <p>Citas provenientes de redes — ¿el contenido abre puertas?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <span class="disclaimer">
+        Ideas desde afuera, basadas en redes públicas. Ajustables a objetivos,
+        métricas, presupuesto y procesos internos de Esencial.
+      </span>
+      <span>Gracias, Vanny</span>
+    </footer>
+  </section>
+
+</body>
+</html>
