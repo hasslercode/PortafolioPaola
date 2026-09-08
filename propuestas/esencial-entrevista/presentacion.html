@@ -2,93 +2,102 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Esencial · Paola Hoyos</title>
+<title>Esencial × Paola Hoyos</title>
 <style>
   @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf"); font-weight: 400; }
   @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf"); font-weight: 500; }
   @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf"); font-weight: 600; }
   @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf"); font-weight: 700; }
-  @font-face { font-family: "Noto Serif Display"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Regular.ttf"); font-weight: 400; }
-  @font-face { font-family: "Noto Serif Display"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Italic.ttf"); font-weight: 400; font-style: italic; }
-  @font-face { font-family: "Noto Serif"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Italic.ttf"); font-weight: 400; font-style: italic; }
+  @font-face { font-family: "Display"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Regular.ttf"); font-weight: 400; }
+  @font-face { font-family: "Display"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Italic.ttf"); font-weight: 400; font-style: italic; }
+  @font-face { font-family: "Serif"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Italic.ttf"); font-weight: 400; font-style: italic; }
 
   :root {
-    --ink: #182230;
-    --text: #3d4654;
-    --muted: #7a8494;
-    --line: #e4e8ee;
-    --bg: #f8f6f3;
-    --white: #fff;
-    --navy: #1c3554;
-    --soft: #eef2f7;
-    --rose: #8a3d50;
+    --ink: #141c28;
+    --text: #3a4352;
+    --muted: #7b8493;
+    --line: #e3e7ee;
+    --bg: #f6f3ef;
+    --white: #ffffff;
+    --navy: #1a2f4a;
+    --rose: #8b3a4d;
+    --soft: #e9eef5;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html, body {
     font-family: "Inter", system-ui, sans-serif;
+    background: #0d1117;
     color: var(--text);
-    background: #111;
     -webkit-font-smoothing: antialiased;
   }
 
   .slide {
     width: 1920px;
     height: 1080px;
-    background: var(--bg);
     overflow: hidden;
     position: relative;
-    margin: 0 auto 20px;
+    margin: 0 auto 24px;
+    background: var(--bg);
   }
 
-  .serif { font-family: "Noto Serif Display", Georgia, serif; }
+  /* ========== COVER ========== */
+  .cover {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+  }
 
-  /* ===== 1. COVER ===== */
-  .cover { display: grid; grid-template-columns: 1fr 0.95fr; }
-
-  .cover-copy {
-    padding: 80px 72px 64px 88px;
+  .cover-left {
+    padding: 72px 70px 56px 84px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(160deg, #faf8f6 0%, #f3f0eb 100%);
+    background:
+      radial-gradient(ellipse 90% 70% at 0% 100%, rgba(139,58,77,0.06), transparent 50%),
+      linear-gradient(165deg, #faf7f4 0%, #f3efe9 100%);
   }
 
-  .cover-copy .who {
-    font-size: 15px;
-    color: var(--muted);
+  .eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 600;
   }
-  .cover-copy .who strong { color: var(--navy); font-weight: 600; }
 
-  .cover-copy h1 {
-    font-family: "Noto Serif Display", Georgia, serif;
-    font-size: 56px;
+  .cover-left h1 {
+    font-family: "Display", Georgia, serif;
+    font-size: 72px;
+    line-height: 1.05;
     font-weight: 400;
-    line-height: 1.12;
     color: var(--ink);
-    max-width: 680px;
-  }
-  .cover-copy h1 em { font-style: italic; color: var(--navy); }
-
-  .cover-copy .lead {
+    max-width: 720px;
     margin-top: 28px;
-    font-size: 20px;
-    line-height: 1.55;
-    max-width: 560px;
+  }
+
+  .cover-left h1 em {
+    font-style: italic;
+    color: var(--navy);
+  }
+
+  .cover-left .lead {
+    margin-top: 32px;
+    font-size: 22px;
+    line-height: 1.5;
+    max-width: 580px;
     color: var(--text);
   }
 
-  .cover-copy .idea {
+  .cover-left .promise {
     margin-top: 40px;
     padding-top: 28px;
     border-top: 1px solid var(--line);
-    max-width: 620px;
-    font-family: "Noto Serif", Georgia, serif;
-    font-size: 19px;
+    font-family: "Serif", Georgia, serif;
     font-style: italic;
-    line-height: 1.5;
+    font-size: 22px;
+    line-height: 1.45;
     color: var(--ink);
+    max-width: 620px;
   }
 
   .cover-foot {
@@ -96,67 +105,93 @@
     justify-content: space-between;
     align-items: flex-end;
     gap: 24px;
-    padding-top: 24px;
+    padding-top: 22px;
     border-top: 1px solid var(--line);
+  }
+
+  .cover-foot .name {
+    font-family: "Display", Georgia, serif;
+    font-size: 24px;
+    color: var(--ink);
+  }
+
+  .cover-foot .meta {
+    margin-top: 6px;
     font-size: 14px;
     color: var(--muted);
     line-height: 1.45;
   }
-  .cover-foot .name {
-    font-family: "Noto Serif Display", Georgia, serif;
-    font-size: 20px;
-    color: var(--ink);
-    margin-bottom: 4px;
+
+  .cover-foot .right {
+    text-align: right;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.45;
   }
-  .cover-foot .right { text-align: right; }
+
   .cover-foot .right strong {
     display: block;
     color: var(--navy);
+    font-size: 15px;
     font-weight: 600;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
 
-  .cover-visual { position: relative; overflow: hidden; background: var(--navy); }
-  .cover-visual img {
+  .cover-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+  }
+
+  .cover-right img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 35%;
+    object-position: center 30%;
     display: block;
   }
 
-  /* ===== SHARED CONTENT ===== */
+  .cover-right::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(246,243,239,0.22) 0%, transparent 22%);
+  }
+
+  /* ========== PAGE SHELL ========== */
   .page {
-    padding: 64px 80px 48px;
+    padding: 60px 80px 44px;
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
-  .page-head {
+  .page-top {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 40px;
+    align-items: flex-start;
+    margin-bottom: 36px;
   }
 
-  .page-head h2 {
-    font-family: "Noto Serif Display", Georgia, serif;
-    font-size: 40px;
+  .page-top h2 {
+    font-family: "Display", Georgia, serif;
+    font-size: 52px;
     font-weight: 400;
     color: var(--ink);
+    line-height: 1.05;
   }
 
-  .page-head .n {
-    font-size: 13px;
-    letter-spacing: 0.16em;
+  .page-top .num {
+    font-size: 14px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
+    padding-top: 14px;
   }
 
   .page-foot {
     margin-top: auto;
-    padding-top: 20px;
+    padding-top: 18px;
     border-top: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
@@ -164,136 +199,123 @@
     color: var(--muted);
   }
 
-  /* ===== 2. LO QUE VEO ===== */
-  .see-intro {
-    font-family: "Noto Serif", Georgia, serif;
-    font-size: 24px;
-    line-height: 1.45;
+  /* ========== SLIDE 2 ========== */
+  .diag-lead {
+    font-family: "Serif", Georgia, serif;
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1.4;
     color: var(--ink);
-    max-width: 1100px;
+    max-width: 1280px;
     margin-bottom: 48px;
   }
 
-  .see-grid {
+  .diag-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    gap: 40px;
     flex: 1;
   }
 
-  .see-item h3 {
-    font-size: 13px;
-    letter-spacing: 0.14em;
+  .diag-card h3 {
+    font-size: 14px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--navy);
+    color: var(--rose);
     font-weight: 600;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line);
+    margin-bottom: 18px;
   }
 
-  .see-item p {
-    font-size: 17px;
-    line-height: 1.55;
-    color: var(--text);
-  }
-
-  .see-item em {
-    font-style: italic;
+  .diag-card .big {
+    font-family: "Display", Georgia, serif;
+    font-size: 34px;
+    line-height: 1.15;
     color: var(--ink);
+    margin-bottom: 18px;
   }
 
-  /* ===== 3. PILARES ===== */
-  .pillars-intro {
-    font-size: 18px;
+  .diag-card p {
+    font-size: 17px;
     line-height: 1.5;
     color: var(--text);
-    max-width: 900px;
+  }
+
+  .diag-card em { font-style: italic; color: var(--ink); }
+
+  /* ========== SLIDE 3 PILLARS ========== */
+  .how-lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--text);
+    max-width: 980px;
     margin-bottom: 36px;
   }
 
   .pillars {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 24px;
     flex: 1;
   }
 
   .pillar {
     background: var(--white);
-    border-top: 3px solid var(--navy);
-    padding: 32px 28px 28px;
+    padding: 36px 32px 30px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    border-top: 4px solid var(--navy);
   }
 
   .pillar:nth-child(2) { border-top-color: var(--rose); }
-  .pillar:nth-child(3) { border-top-color: #3d6b5a; }
+  .pillar:nth-child(3) { border-top-color: #3f6b58; }
 
-  .pillar .num {
-    font-family: "Noto Serif Display", Georgia, serif;
-    font-size: 15px;
+  .pillar .k {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--muted);
-    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 14px;
   }
 
   .pillar h3 {
-    font-family: "Noto Serif Display", Georgia, serif;
-    font-size: 28px;
+    font-family: "Display", Georgia, serif;
+    font-size: 40px;
     font-weight: 400;
     color: var(--ink);
-  }
-
-  .pillar .role {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 18px;
   }
 
   .pillar .desc {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 1.45;
     color: var(--text);
+    margin-bottom: 22px;
   }
 
-  .pillar .ex {
-    margin-top: auto;
-    background: var(--soft);
-    padding: 16px 18px;
-  }
-
-  .pillar .ex strong {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-
-  .pillar .ex ul {
+  .pillar ul {
     list-style: none;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
   }
 
-  .pillar .ex li {
-    font-size: 14px;
+  .pillar li {
+    font-size: 15px;
     line-height: 1.4;
     color: var(--ink);
-    padding-left: 12px;
+    padding-left: 14px;
     position: relative;
   }
 
-  .pillar .ex li::before {
+  .pillar li::before {
     content: "";
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: var(--rose);
     position: absolute;
@@ -301,335 +323,335 @@
     top: 8px;
   }
 
-  /* ===== 4. SISTEMA ===== */
+  /* ========== SLIDE 4 ========== */
   .sys {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 48px;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 56px;
     flex: 1;
     min-height: 0;
   }
 
-  .flow {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0;
+  .flow-title {
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 28px;
   }
 
-  .flow-row {
+  .step {
     display: grid;
-    grid-template-columns: 44px 1fr;
+    grid-template-columns: 52px 1fr;
     gap: 18px;
-    align-items: start;
+    align-items: center;
+    margin-bottom: 8px;
   }
 
-  .flow-dot {
-    width: 36px;
-    height: 36px;
+  .step .dot {
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: var(--navy);
     color: #fff;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: "Display", Georgia, serif;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .flow-row:nth-child(odd) .flow-dot { background: var(--navy); }
-  .flow-row:nth-child(even) .flow-dot { background: var(--rose); }
+  .step:nth-child(even) .dot { background: var(--rose); }
 
-  .flow-text strong {
+  .step strong {
     display: block;
-    font-size: 18px;
+    font-size: 22px;
     color: var(--ink);
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
-  .flow-text span {
+  .step span {
     font-size: 15px;
     color: var(--muted);
+  }
+
+  .connector {
+    width: 1px;
+    height: 14px;
+    background: var(--line);
+    margin: 0 0 8px 21px;
+  }
+
+  .quote {
+    margin-top: 28px;
+    padding: 28px 30px;
+    background: var(--navy);
+    color: #f5f1ed;
+  }
+
+  .quote p {
+    font-family: "Serif", Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
     line-height: 1.4;
   }
 
-  .flow-line {
-    width: 1px;
-    height: 18px;
-    background: var(--line);
-    margin: 6px 0 6px 17px;
+  .quote .by {
+    margin-top: 14px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,241,237,0.65);
+    font-family: "Inter", sans-serif;
+    font-style: normal;
   }
 
-  .side h3 {
-    font-size: 13px;
+  .metrics h3 {
+    font-size: 14px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--navy);
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .metric {
-    padding: 16px 0;
+    padding: 18px 0;
     border-bottom: 1px solid var(--line);
     display: grid;
-    grid-template-columns: 36px 1fr;
+    grid-template-columns: 42px 1fr;
     gap: 12px;
   }
 
   .metric:first-of-type { border-top: 1px solid var(--line); }
 
   .metric .i {
-    font-family: "Noto Serif Display", Georgia, serif;
-    font-size: 18px;
+    font-family: "Display", Georgia, serif;
+    font-size: 22px;
     color: var(--navy);
   }
 
   .metric p {
-    font-size: 15px;
-    line-height: 1.4;
+    font-size: 17px;
+    line-height: 1.35;
     color: var(--ink);
   }
 
-  .quote {
-    margin-top: 28px;
-    padding: 24px 26px;
-    background: var(--navy);
-    color: #f4f1ee;
-  }
-
-  .quote p {
-    font-family: "Noto Serif", Georgia, serif;
-    font-size: 18px;
-    font-style: italic;
-    line-height: 1.45;
-  }
-
-  .quote .by {
-    margin-top: 12px;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(244,241,238,0.65);
-    font-style: normal;
-    font-family: "Inter", sans-serif;
+  .metric p small {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--muted);
   }
 </style>
 </head>
 <body>
 
-<!-- 1 PORTADA -->
+<!-- 1 COVER -->
 <section class="slide cover">
-  <div class="cover-copy">
-    <div class="who"><strong>Paola Hoyos</strong> · Comunicadora social y periodista</div>
+  <div class="cover-left">
+    <div class="eyebrow">Marketing · Branding · Comunicaciones</div>
 
     <div>
-      <h1>Una mirada a <em>Esencial</em>, desde afuera.</h1>
+      <h1>Esencial ya tiene alma.<br><em>Yo la haría visible.</em></h1>
       <p class="lead">
-        Miré el Instagram, entendí lo que ya funciona
-        y traje una forma clara de ordenar el contenido,
-        la comunidad y la conversación con pacientes.
+        Una mirada a lo que ya están construyendo —
+        y cómo lo ordenaría desde marketing,
+        marca y conversación con pacientes.
       </p>
-      <p class="idea">
-        No se trata de empezar de cero. Se trata de que
-        todo lo que Esencial ya sabe —y ya es— se note
-        mejor en redes.
+      <p class="promise">
+        No vengo a reinventarlos.
+        Vengo a que cada pieza de comunicación
+        tenga dirección, criterio y resultado.
       </p>
     </div>
 
     <div class="cover-foot">
       <div>
         <div class="name">Paola Hoyos</div>
-        Estrategia · Contenido · Comunidad<br>
-        Medellín · paolahoyos.com
+        <div class="meta">
+          Comunicadora social y periodista<br>
+          Medellín · paolahoyos.com
+        </div>
       </div>
       <div class="right">
         <strong>Esencial Fisioterapia Integral</strong>
+        Coordinación de Marketing<br>
         Medellín · El Tesoro
       </div>
     </div>
   </div>
-  <div class="cover-visual">
+  <div class="cover-right">
     <img src="assets/esencial-cover-hero.png" alt="">
   </div>
 </section>
 
-<!-- 2 LO QUE VEO -->
+<!-- 2 DIAGNOSIS -->
 <section class="slide page">
-  <div class="page-head">
-    <h2>Lo que veo hoy</h2>
-    <div class="n">01 / 03</div>
+  <div class="page-top">
+    <h2>Lo que veo en Esencial</h2>
+    <div class="num">01 / 03</div>
   </div>
 
-  <p class="see-intro">
-    Esencial ya tiene voz propia: enseña, se ve profesional
-    y tiene cara humana. El trabajo no es inventar una marca.
-    Es ordenarla para que cada publicación tenga un propósito.
+  <p class="diag-lead">
+    Al mirar @fisioterapia.esencial no veo una marca vacía.
+    Veo una clínica que ya sabe enseñar, cuidar y verse profesional.
+    El siguiente paso es convertir eso en un sistema de marca
+    que atraiga, conversa y cite.
   </p>
 
-  <div class="see-grid">
-    <div class="see-item">
-      <h3>Lo que ya funciona</h3>
+  <div class="diag-grid">
+    <div class="diag-card">
+      <h3>Base sólida</h3>
+      <div class="big">Ya hay identidad.</div>
       <p>
-        Covers claros y útiles:
-        <em>“¿Te despiertas con dolor de espalda?”</em>,
-        <em>“Mejora tu equilibrio en 3 pasos”</em>,
-        <em>“Dupuytren…”</em>.
-        Buen video, feed limpio, confianza a primera vista.
+        Covers claras, buen video, tono cercano.
+        Posts como <em>“¿Te despiertas con dolor de espalda?”</em>
+        o <em>“Tu recuperación cambia cuando te sientes escuchado”</em>
+        demuestran criterio.
       </p>
     </div>
-    <div class="see-item">
-      <h3>La personalidad</h3>
+    <div class="diag-card">
+      <h3>Personalidad</h3>
+      <div class="big">Experta y humana.</div>
       <p>
-        Experta, cercana y alentadora.
-        No solo habla del cuerpo: también del miedo a moverse
-        y de sentirse escuchado.
-        Eso es oro para conectar.
+        Vanny y el equipo le dan cara a la marca.
+        Eso no se improvisa: es confianza.
+        Ahí está el diferencial frente a una terapia genérica.
       </p>
     </div>
-    <div class="see-item">
-      <h3>La oportunidad</h3>
+    <div class="diag-card">
+      <h3>El salto</h3>
+      <div class="big">De publicar a dirigir.</div>
       <p>
-        Pasar de “publicar cosas buenas”
-        a un sistema simple:
-        educar → generar confianza → conversar → citar.
-        Sin perder el tono humano.
+        Pasar de piezas buenas a una estrategia
+        donde branding, contenido, pauta y comunidad
+        empujen hacia un mismo resultado: más pacientes.
       </p>
     </div>
   </div>
 
   <div class="page-foot">
-    <span>Lectura desde @fisioterapia.esencial</span>
+    <span>Lectura desde redes públicas · sin inventar métricas</span>
     <span>Paola Hoyos · Esencial</span>
   </div>
 </section>
 
-<!-- 3 PILARES -->
+<!-- 3 HOW I'D LEAD -->
 <section class="slide page">
-  <div class="page-head">
-    <h2>Tres pilares de marketing</h2>
-    <div class="n">02 / 03</div>
+  <div class="page-top">
+    <h2>Cómo lo ordenaría</h2>
+    <div class="num">02 / 03</div>
   </div>
 
-  <p class="pillars-intro">
-    Así ordenaría el trabajo diario: como estratega,
-    como creadora de contenido y como community manager.
-    Tres focos. Cada uno con un rol claro.
+  <p class="how-lead">
+    Tres frentes. Claros. Medibles.
+    Así trabajaría el día a día de marketing, branding y comunicaciones.
   </p>
 
   <div class="pillars">
     <article class="pillar">
-      <div class="num">01</div>
-      <h3>Educar</h3>
-      <div class="role">Contenido · atracción</div>
+      <div class="k">01 · Marca</div>
+      <h3>Branding</h3>
       <p class="desc">
-        Explicar dolores y dudas del día a día
-        con lenguaje simple. Que la gente se detenga
-        porque se siente identificada.
+        Cuidar que Esencial se sienta igual
+        en Instagram, web, WhatsApp y sala de espera.
+        Una sola voz. Una sola estética.
       </p>
-      <div class="ex">
-        <strong>Ejemplos</strong>
-        <ul>
-          <li>“3 señales de que tu ciático necesita valoración”</li>
-          <li>“Lo que nadie te dice sobre el caminador” — con paciente real</li>
-        </ul>
-      </div>
+      <ul>
+        <li>Guía simple de tono y visual</li>
+        <li>Mensaje central: terapia personalizada, no genérica</li>
+        <li>Coherencia en cada punto de contacto</li>
+      </ul>
     </article>
 
     <article class="pillar">
-      <div class="num">02</div>
-      <h3>Humanizar</h3>
-      <div class="role">Comunidad · cercanía</div>
+      <div class="k">02 · Contenido</div>
+      <h3>Comunidad</h3>
       <p class="desc">
-        Mostrar a Vanny, al equipo y a los pacientes.
-        Responder, escuchar y dar cara.
-        La comunidad no se construye solo publicando.
+        Educar, humanizar y responder.
+        Contenido que se guarda — y conversación
+        que se atiende como parte del cuidado.
       </p>
-      <div class="ex">
-        <strong>Ejemplos</strong>
-        <ul>
-          <li>“Un día en el consultorio 1650”</li>
-          <li>“Antes tenía miedo a moverme” — historia breve</li>
-          <li>Caja de preguntas y respuestas en Stories</li>
-        </ul>
-      </div>
+      <ul>
+        <li>Educar: ciático, movilidad, dudas reales</li>
+        <li>Humanizar: equipo, pacientes, día a día</li>
+        <li>Community: DMs, Stories, comentarios con criterio</li>
+      </ul>
     </article>
 
     <article class="pillar">
-      <div class="num">03</div>
-      <h3>Convertir</h3>
-      <div class="role">Confianza · cita</div>
+      <div class="k">03 · Crecimiento</div>
+      <h3>Captación</h3>
       <p class="desc">
-        Hacer visible el proceso de Esencial:
-        valoración, terapias, tecnología y diferencia.
-        Que el contenido invite a escribir o agendar.
+        Llevar a la persona del “eso me pasa”
+        hasta la cita. Contenido orgánico + pauta
+        + seguimiento claro.
       </p>
-      <div class="ex">
-        <strong>Ejemplos</strong>
-        <ul>
-          <li>“Qué pasa en tu primera cita”</li>
-          <li>“Por qué una terapia genérica no basta”</li>
-          <li>CTA claro en bio, Stories y Reels</li>
-        </ul>
-      </div>
+      <ul>
+        <li>Reels y CTAs que abren conversación</li>
+        <li>Meta Ads / Google con foco en citas</li>
+        <li>Embudo simple: ver → confiar → escribir → agendar</li>
+      </ul>
     </article>
   </div>
 
   <div class="page-foot">
-    <span>Estrategia · Contenido · Comunidad</span>
+    <span>Estrategia + ejecución · no solo redes</span>
     <span>Paola Hoyos · Esencial</span>
   </div>
 </section>
 
-<!-- 4 SISTEMA -->
+<!-- 4 IMPACT -->
 <section class="slide page">
-  <div class="page-head">
-    <h2>De contenido a pacientes</h2>
-    <div class="n">03 / 03</div>
+  <div class="page-top">
+    <h2>De marca a pacientes</h2>
+    <div class="num">03 / 03</div>
   </div>
 
   <div class="sys">
     <div>
-      <div class="flow">
-        <div class="flow-row">
-          <div class="flow-dot">1</div>
-          <div class="flow-text">
-            <strong>Publicamos con intención</strong>
-            <span>Un Reel o post que nombra un problema real</span>
-          </div>
+      <div class="flow-title">Cómo lo pensaría en la práctica</div>
+
+      <div class="step">
+        <div class="dot">1</div>
+        <div>
+          <strong>Contenido con intención</strong>
+          <span>Un problema real, bien contado</span>
         </div>
-        <div class="flow-line"></div>
-        <div class="flow-row">
-          <div class="flow-dot">2</div>
-          <div class="flow-text">
-            <strong>La persona se identifica</strong>
-            <span>“Eso me pasa” — dolor, duda o miedo</span>
-          </div>
+      </div>
+      <div class="connector"></div>
+      <div class="step">
+        <div class="dot">2</div>
+        <div>
+          <strong>Identificación</strong>
+          <span>“Eso me pasa” — dolor, duda o miedo</span>
         </div>
-        <div class="flow-line"></div>
-        <div class="flow-row">
-          <div class="flow-dot">3</div>
-          <div class="flow-text">
-            <strong>Confía en Esencial</strong>
-            <span>Ve expertise, proceso y rostros reales</span>
-          </div>
+      </div>
+      <div class="connector"></div>
+      <div class="step">
+        <div class="dot">3</div>
+        <div>
+          <strong>Confianza en Esencial</strong>
+          <span>Marca clara, proceso visible, rostros reales</span>
         </div>
-        <div class="flow-line"></div>
-        <div class="flow-row">
-          <div class="flow-dot">4</div>
-          <div class="flow-text">
-            <strong>Escribe o pregunta</strong>
-            <span>DM, WhatsApp o comentario — comunidad activa</span>
-          </div>
+      </div>
+      <div class="connector"></div>
+      <div class="step">
+        <div class="dot">4</div>
+        <div>
+          <strong>Conversación</strong>
+          <span>DM, WhatsApp o comentario — comunidad viva</span>
         </div>
-        <div class="flow-line"></div>
-        <div class="flow-row">
-          <div class="flow-dot">5</div>
-          <div class="flow-text">
-            <strong>Agenda la cita</strong>
-            <span>Las redes dejan de ser vitrina y pasan a ser puerta</span>
-          </div>
+      </div>
+      <div class="connector"></div>
+      <div class="step">
+        <div class="dot">5</div>
+        <div>
+          <strong>Cita</strong>
+          <span>La comunicación deja de ser vitrina y pasa a ser puerta</span>
         </div>
       </div>
 
@@ -639,29 +661,37 @@
       </div>
     </div>
 
-    <div class="side">
+    <div class="metrics">
       <h3>Qué miraría cada mes</h3>
       <div class="metric">
         <div class="i">01</div>
-        <p>Alcance y visualizaciones — ¿estamos llegando?</p>
+        <p>Alcance y visualizaciones
+          <small>¿La marca está llegando a las personas correctas?</small>
+        </p>
       </div>
       <div class="metric">
         <div class="i">02</div>
-        <p>Guardados y compartidos — ¿el contenido sirve?</p>
+        <p>Guardados, compartidos, comentarios
+          <small>¿El contenido sirve y genera conversación?</small>
+        </p>
       </div>
       <div class="metric">
         <div class="i">03</div>
-        <p>Mensajes y respuestas — ¿hay conversación?</p>
+        <p>Mensajes y leads
+          <small>¿La gente escribe? ¿La pauta trae consultas?</small>
+        </p>
       </div>
       <div class="metric">
         <div class="i">04</div>
-        <p>Citas desde redes — ¿abre puertas reales?</p>
+        <p>Citas desde marketing
+          <small>¿Estamos convirtiendo confianza en pacientes?</small>
+        </p>
       </div>
     </div>
   </div>
 
   <div class="page-foot">
-    <span>Ideas desde afuera · para ajustar juntos</span>
+    <span>Ideas desde afuera · listas para ajustar con ustedes</span>
     <span>Gracias</span>
   </div>
 </section>
