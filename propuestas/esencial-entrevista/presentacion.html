@@ -67,11 +67,11 @@
 
   .cover-left h1 {
     font-family: "Display", Georgia, serif;
-    font-size: 72px;
-    line-height: 1.05;
+    font-size: 58px;
+    line-height: 1.08;
     font-weight: 400;
     color: var(--ink);
-    max-width: 720px;
+    max-width: 700px;
     margin-top: 28px;
   }
 
@@ -82,21 +82,19 @@
 
   .cover-left .lead {
     margin-top: 32px;
-    font-size: 22px;
+    font-size: 21px;
     line-height: 1.5;
-    max-width: 580px;
+    max-width: 600px;
     color: var(--text);
   }
 
-  .cover-left .promise {
-    margin-top: 40px;
-    padding-top: 28px;
+  .cover-left .note {
+    margin-top: 36px;
+    padding-top: 24px;
     border-top: 1px solid var(--line);
-    font-family: "Serif", Georgia, serif;
-    font-style: italic;
-    font-size: 22px;
-    line-height: 1.45;
-    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--muted);
     max-width: 620px;
   }
 
@@ -160,7 +158,7 @@
 
   /* ========== PAGE SHELL ========== */
   .page {
-    padding: 60px 80px 44px;
+    padding: 56px 80px 42px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -170,12 +168,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
   }
 
   .page-top h2 {
     font-family: "Display", Georgia, serif;
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 400;
     color: var(--ink);
     line-height: 1.05;
@@ -191,64 +189,87 @@
 
   .page-foot {
     margin-top: auto;
-    padding-top: 18px;
+    padding-top: 16px;
     border-top: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
     font-size: 13px;
     color: var(--muted);
+  }
+
+  .page-foot .disclaimer {
+    max-width: 1100px;
+    line-height: 1.4;
   }
 
   /* ========== SLIDE 2 ========== */
   .diag-lead {
     font-family: "Serif", Georgia, serif;
     font-style: italic;
-    font-size: 28px;
-    line-height: 1.4;
+    font-size: 24px;
+    line-height: 1.45;
     color: var(--ink);
-    max-width: 1280px;
-    margin-bottom: 48px;
+    max-width: 1320px;
+    margin-bottom: 36px;
   }
 
   .diag-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 36px;
     flex: 1;
   }
 
   .diag-card h3 {
-    font-size: 14px;
-    letter-spacing: 0.16em;
+    font-size: 13px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--rose);
     font-weight: 600;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .diag-card .big {
     font-family: "Display", Georgia, serif;
-    font-size: 34px;
-    line-height: 1.15;
+    font-size: 30px;
+    line-height: 1.18;
     color: var(--ink);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .diag-card p {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--text);
   }
 
-  .diag-card em { font-style: italic; color: var(--ink); }
+  .insight {
+    margin-top: 28px;
+    padding: 22px 26px;
+    background: var(--soft);
+    border-left: 3px solid var(--navy);
+    flex-shrink: 0;
+  }
 
-  /* ========== SLIDE 3 PILLARS ========== */
+  .insight p {
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  .insight strong {
+    font-weight: 600;
+  }
+
+  /* ========== SLIDE 3 ========== */
   .how-lead {
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.5;
     color: var(--text);
     max-width: 980px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
 
   .pillars {
@@ -260,7 +281,7 @@
 
   .pillar {
     background: var(--white);
-    padding: 36px 32px 30px;
+    padding: 34px 30px 28px;
     display: flex;
     flex-direction: column;
     border-top: 4px solid var(--navy);
@@ -280,54 +301,34 @@
 
   .pillar h3 {
     font-family: "Display", Georgia, serif;
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 400;
     color: var(--ink);
-    line-height: 1;
-    margin-bottom: 18px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .pillar .hook {
+    font-family: "Serif", Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 16px;
   }
 
   .pillar .desc {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.45;
     color: var(--text);
-    margin-bottom: 22px;
-  }
-
-  .pillar ul {
-    list-style: none;
     margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 18px;
-    border-top: 1px solid var(--line);
-  }
-
-  .pillar li {
-    font-size: 15px;
-    line-height: 1.4;
-    color: var(--ink);
-    padding-left: 14px;
-    position: relative;
-  }
-
-  .pillar li::before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--rose);
-    position: absolute;
-    left: 0;
-    top: 8px;
   }
 
   /* ========== SLIDE 4 ========== */
   .sys {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    gap: 56px;
+    gap: 52px;
     flex: 1;
     min-height: 0;
   }
@@ -338,7 +339,7 @@
     text-transform: uppercase;
     color: var(--navy);
     font-weight: 600;
-    margin-bottom: 28px;
+    margin-bottom: 26px;
   }
 
   .step {
@@ -366,7 +367,7 @@
 
   .step strong {
     display: block;
-    font-size: 22px;
+    font-size: 21px;
     color: var(--ink);
     font-weight: 600;
     margin-bottom: 2px;
@@ -385,8 +386,8 @@
   }
 
   .quote {
-    margin-top: 28px;
-    padding: 28px 30px;
+    margin-top: 26px;
+    padding: 26px 28px;
     background: var(--navy);
     color: #f5f1ed;
   }
@@ -394,7 +395,7 @@
   .quote p {
     font-family: "Serif", Georgia, serif;
     font-style: italic;
-    font-size: 22px;
+    font-size: 21px;
     line-height: 1.4;
   }
 
@@ -452,19 +453,20 @@
 <!-- 1 COVER -->
 <section class="slide cover">
   <div class="cover-left">
-    <div class="eyebrow">Marketing · Branding · Comunicaciones</div>
+    <div class="eyebrow">Marketing · Contenido · Comunicación</div>
 
     <div>
-      <h1>Esencial ya tiene alma.<br><em>Yo la haría visible.</em></h1>
+      <h1>Esencial ya tiene mucho<br>que contar.<br>
+      <em>Yo ayudaría a convertirlo<br>en contenido que conecte.</em></h1>
       <p class="lead">
-        Una mirada a lo que ya están construyendo —
-        y cómo lo ordenaría desde marketing,
-        marca y conversación con pacientes.
+        Una primera mirada a sus redes y algunas ideas
+        de cómo podría aportar desde marketing,
+        contenido y comunicación.
       </p>
-      <p class="promise">
-        No vengo a reinventarlos.
-        Vengo a que cada pieza de comunicación
-        tenga dirección, criterio y resultado.
+      <p class="note">
+        Primera mirada desde afuera. Las ideas parten de lo que pude conocer
+        a través de sus canales públicos y las ajustaría después de conocer
+        sus objetivos, procesos y resultados.
       </p>
     </div>
 
@@ -478,7 +480,6 @@
       </div>
       <div class="right">
         <strong>Esencial Fisioterapia Integral</strong>
-        Coordinación de Marketing<br>
         Medellín · El Tesoro
       </div>
     </div>
@@ -488,7 +489,7 @@
   </div>
 </section>
 
-<!-- 2 DIAGNOSIS -->
+<!-- 2 LO QUE VEO -->
 <section class="slide page">
   <div class="page-top">
     <h2>Lo que veo en Esencial</h2>
@@ -496,50 +497,60 @@
   </div>
 
   <p class="diag-lead">
-    Al mirar @fisioterapia.esencial no veo una marca vacía.
-    Veo una clínica que ya sabe enseñar, cuidar y verse profesional.
-    El siguiente paso es convertir eso en un sistema de marca
-    que atraiga, conversa y cite.
+    Veo una marca que ya tiene mucho construido.
+    Hay conocimiento, profesionales, historias y una forma de comunicar
+    que se reconoce. Para mí, la oportunidad está en ordenar todo eso
+    y hacer que cada contenido tenga un propósito.
   </p>
 
   <div class="diag-grid">
     <div class="diag-card">
-      <h3>Base sólida</h3>
-      <div class="big">Ya hay identidad.</div>
+      <h3>Ya hay una base</h3>
+      <div class="big">La marca se reconoce.</div>
       <p>
-        Covers claras, buen video, tono cercano.
-        Posts como <em>“¿Te despiertas con dolor de espalda?”</em>
-        o <em>“Tu recuperación cambia cuando te sientes escuchado”</em>
-        demuestran criterio.
+        Hay una línea visual clara.
+        Y los contenidos educativos ya hacen parte
+        de la conversación:
+        dolor de espalda, equilibrio, ciático, Dupuytren…
       </p>
     </div>
     <div class="diag-card">
-      <h3>Personalidad</h3>
-      <div class="big">Experta y humana.</div>
+      <h3>Hay personas detrás</h3>
+      <div class="big">Eso es oro.</div>
       <p>
-        Vanny y el equipo le dan cara a la marca.
-        Eso no se improvisa: es confianza.
-        Ahí está el diferencial frente a una terapia genérica.
+        Las fisioterapeutas tienen algo muy valioso:
+        conocimiento, pero también historias y personalidad.
+        Ahí hay mucho contenido por explorar.
       </p>
     </div>
     <div class="diag-card">
-      <h3>El salto</h3>
-      <div class="big">De publicar a dirigir.</div>
+      <h3>La oportunidad</h3>
+      <div class="big">Pasar del “qué” al “para qué”.</div>
       <p>
-        Pasar de piezas buenas a una estrategia
-        donde branding, contenido, pauta y comunidad
-        empujen hacia un mismo resultado: más pacientes.
+        De pensar solamente en “qué publicamos”
+        a preguntarnos “¿para qué lo publicamos?”.
+        Sin perder el tono humano que ya tienen.
       </p>
     </div>
   </div>
 
+  <div class="insight">
+    <p>
+      <strong>Una observación concreta:</strong>
+      veo que tienen muchísimo conocimiento para compartir.
+      Pero creo que también hay una oportunidad en mostrar más
+      a las personas que están detrás de ese conocimiento —
+      Vanny, el equipo, las historias, el día a día.
+    </p>
+  </div>
+
   <div class="page-foot">
-    <span>Lectura desde redes públicas · sin inventar métricas</span>
+    <span class="disclaimer">A partir de @fisioterapia.esencial · sin inventar métricas</span>
     <span>Paola Hoyos · Esencial</span>
   </div>
 </section>
 
-<!-- 3 HOW I'D LEAD -->
+<!-- 3 CÓMO LO ORDENARÍA -->
 <section class="slide page">
   <div class="page-top">
     <h2>Cómo lo ordenaría</h2>
@@ -547,64 +558,52 @@
   </div>
 
   <p class="how-lead">
-    Tres frentes. Claros. Medibles.
-    Así trabajaría el día a día de marketing, branding y comunicaciones.
+    Tres focos sencillos para el día a día.
+    No un plan cerrado: una forma de trabajar juntos.
   </p>
 
   <div class="pillars">
     <article class="pillar">
       <div class="k">01 · Marca</div>
-      <h3>Branding</h3>
+      <h3>Que se sienta<br>Esencial</h3>
+      <p class="hook">En todos lados.</p>
       <p class="desc">
-        Cuidar que Esencial se sienta igual
-        en Instagram, web, WhatsApp y sala de espera.
-        Una sola voz. Una sola estética.
+        Instagram, web, WhatsApp y cada punto de contacto
+        deberían hablar el mismo idioma.
+        Una sola voz. Una sola forma de cuidarlos.
       </p>
-      <ul>
-        <li>Guía simple de tono y visual</li>
-        <li>Mensaje central: terapia personalizada, no genérica</li>
-        <li>Coherencia en cada punto de contacto</li>
-      </ul>
     </article>
 
     <article class="pillar">
       <div class="k">02 · Contenido</div>
-      <h3>Comunidad</h3>
+      <h3>Respuestas<br>y personas</h3>
+      <p class="hook">Que la gente encuentre las dos.</p>
       <p class="desc">
-        Educar, humanizar y responder.
-        Contenido que se guarda — y conversación
-        que se atiende como parte del cuidado.
+        Educación + historias + equipo + pacientes + día a día.
+        No solo tips: también quiénes están detrás
+        de ese conocimiento.
       </p>
-      <ul>
-        <li>Educar: ciático, movilidad, dudas reales</li>
-        <li>Humanizar: equipo, pacientes, día a día</li>
-        <li>Community: DMs, Stories, comentarios con criterio</li>
-      </ul>
     </article>
 
     <article class="pillar">
       <div class="k">03 · Crecimiento</div>
-      <h3>Captación</h3>
+      <h3>Qué hacer<br>después</h3>
+      <p class="hook">Que quien necesita ayuda sepa el siguiente paso.</p>
       <p class="desc">
-        Llevar a la persona del “eso me pasa”
-        hasta la cita. Contenido orgánico + pauta
-        + seguimiento claro.
+        Contenido → confianza → conversación → cita.
+        Orgánico, pauta y comunidad empujando
+        hacia lo mismo.
       </p>
-      <ul>
-        <li>Reels y CTAs que abren conversación</li>
-        <li>Meta Ads / Google con foco en citas</li>
-        <li>Embudo simple: ver → confiar → escribir → agendar</li>
-      </ul>
     </article>
   </div>
 
   <div class="page-foot">
-    <span>Estrategia + ejecución · no solo redes</span>
+    <span class="disclaimer">Ideas para conversar y ajustar con ustedes</span>
     <span>Paola Hoyos · Esencial</span>
   </div>
 </section>
 
-<!-- 4 IMPACT -->
+<!-- 4 DE MARCA A PACIENTES -->
 <section class="slide page">
   <div class="page-top">
     <h2>De marca a pacientes</h2>
@@ -626,7 +625,7 @@
       <div class="step">
         <div class="dot">2</div>
         <div>
-          <strong>Identificación</strong>
+          <strong>Alguien se identifica</strong>
           <span>“Eso me pasa” — dolor, duda o miedo</span>
         </div>
       </div>
@@ -634,24 +633,24 @@
       <div class="step">
         <div class="dot">3</div>
         <div>
-          <strong>Confianza en Esencial</strong>
-          <span>Marca clara, proceso visible, rostros reales</span>
+          <strong>Confía en Esencial</strong>
+          <span>Ve conocimiento, proceso y rostros reales</span>
         </div>
       </div>
       <div class="connector"></div>
       <div class="step">
         <div class="dot">4</div>
         <div>
-          <strong>Conversación</strong>
-          <span>DM, WhatsApp o comentario — comunidad viva</span>
+          <strong>Escribe o pregunta</strong>
+          <span>DM, WhatsApp o comentario</span>
         </div>
       </div>
       <div class="connector"></div>
       <div class="step">
         <div class="dot">5</div>
         <div>
-          <strong>Cita</strong>
-          <span>La comunicación deja de ser vitrina y pasa a ser puerta</span>
+          <strong>Agenda la cita</strong>
+          <span>Las redes no deberían quedarse en informar. También deberían facilitar el siguiente paso.</span>
         </div>
       </div>
 
@@ -662,36 +661,36 @@
     </div>
 
     <div class="metrics">
-      <h3>Qué miraría cada mes</h3>
+      <div class="flow-title" style="margin-bottom:18px">Qué miraría cada mes</div>
       <div class="metric">
         <div class="i">01</div>
         <p>Alcance y visualizaciones
-          <small>¿La marca está llegando a las personas correctas?</small>
+          <small>¿Estamos llegando?</small>
         </p>
       </div>
       <div class="metric">
         <div class="i">02</div>
         <p>Guardados, compartidos, comentarios
-          <small>¿El contenido sirve y genera conversación?</small>
+          <small>¿El contenido sirve?</small>
         </p>
       </div>
       <div class="metric">
         <div class="i">03</div>
-        <p>Mensajes y leads
-          <small>¿La gente escribe? ¿La pauta trae consultas?</small>
+        <p>Mensajes y consultas
+          <small>¿Hay conversación?</small>
         </p>
       </div>
       <div class="metric">
         <div class="i">04</div>
-        <p>Citas desde marketing
-          <small>¿Estamos convirtiendo confianza en pacientes?</small>
+        <p>Citas desde redes
+          <small>¿Se abre el siguiente paso?</small>
         </p>
       </div>
     </div>
   </div>
 
   <div class="page-foot">
-    <span>Ideas desde afuera · listas para ajustar con ustedes</span>
+    <span class="disclaimer">Primera mirada desde afuera. Se ajusta con sus objetivos reales.</span>
     <span>Gracias</span>
   </div>
 </section>
