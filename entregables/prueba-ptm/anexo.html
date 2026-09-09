@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Anexo · Activa más oportunidades · Paola Hoyos</title>
+<style>
+  @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf"); font-weight: 400; }
+  @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf"); font-weight: 500; }
+  @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf"); font-weight: 600; }
+  @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf"); font-weight: 700; }
+  @font-face { font-family: "Display"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Regular.ttf"); font-weight: 400; }
+  @font-face { font-family: "Display"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Italic.ttf"); font-weight: 400; font-style: italic; }
+
+  :root {
+    --ink: #14232b; --text: #3d4f57; --muted: #7a8a92; --line: #dce6e8;
+    --bg: #f7f3ec; --white: #fff; --teal: #0e5c63; --teal-deep: #0a3f45;
+    --gold: #d4a017; --gold-soft: #f3e2a8; --soft: #e8f1f2; --warm: #fff7e8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: "Inter", system-ui, sans-serif; background: #0d1117; color: var(--text); -webkit-font-smoothing: antialiased; }
+  .slide { width: 1920px; height: 1080px; overflow: hidden; margin: 0 auto 24px; background: var(--bg); }
+  .page { padding: 48px 68px 36px; display: flex; flex-direction: column; height: 100%; }
+  .eyebrow { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
+  .page-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+  .page-top h2 { font-family: "Display", Georgia, serif; font-size: 42px; font-weight: 400; color: var(--ink); line-height: 1.08; }
+  .page-top .num { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding-top: 12px; }
+  .page-foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th { text-align: left; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; background: var(--teal-deep); padding: 12px 14px; }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.4; color: var(--text); }
+  tr:nth-child(even) td { background: rgba(255,255,255,0.6); }
+  td:first-child { font-weight: 600; color: var(--ink); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .card { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .card h3 { font-family: "Display", Georgia, serif; font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 8px; }
+  .card p { font-size: 14px; line-height: 1.45; }
+  .kpi { background: var(--teal-deep); color: #fff; border-radius: 12px; padding: 22px 16px; text-align: center; }
+  .kpi .val { font-family: "Display", Georgia, serif; font-size: 32px; color: var(--gold-soft); margin-bottom: 6px; }
+  .kpi .name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .kpi .meta { font-size: 12px; color: rgba(255,255,255,0.7); }
+  .warm { background: var(--warm); border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; padding: 18px 22px; margin-top: 18px; }
+  .warm p { font-size: 15px; line-height: 1.45; color: var(--ink); }
+  .label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--teal); margin-bottom: 12px; }
+  .bar { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .bar .n { width: 220px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .bar .track { flex: 1; height: 14px; background: #e6e0d6; border-radius: 99px; overflow: hidden; }
+  .bar .fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-deep)); border-radius: 99px; }
+  .bar .amt { width: 140px; text-align: right; font-size: 14px; color: var(--text); }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="page">
+    <div class="page-top">
+      <div>
+        <div class="eyebrow">Anexo A · opcional</div>
+        <h2>Parrilla de las 6 semanas</h2>
+      </div>
+      <div class="num">A1 / 3</div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Sem</th><th>WhatsApp</th><th>SMS</th><th>Redes</th><th>POS / Comercial</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Teaser + pregunta «qué te falta en el mostrador»</td><td>—</td><td>Expectativa / detrás de cámaras del kit</td><td>Capacitación guion 60 s</td></tr>
+        <tr><td>2</td><td>Lanzamiento: beneficio + CTA</td><td>CTA con enlace corto</td><td>3 piezas: promesa, cómo, CTA</td><td>Entrega de material + arranque</td></tr>
+        <tr><td>3</td><td>Paso a paso de 1 servicio</td><td>Recordatorio a quien no abrió</td><td>Tutorial 30 s + stories</td><td>Rutas priorizan bajo uso</td></tr>
+        <tr><td>4</td><td>Caso real del piloto + ganador A/B</td><td>Uso medio: ritmo semanal</td><td>Prueba social / voz del comercio</td><td>Cierre de pendientes S2–S3</td></tr>
+        <tr><td>5</td><td>Recuperación de no activados</td><td>Último empujón útil</td><td>Antes / después del mostrador</td><td>Blitz a rezagados</td></tr>
+        <tr><td>6</td><td>Agradecimiento + siguiente paso</td><td>—</td><td>Resultados + reconocimiento</td><td>Feedback y aprendizajes</td></tr>
+      </tbody>
+    </table>
+    <div class="warm">
+      <p>Pop-up activo desde la semana 2 con la versión ganadora de la prueba. Correo solo en semanas 1 (kit), 2 (lanzamiento) y 6 (cierre). Misma frase y mismo CTA en todos los canales.</p>
+    </div>
+    <div class="page-foot">
+      <span>Anexo · Paola Hoyos · Activa más oportunidades</span>
+      <span>Máx. 3 páginas</span>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="page">
+    <div class="page-top">
+      <div>
+        <div class="eyebrow">Anexo B · opcional</div>
+        <h2>Presupuesto detallado</h2>
+      </div>
+      <div class="num">A2 / 3</div>
+    </div>
+    <div class="label">Distribución COP $18.000.000</div>
+    <div style="flex:1;">
+      <div class="bar"><div class="n">WhatsApp / CRM</div><div class="track"><div class="fill" style="width:23%"></div></div><div class="amt">$4.200.000 · 23%</div></div>
+      <div class="bar"><div class="n">Comercial (kit + incentivos)</div><div class="track"><div class="fill" style="width:20%"></div></div><div class="amt">$3.600.000 · 20%</div></div>
+      <div class="bar"><div class="n">SMS</div><div class="track"><div class="fill" style="width:12%"></div></div><div class="amt">$2.200.000 · 12%</div></div>
+      <div class="bar"><div class="n">Punto de venta</div><div class="track"><div class="fill" style="width:11%"></div></div><div class="amt">$2.000.000 · 11%</div></div>
+      <div class="bar"><div class="n">Redes pagas</div><div class="track"><div class="fill" style="width:10%"></div></div><div class="amt">$1.800.000 · 10%</div></div>
+      <div class="bar"><div class="n">Diseño / producción</div><div class="track"><div class="fill" style="width:8%"></div></div><div class="amt">$1.500.000 · 8%</div></div>
+      <div class="bar"><div class="n">Pop-up / producto digital</div><div class="track"><div class="fill" style="width:6%"></div></div><div class="amt">$1.000.000 · 6%</div></div>
+      <div class="bar"><div class="n">Correo + automatización</div><div class="track"><div class="fill" style="width:4%"></div></div><div class="amt">$700.000 · 4%</div></div>
+      <div class="bar"><div class="n">PR / aliados</div><div class="track"><div class="fill" style="width:3%"></div></div><div class="amt">$600.000 · 3%</div></div>
+      <div class="bar"><div class="n">Contingencia A/B</div><div class="track"><div class="fill" style="width:2%"></div></div><div class="amt">$400.000 · 2%</div></div>
+    </div>
+    <div class="warm">
+      <p><strong>Si el presupuesto baja 40% ($10.8M):</strong> corto primero redes pagas y PR amplio. Preservo WhatsApp + Comercial + SMS + pop-up. POS pasa a tiraje menor / una tinta. Menos piezas de diseño, misma frase y mismo CTA.</p>
+    </div>
+    <div class="page-foot">
+      <span>Anexo · Paola Hoyos · Activa más oportunidades</span>
+      <span>Máx. 3 páginas</span>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="page">
+    <div class="page-top">
+      <div>
+        <div class="eyebrow">Anexo C · opcional</div>
+        <h2>Tablero semanal del piloto</h2>
+      </div>
+      <div class="num">A3 / 3</div>
+    </div>
+    <div class="grid-5" style="margin-bottom:22px;">
+      <div class="kpi"><div class="val">25%</div><div class="name">2.ª categoría</div><div class="meta">Meta · semanal</div></div>
+      <div class="kpi"><div class="val">+40%</div><div class="name">Frecuencia medio</div><div class="meta">Meta · semanal</div></div>
+      <div class="kpi"><div class="val">12%</div><div class="name">Clics CTA</div><div class="meta">Por canal</div></div>
+      <div class="kpi"><div class="val">≤ base</div><div class="name">Tickets confusión</div><div class="meta">Diario</div></div>
+      <div class="kpi"><div class="val">≥4,2</div><div class="name">Claridad</div><div class="meta">S3 y S6</div></div>
+    </div>
+    <div class="label">Respuestas cortas para la sustentación</div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>¿Presupuesto −40%?</h3>
+        <p>Priorizo WhatsApp, Comercial, SMS y pop-up. Corto pauta y PR. Reduzco tiraje POS.</p>
+      </div>
+      <div class="card">
+        <h3>¿Mayor riesgo reputacional?</h3>
+        <p>Prometer “vender más” sin explicar el cómo. Por eso el CTA es activar y la respuesta pública enseña el paso a paso.</p>
+      </div>
+      <div class="card">
+        <h3>¿Alineación con Comercial?</h3>
+        <p>Kit de una página, guion de 60 segundos. Libertad solo en ejemplos de servicio — no en la promesa ni en el CTA.</p>
+      </div>
+      <div class="card">
+        <h3>¿Cuándo freno la campaña?</h3>
+        <p>Si los tickets de confusión se duplican 48 h, o si hay una ola de “no explican” (≥20 en 2 h) sin contención.</p>
+      </div>
+    </div>
+    <div class="warm">
+      <p><strong>Fuentes públicas consultadas:</strong> ptm.com.co · LinkedIn PTM · Facebook @ptmplataforma · coberturas de portafolio y servicios públicos (recargas, corresponsalía, pagos, SOAT). No se presentan piezas de terceros como propias.</p>
+    </div>
+    <div class="page-foot">
+      <span>Anexo · Paola Hoyos · Activa más oportunidades</span>
+      <span>Máx. 3 páginas</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
