@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"/><title>Activa más oportunidades · Excalidraw · Paola Hoyos · PTM</title>
+<style>
+@font-face{font-family:Inter;src:url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf");font-weight:400}
+@font-face{font-family:Inter;src:url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf");font-weight:500}
+@font-face{font-family:Inter;src:url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf");font-weight:600}
+@font-face{font-family:Inter;src:url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf");font-weight:700}
+@font-face{font-family:Display;src:url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Regular.ttf");font-weight:400}
+@font-face{font-family:Display;src:url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Italic.ttf");font-weight:400;font-style:italic}
+@font-face{font-family:Display;src:url("file:///usr/share/fonts/truetype/noto/NotoSerifDisplay-Bold.ttf");font-weight:700}
+:root{--ink:#0f2a30;--text:#334e55;--muted:#6b8288;--line:#d5e3e5;--bg:#f4f1ea;--white:#fff;--teal:#0d5c63;--deep:#083f45;--mid:#1a7a82;--gold:#e0a116;--gold-soft:#f6e2a3;--mint:#dff0f1;--sand:#efe8db;--coral:#c45c2a;--warm:#fff7e8}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:Inter,system-ui,sans-serif;background:#111;color:var(--text);-webkit-font-smoothing:antialiased}
+.slide{width:1920px;height:1080px;overflow:hidden;position:relative;margin:0 auto 20px;background:var(--bg)}
+.page{padding:32px 44px 24px;height:100%;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--teal)}
+.top h1{font-family:Display,Georgia,serif;font-size:30px;font-weight:400;color:var(--ink);line-height:1.08;margin-top:2px}
+.num{font-size:12px;letter-spacing:.14em;color:var(--muted);padding-top:6px;font-weight:600}
+.foot{margin-top:auto;padding-top:8px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px}.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.g6{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:5px}
+.t{font-size:12.5px;line-height:1.35;color:var(--text)}.ink{color:var(--ink);font-weight:600}
+.serif{font-family:Display,Georgia,serif;font-style:italic;color:var(--ink)}
+.pill{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:999px}
+.p1{background:var(--gold-soft);color:var(--ink)}.p2{background:var(--mint);color:var(--deep)}.p3{background:#ece7de;color:var(--muted)}
+table.m{width:100%;border-collapse:collapse;font-size:12px}
+table.m th{background:var(--deep);color:#fff;text-align:left;padding:8px 9px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+table.m td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.3}
+table.m tr:nth-child(even) td{background:rgba(255,255,255,.65)}
+table.m td:first-child{font-weight:600;color:var(--ink)}
+.cover{display:grid;grid-template-columns:1.15fr .85fr}
+.cl{padding:46px 50px 34px 54px;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(ellipse 90% 70% at 0% 100%,rgba(224,161,22,.14),transparent 55%),linear-gradient(160deg,#faf7f1,#efe8db)}
+.cl .eye{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--teal)}
+.cl h1{font-family:Display,Georgia,serif;font-size:62px;line-height:1.02;font-weight:400;color:var(--ink);margin:16px 0 12px;max-width:760px}
+.cl h1 em{font-style:italic;color:var(--teal)}
+.cl .lead{font-size:18px;line-height:1.4;max-width:660px;color:var(--text)}
+.chips{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.chip{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:600;color:var(--ink)}
+.cf{display:flex;justify-content:space-between;align-items:flex-end;padding-top:16px;border-top:1px solid var(--line)}
+.cf .name{font-family:Display,Georgia,serif;font-size:24px;color:var(--ink)}
+.cf .meta{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.35}
+.cr{background:var(--deep);color:#fff;padding:46px 42px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.cr:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 100% 0%,rgba(224,161,22,.28),transparent 55%)}
+.cr>*{position:relative;z-index:1}
+.cr .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold-soft)}
+.cr .q{font-family:Display,Georgia,serif;font-style:italic;font-size:27px;line-height:1.25;margin:18px 0}
+.cr ul{list-style:none}.cr li{padding:10px 0;border-top:1px solid rgba(255,255,255,.16);font-size:14px;line-height:1.35;color:rgba(255,255,255,.88)}
+.cr li strong{color:#fff}
+.flow{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;align-items:stretch;margin-bottom:10px}
+.flow .box{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:13px}
+.flow .box h3{font-family:Display,Georgia,serif;font-size:19px;color:var(--ink);margin:2px 0 5px;font-weight:400}
+.flow .arr{display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--gold);font-weight:700}
+.bar-row{display:flex;align-items:center;gap:8px;margin:4px 0}
+.bar-n{width:124px;font-size:11px;font-weight:600;color:var(--ink)}.bar-t{flex:1;height:10px;background:#e6e0d6;border-radius:99px;overflow:hidden}
+.bar-f{height:100%;background:linear-gradient(90deg,var(--mid),var(--deep));border-radius:99px}
+.bar-a{width:96px;text-align:right;font-size:11px;color:var(--text)}
+.mock{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--white);display:flex;flex-direction:column}
+.mock .mh{padding:7px 10px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#fff}
+.mock .mb{padding:10px;font-size:11.5px;line-height:1.32;color:var(--ink);flex:1;white-space:pre-line}
+.mock .mf{padding:7px 10px;background:var(--sand);font-size:10px;font-weight:700;color:var(--deep)}
+.wa .mh{background:#128C7E}.pop .mh{background:var(--deep)}.soc .mh{background:#4267B2}.pos .mh{background:var(--gold);color:var(--ink)!important}
+.wk{background:var(--white);border-radius:11px;border-top:4px solid var(--teal);padding:10px 8px;display:flex;flex-direction:column}
+.wk:nth-child(even){border-top-color:var(--gold)}
+.wk .s{font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:3px}
+.wk h3{font-family:Display,Georgia,serif;font-size:15px;color:var(--ink);font-weight:400;margin-bottom:4px;line-height:1.12}
+.wk p{font-size:10.5px;line-height:1.3;color:var(--text)}
+.wk .meta{margin-top:auto;padding-top:6px;border-top:1px solid var(--line);font-size:9.5px;color:var(--muted);line-height:1.28}
+.kpi{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.kpi .v{font-family:Display,Georgia,serif;font-size:26px;color:var(--teal);line-height:1;margin:3px 0}
+.kpi .n{font-size:11px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.kpi .w{font-size:10px;line-height:1.25;color:var(--muted)}
+.chain .c{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:10px}
+
+.g3,.g4,.g5,.g6{align-items:stretch}
+.g3[style*="flex:1"],.g4[style*="flex:1"],.g6[style*="flex:1"]{flex:1;min-height:0}
+.card{display:flex;flex-direction:column}
+.wk{min-height:0}
+.wk p{flex:1}
+.flow .box{display:flex;flex-direction:column}
+.flow .box .t{flex:1}
+.mock{min-height:0}
+.mock .mb{flex:1}
+
+
+.sketch-band{height:210px;margin:0 0 8px;border-radius:14px;overflow:hidden;border:1.5px dashed rgba(13,92,99,.35);background:#f7f3ea;position:relative;flex-shrink:0}
+.sketch-band img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block}
+.badge-ex{position:absolute;right:12px;bottom:10px;z-index:3;background:rgba(255,255,255,.94);border:1.5px solid #0d5c63;border-radius:999px;padding:5px 11px;font-size:10px;font-weight:700;color:#0d5c63;letter-spacing:.06em;text-transform:uppercase}
+.slide.cover.has-sketch{grid-template-columns:1.05fr .95fr}
+.cover-sketch{position:relative;overflow:hidden;background:#083f45;min-height:100%}
+.cover-sketch img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}
+.slide.has-sketch:not(.cover) .page{padding:16px 36px 12px}
+.slide.has-sketch:not(.cover) .top{margin-bottom:4px}
+.slide.has-sketch:not(.cover) .top h1{font-size:22px}
+.slide.has-sketch:not(.cover) .t{font-size:11px;line-height:1.28}
+.slide.has-sketch:not(.cover) table.m{font-size:10.5px}
+.slide.has-sketch:not(.cover) table.m th,.slide.has-sketch:not(.cover) table.m td{padding:4px 6px}
+.slide.has-sketch:not(.cover) .kpi .v{font-size:20px}
+.slide.has-sketch:not(.cover) .wk h3{font-size:12px}
+.slide.has-sketch:not(.cover) .wk p{font-size:9.5px}
+.slide.has-sketch:not(.cover) .card{padding:8px 10px}
+.slide.has-sketch:not(.cover) .flow .box h3{font-size:15px}
+.slide.has-sketch:not(.cover) .serif{font-size:13px!important}
+.slide.has-sketch:not(.cover) .foot{padding-top:4px;font-size:10px}
+
+</style></head><body>
+
+<section class="slide cover has-sketch">
+  <div class="cl">
+    <div>
+      <div class="eye">Prueba técnica · Analista de Marca · PTM</div>
+      <h1>Activa más<br><em>oportunidades</em></h1>
+      <p class="lead">Piloto de 6 semanas para que el comercio activo descubra —y use— más servicios desde el mismo mostrador. Menos catálogo. Más movimiento real.</p>
+      <div class="chips">
+        <span class="chip">360° · 6 semanas</span>
+        <span class="chip">COP $18.000.000</span>
+        <span class="chip">Comercios activos</span>
+        <span class="chip">Cercano · claro · útil</span>
+      </div>
+    </div>
+    <div class="cf">
+      <div><div class="name">Paola Hoyos</div><div class="meta">Propuesta de marca, contenido,<br>activación y medición</div></div>
+      <div class="meta" style="text-align:right">Idea central<br><strong style="color:var(--teal);font-size:15px">El mostrador que hace más</strong></div>
+    </div>
+  </div>
+  <div class="cover-sketch"><img src="excalidraw_assets/slide_01.png" alt="Mapa visual del reto"/><div class="badge-ex">Ilustración Excalidraw</div></div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_02.png" alt="Ilustración Excalidraw 2/10"/><div class="badge-ex">Ilustración 2/10</div></div>
+<div class="top"><div><div class="kicker">01 · Diagnóstico</div><h1>De problema a meta en una mirada</h1></div><div class="num">02 / 10</div></div>
+<div class="flow">
+  <div class="box" style="border-top:4px solid var(--coral)"><div class="lbl" style="color:var(--coral)">Problema</div><h3>Usan PTM a medias</h3><p class="t">Los comercios activos operan una o pocas categorías. El valor completo —atraer, ganar, resolver— se queda sin activar.</p></div>
+  <div class="arr">→</div>
+  <div class="box" style="border-top:4px solid var(--gold)"><div class="lbl" style="color:#9a6a00">Oportunidad</div><h3>Un paso, no un catálogo</h3><p class="t">Mostrar utilidad concreta: más visitas e ingreso extra al activar el siguiente servicio desde el mismo mostrador.</p></div>
+  <div class="arr">→</div>
+  <div class="box" style="border-top:4px solid var(--teal)"><div class="lbl">Objetivo SMART · 6 semanas</div><h3>25% y +40%</h3><p class="t"><strong class="ink">25%</strong> de bajo uso completa ≥1 transacción en 2.ª categoría. <strong class="ink">30%</strong> de uso medio sube ≥40% su ritmo semanal en categorías secundarias vs. las 4 semanas previas.</p></div>
+</div>
+<div class="g3" style="flex:1">
+  <div class="card" style="background:var(--mint);border:none">
+    <div class="lbl">Comunicación 1</div>
+    <p class="serif" style="font-size:18px;margin-bottom:8px">Una sola idea clara</p>
+    <p class="t" style="margin-bottom:10px">Que el comercio entienda: más categorías = más movimiento en el punto.</p>
+    <div style="margin-top:auto;padding-top:10px;border-top:1px solid rgba(13,92,99,.15)">
+      <p class="t"><strong class="ink">Se nota cuando:</strong> puede repetir la idea en una frase.</p>
+      <p class="t" style="margin-top:4px"><strong class="ink">Se mide con:</strong> claridad percibida ≥4,2.</p>
+    </div>
+  </div>
+  <div class="card" style="background:var(--sand);border:none">
+    <div class="lbl">Comunicación 2</div>
+    <p class="serif" style="font-size:18px;margin-bottom:8px">Activar sin miedo</p>
+    <p class="t" style="margin-bottom:10px">Guiar el siguiente servicio en minutos, sin tecnicismos ni fricción.</p>
+    <div style="margin-top:auto;padding-top:10px;border-top:1px solid rgba(0,0,0,.08)">
+      <p class="t"><strong class="ink">Se nota cuando:</strong> inicia la 2.ª categoría sin ayuda extra.</p>
+      <p class="t" style="margin-top:4px"><strong class="ink">Se mide con:</strong> CTR «Activar» al 12%.</p>
+    </div>
+  </div>
+  <div class="card" style="background:var(--gold-soft);border:none">
+    <div class="lbl">Comunicación 3</div>
+    <p class="serif" style="font-size:18px;margin-bottom:8px">Misma voz en todos lados</p>
+    <p class="t" style="margin-bottom:10px">Alinear Comercial y Atención con un mensaje único y accionable.</p>
+    <div style="margin-top:auto;padding-top:10px;border-top:1px solid rgba(0,0,0,.08)">
+      <p class="t"><strong class="ink">Se nota cuando:</strong> el guion cabe en 60 segundos.</p>
+      <p class="t" style="margin-top:4px"><strong class="ink">Se mide con:</strong> % activaciones asistidas.</p>
+    </div>
+  </div>
+</div>
+<div class="card" style="margin-top:10px;display:flex;gap:20px;align-items:center;background:var(--deep);border:none;color:#fff">
+  <div style="flex:1"><span class="lbl" style="color:var(--gold-soft)">Frase del problema</span><p style="font-family:Display,Georgia,serif;font-size:18px;color:#fff;line-height:1.3;margin-top:4px">Los comercios ya están en PTM, pero muchos se quedan en una sola categoría: el valor completo se queda a medias.</p></div>
+  <div style="width:280px;font-size:11.5px;line-height:1.35;color:rgba(255,255,255,.75)">Tono del piloto: cercano, claro, útil y optimista. Sin jerga. Pensado para quien tiene poco tiempo detrás del mostrador.</div>
+</div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>Presentación principal</span></div>
+</div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_03.png" alt="Ilustración Excalidraw 3/10"/><div class="badge-ex">Ilustración 3/10</div></div>
+<div class="top"><div><div class="kicker">01 · Audiencias</div><h1>A quién hablamos primero — y qué late debajo</h1></div><div class="num">03 / 10</div></div>
+<p class="serif" style="font-size:17px;margin-bottom:10px">Priorizo a quien puede mover el piloto. Comercial habilita. El barrio refuerza, no lidera la inversión.</p>
+<table class="m" style="flex:1">
+<thead><tr><th style="width:17%">Audiencia</th><th style="width:11%">Prioridad</th><th style="width:24%">Barrera</th><th style="width:28%">Insight</th><th style="width:20%">Comportamiento deseado</th></tr></thead>
+<tbody>
+<tr><td>P1 · Bajo uso<br><span style="font-weight:400;color:var(--muted)">Una sola categoría</span></td><td><span class="pill p1">Alta</span></td><td>“Si activar otra es enredado, mejor sigo igual.”</td><td>No rechazan el portafolio: les falta el siguiente paso útil y les da miedo perder tiempo.</td><td>Probar una 2.ª categoría en el piloto.</td></tr>
+<tr><td>P2 · Uso medio<br><span style="font-weight:400;color:var(--muted)">2–3 categorías</span></td><td><span class="pill p1">Alta</span></td><td>“Uso lo que recuerdo… no veo el valor completo.”</td><td>El valor integral aún no es hábito. Necesitan prueba de resultado, no más catálogo.</td><td>Subir frecuencia y reconocer el valor total.</td></tr>
+<tr><td>P3 · Comercial / Atención</td><td><span class="pill p2">Habilitadora</span></td><td>“Si el mensaje cambia por canal, me enredo.”</td><td>Necesitan un guion corto, único y accionable para acompañar sin improvisar.</td><td>Explicar la campaña con un solo mensaje.</td></tr>
+<tr><td>P4 · Público del barrio</td><td><span class="pill p3">Refuerzo</span></td><td>Busca soluciones cercanas y rápidas.</td><td>Reconocen el punto cuando ven utilidad concreta: pagar, recargar, retirar.</td><td>Ver al comercio como punto multiservicios.</td></tr>
+</tbody></table>
+<div class="g3" style="margin-top:10px">
+<div class="card"><div class="lbl">Inversión de voz</div><p class="t">70% P1+P2 · 20% P3 · 10% P4 (reconocimiento en redes y POS).</p></div>
+<div class="card"><div class="lbl">Regla de mensaje</div><p class="t">Misma promesa. Cambia el ejemplo de servicio y el empujón del CTA.</p></div>
+<div class="card"><div class="lbl">Criterio de priorización</div><p class="t">Quién puede activar más categorías en 6 semanas con el presupuesto dado.</p></div>
+</div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>Presentación principal</span></div>
+</div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_04.png" alt="Ilustración Excalidraw 4/10"/><div class="badge-ex">Ilustración 4/10</div></div>
+<div class="top"><div><div class="kicker">01–02 · Promesa y concepto</div><h1>Una promesa que sí se puede sostener</h1></div><div class="num">04 / 10</div></div>
+<div class="g2" style="margin-bottom:10px">
+<div style="background:var(--deep);border-radius:14px;padding:18px 20px;color:#fff">
+<div class="lbl" style="color:var(--gold-soft)">Promesa de campaña</div>
+<p style="font-family:Display,Georgia,serif;font-size:22px;line-height:1.28;color:#fff;margin:5px 0 8px">Con PTM, tu comercio atrae más clientes, genera ingreso extra y resuelve más necesidades desde un solo lugar.</p>
+<div class="lbl" style="color:var(--gold-soft);margin-top:6px">Concepto rector</div>
+<p style="font-size:16px;color:#fff"><em style="font-family:Display,Georgia,serif">El mostrador que hace más</em> — de una función a un punto de oportunidades.</p>
+</div>
+<div style="background:var(--gold);border-radius:14px;padding:18px 20px">
+<div class="lbl" style="color:var(--ink)">Frase de campaña</div>
+<p style="font-family:Display,Georgia,serif;font-size:34px;color:var(--ink);line-height:1.08;margin:6px 0 10px">Activa más oportunidades</p>
+<p class="t" style="color:var(--ink)">Mantenemos la frase del brief: es clara, accionable y suena a PTM. El concepto le da cuerpo: no es “más botones”, es más movimiento en el punto.</p>
+</div>
+</div>
+<div class="g3" style="margin-bottom:10px">
+<div class="card" style="border-top:4px solid var(--teal)"><div class="lbl">Pilar 1 · Atrae</div><p class="serif" style="font-size:18px;margin-bottom:5px">Más visitas</p><p class="t">El vecino encuentra más razones para acercarse al mismo comercio.</p></div>
+<div class="card" style="border-top:4px solid var(--gold)"><div class="lbl">Pilar 2 · Gana</div><p class="serif" style="font-size:18px;margin-bottom:5px">Ingreso extra</p><p class="t">Comisión y movimiento adicional sin cambiar de mostrador.</p></div>
+<div class="card" style="border-top:4px solid var(--deep)"><div class="lbl">Pilar 3 · Resuelve</div><p class="serif" style="font-size:18px;margin-bottom:5px">Más necesidades</p><p class="t">Pagos, recargas, corresponsalía y más, en el punto de siempre.</p></div>
+</div>
+<div class="g2" style="flex:1">
+<div class="card" style="background:var(--mint);border:none"><div class="lbl">Razones para creer</div>
+<p class="t" style="margin-bottom:4px">• +20.000 comercios en Colombia (fuente pública PTM).</p>
+<p class="t" style="margin-bottom:4px">• Portafolio real: recargas, corresponsalía, pagos, SOAT y más.</p>
+<p class="t" style="margin-bottom:4px">• App PTM Móvil y acompañamiento comercial en territorio.</p>
+<p class="t">• Relato público de utilidad cotidiana e inclusión cercana al barrio.</p></div>
+<div class="card" style="background:var(--sand);border:none"><div class="lbl">Cómo cuida la reputación de PTM</div>
+<p class="t">La idea habla de utilidad, no de milagros de ventas. Cada pieza deja un <strong class="ink">cómo</strong> (activar el siguiente servicio). Así se refuerza la cercanía de PTM y se evita sonar a fintech lejana o a promesa vacía.</p></div>
+</div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>Presentación principal</span></div>
+</div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_05.png" alt="Ilustración Excalidraw 5/10"/><div class="badge-ex">Ilustración 5/10</div></div>
+<div class="top"><div><div class="kicker">02 · Sistema creativo</div><h1>Mirada visual y piezas listas</h1></div><div class="num">05 / 10</div></div>
+<div class="g4" style="margin-bottom:10px">
+<div class="card"><div class="lbl">Intención</div><p class="t">Cercanía de barrio + claridad útil. Fotos reales de mostrador y manos trabajando.</p></div>
+<div class="card"><div class="lbl">Jerarquía</div><p class="t">1) Frase · 2) Beneficio en una línea · 3) CTA. Un solo servicio por pieza.</p></div>
+<div class="card"><div class="lbl">Color (aprox. pública)</div>
+<div style="display:flex;gap:6px;margin:6px 0">
+<div style="width:26px;height:26px;border-radius:6px;background:#083f45"></div>
+<div style="width:26px;height:26px;border-radius:6px;background:#0d5c63"></div>
+<div style="width:26px;height:26px;border-radius:6px;background:#e0a116"></div>
+<div style="width:26px;height:26px;border-radius:6px;background:#f4f1ea;border:1px solid #ccc"></div>
+</div>
+<p class="t">Teal de confianza + dorado de activación. Aprox. visual pública; no brandbook oficial.</p></div>
+<div class="card"><div class="lbl">Imagen</div><p class="t">Luz natural, cotidianidad. Serif en titulares, sans limpia en cuerpo. Optimista, nunca chillona.</p></div>
+</div>
+<div class="g4" style="flex:1;min-height:0">
+<div class="mock wa"><div class="mh">WhatsApp · comercio</div><div class="mb">Hola, {{nombre}}. En PTM ya tienes una categoría activa. En 2 minutos puedes activar una segunda (pagos o corresponsalía) y empezar a recibir más visitas.
+
+¿Te envío el paso a paso?
+Responde ACTIVAR o toca: {{link}}
+
+Activa más oportunidades — PTM</div><div class="mf">CTA → Activa tu siguiente servicio</div></div>
+<div class="mock pop"><div class="mh">Pop-up en plataforma</div><div class="mb">Título: Activa más oportunidades
+
+Cuerpo: Tu comercio ya está en PTM. El siguiente servicio puede traerte más clientes esta misma semana.
+
+[ Activar mi siguiente servicio ]
+Ver cómo funciona (30 seg)</div><div class="mf">CTA → acción inmediata</div></div>
+<div class="mock soc"><div class="mh">Redes · IG / FB</div><div class="mb">Tus vecinos no solo compran: también pagan, recargan y resuelven trámites cerca de casa.
+
+Si tu comercio ya está en PTM, un servicio más puede significar más visitas e ingreso extra — desde el mismo mostrador.
+
+Activa más oportunidades.
+#PTM #ComercioDeBarrio</div><div class="mf">CTA → desliza / pregunta en el punto</div></div>
+<div class="mock pos"><div class="mh" style="color:var(--ink)">Punto de venta</div><div class="mb">Cabeza: Aquí activas más oportunidades
+
+Sub: Recargas · Pagos · Corresponsalía · y más
+
+Pie: Pregunta en el mostrador cómo activar tu siguiente servicio PTM</div><div class="mf">CTA visible en afiche / counter</div></div>
+</div>
+<div class="card" style="margin-top:8px;background:var(--deep);border:none;color:#fff;display:flex;gap:18px;align-items:center">
+<div style="min-width:210px"><div class="lbl" style="color:var(--gold-soft)">CTA común</div><p style="font-family:Display,Georgia,serif;font-size:18px;color:#fff">«Activa tu siguiente servicio»</p></div>
+<p style="font-size:12px;line-height:1.35;color:rgba(255,255,255,.85)">Bajo uso → elige 1 categoría nueva · Uso medio → reactiva / sube frecuencia · Comercial → agenda activación hoy · Redes/POS → reconocimiento + pregunta en mostrador · WhatsApp/pop-up → acción inmediata con enlace</p>
+</div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>Presentación principal</span></div>
+</div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_06.png" alt="Ilustración Excalidraw 6/10"/><div class="badge-ex">Ilustración 6/10</div></div>
+<div class="top"><div><div class="kicker">03 · Journey</div><h1>Seis semanas con un ritmo claro</h1></div><div class="num">06 / 10</div></div>
+<p class="serif" style="font-size:16px;margin-bottom:10px">Primero alineamos por dentro. Después lanzamos. Luego acompañamos, mostramos pruebas y cerramos con aprendizaje.</p>
+<div class="g6" style="flex:1"><div class="wk"><div class="s">Semana 1</div><h3>Expectativa</h3><p>Teaser amable + kit para Comercial. El comercio siente que viene algo útil, no una avalancha.</p>
+<div style="margin:8px 0;padding:8px;background:var(--mint);border-radius:8px"><div class="lbl" style="margin:0 0 4px">Arranque interno</div><p class="t" style="font-size:10.5px">Capacitación 60s · FAQ · lista de priorización P1</p></div>
+<div class="meta"><strong>Msg: “Se acerca algo para tu mostrador”</strong><br>Canal: correo, WA soft, capacitación</div></div><div class="wk"><div class="s">Semana 2</div><h3>Lanzamiento</h3><p>Promesa + CTA en todos los canales. Un solo mensaje. Arranque coordinado.</p>
+<div style="margin:8px 0;padding:8px;background:var(--mint);border-radius:8px"><div class="lbl" style="margin:0 0 4px">Oleada completa</div><p class="t" style="font-size:10.5px">WA · SMS · pop-up · redes · POS el mismo día</p></div>
+<div class="meta"><strong>Msg: Activa más oportunidades</strong><br>Canal: WA, SMS, pop-up, redes, POS</div></div><div class="wk"><div class="s">Semana 3</div><h3>Activación</h3><p>Paso a paso por segmento. Tutoriales cortos. Comercial prioriza bajo uso.</p>
+<div style="margin:8px 0;padding:8px;background:var(--mint);border-radius:8px"><div class="lbl" style="margin:0 0 4px">Ayuda práctica</div><p class="t" style="font-size:10.5px">Tutorial 30–60s · checklist de campo · hotline WA</p></div>
+<div class="meta"><strong>Msg: Tu siguiente servicio en 2 min</strong><br>Canal: WA, SMS, Comercial</div></div><div class="wk"><div class="s">Semana 4</div><h3>Prueba social</h3><p>Historias reales del piloto. Refuerzo a uso medio. Lo que funciona se vuelve plantilla.</p>
+<div style="margin:8px 0;padding:8px;background:var(--mint);border-radius:8px"><div class="lbl" style="margin:0 0 4px">Prueba + plantilla</div><p class="t" style="font-size:10.5px">Casos P1/P2 · ganador A/B pasa a oficial</p></div>
+<div class="meta"><strong>Msg: “Así le funcionó a…”</strong><br>Canal: redes, WA, Comercial</div></div><div class="wk"><div class="s">Semana 5</div><h3>Aceleración</h3><p>Recuperamos a quien no activó. Visitamos rezagados. Subimos el mensaje ganador.</p>
+<div style="margin:8px 0;padding:8px;background:var(--mint);border-radius:8px"><div class="lbl" style="margin:0 0 4px">Cierre de huecos</div><p class="t" style="font-size:10.5px">Remarketing no activados · blitz Comercial</p></div>
+<div class="meta"><strong>Msg: Aún estás a tiempo</strong><br>Canal: remarketing WA/SMS + rutas</div></div><div class="wk"><div class="s">Semana 6</div><h3>Cierre</h3><p>Agradecimiento, encuesta de claridad, tablero final y siguiente mejor paso.</p>
+<div style="margin:8px 0;padding:8px;background:var(--mint);border-radius:8px"><div class="lbl" style="margin:0 0 4px">Aprendizaje</div><p class="t" style="font-size:10.5px">NPS claridad · dashboard · next best action</p></div>
+<div class="meta"><strong>Msg: Gracias + qué sigue</strong><br>Canal: correo, WA, dashboard</div></div></div>
+<div class="foot"></div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>Presentación principal</span></div>
+</div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_07.png" alt="Ilustración Excalidraw 7/10"/><div class="badge-ex">Ilustración 7/10</div></div>
+<div class="top"><div><div class="kicker">03 · Plan 360 y presupuesto</div><h1>Canales que activan · plata donde convierte</h1></div><div class="num">07 / 10</div></div>
+<div class="g2" style="flex:1;min-height:0;gap:12px">
+<div>
+<table class="m">
+<thead><tr><th>Canal</th><th>Rol</th><th>Frecuencia</th><th>Contenido</th></tr></thead>
+<tbody>
+<tr><td>WhatsApp</td><td>Conversión 1:1</td><td>2–3/sem S2–S5</td><td>Teaser, paso a paso, caso</td></tr>
+<tr><td>SMS</td><td>Empujón corto</td><td>1/sem S2–S4</td><td>CTA + enlace</td></tr>
+<tr><td>Correo</td><td>Contexto</td><td>S1, S2, S6</td><td>Kit, lanzamiento, cierre</td></tr>
+<tr><td>Pop-up</td><td>Captura en uso</td><td>Siempre-on S2–S5</td><td>Beneficio + activar</td></tr>
+<tr><td>Redes</td><td>Reconocimiento</td><td>3/sem</td><td>Beneficio, tutorial, prueba</td></tr>
+<tr><td>POS</td><td>Refuerzo físico</td><td>Todo el piloto</td><td>Affiche / counter card</td></tr>
+<tr><td>Comercial</td><td>Activación asistida</td><td>Diario S2–S5</td><td>Guion 60s + checklist</td></tr>
+</tbody></table>
+</div>
+<div class="card" style="display:flex;flex-direction:column">
+<div class="lbl">Presupuesto COP $18.000.000 · criterio: primero lo que activa</div>
+<div style="flex:1;margin-top:4px">
+<div class="bar-row"><div class="bar-n">WhatsApp / CRM</div><div class="bar-t"><div class="bar-f" style="width:23%"></div></div><div class="bar-a">$4.2M · 23%</div></div>
+<div class="bar-row"><div class="bar-n">Comercial</div><div class="bar-t"><div class="bar-f" style="width:20%"></div></div><div class="bar-a">$3.6M · 20%</div></div>
+<div class="bar-row"><div class="bar-n">SMS</div><div class="bar-t"><div class="bar-f" style="width:12%"></div></div><div class="bar-a">$2.2M · 12%</div></div>
+<div class="bar-row"><div class="bar-n">Punto de venta</div><div class="bar-t"><div class="bar-f" style="width:11%"></div></div><div class="bar-a">$2.0M · 11%</div></div>
+<div class="bar-row"><div class="bar-n">Redes pagas</div><div class="bar-t"><div class="bar-f" style="width:10%"></div></div><div class="bar-a">$1.8M · 10%</div></div>
+<div class="bar-row"><div class="bar-n">Diseño</div><div class="bar-t"><div class="bar-f" style="width:8%"></div></div><div class="bar-a">$1.5M · 8%</div></div>
+<div class="bar-row"><div class="bar-n">Pop-up / digital</div><div class="bar-t"><div class="bar-f" style="width:6%"></div></div><div class="bar-a">$1.0M · 6%</div></div>
+<div class="bar-row"><div class="bar-n">Correo</div><div class="bar-t"><div class="bar-f" style="width:4%"></div></div><div class="bar-a">$0.7M · 4%</div></div>
+<div class="bar-row"><div class="bar-n">PR / aliados</div><div class="bar-t"><div class="bar-f" style="width:3%"></div></div><div class="bar-a">$0.6M · 3%</div></div>
+<div class="bar-row"><div class="bar-n">Contingencia A/B</div><div class="bar-t"><div class="bar-f" style="width:2%"></div></div><div class="bar-a">$0.4M · 2%</div></div>
+</div>
+<p class="t" style="margin-top:6px"><strong class="ink">Si baja 40%:</strong> corto redes pagas y PR; preservo WA + Comercial + SMS + pop-up.</p>
+</div>
+</div>
+<div class="g4" style="margin-top:10px">
+<div class="card"><div class="lbl">Dueño</div><p class="t"><strong class="ink">Marca</strong> — mensaje, tono, guion y reputación.</p></div>
+<div class="card"><div class="lbl">Dependencias</div><p class="t">Base segmentada · enlaces estables · POS · capacitación S1.</p></div>
+<div class="card"><div class="lbl">Aprobaciones</div><p class="t">Marca+Legal → Comercial (operable) → go-live S2.</p></div>
+<div class="card" style="background:#fff6ee;border-color:#f0d2b8"><div class="lbl" style="color:var(--coral)">3 riesgos</div><p class="t">1) Sobreprometer ventas → claim + cómo. 2) Fricción al activar → tutorial 30s. 3) Mensaje diluido → kit 1 página + veto Marca.</p></div>
+</div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>Presentación principal · Total $18.000.000</span></div>
+</div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_08.png" alt="Ilustración Excalidraw 8/10"/><div class="badge-ex">Ilustración 8/10</div></div>
+<div class="top"><div><div class="kicker">04 · Medición</div><h1>Cinco indicadores · dos pruebas · una lógica</h1></div><div class="num">08 / 10</div></div>
+<div class="g5" style="margin-bottom:10px">
+<div class="kpi"><div class="lbl">KPI 1</div><div class="v">25%</div><div class="n">2.ª categoría</div><div class="w">Bajo uso · base* 8% → ×3,1 en 6 sem</div></div>
+<div class="kpi"><div class="lbl">KPI 2</div><div class="v">+40%</div><div class="n">Frecuencia medio</div><div class="w">Base* 1,2/sem → meta 1,7 (hábito)</div></div>
+<div class="kpi"><div class="lbl">KPI 3</div><div class="v">12%</div><div class="n">Clics «Activar»</div><div class="w">Base* ~6–7% → duplicar con beneficio</div></div>
+<div class="kpi"><div class="lbl">KPI 4</div><div class="v">35%</div><div class="n">Vía Comercial</div><div class="w">Del total de 2.ª cat. en bajo uso</div></div>
+<div class="kpi"><div class="lbl">KPI 5</div><div class="v">≥4,2</div><div class="n">Claridad mensaje</div><div class="w">Base* ~3,8 → sin tecnicismos</div></div>
+</div>
+<p class="t" style="margin-bottom:8px"><strong class="ink">*Justificación (KPI 1–3):</strong> el brief no trae tablas numéricas. Declaramos línea base de piloto (ver supuestos) para hacer medible el SMART. Las metas 1–3 se anclan a esa base.</p>
+<div class="g2" style="flex:1">
+<div class="card" style="border-top:4px solid var(--teal)"><div class="lbl">Prueba A/B 1 · WhatsApp</div>
+<p class="serif" style="font-size:17px;margin-bottom:6px">Beneficio vs. solo instrucciones</p>
+<p class="t" style="margin-bottom:4px"><strong class="ink">Hipótesis:</strong> “más visitas esta semana” convierte mejor que listar pasos técnicos.</p>
+<p class="t" style="margin-bottom:4px"><strong class="ink">Variable:</strong> primer bloque del mensaje.</p>
+<p class="t" style="margin-bottom:4px"><strong class="ink">Éxito:</strong> +20% relativo en clics al enlace en 7 días.</p>
+<p class="t"><strong class="ink">Decisión:</strong> el ganador se vuelve plantilla oficial S4–S6.</p></div>
+<div class="card" style="border-top:4px solid var(--gold)"><div class="lbl">Prueba A/B 2 · Pop-up</div>
+<p class="serif" style="font-size:17px;margin-bottom:6px">1 servicio recomendado vs. menú</p>
+<p class="t" style="margin-bottom:4px"><strong class="ink">Hipótesis:</strong> sugerir el siguiente servicio según uso supera mostrar 4 categorías.</p>
+<p class="t" style="margin-bottom:4px"><strong class="ink">Variable:</strong> contenido del pop-up.</p>
+<p class="t" style="margin-bottom:4px"><strong class="ink">Éxito:</strong> +15% relativo en inicio de activación; menos cierre inmediato.</p>
+<p class="t"><strong class="ink">Decisión:</strong> si gana 1, personalizamos; si gana menú, lo dejamos corto.</p></div>
+</div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>Presentación principal</span></div>
+</div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_09.png" alt="Ilustración Excalidraw 9/10"/><div class="badge-ex">Ilustración 9/10</div></div>
+<div class="top"><div><div class="kicker">04 · Optimización</div><h1>Dato → hallazgo → acción</h1></div><div class="num">09 / 10</div></div>
+<p class="t" style="margin-bottom:8px">Corte de lectura · <strong class="ink">semana 3 del piloto</strong> (escenario de análisis declarado en supuestos; sirve para decidir, no es dato interno real de PTM).</p>
+<table class="m" style="margin-bottom:10px">
+<thead><tr><th>Métrica</th><th>Bajo uso</th><th>Uso medio</th><th>Lectura</th></tr></thead>
+<tbody>
+<tr><td>Apertura WhatsApp</td><td>68%</td><td>71%</td><td>Hay interés</td></tr>
+<tr><td>Clics «Activar»</td><td>9,1%</td><td>11,4%</td><td>Bajo uso atrasado vs. ritmo</td></tr>
+<tr><td>2.ª cat. iniciada / con ≥1 uso</td><td>14% / 9%</td><td>—</td><td>Se caen después del clic</td></tr>
+<tr><td>Frecuencia cat. secundarias</td><td>—</td><td>+18%</td><td>Lejos del +40%</td></tr>
+<tr><td>Activaciones con Comercial</td><td>41% del total</td><td>22%</td><td>Comercial jala el bajo uso</td></tr>
+</tbody></table>
+<div class="g3" style="flex:1">
+<div class="chain" style="display:grid;gap:8px">
+<div class="c" style="background:var(--mint);border:none"><div class="lbl">Dato</div><p class="t">Apertura alta, clic bajo en P1.</p></div>
+<div class="c"><div class="lbl">Hallazgo 1</div><p class="t">Abren la puerta y no cierran la activación.</p></div>
+<div class="c" style="background:var(--sand);border:none"><div class="lbl">Acción 1</div><p class="t">S4: WA de bajo uso pasa al mensaje ganador (beneficio + 1 servicio) con enlace profundo.</p></div>
+</div>
+<div class="chain" style="display:grid;gap:8px">
+<div class="c" style="background:var(--mint);border:none"><div class="lbl">Dato</div><p class="t">14% inicia · solo 9% completa 1 uso.</p></div>
+<div class="c"><div class="lbl">Hallazgo 2</div><p class="t">El hueco está entre empezar y completar: hay fricción o duda.</p></div>
+<div class="c" style="background:var(--sand);border:none"><div class="lbl">Acción 2</div><p class="t">Microtutorial 30s al iniciar + seguimiento a 24h si no hay primer uso.</p></div>
+</div>
+<div class="chain" style="display:grid;gap:8px">
+<div class="c" style="background:var(--mint);border:none"><div class="lbl">Dato</div><p class="t">Comercial = 41% del lift en bajo uso.</p></div>
+<div class="c"><div class="lbl">Hallazgo 3</div><p class="t">Comercial mueve P1; P2 responde mejor a digital, pero aún no es hábito.</p></div>
+<div class="c" style="background:var(--sand);border:none"><div class="lbl">Acción 3</div><p class="t">Reasignar tiempo Comercial a P1 rezagado; a P2, recordatorios de ritmo SMS+WA.</p></div>
+</div>
+</div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>Presentación principal</span></div>
+</div></section>
+
+<section class="slide has-sketch"><div class="page"><div class="sketch-band"><img src="excalidraw_assets/slide_10.png" alt="Ilustración Excalidraw 10/10"/><div class="badge-ex">Ilustración 10/10</div></div>
+<div class="top"><div><div class="kicker">05 · Reputación y cierre</div><h1>Historia pública, respuesta humana, ruta clara</h1></div><div class="num">10 / 10</div></div>
+<div class="g2" style="gap:10px;margin-bottom:8px">
+<div class="card"><div class="lbl">17 · Ángulo para medios / aliados</div>
+<p class="serif" style="font-size:15px;margin:5px 0 6px">Los comercios de barrio como red cotidiana: activar más servicios útiles sin pedirle al tendero que se vuelva experto en tecnología.</p>
+<p class="t" style="margin-bottom:5px"><strong class="ink">Titular:</strong> «Activa más oportunidades»: la apuesta de PTM para que el comercio de barrio ofrezca más desde el mismo mostrador.</p>
+<p class="t"><strong class="ink">Vocería:</strong> 1) No pedimos “ser digital”: damos un siguiente servicio, paso a paso. 2) Más categorías = más razones para que el vecino vuelva. 3) Medimos activaciones reales, no ruido.</p></div>
+<div class="card" style="background:var(--mint);border:none"><div class="lbl">18 · Respuesta al comentario</div>
+<p class="t" style="font-style:italic;margin-bottom:6px;color:var(--muted)">«PTM dice que ayuda a vender más, pero nadie explica cómo activar los servicios»</p>
+<p class="t" style="color:var(--ink)">Tienes razón en pedirlo claro. Activar un servicio en PTM se hace desde la plataforma en pocos pasos (o con ayuda de tu asesor). Aquí va la guía de 30 segundos {{link}}. Si prefieres, escríbenos por WhatsApp {{wa}} con el nombre de tu comercio y te acompañamos hoy. Gracias por decirlo: justo por eso existe «Activa más oportunidades».</p></div>
+</div>
+<div class="g3" style="margin-bottom:8px">
+<div class="card"><div class="lbl">19 · 0–30 min</div><p class="t">Alerta a marca. Congelar respuestas improvisadas. Guardar evidencia. Clasificar: claridad, falla técnica o expectativa.</p></div>
+<div class="card"><div class="lbl">30–90 min</div><p class="t">Un vocero. Respuesta madre + guía. Atención contacta casos. Comercial recibe talking points.</p></div>
+<div class="card"><div class="lbl">2–48 h</div><p class="t">Monitoreo cada 30 min. No borrar críticas de buena fe. Post-mortem y ajuste de copy si hace falta.</p></div>
+</div>
+<div class="g2" style="flex:1;gap:10px">
+<div class="card" style="background:var(--sand);border:none"><div class="lbl">Supuestos clave</div>
+<p class="t">Universo piloto declarado: 2.500 comercios (1.600 bajo / 900 medio). Línea base: 2.ª cat. 8%; frecuencia medio 1,2/sem; CTR ~6–7%. Corte S3 = escenario de criterio. Colores = aproximación visual pública (sitio con Cloudflare; LinkedIn/FB/app como referencia). Presupuesto = estimaciones de mercado.</p></div>
+<div class="card" style="background:var(--deep);border:none;color:#fff"><div class="lbl" style="color:var(--gold-soft)">Uso de IA · qué hice yo</div>
+<p style="font-size:12.5px;line-height:1.35;color:rgba(255,255,255,.88);margin-bottom:6px">IA apoyó estructura y densidad del PDF. Decisiones mías: problema, SMART, priorización, insights, promesa, concepto, CTA, journey, mix, KPIs, A/B, hallazgos, PR, respuesta y ruta de crisis. Validé tono cercano/útil alineado a comunicación pública de PTM.</p>
+<p style="font-size:11px;color:var(--gold-soft)">Fuentes: ptm.com.co · LinkedIn comercial-card-s-a-s · Facebook @ptmplataforma · Play Store PTM Móvil · coberturas públicas de portafolio.</p></div>
+</div>
+<div class="foot"><span>PTM · Activa más oportunidades · Paola Hoyos</span><span>12 min decisiones · 8 min conversación</span></div>
+</div></section>
+</body></html>
