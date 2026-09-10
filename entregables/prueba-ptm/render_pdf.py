@@ -41,6 +41,7 @@ def render_slide(html_path: Path, index: int, out_png: Path) -> None:
   }}
   body > .slide {{ display: none !important; margin: 0 !important; }}
   body > .slide:nth-of-type({index + 1}) {{ display: block !important; }}
+  body > .slide.cover.has-sketch:nth-of-type({index + 1}),
   body > .slide.cover:nth-of-type({index + 1}) {{ display: grid !important; }}
 </style>
 """
@@ -110,12 +111,19 @@ def build_pdf(html_path: Path, n_slides: int, out_pdf: Path) -> None:
 
 
 def main() -> None:
-    # Prefer presentacion.html (redesign); fallback name
-    main_html = ROOT / "presentacion.html"
-    if not main_html.exists():
-        main_html = ROOT / "presentacion.html"
-    build_pdf(main_html, 10, ROOT / "Paola_Hoyos_Prueba_AnalistaMarca.pdf")
-    build_pdf(ROOT / "anexo.html", 3, ROOT / "Paola_Hoyos_Prueba_AnalistaMarca_Anexo.pdf")
+    import sys
+
+    only = sys.argv[1] if len(sys.argv) > 1 else "all"
+    if only in ("all", "main"):
+        build_pdf(ROOT / "presentacion.html", 10, ROOT / "Paola_Hoyos_Prueba_AnalistaMarca.pdf")
+    if only in ("all", "anexo"):
+        build_pdf(ROOT / "anexo.html", 3, ROOT / "Paola_Hoyos_Prueba_AnalistaMarca_Anexo.pdf")
+    if only in ("all", "excalidraw"):
+        build_pdf(
+            ROOT / "presentacion_excalidraw.html",
+            10,
+            ROOT / "Paola_Hoyos_Prueba_AnalistaMarca_Excalidraw.pdf",
+        )
 
 
 if __name__ == "__main__":
