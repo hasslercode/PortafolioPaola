@@ -19,6 +19,8 @@ type BuildMetadataInput = {
   absoluteTitle?: boolean;
   publishedTime?: string;
   modifiedTime?: string;
+  /** Locales advertised in hreflang. Omit a noindex counterpart. */
+  hreflangLocales?: SiteLocale[];
 };
 
 /**
@@ -40,13 +42,14 @@ export function buildPageMetadata({
   absoluteTitle = false,
   publishedTime,
   modifiedTime,
+  hreflangLocales,
 }: BuildMetadataInput): Metadata {
   const path = buildLocalizedPath(locale, route);
   const url = absoluteUrl(path);
   const absoluteOg = ogImage.startsWith('http')
     ? ogImage
     : absoluteUrl(ogImage);
-  const languages = buildAlternateLanguages(route);
+  const languages = buildAlternateLanguages(route, hreflangLocales);
   const ogTypeMime = absoluteOg.endsWith('.png')
     ? 'image/png'
     : absoluteOg.endsWith('.webp')

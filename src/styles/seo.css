@@ -1689,3 +1689,64 @@
   background: rgba(30, 24, 26, 0.92);
   border-color: rgba(255, 255, 255, 0.12);
 }
+
+/* Article reading on small screens: 16px body, wrapping tables, 44px FAQ targets. */
+@media (max-width: 720px) {
+  .case-detail__title {
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  .case-detail__header {
+    margin-bottom: 1.1rem;
+  }
+
+  .prose-seo {
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+
+  .page-prose h2,
+  .prose-seo h2,
+  .seo-faq h2 {
+    font-size: clamp(1.35rem, 5.4vw, 1.6rem);
+    line-height: 1.25;
+  }
+
+  .prose-seo h3 {
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+
+  .prose-seo__table {
+    min-width: 0;
+  }
+
+  .prose-seo__table th {
+    white-space: normal;
+    letter-spacing: 0.02em;
+  }
+
+  .seo-faq__item summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    line-height: 1.35;
+  }
+
+  .geo-answer {
+    padding: 0.95rem 1rem;
+  }
+
+  .geo-answer__body,
+  .geo-answer__body p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .case-detail__cta .btn-pill {
+    min-height: 48px;
+  }
+}

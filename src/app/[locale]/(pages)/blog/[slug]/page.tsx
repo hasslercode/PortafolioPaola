@@ -46,9 +46,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     publishedTime: post.publishedAt,
     modifiedTime: post.updatedAt ?? post.publishedAt,
     absoluteTitle: true,
-    // HU-EN-001: EN blog bodies still mixed/ES — avoid hreflang dilution until HU-EN-002
-    // Thin stubs can set seo.noIndex until expanded (helpful-content hygiene).
+    // HU-EN-001: EN blog bodies still mixed/ES — noindex and do not advertise
+    // them in hreflang until HU-EN-002. Thin stubs can set seo.noIndex.
     noIndex: enNeedsNoIndex || contentNoIndex,
+    hreflangLocales: enNeedsNoIndex ? ['en'] : ['es'],
   });
 }
 
@@ -59,6 +60,21 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!post) notFound();
   const t = await getTranslations({ locale, namespace: 'Blog' });
   const typedLocale = locale as SiteLocale;
+  const topicBadge: Record<string, { es: string; en: string }> = {
+    seo: { es: 'SEO', en: 'SEO' },
+    instagram: { es: 'Instagram', en: 'Instagram' },
+    tiktok: { es: 'TikTok', en: 'TikTok' },
+    branding: { es: 'Marca', en: 'Brand' },
+    marketing: { es: 'Marketing', en: 'Marketing' },
+    video: { es: 'Video', en: 'Video' },
+    ugc: { es: 'UGC', en: 'UGC' },
+    strategy: { es: 'Estrategia', en: 'Strategy' },
+    local: { es: 'Local', en: 'Local' },
+    comparison: { es: 'Comparativa', en: 'Comparison' },
+  };
+  const badge =
+    topicBadge[post.topic]?.[typedLocale] ??
+    (typedLocale === 'es' ? 'Guía' : 'Guide');
   const crumbs = buildBreadcrumbs(typedLocale, [
     { name: t('title'), route: { type: 'hub', hub: 'blog' } },
     { name: post.title, route: { type: 'blogPost', slug } },
@@ -117,7 +133,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <Breadcrumbs items={crumbs} locale={locale} />
       </div>
       <DetailWithHomeArt
-        badge={post.intent}
+        badge={badge}
         title={post.title}
         subtitle={<time dateTime={post.publishedAt}>{post.publishedAt}</time>}
         ctaLabel={typedLocale === 'es' ? 'Contactar por correo' : 'Contact by email'}

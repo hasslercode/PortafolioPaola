@@ -27,6 +27,7 @@ function entry(
   priority: number,
   changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'],
   lastModified: Date = CONTENT_EPOCH,
+  hreflangLocales?: SiteLocale[],
 ): MetadataRoute.Sitemap[number] {
   return {
     url: absoluteUrl(buildLocalizedPath(locale, route)),
@@ -34,7 +35,7 @@ function entry(
     changeFrequency,
     priority,
     alternates: {
-      languages: buildAlternateLanguages(route),
+      languages: buildAlternateLanguages(route, hreflangLocales),
     },
   };
 }
@@ -90,12 +91,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     for (const slug of blogSlugs) {
+      // HU-EN-001: EN blog is noindex until bodies are translated.
+      // Keep those URLs out of the sitemap and out of ES hreflang.
+      if (locale === 'en') continue;
       const post = await getBlogBySlug(slug, locale);
+      if (post?.seo?.noIndex) continue;
       const lastModified = parseContentDate(
         post?.updatedAt ?? post?.publishedAt,
       );
       entries.push(
-        entry(locale, { type: 'blogPost', slug }, 0.75, 'monthly', lastModified),
+        entry(
+          locale,
+          { type: 'blogPost', slug },
+          0.75,
+          'monthly',
+          lastModified,
+          ['es'],
+        ),
       );
     }
   }

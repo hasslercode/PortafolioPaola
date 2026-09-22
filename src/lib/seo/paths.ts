@@ -73,13 +73,29 @@ export function absoluteUrl(path: string): string {
   return `${siteConfig.url}${normalized}`;
 }
 
-/** Absolute URLs for every locale of the same logical route (hreflang map). */
-export function buildAlternateLanguages(route: SeoRoute): Record<string, string> {
-  return {
-    'es-CO': absoluteUrl(buildLocalizedPath('es', route)),
-    en: absoluteUrl(buildLocalizedPath('en', route)),
-    'x-default': absoluteUrl(buildLocalizedPath('es', route)),
-  };
+/**
+ * Absolute URLs for the locales that should be advertised as alternates.
+ * Default is every public locale. Pass a subset when the other locale is
+ * noindex (EN blog until it is actually translated) so hreflang does not
+ * point at a non-indexable URL.
+ */
+export function buildAlternateLanguages(
+  route: SeoRoute,
+  locales: SiteLocale[] = [...siteConfig.locales],
+): Record<string, string> {
+  const map: Record<string, string> = {};
+  if (locales.includes('es')) {
+    const esUrl = absoluteUrl(buildLocalizedPath('es', route));
+    map['es-CO'] = esUrl;
+    map['x-default'] = esUrl;
+  }
+  if (locales.includes('en')) {
+    map.en = absoluteUrl(buildLocalizedPath('en', route));
+  }
+  if (!map['x-default'] && map.en) {
+    map['x-default'] = map.en;
+  }
+  return map;
 }
 
 export function resolveCanonicalServiceSlug(
