@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // HU-EN-001: EN blog bodies still mixed/ES — noindex and do not advertise
     // them in hreflang until HU-EN-002. Thin stubs can set seo.noIndex.
     noIndex: enNeedsNoIndex || contentNoIndex,
-    hreflangLocales: enNeedsNoIndex ? ['en'] : ['es'],
+    hreflangLocales: enNeedsNoIndex ? [] : ['es'],
   });
 }
 

@@ -83,6 +83,7 @@ export function buildAlternateLanguages(
   route: SeoRoute,
   locales: SiteLocale[] = [...siteConfig.locales],
 ): Record<string, string> {
+  if (locales.length === 0) return {};
   const map: Record<string, string> = {};
   if (locales.includes('es')) {
     const esUrl = absoluteUrl(buildLocalizedPath('es', route));

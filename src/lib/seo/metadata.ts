@@ -70,7 +70,7 @@ export function buildPageMetadata({
     metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: url,
-      languages,
+      ...(Object.keys(languages).length ? { languages } : {}),
       types: {
         'application/rss+xml': absoluteUrl(`/${locale}/feed.xml`),
       },
