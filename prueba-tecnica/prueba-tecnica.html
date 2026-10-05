@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prueba Técnica — Línea Estética</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple: #6b2d8b;
+      --purple-dark: #4f1f68;
+      --purple-light: #f3e8fa;
+      --purple-mid: #e8d4f4;
+      --ink: #1a1a2e;
+      --muted: #5c5c72;
+      --border: #e2dce8;
+      --white: #ffffff;
+      --accent: #c77dff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: letter;
+      margin: 9mm 11mm 10mm;
+    }
+
+    html { font-size: 9.25pt; }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      color: var(--ink);
+      line-height: 1.38;
+      background: var(--white);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Portada compacta ── */
+    .cover {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 55%, #8b3aab 100%);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 14px 18px 12px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      break-after: avoid;
+    }
+    .cover-left h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 17pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .cover-left .brand {
+      font-size: 8.5pt;
+      opacity: 0.85;
+      margin-top: 3px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cover-right {
+      text-align: right;
+      font-size: 8.5pt;
+      opacity: 0.92;
+      white-space: nowrap;
+    }
+    .cover-right strong { display: block; font-size: 9.5pt; margin-bottom: 2px; }
+
+    /* ── Secciones ── */
+    .exercise {
+      margin-bottom: 11px;
+      break-inside: auto;
+    }
+    .exercise-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 7px;
+      break-after: avoid;
+    }
+    .exercise-num {
+      background: var(--purple);
+      color: var(--white);
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .exercise-title {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--purple-dark);
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 8.75pt;
+      font-weight: 700;
+      color: var(--purple);
+      margin: 7px 0 4px;
+      break-after: avoid;
+    }
+    h3::before {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    p { margin-bottom: 5px; text-align: justify; }
+    p.lead { font-size: 9pt; color: var(--muted); margin-bottom: 6px; }
+
+    ul {
+      list-style: none;
+      margin: 0 0 5px 0;
+      padding: 0;
+    }
+    ul li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+      font-size: 8.75pt;
+      line-height: 1.36;
+    }
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--purple);
+      font-weight: 700;
+    }
+    ul.compact-2col {
+      columns: 2;
+      column-gap: 14px;
+    }
+
+    /* ── Tablas ── */
+    .table-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .table-row.single { grid-template-columns: 1fr; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.75pt;
+      margin-bottom: 5px;
+      break-inside: avoid;
+    }
+    thead th {
+      background: var(--purple);
+      color: var(--white);
+      font-weight: 600;
+      padding: 4px 5px;
+      text-align: center;
+      font-size: 7.5pt;
+    }
+    thead th:first-child { border-radius: 5px 0 0 0; text-align: left; }
+    thead th:last-child { border-radius: 0 5px 0 0; }
+    tbody td {
+      padding: 3px 5px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      vertical-align: middle;
+    }
+    tbody td:first-child { text-align: left; font-weight: 500; }
+    tbody tr:nth-child(even) td { background: var(--purple-light); }
+    tbody tr:last-child td:first-child { border-radius: 0 0 0 5px; }
+    tbody tr:last-child td:last-child { border-radius: 0 0 5px 0; }
+    .neg { color: #c0392b; font-weight: 600; }
+    .pos { color: #27ae60; font-weight: 600; }
+
+    /* ── Quote ── */
+    .quote {
+      background: var(--purple-light);
+      border-left: 3px solid var(--purple);
+      border-radius: 0 6px 6px 0;
+      padding: 7px 10px;
+      font-style: italic;
+      font-size: 8.75pt;
+      color: var(--muted);
+      margin: 5px 0 6px;
+      break-inside: avoid;
+    }
+
+    /* ── Cards inline ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+    .card {
+      background: var(--purple-light);
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 8.25pt;
+      line-height: 1.34;
+      break-inside: avoid;
+    }
+    .card strong { color: var(--purple-dark); display: block; margin-bottom: 2px; font-size: 8.5pt; }
+
+    .tagline {
+      display: inline-block;
+      background: var(--purple-mid);
+      color: var(--purple-dark);
+      font-size: 7.5pt;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 20px;
+      margin-bottom: 5px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 9px 0;
+    }
+
+    strong { font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <header class="cover">
+    <div class="cover-left">
+      <h1>Prueba Técnica</h1>
+      <div class="brand">Línea Estética</div>
+    </div>
+    <div class="cover-right">
+      <strong>Paola Andrea Hoyos Cardona</strong>
+      Septiembre 2026
+    </div>
+  </header>
+
+  <!-- ═══════════════ EJERCICIO 1 ═══════════════ -->
+  <section class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-num">01</span>
+      <h2 class="exercise-title">Diagnóstico y estrategia trimestral</h2>
+    </div>
+
+    <h3>¿Qué está fallando y por qué?</h3>
+    <p class="lead">Caída sistémica y acelerada entre junio y agosto en ambos canales: desalineación entre ejecución de contenido, frecuencia, calidad percibida y objetivos de negocio — no solo algoritmo.</p>
+
+    <div class="table-row">
+      <div>
+        <h3 style="margin-top:0">Instagram</h3>
+        <table>
+          <thead><tr><th>Métrica</th><th>Jun</th><th>Jul</th><th>Ago</th><th>Δ</th></tr></thead>
+          <tbody>
+            <tr><td>Seguidores nuevos</td><td>890</td><td>640</td><td>310</td><td class="neg">−65%</td></tr>
+            <tr><td>Alcance total</td><td>156K</td><td>141K</td><td>98K</td><td class="neg">−37%</td></tr>
+            <tr><td>Engagement rate</td><td>3.2%</td><td>2.6%</td><td>2.1%</td><td class="neg">−34%</td></tr>
+            <tr><td>Comentarios</td><td>410</td><td>380</td><td>290</td><td class="neg">−29%</td></tr>
+            <tr><td>Menciones negativas</td><td>12</td><td>19</td><td>31</td><td class="pos">+158%</td></tr>
+            <tr><td>Publicaciones</td><td>18</td><td>16</td><td>12</td><td class="neg">−33%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-top:0">TikTok</h3>
+        <table>
+          <thead><tr><th>Métrica</th><th>Jun</th><th>Jul</th><th>Ago</th><th>Δ</th></tr></thead>
+          <tbody>
+            <tr><td>Seguidores nuevos</td><td>1.200</td><td>950</td><td>180</td><td class="neg">−85%</td></tr>
+            <tr><td>Views promedio</td><td>8.400</td><td>6.100</td><td>2.300</td><td class="neg">−73%</td></tr>
+            <tr><td>Videos publicados</td><td>10</td><td>9</td><td>4</td><td class="neg">−60%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>Diagnóstico integrado</h3>
+    <ul>
+      <li><strong>Consistencia editorial:</strong> Menos publicaciones (−33% IG, −60% TT) reduce señales al algoritmo y contacto con la audiencia. La estancación en TikTok coincide con la caída de videos.</li>
+      <li><strong>Contenido poco guardable:</strong> El ER cae más rápido que el alcance. Solo producto/promo sin educación reduce guardados, shares y retención.</li>
+      <li><strong>Portafolio sin narrativa:</strong> Tres líneas (limpieza, solar, antiedad) requieren segmentación por necesidad de piel, no un feed genérico.</li>
+      <li><strong>Alerta reputacional:</strong> Menciones negativas casi se triplican (12→31). En protección solar, un caso mal gestionado escala rápido.</li>
+      <li><strong>TikTok mal explotado:</strong> Views −73%: sin gancho en 3s, formato vertical nativo ni persona a cámara. IG retiene; TikTok debe captar — hoy no lo hace.</li>
+      <li><strong>Sin puente digital→negocio:</strong> Sin CTA claros (bio, códigos, WhatsApp, tienda) la comunidad no convierte.</li>
+    </ul>
+
+    <h3>Acciones inmediatas</h3>
+    <ul class="compact-2col">
+      <li>Auditoría top/bottom 10 piezas (90 días) por guardados, shares y retención.</li>
+      <li>Calendario mínimo: IG 16–20 posts/mes + Stories diarias; TikTok 12–16 videos/mes.</li>
+      <li>Piloto 4 formatos nativos (rutina 30s, mito vs. realidad, POV tienda) y escalar ganadores.</li>
+      <li>Respuesta comunitaria &lt;2h; escalar menciones negativas a tabla de crisis.</li>
+      <li>UTMs + códigos por línea para medir tráfico y conversión.</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>Propuesta estrategia trimestral (Q4)</h3>
+    <p><strong>Objetivo de negocio:</strong> +20% venta online y en tienda en limpieza, protección solar y antiedad; elevar recompra en 90 días.</p>
+    <p><strong>Soporte digital:</strong> Comunidad educada (#SkincareLovers) que asocie a Línea Estética con asesoría confiable, genere confianza pre-compra y dirija tráfico medible a e-commerce y tiendas vía contenido segmentado, UGC y conversión (códigos, WhatsApp, asesoría).</p>
+
+    <div class="card-grid">
+      <div class="card"><strong>Educa tu piel (40%)</strong>Ingredientes, mitos, rutinas por tipo de piel. Carruseles + TikTok educativo → autoridad y guardados.</div>
+      <div class="card"><strong>Rutina real (30%)</strong>Equipo, clientas y microcreadores con rutinas de 3 pasos → identificación y consideración.</div>
+      <div class="card"><strong>Comunidad (20%)</strong>Encuestas, retos de hábito, Q&A → engagement y UGC.</div>
+      <div class="card"><strong>Experiencia LE (10%)</strong>Tiendas, Modo Planeta, lanzamientos → omnicanalidad y propósito.</div>
+    </div>
+
+    <div class="table-row">
+      <div>
+        <h3 style="margin-top:0">Frecuencia</h3>
+        <table>
+          <thead><tr><th>Canal</th><th>Frec.</th><th>Detalle</th></tr></thead>
+          <tbody>
+            <tr><td>IG Feed/Reels</td><td>4–5/sem</td><td>2 Reels + 1 carrusel + 1 comunidad</td></tr>
+            <tr><td>IG Stories</td><td>Diario</td><td>Encuestas, Q&A, CTA</td></tr>
+            <tr><td>TikTok</td><td>3–4/sem</td><td>Vertical nativo, gancho 0–3s</td></tr>
+            <tr><td>WhatsApp</td><td>2/sem</td><td>Rutinas segmentadas</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Medición del éxito</h3>
+        <table>
+          <thead><tr><th>Nivel</th><th>KPI</th><th>Meta Q4</th></tr></thead>
+          <tbody>
+            <tr><td>Awareness</td><td>Alcance / views</td><td>+25%</td></tr>
+            <tr><td>Engagement</td><td>ER, guardados</td><td>ER ≥3%</td></tr>
+            <tr><td>Consideración</td><td>Clics, visitas web</td><td>+20%</td></tr>
+            <tr><td>Conversión</td><td>Ventas, cupones</td><td>+20%/línea</td></tr>
+            <tr><td>Comunidad</td><td>UGC, respuesta</td><td>50 UGC; 90%</td></tr>
+            <tr><td>Reputación</td><td>Menciones neg.</td><td>&lt;15/mes</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>Mezcla de canales</h3>
+    <ul class="compact-2col">
+      <li><strong>Instagram:</strong> Hub de comunidad y conversión (42K). Fidelizar, educar, dirigir a compra.</li>
+      <li><strong>TikTok:</strong> Motor de descubrimiento. Rutinas y tendencias; priorizar retención y shares.</li>
+      <li><strong>WhatsApp:</strong> Cierre y asesoría — canal natural del consumidor colombiano de belleza.</li>
+      <li><strong>Blog Skincare Lovers:</strong> Evergreen para SEO y educación.</li>
+      <li><strong>Tienda + Modo Planeta:</strong> Activaciones que devuelven contenido a redes (QR, eventos).</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════ EJERCICIO 2 ═══════════════ -->
+  <section class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-num">02</span>
+      <h2 class="exercise-title">Crisis: reacción alérgica al protector solar</h2>
+    </div>
+
+    <h3>Respuesta pública</h3>
+    <div class="quote">«Hola [nombre], lamento muchísimo lo que describes y entendemos lo importante que es sentirse segura con un producto de protección solar. Tu bienestar es nuestra prioridad. Te escribimos por mensaje privado para acompañarte de forma personalizada y recopilar la información necesaria. Si presentas molestias persistentes, te recomendamos consultar a un dermatólogo. Estamos aquí para ayudarte. 💜»</div>
+    <p><strong>Principios:</strong> Empatía sin admitir culpa legal; no debatir en público; canal privado; recomendación de salud; responder en &lt;30 min. No eliminar el comentario ni bloquear a la usuaria.</p>
+
+    <div class="table-row">
+      <div>
+        <h3 style="margin-top:0">Protocolo interno</h3>
+        <table>
+          <thead><tr><th>#</th><th>Área</th><th>Acción</th><th>Tiempo</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Comunidad</td><td>Respuesta pública + DM</td><td>&lt;30 min</td></tr>
+            <tr><td>2</td><td>SAC</td><td>Caso: lote, foto, síntomas</td><td>&lt;2 h</td></tr>
+            <tr><td>3</td><td>QA</td><td>Verificar lote, reportes</td><td>&lt;24 h</td></tr>
+            <tr><td>4</td><td>Marca/Lab</td><td>Escalar al laboratorio</td><td>&lt;48 h</td></tr>
+            <tr><td>5</td><td>Legal</td><td>Revisar si escala</td><td>Según caso</td></tr>
+            <tr><td>6</td><td>Marketing</td><td>Pausar piezas del SKU</td><td>&lt;4 h</td></tr>
+            <tr><td>7</td><td>Seguimiento</td><td>Cierre + registro crisis</td><td>7 días</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Cómo enfrentar la situación</h3>
+        <ul>
+          <li><strong>Contener sin silenciar:</strong> Monitorear el hilo cada hora; «Estamos atendiendo el caso de forma individualizada».</li>
+          <li><strong>Evitar Streisand:</strong> No borrar comentarios legítimos. Ocultar insultos/spam.</li>
+          <li><strong>Transparencia controlada:</strong> Comunicado oficial solo si hay más casos del mismo lote.</li>
+          <li><strong>Aprendizaje:</strong> Informe post-crisis: tiempo de respuesta, menciones, impacto en ER.</li>
+          <li><strong>Refuerzo:</strong> Contenido educativo sobre patch test y elección de SPF — sin referenciar el caso.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EJERCICIO 3 ═══════════════ -->
+  <section class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-num">03</span>
+      <h2 class="exercise-title">Reto 14 días antiedad — TikTok &amp; IG</h2>
+    </div>
+    <span class="tagline">Presupuesto: $6.000.000 COP · Objetivo: awareness + consideración + conversión</span>
+
+    <div class="table-row">
+      <div>
+        <h3 style="margin-top:0">Distribución presupuesto</h3>
+        <table>
+          <thead><tr><th>Concepto</th><th>%</th><th>COP</th></tr></thead>
+          <tbody>
+            <tr><td>Creadores + producto</td><td>55%</td><td>$3.300.000</td></tr>
+            <tr><td>Producción / kits</td><td>10%</td><td>$600.000</td></tr>
+            <tr><td>Pauta amplificación</td><td>20%</td><td>$1.200.000</td></tr>
+            <tr><td>Landing + tracking</td><td>5%</td><td>$300.000</td></tr>
+            <tr><td>Gestión y reportes</td><td>10%</td><td>$600.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Tipo de creadores</h3>
+        <ul>
+          <li><strong>6 micro (15K–50K):</strong> Nicho skincare, documentan hábitos — ideales para 14 días.</li>
+          <li><strong>4 nano (3K–15K):</strong> Autenticidad, diversidad de piel y edades (25–45).</li>
+          <li><strong>1 dermato-creadora (30K–80K):</strong> Autoridad en activos (retinol, vit. C). Apertura y cierre.</li>
+        </ul>
+        <p style="font-size:8.25pt;margin-top:4px"><strong>¿Por qué no macro?</strong> Con $6M, un macro consume el presupuesto sin garantizar conversión. La confianza en skincare se construye con rostros cercanos y constancia.</p>
+      </div>
+    </div>
+
+    <h3>Brief — contenido auténtico</h3>
+    <ul class="compact-2col">
+      <li><strong>Concepto:</strong> «14 días cuidando mi piel como cariño propio» — no anuncio.</li>
+      <li><strong>Libertad:</strong> Rutina nocturna, día 1 vs. 14, errores previos, preguntas sobre antiedad.</li>
+      <li><strong>Mínimos:</strong> Producto en contexto real; 1 beneficio; #14DíasConLineaEstética; código único; @lineaestetica.co.</li>
+      <li><strong>Prohibidos:</strong> Claims médicos, antes/después manipulados, guion rígido, filtros en piel.</li>
+      <li><strong>Entregables:</strong> 1 video/semana (mín. 4) + 2 Stories/semana. Vertical, luz natural.</li>
+      <li><strong>Tono:</strong> Conversacional, como a una amiga. #SkincareLovers.</li>
+    </ul>
+
+    <h3>Ir más allá del awareness</h3>
+    <ul class="compact-2col">
+      <li><strong>Códigos únicos</strong> por creador (15% dto.) → ventas atribuidas.</li>
+      <li><strong>Landing</strong> del reto con rutina, productos y compra directa.</li>
+      <li><strong>Retargeting</strong> ($1.2M) sobre top 3 videos por retención.</li>
+      <li><strong>Incentivo:</strong> Compra con código = sorteo kit antiedad completo.</li>
+      <li><strong>Tienda física:</strong> QR para unirse al reto + asesoría con hoja de rutina.</li>
+      <li><strong>KPIs negocio:</strong> CPA/código, conversión landing, ticket, nuevas vs. recurrentes.</li>
+      <li><strong>Fase 2:</strong> Top 3 creadores → embajadores trimestrales.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════ EJERCICIO 4 ═══════════════ -->
+  <section class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-num">04</span>
+      <h2 class="exercise-title">Apertura tiendas — Bogotá, Medellín y Barranquilla</h2>
+    </div>
+    <p><strong>Objetivo:</strong> Tráfico en semana 1 + base de clientas recurrentes conectando comunidad digital (#SkincareLovers) con experiencia física.</p>
+
+    <h3>Pre-apertura (4 semanas antes)</h3>
+    <ul class="compact-2col">
+      <li><strong>Teasing por ciudad:</strong> Countdown en Stories + Reels con pistas de ubicación.</li>
+      <li><strong>Lista de espera:</strong> WhatsApp «Quiero ser de las primeras» + beneficio día 1 (mini kit o asesoría).</li>
+      <li><strong>3 creadores/ciudad:</strong> Tour behind the scenes + encuesta «¿qué esperas?».</li>
+      <li><strong>Contenido localizado:</strong> Rutina según clima de cada ciudad (solar + hidratación).</li>
+      <li><strong>Comunidad:</strong> Encuesta «¿próxima ciudad?» para amplificar alcance orgánico.</li>
+    </ul>
+
+    <h3>Activación día de apertura</h3>
+    <table>
+      <thead><tr><th>Ciudad</th><th>Activación</th><th>Mecánica</th></tr></thead>
+      <tbody>
+        <tr><td>Bogotá</td><td>Ruta del Glow</td><td>Primeras 100: asesoría + diagnóstico + regalo. Live influencer 10am–12m.</td></tr>
+        <tr><td>Medellín</td><td>Café &amp; Skincare</td><td>Rutina express + café partner + masterclass antiedad. Check-in Stories.</td></tr>
+        <tr><td>Barranquilla</td><td>Sol que protege</td><td>Estación SPF, regalo portafolio solar, mural #SkincareLovers, concurso.</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Transversal:</strong> QR → WhatsApp con rutina post-visita + código bienvenida 10% (7 días).</p>
+
+    <div class="table-row">
+      <div>
+        <h3 style="margin-top:0">Bucle digital post-visita</h3>
+        <ul>
+          <li><strong>#MiRutinaLE:</strong> Compartir bolsa/productos → repost oficial.</li>
+          <li><strong>Fidelización:</strong> Vincular compra al programa de estrellas existente.</li>
+          <li><strong>WhatsApp D+3:</strong> «¿Cómo va tu rutina?» + tips + recordatorio código.</li>
+          <li><strong>NPS digital</strong> post-visita con sorteo mensual.</li>
+          <li><strong>Modo Planeta:</strong> Traer envases en 2.ª visita → recurrencia + propósito.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Medición del éxito</h3>
+        <table>
+          <thead><tr><th>Dimensión</th><th>Indicador</th><th>Meta</th></tr></thead>
+          <tbody>
+            <tr><td>Tráfico físico</td><td>Visitantes/día</td><td>Meta retail</td></tr>
+            <tr><td>Digital→tienda</td><td>Canjes código</td><td>≥30%</td></tr>
+            <tr><td>Conversión</td><td>Ticket promedio</td><td>≥85% benchmark</td></tr>
+            <tr><td>Recurrencia</td><td>2.ª compra 30d</td><td>≥25%</td></tr>
+            <tr><td>Comunidad</td><td>UGC #MiRutinaLE</td><td>≥60 piezas</td></tr>
+            <tr><td>Satisfacción</td><td>NPS</td><td>≥70</td></tr>
+            <tr><td>Digital</td><td>Alcance local</td><td>+40%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

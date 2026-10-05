@@ -1,0 +1,11 @@
+{
+  "name": "prueba-tecnica-linea-estetica",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pdf": "node generar_pdf.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^24.2.0"
+  }
+}
