@@ -21,7 +21,9 @@ export default function Header({ onOpenContact }) {
 
   const isHome = pathname === '/';
   const isCases = pathname.startsWith('/experiences');
+  const isResults = pathname.startsWith('/results');
   const isServices = pathname.startsWith('/services');
+  const isPricing = pathname.startsWith('/pricing');
   const isContact = pathname.startsWith('/contact');
   const isAbout = pathname.startsWith('/about');
   const isBlog = pathname.startsWith('/blog');
@@ -133,6 +135,11 @@ export default function Header({ onOpenContact }) {
                   {header.nav.experiencias}
                 </Link>
               </li>
+              <li className={navItemClass(isResults)}>
+                <Link href="/results" onClick={handleNavClick}>
+                  {header.nav.resultados}
+                </Link>
+              </li>
               <li className={navItemClass(isServices)}>
                 <Link href="/services" onClick={handleNavClick}>
                   {header.nav.servicios}
@@ -141,6 +148,11 @@ export default function Header({ onOpenContact }) {
               <li className={navItemClass(isBlog)}>
                 <Link href="/blog" onClick={handleNavClick}>
                   {header.nav.blog}
+                </Link>
+              </li>
+              <li className={navItemClass(isPricing)}>
+                <Link href="/pricing" onClick={handleNavClick}>
+                  {header.nav.tarifas}
                 </Link>
               </li>
               <li className={navItemClass(isAbout)}>

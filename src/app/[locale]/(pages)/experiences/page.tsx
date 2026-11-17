@@ -66,6 +66,9 @@ export default async function CaseStudiesIndexPage({ params }: PageProps) {
       <div className="container" style={{ paddingTop: '1rem' }}>
         <Breadcrumbs items={crumbs} locale={locale} />
       </div>
+      <header className="container hub-page-intro">
+        <h1 className="blog-hub__title">{t('titleMerged')}</h1>
+      </header>
       <CaseStudiesHubView />
     </>
   );

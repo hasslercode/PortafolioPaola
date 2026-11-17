@@ -7,6 +7,25 @@ import {
   type SeoRoute,
 } from '@/lib/seo/paths';
 
+const BRAND_NAME = 'Paola Hoyos';
+
+/**
+ * Root layout appends " | Paola Hoyos". Skip that suffix when the title
+ * already names the brand, or when the page asks for an absolute title.
+ */
+export function documentTitle(
+  title: string,
+  absoluteTitle = false,
+): string | { absolute: string } {
+  if (
+    absoluteTitle ||
+    title.toLowerCase().includes(BRAND_NAME.toLowerCase())
+  ) {
+    return { absolute: title };
+  }
+  return title;
+}
+
 type BuildMetadataInput = {
   locale: SiteLocale;
   title: string;
@@ -60,7 +79,7 @@ export function buildPageMetadata({
   );
 
   return {
-    title: absoluteTitle ? { absolute: title } : title,
+    title: documentTitle(title, absoluteTitle),
     description,
     keywords: keywords.length ? keywords : undefined,
     authors: [{ name: siteConfig.name, url: aboutPath }],

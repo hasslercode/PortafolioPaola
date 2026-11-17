@@ -46,17 +46,12 @@ export default async function HomePage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const content = homeContent[locale as SiteLocale] ?? homeContent.es;
-  const reviews = content.testimonials.items.map((item) => ({
-    reviewBody: item.quote,
-    authorName: item.name,
-    result: `${content.testimonials.resultLabel} ${item.result}`,
-  }));
   const posts = await getAllPosts(locale);
   /** Prefer GSC/commercial pillars over glossary fluff on the home teaser strip. */
   const PRIORITY_HOME_TEASERS = [
     'definicion-reel',
     'que-es-ugc-y-por-que-funciona-en-colombia',
-    'como-contratar-estratega-digital',
+    'creador-ugc-colombia-guia',
   ] as const;
   const typedLocale = locale as SiteLocale;
   const bySlug = new Map(
@@ -89,7 +84,7 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <>
-      <JsonLdScript graph={homeGraph(locale as SiteLocale, reviews)} />
+      <JsonLdScript graph={homeGraph(locale as SiteLocale)} />
       <HomeContentProvider locale={locale as AppLocale} content={content}>
         <HomeExperience blogTeasers={blogTeasers} />
       </HomeContentProvider>

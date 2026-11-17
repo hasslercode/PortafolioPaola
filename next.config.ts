@@ -1,6 +1,7 @@
 import path from 'path';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import { blogRedirectRules } from './src/content/blog-catalog';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const emptyModule = path.join(__dirname, 'src/lib/empty-module.js');
@@ -60,6 +61,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Archived guides: one hop from /blog, /es/blog and /en/blog to the final URL.
+      ...blogRedirectRules(),
       {
         source: '/',
         destination: '/es',

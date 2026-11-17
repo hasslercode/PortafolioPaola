@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildPageMetadata({
     locale: locale as SiteLocale,
     title: isEn
-      ? 'FAQ | Content & video services Colombia | Paola Hoyos'
-      : 'Preguntas frecuentes | Contenido y video Colombia | Paola Hoyos',
+      ? 'FAQ | Content and video in Colombia'
+      : 'Preguntas frecuentes de contenido y video',
     description: isEn
       ? 'Answers about strategy sessions, content production, pricing in COP and monthly management for brands in Colombia.'
       : 'Respuestas sobre sesiones estratégicas, producción de contenido, tarifas en COP y gestión mensual para marcas en Colombia.',

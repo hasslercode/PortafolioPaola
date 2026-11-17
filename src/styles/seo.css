@@ -842,6 +842,18 @@
   max-width: 38rem;
 }
 
+.hub-page-intro {
+  padding-top: 0.35rem;
+}
+
+.case-detail__definition {
+  margin: 0 0 0.85rem;
+  max-width: 40rem;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  color: var(--text-primary, #2d1e1b);
+}
+
 .case-detail__body {
   max-width: 52rem;
 }

@@ -15,48 +15,46 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const CITY_POSTS = [
+const CITY_LINKS = [
   {
-    slug: 'creacion-de-contenido-medellin',
+    key: 'medellin',
+    kind: 'blog' as const,
+    slug: 'edicion-de-video-medellin',
     es: {
-      name: 'Medellín',
-      title: 'Creación de contenido en Medellín',
+      title: 'Edición de video en Medellín',
       summary:
         'Estrategia, Reels y producción remota para marcas en Medellín y área metropolitana.',
     },
     en: {
-      name: 'Medellín',
-      title: 'Content creation in Medellín',
+      title: 'Video editing in Medellín',
       summary:
         'Strategy, Reels and remote production for brands in Medellín and metro area.',
     },
   },
   {
-    slug: 'creacion-de-contenido-bogota',
+    key: 'bogota',
+    kind: 'services' as const,
     es: {
-      name: 'Bogotá',
       title: 'Creación de contenido en Bogotá',
       summary:
         'Producción estratégica para retail, servicios y emprendimiento en la capital.',
     },
     en: {
-      name: 'Bogotá',
       title: 'Content creation in Bogotá',
       summary:
         'Strategic production for retail, services and entrepreneurship in the capital.',
     },
   },
   {
-    slug: 'creacion-de-contenido-barranquilla',
+    key: 'barranquilla',
+    kind: 'experiences' as const,
     es: {
-      name: 'Barranquilla',
-      title: 'Creación de contenido en Barranquilla',
+      title: 'Experiencias en Barranquilla',
       summary:
         'Marcas costeñas con alcance nacional — Reels, WhatsApp y prueba local.',
     },
     en: {
-      name: 'Barranquilla',
-      title: 'Content creation in Barranquilla',
+      title: 'Experiences in Barranquilla',
       summary:
         'Coastal brands with national reach — Reels, WhatsApp and local proof.',
     },
@@ -125,13 +123,20 @@ export default async function CitiesPage({ params }: PageProps) {
         <nav className="page-prose" aria-label={isEn ? 'City guides' : 'Guías por ciudad'}>
           <h2>{isEn ? 'Main cities' : 'Ciudades principales'}</h2>
           <ul>
-            {CITY_POSTS.map((city) => {
+            {CITY_LINKS.map((city) => {
               const copy = city[typed];
+              const title = <strong>{copy.title}</strong>;
               return (
-                <li key={city.slug}>
-                  <Link href={{ pathname: '/blog/[slug]', params: { slug: city.slug } }}>
-                    <strong>{copy.title}</strong>
-                  </Link>
+                <li key={city.key}>
+                  {city.kind === 'blog' ? (
+                    <Link href={{ pathname: '/blog/[slug]', params: { slug: city.slug } }}>
+                      {title}
+                    </Link>
+                  ) : city.kind === 'services' ? (
+                    <Link href="/services">{title}</Link>
+                  ) : (
+                    <Link href="/experiences">{title}</Link>
+                  )}
                   {' — '}
                   {copy.summary}
                 </li>
@@ -144,13 +149,13 @@ export default async function CitiesPage({ params }: PageProps) {
           <h2>{isEn ? 'Also explore' : 'También explora'}</h2>
           <ul>
             <li>
-              <Link href={{ pathname: '/blog/[slug]', params: { slug: 'produccion-reels-colombia' } }}>
-                {isEn ? 'Reels production Colombia' : 'Producción de Reels Colombia'}
+              <Link href={{ pathname: '/blog/[slug]', params: { slug: 'instagram-reels-para-negocios-colombia' } }}>
+                {isEn ? 'Instagram Reels for businesses' : 'Instagram Reels para negocios'}
               </Link>
             </li>
             <li>
-              <Link href={{ pathname: '/blog/[slug]', params: { slug: 'content-strategist-colombia-remoto' } }}>
-                {isEn ? 'Remote content strategist' : 'Content strategist remoto'}
+              <Link href={{ pathname: '/blog/[slug]', params: { slug: 'precio-edicion-de-reels-colombia' } }}>
+                {isEn ? 'Reels editing rates' : 'Precio de edición de Reels'}
               </Link>
             </li>
             <li>

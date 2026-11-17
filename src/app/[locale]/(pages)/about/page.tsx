@@ -55,6 +55,9 @@ export default async function AboutPage({ params }: PageProps) {
       <div className="container sobre-hub-crumbs">
         <Breadcrumbs items={crumbs} locale={locale} />
       </div>
+      <header className="container hub-page-intro">
+        <h1 className="blog-hub__title">{t('title')}</h1>
+      </header>
       <AboutHubView />
     </>
   );

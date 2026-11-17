@@ -51,6 +51,9 @@ export default function Footer({ onOpenPortfolio }) {
                 <Link href="/experiences">{footer.nav.experiencias}</Link>
               </li>
               <li>
+                <Link href="/results">{locale === 'en' ? 'Results' : 'Resultados'}</Link>
+              </li>
+              <li>
                 <Link href="/services">{footer.nav.servicios}</Link>
               </li>
               <li>
