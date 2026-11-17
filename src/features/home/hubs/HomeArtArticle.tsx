@@ -25,7 +25,7 @@ export function HomeArtArticle({
         <header className="case-detail__header">
           <span className="case-detail__badge">{badge}</span>
           <h1 className="case-detail__title">{title}</h1>
-          {subtitle ? <p className="case-detail__subtitle">{subtitle}</p> : null}
+          {subtitle ? <div className="case-detail__subtitle">{subtitle}</div> : null}
         </header>
         <div className="case-detail__body">{children}</div>
       </div>

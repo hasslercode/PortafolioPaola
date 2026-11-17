@@ -8,7 +8,6 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { buildBreadcrumbs } from '@/lib/seo/paths';
 import { MarkdownBody, extractToc } from '@/components/content/MarkdownBody';
 import { FaqSection } from '@/components/content/FaqSection';
-import { GeoAnswer } from '@/components/content/GeoAnswer';
 import { TableOfContents } from '@/components/content/TableOfContents';
 import { AuthorByline } from '@/components/content/AuthorByline';
 import { RelatedContent } from '@/components/content/RelatedContent';
@@ -135,12 +134,18 @@ export default async function BlogPostPage({ params }: PageProps) {
       <DetailWithHomeArt
         badge={badge}
         title={post.title}
-        subtitle={<time dateTime={post.publishedAt}>{post.publishedAt}</time>}
+        subtitle={
+          <>
+            <p className="geo-answer geo-answer__body case-detail__definition">
+              {post.shortAnswer}
+            </p>
+            <time className="case-detail__subtitle" dateTime={post.publishedAt}>
+              {post.publishedAt}
+            </time>
+          </>
+        }
         ctaLabel={typedLocale === 'es' ? 'Contactar por correo' : 'Contact by email'}
       >
-        <GeoAnswer label={t('shortAnswer')}>
-          <p className="text-lg">{post.shortAnswer}</p>
-        </GeoAnswer>
         <TableOfContents
           title={typedLocale === 'es' ? 'En este artículo' : 'In this article'}
           items={toc}

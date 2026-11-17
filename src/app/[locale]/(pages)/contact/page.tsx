@@ -48,6 +48,9 @@ export default async function ContactPage({ params }: PageProps) {
       <div className="container contacto-hub-crumbs">
         <Breadcrumbs items={crumbs} locale={locale} />
       </div>
+      <header className="container hub-page-intro">
+        <h1 className="blog-hub__title">{t('title')}</h1>
+      </header>
       <ContactHubView />
       {/* crawlable channels (also in Contact section visually) */}
       <div className="sr-only">

@@ -1,7 +1,6 @@
 import path from 'path';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const emptyModule = path.join(__dirname, 'src/lib/empty-module.js');
 
@@ -24,6 +23,10 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],
+  },
+  // Archived guides are not rendered. Keep them out of every serverless trace.
+  outputFileTracingExcludes: {
+    '*': ['./content/blog/_archive/**'],
   },
   // Next ships baseline polyfills unconditionally (browserslist does not gate them).
   // Lighthouse "Legacy JavaScript" (~12 KiB) — safe to stub for our modern browser targets.
@@ -76,7 +79,6 @@ const nextConfig: NextConfig = {
       { source: '/contacto', destination: '/es/contacto', permanent: true },
       { source: '/tarifas', destination: '/es/tarifas', permanent: true },
       { source: '/blog', destination: '/es/blog', permanent: true },
-      { source: '/blog/:slug', destination: '/es/blog/:slug', permanent: true },
       // Old service slugs → hub / new plans
       { source: '/es/servicios/community-manager', destination: '/es/servicios/gestion-mensual', permanent: true },
       { source: '/es/servicios/creacion-contenido', destination: '/es/servicios/produccion-contenido', permanent: true },

@@ -104,8 +104,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildPageMetadata({
     locale: locale as SiteLocale,
     title: isEn
-      ? 'Work process | Content & video Colombia | Paola Hoyos'
-      : 'Proceso de trabajo | Contenido y video Colombia | Paola Hoyos',
+      ? 'Content and video work process'
+      : 'Proceso de trabajo de contenido y video',
     description: isEn
       ? 'Six clear steps from first contact to delivery and measurement for content strategy and video services in Colombia.'
       : 'Seis pasos claros desde el primer contacto hasta entrega y medición para servicios de estrategia y contenido en Colombia.',

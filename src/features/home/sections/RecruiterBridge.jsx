@@ -18,8 +18,8 @@ export default function RecruiterBridge() {
 
   const guideHref =
     locale === 'en'
-      ? '/en/blog/content-strategist-colombia-remoto'
-      : '/es/blog/content-strategist-colombia-remoto';
+      ? '/en/services'
+      : '/es/servicios';
 
   return (
     <section

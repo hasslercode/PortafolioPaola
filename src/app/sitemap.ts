@@ -1,6 +1,7 @@
 /**
  * Sitemap with real content dates (HU-TECH-010).
- * Blog posts use updatedAt/publishedAt; hubs/services fall back to content epoch.
+ * Blog posts use updatedAt/publishedAt. Hubs, services and case studies use
+ * the last git commit that touched their source.
  */
 
 import type { MetadataRoute } from 'next';
@@ -17,9 +18,30 @@ import {
   buildLocalizedPath,
   type SeoRoute,
 } from '@/lib/seo/paths';
+import { lastModifiedFor } from '@/lib/seo/lastmod';
 
 /** Stable fallback when a collection has no per-doc dates */
 const CONTENT_EPOCH = new Date('2026-03-01T00:00:00.000Z');
+
+const HUB_SOURCES: Record<string, string[]> = {
+  home: ['content/home', 'src/app/[locale]/page.tsx'],
+  caseStudies: [
+    'src/app/[locale]/(pages)/experiences/page.tsx',
+    'content/case-studies',
+  ],
+  results: ['src/app/[locale]/(pages)/results/page.tsx'],
+  services: ['src/app/[locale]/(pages)/services/page.tsx', 'content/services'],
+  pricing: ['src/app/[locale]/(pages)/pricing/page.tsx'],
+  blog: ['src/app/[locale]/(pages)/blog/page.tsx', 'content/blog/es'],
+  cities: ['src/app/[locale]/(pages)/cities/page.tsx'],
+  about: ['src/app/[locale]/(pages)/about/page.tsx'],
+  contact: ['src/app/[locale]/(pages)/contact/page.tsx'],
+  process: ['src/app/[locale]/(pages)/process/page.tsx'],
+  faq: ['src/app/[locale]/(pages)/faq/page.tsx'],
+  privacy: ['src/app/[locale]/(pages)/privacy/page.tsx'],
+  terms: ['src/app/[locale]/(pages)/terms/page.tsx'],
+  legal: ['src/app/[locale]/(pages)/legal/page.tsx'],
+};
 
 function entry(
   locale: SiteLocale,
@@ -75,18 +97,45 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   for (const locale of siteConfig.locales) {
     for (const item of hubRoutes) {
-      entries.push(entry(locale, item.hub, item.priority, item.freq));
+      const hubName = item.hub.type === 'hub' ? item.hub.hub : 'home';
+      entries.push(
+        entry(
+          locale,
+          item.hub,
+          item.priority,
+          item.freq,
+          lastModifiedFor(HUB_SOURCES[hubName] ?? []),
+        ),
+      );
     }
 
     for (const slug of serviceSlugs) {
       entries.push(
-        entry(locale, { type: 'service', slug }, 0.9, 'monthly'),
+        entry(
+          locale,
+          { type: 'service', slug },
+          0.9,
+          'monthly',
+          lastModifiedFor([
+            `content/services/es/${slug}.mdx`,
+            `content/services/en/${slug}.mdx`,
+          ]),
+        ),
       );
     }
 
     for (const slug of caseStudySlugs) {
       entries.push(
-        entry(locale, { type: 'caseStudy', slug }, 0.85, 'monthly'),
+        entry(
+          locale,
+          { type: 'caseStudy', slug },
+          0.85,
+          'monthly',
+          lastModifiedFor([
+            `content/case-studies/es/${slug}.mdx`,
+            `content/case-studies/en/${slug}.mdx`,
+          ]),
+        ),
       );
     }
 

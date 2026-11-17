@@ -3,15 +3,13 @@ import { JsonLdScript } from '@/components/seo/JsonLdScript';
 
 type SchemaProviderProps = {
   locale: string;
-  reviews?: Array<{ reviewBody: string; authorName: string; result?: string }>;
 };
 
 /**
  * Home-oriented core schema helper.
- * Prefer page-level JsonLdScript + graph builders for richer entities.
+ * Testimonials stay in the page; they are not emitted as Review JSON-LD.
  */
-export function SchemaProvider({ locale, reviews = [] }: SchemaProviderProps) {
+export function SchemaProvider({ locale }: SchemaProviderProps) {
   const typed = locale === 'en' ? 'en' : 'es';
-  const graph = homeGraph(typed, reviews);
-  return <JsonLdScript graph={graph} />;
+  return <JsonLdScript graph={homeGraph(typed)} />;
 }

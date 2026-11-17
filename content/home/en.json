@@ -3,11 +3,11 @@
     "skipLink": "Skip to main content"
   },
   "meta": {
-    "title": "Paola Hoyos | Content Creation, Video & Digital Strategy Colombia",
+    "title": "Paola Hoyos | Content and Video Colombia",
     "description": "Content creation, social video editing, UGC and digital strategy for entrepreneurs and brands in Colombia — measurable organic results.",
-    "ogTitle": "Paola Hoyos | Content Creation, Video & Digital Strategy Colombia",
+    "ogTitle": "Paola Hoyos | Content and Video Colombia",
     "ogDescription": "Content creation, social video editing, UGC and digital strategy for entrepreneurs and brands in Colombia.",
-    "twitterTitle": "Paola Hoyos | Content Creation, Video & Digital Strategy Colombia",
+    "twitterTitle": "Paola Hoyos | Content and Video Colombia",
     "twitterDescription": "Content creation, social video editing, UGC and digital strategy for entrepreneurs and brands in Colombia."
   },
   "header": {
@@ -25,7 +25,8 @@
       "experiencias": "Experiences",
       "portafolio": "Portfolio",
       "blog": "Blog",
-      "tarifas": "Investment",
+      "resultados": "Results",
+      "tarifas": "Pricing",
       "sobreMi": "About",
       "contacto": "Contact"
     },

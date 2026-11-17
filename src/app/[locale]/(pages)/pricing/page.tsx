@@ -30,8 +30,8 @@ export async function generateMetadata({
   return buildPageMetadata({
     locale: locale as SiteLocale,
     title: isEn
-      ? 'Investment & pricing | Content & video Colombia | Paola Hoyos'
-      : 'Tarifas e inversión | Contenido y video Colombia | Paola Hoyos',
+      ? 'Content and video pricing in Colombia'
+      : 'Tarifas de contenido y video en Colombia',
     description: isEn
       ? 'Transparent COP “from” ranges for strategy, video editing, UGC-style production and monthly management for entrepreneurs in Colombia.'
       : 'Rangos transparentes en COP “desde” para estrategia, edición de video, UGC y gestión mensual para emprendedores en Colombia.',
@@ -247,7 +247,7 @@ export default async function PricingPage({ params }: PageProps) {
           <Link
             href={{
               pathname: '/blog/[slug]',
-              params: { slug: 'tarifas-community-manager-colombia' },
+              params: { slug: 'tarifas-creador-ugc-colombia' },
             }}
           >
             {isEn ? 'Read the rates guide' : 'Leer guía de tarifas'}

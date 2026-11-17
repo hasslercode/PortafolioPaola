@@ -14,7 +14,6 @@ import {
   howToNode,
   itemListNode,
   offerNode,
-  reviewNode,
   serviceNode,
   videoObjectNode,
   webPageNode,
@@ -22,10 +21,7 @@ import {
 } from '@/lib/seo/jsonld';
 import type { SiteLocale } from '@/config/site';
 
-export function homeGraph(
-  locale: SiteLocale,
-  reviews: Array<{ reviewBody: string; authorName: string; result?: string }> = [],
-) {
+export function homeGraph(locale: SiteLocale) {
   const url = absoluteUrl(buildLocalizedPath(locale, { type: 'hub', hub: 'home' }));
   const nodes: JsonLdNode[] = [
     ...coreGraph(locale),
@@ -40,7 +36,6 @@ export function homeGraph(
       type: 'WebPage',
       speakable: true,
     }),
-    ...reviews.map((review) => reviewNode({ locale, ...review })),
   ];
 
   return buildGraph(nodes);
